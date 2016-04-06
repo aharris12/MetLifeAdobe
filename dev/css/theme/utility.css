@@ -1,0 +1,252 @@
+strong {
+    font-weight:600;
+}
+.bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* make bg images clickable via JS */
+.clickable {
+    cursor: pointer;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+
+
+.width-60{
+    width: 60%;
+}
+
+.block {
+    display: block !important;
+}
+
+.newline {
+    white-space: pre;
+}
+
+.newline:after {
+    content: "\A";
+}
+
+.padding-0-10 {
+    padding: 0 15px;
+}
+
+
+
+.no-padding {
+    padding: 0;
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-right {
+    margin-right: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-margin-left {
+    margin-left: 0;
+}
+
+.margin-50-0 {
+    margin: 50px auto !important;
+}
+
+.container.bg-gray-1st.margin-b-50 {
+    background-color:#efefef;
+}
+.container.bg-white.margin-b-100 {
+    background-color:#fff;
+    margin-bottom:100px;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.padding-50-0-sm,
+.padding-80-0-sm {
+    padding: 0
+}
+
+.margin-b {
+    margin-bottom: 20px;
+}
+
+.margin-b-50 {
+    margin-bottom: 50px;
+}
+
+.margin-t{
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.visible-xs {
+    display: inline-block !important;
+}
+
+@media screen and (min-width: 768px) {
+    .margin-b {
+        margin-bottom: 40px;
+    }
+
+    .margin-t{
+        margin-top: 40px;
+    }
+
+    .padding-50-0-sm {
+        padding: 50px 0 !important;
+    }
+
+    .padding-80-0-sm {
+        padding: 80px 0 !important;
+    }
+
+    .padding-40-0{
+        padding-top: 40px;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.static {
+    position: static;
+}
+
+.border-top {
+    border-top: 1px solid #ccc;
+}
+
+.border-top-sm {
+    border-top: 0px solid #ccc;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.table {
+    display: table !important;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .border-top-sm {
+        border-top: 1px solid #ccc;
+    }
+    .border-bottom-sm{
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/* Remove X from input in field IE */
+::-ms-clear {
+    display: none !important;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+input[type=text]::-ms-clear {
+    display: none !important;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+a[href*='tel'] {
+    color:#2377C5;
+    text-decoration:none;
+}
+.disabled-anchor,
+.disabled-anchor:hover {
+    color:#2377C5;
+    text-decoration:none;
+}
+
+@media screen and (min-width: 480px) {
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .visible-xs {
+        display: none !important;
+    }
+    .width-80{
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+}

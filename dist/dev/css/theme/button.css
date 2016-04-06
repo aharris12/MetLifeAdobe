@@ -1,0 +1,261 @@
+/* Metlife Buttons + Button Group */
+.btn-brand-1st,
+.btn-brand-1st-inv,
+.btn-brand-2nd,
+.btn-brand-2nd-inv,
+.btn-brand-3rd,
+.btn-brand-3rd-inv,
+.btn-brand-4th,
+.btn-brand-4th-inv {
+    font-size: 12px;
+    line-height: 40px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    min-width: 40px;
+    /*    max-width: 320px;*/
+    width: auto;
+    border: 0px solid transparent;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    margin: 0 auto 10px;
+    padding: 0 20px;
+    display: inline-block;
+}
+
+.btn-brand-1st:hover,
+.btn-brand-1st-inv:hover,
+.btn-brand-2nd:hover,
+.btn-brand-2nd-inv:hover,
+.btn-brand-3rd:hover,
+.btn-brand-3rd-inv:hover,
+.btn-brand-4th:hover,
+.btn-brand-4th-inv:hover{
+    text-decoration: none;
+}
+
+.btn-brand-1st,
+.btn-brand-1st-inv:active,
+.btn-brand-1st-inv:focus,
+.btn-brand-1st-inv:hover {
+    background-color: #2c77c5;
+    background: -webkit-linear-gradient(#347fcd, #2c77c5);
+    background: -o-linear-gradient(#347fcd, #2c77c5);
+    background: -moz-linear-gradient(#347fcd, #2c77c5);
+    background: linear-gradient(#347fcd, #2c77c5);
+    color: #ffffff;
+}
+
+.btn-brand-1st-inv,
+.btn-brand-1st:active,
+.btn-brand-1st:focus,
+.btn-brand-1st:hover {
+    background-color: #3d9cdb;
+    background: -webkit-linear-gradient(#4ba9e7, #3d9cdb);
+    background: -o-linear-gradient(#4ba9e7, #3d9cdb);
+    background: -moz-linear-gradient(#4ba9e7, #3d9cdb);
+    background: linear-gradient(#4ba9e7, #3d9cdb);
+    color: #ffffff;
+}
+
+.btn-brand-2nd,
+.btn-brand-2nd-inv:active,
+.btn-brand-2nd-inv:focus,
+.btn-brand-2nd-inv:hover {
+    background-color: #a0c323;
+    background: -webkit-linear-gradient(#a0c323, #8caa0a);
+    background: -o-linear-gradient(#a0c323, #8caa0a);
+    background: -moz-linear-gradient(#a0c323, #8caa0a);
+    background: linear-gradient(#a0c323, #8caa0a);
+    color: #ffffff;
+}
+
+.btn-brand-2nd-inv,
+.btn-brand-2nd:active,
+.btn-brand-2nd:focus,
+.btn-brand-2nd:hover {
+    background-color: #8caa0a;
+    background: -webkit-linear-gradient(#8caa0a, #8caa0a);
+    background: -o-linear-gradient(#8caa0a, #8caa0a);
+    background: -moz-linear-gradient(#8caa0a, #8caa0a);
+    background: linear-gradient(#8caa0a, #8caa0a);
+    color: #ffffff;
+}
+
+.btn-brand-3rd,
+.btn-brand-3rd-inv:active,
+.btn-brand-3rd-inv:focus,
+.btn-brand-3rd-inv:hover {
+    background-color: #0d5cad;
+    background-image: -webkit-linear-gradient(#0d5cad, #054c92) !important;
+    background-image: linear-gradient(#0d5cad, #054c92) !important;
+    color: #ffffff;
+    border-color: #0d5cad;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+
+.btn-brand-4th,
+.btn-brand-4th:active,
+.btn-brand-4th:focus,
+.btn-brand-4th:hover {
+    background-color: #52BDFC;
+    background: -webkit-linear-gradient(#52BDFC, #4CA6E1);
+    background: -o-linear-gradient(#52BDFC, #4CA6E1);
+    background: -moz-linear-gradient(#52BDFC, #4CA6E1);
+    background: linear-gradient(#52bdfc, #4ca6e1);
+    color: #ffffff;
+}
+
+.btn-brand-4th-inv,
+.btn-brand-4th:active,
+.btn-brand-4th:focus,
+.btn-brand-4th:hover {
+    background: #72C3F8;
+}
+
+.btn-brand-2nd--disabled,
+.btn-brand-2nd--disabled:hover {
+    background-color: #C0DC5A;
+    background: -webkit-linear-gradient(#C0DC5A, #B8C580);
+    background: -o-linear-gradient(#C0DC5A, #B8C580);
+    background: -moz-linear-gradient(#C0DC5A, #B8C580);
+    background: linear-gradient(#C0DC5A, #B8C580);
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    cursor: none;
+}
+
+/* btn Group */
+
+.btn-group .btn {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    line-height: 2.75em;
+    border: 0px solid #094480;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0 0 0 #fff;
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    background-color: #0d5cad;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0d5cad), to(#054c92));
+    background-image: -moz-linear-gradient(#0d5cad, #054c92);
+    background-image: -o-linear-gradient(#0d5cad, #054c92);
+    background-image: linear-gradient(#0d5cad, #054c92);
+    -moz-background-clip: padding; /* for Firefox 3.6 */
+    background-clip: padding-box;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+    border-left-width: 1px;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+
+.btn-group .btn:active,
+.btn-group .btn.active {
+    background-color: #3d9cdb;
+    background-image: none;
+}
+
+/* overrides extra padding on btn elements in Firefox */
+.btn-group .btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.btn-group {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.btn-group + .btn,
+.btn-group + .btn-group {
+    margin-left: 15px;
+}
+
+.btn-group .btn {
+    float: left;
+    margin-left: -1px;
+    position: relative;
+}
+
+.btn-group > .btn:first-child {
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left-width: 0;
+}
+
+.btn-group .btn:last-of-type {
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.btn-group .icon svg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: #3d9cdb;
+    font-size: 1.5em;
+    line-height: 0.5em;
+    top: 33px
+}
+
+.btn-group .icon.active {
+    display: block;
+}
+
+.btn-group__icon {
+    position: absolute;
+    width: 100%;
+    top: 28px;
+    display: none;
+}
+
+.btn-group-fax {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-group-fax .btn{
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 6px 12px;
+    line-height: 0;
+}
+
+.btn-group-fax .btn.active{
+    background-color: #666666;
+
+}
+
+.btn-brand-5th,
+.btn-brand-5th:focus,
+.btn-brand-5th:hover {
+    background-color: white;
+    border: 1px solid #cccccc;
+}
+
+.btn-brand-5th:active {
+
+}

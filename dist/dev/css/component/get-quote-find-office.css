@@ -1,0 +1,90 @@
+
+.quote-office {
+    margin-top:0;
+    position:relative;
+    z-index:100;
+}
+.quote-office__heading {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+.get-quote__container, .find-office__container {
+    height:200px;
+    background-color:#0e5dae;
+    float:left;
+    color:#fff;
+    width:100%;
+    display:table;
+    margin-bottom:40px;
+    min-height: 210px;
+}
+.find-office__container {
+    background-color:#2c77c5;
+    float:right;
+}
+.get-quote, .find-office {
+    display:table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding: 15px;
+}
+
+.find-office__dental-container,
+.find-office__vision-container {
+    display:none;
+}
+.error-span {
+    background-color: #EB4646;
+    color: white;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    display:none;
+    position:relative;
+    font-size: 0.85em;
+    padding: 0 10px;
+    line-height: 2.5em;
+}
+.error-span .icon.error {
+    position: absolute;
+    top: -14px;
+}
+.error-span .icon.info {
+    top:4px;
+}
+
+@media screen and (min-width: 768px) {
+    .quote-office {
+        margin: -85px auto 0;
+        width: 96%;
+    }
+    .get-quote__container {
+        width: 48%;
+        margin-left: 1%;
+    }
+    .find-office__container {
+        width: 48%;
+        margin-right: 1%;
+    }
+    .get-quote, .find-office {
+        padding: 30px 35px;
+    }
+}
+@media screen and (min-width: 1280px) {
+    .quote-office {
+        margin-top:-85px;
+        width: 85%;
+        max-width: 1300px;
+    }
+        .get-quote__container {
+            width: 47%;
+            margin-left: 2%;
+        }
+        .find-office__container {
+            width: 47%;
+            margin-right: 2%;
+        }
+}
+

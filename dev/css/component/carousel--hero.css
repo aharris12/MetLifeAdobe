@@ -1,0 +1,198 @@
+/* Image size 500x250 */
+.carousel-indicators {
+    display:none;
+}
+
+.carousel {
+    max-height:250px;
+    overflow: hidden;
+    margin-top:0;
+}
+
+.carousel--microsite{
+    max-height: none;
+    overflow: visible;
+}
+
+.carousel--microsite .carousel-control{
+    height: 100%;
+}
+
+.carousel--microsite .carousel-control svg{
+    position: relative;
+    top: 50%;
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: table;
+    padding:0 5%;
+}
+
+.carousel-caption--hero {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    margin:5px auto;
+    font-size: 6vw;
+    line-height: 7vw;
+    font-weight: 600;
+}
+
+.carousel-caption--bottom{
+    background-color: rgba(35,119,197,0.7);
+    top: auto;
+    position: relative;
+}
+
+.carousel--hero .icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/* Image size 800x400 */
+@media screen and (min-width: 480px) {
+    .carousel {
+        max-height:300px;
+/*        margin-top:-60px;*/
+    }
+    .carousel--microsite{
+        max-height: none;
+    }
+    .carousel-caption {
+        padding:0 15%;
+    }
+    .carousel-caption--bottom{
+        padding: 20px 0 10px;
+    }
+    .carousel-control {
+        padding-top:130px;
+        z-index:10;
+    }
+    .carousel-caption--hero {
+        font-size: 5vw;
+    }
+}
+/* Image size 1100x550 */
+@media screen and (min-width: 768px) {
+    .carousel {
+        max-height:315px;
+    }
+    .carousel-indicators{
+        display: block;
+        bottom: 30%;
+    }
+    .carousel--microsite{
+        max-height: none;
+    }
+    .carousel-caption {
+        padding:0 15%;
+    }
+    .carousel-caption--bottom{
+        padding: 30px 0 20px;
+        position: absolute;
+    }
+    .carousel-control {
+        padding-top:150px;
+    }
+    .carousel-caption--hero {
+        font-size: 4.5vw;
+        line-height: 5vw;
+        padding-bottom: 150px;
+    }
+    .carousel-indicators--visible{
+        display:block;
+        bottom: 30%;
+    }
+    .carousel--microsite .carousel-indicators--visible{
+        bottom:45%;
+    }
+    .item--microsite{
+        max-height:425px;
+    }
+}
+/* Image size 1350x675 */
+@media screen and (min-width: 1024px) {
+    .carousel {
+        max-height:440px;
+    }
+    .carousel--microsite{
+        max-height: none;
+    }
+    .carousel-caption {
+        padding:0 15%;
+    }
+    .carousel-caption--bottom{
+        padding: 30px 0 20px;
+    }
+    .carousel-control {
+        padding-top:170px;
+    }
+    .carousel-caption--hero {
+        font-size: 4vw;
+        line-height: 4.6vw;
+    }
+    .carousel--hero .icon {
+        height: 40px;
+        width: 40px;
+    }
+    .item--microsite{
+        max-height:450px;
+    }
+    .carousel--microsite .carousel-indicators--visible{
+        bottom:10px;
+    }
+    .carousel-caption--bottom h2 {
+        font-size:1.5em;
+    }
+}
+/* Image size 1350x675 */
+@media screen and (min-width: 1280px) {
+    .carousel {
+        max-height:440px;
+    }
+    .carousel--microsite{
+        max-height: none;
+    }
+    .carousel-caption {
+        padding:0 20%;
+    }
+    .carousel-caption--bottom{
+        padding: 30px 0 20px;
+    }
+    .carousel-control {
+        padding-top:180px;
+    }
+    .carousel-caption--hero {
+        font-size: 3.5vw;
+        line-height: 4.5vw;
+    }
+    .item--microsite{
+        max-height:500px;
+    }
+
+}
+/* Image size 2600*1000 */
+@media screen and (min-width: 1900px) {
+    .carousel {
+        max-height:600px;
+    }
+    .carousel--microsite{
+        max-height: none;
+    }
+    .carousel-caption--hero {
+        font-size: 3.5vw;
+        line-height: 4vw;
+    }
+    .carousel--hero .icon {
+        font-size: 3vw;
+    }
+    .item--microsite{
+        max-height:560px;
+    }
+}

@@ -1,0 +1,140 @@
+input, select, textarea {
+    padding: 7px 12px;
+    width: 100%;
+    text-align: left;
+    color: #666;
+    background-color: #FFF;
+    border: 1px solid #e3e3e3;
+    font-size: 0.9em;
+    font-weight:400;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    outline: none;
+    height:40px;
+}
+textarea {
+    height:120px;
+    resize: none;
+}
+input.user-checkbox{
+    width:inherit;
+    padding: 2px 3px;
+    -webkit-appearance: initial;
+    -moz-appearance: initial;
+    -o-appearance: initial;
+    -ms-appearance: initial;
+}
+
+select {
+    height:40px;
+    padding: 7px 12px;
+    position:relative;
+    z-index:500;
+    background-color: transparent;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("../../images/form/icon_selection_arrow.png") no-repeat 100% center;
+    background-size: 18px 40px;
+    
+    
+}
+select::-ms-expand{
+  display:none;
+}
+option {
+    padding: 7px 0;
+}
+
+.form-radio-icon--hidden{
+    display: none;
+}
+
+input[type="radio"] {
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    -o-appearance: radio;
+    -ms-appearance: radio;
+    width: 20px;
+    height:20px;
+    display: inline-block;
+    top: 5px;
+    left: 7px;
+    position: relative;
+    margin-right:4px;
+}
+
+
+.form-icon-wrapper {
+    position: relative;
+    min-height:35px;
+}
+.form-icon-wrapper svg {
+    position: absolute;
+    top: 7px;
+    right: 2px;
+    fill: #666;
+    width: 24px;
+    height: 24px;
+    z-index:601;
+}
+
+.form-error {
+    border: 1px solid #eb4646 !important;
+    background-color: #f5d0d0 !important;
+    color: #db3535 !important;
+}
+
+.form-item {
+    display:block;
+    margin-bottom:10px;
+}
+.form-item__label {
+    display:block;
+    width:100%;
+    padding:0;
+}
+.form-item__field {
+    display:block;
+    width:100%;
+    padding:0;
+}
+.form-item input {
+    width:100%;
+}
+
+.form-item__field.form-icon-wrapper {
+    background-color:#fff;
+}
+.form-item__field.form-icon-wrapper select{
+    background-color:transparent;
+}
+
+.form-user-grp input[type=radio]{
+    display: none;
+}
+
+.form-radio-grp svg{
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    .form-item {
+        display:table;
+        width:100%;
+    }
+    .form-item__label {
+        display:table-cell;
+        width:200px;
+        padding:0 10px;
+    }
+    .form-item__field {
+        display:table-cell;
+        width:100%;
+    }
+}

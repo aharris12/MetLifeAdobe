@@ -1,0 +1,283 @@
+.product-card{
+    display:block;
+    background:  #fff;
+    -webkit-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 5px 0 #ccc;
+
+}
+.product-card ul {
+    font-size:0.9em;
+}
+
+.product-card__img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    max-height: 188px;
+    min-height: 120px;
+}
+.product-card .title, .product-card .content, .product-card .action{
+    display: block;
+    padding: 20px;
+}
+
+.product-card .title h3 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    font-weight: 600;
+}
+
+.product-card .content{
+    padding-bottom: 0;
+}
+
+.content-body__action{
+    text-align: center;
+}
+
+.content-body__secondary-copy{
+    padding: 10px 0;
+}
+
+.content-body__secondary-copy a{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.product-card .content .content-body .intro{
+    display:block;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.product-card .content .content-body ul{
+    padding-left: 15px;
+    text-indent: -16px;
+}
+
+.product-card .content .content-body li:before{
+    content: "\0387";
+    font-size: 26px;
+    vertical-align: middle;
+    line-height: 20px;
+    padding-right: 10px;
+}
+
+.product-card .content .content-body li{
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.product-card .action p a{
+    color: #337ab7;
+    border-bottom: 1px solid #add0f0;
+}
+.product-card .action p a:hover{
+    text-decoration: none;
+    color: #2c77c5;
+    border-bottom-color: #2c77c5;
+}
+
+.product-card .read-more{
+    border-bottom: 1px solid #B9D4F0;
+        font-size: 0.9em;
+        font-weight:600;
+}
+.product-card .read-more:hover{
+    color: #2c77c5;
+    border-bottom-color: #2c77c5;
+}
+.pc-tel-number {
+    display: block;
+    margin-bottom: 20px;
+    color: #2377C5;
+    text-decoration: none;
+    font-weight: 700;
+}
+.company-search-label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+.content-body input {
+    width: 65%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0px 12px;
+}
+.content-body b {
+    font-weight: 600;
+}
+.expand-open-close {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+.expand-content {
+    font-weight: 400;
+    display: block;
+}
+.expand-content__intro {
+    display: block;
+    margin-bottom: 10px;
+}
+.expand-content__list {
+    list-style-position: inside;
+    list-style-type: none;
+    text-indent: -16px;
+    padding-left: 18px;
+    margin-bottom: 20px;
+}
+.expand-content__list li {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+.expand-content__list li:before {
+    content: "\0387";
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 20px;
+    padding-right: 10px;
+}
+.expand-content__contact {
+    display: block;
+    margin-bottom: 10px;
+}
+.expand-open .icon,
+.expand-close .icon {
+    fill: #8caa0a;
+    top: 7px;
+    right: 5px;
+}
+.company-search-container{
+    position:relative;
+}
+.shadow{
+    background: #fff;
+    left: 0!important;
+    top: 69px!important;
+    position: absolute;
+    display: table-row-group!important;
+}
+
+.shadow .output{
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+    background: #fff;
+    white-space: nowrap!important;
+    cursor: pointer;
+    line-height: 16px;
+    margin-top: -1px;
+    z-index: 900;
+    position: absolute;
+    padding: 0 10px 10px;
+}
+
+.shadow .output div{
+    padding: 1px 3px;
+    font-size: 13px;
+}
+
+@media screen and (min-width: 768px){
+
+    .product-card{
+        display: table;
+        margin-bottom: 20px;
+    }
+    .product-card .title, .product-card .content, .product-card .action{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .product-card .title{
+        width: 25%;
+    }
+
+    .product-card .content{
+        width: 55%;
+        padding: 30px 10px 30px 30px;
+    }
+
+    .product-card .action{
+        width: 20%;
+    }
+
+    .content-body__action{
+        text-align: left;
+    }
+    .product-card .content .content-body ul{
+        margin-bottom: 20px;
+    }
+    .pc-tel-number {
+        pointer-events: none;
+        color: #333;
+    }
+    .company-search-label {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .expand-content {
+        display: none;
+        font-weight: 400;
+    }
+    .expand-open,
+    .expand-close {
+        display: table;
+        width: 100%;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        border: #cccccc;
+        border-top-style: solid;
+        border-top-width: 1px;
+        cursor: pointer;
+    }
+    .expand-close {
+        display: none;
+    }
+
+    .shadow{
+        top: 79px !important;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    .product-card .content{
+        width: 50%;
+        padding: 40px 10px 40px 40px;
+    }
+    .company-search-label {
+        display: inline;
+        width: 30%;
+        text-align: left;
+    }
+    .content-body input {
+        margin-top: 20px;
+        width: 45%;
+    }
+    .expand-content {
+        display: none;
+        font-weight: 400;
+    }
+    .expand-open-close .visible-xs {
+        display: block !important;
+    }
+    .shadow {
+        left: 158px!important;
+
+        top: 62px!important;
+
+    }
+}
+

@@ -1,0 +1,22 @@
+.optional-image__img{
+    margin-bottom:10px;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .optional-image__img, .optional-image__description{
+        width: 60%;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .optional-image__img, .optional-image__description{
+        width: 60%;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+

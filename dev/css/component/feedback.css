@@ -1,0 +1,42 @@
+.oo_tab_right, #oo_tab {
+    display: none;
+    background-image: none;
+    background-color: #333333;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    top: 50%;
+    border-radius: 0;
+}
+
+.oo_tab_right div, #oo_tab div {
+    background-image: url("/global-assets/images/form/icon_fb_text_plus.png");
+    background-size: 113%;
+    background-position-x: -9px;
+    background-position-y: 1px;
+}
+
+.oo_tab_right span, #oo_tab span {
+    background-image: none;
+}
+
+.oo_tab_right:hover, #oo_tab:hover {
+    background-color: #666666
+}
+
+@media (min-width: 768px) {
+    .oo_tab_right, #oo_tab {
+        display: block;
+    }
+}
+
+@-moz-document url-prefix() {
+    .oo_tab_right div {
+        background-position: -8px 2px;
+    }
+}
