@@ -281,3 +281,26 @@
     }
 }
 
+@media screen and (min-width: 1024px){
+    .product-card .content{
+        width: 50%;
+        padding: 40px 10px 40px 40px;
+    }
+    .company-search-label {
+        display: inline;
+        width: 30%;
+        text-align: left;
+    }
+    .content-body input {
+        margin-top: 20px;
+        width: 45%;
+    }
+    .expand-content {
+        display: none;
+        font-weight: 400;
+    }
+
+    .expand-open-close .visible-xs {
+        display: block !important;
+    }
+}
