@@ -298,7 +298,7 @@
         <div class="form-item__label--large">
             <span>I'm looking for a form related to:</span>
             <div class="form-icon-wrapper">
-                <select class="inline-block form-item__field--large form-library" data-forms-lib-url="/path/to/form_library.results.product=" data-forms-query-parameter=".json">
+                <select class="inline-block form-item__field--large form-library js-formLib" data-forms-lib-url="/path/to/form_library.results.product=" data-forms-query-parameter=".json">
                     <option value="all" disabled selected>Select a Product</option>
                     <option value="life_insurance">Life Insurance</option>
                     <option value="home_auto_insurance">Home & Auto Insurance</option>
@@ -318,67 +318,67 @@
 
 <!-- Result -->
 <div class="container">
-    <div class="row wrapper list results_content">
-       
-        <div data-form-library-msg="all">
-            <h2 class="list__title">Most Downloaded Forms</h2>
-        </div>
-        <div data-form-library-msg="life_insurance">
-            <h2 class="list__title">Life Insurance Forms (purchased individually)</h2>
-            <p class="list__copy">
-                If you purchased Life Insurance individually rather than through your employer 
-                or group, find the forms you need below. Group participants, please contact your 
-                plan administrator.If you would like to perform service transactions online, 
-                please 
-                <a href="">register</a> or 
-                <a href="">log in to eSERVICE</a>.
-            </p>
-        </div>
-        <div data-form-library-msg="home_auto_insurance">
-            <h2 class="list__title">Home Auto Insurance</h2>
-            <p class="list__copy">
-                Home Auto Insurance. If you purchased Life Insurance individually rather than through your employer 
-                or group, find the forms you need below. Group participants, please contact your 
-                plan administrator.If you would like to perform service transactions online, 
-                please 
-                <a href="">register</a> or 
-                <a href="">log in to eSERVICE</a>.
-            </p>
-        </div>
-        <div data-form-library-msg="disability_insurance">
-            <h2 class="list__title">Disability Insurance</h2>
-            <p class="list__copy">
-                Disability Insurance. If you purchased Life Insurance individually rather than through your employer 
-                or group, find the forms you need below. Group participants, please contact your 
-                plan administrator.If you would like to perform service transactions online, 
-                please 
-                <a href="">register</a> or 
-                <a href="">log in to eSERVICE</a>.
-            </p>
-        </div>
-        <div data-form-library-msg="dental_insurance">
-            <h2 class="list__title">Dental Insurance</h2>
-            <p class="list__copy">
-                Dental Insurance. If you purchased Life Insurance individually rather than through your employer 
-                or group, find the forms you need below. Group participants, please contact your 
-                plan administrator.If you would like to perform service transactions online, 
-                please 
-                <a href="">register</a> or 
-                <a href="">log in to eSERVICE</a>.
-            </p>
-        </div>
-        <div data-form-library-msg="general_american">
-            <h2 class="list__title">General American</h2>
-            <p class="list__copy">
-                General American. If you purchased Life Insurance individually rather than through your employer 
-                or group, find the forms you need below. Group participants, please contact your 
-                plan administrator.If you would like to perform service transactions online, 
-                please 
-                <a href="">register</a> or 
-                <a href="">log in to eSERVICE</a>.
-            </p>
-        </div>
-        <div data-form-library-msg="annuities">
+    <div class="row wrapper list ">
+        <div class="lists">
+            <div data-form-library-msg="all">
+                <h2 class="list__title">Most Downloaded Forms</h2>
+            </div>
+            <div data-form-library-msg="life_insurance">
+                <h2 class="list__title">Life Insurance Forms (purchased individually)</h2>
+                <p class="list__copy">
+                    If you purchased Life Insurance individually rather than through your employer
+                    or group, find the forms you need below. Group participants, please contact your
+                    plan administrator.If you would like to perform service transactions online,
+                    please
+                    <a href="">register</a> or
+                    <a href="">log in to eSERVICE</a>.
+                </p>
+            </div>
+            <div data-form-library-msg="home_auto_insurance">
+                <h2 class="list__title">Home Auto Insurance</h2>
+                <p class="list__copy">
+                    Home Auto Insurance. If you purchased Life Insurance individually rather than through your employer
+                    or group, find the forms you need below. Group participants, please contact your
+                    plan administrator.If you would like to perform service transactions online,
+                    please
+                    <a href="">register</a> or
+                    <a href="">log in to eSERVICE</a>.
+                </p>
+            </div>
+            <div data-form-library-msg="disability_insurance">
+                <h2 class="list__title">Disability Insurance</h2>
+                <p class="list__copy">
+                    Disability Insurance. If you purchased Life Insurance individually rather than through your employer
+                    or group, find the forms you need below. Group participants, please contact your
+                    plan administrator.If you would like to perform service transactions online,
+                    please
+                    <a href="">register</a> or
+                    <a href="">log in to eSERVICE</a>.
+                </p>
+            </div>
+            <div data-form-library-msg="dental_insurance">
+                <h2 class="list__title">Dental Insurance</h2>
+                <p class="list__copy">
+                    Dental Insurance. If you purchased Life Insurance individually rather than through your employer
+                    or group, find the forms you need below. Group participants, please contact your
+                    plan administrator.If you would like to perform service transactions online,
+                    please
+                    <a href="">register</a> or
+                    <a href="">log in to eSERVICE</a>.
+                </p>
+            </div>
+            <div data-form-library-msg="general_american">
+                <h2 class="list__title">General American</h2>
+                <p class="list__copy">
+                    General American. If you purchased Life Insurance individually rather than through your employer
+                    or group, find the forms you need below. Group participants, please contact your
+                    plan administrator.If you would like to perform service transactions online,
+                    please
+                    <a href="">register</a> or
+                    <a href="">log in to eSERVICE</a>.
+                </p>
+            </div>
+            <div data-form-library-msg="annuities">
             <h2 class="list__title">Annuities</h2>
             <p class="list__copy">
                 Annuities. If you purchased Life Insurance individually rather than through your employer 
@@ -389,89 +389,91 @@
                 <a href="">log in to eSERVICE</a>.
             </p>
         </div>
-        
-        <div class="row list__item">
-            <span class="list__item__date">Category</span>
-            <div class="list__item--left">
-                <a href="#" class="list__item__title text-bold">File Name</a>
-                <p>A form description lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="list__item--right">
-                <a href="#">
-                    <img src="images/icon_pdf.png" class="document-icon">
-                </a>
-                <a href="#" class="hidden-xs download-link">Download</a>
-                <span class="block document-size">(PDF-689 KB)</span>
-            </div>
-            <span class="clearfix"></span>
         </div>
-        <div class="row list__item">
-            <span class="list__item__date">Life Insurance</span>
-
-            <div class="list__item--left">
-                <a href="#" class="list__item__title text-bold">Change of Beneficiary Form</a>
-
-                <p>Correct, change or add beneficiaries on your life insurance policy.</p>
+        <div class="results_content">
+            <div class="row list__item">
+                <span class="list__item__date">Category</span>
+                <div class="list__item--left">
+                    <a href="#" class="list__item__title text-bold">File Name</a>
+                    <p>A form description lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="list__item--right">
+                    <a href="#">
+                        <img src="images/icon_pdf.png" class="document-icon">
+                    </a>
+                    <a href="#" class="hidden-xs download-link">Download</a>
+                    <span class="block document-size">(PDF-689 KB)</span>
+                </div>
+                <span class="clearfix"></span>
             </div>
-            <div class="list__item--right">
-                <a href="#">
-                    <img src="images/icon_pdf.png" class="document-icon">
-                </a>
-                <a href="#" class="hidden-xs download-link">Download</a>
-                <span class="block document-size">(PDF-689 KB)</span>
-            </div>
-            <span class="clearfix"></span>
-        </div>
-        <div class="row list__item">
-            <span class="list__item__date">Category</span>
+            <div class="row list__item">
+                <span class="list__item__date">Life Insurance</span>
 
-            <div class="list__item--left">
-                <a href="#" class="list__item__title text-bold">File Name</a>
+                <div class="list__item--left">
+                    <a href="#" class="list__item__title text-bold">Change of Beneficiary Form</a>
 
-                <p>A form description lorem ipsum dolor sit amet.</p>
+                    <p>Correct, change or add beneficiaries on your life insurance policy.</p>
+                </div>
+                <div class="list__item--right">
+                    <a href="#">
+                        <img src="images/icon_pdf.png" class="document-icon">
+                    </a>
+                    <a href="#" class="hidden-xs download-link">Download</a>
+                    <span class="block document-size">(PDF-689 KB)</span>
+                </div>
+                <span class="clearfix"></span>
             </div>
-            <div class="list__item--right">
-                <a href="#">
-                    <img src="images/icon_pdf.png" class="document-icon">
-                </a>
-                <a href="#" class="hidden-xs download-link">Download</a>
-                <span class="block document-size">(PDF-689 KB)</span>
-            </div>
-            <span class="clearfix"></span>
-        </div>
-        <div class="row list__item">
-            <span class="list__item__date">Category</span>
+            <div class="row list__item">
+                <span class="list__item__date">Category</span>
 
-            <div class="list__item--left">
-                <a href="#" class="list__item__title text-bold">File Name</a>
+                <div class="list__item--left">
+                    <a href="#" class="list__item__title text-bold">File Name</a>
 
-                <p>A form description lorem ipsum dolor sit amet.</p>
+                    <p>A form description lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="list__item--right">
+                    <a href="#">
+                        <img src="images/icon_pdf.png" class="document-icon">
+                    </a>
+                    <a href="#" class="hidden-xs download-link">Download</a>
+                    <span class="block document-size">(PDF-689 KB)</span>
+                </div>
+                <span class="clearfix"></span>
             </div>
-            <div class="list__item--right">
-                <a href="#">
-                    <img src="images/icon_pdf.png" class="document-icon">
-                </a>
-                <a href="#" class="hidden-xs download-link">Download</a>
-                <span class="block document-size">(PDF-689 KB)</span>
-            </div>
-            <span class="clearfix"></span>
-        </div>
-        <div class="row list__item">
-            <span class="list__item__date">Category</span>
+            <div class="row list__item">
+                <span class="list__item__date">Category</span>
 
-            <div class="list__item--left">
-                <a href="#" class="list__item__title text-bold">File Name</a>
+                <div class="list__item--left">
+                    <a href="#" class="list__item__title text-bold">File Name</a>
 
-                <p>A form description lorem ipsum dolor sit amet.</p>
+                    <p>A form description lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="list__item--right">
+                    <a href="#">
+                        <img src="images/icon_pdf.png" class="document-icon">
+                    </a>
+                    <a href="#" class="hidden-xs download-link">Download</a>
+                    <span class="block document-size">(PDF-689 KB)</span>
+                </div>
+                <span class="clearfix"></span>
             </div>
-            <div class="list__item--right">
-                <a href="#">
-                    <img src="images/icon_pdf.png" class="document-icon">
-                </a>
-                <a href="#" class="hidden-xs download-link">Download</a>
-                <span class="block document-size">(PDF-689 KB)</span>
-            </div>
-            <span class="clearfix"></span>
+            <div class="row list__item">
+                    <span class="list__item__date">Category</span>
+
+                    <div class="list__item--left">
+                        <a href="#" class="list__item__title text-bold">File Name</a>
+
+                        <p>A form description lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="list__item--right">
+                        <a href="#">
+                            <img src="images/icon_pdf.png" class="document-icon">
+                        </a>
+                        <a href="#" class="hidden-xs download-link">Download</a>
+                        <span class="block document-size">(PDF-689 KB)</span>
+                    </div>
+                    <span class="clearfix"></span>
+                </div>
         </div>
     </div>
     
@@ -485,7 +487,7 @@
         </ul>
     </div>
 
-    <div class="row wrapper other-forms">
+    <div class="row wrapper">
         <div data-form-library-msg="all">
             <!-- nothing specified -->
         </div>
@@ -1555,6 +1557,8 @@
     </div>
 </div>
 
+<!-- Find an Office - Google Map -->
+<script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
 <!-- build:js js/vendors.min.js -->
 <script src="js/_lib/jquery-1.11.3.js"></script>
@@ -1602,14 +1606,11 @@
 <script src="js/quote-tool.js"></script>
 <script src="js/result-pages.js"></script>
 <script src="js/view-all-rates.js"></script>
-<!-- /build -->
-
-<!-- Find an Office - Google Map -->
-<script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
-<!-- build:js js/findoffice.min.js -->
 <script src="js/markerwithlabel.js"></script>
 <script src="js/ServicesAPI.js"></script>
 <!-- /build -->
+
+
 
 
 </body>

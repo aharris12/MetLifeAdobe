@@ -263,7 +263,7 @@ module.exports = function (grunt) {
         compress: {
             main: {
                 options: {
-                    archive: 'Tridion-' + grunt.template.today("mmddyy-HHMMss") + '.zip'
+                    archive: 'Adobe-' + grunt.template.today("mmddyy-HHMMss") + '.zip'
                 },
                 files: [
                     {expand: true, cwd: 'dist/', src: ['**'], dest: 'AEM-'+ grunt.template.today("mmddyy-HHMMss")}, // makes all src relative to cwd
