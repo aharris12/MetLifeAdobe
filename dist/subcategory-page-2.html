@@ -13,8 +13,59 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/07/2016 @10:43:26 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="css/metlife.min.css"/>
+    <!-- build:template
+    <%= message %>
+    /build -->
+    <!-- build:css css/metlife.min.css -->
+    <link href="css/theme/bootstrap-metlife.css" rel="stylesheet">
+    <link href="css/theme/icon-metlife.css" rel="stylesheet">
+    <link href="css/theme/form-metlife.css" rel="stylesheet">
+    <link href="css/theme/utility.css" rel="stylesheet">
+    <link href="css/theme/layout.css" rel="stylesheet">
+    <link href="css/theme/main.css" rel="stylesheet">
+    <link href="css/theme/button.css" rel="stylesheet">
+    <link href="css/theme/pagination.css" rel="stylesheet">
+    <link href="css/component/global-header.css" rel="stylesheet">
+    <link href="css/component/login-popout.css" rel="stylesheet">
+    <link href="css/component/breadcrumb.css" rel="stylesheet">
+    <link href="css/component/homepage-nav.css" rel="stylesheet">
+    <link href="css/component/get-quote-find-office.css" rel="stylesheet">
+    <link href="css/component/divider-scroll-to.css" rel="stylesheet">
+    <link href="css/component/divider-snoopy.css" rel="stylesheet">
+    <link href="css/component/carousel--hero.css" rel="stylesheet">
+    <link href="css/component/carousel--tabs.css" rel="stylesheet">
+    <link href="css/component/promo-card.css" rel="stylesheet">
+    <link href="css/component/disclaimer.css" rel="stylesheet">
+    <link href="css/component/media-contact.css" rel="stylesheet">
+    <link href="css/component/subnavigation.css" rel="stylesheet">
+    <link href="css/component/product-module.css" rel="stylesheet">
+    <link href="css/component/article-list.css" rel="stylesheet">
+    <link href="css/component/optional-image.css" rel="stylesheet">
+    <link href="css/component/product-comparison-chart.css" rel="stylesheet">
+    <link href="css/component/table-variations.css" rel="stylesheet">
+    <link href="css/component/microsite-header.css" rel="stylesheet">
+    <link href="css/component/product-tile.css" rel="stylesheet">
+    <link href="css/component/article.css" rel="stylesheet">
+    <link href="css/component/media-card.css" rel="stylesheet">
+    <link href="css/component/office-search.css" rel="stylesheet">
+    <link href="css/component/contextual-links.css" rel="stylesheet">
+    <link href="css/component/cta-box.css" rel="stylesheet">
+    <link href="css/component/content-header.css" rel="stylesheet">
+    <link href="css/component/section-header.css" rel="stylesheet">
+    <link href="css/component/contact.css" rel="stylesheet">
+    <link href="css/component/form-card.css" rel="stylesheet">
+    <link href="css/component/video-text.css" rel="stylesheet">
+    <link href="css/component/accordion.css" rel="stylesheet">
+    <link href="css/component/global-footer.css" rel="stylesheet">
+    <link href="css/component/divider-load-more.css" rel="stylesheet">
+    <link href="css/component/subnavigationwithgoback.css" rel="stylesheet">
+    <link href="css/component/product-card.css" rel="stylesheet">
+    <link href="css/component/quote-result-card.css" rel="stylesheet">
+    <link href="css/component/contact-form.css" rel="stylesheet">
+    <link href="css/component/privacy-policy-index.css" rel="stylesheet">
+    <link href="css/component/privacy-policy-section.css" rel="stylesheet">
+    <link href="css/component/search-results.css" rel="stylesheet">
+    <!-- /build -->
 
 </head>
 <body>
@@ -31,7 +82,7 @@
                 <svg class="icon icon-homepage home-trigger__icon">
                     <use xlink:href="images/icons-metlife.svg#icon-homepage"></use>
                 </svg>
-                    <span class="home-trigger__label">Home</i></span>
+                    <span class="home-trigger__label">Home</i>
             </a>
         </div>
         <div class="col search-trigger" title="SEARCH" data-target="search">
@@ -1781,8 +1832,50 @@
 
 
 <!-- Required JS Libraries -->
-<script src="js/vendors.min.js"></script>
-<script src="js/metlife.min.js"></script>
+<!-- build:js js/vendors.min.js -->
+<script src="js/_lib/jquery-1.11.3.js"></script>
+<script src="js/_lib/bootstrap.js"></script>
+<script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.js"></script>
+<script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.js"></script>
+<script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.js"></script>
+<script src="js/_plugins/touchswipe/jquery.touchSwipe.js"></script>
+<!-- /build -->
+<!-- build:js js/metlife.min.js -->
+<script src="js/variable.js"></script>
+<script src="js/utility.js"></script>
+<script src="js/global-header.js"></script>
+<script src="js/global-footer.js"></script>
+<script src="js/homepage-nav.js"></script>
+<script src="js/carousel--hero.js"></script>
+<script src="js/carousel--tabs.js"></script>
+<script src="js/accordion.js"></script>
+<script src="js/cta-box.js"></script>
+<script src="js/get-quote-find-office.js"></script>
+<script src="js/svgxuse.js"></script>
+<script src="js/divider-load-more.js"></script>
+<script src="js/divider-scroll-to.js"></script>
+<script src="js/product-module.js"></script>
+<script src="js/subnavigation.js"></script>
+<script src="js/form.js"></script>
+<script src="js/table-variations.js"></script>
+<script src="js/login-overlay.js"></script>
+<script src="js/media-contact.js"></script>
+<script src="js/form-card.js"></script>
+<script src="js/microsite-header.js"></script>
+<script src="js/product-comparison-chart.js"></script>
+<script src="js/product-tile.js"></script>
+<script src="js/form-library.js"></script>
+<script src="js/subnavigationgoback.js"></script>
+<script src="js/privacy-policy.js"></script>
+<script src="js/quote-result-card.js"></script>
+<script src="js/quote-results.js"></script>
+<script src="dev/js/campaign-header.js"></script>
+<script src="dev/js/campaign-card.js"></script>
+<script src="dev/js/glossary.js"></script>
+<script src="dev/js/view-all-rates.js"></script>
+<script src="dev/js/sitemap.js"></script>
+<script src="dev/js/overlay.js"></script>
+<!-- /build -->
 
 </body>
 </html>
