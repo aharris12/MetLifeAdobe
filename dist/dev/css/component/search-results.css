@@ -29,7 +29,7 @@
     line-height: 20px;
 }
 
-.search-results-container div:last-child {
+.search-results-container .row{
     border-top: 1px solid #ccc;
 }
 
