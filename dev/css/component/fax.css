@@ -400,6 +400,7 @@
     display: inline-block;
     float: left;
     margin: 3% auto auto;
+    cursor: pointer;
 }
 
 .fax-directions__container .driving-directions-panel{
