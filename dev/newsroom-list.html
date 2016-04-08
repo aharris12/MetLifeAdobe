@@ -302,7 +302,7 @@
                         <label for="field-id">Year:</label>
                     </div>
                     <div class="form-item__field form-icon-wrapper">
-                        <select id="list_year">
+                        <select id="list_month">
                             <option value="2015" selected>2015</option>
                             <option value="2014">2014</option>
                             <option value="2013">2013</option>
@@ -343,10 +343,15 @@
                         <label for="field-id"></label>
                     </div>
                     <div class="form-item__field form-icon-wrapper">
-                        <select id="list_year">
-                            <option value="" selected>All Topics</option>
-                            <option value="">Topic</option>
-                            <option value="">Topic</option>
+                        <select id="list_topics">
+                            <option value="All" selected>All Topics</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Financialeb">Financial</option>
+                            <option value="Investments">Investments</option>
+                            <option value="Products_and_Services">Products and Services</option>
+                            <option value="MetLife_Foundation">MetLife Foundation</option>
+                            <option value="CSR_Awards">CSR / Awards</option>
+                            <option value="Studies">Studies</option>
                         </select>
                     </div>
                 </div>
@@ -358,37 +363,26 @@
 <!-- Result -->
 <div class="container">
     <div class="row wrapper list">
-        <div data-form-library-msg="all">
+        <div class="lists" data-news-url="http://localhost:4502/content/metlife/ga/jcr:content/content-parsys/news_room_archive.archive" data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">
             <h2 class="list__title">News Releases</h2>
         </div>
 
-        <div class="list__item">
-            <span class="list__item__date">August 24, 2015</span>
-            <a href="#" class="list__item__title">"MetLife MetLife 3 r's to retirment" campaign tackles teacher's
-                retirement readiness</a>
+        <div class="results_content">
+
         </div>
-        <div class="list__item">
-            <span class="list__item__date">August 17, 2015</span>
-            <a href="#" class="list__item__title">MetLife declares third quarter 2015 preferred stock dividend</a>
+
+        <div class="list__item--no-results hidden">
+            <h3>No results found.</h3>
+            <h3>Search Tips: </h3>
+            <ul class="list__item__tips">
+                <li>Check the spelling of your search terms</li>
+                <li>Try using synonyms</li>
+                <li>Try using fewer words or a piece of your search terms</li>
+            </ul>
         </div>
-        <div class="list__item">
-            <span class="list__item__date">July 29, 2015</span>
-            <a href="#" class="list__item__title">MetLife accounces second quarter 2015 results</a>
-        </div>
-        <div class="list__item">
-            <span class="list__item__date">July 23, 2015</span>
-            <a href="#" class="list__item__title">"MetLife provides $505 million loan to facilitate refinancing of hotel
-                porfolio at universal orlando resort</a>
-        </div>
-        <div class="list__item">
-            <span class="list__item__date">August 24, 2015</span>
-            <a href="#" class="list__item__title">"MetLife MetLife 3 r's to retirment" campaign tackles teacher's
-                retirement readiness</a>
-        </div>
-        <div class="list__item">
-            <span class="list__item__date">August 24, 2015</span>
-            <a href="#" class="list__item__title">"MetLife MetLife 3 r's to retirment" campaign tackles teacher's
-                retirement readiness</a>
+        <div class="list__item--no-results hidden">
+            <h3>No results found.</h3>
+            <h3>Try expanding your date range or search by keyword. </h3>
         </div>
     </div>
 </div>
