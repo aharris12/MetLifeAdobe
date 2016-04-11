@@ -12,7 +12,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/08/2016 @16:07:59 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/11/2016 @11:50:26 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -261,7 +261,7 @@
                 <form id="frm_refineSearchResult" name="searchForm" method="get" action="/search">
                     <fieldset>
                         <div class="inputHolderSR" id="inputHolderSR">
-                            <input type="text" id="form-refineSearchQuery_sr" name="query" value="life insurance" class="searchResultsInputSR form-user-ctrl" onkeyup="setSearchResultsPageIDS();ss_handleKey(event);drawTextBox('',event);" autocomplete="off"/>
+                            <input type="text" id="form-refineSearchQuery_sr" name="query" value="life insurance" class="searchResultsInputSR form-user-ctrl js-searchTextBox" onkeyup="setSearchResultsPageIDS();ss_handleKey(event);drawTextBox('',event);" autocomplete="off"/>
                             <input type="text" class="searchResultsInputBackSR" id="overlayerback_sr" value=""/>
 
                             <div id="suggestionsbox" class="suggestionsbox">
@@ -279,7 +279,7 @@
                 </form>
                 <!--<input placeholder="Search" class="form-user-ctrl">-->
             </div>
-            <button class="btn-brand-2nd search-filter__button">
+            <button class="btn-brand-2nd search-filter__button js-searchSubmit" data-search-ajax-url="someUrl.com">
                 <svg class="icon icon-search blue">
                     <use xlink:href="images/icons-metlife.svg#icon-search"></use>
                 </svg>
@@ -288,10 +288,10 @@
 
         </div>
         <div class="search-results-container">
-            <div class="form-item__display">
+            <div class="form-item__display display-text  hidden">
                 <span>0</span> of <span>7</span>
                 <span class="hidden-xs">&nbsp;| Displaying&nbsp;</span>
-                <select class="form-item__display__page-count drop-down form-control hidden-xs">
+                <select class="form-item__display__page-count page-count drop-down form-control hidden-xs">
                     <option selected value="10">10</option>
                     <option value="20">20</option>
                     <option value="50">50</option>
@@ -311,80 +311,27 @@
             <div class="search-results-container__correction-text">
                 Did you mean <a href="#"><span>Term Life Insurance</span>(7)</a>?
             </div>
-            <div class="results_content">
-                <div class="list__item--no-border">
-                    <a class="list__item__anchor inline-block"
-                       href="http://devredesign-train.metlifestage.com/Insurance/Life-Insurance/Term-Life-Insurance/Index.html">Term
-                        Life Insurance</a>
 
-                    <p>...Simplified Issue Term Life <b>Insurance</b> If you're looking for a quick and easy way to get
-                        life...
-                        <b>insurance</b>, we offer a simple online application with same-day approval. Rates begin low to
-                        help you get...
-                        ...
-                    </p>
-                </div>
-                <div class="list__item--no-border">
-                    <a class="list__item__anchor inline-block"
-                       href="http://devredesign-train.metlifestage.com/Insurance/Life-Insurance/Universal-Life-Insurance/Index.html">Universal
-                        Life Insurance</a>
-
-                    <p>...Universal Life <b>Insurance</b> Universal life <b>insurance</b> offers permanent coverage, with a
-                        variety of...
-                        FAQs Contact a Rep Variable Universal Life <b>Insurance</b> Variable universal life <b>insurance</b>
-                        lets you ...
-                    </p>
-                </div>
-                <div class="list__item--no-border">
-                    <a class="list__item__anchor inline-block"
-                       href="http://devredesign-train.metlifestage.com/Insurance/Home-Insurance/Index.html">Home
-                        Insurance</a>
-
-                    <p>... Prev Next Prev Next Home <b>Insurance</b> FAQs FAQs FAQs Does my health affect the price of my
-                        life...
-                        <b>insurance</b> policy? It depends on the type of life <b>insurance</b> policy. MetLife offers
-                        Guaranteed Acceptance...
-                        ...
-                    </p>
-                </div>
-                <div class="list__item--no-border">
-                    <a class="list__item__anchor inline-block"
-                       href="http://devredesign-train.metlifestage.com/Insurance/Life-Insurance/index.html">Life Insurance
-                        Page</a>
-
-                    <p>...The chart below offers a sample of our life <b>insurance</b> products for a quick comparison. Term
-                        life...
-                        <b>insurance</b> works well if you’re most interested in protection for a specific amount of time,
-                        and is usually... the ...
-                    </p>
-                </div>
-                <div class="list__item--no-border">
-                <a class="list__item__anchor inline-block"
-                   href="http://devredesign-train.metlifestage.com/Insurance/Life-Insurance/Index.html">Life Insurance
-                    Page</a>
-
-                <p>...The chart below offers a sample of our life <b>insurance</b> products for a quick comparison. Term
-                    life...
-                    <b>insurance</b> works well if you’re most interested in protection for a specific amount of time,
-                    and is usually... the ...
-                </p>
-            </div>
-            </div>
             <!-- pagination -->
-            <div class="row">
-                <ul class="pagination bootpag">
-                    <li data-lp="1" class="prev disabled"><a href="javascript:void(0);">Prev</a></li>
-                    <li data-lp="1" class="active"><a href="javascript:void(0);">1</a></li>
-                    <li data-lp="2"><a href="javascript:void(0);">2</a></li>
-                    <li data-lp="2" class="next"><a href="javascript:void(0);">Next</a></li>
+            <div class="results_pagination hidden">
+                <ul class="pagination bootpag results_pagination_paginator">
+                    <li><a href="#">Prev</a>
+                    </li>
+                    <li><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">Next</a>
+                    </li>
                 </ul>
             </div>
 
-        </div>
-
-        <div class="hidden">
-            <div class="prev_label">Next</div>
-            <div class="next_label">Prev</div>
         </div>
 
         <!-- Component Begin -->
@@ -620,6 +567,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="hidden">
+    <div class="prev_label">Next</div>
+    <div class="next_label">Prev</div>
 </div>
 
 <!-- Global Footer -->

@@ -97,52 +97,56 @@ if ($(".js-formLib").length > 0) {
 
 //Site Search
 
+
 // Search Results Page Search Start
-$('.search-button, .search-image').on('click', function () {
-	var searchRequest = $(this).siblings('input[type="text"]').val();
-	var url = $(".input_and_image").attr("data-search-ajax-url")+ "?query=" + searchRequest;
+$('.js-searchSubmit').on('click', function () {
+	console.log("click")
+	var searchRequest = $(".js-searchTextBox").val();
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url")+ "?query=" + searchRequest;
 	if (searchRequest) {
 		ServicesAPI.searchServiceCall(url);
 	}
 });
 
 // Site Header Search
-$('.search_submit').click(function () {
-	ServicesAPI.redirectToSearchResultsPage('#searchInPage');
+$('.js-searchIcon').click(function () {
+	if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+		ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+	}
 });
 
-$('.searchBox, .search_openTwo').keypress(function (e) {
+$('.search-trigger__search-box').keypress(function (e) {
 	if (e.which == 13) {
 		e.preventDefault();
-		ServicesAPI.redirectToSearchResultsPage('#searchInPage');
+		ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
 	}
 });
 
 
 // Search in Page
-$("#searchInPage, #Search").keypress(function (e) {
+$("#searchInPage, .js-searchSubmit").keypress(function (e) {
 	if (e.which == 13) {
-		$('.search_submit').click();//Trigger search button click event
+		$('.js-searchSubmit').click();//Trigger search button click event
 	}
 });
 
 // Search in Search Results Page
-$("#searchInput").keypress(function (e) {
+$(".js-searchSubmit").keypress(function (e) {
 	if (e.which == 13) {
-		$('.search-button').click();//Trigger search button click event
+		$('.js-searchSubmit').click();//Trigger search button click event
 	}
 });
 
-$('.correction_text > a').on('click', function (e) {
+$('.search-results-container__correction-text > a').on('click', function (e) {
 	e.preventDefault();
 	var correctionClickedOn = $(this).text();
 });
 
-$('.correction_text > a').on('click', function (e) {
+$('.search-results-container__correction-text > a').on('click', function (e) {
 	e.preventDefault();
-	var correctionClickedOn = $(this).children('em').text();
+	var correctionClickedOn = $(this).children('span').text();
 	var searchRequest = correctionClickedOn;
-	var url = $(".input_and_image").attr("data-search-ajax-url")+ "?query=" + searchRequest;
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url")+ "?query=" + searchRequest;
 	if (searchRequest) {
 		ServicesAPI.searchServiceCall(url);
 	}
@@ -155,14 +159,6 @@ $(".page-count").on('change', function () {
 	ServicesAPI.resetMap();
 	ServicesAPI.showLocation();
 });
-
-//News Room
-/*if ($(".file-container").length > 0) {
-	$(".file-container a").on("click", function() {
-		$(".file-container").find("a").removeClass("selected");
-		$(this).closest(".file-container").find("a").addClass("selected");
-	});
-}*/
 
 //Find an X Click Functions
 
@@ -559,7 +555,7 @@ var ServicesAPI = {
 	},
 	loadEventListeners: function(){
 		ServicesAPI.gmapsAutoCompleteInit();
-		if($(".search_results_container").length > 0)
+		if($(".search-results-container").length > 0)
 			ServicesAPI.searchResultsPageLoad();
 		if($(".results-card").length > 0 || $("#insurance-type").length > 0){
 			ServicesAPI.loadQuoteResults();
@@ -1241,25 +1237,25 @@ var ServicesAPI = {
 		var siteSearchResults = $.getJSON("search.json", function(json) {
 		 siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
-		 $('.display_container').removeClass('hidden');
-		 $(".page-count").removeClass('hidden');
+		 $('.form-item__display').removeClass('hidden');
+		// $(".page-count").removeClass('hidden');
 		 $(".no-results").addClass('hidden');
 		 //results_content is the default component for listing out general results
 		 resultsListHTML += "<div class=\"results_content\">";
 		 for (var i = 0; i < siteSearchResults.length; i++) {
 			 count++;
-			 resultsListHTML += "<div class=\"article\">";
-			 resultsListHTML += "<p><a href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a></p>";
+			 resultsListHTML += "<div class=\"list__item--no-border\">";
+			 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
 			 resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
 			 resultsListHTML += "</div>";
 		 }
 		 resultsListHTML += "</div>";
 		 } else {
-		 $('.display_container').removeClass('hidden');
+		 $('.form-item__display').removeClass('hidden');
 		 $(".page-count").addClass('hidden');
 		 $(".no-results").removeClass('hidden');
 		 }
-		 $(resultsListHTML).insertBefore($(".results_pagination"));
+		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
 		 });
 		/************LOCAL Site Search SERVICE***************/
@@ -1309,15 +1305,13 @@ var ServicesAPI = {
 		window.location.href = url;
 	},
 	searchResultsPageLoad: function(){
+		console.log("search")
 		var cov = sessionStorage.getItem("searchTerm");
 		if(sessionStorage.getItem("searchTerm") !== null){
-			if($("#searchInput").css("display") !== " none"){
+			if($(".js-searchTextBox").css("display") !== " none"){
 
-				$("#searchInput").val(sessionStorage.getItem("searchTerm"));
-				$(".search-button").click();
-			}else{
-				$("#searchInputMobile").val(sessionStorage.getItem("searchTerm"));
-				$(".search-image").click();
+				$(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
+				$(".js-searchSubmit").click();
 			}
 		}
 

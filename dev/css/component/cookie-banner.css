@@ -13,6 +13,9 @@
 .cookie__header{
 	top:342px;
 }
+.cookie__search{
+	top: 392px;
+}
 .cookie__megamenu{
 	top:392px;
 }
@@ -91,6 +94,7 @@
 	.cookie__header{
 		top:133px;
 	}
+
 	.cookie__megamenu{
 		top:203px;
 	}

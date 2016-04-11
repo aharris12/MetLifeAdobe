@@ -123,16 +123,16 @@
                 <svg class="icon icon-homepage home-trigger__icon">
                     <use xlink:href="images/icons-metlife.svg#icon-homepage"></use>
                 </svg>
-                <span class="home-trigger__label">Home</i></span>
+                <span class="home-trigger__label">Home</span>
             </a>
         </div>
         <div class="col search-trigger" title="SEARCH" data-target="search">
-            <span class="search-trigger__icon"><svg class="icon icon-search">
+            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
                 <use xlink:href="images/icons-metlife.svg#icon-search"></use>
             </svg></span>
             <span class="search-trigger__label">Search</span>
 
-            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container">
+            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
                 <input type="text" id="searchInPage" class="search-trigger__search-box" placeholder="Search"
                        data-placeholder="">
                 <input id="overlayerback" class="search-trigger__search-box" autocomplete="off" type="text">

@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/cookie-banner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/js/_plugins/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/js/cookie.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/feedback.css" afterPath="$PROJECT_DIR$/dev/css/component/feedback.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/cookie-banner.css" afterPath="$PROJECT_DIR$/dev/css/component/cookie-banner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/search-results.css" afterPath="$PROJECT_DIR$/dev/css/component/search-results.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/utility.css" afterPath="$PROJECT_DIR$/dev/css/theme/utility.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/cookie.js" afterPath="$PROJECT_DIR$/dev/js/cookie.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/search-results.html" afterPath="$PROJECT_DIR$/dev/search-results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
@@ -23,11 +20,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/feedback.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/feedback.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/global-header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/search-results.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/search-results.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/theme/utility.css" afterPath="$PROJECT_DIR$/dist/dev/css/theme/utility.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dist/dev/js/global-header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -91,65 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80093676">
-              <caret line="2563" column="15" selection-start-line="2563" selection-start-column="15" selection-end-line="2563" selection-end-column="15" />
-              <folding>
-                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utility.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.597561">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feedback.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/feedback.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.754717">
-              <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/category.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.538462">
-              <caret line="352" column="7" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#nav#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cookie-banner.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.42668137">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/dev/js/cookie.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="35" />
+              <caret line="51" column="66" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -168,28 +109,67 @@
       <file leaf-file-name="global-header.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.454545">
-              <caret line="51" column="29" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="29" />
+            <state vertical-scroll-proportion="-3.4634147">
+              <caret line="235" column="21" selection-start-line="235" selection-start-column="1" selection-end-line="235" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <file leaf-file-name="cookie-banner.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.910714">
-              <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accordion.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/accordion.css">
+      <file leaf-file-name="search-results.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/search-results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.923077">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="37" />
+            <state vertical-scroll-proportion="-15.076923">
+              <caret line="356" column="39" selection-start-line="356" selection-start-column="39" selection-end-line="356" selection-end-column="39" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.327273">
+              <caret line="129" column="89" selection-start-line="129" selection-start-column="89" selection-end-line="129" selection-end-column="89" />
+              <folding>
+                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fao.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/fao.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.615385">
+              <caret line="629" column="26" selection-start-line="612" selection-start-column="20" selection-end-line="629" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -212,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/css/component/product-card.css" />
         <option value="$PROJECT_DIR$/dev/css/component/promo-card.css" />
         <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/js/form-library.js" />
@@ -253,16 +232,17 @@
         <option value="$PROJECT_DIR$/dev/news.json" />
         <option value="$PROJECT_DIR$/dev/css/component/fax.css" />
         <option value="$PROJECT_DIR$/dev/js/feedback.js" />
-        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
-        <option value="$PROJECT_DIR$/dev/search-results.html" />
-        <option value="$PROJECT_DIR$/dev/css/component/search-results.css" />
         <option value="$PROJECT_DIR$/dev/css/component/feedback.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/utility.css" />
         <option value="$PROJECT_DIR$/dev/js/cookie.ts" />
-        <option value="$PROJECT_DIR$/dev/js/cookie.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/search-results.css" />
+        <option value="$PROJECT_DIR$/dev/search-results.html" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/css/component/cookie-banner.css" />
+        <option value="$PROJECT_DIR$/dev/js/cookie.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
+        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       </list>
     </option>
   </component>
@@ -485,7 +465,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460128128391</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cookie banner">
+      <created>1460146123471</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1460146123471</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -539,25 +525,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/email-unsubscribe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.307692">
-          <caret line="1315" column="15" selection-start-line="1315" selection-start-column="15" selection-end-line="1315" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/generic-product-details-with-cta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.076923">
-          <caret line="1922" column="15" selection-start-line="1922" selection-start-column="15" selection-end-line="1922" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/generic-product-details-without-cta.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-30.0">
@@ -674,13 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-26.73077">
           <caret line="1893" column="15" selection-start-line="1893" selection-start-column="15" selection-end-line="1893" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/search-no-results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.038462">
-          <caret line="1535" column="15" selection-start-line="1535" selection-start-column="15" selection-end-line="1535" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -854,44 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/fao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.737798">
-          <caret line="612" column="50" selection-start-line="612" selection-start-column="32" selection-end-line="612" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44983461">
-          <caret line="1251" column="63" selection-start-line="1251" selection-start-column="63" selection-end-line="1251" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/search-results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="424" column="28" selection-start-line="424" selection-start-column="28" selection-end-line="424" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/search-results.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5791209">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/_plugins/jquery.cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -910,7 +837,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.538462">
+        <state vertical-scroll-proportion="0.5582418">
           <caret line="352" column="7" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -922,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.597561">
+        <state vertical-scroll-proportion="0.5374707">
           <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
           <folding />
         </state>
@@ -930,23 +857,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/accordion.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.923077">
+        <state vertical-scroll-proportion="0.62637365">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.454545">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.910714">
+        <state vertical-scroll-proportion="0.75795454">
           <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
           <folding />
         </state>
@@ -954,16 +873,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/feedback.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.754717">
+        <state vertical-scroll-proportion="0.8856172">
           <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/search-no-results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.923077">
+          <caret line="1535" column="15" selection-start-line="1535" selection-start-column="15" selection-end-line="1535" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/suggestions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2553419">
+          <caret line="283" column="9" selection-start-line="283" selection-start-column="9" selection-end-line="283" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/search-box.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/search-results.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.327273">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/fao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.615385">
+          <caret line="629" column="26" selection-start-line="612" selection-start-column="20" selection-end-line="629" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/search-results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.076923">
+          <caret line="356" column="39" selection-start-line="356" selection-start-column="39" selection-end-line="356" selection-end-column="39" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.327273">
+          <caret line="129" column="89" selection-start-line="129" selection-start-column="89" selection-end-line="129" selection-end-column="89" />
+          <folding>
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -971,26 +965,24 @@
     <entry file="file://$PROJECT_DIR$/dev/js/cookie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="35" />
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80093676">
-          <caret line="2563" column="15" selection-start-line="2563" selection-start-column="15" selection-end-line="2563" selection-end-column="15" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-3.4634147">
+          <caret line="235" column="21" selection-start-line="235" selection-start-column="1" selection-end-line="235" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42668137">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -42,68 +42,14 @@ if ($(".cookieShell").length > 0) {
 	//var cookieHeight = $(".cookieShell").height();
 	$(".global-header").addClass("cookie__header");
 	$(".megamenu").addClass("cookie__megamenu");
-
-	//$(".global-header").css("top", cookieHeight + 19);
-	//$(".campaign-header").css("top", cookieHeight + 19);
-
-	/*if (($(window).width() <= 767)) {
-	 if ($(".campaign-header").length > 0) {
-	 var campheight = $(".campaign-header").height() + cookieHeight;
-	 console.log(campheight)
-	 $(".megamenu").css("top", campheight + 19);
-	 } else {
-	 var headerHeight = $(".global-header").height() + cookieHeight;
-	 console.log(headerHeight)
-	 $(".megamenu").css("top", headerHeight + 19);
-	 }
-	 } else {
-	 if ($(".campaign-header").length > 0) {
-	 var campheight = $(".campaign-header").height() + cookieHeight;
-	 $(".megamenu").css("top", campheight + 19);
-	 } else {
-	 var headerHeight = $(".global-header").height() + cookieHeight;
-	 console.log(headerHeight)
-	 $(".megamenu").css("top", headerHeight + 19);
-	 }
-	 }*/
+	$(".search-trigger__container").addClass("cookie__search");
 }
 
-/*$(window).resize(function () {
- var cookieHeight = $(".cookieShell").height();
- if ($('.cookieShell').css("display") !== 'none' && $(".cookieShell").length > 0) {
- $(".global-header").css("top", cookieHeight + 19);
- $(".campaign-header").css("top", cookieHeight + 19);
- if (($(window).width() <= 767)) {
- if ($(".campaign-header").length > 0) {
- var campheight = $(".campaign-header").height() + cookieHeight;
- $(".megamenu").css("top", campheight + 19);
- } else {
- var headerHeight = $(".global-header").height() + cookieHeight;
- $(".megamenu").css("top", headerHeight + 19);
- }
- } else {
- if ($(".campaign-header").length > 0) {
- var campheight = $(".campaign-header").height() + cookieHeight;
- $(".megamenu").css("top", campheight + 19);
- } else {
- var headerHeight = $(".global-header").height() + cookieHeight;
- $(".megamenu").css("top", headerHeight + 19);
- }
- }
- }
- });*/
 
 $(".js-cookieAccept").click(function () {
 	$(".global-header").removeClass("cookie__header");
 	$(".megamenu").removeClass("cookie__megamenu");
-	//$(".cookieShell").remove();
-	/*$(".global-header").css("top", "0px");
-	 $(".campaign-header").css("top", "0px");
-	 if (($(window).width() >= 767)) {
-	 $(".megamenu").css("top", "70px");
-	 } else {
-	 $(".megamenu").css("top", "50px");
-	 }*/
+	$(".search-trigger__container").removeClass("cookie__search");
 });
 
 function checkExistance() {

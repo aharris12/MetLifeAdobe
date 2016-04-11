@@ -192,8 +192,6 @@
     .home-trigger__icon{
         z-index: 920;
     }
-
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -240,6 +238,13 @@
     top: 15px;
     z-index: 920;
 }
+
+@media screen and (max-width: 768px) {
+    .search-trigger__icon {
+        left:10px;
+    }
+}
+
 .search-trigger__icon:before {
     padding-right: 10px;
     top: 1px;
