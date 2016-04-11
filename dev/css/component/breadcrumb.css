@@ -71,3 +71,7 @@
         height:45px;
     }
 }
+
+.aem :not(:last-child)::after {
+     content: "";
+}

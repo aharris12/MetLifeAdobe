@@ -7745,7 +7745,7 @@ QuoteToolAPI.loadEventListenersForResults = function() {
 }
 
 QuoteToolAPI.splitParams = function(){
-    if($(".results-card__premium-card").length != 0){
+    if($(".js-resultsUS").length != 0){
         var paramslist = window.location.href.split("?")[1],online,editFields;
         var qvalue="";
         paramslist = paramslist.split("&");
@@ -14477,7 +14477,6 @@ if ($(".js-formLib").length > 0) {
 
 // Search Results Page Search Start
 $('.js-searchSubmit').on('click', function () {
-	console.log("click")
 	var searchRequest = $(".js-searchTextBox").val();
 	var url = $(".js-searchSubmit").attr("data-search-ajax-url")+ "?query=" + searchRequest;
 	if (searchRequest) {
@@ -14681,14 +14680,14 @@ if ($(".cta_header_quote").length > 0) {
 }
 
 // Initializes the quote results display and edit your quote
-if ($(".results-card .quote-box").length > 0) {
+if ($(".js-editGlobal").length > 0) {
 // Get Quote Results
 // Open Edit Quote Form
-	$(".quote-edit .form-open").on("click", function () {
+	$(".js-editGlobal").on("click", function () {
 		if(sessionStorage.getItem("product") !== null){
-			$("#insurance-type").val($("[data-product='"+ sessionStorage.getItem("product") + "']").val());
+			$(".insurance-type").val($("[data-product='"+ sessionStorage.getItem("product") + "']").val());
 		}
-		$("#insurance-type").change();
+		$(".insurance-type").change();
 		$(".contact-form-quote-results").addClass("contact-form-quote-results--hidden");
 		$(".edit-form-quote-results").addClass("edit-form-quote-results--block");
 		$(".results-form").addClass("results-form--dark-blue");
@@ -14705,16 +14704,13 @@ if ($(".results-card .quote-box").length > 0) {
 	});
 }
 
-$(".submit-quote").click(function(e){
+$(".js-submitQuote").click(function(e){
 	e.preventDefault();
-	if($(".submit-quote").parent().parent().parent().parent().hasClass('quote-tool-form')){
+	if($(".js-submitQuote").parent().parent().parent().parent().hasClass('quote-tool-form')){
 		var baseUrl  = $(".quote-tool-form").attr("data-quote-url");
 		quoteUrl ="";
-		/************LIVE Quote SERVICE***************/
-			//quoteUrl = baseUrl + '{"domain":"' + quoteDomain + '","language":"'+ quotelanguage+'","product":"'+ quoteProduct +'","country":"default"';
+		//quoteUrl = baseUrl + '{"domain":"' + quoteDomain + '","language":"'+ quotelanguage+'","product":"'+ quoteProduct +'","country":"default"';
 		quoteUrl = baseUrl;
-		/************LIVE Quote SERVICE***************/
-
 		quoteRequest = {domain:quoteDomain, language:quotelanguage,product: quoteProduct, country: 'default' };
 		ServicesAPI.loopThroughQuoteInputs();
 		//quoteUrl +=  '}';
@@ -14724,22 +14720,15 @@ $(".submit-quote").click(function(e){
 	}
 });
 
-$(".dobMonth").on("change", function () {
-	ServicesAPI.populateDaysDropDown("#");
-});
 
-$(".dobyear").on("change", function () {
-	ServicesAPI.populateDaysDropDown("#");
-});
-
-$("#insurance-type").on("change", function(){
-	var formToShow = $("#insurance-type").val();
+$(".insurance-type").on("change", function(){
+	var formToShow = $(".insurance-type").val();
 	$(".quote-tool-form").show();
 	$(".quote-tool-form form").hide();
 	$("[data-show-form='"+quoteToolForm+ "']").hide();
-	quoteSubmit = $("#insurance-type").val();
+	quoteSubmit = $(".insurance-type").val();
 	$("."+formToShow + " form").show();
-	quoteSubmit = $("#insurance-type").val();
+	quoteSubmit = $(".insurance-type").val();
 	if($("[data-quoteDescription='"+ quoteSubmit +"']").length > 0){
 		$("[data-quoteDescription]").addClass("hidden");
 		$("[data-quoteDescription='"+ quoteSubmit +"']").removeClass("hidden");
@@ -14748,100 +14737,7 @@ $("#insurance-type").on("change", function(){
 	quoteDomain = $("[data-quoteTool='"+ quoteToolForm +"']").attr("data-domain");
 	quotelanguage = $("[data-quoteTool='"+ quoteToolForm +"']").attr("data-lan");
 	quoteProduct = $(this).find(':selected').attr('data-product');
-	if(quoteProduct ==="us_gawli"){
-		$(".cta_header_quote div + .btn-green").hide();
-		$("#submitBtn").hide();
-		if($('#' +quoteToolForm + 'state')[0].selectedIndex === 0){
-			$("[data-quoteTool='"+quoteToolForm+"']").find(".form-focus, .form-button").addClass("hidden");
-			$("[data-show-form='"+quoteToolForm+ "']").show().css("margin-top", "5px");
-			$('#' +quoteToolForm + 'state').parent().parent().removeClass('hidden');
-			$('#' +quoteToolForm + 'state').show();
-			$('#' +quoteToolForm + 'state').css("width", "75%");
-		}else{
-			$('#' +quoteToolForm + 'state').css("width", "100%");
-			$("[data-show-form='"+quoteToolForm+ "']").hide();
-		}
-		ServicesAPI.quoteToolType = 'GAWLI';
-		var d = new Date();
-		d = d.getFullYear();
-		var r = ServicesAPI.gawliAgeCriteria[$('#' +quoteToolForm + 'state').val()];
-		if(r != 'undefined')
-		{
-			if(typeof (r) == "object")
-			{
-				ServicesAPI.populateYearDropDown(d-r[1],18,".dobYear");
-			}
-			else
-			{
-				ServicesAPI.populateYearDropDown(d-80,18,".dobYear");
-			}
-		}
-	}else if(quoteProduct ==="us_term"){
-		$(".cta_header_quote div + .btn-green").hide();
-		$("#submitBtn").hide();
-		if($('#' +quoteToolForm + 'state')[0].selectedIndex === 0){
-			$("[data-quoteTool='"+quoteToolForm+"']").find(".form-focus, .form-button").addClass("hidden");
-			$("[data-show-form='"+quoteToolForm+ "']").show().css("margin-top", "5px");
-			$('#' +quoteToolForm + 'state').parent().parent().removeClass('hidden');
-			$('#' +quoteToolForm + 'state').show();
-			$('#' +quoteToolForm + 'state').css("width", "75%");
-		}else{
-			$('#' +quoteToolForm + 'state').css("width", "100%");
-			$("[data-show-form='"+quoteToolForm+ "']").hide();
-		}
-		var d = new Date(), r = ServicesAPI.sitStates.indexOf(ServicesAPI.selectedState);
-		d = d.getFullYear();
-		ServicesAPI.quoteToolType = 'SIT';
-		ServicesAPI.populateYearDropDown(d-75,18,".dobYear");
-	}else if($("#insurance-type")[0].selectedIndex !== 0){
-		$(".cta_header_quote div + .btn-green").hide();
-		$("#submitBtn").show();
-	}else{
-		$(".cta_header_quote div + .btn-green").show();
-	}
-});
-
-$(".btn-green").on("click", function(){
-	if(quoteToolForm !== undefined){
-		if($(this).data("show-form") === quoteToolForm){
-			if($('#' +quoteToolForm + 'state')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'state').addClass("error").parent().find('.errorSpan').show().css("display" , "block");
-			}else{
-				$("[data-quoteTool='"+quoteToolForm+"']").find(".form-focus, .form-button").removeClass("hidden");
-				$(this).hide();
-				$('#' +quoteToolForm + 'state').css("width", "100%");
-				$('#' +quoteToolForm + 'state').removeClass("error").parent().find(".errorSpan").hide();
-				if ($(".floatContentLeft").index()%2 !== 0) {
-					$(".floatContentLeft").prev().css("width","101%");
-				}
-			}
-		}
-	}
-});
-
-$(".stateSelect").on("change", function(){
-	if(quoteProduct ==="us_gawli"){
-		ServicesAPI.quoteToolType = 'GAWLI';
-		var d = new Date();
-		d = d.getFullYear();
-		var r = ServicesAPI.gawliAgeCriteria[$('#' +quoteToolForm + 'state').val()];
-		if(r != 'undefined')
-		{
-			if(typeof (r) == "object")
-			{
-				ServicesAPI.populateYearDropDown(d-r[1],18,".dobYear");
-			}
-			else
-			{
-				ServicesAPI.populateYearDropDown(d-80,18,".dobYear");
-			}
-		}
-	}else if(quoteProduct ==="us_term"){
-		var d = new Date();
-		d = d.getFullYear();
-		ServicesAPI.quoteToolType = 'SIT';
-		ServicesAPI.populateYearDropDown(d-75,18,".dobYear");
-	}
+	$(".js-hideButton").hide();
 });
 
 String.prototype.toTitleCase = function() {
@@ -14880,61 +14776,11 @@ function isNonblank (s) {
 }
 
 var ServicesAPI = {
-	quoteUrl: null,
-	selectedInsurance: null,
-	selectedState: null,
-	quoteToolType: null,
-	gawliStates: "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-	gawliOnlineAvailableStates: "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-	sitStates: "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-	sitOnlineAvailableStates: "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-	mltApprovedStates: "AL,AK,AZ,AR,CA,CO,CT,DC,DE,FL,GA,HI,IA,ID,IL,IN,KS,KY,LA,MA,MD,MI,MN,MO,MS,MT,NC,ND,NE,NH,NJ,NM,NV,NY,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VA,VT,WA,WI,WV,WY",
-	sitCompatibleAge: null,
-	quoteOption: 'online',
-	quoteToolStarted: false,
-	gawliAgeError: false,
-	coverage: {
-		"GAWLIAmounts": ["$2,500", "$5,000", "$7,500", "$10,000", "$15,000", "$20,000", "$30,000", "$40,000", "$50,000"],
-		"GAWLIValues": ["2500", "5000", "7500", "10000", "15000", "20000", "30000", "40000", "50000"],
-		/*	"GLTAmounts" : ["$750,000","$1,000,000","$1,500,000","$2,000,000","$2,500,000","$3,000,000","$3,500,000","$4,000,000","$4,500,000","$5,000,000"],
-		 "GLTValues" : ["750000","1000000","1500000","2000000","2500000","3000000","3500000","4000000","4500000","5000000"],
-		 "MLTAmounts" : ["$100,000","$150,000","$200,000","$250,000","$300,000","$400,000","$500,000"],
-		 "MLTValues" : ["100000","150000","200000","250000","300000","400000","500000"],
-		 "SITAmounts" : ["$10,000","$20,000","$30,000","$50,000"],
-		 "SITValues" : ["10000","20000","30000","50000"],*/
-		"TERMAmounts": ["$10,000", "$20,000", "$30,000", "$50,000", "$100,000", "$150,000", "$200,000", "$250,000", "$300,000", "$400,000", "$500,000", "$750,000", "$1,000,000", "$1,500,000", "$2,000,000", "$2,500,000", "$3,000,000", "$3,500,000", "$4,000,000", "$4,500,000", "$5,000,000"],
-		"TERMValues": ["10000", "20000", "30000", "50000", "100000", "150000", "200000", "250000", "300000", "400000", "500000", "750000", "1000000", "1500000", "2000000", "2500000", "3000000", "3500000", "4000000", "4500000", "5000000"],
-		"MLTGLTAmounts": ["$100,000", "$150,000", "$200,000", "$250,000", "$300,000", "$400,000", "$500,000", "$750,000", "$1,000,000", "$1,500,000", "$2,000,000", "$2,500,000", "$3,000,000", "$3,500,000", "$4,000,000", "$4,500,000", "$5,000,000"],
-		"MLTGLTValues": ["100000", "150000", "200000", "250000", "300000", "400000", "500000", "750000", "1000000", "1500000", "2000000", "2500000", "3000000", "3500000", "4000000", "4500000", "5000000"]
-	},
-	gawliAgeCriteria: {
-		"AR": [45, 70],
-		"MN": [45, 65],
-		"MO": [45, 75],
-		"NE": [45, 75],
-		"NJ": [45, 75],
-		"PA": [56, 70]
-	},
-	termLength: {
-		51: [10, 15, 20, 30],
-		66: [10, 15, 20],
-		71: [10, 15],
-		76: [10]
-	},
-	termLength_NY: {
-		66: [10, 15, 20],
-		76: [10]
-	},
-	termLength_WA: {
-		51: [10, 15, 20, 30],
-		66: [10, 15, 20],
-		71: [10, 15]
-	},
 	loadEventListeners: function(){
 		ServicesAPI.gmapsAutoCompleteInit();
 		if($(".search-results-container").length > 0)
 			ServicesAPI.searchResultsPageLoad();
-		if($(".results-card").length > 0 || $("#insurance-type").length > 0){
+		if($(".js-resultsGlobal").length > 0 || $(".insurance-type").length > 0){
 			ServicesAPI.loadQuoteResults();
 			ServicesAPI.clearOverlays();
 		}
@@ -15208,6 +15054,7 @@ var ServicesAPI = {
 			data : JSON.stringify(quoteRequest),
 			type: 'POST',
 			success: function(response) {
+				console.log(response)
 				var numObjects = Object.keys(response.solution).length;
 				window.sessionStorage.clear();
 				ServicesAPI.setQuoteSessionStorage();
@@ -15264,9 +15111,9 @@ var ServicesAPI = {
 		});
 	},
 	loadQuoteResults: function(){
-		if($(".results-card").length > 0){
+		if($(".js-resultsGlobal").length > 0){
 			if(sessionStorage.getItem("premium") !== null){
-				$(".coverage-price .value").text(sessionStorage.getItem("premium"));
+				$(".results-card__quoteinfo__value").text(sessionStorage.getItem("premium"));
 			}
 			if(sessionStorage.getItem("coverage") !== null){
 				$("[data-field='coverage'] .value").text(sessionStorage.getItem("coverage"));
@@ -15286,10 +15133,10 @@ var ServicesAPI = {
 				$("[data-field='term']").html('');
 			}
 		}else{
-			if($(".list").lenght > 0 ){
+			if($(".list").length > 0 ){
 
 			}else{
-				$("#insurance-type").val($("#insurance-type option:first").val());
+				$(".insurance-type").val($(".insurance-type option:first").val());
 				sessionStorage.clear();
 			}
 		}
@@ -15682,7 +15529,6 @@ var ServicesAPI = {
 		window.location.href = url;
 	},
 	searchResultsPageLoad: function(){
-		console.log("search")
 		var cov = sessionStorage.getItem("searchTerm");
 		if(sessionStorage.getItem("searchTerm") !== null){
 			if($(".js-searchTextBox").css("display") !== " none"){

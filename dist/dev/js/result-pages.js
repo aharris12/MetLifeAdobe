@@ -100,7 +100,7 @@ QuoteToolAPI.loadEventListenersForResults = function() {
 }
 
 QuoteToolAPI.splitParams = function(){
-    if($(".results-card__premium-card").length != 0){
+    if($(".js-resultsUS").length != 0){
         var paramslist = window.location.href.split("?")[1],online,editFields;
         var qvalue="";
         paramslist = paramslist.split("&");

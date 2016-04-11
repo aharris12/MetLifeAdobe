@@ -207,6 +207,9 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.btn-group .btn:only-of-type {
+    border-radius: 5px;
+}
 
 .btn-group .icon svg {
     display: block;
