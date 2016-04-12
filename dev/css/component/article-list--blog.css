@@ -1,0 +1,145 @@
+
+/* line 1, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list {
+    padding: 20px;
+}
+/* line 4, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+/* line 9, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .blog-article-image {
+    width: 100%;
+}
+/* line 12, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .blog-article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+/* line 20, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article h5 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #2377c5;
+    margin-bottom: 5px;
+}
+/* line 29, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .article-date::after {
+    content: "|";
+    margin: 0 10px;
+    color: #333333;
+}
+/* line 34, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .article-date:last-child::after {
+    content: "";
+}
+/* line 39, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .article-date-category {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    color: #333333;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+/* line 47, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article .article-description {
+    display: block;
+    margin-bottom: 5px;
+    line-height: 18px;
+}
+/* line 52, ../../../sass/_blogArticleListMobile.scss */
+.blog-article-list .blog-article a {
+    display: inline-block;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+/* line 1, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list {
+    padding-top: 30px;
+    padding-right: 1%;
+}
+/* line 7, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article .blog-article-image {
+    width: 40%;
+    float: left;
+}
+/* line 11, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article .blog-article-image img {
+    width: 100%;
+}
+/* line 16, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article .blog-article-text {
+    float: right;
+    padding-left: 15px;
+    width: 60%;
+}
+/* line 23, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article h5 {
+    font-size: 16px;
+    line-height: 20px;
+}
+/* line 28, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article .article-description {
+    font-size: 13px;
+}
+/* line 32, ../../../sass/_blogArticleListTablet.scss */
+.blog-article-list .blog-article a {
+    font-size: 13px;
+}
+}
+
+@media (min-width: 1025px) {
+    /* line 1, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list {
+        padding: 40px 0 20px;
+        padding-right: 1%;
+    }
+    /* line 7, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article .blog-article-image {
+        width: 40%;
+        float: left;
+    }
+    /* line 11, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article .blog-article-image img {
+        width: 100%;
+    }
+    /* line 16, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article .blog-article-text {
+        float: right;
+        padding-left: 15px;
+        width: 60%;
+    }
+    /* line 23, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article h5 {
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    /* line 30, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article .article-date-category {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    /* line 37, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article .article-description {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    /* line 43, ../../../sass/_blogArticleListDesktop.scss */
+    .blog-article-list .blog-article a {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+}

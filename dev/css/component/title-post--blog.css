@@ -1,0 +1,39 @@
+/* line 1, ../../../sass/_blogPostTitleDesktop.scss */
+.postTitle {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+/* line 6, ../../../sass/_blogPostTitleDesktop.scss */
+.postSubTitle {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* line 1, ../../../sass/_blogPostTitleTablet.scss */
+    .postTitle {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    /* line 6, ../../../sass/_blogPostTitleTablet.scss */
+    .postSubTitle {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* line 1, ../../../sass/_blogPostTitleDesktop.scss */
+    .postTitle {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    /* line 6, ../../../sass/_blogPostTitleDesktop.scss */
+    .postSubTitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

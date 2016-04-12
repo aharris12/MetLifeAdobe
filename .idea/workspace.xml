@@ -2,78 +2,400 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/js/aemfixes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/life-insurance-quote-global.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/quote-results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/4-Things-That-Might-Not-Be-Covered-By-Your-Renters-Insurance-Policy-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Budgeting-Hacks-to-Save-More-Money-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Budgeting-Hacks-to-Save-More-Money-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Budgeting-Hacks-to-Save-More-Money-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Health-Tips-for-Your-20s-and-30s-1-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Cope-with-Seasonal-Depression-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Cope-with-Seasonal-Depression-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Cope-with-Seasonal-Depression-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Identity-Thieves-Target-Oversharing-Online-1-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Password-Dos-and-Donts-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Password-Dos-and-Donts-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Planning-for-Retirement-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Planning-for-Retirement.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Prevent-Identity-Theft-During-Tax-Season-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/Prevent-Identity-Theft-During-Tax-Season-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/images/blog/What-to-Do-with-Your-First-Paycheck-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/4-Things-That-Might-Not-Be-Covered-By-Your-Renters-Insurance-Policy-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Budgeting-Hacks-to-Save-More-Money-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Budgeting-Hacks-to-Save-More-Money-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Budgeting-Hacks-to-Save-More-Money-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Health-Tips-for-Your-20s-and-30s-1-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Cope-with-Seasonal-Depression-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Cope-with-Seasonal-Depression-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Cope-with-Seasonal-Depression-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/How-to-Save-for-Retirement-as-a-Startup-Employee-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Identity-Thieves-Target-Oversharing-Online-1-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Password-Dos-and-Donts-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Password-Dos-and-Donts-80x50.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Planning-for-Retirement-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Planning-for-Retirement.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Prevent-Identity-Theft-During-Tax-Season-1060x425.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/Prevent-Identity-Theft-During-Tax-Season-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/blog/What-to-Do-with-Your-First-Paycheck-365x365.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/images/icon_fb_text_plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/additional-content--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/article-list--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/category--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/post--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/post-social--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/sidebar--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/css/component/title-post--blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/js/blogpost.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/contact-us__default.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/404.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/accordion.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/article-list.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/article.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/carousel--tabs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contact-form.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contact.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/content-header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contextual-links.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-box.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/disclaimer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-load-more.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-scroll-to.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-snoopy.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/email-unsub.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/fax.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/feedback.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/form-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/get-quote-find-office.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/global-footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/global-header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/glossary.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/homepage-nav.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/hp-contextual-links.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/life-insurance-quote.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/login-popout.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/media-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/media-contact.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/microsite-header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/microsite-page-footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/office-search.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/optional-image.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/options-small.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/overlay.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/privacy-policy-index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/privacy-policy-section.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-comparison-chart.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-tile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/promo-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/quote-result-card.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/quote-tool.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/search-results.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/search-suggestions-box.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/section-header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/sitemap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/subnavigation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/subnavigationwithgoback.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/table-variations.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/video-text.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/view-all-rates.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/bootstrap-metlife.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/button.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/font-metlife.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/form-metlife.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/icon-metlife.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/ie9select.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/layout.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/pagination.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/utility.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery-1.11.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery-1.11.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery.mobile.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/jquery.bootpag.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/jquery.ddslick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.bg.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.extra.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.extra.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.fadein.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.fadein.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.picture.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.picture.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.print.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.print.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.script.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.spinner.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.spinner.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.video.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.widget.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/svg4everybody.ie8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe-ORIGINAL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/typeahead.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/accordion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/campaign-card.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/campaign-header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/carousel--hero.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/carousel--tabs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/cta-box.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/ctc_tcpa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/divider-load-more.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/divider-scroll-to.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/fao.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form-card.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form-library.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/get-quote-find-office.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/global-footer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/global-header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/glossary.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/homepage-nav.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/login-overlay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/markerwithlabel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/media-contact.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/microsite-header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/microsite-page-footer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/overlay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/privacy-policy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-card.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-comparison-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-tile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-result-card.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-results.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-tool.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/result-pages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/search-box.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/sitemap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/subnavigation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/subnavigationgoback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/suggestions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/svgxuse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/table-variations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/toqdata.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/toqjshashtable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/utility.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/variable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/view-all-rates.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/xmlhttp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fao.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-Awesome/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/Icon Master Set 1.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/Icon Master Set 2.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/Icon Master Set_outlines.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/Icon Master Set_outlines.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/Master Set Outlines 3.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/MetLife" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/MetLife-logo-blue-PMS285.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/MetLife-logo-white.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/MetLife-Icons-Master/metlife.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/arrow-down.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/arrow-left.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/arrow-right.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/arrow-up.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/close.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/comment.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/down.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/facebook.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/homepage.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/info.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/linkedin.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/login.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/logout.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/metlife_logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/metlife_logo_outline.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/minus.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/next.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/plus.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/prev.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/question.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/search.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/secure.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/select-arrows.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/snoopy-1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/snoopy-2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/twitter.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/up.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/MetLife-Icons/youtube.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/metlife.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/metlife.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/metlife.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Font-MetLife/metlife.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/Open-Sans-300.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/Open-Sans-300.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/Open-Sans-300.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/Open-Sans-300.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300/Open-Sans-300.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/Open-Sans-300italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/Open-Sans-300italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/Open-Sans-300italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/Open-Sans-300italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-300italic/Open-Sans-300italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/Open-Sans-600.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/Open-Sans-600.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/Open-Sans-600.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/Open-Sans-600.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600/Open-Sans-600.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/Open-Sans-600italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/Open-Sans-600italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/Open-Sans-600italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/Open-Sans-600italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-600italic/Open-Sans-600italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/Open-Sans-700.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/Open-Sans-700.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/Open-Sans-700.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/Open-Sans-700.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700/Open-Sans-700.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/Open-Sans-700italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/Open-Sans-700italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/Open-Sans-700italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/Open-Sans-700italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-700italic/Open-Sans-700italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/Open-Sans-800.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/Open-Sans-800.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/Open-Sans-800.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/Open-Sans-800.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800/Open-Sans-800.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/Open-Sans-800italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/Open-Sans-800italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/Open-Sans-800italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/Open-Sans-800italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-800italic/Open-Sans-800italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/Open-Sans-Condensed-300.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/Open-Sans-Condensed-300.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/Open-Sans-Condensed-300.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/Open-Sans-Condensed-300.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300/Open-Sans-Condensed-300.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/Open-Sans-Condensed-300italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/Open-Sans-Condensed-300italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/Open-Sans-Condensed-300italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/Open-Sans-Condensed-300italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-300italic/Open-Sans-Condensed-300italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/Open-Sans-Condensed-700.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/Open-Sans-Condensed-700.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/Open-Sans-Condensed-700.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/Open-Sans-Condensed-700.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-Condensed-700/Open-Sans-Condensed-700.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/Open-Sans-italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/Open-Sans-italic.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/Open-Sans-italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/Open-Sans-italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-italic/Open-Sans-italic.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/Open-Sans-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/Open-Sans-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/Open-Sans-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/Open-Sans-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/Open-Sans-regular/Open-Sans-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/forms.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/getaquote-mlt-error.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/vendors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/newroom-noresults.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/news.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/search-no-results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/search.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dev/blog-category.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/dev/css/component/carousel--hero.css" afterPath="$PROJECT_DIR$/dev/css/component/carousel--blog.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dev/blog-post.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dev/blog-home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/breadcrumb.css" afterPath="$PROJECT_DIR$/dev/css/component/breadcrumb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/cta-quote-tool.css" afterPath="$PROJECT_DIR$/dev/css/component/cta-quote-tool.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/button.css" afterPath="$PROJECT_DIR$/dev/css/theme/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/getaquote-glt.html" afterPath="$PROJECT_DIR$/dev/getaquote-glt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/getaquote-mlt-error.html" afterPath="$PROJECT_DIR$/dev/getaquote-mlt-error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dev/getaquote-mlt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/result-pages.js" afterPath="$PROJECT_DIR$/dev/js/result-pages.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/404.html" afterPath="$PROJECT_DIR$/dev/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/gruntfile.js" afterPath="$PROJECT_DIR$/dev/gruntfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/product-details-page1.html" afterPath="$PROJECT_DIR$/dev/product-details-page1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__default.html" afterPath="$PROJECT_DIR$/dist/contact-us__default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/theme/button.css" afterPath="$PROJECT_DIR$/dist/dev/css/theme/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/result-pages.js" afterPath="$PROJECT_DIR$/dist/dev/js/result-pages.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt-error.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt-error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newroom-noresults.html" afterPath="$PROJECT_DIR$/dist/newroom-noresults.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-no-results.html" afterPath="$PROJECT_DIR$/dist/search-no-results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,21 +416,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="result-pages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/result-pages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56661046">
-              <caret line="1191" column="16" selection-start-line="1191" selection-start-column="16" selection-end-line="1191" selection-end-column="16" />
+            <state vertical-scroll-proportion="-47.73077">
+              <caret line="73" column="47" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="47" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -130,6 +442,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="194" column="49" selection-start-line="194" selection-start-column="43" selection-end-line="194" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cookie-banner.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.02866779">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -147,26 +489,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/contact-us__single.html" />
-        <option value="$PROJECT_DIR$/dev/email-unsubscribe.html" />
-        <option value="$PROJECT_DIR$/dev/generic-product-details-with-cta.html" />
-        <option value="$PROJECT_DIR$/dev/generic-product-details-without-cta.html" />
-        <option value="$PROJECT_DIR$/dev/glossary-group.html" />
-        <option value="$PROJECT_DIR$/dev/glossary-single.html" />
-        <option value="$PROJECT_DIR$/dev/life-insurance-FAQ.html" />
-        <option value="$PROJECT_DIR$/dev/life-insurance-quote.html" />
-        <option value="$PROJECT_DIR$/dev/newroom-noresults.html" />
-        <option value="$PROJECT_DIR$/dev/news-article.html" />
-        <option value="$PROJECT_DIR$/dev/opt-out.html" />
-        <option value="$PROJECT_DIR$/dev/privacy-policy.html" />
-        <option value="$PROJECT_DIR$/dev/product-details-page1-expand.html" />
-        <option value="$PROJECT_DIR$/dev/product-details-page-2.html" />
         <option value="$PROJECT_DIR$/dev/product-details-page-image-no-cta.html" />
         <option value="$PROJECT_DIR$/dev/product-details-page-image-with-cta.html" />
         <option value="$PROJECT_DIR$/dev/search-no-results.html" />
         <option value="$PROJECT_DIR$/dev/sitemap.html" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
-        <option value="$PROJECT_DIR$/dev/404.html" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
         <option value="$PROJECT_DIR$/dev/fao.html" />
         <option value="$PROJECT_DIR$/dev/newsroom-list.html" />
@@ -195,9 +522,24 @@
         <option value="$PROJECT_DIR$/dev/css/component/quote-tool.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/button.css" />
         <option value="$PROJECT_DIR$/dev/css/component/breadcrumb.css" />
-        <option value="$PROJECT_DIR$/dev/product-details-page1.html" />
         <option value="$PROJECT_DIR$/dev/js/aemfixes.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
+        <option value="$PROJECT_DIR$/dev/css/component/carousel--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/article-list--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/sidebar--blog.css" />
+        <option value="$PROJECT_DIR$/dev/product-details-page1.html" />
+        <option value="$PROJECT_DIR$/dev/css/component/category--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/additional-content--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/title-post--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/post-social--blog.css" />
+        <option value="$PROJECT_DIR$/dev/css/component/post--blog.css" />
+        <option value="$PROJECT_DIR$/dev/js/blogpost.js" />
+        <option value="$PROJECT_DIR$/dev/blog-post.html" />
+        <option value="$PROJECT_DIR$/dev/404.html" />
+        <option value="$PROJECT_DIR$/dev/blog-category.html" />
+        <option value="$PROJECT_DIR$/dev/blog-home.html" />
+        <option value="$PROJECT_DIR$/dev/gruntfile.js" />
+        <option value="$PROJECT_DIR$/dist/homepage.html" />
       </list>
     </option>
   </component>
@@ -257,6 +599,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MetLifeAdobe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -266,7 +662,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Digital Toolkit" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
@@ -274,27 +670,27 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspace\MetLifeAdobe\dev" />
-      <recent name="C:\workspace\MetLifeAdobe\dev\js\_plugins" />
-      <recent name="C:\workspace\MetLifeAdobe\dev\images" />
-      <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
       <recent name="C:\workspace\MetLifeAdobe\dist" />
+      <recent name="C:\workspace\MetLifeAdobe\dist\images" />
+      <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
+      <recent name="C:\workspace\MetLifeAdobe\dev" />
+      <recent name="C:\workspace\MetLifeAdobe\dev\images" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.product-details-page1.html">
-    <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+    <configuration default="false" name="blog-home.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/blog-home.html">
       <method />
     </configuration>
-    <configuration default="false" name="quote-results.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/quote-results.html">
+    <configuration default="false" name="blog-category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/blog-category.html">
       <method />
     </configuration>
-    <configuration default="false" name="life-insurance-quote-global.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/life-insurance-quote-global.html">
+    <configuration default="false" name="blog-post.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/blog-post.html">
       <method />
     </configuration>
-    <configuration default="false" name="life-insurance-quote.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/life-insurance-quote.html">
+    <configuration default="false" name="blog-category.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/blog-category.html">
       <method />
     </configuration>
-    <configuration default="false" name="product-details-page1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/product-details-page1.html">
+    <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/homepage.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -346,19 +742,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.quote-results.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-quote-global.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-quote.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-quote-global.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-quote.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.quote-results.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +829,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460389889010</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Quote Results">
+      <created>1460407852741</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1460407852741</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -447,7 +849,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20415778" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29371002" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32883817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -494,222 +896,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/subcategory-page-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1118421">
-          <caret line="59" column="70" selection-start-line="0" selection-start-column="0" selection-end-line="1880" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33552632">
-          <caret line="102" column="10" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1222031">
-          <caret line="1201" column="0" selection-start-line="1201" selection-start-column="0" selection-end-line="1256" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/newroom-noresults.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.1284304">
-          <caret line="382" column="14" selection-start-line="370" selection-start-column="7" selection-end-line="382" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/news-article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.7102084">
-          <caret line="306" column="58" selection-start-line="306" selection-start-column="35" selection-end-line="306" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/fao.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055982437">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/newsroom-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5272727">
-          <caret line="390" column="23" selection-start-line="390" selection-start-column="23" selection-end-line="390" selection-end-column="23" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/news.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#473#0" expanded="false" />
-            <element signature="e#479#938#0" expanded="false" />
-            <element signature="e#944#1405#0" expanded="false" />
-            <element signature="e#1411#1872#0" expanded="false" />
-            <element signature="e#1878#2337#0" expanded="false" />
-            <element signature="e#2343#2804#0" expanded="false" />
-            <element signature="e#2810#3271#0" expanded="false" />
-            <element signature="e#3277#3736#0" expanded="false" />
-            <element signature="e#3742#4203#0" expanded="false" />
-            <element signature="e#4209#4671#0" expanded="false" />
-            <element signature="e#4677#5137#0" expanded="false" />
-            <element signature="e#5143#5605#0" expanded="false" />
-            <element signature="e#5611#6073#0" expanded="false" />
-            <element signature="e#6079#6539#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/fax.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54133636">
-          <caret line="402" column="19" selection-start-line="402" selection-start-column="19" selection-end-line="402" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/oo_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/_plugins/oo_conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/homepage-nav.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/feedback.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018162394">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/form-library.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33736265">
-          <caret line="283" column="6" selection-start-line="283" selection-start-column="6" selection-end-line="283" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#1;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#2;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/_plugins/jquery.cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/disclaimer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5582418">
-          <caret line="352" column="7" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#nav#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/accordion.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62637365">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75795454">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/feedback.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8856172">
-          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/search-no-results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.923077">
-          <caret line="1535" column="15" selection-start-line="1535" selection-start-column="15" selection-end-line="1535" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/suggestions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2553419">
@@ -763,14 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4634147">
           <caret line="235" column="21" selection-start-line="235" selection-start-column="1" selection-end-line="235" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -867,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="37.381817">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/quote-results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55795676">
@@ -961,14 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/product-details-page1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.085366">
-          <caret line="356" column="168" selection-start-line="356" selection-start-column="168" selection-end-line="356" selection-end-column="168" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/aemfixes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1724138">
@@ -987,10 +1149,217 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3461537">
+          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="327" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#nav#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.653846">
+          <caret line="146" column="13" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.304878">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/article-list--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.037736">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/sidebar--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.5">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/product-details-page1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="342" column="0" selection-start-line="342" selection-start-column="0" selection-end-line="356" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/category--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09497207">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/additional-content--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5733558">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/title-post--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2866779">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/post-social--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36042404">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/post--blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9399293">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/blogpost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5056543">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/product-details-page1-expand.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35815603">
+          <caret line="631" column="26" selection-start-line="588" selection-start-column="20" selection-end-line="631" selection-end-column="26" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#32768#32988#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94266444">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/blog-home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6559865">
+          <caret line="1564" column="27" selection-start-line="1564" selection-start-column="13" selection-end-line="1564" selection-end-column="27" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/blog-post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48735243">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/campaign-page-a.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89881957">
+          <caret line="69" column="19" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/blog-category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74873525">
+          <caret line="88" column="22" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.607082">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56661046">
-          <caret line="1191" column="16" selection-start-line="1191" selection-start-column="16" selection-end-line="1191" selection-end-column="16" />
+        <state vertical-scroll-proportion="-47.73077">
+          <caret line="73" column="47" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="47" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1008,6 +1377,30 @@
             <element signature="n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="194" column="49" selection-start-line="194" selection-start-column="43" selection-end-line="194" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/cookie-banner.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02866779">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

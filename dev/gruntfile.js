@@ -83,9 +83,12 @@ module.exports = function (grunt) {
                     'dev/js/toqjshashtable.js',
                     'dev/js/toqdata.js',
                     'dev/js/contactSideBar.js',
+                    'dev/js/Cookie.js',
+                    'dev/js/blogpost.js',
                     'dev/js/markerwithlabel.js',
                     'dev/js/ServicesAPI.js',
-                    'dev/js/overlay.js'],
+                    'dev/js/overlay.js',
+                    'dev/js/aemfixes.js'],
                 dest: 'dist/js/metlife.js'
             }
         }, //concat
@@ -180,6 +183,16 @@ module.exports = function (grunt) {
                         'dev/css/component/fax.css',
                         'dev/css/component/divider-load-more.css',
                         'dev/css/component/microsite-page-footer.css',
+                        'dev/css/component/additional-content--blog.css',
+                        'dev/css/component/article-list--blog.css',
+                        'dev/css/component/carousel--blog.css',
+                        'dev/css/component/category--blog.css',
+                        'dev/css/component/post--blog.css',
+                        'dev/css/component/post-social--blog.css',
+                        'dev/css/component/sidebar--blog.css',
+                        'dev/css/component/title-post--blog.css',
+                        'dev/css/component/oo_style.css',
+                        'dev/css/component/cookie-banner.css',
                         'dev/css/theme/ie9select.css']
                 }
             }
