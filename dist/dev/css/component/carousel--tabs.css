@@ -50,6 +50,7 @@
     text-transform: uppercase;
     text-align: center;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .carousel--tabs .carousel-item:hover {

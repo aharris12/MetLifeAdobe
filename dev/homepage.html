@@ -18,7 +18,6 @@
     /build -->
     <!-- build:css css/metlife.min.css -->
     <link href="css/theme/bootstrap-metlife.css" rel="stylesheet">
-    <link href="css/component/oo_style.css" rel="stylesheet">
     <link href="css/theme/icon-metlife.css" rel="stylesheet">
     <link href="css/theme/form-metlife.css" rel="stylesheet">
     <link href="css/theme/utility.css" rel="stylesheet">
@@ -45,6 +44,7 @@
     <link href="css/component/product-comparison-chart.css" rel="stylesheet">
     <link href="css/component/table-variations.css" rel="stylesheet">
     <link href="css/component/microsite-header.css" rel="stylesheet">
+    <link href="css/component/microsite-page-footer.css" rel="stylesheet">
     <link href="css/component/product-tile.css" rel="stylesheet">
     <link href="css/component/article.css" rel="stylesheet">
     <link href="css/component/media-card.css" rel="stylesheet">
@@ -69,9 +69,31 @@
     <link href="css/component/hp-contextual-links.css" rel="stylesheet">
     <link href="css/component/search-suggestions-box.css" rel="stylesheet">
     <link href="css/component/cta-quote-tool.css" rel="stylesheet">
+    <link href="css/component/quote-tool.css" rel="stylesheet">
     <link href="css/component/view-all-rates.css" rel="stylesheet">
-    <link href="css/component/feedback.css" rel="stylesheet">
     <link href="css/component/cookie-banner.css" rel="stylesheet">
+    <link href="css/component/carousel--blog.css" rel="stylesheet">
+    <link href="css/component/article-list--blog.css" rel="stylesheet">
+    <link href="css/component/sidebar--blog.css" rel="stylesheet">
+    <link href="css/component/category--blog.css" rel="stylesheet">
+    <link href="css/component/additional-content--blog.css" rel="stylesheet">
+    <link href="css/component/title-post--blog.css" rel="stylesheet">
+    <link href="css/component/post--blog.css" rel="stylesheet">
+    <link href="css/component/post-social--blog.css" rel="stylesheet">
+    <link href="css/component/campaign-footer.css" rel="stylesheet">
+    <link href="css/component/campaign-header.css" rel="stylesheet">
+    <link href="css/component/campaign-card.css" rel="stylesheet">
+    <link href="css/component/oo_style.css" rel="stylesheet">
+    <link href="css/component/feedback.css" rel="stylesheet">
+    <link href="css/component/404.css" rel="stylesheet">
+    <link href="css/component/email-unsub.css" rel="stylesheet">
+    <link href="css/component/fax.css" rel="stylesheet">
+    <link href="css/component/glossary.css" rel="stylesheet">
+    <link href="css/component/life-insurance-quote.css" rel="stylesheet">
+    <link href="css/component/options-small.css" rel="stylesheet">
+    <link href="css/component/overlay.css" rel="stylesheet">
+    <link href="css/component/sitemap.css" rel="stylesheet">
+    <link href="css/theme/ie9select.css" rel="stylesheet">
     <!-- /build -->
 
 </head>
@@ -89,7 +111,7 @@
     var cookieNamesDelete = '';
 </script>
 <div class="container">
-    <div class="row cookieShell hidden">
+    <div class="row cookieShell">
 
         <div class="wrapper">
                         <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
@@ -161,7 +183,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Mega Menu -->
 <div class="row megamenu">
@@ -318,6 +339,477 @@
             </ul>
         </li>
     </ul>
+</div>
+
+<!-- Contact Form -->
+<div class="contact-container--global">
+    <div class="contactSliderOuterCon">
+        <a href="#">
+            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
+                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+            </svg></span>
+        </a>
+
+        <div class="contactSideForm">
+            <span class="form__title">Have a rep contact me:</span>
+            <span class="form__subtitle info-mandatory">All fields are required</span>
+
+            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
+                  method="post" class="userForm" data-fid="contactSidebar">
+                <input type="hidden" id="thankYouPage" name="thankYouPage">
+                <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
+                <input type="hidden" id="isLead" name="isLead" value="true">
+                <input type="hidden" id="subject" value="Consult with a MetLife Representative" name="subject">
+                <input type="hidden" id="site" value="MetLife Online: Consult with a MetLife Representative"
+                       name="site">
+                <input type="hidden" id="requiredFields"
+                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType"
+                       name="requiredFields">
+                <input type="hidden" id="confirmationmailText"
+                       value="*****PLEASE DO NOT REPLY TO THIS AUTO-ACKNOWLEDGEMENT***** Dear 'Name', Thank You for contacting MetLife Online Support. We have received your inquiry, which will be personally reviewed by one of our consultants. Our normal response time is within 1-2 business days. We believe in world class service and will do everything we can to make sure that your inquiry is answered promptly and accurately. Should you wish to speak with a Customer Service Consultant you may call 866-881-0784 between the hours of 8am and 5pm, Central Time, Monday through Friday. Please be advised that some computers may have a firwewall or spam blocker, which may not allow our email to be received to you. Please be sure to add our email address to your address book, so that it will not be blocked. If you experience additional difficulties in receiving your email, we might suggest using a different computer. Your message identification number is 'MessageID'. Thank you, MetLife Online Customer Support 'Gurantees for the if in life.'"
+                       name="confirmationmailText">
+                <input type="hidden"
+                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInt,policyNo,questionOrComment,pageFrom"
+                       id="sortOrder" name="sortOrder">
+                <input type="hidden" value="ML_ST_Home_sidebar" name="pageFrom">
+                <input type="hidden" value="state,email,prodInt" name="lstPnPParameters">
+                <input type="hidden" name="bWFCompleted" value="Y">
+                <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
+                <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+
+                <div class="form-user-grp">
+                    <label for="firstName_Acc" class="hidden">First Name</label>
+                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+                           placeholder="First Name" data-required="true" aria-required="true">
+                </div>
+                <div class="form-user-grp">
+                    <label class="hidden" for="lastName_Acc">Last Name</label>
+                    <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+                           placeholder="Last Name" data-required="true" aria-required="true">
+                </div>
+                <div class="form-user-grp">
+                    <label class="hidden" for="address_Acc">Address</label>
+                    <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
+                           data-required="true" aria-required="true">
+                </div>
+                <div class="form-user-grp">
+                    <label class="hidden" for="city_Acc">City</label>
+                    <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+                           data-required="true" aria-required="true">
+                </div>
+                <div class="form-statezip-grp row">
+                    <div class="form-user-grp form-state form-icon-wrapper">
+
+                        <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+                                data-required="true" aria-required="true">
+                            <option value="" selected="selected">State</option>
+                            <option class="general" value="AL">AL</option>
+                            <option class="general" value="AK">AK</option>
+                            <option class="general" value="AZ">AZ</option>
+                            <option class="general" value="AR">AR</option>
+                            <option class="general" value="CA">CA</option>
+                            <option class="general" value="CO">CO</option>
+                            <option class="general" value="CT">CT</option>
+                            <option class="general" value="DC">DC</option>
+                            <option class="general" value="DE">DE</option>
+                            <option class="general" value="FL">FL</option>
+                            <option class="general" value="GA">GA</option>
+                            <option class="general" value="HI">HI</option>
+                            <option class="general" value="IA">IA</option>
+                            <option class="general" value="ID">ID</option>
+                            <option class="general" value="IL">IL</option>
+                            <option class="general" value="IN">IN</option>
+                            <option class="general" value="KS">KS</option>
+                            <option class="general" value="KY">KY</option>
+                            <option class="general" value="LA">LA</option>
+                            <option class="general" value="MA">MA</option>
+                            <option class="general" value="MD">MD</option>
+                            <option class="general" value="ME">ME</option>
+                            <option class="general" value="MI">MI</option>
+                            <option class="general" value="MN">MN</option>
+                            <option class="general" value="MO">MO</option>
+                            <option class="general" value="MS">MS</option>
+                            <option class="general" value="MT">MT</option>
+                            <option class="general" value="NC">NC</option>
+                            <option class="general" value="ND">ND</option>
+                            <option class="general" value="NE">NE</option>
+                            <option class="general" value="NH">NH</option>
+                            <option class="general" value="NJ">NJ</option>
+                            <option class="general" value="NM">NM</option>
+                            <option class="general" value="NV">NV</option>
+                            <option class="general" value="NY">NY</option>
+                            <option class="general" value="OH">OH</option>
+                            <option class="general" value="OK">OK</option>
+                            <option class="general" value="OR">OR</option>
+                            <option class="general" value="PA">PA</option>
+                            <option class="general" value="PR">PR</option>
+                            <option class="general" value="RI">RI</option>
+                            <option class="general" value="SC">SC</option>
+                            <option class="general" value="SD">SD</option>
+                            <option class="general" value="TN">TN</option>
+                            <option class="general" value="TX">TX</option>
+                            <option class="general" value="UT">UT</option>
+                            <option class="general" value="VA">VA</option>
+                            <option class="general" value="VT">VT</option>
+                            <option class="general" value="WA">WA</option>
+                            <option class="general" value="WI">WI</option>
+                            <option class="general" value="WV">WV</option>
+                            <option class="general" value="WY">WY</option>
+                        </select>
+                    </div>
+                    <div class="form-user-grp form-zip">
+                        <label class="hidden" for="zip_Acc">Zip</label>
+                        <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+                               data-required="true" aria-required="true" data-valid-type="zip">
+                    </div>
+                </div>
+                <div class="form-user-grp">
+                    <label class="hidden" for="email_Acc">Email</label>
+                    <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+                           data-required="true" aria-required="true" data-valid-type="email">
+                    <span class="errorSpan"><img class="errorSpanImg"
+                                                 src="images/form/icon_form_error.png"
+                                                 alt="! Error Image">Please enter a valid email address.</span>
+                </div>
+                <div class="form-user-grp">
+                    <label class="hidden" for="phone_Acc">Phone</label>
+                    <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+                           placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+                           data-valid-type="phone">
+                    <span class="errorSpan"><img class="errorSpanImg"
+                                                 src="images/form/icon_form_error.png"
+                                                 alt="! Error Image">Please enter a valid phone number.</span>
+                </div>
+                <div class="productPolicyTypes">
+                    <div class="form-user-grp form-icon-wrapper">
+
+                        <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
+                                title="In reference to ..." data-required="true" aria-required="true"
+                                data-valid-status="failed">
+                            <option value="">In reference to ...</option>
+                            <option value="New Product/Planning Services">New Product/Policy</option>
+                            <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+                        </select>
+                    </div>
+                    <div class="productUserType newProductUser">
+                        <div class="form-check-grp">
+                            <div class="productCount">- Select up to 5 -</div>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox"
+                                       class="user-checkbox" value="ANN"><span>Annuity</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
+                                       class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
+                                       class="user-checkbox" value="B01"><span>Disability Income</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
+                                       class="user-checkbox" value="L06"><span>Financial Review</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
+                                       class="user-checkbox" value="INV"><span>Investments</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox"
+                                       class="user-checkbox" value="IRA"><span>IRA</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
+                                       class="user-checkbox" value="LIF"><span>Life Insurance</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="productUserType existingProductUser">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
+                            <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Policy/Contract #" data-placeholder="">
+                        </div>
+                        <div class="form-user-grp">
+                            <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
+                                      rows="3" class="form-user-ctrl productUserQuestion"
+                                      data-placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right contactSidebarBtns">
+                    <button id="headerContactSideBarSumbit" type="submit"
+                            class="contatMeSidebarBtn border-radius-rounded btn btn-brand-2nd"
+                            data-fsubmit="contactSidebar">SUBMIT
+                    </button>
+                </div>
+                <p class="contactDisclaimer">
+                    By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
+                    using automated technology or a prerecorded voice, to talk about our products and services. If
+                    you don't want to give this permission, you can still get a quote or make a purchase by calling
+                    us directly at 1-800-638-5433.
+                </p>
+
+                <p class="contactDisclaimer">
+                    *<a id="headerContactSideBarMetlifeLink"
+                        href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
+                    company</a> or third party acting on MetLife's behalf.
+                </p>
+            </form>
+        </div>
+        <div class="contactSideThankyou" id="contactus_lead_thankyou">
+            <div class="thanksHeaderText">Thank you for contacting us.</div>
+            <div class="thanksSubText">Someone from MetLife will be reaching shortly to provide you help.</div>
+        </div>
+        <div class="contactSideSubmitError" id="contactus_lead_submit_error">
+            <div class="thanksHeaderText">Error!</div>
+            <div class="thanksSubText">An error occured while submitting your information.</div>
+        </div>
+        <div class="contactOtherDetails">
+            <div class="contactSideCall">
+                <a href="tel:1-800-638-5433">CALL: 1-800-METLIFE</a>
+            </div>
+            <div class="otherContactOptions">
+                <a id="headerContactSideBarAllOtherOptionsLink"
+                   href="https://www.metlife.com/about/corporate-profile/contact/metlife/index.html">ALL OTHER
+                    CONTACT OPTIONS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Overlay -->
+<div class="login-container">
+    <div class="row login-container-header">
+        <div class="col-xs-2 login-container--close">
+            <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
+            <svg class="icon">
+                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+            </svg>
+            <span class="login-container--close__label">CLOSE</span>
+        </div>
+        <div class="col-xs-8">
+            <a id="headerLogoLink" href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+                                                                      class="global-header__logo img-responsive"></a>
+        </div>
+    </div>
+
+    <h2 class="login-popout__title">Select account type to log in:</h2>
+
+    <div class="login-popout">
+        <div class="form-item login-type-options">
+            <div class="form-item__field form-icon-wrapper">
+                <select class="login-type">
+                    <option value="for_individuals">For Individuals</option>
+                    <option value="for_businesses">For Businesses</option>
+                    <option value="for_brokers">For Brokers</option>
+                </select>
+                <svg class="icon info">
+                    <use xlink:href="images/icons-metlife.svg#icon-info"></use>
+                </svg>
+            </div>
+            <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
+                <div class="login-popout-msg">
+                    <span class="login-popout-msg__title">For Individuals</span>
+                    <span class="login-popout-msg__copy">
+                        MetLife's Online Service - Life, Annuities, Disability,
+                        Long-Term Care, Critical Illness, Auto, Home, Total Control
+                        Account (eSERVICE)
+                    </span>
+                    <span class="login-popout-msg__copy">
+                        Benefits Through Your Employer (MyBenefits)
+                    </span>
+                </div>
+            </div>
+            <div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
+                <div class="login-popout-msg">
+                    <span class="login-popout-msg__title">For Businesses</span>
+                    <span class="login-popout-msg__copy">
+                        MetLink - Access your company's benefits data
+                    </span>
+                    <span class="login-popout-msg__copy">
+                        MyBenefits - Benefits Through Your Employer
+                    </span>
+                    <span class="login-popout-msg__copy">
+                        SBR - Manage executive benefits
+                    </span>
+                </div>
+            </div>
+            <div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
+                <div class="login-popout-msg">
+                    <span class="login-popout-msg__title">For Brokers</span>
+                <span class="login-popout-msg__copy">
+                    MetLife's Online Service - Life, Annuities, Disability,
+                    Long-Term Care, Critical Illness, Auto, Home, Total Control
+                    Account (eSERVICE)
+                </span>
+                <span class="login-popout-msg__copy">
+                    Benefits Through Your Employer (MyBenefits)
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-item login-type-biz-account">
+            <div class="form-item__field form-icon-wrapper">
+                <select class="login-type" id="biz-account-type">
+                    <option value="">Select an option</option>
+                    <option value="metlink">MetLink</option>
+                    <option value="mybenefits">MyBenefits</option>
+                    <option value="sbr">SBR</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-item login-type-biz-purpose">
+            <div class="form-item__field form-icon-wrapper">
+                <select class="login-type" id="biz-account-purpose">
+                    <option value="">Select an option</option>
+                    <option value="my-benefits-home">My Benefits Home</option>
+                    <option value="for_businesses">Check your group disability claim</option>
+                    <option value="check-your-group-disability-claim">Check Your Group Disability Claim</option>
+                    <option value="check-your-dental-claim-plan">Check Your Dental Claim/Plan</option>
+                    <option value="check-your-retirement-income">Check Your Retirement Income</option>
+                    <option value="retirement-education">Retirement Education</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-item login-type-username">
+            <div class="form-item__field">
+                <input type="text" placeholder="Username" name="username" data-required="true" value="">
+            </div>
+        </div>
+        <div class="form-item login-type-password">
+            <div class="form-item__field">
+                <input type="password" placeholder="Password" name="password" data-required="true" value="">
+            </div>
+        </div>
+    </div>
+    <div class="login-popout">
+        <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Forgot username or password?</a>
+        <a href="#" class="login-popout__action" data-popout-msg="for_businesses">Forgot username or password?</a>
+        <a href="#" class="login-popout__action" data-popout-msg="for_brokers">Forgot your password?</a>
+    </div>
+    <div class="login-popout login-submit">
+        <button class="btn-brand-2nd">LOGIN</button>
+    </div>
+    <div class="login-popout" data-popout-msg="for_individuals">
+        <span class="login-popout__not-registered">Not registered?</span>
+        <a href="#" class="login-popout__action">Create a new account</a>
+    </div>
+    <div class="login-popout" data-popout-msg="for_businesses">
+        <span class="login-popout__not-registered">Need an account?</span>
+        <a href="#" class="login-popout__action">Register</a>
+    </div>
+    <div class="login-popout" data-popout-msg="for_brokers">
+        <span class="login-popout__not-registered">By signing in, I agree to the</span><br>
+        <a href="#" class="login-popout__action">Terms of Use</a>
+    </div>
+    <div class="login-popout go-to-benefits" data-popout-msg="for_benefits">
+        <a href="#" class="login-popout__action">Go to MyBenefits without signing in</a>
+    </div>
+
+    <div class="login-types bg-white">
+        <div class="login-type-trigger">
+            <h2 class="login-type-trigger__title">
+                other account types
+                <svg class="icon icon-plus">
+                    <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
+                </svg>
+            </h2>
+        </div>
+        <div class="row login-type__details">
+            <div class="col-xs-12 col-sm-4">
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR RETIREES</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">Retirement Plan Access</a></li>
+                    </ul>
+                </div>
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR INVESTORS</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">MetLife Securities Client View</a></li>
+                        <li class="login-type__link"><a href="">NetXInvestor</a></li>
+                    </ul>
+                </div>
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR PROVIDERS</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">Dental Professionals Account</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR EMPLOYERS</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
+                        <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
+                        </li>
+                        <li class="login-type__link"><a href="">Annuities Administration</a></li>
+                    </ul>
+                </div>
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR BROKERS &amp; CONSULTANTS</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
+                        </li>
+                        <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
+                        <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR METLIFE SECURITIES INC. REPRESENTATIVES</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">Brokerage &amp; Securities Account</a></li>
+                    </ul>
+                </div>
+                <div class="login-type__detail">
+                    <h3 class="login-type__title">FOR METLIFE ASSOCIATES</h3>
+                    <svg class="icon icon-chevron-right">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                    </svg>
+                    <ul>
+                        <li class="login-type__link"><a href="">MyMetLife</a></li>
+                        <li class="login-type__link"><a href="">Associate Information Center (AIC)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="login-type__contact">
+            Account questions? Call <b>1-866-363-8669</b> Monday to Friday 8 a.m. to 8 p.m. ET
+            <p class="hidden-sm hidden-md hidden-lg">
+                Need an account?
+                <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
+            </p>
+        </div>
+    </div>
 </div>
 
 <!-- Homepage Nav -->
@@ -548,7 +1040,6 @@
     </ul>
 </div>
 
-<!-- Jessica edit 3-18-2016-->
 <!-- Carousel Hero -->
 <div id="carouselHero" class="carousel slide carousel--hero" data-ride="carousel" data-interval="5000">
     <!-- Indicators -->
@@ -1273,6 +1764,244 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Begin Health Guidelines Overlay Section-->
+<div class="container rates-overlay health-guidelines-overlay">
+    <div class="row wrapper">
+        <!-- Component Begin -->
+        <div class="view-close">
+            <svg class="icon icon-close brand-gray-1st view-close">
+                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+            </svg>
+        </div>
+        <div class="view-header bg-gray-1st">
+            <h2>Health Class Guidelines</h2>
+
+            <p>Find your health class by reading the charts below.
+                Note: if your health information does not fall within these ranges, please select Fair.</p>
+        </div>
+
+        <div class="overlay-table-section bg-gray-1st">
+            <div class="view-nav view-nav--hidden bg-gray-1st text-center">
+                <ul>
+                    <li class="active" data-target="health-class-1">Excellent</li>
+                    <li data-target="health-class-2">Very Good</li>
+                    <li data-target="health-class-3">Good</li>
+                </ul>
+            </div>
+            <div class="view-content bg-white">
+                <div class="overlay-table-layout active">
+                    <div class="overlay-table">
+                        <div class="rate_table rate_table--variation rate_table--variation-1 clearfix">
+                            <div class="content col-xs-12 col-sm-12 col-lg-12">
+                                <div class="content_body--variation">
+                                    <div class="content_container">
+                                        <div class="window">
+                                            <table class="content_table table-striped">
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_temp">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td>Blood Pressure</td>
+                                            <td>130/80 or less, no medication</td>
+                                            <td>140/85 or less, no medication</td>
+                                            <td>145/90 or less, with medication</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cholesterol</td>
+                                            <td>200 or less</td>
+                                            <td>220 or less</td>
+                                            <td>260 or less</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Substance Abuse</td>
+                                            <td>No history or treatment</td>
+                                            <td>No history or treatment</td>
+                                            <td>No history in past 10 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Family History</td>
+                                            <td>No death from cardiovascular disease or cancer in parents before age
+                                                60,
+                                                in siblings before age 65
+                                            </td>
+                                            <td>No death from cardiovascular disease or cancer in parents before age
+                                                60,
+                                                in siblings before age 65
+                                            </td>
+                                            <td>No death from cardiovascular disease or cancer in parents or
+                                                siblings
+                                                before age 60
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bg-gray-1st view-content">
+                <div class="disclaimer">Use of cholesterol medications is acceptable provided cholesterol levels have
+                    been within range for 12 months.
+                </div>
+                <p class="overlay-table-section__description">Your health class is determined by medical history,
+                    current health and underwriting considerations. People in better health are judged to have a lower
+                    risk during their coverage periods and will pay lower premiums.</p>
+            </div>
+        </div>
+        <!-- Component End -->
+
+        <div class="overlay-table-section bg-gray-1st">
+            <div class="row bg-gray-1st view-content">
+                <overlay-table-section__title>Height/Weight</overlay-table-section__title>
+                <p class="overlay-table-section__subtitle">If your weight is greater than listed, please contact us for
+                    a personalized quote</p>
+            </div>
+            <div class="view-nav view-nav--hidden bg-gray-1st text-center">
+                <ul>
+                    <li class="active" data-target="health-class-1">Excellent</li>
+                    <li data-target="health-class-2">Very Good</li>
+                    <li data-target="health-class-3">Good</li>
+                </ul>
+            </div>
+            <div class="view-content bg-white">
+                <div class="overlay-table-layout active">
+                    <div class="overlay-table">
+                        <div class="rate_table rate_table--variation rate_table--variation-2 clearfix">
+                            <div class="content col-xs-12 col-sm-12 col-lg-12">
+                                <div class="content_body--variation">
+                                    <div class="content_container">
+                                        <div class="window">
+                                            <table class="content_table table-striped">
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_temp">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>M</td>
+                                            <td>F</td>
+                                            <td>M</td>
+                                            <td>F</td>
+                                            <td>M</td>
+                                            <td>F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'9"</td>
+                                            <td>125</td>
+                                            <td>121</td>
+                                            <td>132</td>
+                                            <td>125</td>
+                                            <td>143</td>
+                                            <td>137</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'10"</td>
+                                            <td>130</td>
+                                            <td>125</td>
+                                            <td>136</td>
+                                            <td>130</td>
+                                            <td>148</td>
+                                            <td>141</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'11"</td>
+                                            <td>135</td>
+                                            <td>130</td>
+                                            <td>141</td>
+                                            <td>135</td>
+                                            <td>153</td>
+                                            <td>146</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4'12"</td>
+                                            <td>139</td>
+                                            <td>134</td>
+                                            <td>146</td>
+                                            <td>139</td>
+                                            <td>158</td>
+                                            <td>152</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wrapper bg-gray-1st view-content">
+                <div class="disclaimer">Use of cholesterol medications is acceptable provided cholesterol levels have
+                    been within range for 12 months.
+                </div>
+                <p class="overlay-table-section__description">Your health class is determined by medical history,
+                    current health and underwriting considerations. People in better health are judged to have a lower
+                    risk during their coverage periods and will pay lower premiums.</p>
+            </div>
+        </div>
+        <!-- Component End -->
+
+
     </div>
 </div>
 
@@ -2095,716 +2824,6 @@
     </div>
 </div>
 
-<!-- Contact Form -->
-<div class="contact-container--global">
-    <div class="contactSliderOuterCon">
-        <a href="#">
-            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
-                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
-            </svg></span>
-        </a>
-
-        <div class="contactSideForm">
-            <span class="form__title">Have a rep contact me:</span>
-            <span class="form__subtitle info-mandatory">All fields are required</span>
-
-            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar">
-                <input type="hidden" id="thankYouPage" name="thankYouPage">
-                <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
-                <input type="hidden" id="isLead" name="isLead" value="true">
-                <input type="hidden" id="subject" value="Consult with a MetLife Representative" name="subject">
-                <input type="hidden" id="site" value="MetLife Online: Consult with a MetLife Representative"
-                       name="site">
-                <input type="hidden" id="requiredFields"
-                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType"
-                       name="requiredFields">
-                <input type="hidden" id="confirmationmailText"
-                       value="*****PLEASE DO NOT REPLY TO THIS AUTO-ACKNOWLEDGEMENT***** Dear 'Name', Thank You for contacting MetLife Online Support. We have received your inquiry, which will be personally reviewed by one of our consultants. Our normal response time is within 1-2 business days. We believe in world class service and will do everything we can to make sure that your inquiry is answered promptly and accurately. Should you wish to speak with a Customer Service Consultant you may call 866-881-0784 between the hours of 8am and 5pm, Central Time, Monday through Friday. Please be advised that some computers may have a firwewall or spam blocker, which may not allow our email to be received to you. Please be sure to add our email address to your address book, so that it will not be blocked. If you experience additional difficulties in receiving your email, we might suggest using a different computer. Your message identification number is 'MessageID'. Thank you, MetLife Online Customer Support 'Gurantees for the if in life.'"
-                       name="confirmationmailText">
-                <input type="hidden"
-                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInt,policyNo,questionOrComment,pageFrom"
-                       id="sortOrder" name="sortOrder">
-                <input type="hidden" value="ML_ST_Home_sidebar" name="pageFrom">
-                <input type="hidden" value="state,email,prodInt" name="lstPnPParameters">
-                <input type="hidden" name="bWFCompleted" value="Y">
-                <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
-                <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
-
-                <div class="form-user-grp">
-                    <label for="firstName_Acc" class="hidden">First Name</label>
-                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="First Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="lastName_Acc">Last Name</label>
-                    <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Last Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="address_Acc">Address</label>
-                    <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="city_Acc">City</label>
-                    <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-statezip-grp row">
-                    <div class="form-user-grp form-state form-icon-wrapper">
-
-                        <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
-                                data-required="true" aria-required="true">
-                            <option value="" selected="selected">State</option>
-                            <option class="general" value="AL">AL</option>
-                            <option class="general" value="AK">AK</option>
-                            <option class="general" value="AZ">AZ</option>
-                            <option class="general" value="AR">AR</option>
-                            <option class="general" value="CA">CA</option>
-                            <option class="general" value="CO">CO</option>
-                            <option class="general" value="CT">CT</option>
-                            <option class="general" value="DC">DC</option>
-                            <option class="general" value="DE">DE</option>
-                            <option class="general" value="FL">FL</option>
-                            <option class="general" value="GA">GA</option>
-                            <option class="general" value="HI">HI</option>
-                            <option class="general" value="IA">IA</option>
-                            <option class="general" value="ID">ID</option>
-                            <option class="general" value="IL">IL</option>
-                            <option class="general" value="IN">IN</option>
-                            <option class="general" value="KS">KS</option>
-                            <option class="general" value="KY">KY</option>
-                            <option class="general" value="LA">LA</option>
-                            <option class="general" value="MA">MA</option>
-                            <option class="general" value="MD">MD</option>
-                            <option class="general" value="ME">ME</option>
-                            <option class="general" value="MI">MI</option>
-                            <option class="general" value="MN">MN</option>
-                            <option class="general" value="MO">MO</option>
-                            <option class="general" value="MS">MS</option>
-                            <option class="general" value="MT">MT</option>
-                            <option class="general" value="NC">NC</option>
-                            <option class="general" value="ND">ND</option>
-                            <option class="general" value="NE">NE</option>
-                            <option class="general" value="NH">NH</option>
-                            <option class="general" value="NJ">NJ</option>
-                            <option class="general" value="NM">NM</option>
-                            <option class="general" value="NV">NV</option>
-                            <option class="general" value="NY">NY</option>
-                            <option class="general" value="OH">OH</option>
-                            <option class="general" value="OK">OK</option>
-                            <option class="general" value="OR">OR</option>
-                            <option class="general" value="PA">PA</option>
-                            <option class="general" value="PR">PR</option>
-                            <option class="general" value="RI">RI</option>
-                            <option class="general" value="SC">SC</option>
-                            <option class="general" value="SD">SD</option>
-                            <option class="general" value="TN">TN</option>
-                            <option class="general" value="TX">TX</option>
-                            <option class="general" value="UT">UT</option>
-                            <option class="general" value="VA">VA</option>
-                            <option class="general" value="VT">VT</option>
-                            <option class="general" value="WA">WA</option>
-                            <option class="general" value="WI">WI</option>
-                            <option class="general" value="WV">WV</option>
-                            <option class="general" value="WY">WY</option>
-                        </select>
-                    </div>
-                    <div class="form-user-grp form-zip">
-                        <label class="hidden" for="zip_Acc">Zip</label>
-                        <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
-                               data-required="true" aria-required="true" data-valid-type="zip">
-                    </div>
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="email_Acc">Email</label>
-                    <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
-                           data-required="true" aria-required="true" data-valid-type="email">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid email address.</span>
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="phone_Acc">Phone</label>
-                    <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
-                           data-valid-type="phone">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid phone number.</span>
-                </div>
-                <div class="productPolicyTypes">
-                    <div class="form-user-grp form-icon-wrapper">
-
-                        <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
-                                title="In reference to ..." data-required="true" aria-required="true"
-                                data-valid-status="failed">
-                            <option value="">In reference to ...</option>
-                            <option value="New Product/Planning Services">New Product/Policy</option>
-                            <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
-                        </select>
-                    </div>
-                    <div class="productUserType newProductUser">
-                        <div class="form-check-grp">
-                            <div class="productCount">- Select up to 5 -</div>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox"
-                                       class="user-checkbox" value="ANN"><span>Annuity</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
-                                       class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
-                                       class="user-checkbox" value="B01"><span>Disability Income</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
-                                       class="user-checkbox" value="L06"><span>Financial Review</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
-                                       class="user-checkbox" value="INV"><span>Investments</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox"
-                                       class="user-checkbox" value="IRA"><span>IRA</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
-                                       class="user-checkbox" value="LIF"><span>Life Insurance</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="productUserType existingProductUser">
-                        <div class="form-user-grp">
-                            <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
-                            <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="">
-                        </div>
-                        <div class="form-user-grp">
-                            <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
-                                      rows="3" class="form-user-ctrl productUserQuestion"
-                                      data-placeholder=""></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-right contactSidebarBtns">
-                    <button id="headerContactSideBarSumbit" type="submit"
-                            class="contatMeSidebarBtn border-radius-rounded btn btn-brand-2nd"
-                            data-fsubmit="contactSidebar">SUBMIT
-                    </button>
-                </div>
-                <p class="contactDisclaimer">
-                    By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
-                    using automated technology or a prerecorded voice, to talk about our products and services. If
-                    you don't want to give this permission, you can still get a quote or make a purchase by calling
-                    us directly at 1-800-638-5433.
-                </p>
-
-                <p class="contactDisclaimer">
-                    *<a id="headerContactSideBarMetlifeLink"
-                        href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
-                    company</a> or third party acting on MetLife's behalf.
-                </p>
-            </form>
-        </div>
-        <div class="contactSideThankyou" id="contactus_lead_thankyou">
-            <div class="thanksHeaderText">Thank you for contacting us.</div>
-            <div class="thanksSubText">Someone from MetLife will be reaching shortly to provide you help.</div>
-        </div>
-        <div class="contactSideSubmitError" id="contactus_lead_submit_error">
-            <div class="thanksHeaderText">Error!</div>
-            <div class="thanksSubText">An error occured while submitting your information.</div>
-        </div>
-        <div class="contactOtherDetails">
-            <div class="contactSideCall">
-                <a href="tel:1-800-638-5433">CALL: 1-800-METLIFE</a>
-            </div>
-            <div class="otherContactOptions">
-                <a id="headerContactSideBarAllOtherOptionsLink"
-                   href="https://www.metlife.com/about/corporate-profile/contact/metlife/index.html">ALL OTHER
-                    CONTACT OPTIONS</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Login Overlay -->
-<div class="login-container">
-    <div class="row login-container-header">
-        <div class="col-xs-2 login-container--close">
-            <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
-            <svg class="icon">
-                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
-            </svg>
-            <span class="login-container--close__label">CLOSE</span>
-        </div>
-        <div class="col-xs-8">
-            <a id="headerLogoLink" href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
-                                                                      class="global-header__logo img-responsive"></a>
-        </div>
-    </div>
-
-    <h2 class="login-popout__title">Select account type to log in:</h2>
-
-    <div class="login-popout">
-        <div class="form-item login-type-options">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type">
-                    <option value="for_individuals">For Individuals</option>
-                    <option value="for_businesses">For Businesses</option>
-                    <option value="for_brokers">For Brokers</option>
-                </select>
-                <svg class="icon info">
-                    <use xlink:href="images/icons-metlife.svg#icon-info"></use>
-                </svg>
-            </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Individuals</span>
-                    <span class="login-popout-msg__copy">
-                        MetLife's Online Service - Life, Annuities, Disability,
-                        Long-Term Care, Critical Illness, Auto, Home, Total Control
-                        Account (eSERVICE)
-                    </span>
-                    <span class="login-popout-msg__copy">
-                        Benefits Through Your Employer (MyBenefits)
-                    </span>
-                </div>
-            </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Businesses</span>
-                    <span class="login-popout-msg__copy">
-                        MetLink - Access your company's benefits data
-                    </span>
-                    <span class="login-popout-msg__copy">
-                        MyBenefits - Benefits Through Your Employer
-                    </span>
-                    <span class="login-popout-msg__copy">
-                        SBR - Manage executive benefits
-                    </span>
-                </div>
-            </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Brokers</span>
-                <span class="login-popout-msg__copy">
-                    MetLife's Online Service - Life, Annuities, Disability,
-                    Long-Term Care, Critical Illness, Auto, Home, Total Control
-                    Account (eSERVICE)
-                </span>
-                <span class="login-popout-msg__copy">
-                    Benefits Through Your Employer (MyBenefits)
-                </span>
-                </div>
-            </div>
-        </div>
-        <div class="form-item login-type-biz-account">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type" id="biz-account-type">
-                    <option value="">Select an option</option>
-                    <option value="metlink">MetLink</option>
-                    <option value="mybenefits">MyBenefits</option>
-                    <option value="sbr">SBR</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-item login-type-biz-purpose">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type" id="biz-account-purpose">
-                    <option value="">Select an option</option>
-                    <option value="my-benefits-home">My Benefits Home</option>
-                    <option value="for_businesses">Check your group disability claim</option>
-                    <option value="check-your-group-disability-claim">Check Your Group Disability Claim</option>
-                    <option value="check-your-dental-claim-plan">Check Your Dental Claim/Plan</option>
-                    <option value="check-your-retirement-income">Check Your Retirement Income</option>
-                    <option value="retirement-education">Retirement Education</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-item login-type-username">
-            <div class="form-item__field">
-                <input type="text" placeholder="Username" name="username" data-required="true" value="">
-            </div>
-        </div>
-        <div class="form-item login-type-password">
-            <div class="form-item__field">
-                <input type="password" placeholder="Password" name="password" data-required="true" value="">
-            </div>
-        </div>
-    </div>
-    <div class="login-popout">
-        <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Forgot username or password?</a>
-        <a href="#" class="login-popout__action" data-popout-msg="for_businesses">Forgot username or password?</a>
-        <a href="#" class="login-popout__action" data-popout-msg="for_brokers">Forgot your password?</a>
-    </div>
-    <div class="login-popout login-submit">
-        <button class="btn-brand-2nd">LOGIN</button>
-    </div>
-    <div class="login-popout" data-popout-msg="for_individuals">
-        <span class="login-popout__not-registered">Not registered?</span>
-        <a href="#" class="login-popout__action">Create a new account</a>
-    </div>
-    <div class="login-popout" data-popout-msg="for_businesses">
-        <span class="login-popout__not-registered">Need an account?</span>
-        <a href="#" class="login-popout__action">Register</a>
-    </div>
-    <div class="login-popout" data-popout-msg="for_brokers">
-        <span class="login-popout__not-registered">By signing in, I agree to the</span><br>
-        <a href="#" class="login-popout__action">Terms of Use</a>
-    </div>
-    <div class="login-popout go-to-benefits" data-popout-msg="for_benefits">
-        <a href="#" class="login-popout__action">Go to MyBenefits without signing in</a>
-    </div>
-
-    <div class="login-types bg-white">
-        <div class="login-type-trigger">
-            <h2 class="login-type-trigger__title">
-                other account types
-                <svg class="icon icon-plus">
-                    <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
-                </svg>
-            </h2>
-        </div>
-        <div class="row login-type__details">
-            <div class="col-xs-12 col-sm-4">
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR RETIREES</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">Retirement Plan Access</a></li>
-                    </ul>
-                </div>
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR INVESTORS</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">MetLife Securities Client View</a></li>
-                        <li class="login-type__link"><a href="">NetXInvestor</a></li>
-                    </ul>
-                </div>
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR PROVIDERS</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">Dental Professionals Account</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR EMPLOYERS</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
-                        <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
-                        </li>
-                        <li class="login-type__link"><a href="">Annuities Administration</a></li>
-                    </ul>
-                </div>
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR BROKERS &amp; CONSULTANTS</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
-                        </li>
-                        <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
-                        <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR METLIFE SECURITIES INC. REPRESENTATIVES</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">Brokerage &amp; Securities Account</a></li>
-                    </ul>
-                </div>
-                <div class="login-type__detail">
-                    <h3 class="login-type__title">FOR METLIFE ASSOCIATES</h3>
-                    <svg class="icon icon-chevron-right">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-                    </svg>
-                    <ul>
-                        <li class="login-type__link"><a href="">MyMetLife</a></li>
-                        <li class="login-type__link"><a href="">Associate Information Center (AIC)</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="login-type__contact">
-            Account questions? Call <b>1-866-363-8669</b> Monday to Friday 8 a.m. to 8 p.m. ET
-            <p class="hidden-sm hidden-md hidden-lg">
-                Need an account?
-                <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-<!--Jessica edit 3/08/2016 -->
-<!-- Begin Health Guidelines Overlay Section-->
-<div class="container rates-overlay health-guidelines-overlay">
-    <div class="row wrapper">
-        <!-- Component Begin -->
-        <div class="view-close">
-            <svg class="icon icon-close brand-gray-1st view-close">
-                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
-            </svg>
-        </div>
-        <div class="view-header bg-gray-1st">
-            <h2>Health Class Guidelines</h2>
-
-            <p>Find your health class by reading the charts below.
-                Note: if your health information does not fall within these ranges, please select Fair.</p>
-        </div>
-
-        <div class="overlay-table-section bg-gray-1st">
-            <div class="view-nav view-nav--hidden bg-gray-1st text-center">
-                <ul>
-                    <li class="active" data-target="health-class-1">Excellent</li>
-                    <li data-target="health-class-2">Very Good</li>
-                    <li data-target="health-class-3">Good</li>
-                </ul>
-            </div>
-            <div class="view-content bg-white">
-                <div class="overlay-table-layout active">
-                    <div class="overlay-table">
-                        <div class="rate_table rate_table--variation rate_table--variation-1 clearfix">
-                            <div class="content col-xs-12 col-sm-12 col-lg-12">
-                                <div class="content_body--variation">
-                                    <div class="content_container">
-                                        <div class="window">
-                                            <table class="content_table table-striped">
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content_temp">
-                                    <table>
-                                        <tbody>
-                                        <tr>
-                                            <td>Blood Pressure</td>
-                                            <td>130/80 or less, no medication</td>
-                                            <td>140/85 or less, no medication</td>
-                                            <td>145/90 or less, with medication</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cholesterol</td>
-                                            <td>200 or less</td>
-                                            <td>220 or less</td>
-                                            <td>260 or less</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Substance Abuse</td>
-                                            <td>No history or treatment</td>
-                                            <td>No history or treatment</td>
-                                            <td>No history in past 10 years</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Family History</td>
-                                            <td>No death from cardiovascular disease or cancer in parents before age
-                                                60,
-                                                in siblings before age 65
-                                            </td>
-                                            <td>No death from cardiovascular disease or cancer in parents before age
-                                                60,
-                                                in siblings before age 65
-                                            </td>
-                                            <td>No death from cardiovascular disease or cancer in parents or
-                                                siblings
-                                                before age 60
-                                            </td>
-                                        </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row bg-gray-1st view-content">
-                <div class="disclaimer">Use of cholesterol medications is acceptable provided cholesterol levels have
-                    been within range for 12 months.
-                </div>
-                <p class="overlay-table-section__description">Your health class is determined by medical history,
-                    current health and underwriting considerations. People in better health are judged to have a lower
-                    risk during their coverage periods and will pay lower premiums.</p>
-            </div>
-        </div>
-        <!-- Component End -->
-
-        <div class="overlay-table-section bg-gray-1st">
-            <div class="row bg-gray-1st view-content">
-                <overlay-table-section__title>Height/Weight</overlay-table-section__title>
-                <p class="overlay-table-section__subtitle">If your weight is greater than listed, please contact us for
-                    a personalized quote</p>
-            </div>
-            <div class="view-nav view-nav--hidden bg-gray-1st text-center">
-                <ul>
-                    <li class="active" data-target="health-class-1">Excellent</li>
-                    <li data-target="health-class-2">Very Good</li>
-                    <li data-target="health-class-3">Good</li>
-                </ul>
-            </div>
-            <div class="view-content bg-white">
-                <div class="overlay-table-layout active">
-                    <div class="overlay-table">
-                        <div class="rate_table rate_table--variation rate_table--variation-2 clearfix">
-                            <div class="content col-xs-12 col-sm-12 col-lg-12">
-                                <div class="content_body--variation">
-                                    <div class="content_container">
-                                        <div class="window">
-                                            <table class="content_table table-striped">
-
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="content_temp">
-                                    <table>
-                                        <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td>M</td>
-                                            <td>F</td>
-                                            <td>M</td>
-                                            <td>F</td>
-                                            <td>M</td>
-                                            <td>F</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'9"</td>
-                                            <td>125</td>
-                                            <td>121</td>
-                                            <td>132</td>
-                                            <td>125</td>
-                                            <td>143</td>
-                                            <td>137</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'10"</td>
-                                            <td>130</td>
-                                            <td>125</td>
-                                            <td>136</td>
-                                            <td>130</td>
-                                            <td>148</td>
-                                            <td>141</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'11"</td>
-                                            <td>135</td>
-                                            <td>130</td>
-                                            <td>141</td>
-                                            <td>135</td>
-                                            <td>153</td>
-                                            <td>146</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4'12"</td>
-                                            <td>139</td>
-                                            <td>134</td>
-                                            <td>146</td>
-                                            <td>139</td>
-                                            <td>158</td>
-                                            <td>152</td>
-                                        </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row wrapper bg-gray-1st view-content">
-                <div class="disclaimer">Use of cholesterol medications is acceptable provided cholesterol levels have
-                    been within range for 12 months.
-                </div>
-                <p class="overlay-table-section__description">Your health class is determined by medical history,
-                    current health and underwriting considerations. People in better health are judged to have a lower
-                    risk during their coverage periods and will pay lower premiums.</p>
-            </div>
-        </div>
-        <!-- Component End -->
-
-
-    </div>
-</div>
-
 <div id="suggestionsbox" class="suggestionsbox ">
     <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
         <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">
@@ -2813,10 +2832,10 @@
 </div>
 
 
-<!-- Find an Office - Google Map -->
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
 <!-- build:js js/vendors.min.js -->
+<script src="js/_plugins/svg4everybody.ie8.js"></script>
 <script src="js/_lib/jquery-1.11.3.js"></script>
 <script src="js/_lib/bootstrap.js"></script>
 <script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.js"></script>
@@ -2869,7 +2888,16 @@
 <script src="js/feedback.js"></script>
 <script src="js/cookie.js"></script>
 <script src="js/ServicesAPI.js"></script>
+<script src="js/campaign-header.js"></script>
+<script src="js/campaign-card.js"></script>
+<script src="js/glossary.js"></script>
+<script src="js/toqjshashtable.js"></script>
+<script src="js/blogpost.js"></script>
+<script src="js/overlay.js"></script>
+<script src="js/aemfixes.js"></script>
 <!-- /build -->
+
+
 
 
 </body>

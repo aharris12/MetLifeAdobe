@@ -440,7 +440,7 @@
 .fax-directions__container .driving-directions-panel .adp-placemark{
     background-size: 30px 40px;
     display: inline-block;
-    background-image: url("../../../images/icon_locpin_blue.png");
+    background-image: url("../images/icon_locpin_blue.png");
     background-repeat: no-repeat;
     height: 42px;
     padding-left: 50px;

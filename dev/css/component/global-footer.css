@@ -229,7 +229,7 @@
     position: relative;
     top: -2px;
     top: 0;
-    background-image: url("../../images/country-flags-sprite.png");
+    background-image: url("../images/country-flags-sprite.png");
     background-position: 0 0;
 }
 
