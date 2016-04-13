@@ -92,6 +92,7 @@
     <link href="css/component/options-small.css" rel="stylesheet">
     <link href="css/component/overlay.css" rel="stylesheet">
     <link href="css/component/sitemap.css" rel="stylesheet">
+    <link href="css/component/share-chat.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
     <!-- /build -->
 
@@ -369,8 +370,39 @@
 
 <!--Breadcrumb -->
 <div class="container bg-gray-1st">
-    <div class="row share__chat">
+    <div class="row share__chat hidden-xs">
+        <div class="share__chat--social">
+                <a href="https://www.facebook.com/metlife" title="Facebook" target="_blank">
+                    <svg class="icon brand-1st">
+                        <use xlink:href="images/icons-metlife.svg#icon-facebook"></use>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/metlife" title="Twitter" target="_blank">
+                    <svg class="icon brand-1st">
+                        <use xlink:href="images/icons-metlife.svg#icon-twitter"></use>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/metlife" title="LinkedIn"
+                   target="_blank">
+                    <svg class="icon brand-1st">
+                        <use xlink:href="images/icons-metlife.svg#icon-linkedin"></use>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/user/Metlife" title="YouTube" target="_blank">
+                    <svg class="icon brand-1st">
+                        <use xlink:href="images/icons-metlife.svg#icon-youtube"></use>
+                    </svg>
+                </a>
+            <div class="arrow-left"></div>
+            </div>
 
+
+        <div class="share__chat--buttons">
+            <a class="btn-brand-1st js-share" data-target="share__chat--social" href="#">Share</a>
+
+            <a class="btn-brand-1st" href="#">click to
+                Chat</a>
+        </div>
     </div>
 </div>
 
@@ -1655,6 +1687,7 @@
 <script src="js/blogpost.js"></script>
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
+<script src="js/share-chat.js"></script>
 <!-- /build -->
 
 

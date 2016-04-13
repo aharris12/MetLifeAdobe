@@ -1,3 +1,76 @@
 .share__chat{
 	position: absolute;
+	right:0;
+	display: block;
+	padding-top: 15px;
+	height: 45px;
+	padding-right: 30px;
 }
+
+.share__chat a:hover, .share__chat a:active{
+	text-decoration: none;
+}
+
+.share__chat div{
+	display: inline-block;
+}
+
+.share__chat .share__chat--social{
+	left:155px;
+	position: relative;
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 39px;
+	font-weight: 600;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	min-width: 40px;
+	/*    max-width: 320px;*/
+	width: auto;
+	border: 0px solid transparent;
+	border-radius: 2px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+	padding: 0 20px;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+	opacity: 0;
+}
+.share__chat .share__chat--social.share__chat—social__open{
+	left:20px;
+	opacity:1;
+}
+
+.share__chat .share__chat--social a svg{
+	padding-top: 7px;
+}
+
+.arrow-left {
+	position: relative;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid #2c77c5;
+	top: 5px;
+	left: 4px;
+	z-index: 1;
+
+}
+
+.share__chat--buttons{
+	position: relative;
+	z-index: 2;
+}
+
+.share__chat .share__chat--buttons a:active,.share__chat .share__chat--buttons a:hover, .share__chat .share__chat--buttons a:visited, .share__chat .share__chat--buttons a:focus{
+	background-color: #2c77c5;
+	background: -webkit-linear-gradient(#347fcd, #2c77c5);
+	background: -o-linear-gradient(#347fcd, #2c77c5);
+	background: -moz-linear-gradient(#347fcd, #2c77c5);
+	background: linear-gradient(#347fcd, #2c77c5);
+}
+

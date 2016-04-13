@@ -995,6 +995,12 @@ $('.accordion-selector').change(function(){
     $(".accordion").find(".expandAll").show();
 })
 
+$(".js-faqSelect").on("change", function(){
+    var faqItem = $(".js-faqSelect").val();
+    $(".accordion").addClass("hidden");
+    $(("[data-faq='"+faqItem+ "']")).removeClass("hidden");
+});
+
 
 $(window).load(function () {
     formatCTABoxes();
@@ -11265,4 +11271,10 @@ $(".contact-us__select").on("change", function(){
 	if( $(".contact-us__results__wrapper").hasClass(whichresults)){
 		$("." + whichresults).removeClass("hidden");
 	}
+});
+$('.js-share').click(function(e){
+    e.preventDefault();
+    $('.' + $(this).attr('data-target')).toggleClass("share__chat—social__open");
+   // $(".arrow-left").toggleClass("hidden");
+
 });

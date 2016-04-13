@@ -89,6 +89,7 @@ module.exports = function (grunt) {
                     'dev/css/component/options-small.css',
                     'dev/css/component/overlay.css',
                     'dev/css/component/sitemap.css',
+                    'dev/css/component/share-chat.css',
                     'dev/css/theme/ie9select.css'
                 ],
                 dest: 'dist/css/metlife.css'
@@ -107,7 +108,7 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/jquery.cookie.js',
                     'dev/js/_plugins/jquery.bootpag.min.js',
                     'dev/js/_plugins/oo_engine.min.js',
-                    'dev/js/_plugins/oo_conf.js',
+                    'dev/js/_plugins/oo_conf.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
@@ -157,7 +158,8 @@ module.exports = function (grunt) {
                     'dev/js/toqjshashtable.js',
                     'dev/js/blogpost.js',
                     'dev/js/overlay.js',
-                    'dev/js/aemfixes.js'
+                    'dev/js/aemfixes.js',
+                    'dev/js/share-chat.js'
                 ],
                 dest: 'dist/js/metlife.js'
             }
@@ -263,6 +265,7 @@ module.exports = function (grunt) {
                         'dev/css/component/options-small.css',
                         'dev/css/component/overlay.css',
                         'dev/css/component/sitemap.css',
+                        'dev/css/component/share-chat.css',
                         'dev/css/theme/ie9select.css'
                     ]
                 }

@@ -65,3 +65,9 @@ $('.accordion-selector').change(function(){
     $(".accordion").find(".collapseAll").hide();
     $(".accordion").find(".expandAll").show();
 })
+
+$(".js-faqSelect").on("change", function(){
+    var faqItem = $(".js-faqSelect").val();
+    $(".accordion").addClass("hidden");
+    $(("[data-faq='"+faqItem+ "']")).removeClass("hidden");
+});
