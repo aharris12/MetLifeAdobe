@@ -68,14 +68,23 @@
     .global-header__left--minimized {
         padding:0 0 0 30px;
     }
+    .global-header__left--minimized .megamenu-trigger{
+        height:50px;
+    }
+    .global-header__left--minimized .search-trigger{
+        height:50px;
+    }
+    .global-header__left--minimized .home-trigger{
+        height:50px;
+    }
 }
 
         
 /* Mega Menu Trigger Animation */
 .megamenu-trigger {
     width: 41px;
-    height: 100%;
     margin-left: 0;
+    height: 50px;
 }
 .megamenu-trigger__label {
     display:none;
@@ -133,6 +142,7 @@
         width: auto;
         padding: 25px 0;
         margin-right:30px;
+        height: 60px;
     }
     .megamenu-trigger__icon {
         left: 40px;
@@ -150,7 +160,12 @@
 .home-trigger {
     display:none;
     color:#fff;
+    cursor: pointer;
 }
+.home-trigger:hover span{
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .home-trigger__label {
     display:none;
     text-decoration: none;
@@ -183,7 +198,7 @@
     .home-trigger{
         position:relative;
         display: block;
-        height:100%;
+        height:60px;
         width: auto;
         margin-right: 30px;
         margin-left: 19px;
@@ -227,7 +242,7 @@
 .search-trigger {
     position:relative;
     width:41px;
-    height:100%;
+    height:50px;
     color:#fff;
 }
 .search-trigger--open {
@@ -293,6 +308,7 @@
         box-sizing: border-box;
         margin:auto;
         padding: 15px 0;
+        height:60px;
     }
     .search-trigger__icon {
         top: 15px;
@@ -334,9 +350,17 @@
     padding-right: 15px;
     padding-top: 15px;
     color:#fff;
+    cursor: pointer;
+}
+.login-trigger:hover span{
+    color: rgba(255, 255, 255, 0.6);
 }
 .contact-trigger {
     display:none;
+    cursor: pointer;
+}
+.contact-trigger:hover a{
+    color: rgba(255, 255, 255, 0.6);
 }
 .login-trigger__label,
 .contact-trigger__label {
