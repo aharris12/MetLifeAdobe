@@ -90,7 +90,20 @@ module.exports = function (grunt) {
                     'dev/css/component/overlay.css',
                     'dev/css/component/sitemap.css',
                     'dev/css/component/share-chat.css',
+                    'dev/css/component/toolkit-login.css',
+                    'dev/css/component/toolkit-searchbox.css',
+                    'dev/css/component/toolkit-page-title.css',
+                    'dev/css/component/toolkit-contextual-links.css',
+                    'dev/css/component/toolkit-idea-submit.css',
+                    'dev/css/component/toolkit-column-layouts.css',
+                    'dev/css/component/toolkit-download-farm.css',
+                    'dev/css/component/toolkit-element-title.css',
+                    'dev/css/component/toolkit-search-page.css',
+                    'dev/css/component/toolkit-contentblock.css',
+                    'dev/css/component/toolkit-divider.css',
                     'dev/css/theme/ie9select.css'
+
+
                 ],
                 dest: 'dist/css/metlife.css'
             },
@@ -159,7 +172,12 @@ module.exports = function (grunt) {
                     'dev/js/blogpost.js',
                     'dev/js/overlay.js',
                     'dev/js/aemfixes.js',
+                    'dev/js/toolkit-contextual-links.js',
+                    'dev/js/toolkit-search-page.js',
+                    'dev/js/toolkit-column.js',
+                    'dev/js/toolkit-page-title-banner.js',
                     'dev/js/share-chat.js'
+
                 ],
                 dest: 'dist/js/metlife.js'
             }
@@ -266,7 +284,19 @@ module.exports = function (grunt) {
                         'dev/css/component/overlay.css',
                         'dev/css/component/sitemap.css',
                         'dev/css/component/share-chat.css',
+                        'dev/css/component/toolkit-login.css',
+                        'dev/css/component/toolkit-searchbox.css',
+                        'dev/css/component/toolkit-page-title.css',
+                        'dev/css/component/toolkit-contextual-links.css',
+                        'dev/css/component/toolkit-idea-submit.css',
+                        'dev/css/component/toolkit-column-layouts.css',
+                        'dev/css/component/toolkit-download-farm.css',
+                        'dev/css/component/toolkit-element-title.css',
+                        'dev/css/component/toolkit-search-page.css',
+                        'dev/css/component/toolkit-contentblock.css',
+                        'dev/css/component/toolkit-divider.css',
                         'dev/css/theme/ie9select.css'
+
                     ]
                 }
             }

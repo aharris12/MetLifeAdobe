@@ -1,0 +1,195 @@
+.search-page-search-bar{
+	text-align: center;
+}
+.search-page-search-bar div input:first-child{
+	width:34%;
+}
+
+.search-page-pagination{
+	border-bottom: 1px solid #666;
+}
+.search-page-pagination span{
+	font-weight: 600;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+.search-page-pagination p{
+	display: inline-block;
+	margin-bottom: 10px;
+	padding-left: 35px;
+}
+.search-page-pagination p:last-child{
+	display: none;
+}
+.search-page-results-side{
+	width: 20%;
+	padding: 25px;
+}
+.search-page-results-side a {
+	padding-left: 5px;
+	padding-bottom: 10px;
+}
+.search-page-results-side p{
+	margin-top: 5px;
+	padding-left: 5px;
+}
+
+.search-page-results-side-filters{
+	padding-top: 20px;
+}
+.search-page-results-side .search-page-results-side-filters a{
+	color: #666;
+	text-decoration: none;
+}
+
+.search-page-results-side .search-page-results-side-filters .form-check-grp{
+	display: none;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+.search-page-results-side .search-page-results-side-filters .form-check-grp label {
+	display: block;
+	position: relative;
+	line-height: 15px;
+	height: 30px;
+}
+
+.search-page-results-body{
+	float: right;
+	width:77%;
+	height: 1000px;
+}
+.search-page-results-body .search-page-results-body-content-container{
+	position: relative;
+	height: 160px;
+}
+.search-page-results-body .search-page-results-body-content-container .search-page-results-body-content{
+	position: absolute;
+	width: 100%;
+	height: 160px;
+}
+
+.search-page-results-body .search-page-results-body-content-container .search-page-results-body-content-hover{
+	position: absolute;
+	width: 100%;
+	height: 160px;
+}
+.search-page-results-body .search-page-results-body-content-container .search-page-results-body-content-hover div{
+	float: right;
+	margin-right: 25px;
+	margin-top: 50px;
+}
+.search-page-results-body .search-page-results-body-content-container .search-page-results-body-content-hover img:first-of-type{
+	margin-right: 5px;
+}
+.search-page-results-body .search-page-results-body-content{
+	padding: 40px 20px;
+	border-bottom: 1px solid #666;
+}
+.search-page-results-body .search-page-results-body-content h4{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #2377C5;
+}
+.search-page-results-body .search-page-results-body-content p{
+	color: #333;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+.search-page-results-body .search-page-results-body-content p:last-child{
+	opacity: .8;
+}
+
+.hover-state{
+	opacity: .7;
+	 background-color: #efefef;;
+}
+.flip-image{
+	transform: rotate(180deg);
+}
+.image-with-text__image{
+	position: absolute;
+	margin-top: -20px;
+}
+.image-with-text__image img{
+	box-shadow: 1px 3px 5px 0px #CCC;
+}
+.image-with-text__text{
+	position: absolute;
+	right: 15%;
+	width: 50%;
+}
+
+@media screen and (min-width: 1024px) {
+	.image-with-text__text{
+		right: 20%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.image-with-text__image{
+		position: relative;
+		display: block;
+	}
+	.image-with-text__image img{
+		width: 50%;
+	}
+	.image-with-text__image--height{
+		height:350px;
+	}
+	.image-with-text__text{
+		width: 100%;
+		position: relative;
+		display: block;
+		right: 2%;
+		margin-top: 15px;
+	}
+	.search-page-pagination p{
+		width: 49%;
+	}
+	.search-page-pagination p:last-child{
+		display: inline-block;
+	}
+	.search-page-pagination p:last-child a:hover{
+		text-decoration: none;
+	}
+	.search-page-pagination p:last-child a:focus{
+		text-decoration: none;
+	}
+	.search-page-results-side{
+		display: none;
+		border: 1px solid #ccc;
+		width:100%;
+	}
+	.search-page-results-body{
+		width:100%;
+	}
+	.search-page-results-body .search-page-results-body-content-container{
+		min-height: 160px;
+	}
+	.search-page-results-body .search-page-results-body-content-container .search-page-results-body-content-hover div{
+		float: right;
+		margin-right: 0px;
+		margin-top: 15px;
+	}
+	.search-page-results-body .search-page-results-body-content-container .image-with-text__image--height{
+		height: 350px;
+	}
+	.search-page-results-body .image-with-text__image--height{
+		height: 350px;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 767px) {
+	.image-with-text__image img{
+		width: 50%;
+
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.image-with-text__image img{
+		width: 100%;
+	}
+}

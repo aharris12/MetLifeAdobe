@@ -45,7 +45,7 @@
 .contact-us__header--large {
     font-size: 32px;
     margin-bottom: 10px;
-            font-weight:400;
+    font-weight:400;
 }
 .contact-us__contact-form__sub-header {
     font-weight: 400;
@@ -134,6 +134,10 @@ ul.bullet-list {
 .wrapper__contact-us__bottom-box__links:last-child {
     margin-bottom: 20px;
 }
+.contact-container__contact-us-page .contactOtherDetails{
+    display:none;
+}
+
 
 @media screen and (max-width: 767px) {
 
@@ -207,7 +211,7 @@ ul.bullet-list {
 
 @media screen and (min-width: 768px) {
     .contact-us {
-/*        padding: 50px 0;*/
+        /*        padding: 50px 0;*/
     }
 
     .wrapper.contact-us__results__wrapper {
@@ -227,8 +231,8 @@ ul.bullet-list {
     }
 
     .wrapper.wrapper__contact-us__bottom-box {
-    padding-top: 30px;
-    border-top: 1px solid #ddd;
+        padding-top: 30px;
+        border-top: 1px solid #ddd;
     }
 
     .wrapper__contact-us__bottom-box__links {

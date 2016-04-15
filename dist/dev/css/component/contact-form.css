@@ -20,6 +20,8 @@
     background-color:#fff;
     font-size:0.85em;
     min-height: 100%;
+    position: relative;
+    padding-bottom: 100px;
 }
 .contact-close {
     top:10px;
@@ -134,14 +136,14 @@
 }
 
 .errorSpanOpen:after, .errorSpanOpen:before {
-	left: 100%;
-	top: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
 }
 .errorSpanOpen:after {
     border-color: rgba(187, 0, 0, 0);
@@ -180,7 +182,7 @@
 .form-check-grp label input {
     visibility: hidden;
     position: absolute;
-}     
+}
 .form-check-grp label input + span {
     padding-left: 25px;
 }
@@ -256,6 +258,10 @@
     right: 60px;
 
 }
+
+.contact-container--form-card .contactOtherDetails{
+    display:none;
+}
 .contact-container--form-card .contactOtherDetails {
     bottom: 0;
     right: auto;
@@ -273,16 +279,16 @@
     margin-left:5px;
 }
 .contact-container--form-card .icon {
-/*
-    top: -10px;
-    right: -10px;
-    width: 16px;
-    height: 16px;
-*/
+    /*
+		top: -10px;
+		right: -10px;
+		width: 16px;
+		height: 16px;
+	*/
     top:12px;
     cursor: pointer;
 }
-    
+
 .contactSideCall {
     color: #2377c5;
     font-weight: 600;
@@ -299,7 +305,7 @@
     min-height: 100%;
     box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
     padding-bottom: 100px;
-    
+
 }
 .otherContactOptions a {
     border-bottom: 1px solid #aed1f2;
@@ -328,8 +334,8 @@
 }
 
 .form-row [class*="col-"] {
-    padding-right:0; 
-    padding-left:0; 
+    padding-right:0;
+    padding-left:0;
 }
 .contact-us__contact-form [class*="col-"] .form-icon-wrapper svg  {
     top:12px;
@@ -363,22 +369,22 @@
 }
 @media screen and (min-width: 768px) {
     .form-row [class*="col-sm-6"]:nth-of-type(odd) {
-       padding-right:5px; 
+        padding-right:5px;
     }
     .form-row [class*="col-sm-6"]:nth-of-type(even) {
-       padding-left:5px; 
+        padding-left:5px;
     }
     .form-row [class*="col-sm-2"]:nth-of-type(1) {
-       padding-right:5px; 
+        padding-right:5px;
     }
     .form-row [class*="col-sm-2"]:nth-of-type(2) {
         padding-right:5px;
     }
     .form-row [class*="col-sm-2"]:nth-of-type(3) {
-       padding-right:5px;
+        padding-right:5px;
     }
     .form-row [class*="col-sm-8"] {
-       padding-left:5px;
+        padding-left:5px;
     }
     .form-row {
         margin:5px 0;

@@ -1,0 +1,43 @@
+.search-box__container{
+    padding: 20px 10px;
+}
+
+.search-box__container form{
+    position: relative;
+}
+
+.search-box__container p {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 200;
+}
+
+.search-box__container__img
+{
+    fill: #0e5dae;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .search-box__container{
+        padding: 40px 80px;
+    }
+    .search-box__container{
+        position: relative;
+        top: -80px;
+        margin-bottom: -80px;
+    }
+    .varation-2{
+        top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+}

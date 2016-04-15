@@ -359,6 +359,11 @@
     display:none;
     cursor: pointer;
 }
+.login-arrow{
+    width: 13px;
+    height: 13px;
+    top: 2px;
+}
 .contact-trigger:hover a{
     color: rgba(255, 255, 255, 0.6);
 }

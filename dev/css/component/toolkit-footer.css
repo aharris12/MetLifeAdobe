@@ -1,0 +1,31 @@
+.toolkit__footer{
+
+}
+
+.basic-footer {
+/*    padding: 20px;*/
+   /* padding-top: 30px;*/
+}
+
+.login-footer{
+/*    padding-top: 30px;*/
+}
+
+@media screen and (min-width: 768px) {
+    .login-footer {
+        padding-top: 30px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .basic-footer {
+        padding-top: 25px;
+    }
+}
+@media(max-width: 767px) {
+    .basic-footer {
+        padding-top: 10px;
+    }
+}
+/*@media (min-width: 1025px) {*/
+    /**/
+/*}*/
