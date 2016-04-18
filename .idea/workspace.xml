@@ -2,167 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/blog.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/fao.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/forms.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/news.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/search.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/404.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/accordion.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/article-list.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/article.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-footer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/carousel--hero.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/carousel--tabs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contact-form.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contact.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/content-header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/contextual-links.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-box.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/disclaimer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-load-more.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-scroll-to.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/divider-snoopy.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/email-unsub.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/fax.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/feedback.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/form-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/get-quote-find-office.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/global-footer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/global-header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/glossary.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/homepage-nav.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/hp-contextual-links.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/life-insurance-quote.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/login-popout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/media-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/media-contact.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/microsite-header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/microsite-page-footer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/office-search.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/optional-image.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/options-small.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/overlay.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/privacy-policy-index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/privacy-policy-section.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-comparison-chart.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-tile.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/promo-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/quote-result-card.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/quote-tool.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/search-results.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/search-suggestions-box.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/section-header.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/sitemap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/subnavigation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/subnavigationwithgoback.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/table-variations.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/video-text.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/component/view-all-rates.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/bootstrap-metlife.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/button.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/font-metlife.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/form-metlife.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/icon-metlife.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/ie9select.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/layout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/pagination.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/theme/utility.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/ServicesAPI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery-1.11.3.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery-1.11.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_lib/jquery.mobile.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/jquery.bootpag.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/jquery.ddslick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.bg.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.extra.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.extra.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.fadein.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.fadein.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.picture.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.picture.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.print.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.print.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.script.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.spinner.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.spinner.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.video.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.video.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/jquery.lazyloadxt.widget.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/lazyloadxt/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/svg4everybody.ie8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe-ORIGINAL.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/touchswipe/jquery.touchSwipe.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/_plugins/typeahead.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/accordion.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/campaign-card.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/campaign-header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/carousel--hero.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/carousel--tabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/cta-box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/ctc_tcpa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/divider-load-more.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/divider-scroll-to.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/fao.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form-card.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form-library.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/form.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/get-quote-find-office.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/global-footer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/global-header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/glossary.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/homepage-nav.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/login-overlay.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/markerwithlabel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/media-contact.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/microsite-header.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/microsite-page-footer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/overlay.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/privacy-policy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-card.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-comparison-chart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/product-tile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-result-card.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-results.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/quote-tool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/result-pages.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/search-box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/sitemap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/subnavigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/subnavigationgoback.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/suggestions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/svgxuse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/table-variations.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/toqdata.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/toqjshashtable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/utility.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/variable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/view-all-rates.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/js/xmlhttp.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/toolkit-landingpage.html" afterPath="$PROJECT_DIR$/dev/toolkit-landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-post.html" afterPath="$PROJECT_DIR$/dist/blog-post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__default.html" afterPath="$PROJECT_DIR$/dist/contact-us__default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt-error.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt-error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newroom-noresults.html" afterPath="$PROJECT_DIR$/dist/newroom-noresults.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/quote-results.html" afterPath="$PROJECT_DIR$/dist/quote-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-no-results.html" afterPath="$PROJECT_DIR$/dist/search-no-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-assets.html" afterPath="$PROJECT_DIR$/dist/toolkit-assets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-landingpage.html" afterPath="$PROJECT_DIR$/dist/toolkit-landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -183,75 +88,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="blog.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/blog.json">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.827586">
-              <caret line="1358" column="44" selection-start-line="1358" selection-start-column="44" selection-end-line="1358" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/forms.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog-home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/blog-home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.830189">
-              <caret line="401" column="21" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.49263874">
+              <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog-post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/blog-post.html">
+      <file leaf-file-name="toolkit-landingpage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/toolkit-landingpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615">
-              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog-category.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/blog-category.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.301887">
-              <caret line="350" column="57" selection-start-line="350" selection-start-column="47" selection-end-line="350" selection-end-column="57" />
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="147" column="100" selection-start-line="147" selection-start-column="100" selection-end-line="147" selection-end-column="100" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#1;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#2;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#3;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#a#4;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -311,20 +191,20 @@
         <option value="$PROJECT_DIR$/dev/css/component/contact.css" />
         <option value="$PROJECT_DIR$/dev/css/component/contact-form.css" />
         <option value="$PROJECT_DIR$/dev/toolkit-assets.html" />
-        <option value="$PROJECT_DIR$/dev/toolkit-landingpage.html" />
         <option value="$PROJECT_DIR$/dev/toolkit-product-icon-set.html" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
         <option value="$PROJECT_DIR$/dist/toolkit-login.html" />
         <option value="$PROJECT_DIR$/dev/toolkit-login.html" />
-        <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/css/component/toolkit-divider.css" />
         <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/opt-out.html" />
         <option value="$PROJECT_DIR$/dev/blog-post.html" />
-        <option value="$PROJECT_DIR$/dev/blog-category.html" />
         <option value="$PROJECT_DIR$/dev/blog-home.html" />
         <option value="$PROJECT_DIR$/dev/blog.json" />
+        <option value="$PROJECT_DIR$/dev/blog-category.html" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
+        <option value="$PROJECT_DIR$/dev/homepage.html" />
+        <option value="$PROJECT_DIR$/dev/toolkit-landingpage.html" />
       </list>
     </option>
   </component>
@@ -509,10 +389,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\images\toolkit" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.blog-post.html">
-    <configuration default="false" name="generic-product-details-with-cta.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/generic-product-details-with-cta.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.homepage.html">
     <configuration default="false" name="generic-product-details-without-cta.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/generic-product-details-without-cta.html">
       <method />
     </configuration>
@@ -523,6 +400,9 @@
       <method />
     </configuration>
     <configuration default="false" name="blog-post.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/blog-post.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -574,19 +454,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-without-cta.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-without-cta.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-without-cta.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-post.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-category.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-without-cta.html" />
       </list>
     </recent_temporary>
   </component>
@@ -739,15 +619,21 @@
       <option name="project" value="LOCAL" />
       <updated>1460744525085</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Blog Service">
+      <created>1460744644468</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1460744644468</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -898,6 +784,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -905,6 +792,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,6 +800,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -973,6 +862,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="51.987804">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -980,6 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,13 +975,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="24" column="9" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/toolkit-landingpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.945455">
-          <caret line="510" column="81" selection-start-line="510" selection-start-column="74" selection-end-line="510" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,27 +983,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35494506">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66483516">
-          <caret line="2864" column="0" selection-start-line="2864" selection-start-column="0" selection-end-line="2914" selection-end-column="15" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,17 +1056,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/blog-post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/blog-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.830189">
+        <state vertical-scroll-proportion="0.6500566">
           <caret line="401" column="21" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="21" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1215,32 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/blog-category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.301887">
-          <caret line="350" column="57" selection-start-line="350" selection-start-column="47" selection-end-line="350" selection-end-column="57" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/blog.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.346153">
           <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.827586">
-          <caret line="1358" column="44" selection-start-line="1358" selection-start-column="44" selection-end-line="1358" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1250,6 +1085,80 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/blog-post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="502" column="44" selection-start-line="502" selection-start-column="37" selection-end-line="502" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/blog-category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37236533">
+          <caret line="431" column="51" selection-start-line="431" selection-start-column="51" selection-end-line="431" selection-end-column="51" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3814774">
+          <caret line="2258" column="33" selection-start-line="2258" selection-start-column="28" selection-end-line="2258" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/toolkit-landingpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="147" column="100" selection-start-line="147" selection-start-column="100" selection-end-line="147" selection-end-column="100" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#1;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#2;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#3;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#4;n#div#0;n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49263874">
+          <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

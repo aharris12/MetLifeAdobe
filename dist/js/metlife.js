@@ -9440,7 +9440,7 @@ var ServicesAPI = {
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
 
-		var siteSearchResults = $.getJSON("search.json", function(json) {
+		/*var siteSearchResults = $.getJSON("search.json", function(json) {
 		 siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
 		 $('.form-item__display').removeClass('hidden');
@@ -9463,46 +9463,46 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 });
+		 });*/
 		/************LOCAL Site Search SERVICE***************/
 
 
 		/************LIVE Site Search SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
 			dataType:'json',
 			type: 'GET',
 			success: function(data) {
-				var siteSearchResults = data.response.docs;
+				var siteSearchResults = json.response.docs;
 				if (siteSearchResults.length != 0) {
-					$('.display_container').removeClass('hidden');
-					$(".page-count").removeClass('hidden');
+					$('.form-item__display').removeClass('hidden');
+					// $(".page-count").removeClass('hidden');
 					$(".no-results").addClass('hidden');
 					//results_content is the default component for listing out general results
 					resultsListHTML += "<div class=\"results_content\">";
 					for (var i = 0; i < siteSearchResults.length; i++) {
 						count++;
-						resultsListHTML += "<div class=\"article\">";
-						resultsListHTML += "<p><a href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a></p>";
+						resultsListHTML += "<div class=\"list__item--no-border\">";
+						resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
 						resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
 						resultsListHTML += "</div>";
 					}
 					resultsListHTML += "</div>";
 				} else {
-					$('.display_container').removeClass('hidden');
+					$('.form-item__display').removeClass('hidden');
 					$(".page-count").addClass('hidden');
 					$(".no-results").removeClass('hidden');
 				}
-				$(resultsListHTML).insertBefore($(".results_pagination"));
+				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 				ServicesAPI.createPagination(count);
 			},
 			error: function(e) {
 				ServicesAPI.showSorryUnableToLocateMessage();
 			},
 			timeout:30000
-		});*/
+		});
 		/************LIVE SERVICE***************/
 	},
 	redirectToSearchResultsPage: function(input){
