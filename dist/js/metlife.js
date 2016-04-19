@@ -267,7 +267,6 @@ $('.megamenu__sub-items--action').each(function(){
 //});
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        console.log()
         if($('.' + $(this).attr('data-target') === 'loginOpen')){
             $(".loginOpen").toggle()
         }else {
@@ -1040,12 +1039,17 @@ var valid = true;
 var zipcode = 0;
 var isNumber = false;
 
+$(".find-office__zip-city-state").on("keyup", function(){
+    $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
+    $('.error-span').hide();
+});
+
 function validateFindOffice() {
     //reset
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
     $('.error-span').hide();
     valid=true;
-    
+
     zipcode = $('.find-office__zip-city-state').val();
     isNumber =  /^\d+$/.test(zipcode);
     if( zipcode.length == 0 || (isNumber && zipcode.length != 5)) {
@@ -1064,9 +1068,6 @@ function validateFindOffice() {
     return valid;
 }
 
-$('.find-office__dental, .find-office__vision').change(function(){
-    validateFindOffice();
-});
 
 $('.btn-group .btn').click(function(){
     //reset
@@ -1080,25 +1081,34 @@ $('.btn-group .btn').click(function(){
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
         if (selectedBtnGroupOption == "dental") {
-            $('.find-office__zip-city-state-container').addClass('full-width');
-            $('.find-office__dental-container').css('display','block');
+            console.log("dental")
+            $(".find-office__zip-city-state").on("focus", function(){
+                $('.find-office__zip-city-state-container').addClass('full-width');
+                $('.find-office__dental-container').css('display','block');
+                $('.find-office__vision-container').css('display','none');
+            });
+
         } else if (selectedBtnGroupOption == "vision") {
-            $('.find-office__zip-city-state-container').addClass('full-width');
-            $('.find-office__vision-container').css('display','block');
+            console.log("vision")
+            $(".find-office__zip-city-state").on("focus", function(){
+                $('.find-office__zip-city-state-container').addClass('full-width');
+                $('.find-office__vision-container').css('display','block');
+                $('.find-office__dental-container').css('display','none');
+            });
+
         }
     }
 });
 
 $('.find-office__submit').click(function(){
     event.preventDefault();
-    selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');    
+    selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
     if (validateFindOffice()) {
         var urlStr = "";
         if (selectedBtnGroupOption == "office") {
             var x = window.location.href;
             urlStr = window.location.href + x.substring(0, x.lastIndexOf("/")) + "?zip=" + zipcode;
-            urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
-            sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());
+            urlStr = "https://www.metlife.com/products/findanoffice/index.html" + "?zip=" + zipcode;
         } else if (selectedBtnGroupOption == "dental") {
             if (!($('.find-office__dental').val().trim() == 'TRICARE')) {
                 urlStr = "https://metlocator.metlife.com/metlocator/execute/Search?searchType=findDentistMetLife&networkID=2&zip=" + zipcode + "&qsType=" + $('.find-office__dental').val();
@@ -1114,6 +1124,22 @@ $('.find-office__submit').click(function(){
         }
         window.location.href = urlStr;
     }
+});
+
+$('[data-target="vision_overlay"]').click(function(e){
+    e.preventDefault();
+    $(".vision_overlay").removeClass("hidden")
+});
+
+$('[data-target="dental_overlay"]').click(function(e){
+    e.preventDefault();
+    $(".dental_overlay").removeClass("hidden")
+});
+
+$(".vision_dental_overlay_close").click(function(e){
+    e.preventDefault();
+    $(".dental_overlay").addClass("hidden");
+    $(".vision_overlay").addClass("hidden");
 });
 /*!
  * @copyright Copyright (c) 2015 IcoMoon.io
@@ -5549,69 +5575,68 @@ $("#searchInPage").keyup(function(e) {
 var QuoteToolAPI = {} || QuoteToolAPI;
 
 QuoteToolAPI = {
-    selectedInsurance: null,
-    selectedState: null,
-    quoteToolType: null,
-    gawliStates: "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-    gawliOnlineAvailableStates: "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-    sitStates: "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-    sitOnlineAvailableStates: "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
-    mltApprovedStates: "AL,AK,AZ,AR,CA,CO,CT,DC,DE,FL,GA,HI,IA,ID,IL,IN,KS,KY,LA,MA,MD,MI,MN,MO,MS,MT,NC,ND,NE,NH,NJ,NM,NV,NY,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VA,VT,WA,WI,WV,WY",
-    sitCompatibleAge: null,
-    quoteOption: 'online',
+    selectedInsurance : null,
+    selectedState : null,
+    quoteToolType : null,
+    gawliStates : "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
+    gawliOnlineAvailableStates : "AL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
+    sitStates : "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
+    sitOnlineAvailableStates : "AL,AK,AZ,AR,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,NE,NV,NH,NJ,NM,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WV,WI,WY",
+    mltApprovedStates : "AL,AK,AZ,AR,CA,CO,CT,DC,DE,FL,GA,HI,IA,ID,IL,IN,KS,KY,LA,MA,MD,MI,MN,MO,MS,MT,NC,ND,NE,NH,NJ,NM,NV,NY,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VA,VT,WA,WI,WV,WY",
+    sitCompatibleAge : null,
+    quoteOption : 'online',
     quoteToolStarted: false,
     gawliAgeError: false,
-    coverage: {
-        "GAWLIAmounts": ["$2,500", "$5,000", "$7,500", "$10,000", "$15,000", "$20,000", "$25,000"],
-        "GAWLIValues": ["2500", "5000", "7500", "10000", "15000", "20000", "25000"],
+    coverage : {
+        "GAWLIAmounts" : ["$2,500","$5,000","$7,500","$10,000","$15,000","$20,000","$25,000"],
+        "GAWLIValues" : ["2500","5000","7500","10000","15000","20000","25000"],
         /*	"GLTAmounts" : ["$750,000","$1,000,000","$1,500,000","$2,000,000","$2,500,000","$3,000,000","$3,500,000","$4,000,000","$4,500,000","$5,000,000"],
          "GLTValues" : ["750000","1000000","1500000","2000000","2500000","3000000","3500000","4000000","4500000","5000000"],
          "MLTAmounts" : ["$100,000","$150,000","$200,000","$250,000","$300,000","$400,000","$500,000"],
          "MLTValues" : ["100000","150000","200000","250000","300000","400000","500000"],
          "SITAmounts" : ["$10,000","$20,000","$30,000","$50,000"],
          "SITValues" : ["10000","20000","30000","50000"],*/
-        "TERMAmounts": ["$10,000", "$20,000", "$30,000", "$50,000", "$100,000", "$150,000", "$200,000", "$250,000", "$300,000", "$400,000", "$500,000", "$750,000", "$1,000,000", "$1,500,000", "$2,000,000", "$2,500,000", "$3,000,000", "$3,500,000", "$4,000,000", "$4,500,000", "$5,000,000"],
-        "TERMValues": ["10000", "20000", "30000", "50000", "100000", "150000", "200000", "250000", "300000", "400000", "500000", "750000", "1000000", "1500000", "2000000", "2500000", "3000000", "3500000", "4000000", "4500000", "5000000"],
-        "MLTGLTAmounts": ["$100,000", "$150,000", "$200,000", "$250,000", "$300,000", "$400,000", "$500,000", "$750,000", "$1,000,000", "$1,500,000", "$2,000,000", "$2,500,000", "$3,000,000", "$3,500,000", "$4,000,000", "$4,500,000", "$5,000,000"],
-        "MLTGLTValues": ["100000", "150000", "200000", "250000", "300000", "400000", "500000", "750000", "1000000", "1500000", "2000000", "2500000", "3000000", "3500000", "4000000", "4500000", "5000000"]
+        "TERMAmounts" : ["$10,000","$20,000","$30,000","$50,000","$100,000","$150,000","$200,000","$250,000","$300,000","$400,000","$500,000","$750,000","$1,000,000","$1,500,000","$2,000,000","$2,500,000","$3,000,000","$3,500,000","$4,000,000","$4,500,000","$5,000,000"],
+        "TERMValues" : ["10000","20000","30000","50000","100000","150000","200000","250000","300000","400000","500000","750000","1000000","1500000","2000000","2500000","3000000","3500000","4000000","4500000","5000000"],
+        "MLTGLTAmounts" : ["$100,000","$150,000","$200,000","$250,000","$300,000","$400,000","$500,000","$750,000","$1,000,000","$1,500,000","$2,000,000","$2,500,000","$3,000,000","$3,500,000","$4,000,000","$4,500,000","$5,000,000"],
+        "MLTGLTValues" : ["100000","150000","200000","250000","300000","400000","500000","750000","1000000","1500000","2000000","2500000","3000000","3500000","4000000","4500000","5000000"]
     },
-    gawliAgeCriteria: {
-        "AR": [45, 70],
-        "MN": [45, 65],
-        "MO": [45, 75],
-        "NE": [45, 75],
-        "NJ": [45, 75],
-        "PA": [56, 70]
+    gawliAgeCriteria : {
+        "AR" : [45,70],
+        "MN" : [45,65],
+        "MO" : [45,75],
+        "NE" : [45,75],
+        "NJ" : [45,75],
+        "PA" : [56,70]
     },
-    termLength: {
-        51: [10, 15, 20, 30],
-        66: [10, 15, 20],
-        71: [10, 15],
-        76: [10]
+    termLength : {
+        51 : [10,15,20,30],
+        66 : [10,15,20],
+        71 : [10,15],
+        76 : [10]
     },
-    termLength_NY: {
-        66: [10, 15, 20],
-        76: [10]
+    termLength_NY : {
+        66 : [10,15,20],
+        76 : [10]
     },
-    termLength_WA: {
-        51: [10, 15, 20, 30],
-        66: [10, 15, 20],
-        71: [10, 15]
+    termLength_WA : {
+        51 : [10,15,20,30],
+        66 : [10,15,20],
+        71 : [10,15]
     }
 };
 
-
-$(document).ready(function () {
+$(document).ready(function(){
     QuoteToolAPI.loadEventListeners();
-    if ($("#submitBtn[data-page='quotes']").length = !0 && $("#recalculateQuote").attr('data-flow') != "GAWLI") {
+    if($("#submitBtn[data-page='quotes']").length = !0 && $("#recalculateQuote").attr('data-flow') != "GAWLI"){
         QuoteToolAPI.quoteToolType = 'SIT';
     }
 });
 
-QuoteToolAPI.loadEventListeners = function () {
-    $("#insurance-type").change(function () {
+QuoteToolAPI.loadEventListeners = function(){
+    $("#insurance-type").change(function(){
         QuoteToolAPI.selectedInsurance = $(this).val();
-        if (QuoteToolAPI.selectedInsurance == 'gawli') {
+        if(QuoteToolAPI.selectedInsurance == 'gawli'){
             QuoteToolAPI.quoteToolType = 'GAWLI';
             $('#term_txt').addClass('hidden');
             $('#gawli_txt').removeClass('hidden');
@@ -5619,31 +5644,52 @@ QuoteToolAPI.loadEventListeners = function () {
             var d = new Date();
             d = d.getFullYear();
             var r = QuoteToolAPI.gawliAgeCriteria[$("#state1-mmquote").val()];
-            if (r != 'undefined') {
-                if (typeof (r) == "object") {
-                    QuoteToolAPI.populateYearDropDown(d - r[1], 18, "#year-mmquote");
-                } else {
-                    QuoteToolAPI.populateYearDropDown(d - 80, 18, "#year-mmquote");
+            if(r != 'undefined')
+            {
+                if(typeof (r) == "object")
+                {
+                    QuoteToolAPI.populateYearDropDown(d-r[1],18,"#year-mmquote");
+                }
+                else
+                {
+                    QuoteToolAPI.populateYearDropDown(d-80,18,"#year-mmquote");
                 }
             }
-        } else if (QuoteToolAPI.selectedInsurance == 'term') {
+        }
+        else if(QuoteToolAPI.selectedInsurance == 'term'){
             $(".error_state_coverage").hide();
-
+            //console.log('term');
             QuoteToolAPI.quoteToolType = 'SIT';
             $('#term_txt').removeClass('hidden');
             $('#gawli_txt').addClass('hidden');
             $(this).removeClass('errorField errorArrow');
         }
-        if (QuoteToolAPI.quoteToolStarted) {
+        if(QuoteToolAPI.quoteToolStarted)
+        {
             $(".quote_tool_form,.error_age_coverage,.error_state_coverage").hide();
             $("#ctaHeaderQuoteSubmit").show();
             $(".dob_cta_quote").removeClass('visible-lg');
             $(".dob_cta_quote").removeClass('visible-md');
+            var quoteHeight = $(".cta_header_quote").height();
+            var findXHeight = $(".cta_header_find_x").height();
+            /*if ($(window).width() <= 751) {
+             //$(".icon_scroll_bar").css("margin-top", "325px");
+             }
+             if ($(window).width() >= 751 && $(window).width() <= 1024) {
+             $(".icon_scroll_bar").css("margin-top", "175px");
+             if (quoteHeight < findXHeight) {
+             $(".icon_scroll_bar").css("margin-top", "260px");
+             }
+             }
+             if ($(window).width() >= 1025) {
+             $(".icon_scroll_bar").css("margin-top", "122px");
+             if (quoteHeight < findXHeight) {
+             $(".icon_scroll_bar").css("margin-top", "212px");
+             }
 
-
+             }*/
 
             $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
-
             $(".rep_cta_check").removeAttr("checked");
             $(".online_cta_check").prop("checked", true);
 
@@ -5653,14 +5699,15 @@ QuoteToolAPI.loadEventListeners = function () {
             $(".online_cta_check").siblings("svg").first().show();
         }
         /* for LI quote */
-        if ($("#submitBtn[data-page='quotes']").length != 0) {
+        if($("#submitBtn[data-page='quotes']").length != 0){
             QuoteToolAPI.goOnBlur();
         }
         QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
     });
-    $("#state1-mmquote").change(function () {
+    $("#state1-mmquote").change(function(){
         QuoteToolAPI.selectedState = $(this).val();
-        if (QuoteToolAPI.quoteToolStarted) {
+        if(QuoteToolAPI.quoteToolStarted)
+        {
             var quoteHeight = $(".cta_header_quote").height();
             var findXHeight = $(".cta_header_find_x").height();
             $(".quote_tool_form,.error_age_coverage,.error_state_coverage").hide();
@@ -5682,7 +5729,6 @@ QuoteToolAPI.loadEventListeners = function () {
              $(".icon_scroll_bar").css("margin-top", "212px");
              }*/
             $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
-
             $(".rep_cta_check").removeAttr("checked");
             $(".online_cta_check").prop("checked", true);
             $(".rep_cta_check").siblings("svg").first().hide();
@@ -5691,43 +5737,52 @@ QuoteToolAPI.loadEventListeners = function () {
             $(".online_cta_check").siblings("svg").first().show();
         }
 
-        if ($("#state1-mmquote").val() != null || $("#state1-mmquote").val() != '') {
+        if($("#state1-mmquote").val() != null || $("#state1-mmquote").val() != '')
+        {
             $(".select_state_cta_quote").removeClass('errorField errorArrow');
 
         }
 
         /* for LI quote */
-        if ($("#submitBtn[data-page='quotes']").length != 0) {
+        if($("#submitBtn[data-page='quotes']").length != 0){
             QuoteToolAPI.goOnBlur();
-            if (QuoteToolAPI.selectedInsurance == 'gawli') {
+            if(QuoteToolAPI.selectedInsurance == 'gawli'){
                 $(".error_state_not_selected").hide();
-                if (QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) == -1) {
-                    if ($(".dob_label").is(':visible')) {
+                if(QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) == -1){
+                    if($(".dob_label").is(':visible'))
+                    {
                         $(".gawli_error_state").insertAfter(".select_state");
-                    } else {
+                    }
+                    else{
                         $(".gawli_error_state").insertAfter(".dob_input");
                     }
                     $(".error_state_coverage").show();
 
-                } else {
+                }
+                else
+                {
                     $(".error_state_coverage").hide();
                 }
-            } else {
-                if (QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1) {
+            }
+            else
+            {
+                if(QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1){
                     $(".quoteBottom").show();
-                    $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation', true);
-                } else {
+                    $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation',true);
+                }
+                else
+                {
                     $(".quoteBottom").hide();
                     $("#term-mmquote,#tobacco-mmquote,#health-mmquote").removeAttr('data-validation').removeClass('errorField');
                 }
             }
         }
-        if (QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1) {
+        if(QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1){
             QuoteToolAPI.verifyMLTorGLT();
         }
         QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
         QuoteToolAPI.selectedInsurance = $("#insurance-type").val();
-        if (QuoteToolAPI.selectedInsurance == 'gawli') {
+        if(QuoteToolAPI.selectedInsurance == 'gawli'){
             QuoteToolAPI.quoteToolType = 'GAWLI';
             $('#term_txt').addClass('hidden');
             $('#gawli_txt').removeClass('hidden');
@@ -5736,77 +5791,92 @@ QuoteToolAPI.loadEventListeners = function () {
             d = d.getFullYear();
             var r = QuoteToolAPI.gawliAgeCriteria[$("#state1-mmquote").val()];
             console.log(r != 'undefined');
-            if (r != 'undefined') {
-                if (typeof (r) == "object") {
-                    QuoteToolAPI.populateYearDropDown(d - r[1], 18, "#year-mmquote");
-                } else {
-                    QuoteToolAPI.populateYearDropDown(d - 80, 18, "#year-mmquote");
+            if(r != 'undefined')
+            {
+                if(typeof (r) == "object")
+                {
+                    QuoteToolAPI.populateYearDropDown(d-r[1],18,"#year-mmquote");
+                }
+                else
+                {
+                    QuoteToolAPI.populateYearDropDown(d-80,18,"#year-mmquote");
                 }
             }
         }
     });
 
-    $("#ctaHeaderQuoteSubmit").click(function (e) {
+    $("#ctaHeaderQuoteSubmit").click(function(e){
         e.preventDefault();
-        if ($("#insurance-type").val() == null || $("#insurance-type").val() == '') {
+        if($("#insurance-type").val() == null || $("#insurance-type").val()  == ''){
             $("#insurance-type").addClass('errorField errorArrow');
         }
-        if ($("#state1-mmquote").val() == null || $("#state1-mmquote").val() == '') {
+        if($("#state1-mmquote").val() == null || $("#state1-mmquote").val() == '')
+        {
             $(".select_state_cta_quote").addClass('errorField errorArrow');
-        } else //if(!QuoteToolAPI.areErrorFieldsPresent)
+        }
+        else //if(!QuoteToolAPI.areErrorFieldsPresent)
         {
             QuoteToolAPI.selectedInsurance = $("#insurance-type").val();
             var d = new Date();
             d = d.getFullYear();
-            if (QuoteToolAPI.selectedInsurance == 'gawli') {
-                if (QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) == -1) {
-                    if ($(".dob_label").is(':visible')) {
+            if(QuoteToolAPI.selectedInsurance == 'gawli'){
+                if(QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) == -1){
+                    if($(".dob_label").is(':visible'))
+                    {
                         $(".gawli_error_state").insertAfter(".select_state");
-                    } else {
+                    }
+                    else{
                         $(".gawli_error_state").insertAfter(".dob_input");
                     }
                     $(".error_state_coverage").show();
 
-                } else {
+                }
+                else{
                     $(".quote_tool_form").show();
                     $(".quoteBottom,.error_state_coverage").hide();
                     $(".select_state_cta_quote").removeClass('errorField errorArrow');
                     $("#insurance-type").removeClass('errorField errorArrow');
                     $(".dob_cta_quote").insertBefore($(".state_wrapper")).addClass('visible-lg');
                     $(".dob_cta_quote").insertBefore($(".state_wrapper")).addClass('visible-md');
-                    $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#coverage-mmquote").attr('data-validation', true);
+                    $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#coverage-mmquote").attr('data-validation',true);
                     $(this).hide();
                     QuoteToolAPI.quoteToolType = 'GAWLI';
                     QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
                     QuoteToolAPI.quoteToolStarted = true;
                     var r = QuoteToolAPI.gawliAgeCriteria[QuoteToolAPI.selectedState];
-                    if (typeof (r) == "object") {
-                        QuoteToolAPI.populateYearDropDown(d - r[1], 18, "#year-mmquote");
-                    } else {
-                        QuoteToolAPI.populateYearDropDown(d - 80, 18, "#year-mmquote");
+                    if(typeof (r) == "object")
+                    {
+                        QuoteToolAPI.populateYearDropDown(d-r[1],18,"#year-mmquote");
+                    }
+                    else
+                    {
+                        QuoteToolAPI.populateYearDropDown(d-80,18,"#year-mmquote");
                     }
                 }
                 QuoteToolAPI.quoteToolType = 'GAWLI';
                 QuoteToolAPI.sitCompatibleAge = false;
-            } else if (QuoteToolAPI.selectedInsurance == 'term') {
-                var d = new Date(),
-                    r = QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState);
+            }
+            else if(QuoteToolAPI.selectedInsurance == 'term'){
+                var d = new Date(), r = QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState);
                 d = d.getFullYear();
                 $(".quote_tool_form").show();
-                $(this, ".error_state_coverage").hide();
+                $(this,".error_state_coverage").hide();
                 $(".dob_cta_quote").insertBefore($(".state_wrapper")).addClass('visible-lg');
                 $(".dob_cta_quote").insertBefore($(".state_wrapper")).addClass('visible-md');
                 $(".select_state_cta_quote").removeClass('errorField errorArrow');
                 $("#insurance-type").removeClass('errorField errorArrow');
-                $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#coverage-mmquote").attr('data-validation', true);
+                $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#coverage-mmquote").attr('data-validation',true);
                 QuoteToolAPI.quoteToolType = 'SIT';
-                QuoteToolAPI.populateYearDropDown(d - 75, 18, "#year-mmquote");
+                QuoteToolAPI.populateYearDropDown(d-75,18,"#year-mmquote");
                 QuoteToolAPI.quoteToolStarted = true;
-                QuoteToolAPI.updateTermLength("#term-mmquote", "home");
-                if (r == -1) {
+                QuoteToolAPI.updateTermLength("#term-mmquote","home");
+                if(r == -1)
+                {
                     $(".quoteBottom").show();
                     QuoteToolAPI.quoteToolType = 'MLT';
-                } else {
+                }
+                else
+                {
                     $(".quoteBottom").hide();
                 }
                 QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
@@ -5847,40 +5917,73 @@ QuoteToolAPI.loadEventListeners = function () {
              }*/
         }
     });
-    $("#month-mmquote,#day-mmquote,#year-mmquote").change(function () {
+    $("#month-mmquote,#day-mmquote,#year-mmquote").change(function(){
         var age = QuoteToolAPI.calculateAge();
-        if (QuoteToolAPI.quoteToolType == 'GAWLI' && age != 0) {
+        if(QuoteToolAPI.quoteToolType == 'GAWLI' && age != 0){
             var range = QuoteToolAPI.gawliAgeCriteria[QuoteToolAPI.selectedState];
-            if (typeof (range) == "object") {
-                if (age < range[0] || age > range[1]) {
+            if(typeof(range) == "object")
+            {
+                if(age < range[0] || age > range[1])
+                {
                     $(".error_age_coverage").show();
+                    /*var quoteHeight = $(".cta_header_quote").height();
+                     var findXHeight = $(".cta_header_find_x").height();
+                     if ($(window).width() >= 751 && $(window).width() <= 1024) {
+                     $(".icon_scroll_bar").css("margin-top", "478px");
 
-                } else {
+                     }
+                     if ($(window).width() >= 1025) {
+                     $(".icon_scroll_bar").css("margin-top", "340px");
+
+                     }*/
+                }
+                else
+                {
                     $(".error_age_coverage").hide();
                 }
-            } else if (age < 45 || age > 80) {
+            }
+            else if(age < 45 || age > 80)
+            {
                 $(".error_age_coverage").show();
-            } else {
+                /*var quoteHeight = $(".cta_header_quote").height();
+                 var findXHeight = $(".cta_header_find_x").height();
+                 if ($(window).width() >= 751 && $(window).width() <= 1024) {
+                 $(".icon_scroll_bar").css("margin-top", "478px");
+
+                 }
+                 if ($(window).width() >= 1025) {
+                 $(".icon_scroll_bar").css("margin-top", "340px");
+
+                 }*/
+            }
+            else
+            {
                 $(".error_age_coverage").hide();
             }
-        } else {
-            if (age > 70 && age < 76) { // && $("#coverage-mmquote").val() < 750000){
+        }
+        else {
+            if(age > 70 && age < 76){// && $("#coverage-mmquote").val() < 750000){
                 //console.log('71-75');
                 $(".quoteBottom").show();
-                $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation', true);
+                $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation',true);
                 QuoteToolAPI.sitCompatibleAge = false;
                 QuoteToolAPI.verifyMLTorGLT();
                 QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
-            } else if (age > 17 && age < 71) {
+            }
+            else if(age > 17 && age < 71){
                 //console.log('18-70');
-                if (QuoteToolAPI.sitStates.indexOf($("#state1-mmquote").val()) != -1) {
-                    if ($("#coverage-mmquote").val() > 99999) {
+                if(QuoteToolAPI.sitStates.indexOf($("#state1-mmquote").val()) != -1)
+                {
+                    if($("#coverage-mmquote").val() > 99999)
+                    {
                         $(".quoteBottom").show();
-                        $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation', true);
+                        $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation',true);
                         QuoteToolAPI.sitCompatibleAge = false;
-                        QuoteToolAPI.updateTermLength("#term-mmquote", "home");
+                        QuoteToolAPI.updateTermLength("#term-mmquote","home");
                         QuoteToolAPI.verifyMLTorGLT();
-                    } else {
+                    }
+                    else
+                    {
                         $(".quoteBottom").hide();
                         $(".quoteTermLength,.quoteTobacco,.quoteHealth,.quoteOptions").addClass('hidden').removeClass('errorField');
                         $("#term-mmquote,#tobacco-mmquote,#health-mmquote").removeAttr('data-validation');
@@ -5890,13 +5993,14 @@ QuoteToolAPI.loadEventListeners = function () {
                 }
                 QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
             }
-            QuoteToolAPI.updateTermLength("#term-mmquote", "home");
+            QuoteToolAPI.updateTermLength("#term-mmquote","home");
         }
     });
-    $("#coverage-mmquote").change(function () {
+    $("#coverage-mmquote").change(function(){
         var val = $(this).val();
-        if (QuoteToolAPI.quoteToolType != 'GAWLI') {
-            if (parseInt(val) < 50001 && (QuoteToolAPI.calculateAge() == 0 || (QuoteToolAPI.calculateAge() > 17 && QuoteToolAPI.calculateAge() < 71)) && QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+        if(QuoteToolAPI.quoteToolType != 'GAWLI')
+        {
+            if(parseInt(val) < 50001 && (QuoteToolAPI.calculateAge() == 0 || (QuoteToolAPI.calculateAge() > 17 && QuoteToolAPI.calculateAge() < 71)) && QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) != -1){
                 $(".quoteBottom").hide();
                 $("#term-mmquote,#tobacco-mmquote,#health-mmquote").removeAttr('data-validation').removeClass('errorField')
                 QuoteToolAPI.quoteToolType = 'SIT';
@@ -5910,9 +6014,10 @@ QuoteToolAPI.loadEventListeners = function () {
                  if ($(window).width() >= 1025) {
                  $(".icon_scroll_bar").css("margin-top", "250px");
                  }*/
-            } else {
+            }
+            else{
                 $(".quoteBottom").show();
-                $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation', true);
+                $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation',true);
                 QuoteToolAPI.verifyMLTorGLT();
                 //more margin
 
@@ -5927,24 +6032,20 @@ QuoteToolAPI.loadEventListeners = function () {
                  }*/
             }
         }
-        if (val > 750000) {
+        if(val > 750000){
             $(".online_cta_check").removeAttr("checked");
             $(".rep_cta_check").prop("checked", true);
-
-
-
             $(".online_cta_check").siblings("svg").first().hide();
             $(".online_cta_check").siblings("svg:not(\":first-of-type\")").show();
             $(".rep_cta_check").siblings("svg").hide();
             $(".rep_cta_check").siblings("svg").first().show();
-
             QuoteToolAPI.quoteToolType = 'GLT';
         }
     });
-    $("input[name='options']").change(function () {
+    $("input[name='options']").change(function(){
         QuoteToolAPI.quoteOption = $(this).val();
     });
-    $("#submitBtn").click(function (e) {
+    $("#submitBtn").click(function(e){
         e.preventDefault();
         var birthMonth = $("#month-mmquote").val();
         var birthDay = $("#day-mmquote").val();
@@ -5963,10 +6064,12 @@ QuoteToolAPI.loadEventListeners = function () {
         var cancelRedirect = QuoteToolAPI.validateFields();
         var age = QuoteToolAPI.calculateAge();
         if ($("#insurance-type").val() == "gawli") {
-            if (QuoteToolAPI.selectedState) {
-                if (QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+            if(QuoteToolAPI.selectedState)
+            {
+                if(QuoteToolAPI.gawliStates.indexOf(QuoteToolAPI.selectedState) != -1){
                     var range = QuoteToolAPI.gawliAgeCriteria[QuoteToolAPI.selectedState];
-                    if (typeof (range) == "object" && (age < range[0] || age > range[1])) {
+                    if(typeof(range) == "object" && (age < range[0] || age > range[1]))
+                    {
                         $(".error_age_coverage").show();
                         /*var quoteHeight = $(".cta_header_quote").height();
                          var findXHeight = $(".cta_header_find_x").height();
@@ -5978,7 +6081,8 @@ QuoteToolAPI.loadEventListeners = function () {
                          $(".icon_scroll_bar").css("margin-top", "340px");
 
                          }*/
-                    } else if (age < 45 || age > 80) {
+                    }
+                    else if(age < 45 || age > 80){
                         $(".error_age_coverage").show();
                         /*var quoteHeight = $(".cta_header_quote").height();
                          var findXHeight = $(".cta_header_find_x").height();
@@ -5990,20 +6094,27 @@ QuoteToolAPI.loadEventListeners = function () {
                          $(".icon_scroll_bar").css("margin-top", "340px");
 
                          }*/
-                    } else {
+                    }
+                    else
+                    {
                         $(".error_age_coverage").hide();
-                        if (!cancelRedirect) {
+                        if(!cancelRedirect)
+                        {
                             QuoteToolAPI.getQuotePremiumGAWLI();
                         }
                     }
                 }
-            } else {
+            }
+            else
+            {
                 $(".error_state_not_selected").show();
             }
-        } else if ($("#insurance-type").val() == "term") {
+        }
+        else if ($("#insurance-type").val() == "term") {
 
-            if (QuoteToolAPI.quoteToolType == 'SIT') {
-                if (age < 18 || age > 70) {
+            if(QuoteToolAPI.quoteToolType == 'SIT')
+            {
+                if(age < 18 || age > 70){
                     $(".error_age_coverage").show();
                     /*var quoteHeight = $(".cta_header_quote").height();
                      var findXHeight = $(".cta_header_find_x").height();
@@ -6015,34 +6126,49 @@ QuoteToolAPI.loadEventListeners = function () {
                      $(".icon_scroll_bar").css("margin-top", "340px");
 
                      }*/
-                } else {
+                }
+                else
+                {
                     $(".error_age_coverage").hide();
-                    if (!cancelRedirect) {
+                    if(!cancelRedirect)
+                    {
                         QuoteToolAPI.getQuotePremiumSIT();
                     }
                 }
-            } else if (QuoteToolAPI.quoteToolType == 'MLT') {
-                if (!cancelRedirect) {
+            }
+            else if(QuoteToolAPI.quoteToolType == 'MLT')
+            {
+                if(!cancelRedirect)
+                {
                     QuoteToolAPI.getQuotePremiumMLT();
                 }
-            } else if (QuoteToolAPI.quoteToolType == 'GLT') {
-                if (!cancelRedirect) {
+            }
+            else if(QuoteToolAPI.quoteToolType == 'GLT')
+            {
+                if(!cancelRedirect)
+                {
                     QuoteToolAPI.getQuotePremiumGLT();
                 }
             }
         }
     });
-    $(document).on("blur", "[data-validation='true']", function () {
-        if ($(this).val() != null && $(this).val() != '') {
+    $(document).on("blur","[data-validation='true']",function(){
+        if($(this).val() != null && $(this).val() != '')
+        {
             $(this).removeClass('errorField errorArrow');
-            if ($(this).hasClass('birth_month_cta_quote') || $(this).hasClass('birth_day_cta_quote') || $(this).hasClass('birth_year_cta_quote')) {
+            if($(this).hasClass('birth_month_cta_quote') || $(this).hasClass('birth_day_cta_quote') || $(this).hasClass('birth_year_cta_quote'))
+            {
                 var age = null;
-                if ($("#recalculateQuote").length != 0) {
+                if($("#recalculateQuote").length != 0)
+                {
                     age = QuoteToolAPI.calculateAgeResults();
-                } else {
+                }
+                else
+                {
                     age = QuoteToolAPI.calculateAge();
                 }
-                if (age != 0) {
+                if(age != 0)
+                {
                     $(".birth_month_cta_quote,.birth_day_cta_quote,.birth_year_cta_quote").removeClass('errorField errorArrow');
                 }
             }
@@ -6056,7 +6182,7 @@ QuoteToolAPI.loadEventListeners = function () {
     });
 }
 
-QuoteToolAPI.calculateAge = function () {
+QuoteToolAPI.calculateAge = function(){
     var l = 0;
     if ((document.getElementById("month-mmquote").value != "") && (document.getElementById("day-mmquote").value != "") && (document.getElementById("year-mmquote").value != "")) {
         var b = parseInt(document.getElementById("month-mmquote").value);
@@ -6096,15 +6222,13 @@ QuoteToolAPI.calculateAge = function () {
                 }
             }
         }
-        if (QuoteToolAPI.quoteToolType == 'GLT' && a >= 6) {
-            l = l + 1
-        }
+        if (QuoteToolAPI.quoteToolType == 'GLT' && a>= 6) {l = l + 1}
     } else {}
     return l;
 }
 
-QuoteToolAPI.verifyMLTorGLT = function () {
-    if (QuoteToolAPI.quoteOption == 'online') // && QuoteToolAPI.mltApprovedStates.indexOf(QuoteToolAPI.selectedState) != -1)
+QuoteToolAPI.verifyMLTorGLT = function(){
+    if(QuoteToolAPI.quoteOption == 'online')// && QuoteToolAPI.mltApprovedStates.indexOf(QuoteToolAPI.selectedState) != -1)
     {
         QuoteToolAPI.quoteToolType = 'MLT';
         /*if(QuoteToolAPI.mltApprovedStates.indexOf(QuoteToolAPI.selectedState) != -1)
@@ -6115,31 +6239,43 @@ QuoteToolAPI.verifyMLTorGLT = function () {
          {
          QuoteToolAPI.quoteToolType = 'GLT';
          }*/
-    } else if (QuoteToolAPI.quoteOption == 'advisor') {
+    }
+    else if(QuoteToolAPI.quoteOption == 'advisor')
+    {
         QuoteToolAPI.quoteToolType = 'GLT';
     }
 };
 
-QuoteToolAPI.updateCoverageAmount = function (id) {
-    var amounts, values, len, coverageOption = QuoteToolAPI.quoteToolType;
+QuoteToolAPI.updateCoverageAmount = function(id) {
+    var amounts,values,len,coverageOption = QuoteToolAPI.quoteToolType;
     //console.log(QuoteToolAPI.quoteToolType);
     //console.log(coverageOption);
     //console.log(QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState));
     var age = null;
-    if (id == "#coverage-mmquote") {
+    if(id == "#coverage-mmquote")
+    {
         age = QuoteToolAPI.calculateAge();
-    } else if (id == "#edit-coverage-mmquote") {
+    }
+    else if(id == "#edit-coverage-mmquote")
+    {
         age = QuoteToolAPI.calculateAgeResults();
     }
-    if (QuoteToolAPI.quoteToolType == 'GAWLI') {
+    if(QuoteToolAPI.quoteToolType == 'GAWLI')
+    {
         coverageOption = 'GAWLI';
-    } else if ((QuoteToolAPI.quoteToolType == 'GLT' || QuoteToolAPI.quoteToolType == 'MLT')) {
-        if (((QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) != -1) && age > 70) || (QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1)) {
+    }
+    else if((QuoteToolAPI.quoteToolType == 'GLT' || QuoteToolAPI.quoteToolType == 'MLT'))
+    {
+        if(((QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) != -1) && age>70) || (QuoteToolAPI.sitStates.indexOf(QuoteToolAPI.selectedState) == -1))
+        {
             coverageOption = 'MLTGLT';
-        } else {
+        }
+        else
+        {
             coverageOption = 'TERM';
         }
-    } else //if(QuoteToolAPI.quoteToolType == 'SIT')
+    }
+    else//if(QuoteToolAPI.quoteToolType == 'SIT')
     {
         coverageOption = 'TERM';
     }
@@ -6151,14 +6287,16 @@ QuoteToolAPI.updateCoverageAmount = function (id) {
     $(id).children().remove();
     $(id).append("<option value=''>Coverage Amount</option>");
 
-    for (var i = 0; i < len; i++) {
-        $(id).append("<option value=" + values[i] + ">" + amounts[i] + "</option>");
+    for(var i=0; i<len; i++)
+    {
+        $(id).append("<option value="+values[i]+">"+amounts[i]+"</option>");
     }
 }
 
-QuoteToolAPI.redirectToResultsPage = function (quotePremium) {
+QuoteToolAPI.redirectToResultsPage = function(quotePremium) {
 
-    if (quotePremium == "-100") {
+    if(quotePremium == "-100")
+    {
         var urlParamString = '';
         urlParamString += 's=' + $("#state1-mmquote").val() + ',';
         urlParamString += 'd=' + $("#day-mmquote").val() + ',';
@@ -6166,7 +6304,8 @@ QuoteToolAPI.redirectToResultsPage = function (quotePremium) {
         urlParamString += 'y=' + $("#year-mmquote").val() + ',';
         urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
         urlParamString += 'c=' + $("#coverage-mmquote").val();
-        if (QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT') {
+        if(QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT')
+        {
             urlParamString += ',t=' + $("#term-mmquote").val();
             urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
             urlParamString += 'h=' + $("#health-mmquote").val();
@@ -6174,37 +6313,44 @@ QuoteToolAPI.redirectToResultsPage = function (quotePremium) {
         urlParamString = QuoteToolAPI.base64Encode(urlParamString);
         console.log(urlParamString);
         var x = window.location.pathname;
-        console.log(x);
-        var urlBase = x.substring(0, x.lastIndexOf('/') + 1);
-        if ($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes') {
-            urlBase = x.substring(0, x.lastIndexOf('/insurance') + 1);
+        var urlBase = x.substring(0, x.lastIndexOf('/')+1);
+        if($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes')
+        {
+            urlBase= x.substring(0, x.lastIndexOf('/insurance')+1);
         }
         var onlineAvailable = "n";
-        if (QuoteToolAPI.quoteToolType == 'GAWLI') {
-            if (QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+        if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+            if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
                 onlineAvailable = "y";
             }
             //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("GAWLIUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
-        } else if (QuoteToolAPI.quoteToolType == 'SIT') {
-            if (QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+            window.location.href = urlBase + localStorage.getItem("GAWLIUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'SIT'){
+            if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
                 onlineAvailable = "y";
             }
 
             //window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("SITUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
-        } else if (QuoteToolAPI.quoteToolType == 'MLT') {
-            if (QuoteToolAPI.selectedState != 'NY') {
+            window.location.href =  urlBase + localStorage.getItem("SITUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'MLT'){
+            if(QuoteToolAPI.selectedState != 'NY'){
                 onlineAvailable = "y";
             }
             //window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("MLTUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
-        } else if (QuoteToolAPI.quoteToolType == 'GLT') {
+            window.location.href = urlBase + localStorage.getItem("MLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'GLT'){
             //window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("GLTUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode('') + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+            window.location.href = urlBase + localStorage.getItem("GLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
         }
 
-    } else {
+    }
+
+    else
+    {
+
         var urlParamString = '';
         urlParamString += 's=' + $("#state1-mmquote").val() + ',';
         urlParamString += 'd=' + $("#day-mmquote").val() + ',';
@@ -6212,7 +6358,8 @@ QuoteToolAPI.redirectToResultsPage = function (quotePremium) {
         urlParamString += 'y=' + $("#year-mmquote").val() + ',';
         urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
         urlParamString += 'c=' + $("#coverage-mmquote").val();
-        if (QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT') {
+        if(QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT')
+        {
             urlParamString += ',t=' + $("#term-mmquote").val();
             urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
             urlParamString += 'h=' + $("#health-mmquote").val();
@@ -6220,89 +6367,46 @@ QuoteToolAPI.redirectToResultsPage = function (quotePremium) {
         urlParamString = QuoteToolAPI.base64Encode(urlParamString);
         console.log(urlParamString);
         var x = window.location.pathname;
-        var urlBase = x.substring(0, x.lastIndexOf('/') + 1);
-        if ($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes') {
-            urlBase = x.substring(0, x.lastIndexOf('/insurance') + 1);
+        var urlBase = x.substring(0, x.lastIndexOf('/')+1);
+        if($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes')
+        {
+            urlBase= x.substring(0, x.lastIndexOf('/insurance')+1);
         }
         var onlineAvailable = "n";
-        if (QuoteToolAPI.quoteToolType == 'GAWLI') {
-            if (QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+        if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+            if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
                 onlineAvailable = "y";
             }
             //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("GAWLIUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-        } else if (QuoteToolAPI.quoteToolType == 'SIT') {
-            if (QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
+            window.location.href = urlBase + localStorage.getItem("GAWLIUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
+        else if(QuoteToolAPI.quoteToolType == 'SIT'){
+            if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
                 onlineAvailable = "y";
             }
 
             //window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("SITUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-        } else if (QuoteToolAPI.quoteToolType == 'MLT') {
-            if (QuoteToolAPI.selectedState != 'NY') {
+            window.location.href = urlBase + localStorage.getItem("SITUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
+        else if(QuoteToolAPI.quoteToolType == 'MLT'){
+            if(QuoteToolAPI.selectedState != 'NY'){
                 onlineAvailable = "y";
             }
             //window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("MLTUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-        } else if (QuoteToolAPI.quoteToolType == 'GLT') {
+            window.location.href = urlBase + localStorage.getItem("MLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
+        else if(QuoteToolAPI.quoteToolType == 'GLT'){
             //window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-            window.location.href = urlBase + localStorage.getItem("GLTUrl") + "?" + "ol=" + QuoteToolAPI.base64Encode('') + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("GLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
         }
     }
-    // ALEX 03/11/16
-    //	var urlParamString = '';
-    //	urlParamString += 's=' + $("#state1-mmquote").val() + ',';
-    //	urlParamString += 'd=' + $("#day-mmquote").val() + ',';
-    //	urlParamString += 'm=' + $("#month-mmquote").val() + ',';
-    //	urlParamString += 'y=' + $("#year-mmquote").val() + ',';
-    //	urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
-    //	urlParamString += 'c=' + $("#coverage-mmquote").val();
-    //	if(QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT')
-    //	{
-    //		urlParamString += ',t=' + $("#term-mmquote").val();
-    //		urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
-    //		urlParamString += 'h=' + $("#health-mmquote").val();
-    //	}
-    //	urlParamString = QuoteToolAPI.base64Encode(urlParamString);
-    //	console.log(urlParamString);
-    //	var x = window.location.pathname;
-    //	var urlBase = x.substring(0, x.lastIndexOf('/')+1);
-    //	if($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes')
-    //	{
-    //		urlBase= x.substring(0, x.lastIndexOf('/insurance')+1);
-    //	}
-    //	var onlineAvailable = "n";
-    //	if(QuoteToolAPI.quoteToolType == 'GAWLI'){
-    //		if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-    //			onlineAvailable = "y";
-    //		}
-    //		//window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //		window.location.href = urlBase + "quote-results/guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //	}
-    //	else if(QuoteToolAPI.quoteToolType == 'SIT'){
-    //		if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-    //			onlineAvailable = "y";
-    //		}
-    //		//window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //		window.location.href = urlBase + "quote-results/simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //	}
-    //	else if(QuoteToolAPI.quoteToolType == 'MLT'){
-    //		if(QuoteToolAPI.selectedState != 'NY'){
-    //			onlineAvailable = "y";
-    //		}
-    //		//window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //		window.location.href = urlBase + "quote-results/term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //	}
-    //	else if(QuoteToolAPI.quoteToolType == 'GLT'){
-    //		//window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //		window.location.href = urlBase + "quote-results/guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    //	}
 }
 
-QuoteToolAPI.validateFields = function () {
+QuoteToolAPI.validateFields = function() {
     var areErrorFieldsPresent = false;
-    $("[data-validation='true']").each(function () {
-        if ($(this).val() == null || $(this).val() == '') {
+    $("[data-validation='true']").each(function(){
+        if($(this).val() == null || $(this).val() == '')
+        {
             $(this).addClass('errorField errorArrow');
             areErrorFieldsPresent = true;
         }
@@ -6311,7 +6415,7 @@ QuoteToolAPI.validateFields = function () {
     return areErrorFieldsPresent;
 }
 
-QuoteToolAPI.populateYearDropDown = function (year, min, element) {
+QuoteToolAPI.populateYearDropDown = function(year,min,element) {
     var yearOptions = $(element);
     var yr = new Date();
     yr = yr.getFullYear() - min;
@@ -6327,38 +6431,38 @@ QuoteToolAPI.populateYearDropDown = function (year, min, element) {
 }
 
 QuoteToolAPI.populateDaysDropDown = function (id) {
-    if (($(id + "month-mmquote").val() == "09") || ($(id + "month-mmquote").val() == "04") ||
-        ($(id + "month-mmquote").val() == "06") || ($(id + "month-mmquote").val() == "11")) {
-        $(id + "day-mmquote option:eq(31)").remove();
-    } else if ($(id + "month-mmquote").val() == "02") {
+    if (($(id+"month-mmquote").val() == "09") || ($(id+"month-mmquote").val() == "04") ||
+        ($(id+"month-mmquote").val() == "06") || ($(id+"month-mmquote").val() == "11")) {
+        $(id+"day-mmquote option:eq(31)").remove();
+    } else if ($(id+"month-mmquote").val() == "02") {
 
-        if ((QuoteToolAPI.isLeapYear($(id + "year-mmquote").val()) == false) || $(id + "year-mmquote").val() == "") {
-            $(id + "day-mmquote option:eq(31)").remove();
-            $(id + "day-mmquote option:eq(30)").remove();
-            $(id + "day-mmquote option:eq(29)").remove();
+        if ((QuoteToolAPI.isLeapYear($(id+"year-mmquote").val()) == false) || $(id+"year-mmquote").val() == "") {
+            $(id+"day-mmquote option:eq(31)").remove();
+            $(id+"day-mmquote option:eq(30)").remove();
+            $(id+"day-mmquote option:eq(29)").remove();
         } else {
-            if (($(id + "day-mmquote option[value='29']").length > 0) == false) {
-                $(id + "day-mmquote").append('<option value="29">29</option>');
+            if (($(id+"day-mmquote option[value='29']").length > 0) == false) {
+                $(id+"day-mmquote").append('<option value="29">29</option>');
             }
-            $(id + "day-mmquote option:eq(31)").remove();
-            $(id + "day-mmquote option:eq(30)").remove();
+            $(id+"day-mmquote option:eq(31)").remove();
+            $(id+"day-mmquote option:eq(30)").remove();
         }
 
     } else {
-        if (($(id + "day-mmquote option[value='29']").length > 0) == false) {
-            $(id + "day-mmquote").append('<option value="29">29</option>');
+        if (($(id+"day-mmquote option[value='29']").length > 0) == false) {
+            $(id+"day-mmquote").append('<option value="29">29</option>');
         }
-        if (($(id + "day-mmquote option[value='30']").length > 0) == false) {
-            $(id + "day-mmquote").append('<option value="30">30</option>');
+        if (($(id+"day-mmquote option[value='30']").length > 0) == false) {
+            $(id+"day-mmquote").append('<option value="30">30</option>');
         }
-        if (($(id + "day-mmquote option[value='31']").length > 0) == false) {
-            $(id + "day-mmquote").append('<option value="31">31</option>');
+        if (($(id+"day-mmquote option[value='31']").length > 0) == false) {
+            $(id+"day-mmquote").append('<option value="31">31</option>');
         }
     }
 }
 
-QuoteToolAPI.base64Encode = function (g) {
-    if (typeof (btoa) == "function") {
+QuoteToolAPI.base64Encode = function(g) {
+    if (typeof(btoa) == "function") {
         return btoa(g)
     }
     var h = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -6386,7 +6490,7 @@ QuoteToolAPI.base64Encode = function (g) {
     return o.join("");
 }
 
-QuoteToolAPI.isLeapYear = function (a) {
+QuoteToolAPI.isLeapYear = function(a) {
     a = parseInt(a);
     if (a % 4 == 0) {
         if (a % 100 != 0) {
@@ -6402,7 +6506,8 @@ QuoteToolAPI.isLeapYear = function (a) {
     return false;
 }
 
-QuoteToolAPI.getQuotePremiumGAWLI = function () {
+QuoteToolAPI.getQuotePremiumGAWLI = function(){
+
     var flag = null;
     var date = new Date();
     var hours = date.getHours();
@@ -6415,98 +6520,33 @@ QuoteToolAPI.getQuotePremiumGAWLI = function () {
         seconds = "0" + seconds
     }
     var todaydate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + hours + ":" + minutes + ":" + seconds;
-    var dob = $("#month-mmquote").val() + "-" + $("#day-mmquote").val() + "-" + $("#year-mmquote").val();
+    var dob = $("#month-mmquote").val()+"-"+$("#day-mmquote").val()+"-"+$("#year-mmquote").val();
     console.log(typeof dob);
-    var reqObjParam = {
-        "transaction": {
-            "metaData": {},
-            "transactionType": "diagnosticTool",
-            "entities": {
-                "user": {
-                    "personalInfo": {
-                        "firstName": "",
-                        "middleName": "",
-                        "lastName": "",
-                        "email": "",
-                        "street": "",
-                        "city": "",
-                        "zip": "",
-                        "stateDesc": QuoteToolAPI.selectedState,
-                        "primaryPhone": "",
-                        "alternatePhone": ""
-                    },
-                    "inputFields": {
-                        "gender": $("#gender-mmquote").val(),
-                        "dateOfBirth": $("#month-mmquote").val() + "-" + $("#day-mmquote").val() + "-" + $("#year-mmquote").val(),
-                        "state": QuoteToolAPI.selectedState,
-                        "faceAmount": $("#coverage-mmquote").val(),
-                        "productType": "GIWL",
-                        "termLength": "10",
-                        "age": QuoteToolAPI.calculateAge(),
-                        "health": "Healthy",
-                        "replacement": "No",
-                        "healthClass": "Standard",
-                        "tobacco": "No"
-                    },
-                    "agentId": "",
-                    "agentName": "",
-                    "appSrc": "ML.com",
-                    "campaignCode": "",
-                    "channelType": "BroadMarket",
-                    "cRMID": "",
-                    "submittedDateTime": todaydate
-                }
-            }
-        }
-    };
-    reqObjParam = JSON.stringify(reqObjParam);
+    var reqObjParam = {"transaction":{"metaData":{},"transactionType":"diagnosticTool","entities":{"user":{"personalInfo":{"firstName":"","middleName":"",	"lastName":"","email":"","street":"","city":"","zip":"","stateDesc": QuoteToolAPI.selectedState,"primaryPhone":"","alternatePhone":""},"inputFields":{"gender":$("#gender-mmquote").val(),"dateOfBirth":$("#month-mmquote").val()+"-"+$("#day-mmquote").val()+"-"+$("#year-mmquote").val(),"state":QuoteToolAPI.selectedState,"faceAmount":$("#coverage-mmquote").val(),"productType":"GIWL","termLength":"10","age":QuoteToolAPI.calculateAge(),"health":"Healthy","replacement":"No","healthClass":"Standard","tobacco":"No"},"agentId":"","agentName":"","appSrc":"ML.com","campaignCode":"","channelType":"BroadMarket","cRMID":"","submittedDateTime":todaydate}}}};
+    reqObjParam =JSON.stringify(reqObjParam);
 
-//ALEX 03/11/16
-//    $.ajax({
-//        //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        //url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        type: 'POST',
-//        dataType: 'json',
-//        data: reqObjParam,
-//        contentType: "application/json",
-//        success: function (e) {
-//
-//            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e["GIWLResp"]["premium"]));
-//        },
-//        error: function (e) {
-//            console.log('error ', e); //	handleServiceError()
-//        },
-//        timeout: 30000
-//    });
-//    $.ajax({
-//        //url:"/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        type: 'POST',
-//        dataType:'json',
-//        data: reqObjParam,
-//        contentType: "application/json",
-//        success: function(e) {QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e["GIWLResp"]["premium"]));},
-//        error: function(e) {
-//            console.log('error',e);
-//            //handleServiceError()QuoteToolAPI.redirectToResultsPage(-100);
-//        },timeout:30000
-//    });
-    
     $.ajax({
-        //url:"/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
+        //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         type: 'POST',
         dataType:'json',
         data: reqObjParam,
         contentType: "application/json",
-        success: function(e) {QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e["GIWLResp"]["premium"]));},
-        error: function(e) {console.log('error',e);QuoteToolAPI.redirectToResultsPage(-100);},
+        success: function(e) {
+
+            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e["GIWLResp"]["premium"]));
+        },
+        error: function(e) {
+            console.log('error ',e);//	handleServiceError()
+            QuoteToolAPI.redirectToResultsPage(-100);
+        },
         timeout:30000
     });
+
+
 }
 
-QuoteToolAPI.getQuotePremiumSIT = function () {
+QuoteToolAPI.getQuotePremiumSIT = function(){
     var flag = null;
     var date = new Date();
     var hours = date.getHours();
@@ -6519,213 +6559,143 @@ QuoteToolAPI.getQuotePremiumSIT = function () {
         seconds = "0" + seconds
     }
     var todaydate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + hours + ":" + minutes + ":" + seconds;
-    var dob = $("#month-mmquote").val() + "-" + $("#day-mmquote").val() + "-" + $("#year-mmquote").val();
-    var reqObjParam = {
-        "transaction": {
-            "metaData": {},
-            "transactionType": "diagnosticTool",
-            "entities": {
-                "user": {
-                    "personalInfo": {
-                        "firstName": "",
-                        "middleName": "",
-                        "lastName": "",
-                        "email": "",
-                        "street": "",
-                        "city": "",
-                        "zip": "",
-                        "stateDesc": QuoteToolAPI.selectedState,
-                        "primaryPhone": "",
-                        "alternatePhone": ""
-                    },
-                    "inputFields": {
-                        "gender": $("#gender-mmquote").val(),
-                        "dateOfBirth": $("#month-mmquote").val() + "-" + $("#day-mmquote").val() + "-" + $("#year-mmquote").val(),
-                        "state": QuoteToolAPI.selectedState,
-                        "faceAmount": $("#coverage-mmquote").val(),
-                        "productType": "SIT",
-                        "termLength": "10",
-                        "age": QuoteToolAPI.calculateAge(),
-                        "health": "Healthy",
-                        "replacement": "No",
-                        "healthClass": "Standard",
-                        "tobacco": "No"
-                    },
-                    "agentId": "",
-                    "agentName": "",
-                    "appSrc": "ML.com",
-                    "campaignCode": "",
-                    "channelType": "BroadMarket",
-                    "cRMID": "",
-                    "submittedDateTime": todaydate
-                }
-            }
-        }
-    };
-    reqObjParam = JSON.stringify(reqObjParam);
-//ALEX 03/11/16
-//    $.ajax({
-//        //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        //url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-//        type: 'POST',
-//        dataType: 'json',
-//        data: reqObjParam,
-//        contentType: "application/json",
-//        success: function (e) {
-//            console.log('success ', e);
-//            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e['SITResp']['WithoutRider']['monthlypremium'].split(",")[1]));
-//        },
-//        error: function (e) {
-//            console.log('error ', e);
-//        },
-//        timeout: 30000
-//    });
+    var dob = $("#month-mmquote").val()+"-"+$("#day-mmquote").val()+"-"+$("#year-mmquote").val();
+    var reqObjParam = {"transaction":{"metaData":{},"transactionType":"diagnosticTool","entities":{"user":{"personalInfo":{"firstName":"","middleName":"",	"lastName":"","email":"","street":"","city":"","zip":"","stateDesc": QuoteToolAPI.selectedState,"primaryPhone":"","alternatePhone":""},"inputFields":{"gender":$("#gender-mmquote").val(),"dateOfBirth":$("#month-mmquote").val()+"-"+$("#day-mmquote").val()+"-"+$("#year-mmquote").val(),"state":QuoteToolAPI.selectedState,"faceAmount":$("#coverage-mmquote").val(),"productType":"SIT","termLength":"10","age":QuoteToolAPI.calculateAge(),"health":"Healthy","replacement":"No","healthClass":"Standard","tobacco":"No"},"agentId":"","agentName":"","appSrc":"ML.com","campaignCode":"","channelType":"BroadMarket","cRMID":"","submittedDateTime":todaydate}}}};
+    reqObjParam =JSON.stringify(reqObjParam);
+
     $.ajax({
-        //url:"/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
+        //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         type: 'POST',
         dataType:'json',
         data: reqObjParam,
         contentType: "application/json",
-        success: function(e) {console.log('success ',e);QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e['SITResp']['WithoutRider']['monthlypremium'].split(",")[1]));},
-        error: function(e) {console.log('error ',e);QuoteToolAPI.redirectToResultsPage(-100);},
+        success: function(e) {
+            console.log('success ',e);
+            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(e['SITResp']['WithoutRider']['monthlypremium'].split(",")[1]));
+        },
+        error: function(e) {
+            console.log('error ',e);
+            QuoteToolAPI.redirectToResultsPage("-100");
+        },
         timeout:30000
     });
+
 }
 
-QuoteToolAPI.getQuotePremiumMLT = function () {
-    var jsonData = {
-        "term": $("#term-mmquote").val(),
-        "age": QuoteToolAPI.calculateAge(),
-        "gender": $("#gender-mmquote").val(),
-        "health": $("#health-mmquote").val(),
-        "tobacco": $("#tobacco-mmquote").val(),
-        "coverage": $("#coverage-mmquote").val(),
-        "state": $("#state1-mmquote").val(),
-        "lstPnPParameters": "state,DOB,coverage,term,tobacco,health,gender,age,lStatus",
-        "lStatus": "Q",
-        "rating": 0,
-        "mcid": ""
+QuoteToolAPI.getQuotePremiumMLT = function(){
+
+    var  jsonData={"term":$("#term-mmquote").val(),"age":QuoteToolAPI.calculateAge(),"gender":$("#gender-mmquote").val(),"health":$("#health-mmquote").val(),"tobacco":$("#tobacco-mmquote").val(),
+        "coverage":$("#coverage-mmquote").val(),
+        "state":$("#state1-mmquote").val(),
+        "lstPnPParameters":"state,DOB,coverage,term,tobacco,health,gender,age,lStatus",
+        "lStatus":"Q",
+        "rating":0,
+        "mcid":""
     };
     var URL;
     console.log(jsonData);
-//ALEX 03/11/16
-//    if ($("#submitBtn[data-page='quotes']").length == 1) {
-//        URL = "../../../wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote";
-//    } else {
-//        URL = "../wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote";
-//    }
-    if($("#submitBtn[data-page='quotes']").length == 1){
+    if($("#submitBtn[data-page='quotes']").length == 1)
+    {
         URL = "/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote";
-    } else {
+    }
+    else
+    {
         URL = "/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote";
     }
 
-    
     $.ajax({
         url: URL,
         //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
         type: 'GET',
-        contentType: "json",
+        contentType:"json",
         data: jsonData,
-        success: function (e) {
-            console.log('success ', e);
-            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["basepremium"]));
+        success: function(e) {
+            console.log('success ',e);
+            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["basepremium"]));
         },
-//ALEX 03/11/16
-//        error: function (e) {
-//            console.log('error ', e);
-//        },
         error: function(e) {
             console.log('error ',e);
             QuoteToolAPI.redirectToResultsPage(-100);
         },
-        timeout: 30000
+        timeout:30000
     });
+
 }
 
-QuoteToolAPI.getQuotePremiumGLT = function () {
+QuoteToolAPI.getQuotePremiumGLT = function(){
+
     var genderIs = "";
-    if ($("#state1-mmquote").val() == "MT") {
-        genderIs = "U"
-    } else {
-        genderIs = $("#gender-mmquote").val()
+    if ($("#state1-mmquote").val() == "MT"){genderIs = "U"}
+    else {genderIs = $("#gender-mmquote").val()};
+    var  jsonData={"term":$("#term-mmquote").val(),"age":QuoteToolAPI.calculateAge(),"gender":genderIs,"health":$("#health-mmquote").val(),"tobacco":$("#tobacco-mmquote").val(),
+        "coverage":$("#coverage-mmquote").val(),
+        "state":$("#state1-mmquote").val(),
+        "lstPnPParameters":"state,DOB,coverage,term,tobacco,health,gender,age,lStatus",
+        "lStatus":"Q",
+        "rating":0,
+        "mcid":""
     };
-    var jsonData = {
-        "term": $("#term-mmquote").val(),
-        "age": QuoteToolAPI.calculateAge(),
-        "gender": genderIs,
-        "health": $("#health-mmquote").val(),
-        "tobacco": $("#tobacco-mmquote").val(),
-        "coverage": $("#coverage-mmquote").val(),
-        "state": $("#state1-mmquote").val(),
-        "lstPnPParameters": "state,DOB,coverage,term,tobacco,health,gender,age,lStatus",
-        "lStatus": "Q",
-        "rating": 0,
-        "mcid": ""
-    };
-//ALEX 03/11/16
-//    if ($("#submitBtn[data-page='quotes']").length == 1) {
-//        URL = "../../../wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
-//    } else {
-//        URL = "../wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
-//    }
-//    if($("#submitBtn[data-page='quotes']").length == 1){
-//        URL = "/wps/proxy/sales/MCPremiumQuoteWS/MCPremiumQuote";
-//    } else {
-//        URL = "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
-//    }
-if ($("#submitBtn[data-page='quotes']").length == 1) {
-    URL = "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
-} else {
-    URL = "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
-}
+    if($("#submitBtn[data-page='quotes']").length == 1)
+    {
+        URL = "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
+    }
+    else
+    {
+        URL = "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote";
+    }
 
-    
     $.ajax({
         url: URL,
         //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
         type: 'GET',
         contentType: "json",
         data: jsonData,
-        success: function (e) {
-            console.log('success ', e);
-            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["premium"]));
+        success: function(e) {
+            console.log('success ',e);
+            QuoteToolAPI.redirectToResultsPage(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["premium"]));
         },
-//ALEX 03/11/16
-//        error: function (e) {
-//            console.log('error ', e);
-//        },
         error: function(e) {
             console.log('error ',e);
             QuoteToolAPI.redirectToResultsPage(-100);
         },
-        timeout: 30000
+        timeout:30000
     });
+
+
 }
 
-QuoteToolAPI.updateTermLength = function (id, page) {
-    var terms = null,
-        age, termRange, len = 0;
-    if (page == 'home') {
+QuoteToolAPI.updateTermLength = function(id,page){
+    var terms = null,age,termRange,len=0;
+    if(page == 'home')
+    {
         age = QuoteToolAPI.calculateAge();
-    } else if (page == 'results') {
+    }
+    else if(page == 'results')
+    {
         age = QuoteToolAPI.calculateAgeResults();
     }
-    if (age != 0 && age > 0) {
-        if (QuoteToolAPI.quoteToolType != 'GAWLI') {
-            if (QuoteToolAPI.selectedState == 'NY') {
+    if(age != 0 && age > 0)
+    {
+        if(QuoteToolAPI.quoteToolType != 'GAWLI')
+        {
+            if(QuoteToolAPI.selectedState == 'NY')
+            {
                 terms = QuoteToolAPI.termLength_NY;
-            } else if (QuoteToolAPI.selectedState == 'WA') {
+            }
+            else if(QuoteToolAPI.selectedState == 'WA')
+            {
                 terms = QuoteToolAPI.termLength_WA;
-            } else {
+            }
+            else
+            {
                 terms = QuoteToolAPI.termLength;
             }
             $(id).children().remove();
             $(id).append("<option value=''>Term Length</option>");
             for (var key in terms) {
-                if (age < key && age > 17) {
+                if(age<key && age>17)
+                {
                     //console.log('if ',key);
                     termRange = terms[key]
                     break;
@@ -6733,20 +6703,20 @@ QuoteToolAPI.updateTermLength = function (id, page) {
                 //console.log('loop');
             }
             len = termRange.length;
-            for (var i = 0; i < len; i++) {
-                $(id).append("<option value=" + termRange[i] + ">" + termRange[i] + " Years</option>");
+            for(var i=0; i<len; i++)
+            {
+                $(id).append("<option value="+termRange[i]+">"+termRange[i]+" Years</option>");
             }
         }
     }
 }
 
-QuoteToolAPI.goOnBlur = function () {
+QuoteToolAPI.goOnBlur = function(){
     /* for LI quote */
-    if (($("#insurance-type").val() != "") && ($("#state1-mmquote").val() != "")) {
+    if(($("#insurance-type").val() != "") && ($("#state1-mmquote").val() != "")){
         $('.quoteTop select').removeAttr('disabled');
-
     }
-    if (QuoteToolAPI.selectedInsurance != 'term') {
+    if(QuoteToolAPI.selectedInsurance != 'term'){
         $(".quoteBottom,.error_age_coverage,.error_state_coverage").hide();
         $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
         $(".rep_cta_check").removeAttr("checked");
@@ -6759,186 +6729,35 @@ QuoteToolAPI.goOnBlur = function () {
     }
 }
 
-QuoteToolAPI.formatQuotePremium = function (premium) {
+QuoteToolAPI.formatQuotePremium = function(premium){
     //if(premium != Math.round(premium)){
-    var dec = parseFloat(Math.round(premium * 100) / 100).toFixed(2);
+    var dec = parseFloat(Math.round(premium*100)/100).toFixed(2);
     return dec;
     /*} else{
      return premium;
      }*/
 }
 
-$("#edit-coverage-mmquote").change(function () {
+$("#edit-coverage-mmquote").change(function(){
     var val = $(this).val();
-    if (val > 750000) {
+    if(val > 750000){
         $(".online_cta_check").removeAttr("checked");
         $(".rep_cta_check").prop("checked", true);
-
-
         $(".online_cta_check").siblings("svg").first().hide();
         $(".online_cta_check").siblings("svg:not(\":first-of-type\")").show();
         $(".rep_cta_check").siblings("svg").hide();
         $(".rep_cta_check").siblings("svg").first().show();
-
-
-
-        /*$(".online_cta_check").removeAttr("checked");
-        $(".rep_cta_check").prop("checked", true);
-        $('.rep_cta_check').siblings('svg').toggle();
-        $('.online_cta_check').siblings('svg').toggle();*/
     }
+});
+
+$("#insurance-type").on("change",function(){
+    $('#state1-mmquote').removeAttr("disabled");
+
 });
 
 
 
-//needed to update the left side of the life insurance quotes page
-//$("#insurance-type").on("change", function () {
-//    if ($(".life-insurance-quote").length != 0) {
-//        var optionSelected = $("#insurance-type").val();
-//        $(".life-insurance-quote-left .life-insurance-quote-left-text").addClass("hidden");
-//        console.log($(".life-insurance-quote-left-text #" + optionSelected));
-//        $("#" + optionSelected).removeClass("hidden");
-//    }
-//});
 
-//needed to update the left side of the life insurance quotes page
-$("#insurance-type").on("change", function () {
-    if($(".cta_quote_form_wraper").hasClass("hidden") && $("#insurance-type").val() !== "default") {
-        $(".cta_quote_form_wraper").removeClass("hidden");
-    }
-    var optionSelected = $("#insurance-type").val();
-    $(".life-insurance-quote-left .life-insurance-quote-left-text").addClass("hidden");
-    console.log($(".life-insurance-quote-left-text #" + optionSelected));
-    $("#" + optionSelected).removeClass("hidden");
-    if($("#insurance-type").val() === "default") {
-        $(".cta_quote_form_wraper").addClass("hidden");
-        console.log("ender");
-    }
-});
-
-var metlifeRedesignQT = {
-    onFSubmitQT: function ($this) {
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        var formStatus = true;
-        $formid.find('[data-required=true]').each(function () {
-            var $this = $(this);
-            var placeholder = $this.attr('placeholder');
-            if ($this.val() == placeholder) {
-                $this.val("");
-            }
-            var val = $this.val();
-            if (val.length == 0) {
-                $this.addClass('error');
-                $this.val(placeholder);
-                formStatus = false;
-            }
-        });
-        $formid.find('[data-valid-status]').each(function () {
-            var attrDVS = $(this).attr('data-valid-status');
-            if (attrDVS == 'failed') {
-                $(this).addClass('error');
-                formStatus = false;
-            }
-        });
-        if (formStatus) {
-            //Do nothing
-        } else {
-            $formid.find('.info-mandatory').addClass('error-mandatory');
-        }
-        return formStatus;
-    }
-};
-
-$('#resultsBuyNow').on('click', function (e) {
-    e.preventDefault();
-    var $this = $(this);
-    var isValid = metlifeRedesignQT.onFSubmitQT($(this));
-    if (isValid) {
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        $('#phone_ql').val($('#phone_ql').val().replace(/-/g, ""));
-        var formName = $formid.attr('name');
-        var formObject = document.getElementById('quote_leadform');
-        formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
-        applyOnlineNow(formObject);
-    }
-})
-
-function applyOnlineNow(e) {
-    var o = getCookie("ReserveID");
-    null != o ? (console.debug("reserveid is not null and the  value =" + o),
-            AddInputParameter(e, "input", "reserveid", o, document)) : console.debug("reserveid is empty for ReserveID "),
-        addSessionParameters(e);
-
-
-    var t = "/wps/proxy/MCOnlineEnterpriseApp/TranzactLeadService.do";
-    var callCount = 0;
-
-    if (typeof FormData !== 'undefined') {
-        var formData = new FormData(e);
-        $.ajax({
-            url: t,
-            type: 'POST',
-            data: formData,
-            async: false,
-            contentType: false,
-            processData: false,
-            handleAs: "text",
-            enctype: "multipart/form-data",
-            contents: {
-                increment: callCount++,
-                fileFields: "attachURL"
-            },
-            success: function (e) {
-                console.log(e);
-                window.location = JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["redirecturl"];
-                var str = JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["redirecturl"];
-                console.log(e.redirecturl);
-                redirectToOEA(str)
-            },
-            error: function () {
-                window.location = "http://oea.metlifetermlife.com"
-            }
-        });
-    } else {
-        var formData = postSerialize($('#' + e.attributes.id.value));
-        $.ajax({
-            url: t,
-            type: 'POST',
-            data: formData,
-            async: false,
-            contentType: 'application/x-www-form-urlencoded',
-            processData: false,
-            handleAs: "text",
-            enctype: "multipart/form-data",
-            contents: {
-                increment: callCount++,
-                fileFields: "attachURL"
-            },
-            success: function (e) {
-                console.log(e);
-                window.location = JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["redirecturl"];
-                var str = JSON.parse(e.substring(e.indexOf("{"), e.indexOf("}") + 1))["redirecturl"];
-                console.log(e.redirecturl);
-                redirectToOEA(str)
-            },
-            error: function () {
-                window.location = "http://oea.metlifetermlife.com"
-            }
-        });
-    }
-
-}
-
-function redirectToOEA(e) {
-    window.location = e
-}
-
-/***** Radio Selector Begin ***********************************************************/
-// Sets the radio button image
-
-/***** Radio Selector End ***********************************************************/
 QuoteToolAPI.loadEventListenersForResults = function() {
     $("#edit-month-mmquote").on("change", function () {
         QuoteToolAPI.populateDaysDropDown("#edit-");

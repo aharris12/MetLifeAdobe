@@ -259,6 +259,15 @@
     border: 1px solid #cccccc;
 }
 
-.btn-brand-5th:active {
-
+@media screen and (min-width: 768px){
+    .btn-brand-1st,
+    .btn-brand-1st-inv,
+    .btn-brand-2nd,
+    .btn-brand-2nd-inv,
+    .btn-brand-3rd,
+    .btn-brand-3rd-inv,
+    .btn-brand-4th,
+    .btn-brand-4th-inv {
+        font-size: 11px;
+    }
 }

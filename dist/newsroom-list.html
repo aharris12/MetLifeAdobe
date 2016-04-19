@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/19/2016 @12:51:20 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/19/2016 @15:56:17 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -245,13 +245,13 @@
 <div class="container">
     <div class="row wrapper list-filter news-room">
         <div class="row">
-            <div class="col-xs-6 col-sm-3">
+            <div class="list-filter__item--half">
                 <div class="form-item">
                     <div class="form-item__label">
-                        <label for="field-id">Year:</label>
+                        <label for="list_year">Year:</label>
                     </div>
-                    <div class="form-item__field form-icon-wrapper">
-                        <select id="list_month">
+                    <div class="form-item__field form-icon-wrapper form-item__field--xs">
+                        <select id="list_year">
                             <option value="2015" selected>2015</option>
                             <option value="2014">2014</option>
                             <option value="2013">2013</option>
@@ -262,13 +262,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <div class="form-item">
+            <div class="list-filter__item--half">
+                <div class="form-item form-item__field--sm">
                     <div class="form-item__label">
-                        <label for="field-id">Month:</label>
+                        <label for="list_month">Month:</label>
                     </div>
-                    <div class="form-item__field form-icon-wrapper">
-                        <select id="list_year">
+                    <div class="form-item__field form-icon-wrapper form-item__field--md">
+                        <select id="list_month">
                             <option value="" selected>All</option>
                             <option value="jan">Jan</option>
                             <option value="feb">Feb</option>
@@ -286,12 +286,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
+            <div class="list-filter__item">
                 <div class="form-item">
                     <div class="form-item__label">
-                        <label for="field-id"></label>
+                        <label for="list_topics"></label>
                     </div>
-                    <div class="form-item__field form-icon-wrapper">
+                    <div class="form-item__field form-icon-wrapper form-item__field--md form-icon">
                         <select id="list_topics">
                             <option value="All" selected>All Topics</option>
                             <option value="Corporate">Corporate</option>

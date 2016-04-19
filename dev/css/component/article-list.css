@@ -4,9 +4,27 @@
     font-size: 1em;
 }
 
+.list-filter__item {
+    width: 100%;
+    display: inline-block;
+}
+
+.list-filter__item--half {
+    width: 49%;
+    display: inline-block;
+}
+
+.list-filter > div {
+    width: auto;
+}
+
 .list-filter .form-item__label {
     padding: 0 10px 0 0;
     font-size: 0.7em;
+}
+
+.list-filter .form-item {
+    width: auto;
 }
 
 .list-filter .form-item__field {
@@ -49,15 +67,15 @@
 }
 
 .list [data-form-library-msg] .list__title {
-    font-size: 1.25em;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .list__item {
-    border: 0 solid transparent;
     border-left-width: 20px;
     border-right-width: 20px;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
+    padding: 0 0 15px 20px;
     margin-bottom: 15px;
 }
 
@@ -68,6 +86,9 @@
 .list__item p {
     margin: 0;
     padding: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .list__item--left {
@@ -89,6 +110,7 @@
 .list__item__date {
     font-size: 0.7em;
     display: block;
+    color: #999;
 }
 
 .list__item--no-results {
@@ -116,23 +138,29 @@
 }
 
 @media (min-width: 768px) {
+    .list__item p{
+        font-size: 13px;
+        line-height: 20px;
+    }
     .list [data-form-library-msg] .list__title {
-        font-size: 1.5em;
+        font-size: 18px;
+        line-height: 22px;
     }
 
-    .list-filter__container, .list__container{
-        width:80%;
+    .list-filter__container, .list__container {
+        width: 80%;
         margin: auto;
-    }
-
-    .list-filter .col-xs-6 {
-        padding: 0;
     }
 
     .list-filter {
         max-width: 1040px;
         font-size: 1em;
         margin: 40px auto 20px;
+        text-align: center;
+    }
+
+    .list-filter__item, .list-filter__item--half {
+        width: auto;
     }
 
     .list-filter--microsite .list-filter {
@@ -142,6 +170,7 @@
     .list-filter .form-item__label {
         padding-left: 30px;
         font-size: 1em;
+        width: auto;
     }
 
     .form-item__label--large {
@@ -150,6 +179,7 @@
         /*        margin-bottom:20px;*/
         font-size: 1.1em;
     }
+
     .list__item__title {
         font-size: 16px;
         line-height: 20px;
@@ -158,11 +188,28 @@
     .list__item--right {
         text-align: right;
     }
+
+    .form-item__field--xs {
+        width: 75px;
+    }
+
+    .form-item__field--sm {
+        width: 100px;
+    }
+
+    .form-item__field--md {
+        width: 200px;
+    }
 }
 
 @media (min-width: 1024px) {
-    .list-filter--microsite .list-filter{
+    .list-filter--microsite .list-filter {
         margin-bottom: 10px;
+    }
+
+    .list [data-form-library-msg] .list__title{
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 

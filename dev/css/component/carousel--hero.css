@@ -50,7 +50,7 @@
 }
 
 .carousel--hero .icon {
-    width: 40px;
+    width: 30px;
     height: 40px;
 }
 
@@ -59,7 +59,7 @@
 @media screen and (min-width: 480px) {
     .carousel {
         max-height:300px;
-/*        margin-top:-60px;*/
+        /*        margin-top:-60px;*/
     }
     .carousel--microsite{
         max-height: none;
@@ -118,6 +118,10 @@
 }
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
+    .carousel-inner > .item > a > img{
+        min-height:440px;
+    }
+
     .carousel {
         max-height:440px;
     }
@@ -137,10 +141,7 @@
         font-size: 4vw;
         line-height: 4.6vw;
     }
-    .carousel--hero .icon {
-        height: 40px;
-        width: 40px;
-    }
+
     .item--microsite{
         max-height:450px;
     }

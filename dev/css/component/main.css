@@ -124,7 +124,9 @@ b {
 }
 
 .document-size{
-    font-size:0.7em;
+    color: #666;
+    font-size: 10px;
+    line-height: 14px;
 }
 
 @media screen and (min-width: 767px) {
@@ -144,6 +146,10 @@ b {
 }
 
 @media screen and (min-width: 1024px) {
+    .document-size{
+        font-size: 11px;
+        line-height: 15px;
+    }
     .hero h1 {
         font-size: 1.75em;
         line-height: 1.35em;
@@ -167,10 +173,6 @@ b {
     }
     .page-title p {
         font-size: 1em;
-    }
-    .document-size{
-        font-size:0.75em;
-        line-height: 0.75em;
     }
     .download-link {
         text-transform:uppercase;

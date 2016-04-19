@@ -110,8 +110,8 @@
     .subnav__list__item__anchor__label{
         display: table-cell;
         vertical-align: middle;
-        font-size: 11px;
-        line-height: 14px;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .subnav__list__item:first-child:nth-last-child(5),
@@ -155,7 +155,8 @@
     }
     .subnav__list__item__anchor__label{
 
-        font-size: 12px;
+        font-size: 14px;
+        line-height:20px;
         letter-spacing: 1px;
     }
 

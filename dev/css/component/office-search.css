@@ -39,6 +39,7 @@
 @media screen and (min-width: 768px) {
     .office-search {
         text-align: center;
+        padding: 25px 0 20px;
     }
 
     .office-search__top {
@@ -58,17 +59,18 @@
 
     .office-search__input {
         display: inline-block;
+        width: 250px;
     }
 
     .office-search__action {
         width: 70px;
-        margin: 0;
+        margin-left: 5px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .office-search {
-        padding: 40px 0 30px;
+
     }
 
     .office-search__label {
@@ -80,7 +82,7 @@
 
 @media screen and (min-width: 1024px){
     .office-search{
-        padding: 50px 0 0;
+        padding: 35px 0 30px;
     }
 }
 

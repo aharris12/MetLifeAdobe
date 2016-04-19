@@ -2287,6 +2287,8 @@ body {
     font-weight: 400;
     color:#333;
     position:relative;
+    overflow-x: hidden;
+
 }
 table {
     width:100%;
@@ -2406,12 +2408,14 @@ b {
 }
 
 .document-size{
-    font-size:0.7em;
+    color: #666;
+    font-size: 10px;
+    line-height: 14px;
 }
 
 @media screen and (min-width: 767px) {
     .wrapper {
-        width: 96%;
+        width: 95%;
         padding: 0 0 10px 0;
     }
     .wrapper.section-title {
@@ -2426,6 +2430,10 @@ b {
 }
 
 @media screen and (min-width: 1024px) {
+    .document-size{
+        font-size: 11px;
+        line-height: 15px;
+    }
     .hero h1 {
         font-size: 1.75em;
         line-height: 1.35em;
@@ -2433,13 +2441,13 @@ b {
     .wrapper.page-title {
         padding: 65px 0 45px 0;
     }
+    .wrapper{
+        width:85%;
+        max-width:1300px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-    .wrapper {
-        width: 80%;
-        max-width: 1300px;
-    }
     .hero h1 {
         font-size: 2.75em;
         width: 65%;
@@ -2449,10 +2457,6 @@ b {
     }
     .page-title p {
         font-size: 1em;
-    }
-    .document-size{
-        font-size:0.75em;
-        line-height: 0.75em;
     }
     .download-link {
         text-transform:uppercase;
@@ -2906,8 +2910,17 @@ a:visited {
     border: 1px solid #cccccc;
 }
 
-.btn-brand-5th:active {
-
+@media screen and (min-width: 768px){
+    .btn-brand-1st,
+    .btn-brand-1st-inv,
+    .btn-brand-2nd,
+    .btn-brand-2nd-inv,
+    .btn-brand-3rd,
+    .btn-brand-3rd-inv,
+    .btn-brand-4th,
+    .btn-brand-4th-inv {
+        font-size: 11px;
+    }
 }
 .pagination {
     display: inline-block;
@@ -4003,7 +4016,9 @@ a:visited {
     text-decoration: none;
     border-bottom: 1px solid #2377c5;
 }
-
+.breadcrumb a:hover{
+    color: #2377C5;
+}
 .breadcrumb__crumb:last-of-type{
     border: none;
 }
@@ -4361,6 +4376,17 @@ a:visited {
     top:4px;
 }
 
+.find-office__dental-container a,
+.find-office__vision-container a{
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.find-office__dental-container a:hover,.find-office__dental-container a:focus,
+.find-office__vision-container a:hover, .find-office__vision-container a:focus{
+    color: #fff;
+}
+
 @media screen and (min-width: 768px) {
     .quote-office {
         margin: -85px auto 0;
@@ -4384,14 +4410,14 @@ a:visited {
         width: 85%;
         max-width: 1300px;
     }
-        .get-quote__container {
-            width: 47%;
-            margin-left: 2%;
-        }
-        .find-office__container {
-            width: 47%;
-            margin-right: 2%;
-        }
+    .get-quote__container {
+        width: 47%;
+        margin-left: 2%;
+    }
+    .find-office__container {
+        width: 47%;
+        margin-right: 2%;
+    }
 }
 
 
@@ -4541,7 +4567,7 @@ a:visited {
 }
 
 .carousel--hero .icon {
-    width: 40px;
+    width: 30px;
     height: 40px;
 }
 
@@ -4550,7 +4576,7 @@ a:visited {
 @media screen and (min-width: 480px) {
     .carousel {
         max-height:300px;
-/*        margin-top:-60px;*/
+        /*        margin-top:-60px;*/
     }
     .carousel--microsite{
         max-height: none;
@@ -4609,6 +4635,10 @@ a:visited {
 }
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
+    .carousel-inner > .item > a > img{
+        min-height:440px;
+    }
+
     .carousel {
         max-height:440px;
     }
@@ -4628,10 +4658,7 @@ a:visited {
         font-size: 4vw;
         line-height: 4.6vw;
     }
-    .carousel--hero .icon {
-        height: 40px;
-        width: 40px;
-    }
+
     .item--microsite{
         max-height:450px;
     }
@@ -5347,8 +5374,8 @@ ol.promocard_content__list li:after {
     .subnav__list__item__anchor__label{
         display: table-cell;
         vertical-align: middle;
-        font-size: 11px;
-        line-height: 14px;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .subnav__list__item:first-child:nth-last-child(5),
@@ -5392,7 +5419,8 @@ ol.promocard_content__list li:after {
     }
     .subnav__list__item__anchor__label{
 
-        font-size: 12px;
+        font-size: 14px;
+        line-height:20px;
         letter-spacing: 1px;
     }
 
@@ -5751,9 +5779,27 @@ a.product-module__action--tel:hover {
     font-size: 1em;
 }
 
+.list-filter__item {
+    width: 100%;
+    display: inline-block;
+}
+
+.list-filter__item--half {
+    width: 49%;
+    display: inline-block;
+}
+
+.list-filter > div {
+    width: auto;
+}
+
 .list-filter .form-item__label {
     padding: 0 10px 0 0;
     font-size: 0.7em;
+}
+
+.list-filter .form-item {
+    width: auto;
 }
 
 .list-filter .form-item__field {
@@ -5796,15 +5842,15 @@ a.product-module__action--tel:hover {
 }
 
 .list [data-form-library-msg] .list__title {
-    font-size: 1.25em;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .list__item {
-    border: 0 solid transparent;
     border-left-width: 20px;
     border-right-width: 20px;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
+    padding: 0 0 15px 20px;
     margin-bottom: 15px;
 }
 
@@ -5815,6 +5861,9 @@ a.product-module__action--tel:hover {
 .list__item p {
     margin: 0;
     padding: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .list__item--left {
@@ -5836,6 +5885,7 @@ a.product-module__action--tel:hover {
 .list__item__date {
     font-size: 0.7em;
     display: block;
+    color: #999;
 }
 
 .list__item--no-results {
@@ -5863,23 +5913,29 @@ a.product-module__action--tel:hover {
 }
 
 @media (min-width: 768px) {
+    .list__item p{
+        font-size: 13px;
+        line-height: 20px;
+    }
     .list [data-form-library-msg] .list__title {
-        font-size: 1.5em;
+        font-size: 18px;
+        line-height: 22px;
     }
 
-    .list-filter__container, .list__container{
-        width:80%;
+    .list-filter__container, .list__container {
+        width: 80%;
         margin: auto;
-    }
-
-    .list-filter .col-xs-6 {
-        padding: 0;
     }
 
     .list-filter {
         max-width: 1040px;
         font-size: 1em;
         margin: 40px auto 20px;
+        text-align: center;
+    }
+
+    .list-filter__item, .list-filter__item--half {
+        width: auto;
     }
 
     .list-filter--microsite .list-filter {
@@ -5889,6 +5945,7 @@ a.product-module__action--tel:hover {
     .list-filter .form-item__label {
         padding-left: 30px;
         font-size: 1em;
+        width: auto;
     }
 
     .form-item__label--large {
@@ -5897,6 +5954,7 @@ a.product-module__action--tel:hover {
         /*        margin-bottom:20px;*/
         font-size: 1.1em;
     }
+
     .list__item__title {
         font-size: 16px;
         line-height: 20px;
@@ -5905,11 +5963,28 @@ a.product-module__action--tel:hover {
     .list__item--right {
         text-align: right;
     }
+
+    .form-item__field--xs {
+        width: 75px;
+    }
+
+    .form-item__field--sm {
+        width: 100px;
+    }
+
+    .form-item__field--md {
+        width: 200px;
+    }
 }
 
 @media (min-width: 1024px) {
-    .list-filter--microsite .list-filter{
+    .list-filter--microsite .list-filter {
         margin-bottom: 10px;
+    }
+
+    .list [data-form-library-msg] .list__title{
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 
@@ -7588,6 +7663,10 @@ body{
     font-weight: 500;
 }
 
+.product-row__tile__title :hover{
+    text-decoration: none;
+}
+
 .product-row__tile__copy {
     width: 90%;
     margin: 0 auto 15px;
@@ -7762,6 +7841,7 @@ body{
     .large-promo-tile{
         height: auto;
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .large-promo-tile .product-row__tile__img-tile__img {
@@ -7793,6 +7873,10 @@ body{
 
     .skinny-promo-tile .product-row__tile__promo {
         font-size: 26px;
+    }
+
+    .large-promo-tile{
+        margin-bottom: 30px;
     }
 
     .large-promo-tile .product-row__tile__promo {
@@ -7943,13 +8027,25 @@ body{
         width: 32%;
         display: inline-block;
         float: left;
-        /*box-shadow: none;*/
+       /* box-shadow: none;*/
         vertical-align: top;
         margin-right: 1.6%;
     }
     .media-card:last-of-type {
         margin-right: 0;
     }
+
+.media-card__content{
+    padding-left: 0;
+    padding-bottom:0;
+}
+.media-card__content a:hover{
+    text-decoration: none;
+}
+.media-card__content--link-list{
+    border: 0 solid transparent;
+    border-top: 1px solid #ccc;
+}
 }
 .office-search {
     padding: 20px 30px 10px;
@@ -7992,6 +8088,7 @@ body{
 @media screen and (min-width: 768px) {
     .office-search {
         text-align: center;
+        padding: 25px 0 20px;
     }
 
     .office-search__top {
@@ -8011,17 +8108,18 @@ body{
 
     .office-search__input {
         display: inline-block;
+        width: 250px;
     }
 
     .office-search__action {
         width: 70px;
-        margin: 0;
+        margin-left: 5px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .office-search {
-        padding: 40px 0 30px;
+
     }
 
     .office-search__label {
@@ -8033,7 +8131,7 @@ body{
 
 @media screen and (min-width: 1024px){
     .office-search{
-        padding: 50px 0 0;
+        padding: 35px 0 30px;
     }
 }
 
@@ -8344,6 +8442,10 @@ body{
     font-size: 14px;
     list-style-type: disc;
     padding-bottom: 20px;
+}
+
+.content-header{
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -9150,6 +9252,8 @@ ul.bullet-list {
     padding-top: 10px;
 }
 
+
+
 .footer-main__items {
     margin-bottom: 10px;
     margin-top: 20px;
@@ -9728,11 +9832,20 @@ ul.bullet-list {
     display: block;
 }
 
-.footer-legal__bullet--permanent:before {
+.global-footer--microsite .footer-legal__bullet:before{
     content: "\2022";
     padding: 0;
     display: inline-block;
 }
+.global-footer--microsite .footer-legal__link a, footer-legal__call--microsite a{
+    font-size: 14px;
+    line-height: 15px;
+}
+.global-footer--microsite .footer-legal__link a:hover, footer-legal__call--microsite a:hover{
+    text-decoration: none;
+}
+
+
 
 .footer-legal__copyright {
     font-size: 1em;
@@ -9741,6 +9854,11 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 768px) {
+    .global-footer--microsite .footer-legal__link a, footer-legal__call--microsite a{
+        font-size: 1em;
+        line-height: 1.55em;
+    }
+
     .global-footer{
         padding-bottom: 110px;
     }
@@ -9759,7 +9877,6 @@ ul.bullet-list {
     .footer-legal__link {
         margin: 0 10px 0 -15px;
     }
-
     .footer-legal__link a{
         margin: 0;
     }
@@ -9787,9 +9904,7 @@ ul.bullet-list {
     .footer-legal__copy{
         margin-top: 20px;
     }
-}
 
-@media screen and (min-width: 768px) {
     .footer-main__label {
         font-size: 16px;
         line-height: 20px;
@@ -15054,6 +15169,7 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 .fax-results__container .results_list_container .page-count{
     display:inline-block;
     width: auto;
+    padding-right: 25px;
 }
 
 .fax-results__container .results_list_container .results_office_result p{
@@ -15344,7 +15460,12 @@ div.email-unsub ~ div.contact-us > div.wrapper {
     content: "B";
 }
 /****************** End Directions Container css *******************/
-
+.fax-results__container .contact-container--form-card{
+    width: 100%;
+}
+.googleMarkerInfo p{
+    margin-bottom: 0;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -16033,6 +16154,223 @@ text-align: center;
 }
 
 
+/* line 1, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay {
+	position: absolute;
+	z-index: 9999999999999;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+/* line 8, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container {
+	margin-top: 50px;
+	width: 320px;
+}
+/* line 11, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: right;
+	top: 15px;
+	right: 15px;
+	position: relative;
+	z-index: 9;
+	clear: both;
+}
+/* line 22, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close img {
+	width: 100%;
+}
+/* line 27, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+	height: 275px;
+	background-color: #f2f2f2;
+	text-align: center;
+	padding: 10px 5px;
+}
+/* line 32, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+	font-size: 28px;
+	line-height: 30px;
+	font-weight: 400;
+	margin-top: auto;
+	margin-bottom: 0;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+/* line 41, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+	margin: 10px 10px 20px 11px;
+	line-height: 21px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 30px;
+}
+/* line 51, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+	padding: 25px 10px;
+	background-color: #ffffff;
+	text-align: left;
+}
+/* line 56, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+	padding-bottom: 25px;
+}
+/* line 58, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+	line-height: 24px;
+	font-weight: 400;
+	font-size: 28px;
+}
+/* line 63, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+	padding-top: 10px;
+	font-weight: 300;
+	padding-left: 30px;
+	font-size: 20px;
+}
+/* line 68, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+	list-style: disc;
+	font-size: 14px;
+}
+
+
+@media screen and (min-width: 768px) {
+	/* line 2, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container {
+		margin-top: 50px;
+		width: 700px;
+	}
+
+	/* line 5, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+		width: 16px;
+		height: 16px;
+		display: block;
+		float: right;
+		top: 15px;
+		right: 15px;
+		position: relative;
+		z-index: 9;
+	}
+
+	/* line 17, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+		height: 200px;
+		padding: 10px 5px;
+	}
+
+	/* line 20, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+		font-size: 44px;
+		line-height: 44px;
+		margin-top: auto;
+		margin-bottom: 0;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+
+	/* line 28, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+		margin: 10px auto 60px;
+		font-size: 14px;
+	}
+
+	/* line 35, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+		padding: 25px 50px;
+	}
+
+	/* line 38, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+		padding-bottom: 25px;
+	}
+
+	/* line 40, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+		font-weight: 400;
+		font-size: 28px;
+	}
+
+	/* line 44, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+		padding-top: 10px;
+		font-weight: 300;
+		padding-left: 30px;
+		font-size: 20px;
+	}
+
+	/* line 49, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+		list-style: disc;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	/* line 2, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container {
+		margin-top: 50px;
+		width: 900px;
+	}
+	/* line 5, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+		width: 16px;
+		height: 16px;
+		display: block;
+		float: right;
+		top: 30px;
+		right: 15px;
+		position: relative;
+		z-index: 9;
+	}
+	/* line 17, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+		height: 200px;
+		padding: 10px 5px;
+	}
+	/* line 20, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+		font-size: 44px;
+		line-height: 44px;
+		margin-top: auto;
+		margin-bottom: 0;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+	/* line 28, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+		margin: 10px auto 60px;
+		font-size: 14px;
+	}
+	/* line 35, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+		padding: 25px 50px;
+	}
+	/* line 38, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+		padding-bottom: 25px;
+	}
+	/* line 40, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+		font-size: 28px;
+	}
+	/* line 43, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+		padding-top: 10px;
+		font-weight: 300;
+		padding-left: 30px;
+		font-size: 20px;
+	}
+	/* line 48, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+		font-size: 14px;
+	}
+}
 /* line 215, ../../../sass/_headerMobile.scss */
 .loginOpen {
 	position: fixed;

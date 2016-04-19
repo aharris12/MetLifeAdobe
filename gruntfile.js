@@ -90,6 +90,7 @@ module.exports = function (grunt) {
                     'dev/css/component/overlay.css',
                     'dev/css/component/sitemap.css',
                     'dev/css/component/share-chat.css',
+                    'dev/css/component/visiondental-overlay.css',
                     'dev/css/component/login-dropdown.css',
                     'dev/css/component/toolkit-login.css',
                     'dev/css/component/toolkit-searchbox.css',
@@ -103,8 +104,6 @@ module.exports = function (grunt) {
                     'dev/css/component/toolkit-contentblock.css',
                     'dev/css/component/toolkit-divider.css',
                     'dev/css/theme/ie9select.css'
-
-
                 ],
                 dest: 'dist/css/metlife.css'
             },
@@ -285,6 +284,7 @@ module.exports = function (grunt) {
                         'dev/css/component/overlay.css',
                         'dev/css/component/sitemap.css',
                         'dev/css/component/share-chat.css',
+                        'dev/css/component/visiondental-overlay.css',
                         'dev/css/component/login-dropdown.css',
                         'dev/css/component/toolkit-login.css',
                         'dev/css/component/toolkit-searchbox.css',

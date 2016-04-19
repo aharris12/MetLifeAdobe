@@ -3,12 +3,17 @@ var valid = true;
 var zipcode = 0;
 var isNumber = false;
 
+$(".find-office__zip-city-state").on("keyup", function(){
+    $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
+    $('.error-span').hide();
+});
+
 function validateFindOffice() {
     //reset
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
     $('.error-span').hide();
     valid=true;
-    
+
     zipcode = $('.find-office__zip-city-state').val();
     isNumber =  /^\d+$/.test(zipcode);
     if( zipcode.length == 0 || (isNumber && zipcode.length != 5)) {
@@ -27,9 +32,6 @@ function validateFindOffice() {
     return valid;
 }
 
-$('.find-office__dental, .find-office__vision').change(function(){
-    validateFindOffice();
-});
 
 $('.btn-group .btn').click(function(){
     //reset
@@ -43,25 +45,34 @@ $('.btn-group .btn').click(function(){
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
         if (selectedBtnGroupOption == "dental") {
-            $('.find-office__zip-city-state-container').addClass('full-width');
-            $('.find-office__dental-container').css('display','block');
+            console.log("dental")
+            $(".find-office__zip-city-state").on("focus", function(){
+                $('.find-office__zip-city-state-container').addClass('full-width');
+                $('.find-office__dental-container').css('display','block');
+                $('.find-office__vision-container').css('display','none');
+            });
+
         } else if (selectedBtnGroupOption == "vision") {
-            $('.find-office__zip-city-state-container').addClass('full-width');
-            $('.find-office__vision-container').css('display','block');
+            console.log("vision")
+            $(".find-office__zip-city-state").on("focus", function(){
+                $('.find-office__zip-city-state-container').addClass('full-width');
+                $('.find-office__vision-container').css('display','block');
+                $('.find-office__dental-container').css('display','none');
+            });
+
         }
     }
 });
 
 $('.find-office__submit').click(function(){
     event.preventDefault();
-    selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');    
+    selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
     if (validateFindOffice()) {
         var urlStr = "";
         if (selectedBtnGroupOption == "office") {
             var x = window.location.href;
             urlStr = window.location.href + x.substring(0, x.lastIndexOf("/")) + "?zip=" + zipcode;
-            urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
-            sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());
+            urlStr = "https://www.metlife.com/products/findanoffice/index.html" + "?zip=" + zipcode;
         } else if (selectedBtnGroupOption == "dental") {
             if (!($('.find-office__dental').val().trim() == 'TRICARE')) {
                 urlStr = "https://metlocator.metlife.com/metlocator/execute/Search?searchType=findDentistMetLife&networkID=2&zip=" + zipcode + "&qsType=" + $('.find-office__dental').val();
@@ -77,4 +88,20 @@ $('.find-office__submit').click(function(){
         }
         window.location.href = urlStr;
     }
+});
+
+$('[data-target="vision_overlay"]').click(function(e){
+    e.preventDefault();
+    $(".vision_overlay").removeClass("hidden")
+});
+
+$('[data-target="dental_overlay"]').click(function(e){
+    e.preventDefault();
+    $(".dental_overlay").removeClass("hidden")
+});
+
+$(".vision_dental_overlay_close").click(function(e){
+    e.preventDefault();
+    $(".dental_overlay").addClass("hidden");
+    $(".vision_overlay").addClass("hidden");
 });

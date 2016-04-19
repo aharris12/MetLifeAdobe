@@ -170,7 +170,6 @@ $('.megamenu__sub-items--action').each(function(){
 //});
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        console.log()
         if($('.' + $(this).attr('data-target') === 'loginOpen')){
             $(".loginOpen").toggle()
         }else {

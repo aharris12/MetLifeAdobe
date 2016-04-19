@@ -1,0 +1,217 @@
+/* line 1, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay {
+	position: absolute;
+	z-index: 9999999999999;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+/* line 8, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container {
+	margin-top: 50px;
+	width: 320px;
+}
+/* line 11, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: right;
+	top: 15px;
+	right: 15px;
+	position: relative;
+	z-index: 9;
+	clear: both;
+}
+/* line 22, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close img {
+	width: 100%;
+}
+/* line 27, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+	height: 275px;
+	background-color: #f2f2f2;
+	text-align: center;
+	padding: 10px 5px;
+}
+/* line 32, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+	font-size: 28px;
+	line-height: 30px;
+	font-weight: 400;
+	margin-top: auto;
+	margin-bottom: 0;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+/* line 41, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+	margin: 10px 10px 20px 11px;
+	line-height: 21px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 30px;
+}
+/* line 51, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+	padding: 25px 10px;
+	background-color: #ffffff;
+	text-align: left;
+}
+/* line 56, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+	padding-bottom: 25px;
+}
+/* line 58, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+	line-height: 24px;
+	font-weight: 400;
+	font-size: 28px;
+}
+/* line 63, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+	padding-top: 10px;
+	font-weight: 300;
+	padding-left: 30px;
+	font-size: 20px;
+}
+/* line 68, ../../../sass/_visionDentalOverlayMobile.scss */
+.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+	list-style: disc;
+	font-size: 14px;
+}
+
+
+@media screen and (min-width: 768px) {
+	/* line 2, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container {
+		margin-top: 50px;
+		width: 700px;
+	}
+
+	/* line 5, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+		width: 16px;
+		height: 16px;
+		display: block;
+		float: right;
+		top: 15px;
+		right: 15px;
+		position: relative;
+		z-index: 9;
+	}
+
+	/* line 17, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+		height: 200px;
+		padding: 10px 5px;
+	}
+
+	/* line 20, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+		font-size: 44px;
+		line-height: 44px;
+		margin-top: auto;
+		margin-bottom: 0;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+
+	/* line 28, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+		margin: 10px auto 60px;
+		font-size: 14px;
+	}
+
+	/* line 35, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+		padding: 25px 50px;
+	}
+
+	/* line 38, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+		padding-bottom: 25px;
+	}
+
+	/* line 40, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+		font-weight: 400;
+		font-size: 28px;
+	}
+
+	/* line 44, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+		padding-top: 10px;
+		font-weight: 300;
+		padding-left: 30px;
+		font-size: 20px;
+	}
+
+	/* line 49, ../../../sass/_visionDentalOverlayTablet.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+		list-style: disc;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	/* line 2, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container {
+		margin-top: 50px;
+		width: 900px;
+	}
+	/* line 5, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_close {
+		width: 16px;
+		height: 16px;
+		display: block;
+		float: right;
+		top: 30px;
+		right: 15px;
+		position: relative;
+		z-index: 9;
+	}
+	/* line 17, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header {
+		height: 200px;
+		padding: 10px 5px;
+	}
+	/* line 20, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header h1 {
+		font-size: 44px;
+		line-height: 44px;
+		margin-top: auto;
+		margin-bottom: 0;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+	/* line 28, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_header p {
+		margin: 10px auto 60px;
+		font-size: 14px;
+	}
+	/* line 35, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body {
+		padding: 25px 50px;
+	}
+	/* line 38, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description {
+		padding-bottom: 25px;
+	}
+	/* line 40, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description h3 {
+		font-size: 28px;
+	}
+	/* line 43, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul {
+		padding-top: 10px;
+		font-weight: 300;
+		padding-left: 30px;
+		font-size: 20px;
+	}
+	/* line 48, ../../../sass/_visionDentalOverlayDesktop.scss */
+	.vision_dental_overlay .vision_dental_overlay_container .vision_dental_overlay_body .overlay_network_description ul li {
+		font-size: 14px;
+	}
+}

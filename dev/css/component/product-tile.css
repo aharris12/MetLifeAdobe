@@ -47,6 +47,10 @@
     font-weight: 500;
 }
 
+.product-row__tile__title :hover{
+    text-decoration: none;
+}
+
 .product-row__tile__copy {
     width: 90%;
     margin: 0 auto 15px;
@@ -221,6 +225,7 @@
     .large-promo-tile{
         height: auto;
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .large-promo-tile .product-row__tile__img-tile__img {
@@ -252,6 +257,10 @@
 
     .skinny-promo-tile .product-row__tile__promo {
         font-size: 26px;
+    }
+
+    .large-promo-tile{
+        margin-bottom: 30px;
     }
 
     .large-promo-tile .product-row__tile__promo {

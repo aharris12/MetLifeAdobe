@@ -55,6 +55,17 @@
     top:4px;
 }
 
+.find-office__dental-container a,
+.find-office__vision-container a{
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.find-office__dental-container a:hover,.find-office__dental-container a:focus,
+.find-office__vision-container a:hover, .find-office__vision-container a:focus{
+    color: #fff;
+}
+
 @media screen and (min-width: 768px) {
     .quote-office {
         margin: -85px auto 0;
@@ -78,13 +89,13 @@
         width: 85%;
         max-width: 1300px;
     }
-        .get-quote__container {
-            width: 47%;
-            margin-left: 2%;
-        }
-        .find-office__container {
-            width: 47%;
-            margin-right: 2%;
-        }
+    .get-quote__container {
+        width: 47%;
+        margin-left: 2%;
+    }
+    .find-office__container {
+        width: 47%;
+        margin-right: 2%;
+    }
 }
 

@@ -163,6 +163,7 @@
 .fax-results__container .results_list_container .page-count{
     display:inline-block;
     width: auto;
+    padding-right: 25px;
 }
 
 .fax-results__container .results_list_container .results_office_result p{
@@ -453,7 +454,12 @@
     content: "B";
 }
 /****************** End Directions Container css *******************/
-
+.fax-results__container .contact-container--form-card{
+    width: 100%;
+}
+.googleMarkerInfo p{
+    margin-bottom: 0;
+}
 
 @media screen and (min-width: 768px) {
 

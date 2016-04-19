@@ -3,6 +3,8 @@ body {
     font-weight: 400;
     color:#333;
     position:relative;
+    overflow-x: hidden;
+
 }
 table {
     width:100%;
@@ -122,12 +124,14 @@ b {
 }
 
 .document-size{
-    font-size:0.7em;
+    color: #666;
+    font-size: 10px;
+    line-height: 14px;
 }
 
 @media screen and (min-width: 767px) {
     .wrapper {
-        width: 96%;
+        width: 95%;
         padding: 0 0 10px 0;
     }
     .wrapper.section-title {
@@ -142,6 +146,10 @@ b {
 }
 
 @media screen and (min-width: 1024px) {
+    .document-size{
+        font-size: 11px;
+        line-height: 15px;
+    }
     .hero h1 {
         font-size: 1.75em;
         line-height: 1.35em;
@@ -149,13 +157,13 @@ b {
     .wrapper.page-title {
         padding: 65px 0 45px 0;
     }
+    .wrapper{
+        width:85%;
+        max-width:1300px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-    .wrapper {
-        width: 80%;
-        max-width: 1300px;
-    }
     .hero h1 {
         font-size: 2.75em;
         width: 65%;
@@ -165,10 +173,6 @@ b {
     }
     .page-title p {
         font-size: 1em;
-    }
-    .document-size{
-        font-size:0.75em;
-        line-height: 0.75em;
     }
     .download-link {
         text-transform:uppercase;

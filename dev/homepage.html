@@ -106,6 +106,7 @@
     <link href="css/component/toolkit-contentblock.css" rel="stylesheet">
     <link href="css/component/toolkit-divider.css" rel="stylesheet">
     <link href="css/component/share-chat.css" rel="stylesheet">
+    <link href="css/component/visiondental-overlay.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
 
 
@@ -115,7 +116,7 @@
 </head>
 <body>
 <!--Cookie Banner Start -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
     // Cookie is automatically added
     // If false, cookie needs a required button press or navigation to be added
     var createCookie = true;
@@ -130,22 +131,22 @@
     <div class="row cookieShell">
 
         <div class="wrapper">
-                        <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
+                        <div class="inline-block col-sm-2 col-xs-9 cookieShell&#45;&#45;title">
                             <p>Cookies on Metlife's UK Website</p>
                         </div>
 
-                        <div class="inline-block col-sm-8 col-xs-12 cookieShell--description">
+                        <div class="inline-block col-sm-8 col-xs-12 cookieShell&#45;&#45;description">
                             <p>Metlife.co.uk uses cookies - by continuing to browse our site, you're agreeing to our use of cookies. To learn more about the cookies we use, please see our <a href="#">privacy policy</a>.</p>
                             <p>Cookies will not be set on your computer, phone, or tablet if you visit our privacy policy from this banner.</p>
                         </div>
 
-                        <div class="inline-block col-sm-2 col-xs-2 cookieShell--button">
+                        <div class="inline-block col-sm-2 col-xs-2 cookieShell&#45;&#45;button">
                             <a href="JavaScript:setAcceptCookieDesktop(true);" class="btn btn-brand-2nd js-cookieAccept">Continue</a>
                         </div>
         </div>
 
     </div>
-</div>
+</div>-->
 <!--Cookie Banner End -->
 
 <!-- Global Header -->
@@ -893,7 +894,7 @@
                 <use xlink:href="images/icons-metlife.svg#icon-arrow-up-triangle"></use>
             </svg>
             <div class="homepage-sub">
-                <div class="row homepage-sub__container">
+                <div class="row homepage-sub__container box-shadow">
                     <div class="col-sm-9">
 
                             <a class="homepage-sub__link" href="/products/insurance/life-insurance/index.html"
@@ -1756,23 +1757,25 @@
         <div class="find-office__container">
             <div class="find-office">
                 <h2 class="quote-office__heading">I want to find a MetLife:</h2>
-
                 <div class="row btn-group full-width">
-                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="office">Office
+                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="office">
+                        Office
                         <div class="btn-group__icon">
                             <svg class="icon icon-arrow-up-triangle brand-1st-inv">
                                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
                             </svg>
                         </div>
                     </a>
-                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="dental">Dentist
+                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="dental">
+                        Dentist
                         <div class="btn-group__icon">
                             <svg class="icon icon-arrow-up-triangle brand-1st-inv">
                                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
                             </svg>
                         </div>
                     </a>
-                    <a href="#" class="col-xs-6 col-sm-4 btn pill" data-btn-group-option="vision">Vision Provider
+                    <a href="#" class="col-xs-6 col-sm-4 btn pill" data-btn-group-option="vision">
+                        Vision Provider
                         <div class="btn-group__icon">
                             <svg class="icon icon-arrow-up-triangle brand-1st-inv">
                                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
@@ -1787,16 +1790,6 @@
                             <div class="form-item__field">
                                 <input type="text" class="form-input find-office__zip-city-state"
                                        placeholder="Zip or City, State">
-
-                                <div class="error-span">
-                                    <svg class="icon error">
-                                        <use xlink:href="images/icons-metlife.svg#icon-arrow-up-triangle"></use>
-                                    </svg>
-                                    <svg class="icon info">
-                                        <use xlink:href="images/icons-metlife.svg#icon-info"></use>
-                                    </svg>
-                                    Please enter a valid 5 digit zip-code
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1811,11 +1804,9 @@
                                     <option value="DPPO">Federal Dental (FEDVIP)</option>
                                     <option value="TRICARE">TRICARE</option>
                                 </select>
-                                <svg class="icon icon-select-arrows brand-gray-1st">
-                                    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                                </svg>
                             </div>
                         </div>
+                        <a href="#" class="white" data-target="dental_overlay">Don't Know your plan?</a>
                     </div>
                     <div class="col-sm-9 find-office__vision-container">
                         <div class="form-item">
@@ -1826,16 +1817,16 @@
                                     <option value="dvp">MetLife Discount Vision</option>
                                     <option value="SafeGuard">SafeGuard Vision</option>
                                 </select>
-                                <svg class="icon icon-select-arrows brand-gray-1st">
-                                    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                                </svg>
                             </div>
                         </div>
+                        <a href="#" class="white" data-target="vision_overlay">Don't Know your plan?</a>
                     </div>
-                    <div class="col-sm-3"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right" data-service-url="/my/service.json" data-href="/dev/fao.html">Submit</a></div>
+                    <div class="col-sm-3"><a href="#"
+                                             class="btn btn-brand-2nd find-office__submit pull-right">Submit</a></div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -2077,8 +2068,139 @@
     </div>
 </div>
 
+<!--Vision Overlay Section-->
+<div class="container-fluid vision_dental_overlay dental_overlay hidden">
+    <div class="row">
+        <div class="container vision_dental_overlay_container">
+            <!--Vision Overlay Component-->
+            <a href="#" class="vision_dental_overlay_close">
+                <svg class="icon icon-close brand-gray-1st view-close">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg>
+            </a>
+
+
+            <div class="col-lg-12 vision_dental_overlay_header">
+                <h1 class="col-lg-12">Don't know your network?</h1>
+
+                <p class="col-lg-12">The descriptions below may help you identify your dental network. If not, log in to
+                    MyBenefits to find a dentist.</p>
+            </div>
+            <div class="col-lg-12 vision_dental_overlay_body">
+
+                <div class="overlay_network_description">
+                    <h3>PDP</h3>
+                    <ul>
+                        <li>Supports the MetLife referred Dentist Program, a Dental PPO plan</li>
+                        <li>Visit any licensed dentist or specialist - however, your out-of-pocket costs are usually
+                            lower when you go to a participating dentist
+                        </li>
+                        <li>Select this network for TRICARE CONUS participating dentist</li>
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>PDP Plus</h3>
+                    <ul>
+                        <li>Offers the greatest selection of participating dentists and specialists for the the MetLife
+                            Preferred Dentist Program, a Dental PPO plan
+                        </li>
+                        <li>Visit any Licensed dentist or specialist - however, your out-of-pocket costs are usually
+                            lower when you go to a participating dentist
+                        </li>
+                        <li>Federal or State Marketplace Customers, please select this network for DPPO Plans</li>
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>Dental HMO/Managed Care</h3>
+                    <ul>
+                        <li>Supports our Dental HMO/Managed Care Plans</li>
+                        <li>The Plans Provide in-network benefits only</li>
+                        <li>Enrolled members pre-select a primary care dentist for all dental services</li>
+                        <li>Federal or State Marketplace customers, please select this network for Dental HMO/Managed
+                            Care Plans. Plan names begin with your state abbreviation (EX. FL Family Basic Plan for
+                            Florida)
+                        </li>
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>TRICARE OCONUS Preferred Dentists (TOPDs)</h3>
+                    <ul>
+                        <li>Visiting a TOPD can save a member time, reduce up-front costs and eliminate additional
+                            paperwork - please note that TOPDs are not avaible in all locations nor are members required
+                            to vist a TOPD
+                        </li>
+                        <li>TRICARE CONUS, please selece the PDP Network</li>
+
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>Federal Dental (FEDVIP)</h3>
+                    <ul>
+                        <li>Supports the MetLife Federal Dental Plan, a Dental PPO Plan</li>
+                        <li>The plan is only avaible to certain Federal goverenement employees and their dependents</li>
+                        <li>Visit any license dentist or specialist - however, your out-of-pocket costs are usually
+                            lower when you go to a participating dentist
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--Vision Overlay Component-->
+        </div>
+    </div>
+
+</div>
+<!-- Vision Overlay Section-->
+
+<!--Dental Overlay -->
+<div class="container-fluid vision_dental_overlay vision_overlay hidden">
+    <div class="row">
+        <div class="container vision_dental_overlay_container">
+            <!--Dental Overlay Component-->
+            <a href="#" class="vision_dental_overlay_close">
+                <svg class="icon icon-close brand-gray-1st view-close">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg>
+            </a>
+
+            <div class="col-lg-12 vision_dental_overlay_header">
+                <h1 class="col-lg-12">Don't know your plan?</h1>
+
+                <p class="col-lg-12">The descriptions below may help you identify your vision network. If not, log in to
+                    MyBenefits to find a vision provider.</p>
+            </div>
+            <div class="col-lg-12 vision_dental_overlay_body">
+
+                <div class="overlay_network_description">
+                    <h3>MetLife Vision PPO</h3>
+                    <ul>
+                        <li>An Insured vision prefered provider organizaion (PPO) plan offering in-and out-of-network
+                            benefits.
+                        </li>
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>MetLife Discount Vision</h3>
+                    <ul>
+                        <li>A discount only program offered only through participating private practice providers.</li>
+                    </ul>
+                </div>
+                <div class="overlay_network_description">
+                    <h3>SafeGuard Vision Plans</h3>
+                    <ul>
+                        <li>Insured vision plans offered through SafeGuard in CA, FL and TX.</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Dental Overlay Component-->
+        </div>
+    </div>
+
+</div>
+<!-- Dental Overlay -->
+
 <!-- Divider Scroll To -->
-<<div class="container">
+<!--
+<div class="container">
     <div class="scroll-form-more-container hidden-xs hidden-sm">
         <div class="scroll-more ">
             <a href="#scroll_more">
@@ -2087,17 +2209,10 @@
             </a>
         </div>
     </div>
+</div>
+-->
 
-    <div class="row wrapper divider&#45;&#45;scroll hidden-xs">
-        <a id="scrollMoreLineLink" href="#scroll_more" class="divider&#45;&#45;scroll__link">
-            <span class="block">Scroll for More</span>
-            <svg class="icon brand-3rd">
-                <use xlink:href="images/icons-metlife.svg#icon-down"></use>
-            </svg>
-        </a>
-    </div>
 
-</div>-
 
 <!-- Divider Snoopy -->
 <div class="container">

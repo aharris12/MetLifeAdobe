@@ -36,11 +36,23 @@
         width: 32%;
         display: inline-block;
         float: left;
-        /*box-shadow: none;*/
+       /* box-shadow: none;*/
         vertical-align: top;
         margin-right: 1.6%;
     }
     .media-card:last-of-type {
         margin-right: 0;
     }
+
+.media-card__content{
+    padding-left: 0;
+    padding-bottom:0;
+}
+.media-card__content a:hover{
+    text-decoration: none;
+}
+.media-card__content--link-list{
+    border: 0 solid transparent;
+    border-top: 1px solid #ccc;
+}
 }
