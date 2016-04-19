@@ -299,12 +299,16 @@
         <div class="results-card__premium-card js-resultsUS">
             <div class="results-card__premium-card__container">
                 <h2 class="results-card__premium-card__title">Here's your quote!</h2>
+                <h2 class="results-card__premium-card__error hidden">Something went wrong</h2>
                 <div class="results-card__quoteinfo" data-thousands="," data-cents=".">
                     <div class="results-card__quoteinfo__arrow-down"></div>
                     <div class="bottom-padding-20">
                         <span class="results-card__quoteinfo__currency">$</span>
                         <span class="results-card__quoteinfo__value" id="QuoteValue"></span>
                         <span class="results-card__quoteinfo__frequency">/ month</span>
+                    </div>
+                    <div class="results-card__quoteinfo__error bottom-padding-20 hidden">
+                        <span>Our calculator is having a little trouble</span>
                     </div>
                     <div class="results-card__quoteinfo__terms">
                         <div data-field="coverage">
@@ -372,12 +376,20 @@
         <!--End call to apply 2/19/16 Ian-->
         <div class="results-form__wrapper bg-brand-1st white">
             <div class="results-form__text">
-                <h2>Want to buy this insurance? It's easy:</h2>
-                <ul class="results-form__text__list">
+                <h2 class="">Want to buy this insurance? It's easy:</h2>
+                <!--Added form title for error 2/18/16 Ian-->
+                <h2 class="results-form__text__error__title hidden">We can still help.</h2>
+                <!--End of added form title for error 2/18/16 Ian-->
+                <ul class="results-form__text__list ">
                     <li>Fill out the form or call to apply</li>
                     <li>You can't be turned down for medical reasons</li>
                     <li>Coverage can start today!</li>
                 </ul>
+                <!--Added form text for error 2/18/16 Ian-->
+                <div class="results-form__text__error__desc hidden">
+                    <span>Please fill out the form and we'll contact you to provide a quote.</span>
+                </div>
+                <!--End of added form title for error 2/18/16 Ian-->
             </div>
             <div class="results-form__inputs">
                 <div class="results-form__header">Start by telling us how to reach you:</div>
