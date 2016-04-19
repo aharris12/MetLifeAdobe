@@ -267,7 +267,12 @@ $('.megamenu__sub-items--action').each(function(){
 //});
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        $('.' + $(this).attr('data-target')).slideToggle();
+        console.log()
+        if($('.' + $(this).attr('data-target') === 'loginOpen')){
+            $(".loginOpen").toggle()
+        }else {
+            $('.' + $(this).attr('data-target')).slideToggle();
+        }
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').toggleClass('megamenu--open');
             $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
@@ -283,7 +288,6 @@ $('.contact-trigger').click(function(){
 // when we open the mega menu as well. this avoids 2 fixes should we tweak the animation
 $('.contact-close').click(function(){
     closeContactForm();
-
 });
 
 function closeContactForm(){

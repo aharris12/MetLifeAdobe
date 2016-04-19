@@ -16033,6 +16033,270 @@ text-align: center;
 }
 
 
+/* line 215, ../../../sass/_headerMobile.scss */
+.loginOpen {
+	position: fixed;
+	display: none;
+	height: 100%;
+	width: 100%;
+	-webkit-transition: all 500ms ease 0s;
+	transition: all 500ms ease 0s;
+	top: 50px;
+	right: -800px;
+	margin: 0px;
+	padding: 20px 0;
+	background-color: #0e5dae;
+	color: #ffffff;
+	text-align: center;
+	z-index: 1000;
+}
+/* line 230, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 9px;
+	display: block;
+	width: 294px;
+	height: 70px;
+	float: none;
+}
+/* line 239, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .input {
+	display: block;
+	width: 100%;
+	height: 38px;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #666666;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+}
+/* line 251, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .input:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+}
+/* line 256, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .loginUsername {
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	margin-right: 20px;
+	margin-bottom: 15px;
+	float: none;
+	border: 1px solid #2c77c5;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+	color: #666666;
+}
+/* line 274, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .loginMoreoptions {
+	display: inline-block;
+	float: left;
+	font-size: 11px;
+}
+/* line 278, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .loginMoreoptions .loginOptions {
+	margin-top: 10px;
+}
+/* line 282, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: underline;
+}
+/* line 286, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+/* line 291, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .login_open_reg_forgot {
+	width: 100%;
+	margin-top: 15px;
+	float: left;
+	text-align: left;
+	clear: both;
+}
+/* line 298, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .loginRegister {
+	display: inline-block;
+	float: left;
+	color: #ffffff;
+	font-size: 11px;
+	font-weight: 400;
+	text-decoration: underline;
+}
+/* line 306, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .loginForget {
+	display: inline-block;
+	float: right;
+	font-size: 11px;
+}
+/* line 311, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .login_error {
+	border-color: #eb4646 !important;
+	background-color: #f5d0d0 !important;
+	color: #db3535 !important;
+}
+/* line 315, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .login_error::-moz-placeholder, .loginOpen .loginForm .login_error:-ms-input-placeholder, .loginOpen .loginForm .login_error::-webkit-input-placeholder {
+	color: #db3535 !important;
+}
+/* line 319, ../../../sass/_headerMobile.scss */
+.loginOpen .loginForm .login_submit_error {
+	margin-top: 58px;
+}
+/* line 324, ../../../sass/_headerMobile.scss */
+.loginOpen .open {
+	position: static;
+	width: 85%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+}
+/* line 332, ../../../sass/_headerMobile.scss */
+.loginOpen .formDone {
+	display: none;
+	padding: 10px;
+	background-color: #cccccc;
+}
+/* line 338, ../../../sass/_headerMobile.scss */
+.loginOpen .formFail .errorSpanLogin {
+	display: none;
+	position: absolute;
+	width: 85%;
+	left: 7.5%;
+	z-index: 994;
+	background-color: #db3535;
+	font-size: 13px;
+	color: #ffffff;
+	white-space: nowrap;
+	padding: 10px 10px;
+	top: 130px;
+	border-radius: 2px;
+}
+/* line 351, ../../../sass/_headerMobile.scss */
+.loginOpen .formFail .errorSpanLogin .errorSpanImg {
+	width: 17px;
+	height: 17px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+/* line 357, ../../../sass/_headerMobile.scss */
+.loginOpen .formFail .errorSpanLogin::after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #db3535;
+	top: -8px;
+	left: 30px;
+}
+
+
+
+
+
+@media screen and (min-width: 768px){
+	/* line 176, ../../../sass/_headerTablet.scss */
+	.loginOpen {
+		top: 70px;
+		right: 0px;
+		height: auto;
+		width: 256px;
+	}
+	/* line 182, ../../../sass/_headerTablet.scss */
+	.loginOpen .loginForm .loginformSubmit {
+		margin-top: 0px;
+	}
+	/* line 187, ../../../sass/_headerTablet.scss */
+	.loginOpen .formFail .errorSpanLogin {
+		width: 128%;
+		left: -124%;
+		margin-top: 0px;
+		top: 20%;
+	}
+	/* line 192, ../../../sass/_headerTablet.scss */
+	.loginOpen .formFail .errorSpanLogin .errorSpanImg {
+		width: 17px;
+		height: 17px;
+		margin-right: 5px;
+	}
+	/* line 197, ../../../sass/_headerTablet.scss */
+	.loginOpen .formFail .errorSpanLogin::after {
+		top: 12px;
+		right: -8px;
+		left: auto;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+	.loginOpen {
+		top: 70px;
+		right: 0px;
+		height: auto;
+		width: 256px;
+		margin-right: 0;
+	}
+
+	/* line 183, ../../../sass/_headerDesktop.scss */
+	.loginOpen .loginForm .loginMoreoptions, .loginOpen .loginForm .loginformSubmit {
+		margin-top: 0;
+	}
+
+	/* line 188, ../../../sass/_headerDesktop.scss */
+	.loginOpen .formFail .errorSpanLogin {
+		display: none;
+		position: absolute;
+		width: 128%;
+		left: -124%;
+		z-index: 994;
+		background-color: #db3535;
+		color: #fff;
+		white-space: nowrap;
+		margin-top: 0px;
+		padding: 10px 10px;
+		top: 20%;
+	}
+
+	/* line 200, ../../../sass/_headerDesktop.scss */
+	.loginOpen .formFail .errorSpanLogin .errorSpanImg {
+		width: 17px;
+		height: 17px;
+		margin-right: 5px;
+	}
+
+	/* line 205, ../../../sass/_headerDesktop.scss */
+	.loginOpen .formFail .errorSpanLogin::after {
+		position: absolute;
+		content: ' ';
+		width: 0;
+		height: 0;
+		border: none;
+		border-top: 8px solid transparent;
+		border-bottom: 8px solid transparent;
+		border-left: 8px solid #db3535;
+		top: 12px;
+		right: -8px;
+		left: auto;
+	}
+}
 .login-title {
     margin-top: 100px;
 }

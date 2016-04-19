@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/19/2016 @09:13:56 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/19/2016 @12:51:20 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -93,7 +93,7 @@
             <a href="#" class="contact-trigger__label">Contact</a>
         </div>
         <!-- Login Trigger -->
-        <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
+        <div class="col login-trigger pull-right" title="LOGIN" data-target="loginOpen">
             <span class="login-trigger__label">
                 Log in
                 <svg class="icon icon-secure-locked">
@@ -102,11 +102,11 @@
             </span>
         </div>
         <!-- User Logged In Trigger-->
-        <div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
+        <!--<div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
             <a href="#" class="contact-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
             </svg></a>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -736,6 +736,55 @@
                 <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
             </p>
         </div>
+    </div>
+</div>
+
+<!--Login Drop Down-->
+<div class="loginOpen">
+    <form class="clearfix loginForm open" id="formLogin" name="formLogin"
+          action="https://dev.phoenix.ead.metlife.com/edge/web/public/identifyUser" method="POST">
+        <input class="border-radius-rounded input loginUsername" id="username" type="text" placeholder="User Name"
+               name="username" data-required="true"/>
+        <input class="border-radius-rounded input loginUsername password" id="password" type="password"
+               placeholder="Password" name="password" data-required="true" data-name="Field 3">
+
+        <div class="loginMoreoptions">
+            <a class="loginOptions" target="_blank"
+               href="https://www.metlife.com/about/signin/content/metlife/index.html">More login options</a>
+        </div>
+
+        <input id="headerLoginSubmit" class="loginformSubmit border-radius-green-buttons btn-green" type="submit"
+               value="Login"/>
+
+
+        <div class=" login_open_reg_forgot hidden-xs">
+            <a id="headerLoginRegisterLinkDesktop" target="_blank" class="loginRegister"
+               href="https://online.metlife.com/edge/web/public/registration?suppressGroupOptions=false&isSrcSweepstakes=false">Register</a>
+
+            <div class="loginForget"><a id="headerLoginForgotUsernameOrPasswordLinkDesktop" target="_blank"
+                                        class="forgotUsername"
+                                        href="https://online.metlife.com/edge/web/public/forgotPassword?suppressGroupOptions=false&isSrcSweepstakes=false">Forgot
+                Username or Password</a>?
+            </div>
+        </div>
+        <div class=" login_open_reg_forgot visible-xs">
+            <a id="headerLoginRegisterLinkMobile" target="_blank" class="loginRegister"
+               href="https://m.metlife.com/secure/register/index.html">Register</a>
+
+            <div class="loginForget"><a id="headerLoginForgotUsernameOrPasswordLinkMobile" target="_blank"
+                                        class="forgotUsername"
+                                        href="https://m.metlife.com/secure/login/password-reset/index.html">Forgot
+                Username or Password</a>?
+            </div>
+        </div>
+    </form>
+    <div class="formDone">
+        <p>Thank you! Your submission has been received!</p>
+    </div>
+    <div class="formFail">
+                <span class="errorSpanLogin"><img class="errorSpanImg"
+                                                  src="assets/static/images/form/icon_form_error.png"
+                                                  alt="! Error Image"/>Please enter a valid username and password.</span>
     </div>
 </div>
 
@@ -1933,7 +1982,7 @@
 </div>
 
 <!-- Divider Scroll To -->
-<!--<div class="container">
+<<div class="container">
     <div class="scroll-form-more-container hidden-xs hidden-sm">
         <div class="scroll-more ">
             <a href="#scroll_more">
@@ -1942,7 +1991,7 @@
             </a>
         </div>
     </div>
-    &lt;!&ndash; ALEX 03/10/16
+
     <div class="row wrapper divider&#45;&#45;scroll hidden-xs">
         <a id="scrollMoreLineLink" href="#scroll_more" class="divider&#45;&#45;scroll__link">
             <span class="block">Scroll for More</span>
@@ -1951,8 +2000,8 @@
             </svg>
         </a>
     </div>
-    &ndash;&gt;
-</div>-->
+
+</div>-
 
 <!-- Divider Snoopy -->
 <div class="container">
