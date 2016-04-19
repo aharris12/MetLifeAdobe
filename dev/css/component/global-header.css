@@ -555,11 +555,13 @@
         width:33.333333333334%;
         float:left;
     }
+    .megamenu__divider{
+        border-top: 1px solid #0e5dae;
+        width: 100%;
+        display: inline-block;
+    }
     .megamenu__main-item:nth-child(n+4) {
         width:25%;
-        float:left;
-        border-top: 1px solid #0e5dae;
-        margin-top:40px;
         padding-top: 20px;
     }
     .megamenu__main-item:nth-child(n+4) .megamenu__main-item-label {

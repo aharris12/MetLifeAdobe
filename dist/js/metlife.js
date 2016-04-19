@@ -190,6 +190,9 @@ function adjustMegaMenu(){
         if ($(".cookieShell").length > 0) {
             $('.megamenu').addClass('cookie-megamenu--minimized');
         }
+        if ($(".cookieShell").css("display") ==="none") {
+            $('.megamenu').removeClass('cookie-megamenu--minimized');
+        }
         $('.global-header').addClass('global-header--minimized');
         $('.global-header__left').addClass('global-header__left--minimized');
         $('.global-header__logo').addClass('global-header__logo--minimized');
@@ -8236,6 +8239,7 @@ $(".js-cookieAccept").click(function () {
 	$(".global-header").removeClass("cookie__header");
 	$(".megamenu").removeClass("cookie__megamenu");
 	$(".search-trigger__container").removeClass("cookie__search");
+	$(".megamenu").removeClass('cookie-megamenu--minimized');
 });
 
 function checkExistance() {

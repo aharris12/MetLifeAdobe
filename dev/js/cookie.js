@@ -50,6 +50,7 @@ $(".js-cookieAccept").click(function () {
 	$(".global-header").removeClass("cookie__header");
 	$(".megamenu").removeClass("cookie__megamenu");
 	$(".search-trigger__container").removeClass("cookie__search");
+	$(".megamenu").removeClass('cookie-megamenu--minimized');
 });
 
 function checkExistance() {
