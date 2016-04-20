@@ -144,7 +144,6 @@ module.exports = function (grunt) {
                     'dev/js/subnavigation.js',
                     'dev/js/form.js',
                     'dev/js/table-variations.js',
-                    'dev/js/login-overlay.js',
                     'dev/js/media-contact.js',
                     'dev/js/form-card.js',
                     'dev/js/microsite-header.js',
@@ -177,7 +176,7 @@ module.exports = function (grunt) {
                     'dev/js/toolkit-column.js',
                     'dev/js/toolkit-page-title-banner.js',
                     'dev/js/share-chat.js',
-                    'dev/js/login-form.js'
+                    'dev/js/share-chat.js'
 
                 ],
                 dest: 'dist/js/metlife.js'

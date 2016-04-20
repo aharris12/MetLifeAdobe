@@ -5,9 +5,9 @@
     height: 100%;
     top: 0;
     overflow-y: auto;
-    padding-left:1px;
+    padding-left:320px;
     background-color:transparent;
-    width:320px;
+    width:640px;
     z-index:9999;
 }
 .contactSliderOuterCon {
@@ -113,6 +113,7 @@
     bottom: 6px;
 }
 
+
 .contact-container__contact-us-page .errorSpan{
     position: static;
     white-space: normal;
@@ -135,6 +136,25 @@
     padding: 5px 10px;
 }
 
+
+
+.formFail .errorSpan{
+    width: 120%;
+}
+@media screen and (max-width: 767px) {
+    .formFail .errorSpanOpen{
+        top: 35%;
+        left:1px;
+        width:102%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .formFail .errorSpanOpen{
+        top: 40px;
+    }
+
+}
 .errorSpanOpen:after, .errorSpanOpen:before {
     left: 100%;
     top: 50%;

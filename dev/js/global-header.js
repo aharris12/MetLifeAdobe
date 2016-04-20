@@ -174,9 +174,7 @@ $('.megamenu__sub-items--action').each(function(){
 
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        console.log("if($('.' + $(this).attr('data-target'))) ,", $('.' + $(this).attr('data-target')))
         if($(this).attr('data-target') == 'loginOpen' ){
-            console.log("dropdown")
             if (getViewport() == "mobile") {
                 if ($(".loginOpen").hasClass("login_mobile")) {
                     $('.loginOpen').removeClass("login_mobile");
@@ -207,7 +205,6 @@ $('.login-trigger').click(function(){
                 }
             }
         }else {
-            console.log("overlay")
             $('.' + $(this).attr('data-target')).slideToggle();
         }
         if ($('.megamenu').is(':visible')) {

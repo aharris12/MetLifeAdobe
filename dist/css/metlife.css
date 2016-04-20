@@ -11449,9 +11449,9 @@ manner*/
     height: 100%;
     top: 0;
     overflow-y: auto;
-    padding-left:1px;
+    padding-left:320px;
     background-color:transparent;
-    width:320px;
+    width:640px;
     z-index:9999;
 }
 .contactSliderOuterCon {
@@ -11557,6 +11557,7 @@ manner*/
     bottom: 6px;
 }
 
+
 .contact-container__contact-us-page .errorSpan{
     position: static;
     white-space: normal;
@@ -11579,6 +11580,25 @@ manner*/
     padding: 5px 10px;
 }
 
+
+
+.formFail .errorSpan{
+    width: 120%;
+}
+@media screen and (max-width: 767px) {
+    .formFail .errorSpanOpen{
+        top: 35%;
+        left:1px;
+        width:102%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .formFail .errorSpanOpen{
+        top: 40px;
+    }
+
+}
 .errorSpanOpen:after, .errorSpanOpen:before {
     left: 100%;
     top: 50%;
@@ -16392,7 +16412,11 @@ text-align: center;
 	text-align: center;
 	z-index: 1000;
 }
-/* line 230, ../../../sass/_headerMobile.scss */
+
+.loginformSubmitbtn{
+	margin-top: 10px;
+}
+	/* line 230, ../../../sass/_headerMobile.scss */
 .loginOpen .loginForm {
 	position: absolute;
 	top: 0px;
@@ -16514,40 +16538,6 @@ text-align: center;
 	padding: 10px;
 	background-color: #cccccc;
 }
-/* line 338, ../../../sass/_headerMobile.scss */
-.loginOpen .formFail .errorSpanLogin {
-	display: none;
-	position: absolute;
-	width: 85%;
-	left: 7.5%;
-	z-index: 994;
-	background-color: #db3535;
-	font-size: 13px;
-	color: #ffffff;
-	white-space: nowrap;
-	padding: 10px 10px;
-	top: 130px;
-	border-radius: 2px;
-}
-/* line 351, ../../../sass/_headerMobile.scss */
-.loginOpen .formFail .errorSpanLogin .errorSpanImg {
-	width: 17px;
-	height: 17px;
-	margin-right: 5px;
-	vertical-align: middle;
-}
-/* line 357, ../../../sass/_headerMobile.scss */
-.loginOpen .formFail .errorSpanLogin::after {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
-	border-bottom: 8px solid #db3535;
-	top: -8px;
-	left: 30px;
-}
 
 
 
@@ -16565,25 +16555,7 @@ text-align: center;
 	.loginOpen .loginForm .loginformSubmit {
 		margin-top: 0px;
 	}
-	/* line 187, ../../../sass/_headerTablet.scss */
-	.loginOpen .formFail .errorSpanLogin {
-		width: 128%;
-		left: -124%;
-		margin-top: 0px;
-		top: 20%;
-	}
-	/* line 192, ../../../sass/_headerTablet.scss */
-	.loginOpen .formFail .errorSpanLogin .errorSpanImg {
-		width: 17px;
-		height: 17px;
-		margin-right: 5px;
-	}
-	/* line 197, ../../../sass/_headerTablet.scss */
-	.loginOpen .formFail .errorSpanLogin::after {
-		top: 12px;
-		right: -8px;
-		left: auto;
-	}
+
 
 }
 
@@ -16602,42 +16574,7 @@ text-align: center;
 		margin-top: 0;
 	}
 
-	/* line 188, ../../../sass/_headerDesktop.scss */
-	.loginOpen .formFail .errorSpanLogin {
-		display: none;
-		position: absolute;
-		width: 128%;
-		left: -124%;
-		z-index: 994;
-		background-color: #db3535;
-		color: #fff;
-		white-space: nowrap;
-		margin-top: 0px;
-		padding: 10px 10px;
-		top: 20%;
-	}
 
-	/* line 200, ../../../sass/_headerDesktop.scss */
-	.loginOpen .formFail .errorSpanLogin .errorSpanImg {
-		width: 17px;
-		height: 17px;
-		margin-right: 5px;
-	}
-
-	/* line 205, ../../../sass/_headerDesktop.scss */
-	.loginOpen .formFail .errorSpanLogin::after {
-		position: absolute;
-		content: ' ';
-		width: 0;
-		height: 0;
-		border: none;
-		border-top: 8px solid transparent;
-		border-bottom: 8px solid transparent;
-		border-left: 8px solid #db3535;
-		top: 12px;
-		right: -8px;
-		left: auto;
-	}
 }
 .login-title {
     margin-top: 100px;

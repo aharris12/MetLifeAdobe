@@ -11,15 +11,16 @@ $("#headerLoginSubmit").click(function(e) {
 		var val = $this.val();
 		if (val.length == 0) {
 			$this.addClass('login_error');
-			$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+			$this.parent("#formLogin").siblings(".formFail").find(".errorSpan").css('display','block');
+			$this.parent("#formLogin").siblings(".formFail").find(".errorSpan").addClass('errorSpanOpen');
 			$this.parent("#formLogin").find(".loginformSubmit").addClass('login_submit_error');
-			$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
+			//$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
 			$this.val(placeholder);
 			formStatus = false;
 		}
 		else{
-			$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','none');
-			$this.siblings(".login_error").parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+			$this.parent("#formLogin").siblings(".formFail").find(".errorSpan").removeClass('errorSpanOpen');
+			$this.siblings(".login_error").parent("#formLogin").siblings(".formFail").find(".errorSpan").css('display','block');
 			$this.parent("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
 			/*var userName = $('#userID').val();
 			 var userPassword = $('#userPassword').val();
@@ -71,9 +72,9 @@ $("#formLogin").find('[data-required=true]').on('blur', function () {
 	var val = $this.val();
 	if (val.length == 0) {
 		$this.addClass('login_error');
-		$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+		$this.parent("#formLogin").siblings(".formFail").find(".errorSpan").css('display','block');
 		$this.parent("#formLogin").find(".loginformSubmit").addClass('login_submit_error');
-		$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
+		//$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
 		$this.val(placeholder);
 	}
 	else {
