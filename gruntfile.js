@@ -176,7 +176,8 @@ module.exports = function (grunt) {
                     'dev/js/toolkit-search-page.js',
                     'dev/js/toolkit-column.js',
                     'dev/js/toolkit-page-title-banner.js',
-                    'dev/js/share-chat.js'
+                    'dev/js/share-chat.js',
+                    'dev/js/login-form.js'
 
                 ],
                 dest: 'dist/js/metlife.js'

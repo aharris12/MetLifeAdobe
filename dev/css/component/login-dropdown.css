@@ -179,7 +179,7 @@
 @media screen and (min-width: 768px){
 	/* line 176, ../../../sass/_headerTablet.scss */
 	.loginOpen {
-		top: 70px;
+		top: 50px;
 		right: 0px;
 		height: auto;
 		width: 256px;
@@ -216,7 +216,7 @@
 		top: 70px;
 		right: 0px;
 		height: auto;
-		width: 256px;
+		width: 260px;
 		margin-right: 0;
 	}
 

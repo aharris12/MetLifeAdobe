@@ -13,9 +13,12 @@
 .cookie__header{
 	top:342px;
 }
-.cookie__search{
-	top: 392px;
+@media screen and (max-width: 767px) {
+	.cookie__search{
+		top: 392px;
+	}
 }
+
 .cookie__megamenu{
 	top:392px;
 }

@@ -13,13 +13,13 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/19/2016 @16:10:14 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/20/2016 @13:03:56 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
 <body>
 <!--Cookie Banner Start -->
-<!--<script type="text/javascript">
+<script type="text/javascript">
     // Cookie is automatically added
     // If false, cookie needs a required button press or navigation to be added
     var createCookie = true;
@@ -34,22 +34,22 @@
     <div class="row cookieShell">
 
         <div class="wrapper">
-                        <div class="inline-block col-sm-2 col-xs-9 cookieShell&#45;&#45;title">
+                        <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
                             <p>Cookies on Metlife's UK Website</p>
                         </div>
 
-                        <div class="inline-block col-sm-8 col-xs-12 cookieShell&#45;&#45;description">
+                        <div class="inline-block col-sm-8 col-xs-12 cookieShell--description">
                             <p>Metlife.co.uk uses cookies - by continuing to browse our site, you're agreeing to our use of cookies. To learn more about the cookies we use, please see our <a href="#">privacy policy</a>.</p>
                             <p>Cookies will not be set on your computer, phone, or tablet if you visit our privacy policy from this banner.</p>
                         </div>
 
-                        <div class="inline-block col-sm-2 col-xs-2 cookieShell&#45;&#45;button">
+                        <div class="inline-block col-sm-2 col-xs-2 cookieShell--button">
                             <a href="JavaScript:setAcceptCookieDesktop(true);" class="btn btn-brand-2nd js-cookieAccept">Continue</a>
                         </div>
         </div>
 
     </div>
-</div>-->
+</div>
 <!--Cookie Banner End -->
 
 <!-- Global Header -->
@@ -282,7 +282,7 @@
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
             <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar">
+                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -741,8 +741,7 @@
 
 <!--Login Drop Down-->
 <div class="loginOpen">
-    <form class="clearfix loginForm open" id="formLogin" name="formLogin"
-          action="https://dev.phoenix.ead.metlife.com/edge/web/public/identifyUser" method="POST">
+   <form class="clearfix loginForm open" id="formLogin" name="formLogin" action="https://int.phoenix.ead.metlife.com/edge/web/public/identifyUser" method="POST">
         <input class="border-radius-rounded input loginUsername" id="username" type="text" placeholder="User Name"
                name="username" data-required="true"/>
         <input class="border-radius-rounded input loginUsername password" id="password" type="password"
@@ -757,7 +756,7 @@
                value="Login"/>
 
 
-        <div class=" login_open_reg_forgot hidden-xs">
+        <div class=" login_open_reg_forgot">
             <a id="headerLoginRegisterLinkDesktop" target="_blank" class="loginRegister"
                href="https://online.metlife.com/edge/web/public/registration?suppressGroupOptions=false&isSrcSweepstakes=false">Register</a>
 
@@ -767,7 +766,7 @@
                 Username or Password</a>?
             </div>
         </div>
-        <div class=" login_open_reg_forgot visible-xs">
+        <!--<div class=" login_open_reg_forgot visible-xs">
             <a id="headerLoginRegisterLinkMobile" target="_blank" class="loginRegister"
                href="https://m.metlife.com/secure/register/index.html">Register</a>
 
@@ -776,7 +775,7 @@
                                         href="https://m.metlife.com/secure/login/password-reset/index.html">Forgot
                 Username or Password</a>?
             </div>
-        </div>
+        </div>-->
     </form>
     <div class="formDone">
         <p>Thank you! Your submission has been received!</p>
@@ -1661,14 +1660,15 @@
             <div class="find-office">
                 <h2 class="quote-office__heading">I want to find a MetLife:</h2>
                 <div class="row btn-group full-width">
-                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="office">
-                        Office
-                        <div class="btn-group__icon">
-                            <svg class="icon icon-arrow-up-triangle brand-1st-inv">
-                                <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
-                            </svg>
-                        </div>
-                    </a>
+                    <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="office" data-service-url="/my/service.json" data-href="http://localhost:63348/MetLifeAdobe/dev/fao.html">
+                    Office
+                    <div class="btn-group__icon">
+                        <svg class="icon icon-arrow-up-triangle brand-1st-inv">
+                            <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
+                        </svg>
+                    </div>
+                </a>
+
                     <a href="#" class="col-xs-3 col-sm-4 btn pill" data-btn-group-option="dental">
                         Dentist
                         <div class="btn-group__icon">
@@ -1724,8 +1724,7 @@
                         </div>
                         <a href="#" class="white" data-target="vision_overlay">Don't Know your plan?</a>
                     </div>
-                    <div class="col-sm-3"><a href="#"
-                                             class="btn btn-brand-2nd find-office__submit pull-right">Submit</a></div>
+                    <div class="col-sm-3"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right">Submit</a></div>
                 </div>
             </div>
         </div>
@@ -2102,8 +2101,7 @@
 <!-- Dental Overlay -->
 
 <!-- Divider Scroll To -->
-<!--
-<div class="container">
+<!--<div class="container">
     <div class="scroll-form-more-container hidden-xs hidden-sm">
         <div class="scroll-more ">
             <a href="#scroll_more">
@@ -2112,8 +2110,7 @@
             </a>
         </div>
     </div>
-</div>
--->
+</div>-->
 
 
 

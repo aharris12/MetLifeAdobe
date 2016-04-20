@@ -209,6 +209,7 @@
 }
 .btn-group .btn:only-of-type {
     border-radius: 5px;
+    width: 100%
 }
 
 .btn-group .icon svg {

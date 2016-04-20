@@ -162,17 +162,52 @@ $('.megamenu__sub-items--action').each(function(){
     }
 });
 
+/*$('.login-trigger').click(function(){
+    if(!$(".login-trigger").hasClass("linkOnly")) {
+        $('.' + $(this).attr('data-target')).slideToggle();
+        if ($('.megamenu').is(':visible')) {
+            $('.megamenu').toggleClass('megamenu--open');
+            $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
+        }
+    }
+});*/
 
-
-
-//$('[data-target]').click(function(){
-//    $('.'+$(this).attr('data-target')).toggle();
-//});
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        if($('.' + $(this).attr('data-target') === 'loginOpen')){
-            $(".loginOpen").toggle()
+        console.log("if($('.' + $(this).attr('data-target'))) ,", $('.' + $(this).attr('data-target')))
+        if($(this).attr('data-target') == 'loginOpen' ){
+            console.log("dropdown")
+            if (getViewport() == "mobile") {
+                if ($(".loginOpen").hasClass("login_mobile")) {
+                    $('.loginOpen').removeClass("login_mobile");
+                    $('.loginOpen').stop().animate({right: '-800'}, 100);
+                    $(".loginUsername").removeClass('login_error').val("");
+                    $("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display', 'none');
+                    $("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+                    $('body').css("height", "auto");
+                    $("html, body").scrollTop(scroll);
+                    $('.loginOpen').css("color", "#fff");
+
+                } else {
+                    scroll = $(window).scrollTop();
+                    $('.loginOpen').addClass("login_mobile");
+                    $(".loginOpen").css("top", "50px");
+                    $('.loginOpen').stop().animate({right: '0'}, 100);
+                    $('body').css("height", "615px");
+                }
+                $('.loginOpen').toggle();
+            }else{
+                $('.loginOpen').css("right", "0");
+                $(".loginOpen").toggle();
+                $('body').css("height", "auto");
+                if ($(".loginOpen").css("display") == 'none') {
+                    $(".loginUsername").removeClass('login_error').val("");
+                    $("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display', 'none');
+                    $("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+                }
+            }
         }else {
+            console.log("overlay")
             $('.' + $(this).attr('data-target')).slideToggle();
         }
         if ($('.megamenu').is(':visible')) {
@@ -181,6 +216,7 @@ $('.login-trigger').click(function(){
         }
     }
 });
+
 $('.contact-trigger').click(function(){
     currentView = getViewport();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
@@ -190,6 +226,7 @@ $('.contact-trigger').click(function(){
 // when we open the mega menu as well. this avoids 2 fixes should we tweak the animation
 $('.contact-close').click(function(){
     closeContactForm();
+
 });
 
 function closeContactForm(){

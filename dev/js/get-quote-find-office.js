@@ -45,7 +45,6 @@ $('.btn-group .btn').click(function(){
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
         if (selectedBtnGroupOption == "dental") {
-            console.log("dental")
             $(".find-office__zip-city-state").on("focus", function(){
                 $('.find-office__zip-city-state-container').addClass('full-width');
                 $('.find-office__dental-container').css('display','block');
@@ -53,7 +52,6 @@ $('.btn-group .btn').click(function(){
             });
 
         } else if (selectedBtnGroupOption == "vision") {
-            console.log("vision")
             $(".find-office__zip-city-state").on("focus", function(){
                 $('.find-office__zip-city-state-container').addClass('full-width');
                 $('.find-office__vision-container').css('display','block');
@@ -70,9 +68,8 @@ $('.find-office__submit').click(function(){
     if (validateFindOffice()) {
         var urlStr = "";
         if (selectedBtnGroupOption == "office") {
-            var x = window.location.href;
-            urlStr = window.location.href + x.substring(0, x.lastIndexOf("/")) + "?zip=" + zipcode;
-            urlStr = "https://www.metlife.com/products/findanoffice/index.html" + "?zip=" + zipcode;
+            urlStr = $('.btn-group .btn.active').attr('data-href') + "?zip=" + zipcode;
+            sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());
         } else if (selectedBtnGroupOption == "dental") {
             if (!($('.find-office__dental').val().trim() == 'TRICARE')) {
                 urlStr = "https://metlocator.metlife.com/metlocator/execute/Search?searchType=findDentistMetLife&networkID=2&zip=" + zipcode + "&qsType=" + $('.find-office__dental').val();
@@ -86,7 +83,7 @@ $('.find-office__submit').click(function(){
                 urlStr = "https://www.metlife.com/individual/insurance/dental-insurance/vision-providers/vision-facility-reference-guides.html";
             }
         }
-        window.location.href = urlStr;
+      window.location.href = urlStr;
     }
 });
 

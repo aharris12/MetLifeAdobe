@@ -259,17 +259,52 @@ $('.megamenu__sub-items--action').each(function(){
     }
 });
 
+/*$('.login-trigger').click(function(){
+    if(!$(".login-trigger").hasClass("linkOnly")) {
+        $('.' + $(this).attr('data-target')).slideToggle();
+        if ($('.megamenu').is(':visible')) {
+            $('.megamenu').toggleClass('megamenu--open');
+            $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
+        }
+    }
+});*/
 
-
-
-//$('[data-target]').click(function(){
-//    $('.'+$(this).attr('data-target')).toggle();
-//});
 $('.login-trigger').click(function(){
     if(!$(".login-trigger").hasClass("linkOnly")) {
-        if($('.' + $(this).attr('data-target') === 'loginOpen')){
-            $(".loginOpen").toggle()
+        console.log("if($('.' + $(this).attr('data-target'))) ,", $('.' + $(this).attr('data-target')))
+        if($(this).attr('data-target') == 'loginOpen' ){
+            console.log("dropdown")
+            if (getViewport() == "mobile") {
+                if ($(".loginOpen").hasClass("login_mobile")) {
+                    $('.loginOpen').removeClass("login_mobile");
+                    $('.loginOpen').stop().animate({right: '-800'}, 100);
+                    $(".loginUsername").removeClass('login_error').val("");
+                    $("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display', 'none');
+                    $("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+                    $('body').css("height", "auto");
+                    $("html, body").scrollTop(scroll);
+                    $('.loginOpen').css("color", "#fff");
+
+                } else {
+                    scroll = $(window).scrollTop();
+                    $('.loginOpen').addClass("login_mobile");
+                    $(".loginOpen").css("top", "50px");
+                    $('.loginOpen').stop().animate({right: '0'}, 100);
+                    $('body').css("height", "615px");
+                }
+                $('.loginOpen').toggle();
+            }else{
+                $('.loginOpen').css("right", "0");
+                $(".loginOpen").toggle();
+                $('body').css("height", "auto");
+                if ($(".loginOpen").css("display") == 'none') {
+                    $(".loginUsername").removeClass('login_error').val("");
+                    $("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display', 'none');
+                    $("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+                }
+            }
         }else {
+            console.log("overlay")
             $('.' + $(this).attr('data-target')).slideToggle();
         }
         if ($('.megamenu').is(':visible')) {
@@ -278,6 +313,7 @@ $('.login-trigger').click(function(){
         }
     }
 });
+
 $('.contact-trigger').click(function(){
     currentView = getViewport();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
@@ -287,6 +323,7 @@ $('.contact-trigger').click(function(){
 // when we open the mega menu as well. this avoids 2 fixes should we tweak the animation
 $('.contact-close').click(function(){
     closeContactForm();
+
 });
 
 function closeContactForm(){
@@ -1081,7 +1118,6 @@ $('.btn-group .btn').click(function(){
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
         if (selectedBtnGroupOption == "dental") {
-            console.log("dental")
             $(".find-office__zip-city-state").on("focus", function(){
                 $('.find-office__zip-city-state-container').addClass('full-width');
                 $('.find-office__dental-container').css('display','block');
@@ -1089,7 +1125,6 @@ $('.btn-group .btn').click(function(){
             });
 
         } else if (selectedBtnGroupOption == "vision") {
-            console.log("vision")
             $(".find-office__zip-city-state").on("focus", function(){
                 $('.find-office__zip-city-state-container').addClass('full-width');
                 $('.find-office__vision-container').css('display','block');
@@ -1106,9 +1141,8 @@ $('.find-office__submit').click(function(){
     if (validateFindOffice()) {
         var urlStr = "";
         if (selectedBtnGroupOption == "office") {
-            var x = window.location.href;
-            urlStr = window.location.href + x.substring(0, x.lastIndexOf("/")) + "?zip=" + zipcode;
-            urlStr = "https://www.metlife.com/products/findanoffice/index.html" + "?zip=" + zipcode;
+            urlStr = $('.btn-group .btn.active').attr('data-href') + "?zip=" + zipcode;
+            sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());
         } else if (selectedBtnGroupOption == "dental") {
             if (!($('.find-office__dental').val().trim() == 'TRICARE')) {
                 urlStr = "https://metlocator.metlife.com/metlocator/execute/Search?searchType=findDentistMetLife&networkID=2&zip=" + zipcode + "&qsType=" + $('.find-office__dental').val();
@@ -1122,7 +1156,7 @@ $('.find-office__submit').click(function(){
                 urlStr = "https://www.metlife.com/individual/insurance/dental-insurance/vision-providers/vision-facility-reference-guides.html";
             }
         }
-        window.location.href = urlStr;
+      window.location.href = urlStr;
     }
 });
 
@@ -11441,3 +11475,131 @@ $('.js-share').click(function(e){
    // $(".arrow-left").toggleClass("hidden");
 
 });
+/* login form script starts here */
+$("#headerLoginSubmit").click(function(e) {
+	e.preventDefault();
+	var formStatus = true;
+	$("#formLogin").find('[data-required=true]').each(function () {
+		var $this = $(this);
+		var placeholder = $this.attr('placeholder');
+		if ($this.val() == placeholder) {
+			$this.val("");
+		}
+		var val = $this.val();
+		if (val.length == 0) {
+			$this.addClass('login_error');
+			$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+			$this.parent("#formLogin").find(".loginformSubmit").addClass('login_submit_error');
+			$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
+			$this.val(placeholder);
+			formStatus = false;
+		}
+		else{
+			$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','none');
+			$this.siblings(".login_error").parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+			$this.parent("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+			/*var userName = $('#userID').val();
+			 var userPassword = $('#userPassword').val();
+			 var jsonData = {
+			 "serviceName":"validateUser",
+			 "userName":userName,
+			 "password":userPassword
+			 }
+
+			 $.ajax({
+			 url: "https://dev.www.metlife.com/wps/loginProxy/edge/services/public/channel/loginInteractionServices/loginservice",
+			 dataType: "json",contentType: "application/json; charset=utf-8",
+			 type:'POST',
+			 data: JSON.stringify(jsonData),
+			 success: function(data) {
+			 if (data.isLoginError) {
+			 window.location.href = "/individual/phoenixloginassist.html?phoenixLoginMsg=ok&TARGET=";
+			 }
+			 else {
+			 window.location.href = data.authenticationMap.redirectUrl;
+			 }
+			 }
+			 });*/
+		}
+	});
+	if(formStatus){
+		document.cookie="phoenixLoginBacktrack"+ "=deleted; expires=" + (new Date(0)).toUTCString() + "; domain=.metlife.com; path=/"
+		$("#formLogin").submit();
+	}
+
+});
+
+$("#formLogin").find('[data-required=true]').on('focus', function () {
+	$this = $(this);
+	$this.removeClass('login_error');
+	var placeholder = $(this).attr('placeholder');
+	if ($this.val() == placeholder) {
+		$this.val("");
+
+	}
+});
+
+$("#formLogin").find('[data-required=true]').on('blur', function () {
+	var $this = $(this);
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == placeholder) {
+		$this.val("");
+	}
+	var val = $this.val();
+	if (val.length == 0) {
+		$this.addClass('login_error');
+		$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','block');
+		$this.parent("#formLogin").find(".loginformSubmit").addClass('login_submit_error');
+		$this.parent("#formLogin").find(".loginMoreoptions").addClass('login_submit_error');
+		$this.val(placeholder);
+	}
+	else {
+		$this.removeClass('login_error');
+		$this.parent("#formLogin").siblings(".formFail").find(".errorSpanLogin").css('display','none');
+		$this.parent("#formLogin").find(".login_submit_error").removeClass('login_submit_error');
+	}
+});
+
+$(window).resize(function () {
+	if (getViewport() == "mobile" || getViewport() == "tablet") {
+		if ($(".loginOpen").css("display") == 'none') {
+			$('.loginOpen').removeClass("login_mobile");
+		}else{
+			$('.loginOpen').addClass("login_mobile");
+		}
+		$(".loginOpen").css("top", "50px");
+	}else{
+		$('.loginOpen').removeClass("login_mobile");
+		if ($(".global-header").hasClass("global-header--minimized")) {
+			$(".loginOpen").css("top", "50px");
+		} else {
+			$(".loginOpen").css("top", "70px");
+		}
+	}
+
+});
+
+
+$(window).scroll(function () {
+	if (getViewport() == "mobile" || getViewport() == "tablet") {
+		$(".loginOpen").css("top", "50px");
+	}else{
+		if ($(".global-header").hasClass("global-header--minimized")) {
+			$(".loginOpen").css("top", "50px");
+		} else {
+			$(".loginOpen").css("top", "70px");
+		}
+	}
+
+	/*if ($(".global-header").hasClass("global-header--minimized")) {
+		$(".loginOpen").css("top", "50px");
+	} else {
+		$(".loginOpen").css('top', '70px');
+		if ($(window).width() < 751) {
+			$(".loginOpen").css("top", "50px");
+
+		}
+	}*/
+});
+
+/* login form script Ends here */
