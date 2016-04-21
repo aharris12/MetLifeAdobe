@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/21/2016 @10:26:29 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/21/2016 @15:02:49 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -507,37 +507,63 @@
 
 <!-- Login Overlay -->
 <div class="login-container">
-    <div class="row login-container-header">
-        <div class="col-xs-2 login-container--close">
-            <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
-            <svg class="icon">
-                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
-            </svg>
-            <span class="login-container--close__label">CLOSE</span>
-        </div>
-        <div class="col-xs-8">
-            <a id="headerLogoLink" href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
-                                                                      class="global-header__logo img-responsive"></a>
-        </div>
-    </div>
-
-    <h2 class="login-popout__title">Select account type to log in:</h2>
-
-    <div class="login-popout">
-        <div class="form-item login-type-options">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type">
-                    <option value="for_individuals">For Individuals</option>
-                    <option value="for_businesses">For Businesses</option>
-                    <option value="for_brokers">For Brokers</option>
-                </select>
-                <svg class="icon info">
-                    <use xlink:href="images/icons-metlife.svg#icon-info"></use>
+    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
+        <div class="row login-container-header">
+            <div class="col-xs-2 login-container--close">
+                <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
+                <svg class="icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
                 </svg>
+                <span class="login-container--close__label">CLOSE</span>
             </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Individuals</span>
+            <div class="col-xs-8">
+                <a id="headerLogoLink" href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+                                                                          class="global-header__logo img-responsive"></a>
+            </div>
+        </div>
+        <h2 class="login-popout__title">Select account type to log in:</h2>
+        <div class="login-popout">
+            <div class="form-item login-type-options">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type">
+                        <option value="for_individuals">For Individuals</option>
+                        <option value="for_businesses">For Businesses</option>
+                        <option value="for_brokers">For Brokers</option>
+                    </select>
+                    <svg class="icon info">
+                        <use xlink:href="images/icons-metlife.svg#icon-info"></use>
+                    </svg>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Individuals</span>
+                        <span class="login-popout-msg__copy">
+                            MetLife's Online Service - Life, Annuities, Disability,
+                            Long-Term Care, Critical Illness, Auto, Home, Total Control
+                            Account (eSERVICE)
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            Benefits Through Your Employer (MyBenefits)
+                        </span>
+                    </div>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Businesses</span>
+                        <span class="login-popout-msg__copy">
+                            MetLink - Access your company's benefits data
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            MyBenefits - Benefits Through Your Employer
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            SBR - Manage executive benefits
+                        </span>
+                    </div>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Brokers</span>
                     <span class="login-popout-msg__copy">
                         MetLife's Online Service - Life, Annuities, Disability,
                         Long-Term Care, Critical Illness, Auto, Home, Total Control
@@ -546,95 +572,67 @@
                     <span class="login-popout-msg__copy">
                         Benefits Through Your Employer (MyBenefits)
                     </span>
+                    </div>
                 </div>
             </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Businesses</span>
-                    <span class="login-popout-msg__copy">
-                        MetLink - Access your company's benefits data
-                    </span>
-                    <span class="login-popout-msg__copy">
-                        MyBenefits - Benefits Through Your Employer
-                    </span>
-                    <span class="login-popout-msg__copy">
-                        SBR - Manage executive benefits
-                    </span>
+            <div class="form-item login-type-biz-account">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type" id="biz-account-type">
+                        <option value="">Select an option</option>
+                        <option value="metlink">MetLink</option>
+                        <option value="mybenefits">MyBenefits</option>
+                        <option value="sbr">SBR</option>
+                    </select>
                 </div>
             </div>
-            <div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
-                <div class="login-popout-msg">
-                    <span class="login-popout-msg__title">For Brokers</span>
-                <span class="login-popout-msg__copy">
-                    MetLife's Online Service - Life, Annuities, Disability,
-                    Long-Term Care, Critical Illness, Auto, Home, Total Control
-                    Account (eSERVICE)
-                </span>
-                <span class="login-popout-msg__copy">
-                    Benefits Through Your Employer (MyBenefits)
-                </span>
+            <div class="form-item login-type-biz-purpose">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type" id="biz-account-purpose">
+                        <option value="">Select an option</option>
+                        <option value="my-benefits-home">My Benefits Home</option>
+                        <option value="for_businesses">Check your group disability claim</option>
+                        <option value="check-your-group-disability-claim">Check Your Group Disability Claim</option>
+                        <option value="check-your-dental-claim-plan">Check Your Dental Claim/Plan</option>
+                        <option value="check-your-retirement-income">Check Your Retirement Income</option>
+                        <option value="retirement-education">Retirement Education</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item login-type-username">
+                <div class="form-item__field">
+                    <input type="text" placeholder="Username" name="username" data-required="true">
+                </div>
+            </div>
+            <div class="form-item login-type-password">
+                <div class="form-item__field">
+                    <input type="password" placeholder="Password" name="password" data-required="true">
                 </div>
             </div>
         </div>
-        <div class="form-item login-type-biz-account">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type" id="biz-account-type">
-                    <option value="">Select an option</option>
-                    <option value="metlink">MetLink</option>
-                    <option value="mybenefits">MyBenefits</option>
-                    <option value="sbr">SBR</option>
-                </select>
-            </div>
+        <div class="login-popout">
+            <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Forgot username or password?</a>
+            <a href="#" class="login-popout__action" data-popout-msg="for_businesses">Forgot username or password?</a>
+            <a href="#" class="login-popout__action" data-popout-msg="for_brokers">Forgot your password?</a>
         </div>
-        <div class="form-item login-type-biz-purpose">
-            <div class="form-item__field form-icon-wrapper">
-                <select class="login-type" id="biz-account-purpose">
-                    <option value="">Select an option</option>
-                    <option value="my-benefits-home">My Benefits Home</option>
-                    <option value="for_businesses">Check your group disability claim</option>
-                    <option value="check-your-group-disability-claim">Check Your Group Disability Claim</option>
-                    <option value="check-your-dental-claim-plan">Check Your Dental Claim/Plan</option>
-                    <option value="check-your-retirement-income">Check Your Retirement Income</option>
-                    <option value="retirement-education">Retirement Education</option>
-                </select>
-            </div>
+        <div class="login-popout login-submit">
+            <input type="submit" class="btn-brand-2nd js-submitLogin" value="Login"/>
         </div>
-        <div class="form-item login-type-username">
-            <div class="form-item__field">
-                <input type="text" placeholder="Username" name="username" data-required="true" value="">
-            </div>
+        <div class="login-popout" data-popout-msg="for_individuals">
+            <span class="login-popout__not-registered">Not registered?</span>
+            <a href="#" class="login-popout__action">Create a new account</a>
         </div>
-        <div class="form-item login-type-password">
-            <div class="form-item__field">
-                <input type="password" placeholder="Password" name="password" data-required="true" value="">
-            </div>
+        <div class="login-popout" data-popout-msg="for_businesses">
+            <span class="login-popout__not-registered">Need an account?</span>
+            <a href="#" class="login-popout__action">Register</a>
         </div>
-    </div>
-    <div class="login-popout">
-        <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Forgot username or password?</a>
-        <a href="#" class="login-popout__action" data-popout-msg="for_businesses">Forgot username or password?</a>
-        <a href="#" class="login-popout__action" data-popout-msg="for_brokers">Forgot your password?</a>
-    </div>
-    <div class="login-popout login-submit">
-        <button class="btn-brand-2nd">LOGIN</button>
-    </div>
-    <div class="login-popout" data-popout-msg="for_individuals">
-        <span class="login-popout__not-registered">Not registered?</span>
-        <a href="#" class="login-popout__action">Create a new account</a>
-    </div>
-    <div class="login-popout" data-popout-msg="for_businesses">
-        <span class="login-popout__not-registered">Need an account?</span>
-        <a href="#" class="login-popout__action">Register</a>
-    </div>
-    <div class="login-popout" data-popout-msg="for_brokers">
-        <span class="login-popout__not-registered">By signing in, I agree to the</span><br>
-        <a href="#" class="login-popout__action">Terms of Use</a>
-    </div>
-    <div class="login-popout go-to-benefits" data-popout-msg="for_benefits">
-        <a href="#" class="login-popout__action">Go to MyBenefits without signing in</a>
-    </div>
-
-    <div class="login-types bg-white">
+        <div class="login-popout" data-popout-msg="for_brokers">
+            <span class="login-popout__not-registered">By signing in, I agree to the</span><br>
+            <a href="#" class="login-popout__action">Terms of Use</a>
+        </div>
+        <div class="login-popout go-to-benefits" data-popout-msg="for_benefits">
+            <a href="#" class="login-popout__action">Go to MyBenefits without signing in</a>
+        </div>
+        <div class="login-types bg-white">
         <div class="login-type-trigger">
             <h2 class="login-type-trigger__title">
                 other account types
@@ -737,6 +735,7 @@
             </p>
         </div>
     </div>
+    </form>
 </div>
 
 

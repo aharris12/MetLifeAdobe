@@ -49,12 +49,14 @@ function resetForm(fid) {
 }
 
 /*contact sidebar*/
-$('[placeholder][data-required=true]').each(function () {
+/*$('[placeholder][data-required=true]').each(function () {
+    console.log("broken")
     $(this).val($(this).attr('placeholder'));
 });
 $('[placeholder][data-placeholder]').each(function () {
+    console.log("broken")
     $(this).val($(this).attr('placeholder'));
-});
+});*/
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
@@ -273,30 +275,34 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 });
 
 /* contact sidebar script */
-$('[placeholder][data-placeholder]').on('focus', function () {
+/*$('[placeholder][data-placeholder]').on('focus', function () {
+    console.log("broken")
     $this = $(this);
     var placeholder = $(this).attr('placeholder');
+    console.log($(this).val())
     if ($this.val() == placeholder) {
         $this.val("");
     }
-});
+});*/
 
-$('[placeholder][data-placeholder]').on('blur', function () {
+/*$('[placeholder][data-placeholder]').on('blur', function () {
+    console.log("broken")
     $this = $(this);
     var placeholder = $(this).attr('placeholder');
     if ($this.val() == "") {
         $this.val(placeholder);
     }
-});
+});*/
 
-$('[placeholder][data-required=true]').on('focus', function () {
+/*$('[placeholder][data-required=true]').on('focus', function () {
+    console.log("broken")
     $this = $(this);
     var placeholder = $(this).attr('placeholder');
     if ($this.val() == placeholder) {
         $this.val("");
     }
     $this.removeClass('error formatError');
-});
+});*/
 
 $('select[data-required=true]').on('change', function () {
     $(this).trigger('blur');

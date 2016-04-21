@@ -129,7 +129,36 @@ $('.login-type__detail').click(function(){
 });
 
 //Validate login fields before submitting
-$('.login-submit').click('/login.js',function(){
+/*$('.js-submitLogin').click(function(){
+    var valid = true;
+    var username = $('.login-type-username').find('input');
+    var password = $('.login-type-password').find('input');
+    console.log(username.val())
+    console.log(password.val())
+    //Remove with PLACEHOLDER
+    $('.login-popout').find("input").each(function(){
+        if( $(this).attr("placeholder") == $(this).val() ) {
+            $(this).val("");
+        }
+    })
+    if(username.val() == "") {
+        username.addClass('error');
+        valid = false;
+    }
+    if(password.val() == "") {
+        password.addClass('error');
+        valid = false;
+    }
+    if( valid || $('#biz-account-type').val() == "sbr") {
+           // loginFunction();
+        $("#formLogin").submit();
+            resetLoginFields();
+    }else{
+        return false;
+    }
+});*/
+
+function loginFunction(){
     var valid = true;
     var username = $('.login-type-username').find('input');
     var password = $('.login-type-password').find('input');
@@ -148,10 +177,38 @@ $('.login-submit').click('/login.js',function(){
         valid = false;
     }
     if( valid || $('#biz-account-type').val() == "sbr") {
-            loginFunction();
-            resetLoginFields();
+        // loginFunction();
+        $("#formLogin").submit();
+        resetLoginFields();
+    }else{
+        return false;
     }
-});
+            /*var userName = $('#userID').val();
+             var userPassword = $('#userPassword').val();
+             var jsonData = {
+             "serviceName":"validateUser",
+             "userName":userName,
+             "password":userPassword
+             }
+
+             $.ajax({
+             url: "https://dev.www.metlife.com/wps/loginProxy/edge/services/public/channel/loginInteractionServices/loginservice",
+             dataType: "json",contentType: "application/json; charset=utf-8",
+             type:'POST',
+             data: JSON.stringify(jsonData),
+             success: function(data) {
+             if (data.isLoginError) {
+             window.location.href = "/individual/phoenixloginassist.html?phoenixLoginMsg=ok&TARGET=";
+             }
+             else {
+             window.location.href = data.authenticationMap.redirectUrl;
+             }
+             }
+             });*/
+   // https://online.metlife.com/edge/web/public/identifyUser
+      //  document.cookie="phoenixLoginBacktrack"+ "=deleted; expires=" + (new Date(0)).toUTCString() + "; domain=.metlife.com; path=/"
+      //  $("#formLogin").submit();
+}
 
 //Reset login fields to default after submitting
 function resetLoginFields() {

@@ -91,6 +91,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+	.cookieShell {
+		padding:30px;
+	}
 	.cookie__header{
 		top:133px;
 	}

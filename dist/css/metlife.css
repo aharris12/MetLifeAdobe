@@ -13616,6 +13616,9 @@ body  .quote_edit_form .submit_quote_edit_form {
 }
 
 @media screen and (min-width: 1024px) {
+	.cookieShell {
+		padding:30px;
+	}
 	.cookie__header{
 		top:133px;
 	}
