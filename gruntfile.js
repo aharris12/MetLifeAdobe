@@ -91,7 +91,6 @@ module.exports = function (grunt) {
                     'dev/css/component/sitemap.css',
                     'dev/css/component/share-chat.css',
                     'dev/css/component/visiondental-overlay.css',
-                    'dev/css/component/login-dropdown.css',
                     'dev/css/component/toolkit-login.css',
                     'dev/css/component/toolkit-searchbox.css',
                     'dev/css/component/toolkit-page-title.css',
@@ -104,6 +103,7 @@ module.exports = function (grunt) {
                     'dev/css/component/toolkit-contentblock.css',
                     'dev/css/component/toolkit-divider.css',
                     'dev/css/theme/ie9select.css'
+
                 ],
                 dest: 'dist/css/metlife.css'
             },
@@ -144,6 +144,7 @@ module.exports = function (grunt) {
                     'dev/js/subnavigation.js',
                     'dev/js/form.js',
                     'dev/js/table-variations.js',
+                    'dev/js/login-overlay.js',
                     'dev/js/media-contact.js',
                     'dev/js/form-card.js',
                     'dev/js/microsite-header.js',
@@ -175,9 +176,7 @@ module.exports = function (grunt) {
                     'dev/js/toolkit-search-page.js',
                     'dev/js/toolkit-column.js',
                     'dev/js/toolkit-page-title-banner.js',
-                    'dev/js/share-chat.js',
                     'dev/js/share-chat.js'
-
                 ],
                 dest: 'dist/js/metlife.js'
             }
@@ -285,7 +284,6 @@ module.exports = function (grunt) {
                         'dev/css/component/sitemap.css',
                         'dev/css/component/share-chat.css',
                         'dev/css/component/visiondental-overlay.css',
-                        'dev/css/component/login-dropdown.css',
                         'dev/css/component/toolkit-login.css',
                         'dev/css/component/toolkit-searchbox.css',
                         'dev/css/component/toolkit-page-title.css',
@@ -298,6 +296,7 @@ module.exports = function (grunt) {
                         'dev/css/component/toolkit-contentblock.css',
                         'dev/css/component/toolkit-divider.css',
                         'dev/css/theme/ie9select.css'
+
 
                     ]
                 }

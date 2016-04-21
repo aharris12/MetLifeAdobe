@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/20/2016 @14:33:58 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/21/2016 @10:26:29 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -93,7 +93,7 @@
             <a href="#" class="contact-trigger__label">Contact</a>
         </div>
         <!-- Login Trigger -->
-        <div class="col login-trigger pull-right" title="LOGIN" data-target="loginOpen">
+        <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
             <span class="login-trigger__label">
                 Log in
                 <svg class="icon icon-secure-locked">
@@ -739,42 +739,6 @@
     </div>
 </div>
 
-<!--Login Drop Down-->
-<div class="loginOpen">
-   <form class="clearfix loginForm open" id="formLogin" name="formLogin" action="https://int.phoenix.ead.metlife.com/edge/web/public/identifyUser" method="POST">
-        <input class=" loginUsername" id="username" type="text" placeholder="User Name"
-               name="username" data-required="true"/>
-        <input class=" loginUsername password" id="password" type="password"
-               placeholder="Password" name="password" data-required="true">
-
-        <div class="loginMoreoptions">
-            <a class="loginOptions" target="_blank"
-               href="https://www.metlife.com/about/signin/content/metlife/index.html">More login options</a>
-        </div>
-
-        <input id="headerLoginSubmit" class="loginformSubmitbtn btn-brand-2nd" type="submit"
-               value="Login"/>
-
-
-        <div class=" login_open_reg_forgot">
-            <a id="headerLoginRegisterLinkDesktop" target="_blank" class="loginRegister"
-               href="https://online.metlife.com/edge/web/public/registration?suppressGroupOptions=false&isSrcSweepstakes=false">Register</a>
-
-            <div class="loginForget"><a id="headerLoginForgotUsernameOrPasswordLinkDesktop" target="_blank"
-                                        class="forgotUsername"
-                                        href="https://online.metlife.com/edge/web/public/forgotPassword?suppressGroupOptions=false&isSrcSweepstakes=false">Forgot
-                Username or Password</a>?
-            </div>
-        </div>
-
-    </form>
-    <div class="formDone">
-        <p>Thank you! Your submission has been received!</p>
-    </div>
-    <div class="formFail">
-          <span class="errorSpan"><img class="errorSpanImg" src="images/form/icon_form_error.png" alt="! Error Image">Please enter a valid username and address</span>
-    </div>
-</div>
 
 <!-- Homepage Nav -->
 <div class="row homepage-nav hidden-xs">
@@ -2912,6 +2876,7 @@
 <!-- Required JS Libraries -->
 <script src="js/vendors.min.js"></script>
 <script src="js/metlife.min.js"></script>
+
 
 
 

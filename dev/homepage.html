@@ -95,7 +95,6 @@
     <link href="css/component/sitemap.css" rel="stylesheet">
     <link href="css/component/share-chat.css" rel="stylesheet">
     <link href="css/component/visiondental-overlay.css" rel="stylesheet">
-    <link href="css/component/login-dropdown.css" rel="stylesheet">
     <link href="css/component/toolkit-login.css" rel="stylesheet">
     <link href="css/component/toolkit-searchbox.css" rel="stylesheet">
     <link href="css/component/toolkit-page-title.css" rel="stylesheet">
@@ -108,6 +107,7 @@
     <link href="css/component/toolkit-contentblock.css" rel="stylesheet">
     <link href="css/component/toolkit-divider.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
+
     <!-- /build -->
 
 </head>
@@ -187,7 +187,7 @@
             <a href="#" class="contact-trigger__label">Contact</a>
         </div>
         <!-- Login Trigger -->
-        <div class="col login-trigger pull-right" title="LOGIN" data-target="loginOpen">
+        <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
             <span class="login-trigger__label">
                 Log in
                 <svg class="icon icon-secure-locked">
@@ -833,42 +833,6 @@
     </div>
 </div>
 
-<!--Login Drop Down-->
-<div class="loginOpen">
-   <form class="clearfix loginForm open" id="formLogin" name="formLogin" action="https://int.phoenix.ead.metlife.com/edge/web/public/identifyUser" method="POST">
-        <input class=" loginUsername" id="username" type="text" placeholder="User Name"
-               name="username" data-required="true"/>
-        <input class=" loginUsername password" id="password" type="password"
-               placeholder="Password" name="password" data-required="true">
-
-        <div class="loginMoreoptions">
-            <a class="loginOptions" target="_blank"
-               href="https://www.metlife.com/about/signin/content/metlife/index.html">More login options</a>
-        </div>
-
-        <input id="headerLoginSubmit" class="loginformSubmitbtn btn-brand-2nd" type="submit"
-               value="Login"/>
-
-
-        <div class=" login_open_reg_forgot">
-            <a id="headerLoginRegisterLinkDesktop" target="_blank" class="loginRegister"
-               href="https://online.metlife.com/edge/web/public/registration?suppressGroupOptions=false&isSrcSweepstakes=false">Register</a>
-
-            <div class="loginForget"><a id="headerLoginForgotUsernameOrPasswordLinkDesktop" target="_blank"
-                                        class="forgotUsername"
-                                        href="https://online.metlife.com/edge/web/public/forgotPassword?suppressGroupOptions=false&isSrcSweepstakes=false">Forgot
-                Username or Password</a>?
-            </div>
-        </div>
-
-    </form>
-    <div class="formDone">
-        <p>Thank you! Your submission has been received!</p>
-    </div>
-    <div class="formFail">
-          <span class="errorSpan"><img class="errorSpanImg" src="images/form/icon_form_error.png" alt="! Error Image">Please enter a valid username and address</span>
-    </div>
-</div>
 
 <!-- Homepage Nav -->
 <div class="row homepage-nav hidden-xs">
@@ -3070,8 +3034,8 @@
 <script src="js/toolkit-column.js"></script>
 <script src="js/toolkit-page-title-banner.js"></script>
 <script src="js/share-chat.js"></script>
-<script src="js/login-form.js"></script>
 <!-- /build -->
+
 
 
 
