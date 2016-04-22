@@ -14,11 +14,10 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     <!-- build:template
-	 <%= message %>
-	 /build -->
+    <%= message %>
+    /build -->
     <!-- build:css css/metlife.min.css -->
     <link href="css/theme/bootstrap-metlife.css" rel="stylesheet">
-    <link href="css/component/oo_style.css" rel="stylesheet">
     <link href="css/theme/icon-metlife.css" rel="stylesheet">
     <link href="css/theme/form-metlife.css" rel="stylesheet">
     <link href="css/theme/utility.css" rel="stylesheet">
@@ -45,6 +44,7 @@
     <link href="css/component/product-comparison-chart.css" rel="stylesheet">
     <link href="css/component/table-variations.css" rel="stylesheet">
     <link href="css/component/microsite-header.css" rel="stylesheet">
+    <link href="css/component/microsite-page-footer.css" rel="stylesheet">
     <link href="css/component/product-tile.css" rel="stylesheet">
     <link href="css/component/article.css" rel="stylesheet">
     <link href="css/component/media-card.css" rel="stylesheet">
@@ -69,8 +69,8 @@
     <link href="css/component/hp-contextual-links.css" rel="stylesheet">
     <link href="css/component/search-suggestions-box.css" rel="stylesheet">
     <link href="css/component/cta-quote-tool.css" rel="stylesheet">
+    <link href="css/component/quote-tool.css" rel="stylesheet">
     <link href="css/component/view-all-rates.css" rel="stylesheet">
-    <link href="css/component/feedback.css" rel="stylesheet">
     <link href="css/component/cookie-banner.css" rel="stylesheet">
     <link href="css/component/carousel--blog.css" rel="stylesheet">
     <link href="css/component/article-list--blog.css" rel="stylesheet">
@@ -80,11 +80,71 @@
     <link href="css/component/title-post--blog.css" rel="stylesheet">
     <link href="css/component/post--blog.css" rel="stylesheet">
     <link href="css/component/post-social--blog.css" rel="stylesheet">
+    <link href="css/component/campaign-footer.css" rel="stylesheet">
+    <link href="css/component/campaign-header.css" rel="stylesheet">
+    <link href="css/component/campaign-card.css" rel="stylesheet">
+    <link href="css/component/oo_style.css" rel="stylesheet">
+    <link href="css/component/feedback.css" rel="stylesheet">
+    <link href="css/component/404.css" rel="stylesheet">
+    <link href="css/component/email-unsub.css" rel="stylesheet">
+    <link href="css/component/fax.css" rel="stylesheet">
+    <link href="css/component/glossary.css" rel="stylesheet">
+    <link href="css/component/life-insurance-quote.css" rel="stylesheet">
+    <link href="css/component/options-small.css" rel="stylesheet">
+    <link href="css/component/overlay.css" rel="stylesheet">
+    <link href="css/component/sitemap.css" rel="stylesheet">
+    <link href="css/component/share-chat.css" rel="stylesheet">
+    <link href="css/component/visiondental-overlay.css" rel="stylesheet">
+    <link href="css/component/toolkit-login.css" rel="stylesheet">
+    <link href="css/component/toolkit-searchbox.css" rel="stylesheet">
+    <link href="css/component/toolkit-page-title.css" rel="stylesheet">
+    <link href="css/component/toolkit-contextual-links.css" rel="stylesheet">
+    <link href="css/component/toolkit-idea-submit.css" rel="stylesheet">
+    <link href="css/component/toolkit-column-layouts.css" rel="stylesheet">
+    <link href="css/component/toolkit-download-farm.css" rel="stylesheet">
+    <link href="css/component/toolkit-element-title.css" rel="stylesheet">
+    <link href="css/component/toolkit-search-page.css" rel="stylesheet">
+    <link href="css/component/toolkit-contentblock.css" rel="stylesheet">
+    <link href="css/component/toolkit-divider.css" rel="stylesheet">
+    <link href="css/theme/ie9select.css" rel="stylesheet">
+
     <!-- /build -->
 
 </head>
 <body>
+<!--Cookie Banner Start -->
+<script type="text/javascript">
+    // Cookie is automatically added
+    // If false, cookie needs a required button press or navigation to be added
+    var createCookie = true;
+    var cookieName = "MLALUKCookiesAccepted";
+    var Allowimmediatesiteanalytics = false;
 
+    var cookieExpiry = 365;
+    var cookieDelete = false;
+    var cookieNamesDelete = '';
+</script>
+<div class="container">
+    <div class="row cookieShell">
+
+        <div class="wrapper">
+            <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
+                <p>Cookies on Metlife's UK Website</p>
+            </div>
+
+            <div class="inline-block col-sm-8 col-xs-12 cookieShell--description">
+                <p>Metlife.co.uk uses cookies - by continuing to browse our site, you're agreeing to our use of cookies. To learn more about the cookies we use, please see our <a href="#">privacy policy</a>.</p>
+                <p>Cookies will not be set on your computer, phone, or tablet if you visit our privacy policy from this banner.</p>
+            </div>
+
+            <div class="inline-block col-sm-2 col-xs-2 cookieShell--button">
+                <a href="JavaScript:setAcceptCookieDesktop(true);" class="btn btn-brand-2nd js-cookieAccept">Continue</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Cookie Banner End -->
 
 <!-- Global Header -->
 <div class="row global-header">
@@ -95,7 +155,7 @@
             <span class="megamenu-trigger__label">MENU</span>
         </div>
         <div class="col home-trigger" title="HOME" data-target="home">
-            <a href="#" id="headerHomeLink" class="home-trigger__link">
+            <a href="#" class="home-trigger__link">
                 <svg class="icon icon-homepage home-trigger__icon">
                     <use xlink:href="images/icons-metlife.svg#icon-homepage"></use>
                 </svg>
@@ -117,8 +177,8 @@
         </div>
     </div>
     <div class="col-xs-4 col-sm-2 global-header__middle">
-        <h1><a id="headerLogoLink" href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
-                                                                      class="global-header__logo img-responsive"></a>
+        <h1><a href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+                                                  class="global-header__logo img-responsive"></a>
         </h1>
     </div>
     <div class="col-xs-4 col-sm-5 global-header__right">
@@ -135,9 +195,14 @@
                 </svg>
             </span>
         </div>
+        <!-- User Logged In Trigger-->
+        <!--<div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="contact-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
+                <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
+            </svg></a>
+        </div>-->
     </div>
 </div>
-
 
 <!-- Mega Menu -->
 <div class="row megamenu">
@@ -148,23 +213,14 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuLifeLink"
-                                                  href="/Insurance/Life-Insurance/Index.html">Life</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuHomeLink"
-                                                  href="http://#">Home</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAutoLink"
-                                                  href="http://#">Auto</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuDisabilityLink"
-                                                  href="http://#">Disability</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuDentalLink"
-                                                  href="http://#">Dental</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuVisionLink"
-                                                  href="http://#">Vision</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAccident&amp;HealthLink"
-                                                  href="http://#">Accident &amp; Health</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuOtherProtectionProductsLink" href="http://#">Other
-                    Protection Products</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="/Insurance/Life-Insurance/Index.html">Life</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Auto</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Disability</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Dental</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Vision</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp; Health</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Other Protection Products</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
@@ -173,20 +229,20 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAnnuitiesLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Annuities</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuIRAsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">IRAs</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuMutualFundsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Mutual Funds</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAPRCalculatorsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">APR Calculators</a></li>
 
 
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAPRCalculatorsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">APR Calculators</a></li>
 
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuAPRCalculatorsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">APR Calculators</a></li>
             </ul>
         </li>
@@ -196,34 +252,34 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuPlanningfortheFutureLink"
-                                                  href="http://#">Planning for the Future</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuSpecialNeedsPlanningLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Planning for the Future</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Special Needs Planning</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuLGBTFinancialPlanningLink" href="http://#">LGBT Financial
+                                                  href="http://#">LGBT Financial
                     Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuFinancialWorkshopLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Financial Workshop</a></li>
 
             </ul>
         </li>
+        <div class="hidden-xs hidden-sm megamenu__divider"></div>
         <li class="megamenu__main-item">
             <a href="#" class="megamenu__main-item-label">FOR BUSINESS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuBenefitsforEmployeesLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Benefits for Employees</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuSmallBusinessLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Small Business</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuRetirement&amp;BenefitFundingLink" href="http://#">Retirement
+                                                  href="http://#">Retirement
                     &amp; Benefit Funding</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuHealthcareReformLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Healthcare Reform</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuThoughtLeadershipLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Thought Leadership</a></li>
             </ul>
         </li>
@@ -233,15 +289,15 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuWorkwithUsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Work with Us</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuCompensationLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Compensation</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuBrokerFormsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Broker Forms</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuExecutiveBenefitLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Executive Benefit</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuPrivateExchangeLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Private Exchange</a></li>
             </ul>
         </li>
@@ -251,22 +307,22 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuOurProfileLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Our Profile</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuCorporateResponsibilityLink" href="http://#">Corporate
+                                                  href="http://#">Corporate
                     Responsibility</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuDiversity&amp;InclusionLink" href="http://#">Diversity
+                                                  href="http://#">Diversity
                     &amp; Inclusion</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuMetLifeFoundationLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">MetLife Foundation</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuMetLifePremierClientGroupLink" href="http://#">MetLife
+                                                  href="http://#">MetLife
                     Premier Client Group</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuCareersLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Careers</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuPressRoomLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="/Press-Room/Index.html">Press Room</a></li>
             </ul>
         </li>
@@ -276,662 +332,24 @@
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuContactUsLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Contact Us</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuFileAClaimLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">File A Claim</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  id="megaMenuFindanOfficeorAdvisorsLink" href="http://#">Find an Office
+                                                  href="http://#">Find an Office
                     or Advisors</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuFindaDentistLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Find a Dentist</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuFindaVisionProviderLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Find a Vision Provider</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuFormsLibraryLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Forms Library</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" id="megaMenuUnsubscribe/OptOutLink"
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
                                                   href="http://#">Unsubscribe/Opt Out</a></li>
             </ul>
         </li>
     </ul>
-</div>
-
-<!--Subnav -->
-<div class="container hidden-xs">
-    <nav class="row subnav bg-brand-1st-inv">
-        <ul class="subnav__list">
-            <li class="subnav__list__item">
-                <a href="#" class="subnav__list__item__anchor">
-                    <p class="subnav__list__item__anchor__label">Wellness</p>
-                </a>
-            </li>
-            <li class="subnav__list__item">
-                <a href="#" class="subnav__list__item__anchor">
-                    <p class="subnav__list__item__anchor__label">Money</p>
-                </a>
-            </li>
-            <li class="subnav__list__item">
-                <a href="#" class="subnav__list__item__anchor">
-                    <p class="subnav__list__item__anchor__label">Insurance</p>
-                </a>
-            </li>
-            <li class="subnav__list__item">
-                <a href="#" class="subnav__list__item__anchor">
-                    <p class="subnav__list__item__anchor__label">Security</p>
-                </a>
-            </li>
-            <li class="subnav__list__item">
-                <a href="#" class="subnav__list__item__anchor">
-                    <p class="subnav__list__item__anchor__label">@MetLife</p>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<!-- Breadcrumb-->
-<div class="container bg-gray-1st">
-    <div class="row breadcrumb">
-        <span class="breadcrumb__crumb">
-            <a href="blog-home.html">MetLife Blog</a>
-        </span>
-        <span class="breadcrumb__crumb">
-            Wellness
-        </span>
-    </div>
-</div>
-
-<!-- begin Blog category title -->
-  <div class="container">
-                <div class="row wrapper">
-                    <div class="blog-category-title-wrapper">
-                        <div class="blog-dropdown">
-                            <label for="blog-category-dropdown">Sort by:</label>
-                            <select id="blog-category-dropdown">
-                                <option value="mostRecent" selected>Most Recent</option>
-                                <option value="mostPopular">Most Popular</option>
-
-                            </select>
-                        </div>
-                        <div class="blog-category-title">
-                            <h1>Wellness</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!-- End Blog category title -->
-
-<!--Blog Category -->
-<div class="container">
-    <div class="row wrapper ">
-        <!---Article list Component Begin-->
-        <div class="blog-article-list col-xs-12 col-sm-8" data-url="someurl">
-          <!--  <div class="results_content">
-              <div class="blog-article">
-                <div class="blog-article-image">
-                    <img src="images/blog/Prevent-Identity-Theft-During-Tax-Season-365x365.jpg" alt="test enlarge" class="enlarge">
-                </div>
-
-                <div class="blog-article-text">
-                    <h5>Prevent Identity Theft During  Tax Season</h5>
-                    <span class="article-date article-date-category">January, 20th 2016</span><span
-                        class="article-date-category">Money, Security</span>
-                    <span class="article-description">Submitting your taxes can be a complicated, stressful process. It’s important to know how to spot a scam and take certain precautions all season long. <a href="#">Protect Yourself from Tax Fraud.</a></span>
-                    &lt;!&ndash;      <a href="#">Read More</a>&ndash;&gt;
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            </div>-->
-            <div class="results_pagination">
-                <ul class="pagination bootpag results_pagination_paginator">
-                    <li><a href="#">Prev</a>
-                    </li>
-                    <li><a href="#">1</a>
-                    </li>
-                    <li><a href="#">2</a>
-                    </li>
-                    <li><a href="#">3</a>
-                    </li>
-                    <li><a href="#">4</a>
-                    </li>
-                    <li><a href="#">5</a>
-                    </li>
-                    <li><a href="#">Next</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!---article list Component End-->
-        <!--sidebar component begin -->
-
-        <div class="blog-sidebar col-xs-12 col-sm-4">
-            <div class="blog-sidebar-header">
-                <span class="showPopular selected-category">Popular</span>
-                <span class="showRecent">Recent</span>
-            </div>
-            <div class="sidebar-content popular-content">
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar-content recent-content">
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--sidebar component end -->
-        </div>
-    </div>
-
-<!-- Begin you might also like section-->
-<div class="container">
-    <div class="row wrapper">
-        <div class="mightAlsoLike">
-            <p class="mightLikeHead">You might also like: </p>
-            <div class="mightLikeOption col-xs-6">
-                <a href="#">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
-                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
-                </a>
-            </div>
-            <div class="mightLikeOption col-xs-6">
-                <a href="#">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
-                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
-                </a>
-            </div>
-            <div class="mightLikeOption col-xs-6">
-                <a href="#">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
-                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
-                </a>
-            </div>
-            <div class="mightLikeOption col-xs-6">
-                <a href="#">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
-                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Global Footer -->
-<div class="container bg-gray-1st global-footer">
-    <div class="wrapper">
-        <ul class="row footer-main__items hidden-xs">
-            <li class="col footer-main__item">
-                <h3 class="footer-main__label">About Metlife</h3>
-                <ul class="footer-sub__items">
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/careers/index.html">Careers</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://investor.metlife.com/">Investor
-                        Relations</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://#">MetLife Foundation</a>
-                    </li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="/Press-Room/Index.html">Press
-                        Room</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="/Blog/Index.html">Blog</a></li>
-                </ul>
-            </li>
-            <li class="col footer-main__item">
-                <h3 class="footer-main__label">What's Right for You</h3>
-                <ul class="footer-sub__items">
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/brokers/index.html">Brokers</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/brokers/benefit-products/group-employee/small-business-employee-benefits/index.html">Business</a>
-                    </li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/about/advertising/employer-and-broker/index.html">HR
-                        Professionals</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/business/investors/index.html">Institutional
-                        Investors</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/expat/index.html">Expatriates</a></li>
-                </ul>
-            </li>
-            <li class="col footer-main__item">
-                <h3 class="footer-main__label">Support</h3>
-                <ul class="footer-sub__items">
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="/Forms-Library/Index.html">Forms
-                        Library</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://metlife.webflow.io/#">Change
-                        Address</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/individual/contact-metlife-representative/index.html">Request
-                        a Quote</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/reform/index.html">Healthcare
-                        Reform</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/policyfinder/index.html">Unclaimed
-                        Policy Finder</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/individual/insurance/life-insurance/service-claims.html">File
-                        a Claim</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="#">Glossary</a></li>
-                </ul>
-            </li>
-            <li class="col footer-main__item">
-                <h3 class="footer-main__label">Contact Us</h3>
-                <ul class="footer-sub__items">
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="/Other/Find-An-X/Index.html">Find an
-                        Office or Advisor</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://metlife.webflow.io/#">Find a
-                        Dentist</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://metlife.webflow.io/#">Find a
-                        Vision Provider</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://#">Unsubscribe/Opt Out</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="col footer-main__item">
-                <h3 class="footer-main__label">My Account</h3>
-                <ul class="footer-sub__items">
-                    <li class="footer-sub__item"><a class="footer-sub__label"
-                                                    href="https://www.metlife.com/about/signin/content/metlife/index.html">Login
-                        Options</a></li>
-                    <li class="footer-sub__item"><a class="footer-sub__label" href="http://metlife.webflow.io/#">Register</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <div class="row footer-country-language-social">
-            <div class="col-xs-6 col-sm-5 col-md-4 footer-country">
-                <div class="row form-icon-wrapper select-country">
-                    <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
-                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                    </svg>
-                    <div class="col-xs-6 col-sm-3 country__label">country</div>
-                    <div class="col-xs-6 col-sm-9 country__selected" id="countrySelected">
-                        <input type="hidden" id="selectedCountry">
-                        <span class="country__flag--selected USA" id="countryFlagSelected"></span>
-                        <span class="country__name--selected" id="countryNameSelected">United States</span>
-                    </div>
-                    <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
-                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                    </svg>
-                </div>
-                <div class="country__list" id="countryList">
-                    <a class="country_header" href="javascript:void(0);">
-                        <div class="country_continent">Americas</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.ar" data-country-name="Argentina"
-                       href="http://www.metlife.com.ar">
-                        <span class="country__flag Argentina"></span>
-
-                        <div class="country__name">Argentina</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.br" data-country-name="Brazil"
-                       href="http://www.metlife.com.br">
-                        <span class="country__flag Brazil"></span>
-
-                        <div class="country__name">Brazil</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.cl" data-country-name="Chile"
-                       href="http://www.metlife.cl">
-                        <span class="country__flag Chile"></span>
-
-                        <div class="country__name">Chile</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.provida.cl" data-country-name="Chile-ProVida"
-                       href="http://www.provida.cl">
-                        <span class="country__flag Chile-ProVida"></span>
-
-                        <div class="country__name">Chile - ProVida</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.co.alico.com" data-country-name="Colombia"
-                       href="http://www.co.alico.com">
-                        <span class="country__flag Colombia"></span>
-
-                        <div class="country__name">Columbia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.mx" data-country-name="Mexico"
-                       href="http://www.metlife.com.mx">
-                        <span class="country__flag Mexico"></span>
-
-                        <div class="country__name">Mexico</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.uy" data-country-name="Uruguay"
-                       href="http://www.metlife.com.uy">
-                        <span class="country__flag Uruguay"></span>
-
-                        <div class="country__name">Uruguay</div>
-                    </a>
-                    <a class="country_header" href="javascript:void(0);">
-                        <div class="country_continent">Asia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.au" data-country-name="Australia"
-                       href="http://www.metlife.com.au">
-                        <span class="country__flag Australia"></span>
-
-                        <div class="country__name">Australia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifealico.com.bd"
-                       data-country-name="Bangladesh" href="http://www.metlifealico.com.bd">
-                        <span class="country__flag Bangladesh"></span>
-
-                        <div class="country__name">Bangladesh</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.cn" data-country-name="China"
-                       href="http://www.metlife.com.cn">
-                        <span class="country__flag China"></span>
-
-                        <div class="country__name">China</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.hk" data-country-name="Hong-Kong"
-                       href="http://www.metlife.com.hk">
-                        <span class="country__flag Hong-Kong"></span>
-
-                        <div class="country__name">Hong Kong</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://pnbmetlife.co.in" data-country-name="India"
-                       href="http://pnbmetlife.co.in">
-                        <span class="country__flag India"></span>
-
-                        <div class="country__name">India</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.co.jp" data-country-name="Japan"
-                       href="http://www.metlife.co.jp">
-                        <span class="country__flag Japan"></span>
-
-                        <div class="country__name">Japan</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.co.kr" data-country-name="South-Korea"
-                       href="http://www.metlife.co.kr">
-                        <span class="country__flag South-Korea"></span>
-
-                        <div class="country__name">Korea</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.ammetlife.com" data-country-name="Malaysia"
-                       href="http://www.ammetlife.com">
-                        <span class="country__flag Malaysia"></span>
-
-                        <div class="country__name">Malaysia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.com.np" data-country-name="Nepal"
-                       href="http://www.alico.com.np">
-                        <span class="country__flag Nepal"></span>
-
-                        <div class="country__name">Nepal</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.bidvmetlife.com.vn" data-country-name="Vietnam"
-                       href="http://www.bidvmetlife.com.vn">
-                        <span class="country__flag Vietnam"></span>
-
-                        <div class="country__name">Vietnam</div>
-                    </a>
-                    <a class="country_header" href="javascript:void(0);">
-                        <div class="country_continent">Europe</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.bg" data-country-name="Bulgaria"
-                       href="http://www.alico.bg">
-                        <span class="country__flag Bulgaria"></span>
-
-                        <div class="country__name">Bulgaria</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.com.cy" data-country-name="Cyprus"
-                       href="http://www.alico.com.cy">
-                        <span class="country__flag Cyprus"></span>
-
-                        <div class="country__name">Cyprus</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifeamcico.cz"
-                       data-country-name="Czech-Republic" href="http://www.metlifeamcico.cz">
-                        <span class="country__flag Czech-Republic"></span>
-
-                        <div class="country__name">Czech Republic</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://metlife.fr" data-country-name="France"
-                       href="http://metlife.fr">
-                        <span class="country__flag France"></span>
-
-                        <div class="country__name">France</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifealico.gr" data-country-name="Greece"
-                       href="http://www.metlifealico.gr">
-                        <span class="country__flag Greece"></span>
-
-                        <div class="country__name">Greece</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.hu" data-country-name="Hungary"
-                       href="http://www.metlife.hu">
-                        <span class="country__flag Hungary"></span>
-
-                        <div class="country__name">Hungary</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.co.uk" data-country-name="Ireland"
-                       href="http://www.metlife.co.uk">
-                        <span class="country__flag Ireland"></span>
-
-                        <div class="country__name">Ireland</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.it" data-country-name="Italy"
-                       href="http://www.metlife.it">
-                        <span class="country__flag Italy"></span>
-
-                        <div class="country__name">Italy</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifeamplico.lv" data-country-name="Latvia"
-                       href="http://www.metlifeamplico.lv">
-                        <span class="country__flag Latvia"></span>
-
-                        <div class="country__name">Latvia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifeamplico.lt" data-country-name="Lithuania"
-                       href="http://www.metlifeamplico.lt">
-                        <span class="country__flag Lithuania"></span>
-
-                        <div class="country__name">Lithuania</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.pl" data-country-name="Poland"
-                       href="http://www.metlife.pl">
-                        <span class="country__flag Poland"></span>
-
-                        <div class="country__name">Poland</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.pt" data-country-name="Portugal"
-                       href="http://www.alico.pt">
-                        <span class="country__flag Portugal"></span>
-
-                        <div class="country__name">Portugal</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.ro" data-country-name="Romania"
-                       href="http://www.alico.ro">
-                        <span class="country__flag Romania"></span>
-
-                        <div class="country__name">Romania</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifealico.ru" data-country-name="Russia"
-                       href="http://www.metlifealico.ru">
-                        <span class="country__flag Russia"></span>
-
-                        <div class="country__name">Russia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifeamslico.sk" data-country-name="Slovakia"
-                       href="http://www.metlifeamslico.sk">
-                        <span class="country__flag Slovakia"></span>
-
-                        <div class="country__name">Slovakia</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.alico.es" data-country-name="Spain"
-                       href="http://www.alico.es">
-                        <span class="country__flag Spain"></span>
-
-                        <div class="country__name">Spain</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.com.tr" data-country-name="Turkey"
-                       href="http://www.metlife.com.tr">
-                        <span class="country__flag Turkey"></span>
-
-                        <div class="country__name">Turkey</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifealico.com.ua" data-country-name="Ukraine"
-                       href="http://www.metlifealico.com.ua">
-                        <span class="country__flag Ukraine"></span>
-
-                        <div class="country__name">Ukraine</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlife.co.uk"
-                       data-country-name="United-Kingdom" href="http://www.metlife.co.uk">
-                        <span class="country__flag United-Kingdom"></span>
-
-                        <div class="country__name">United Kingdom</div>
-                    </a>
-                    <a class="country_header" href="javascript:void(0);">
-                        <div class="country_continent">Middle East and Africa</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.bh.alico.com" data-country-name="Bahrain"
-                       href="http://www.bh.alico.com">
-                        <span class="country__flag Bahrain"></span>
-
-                        <div class="country__name">Bahrain</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.eg.alico.com" data-country-name="Egypt"
-                       href="http://www.eg.alico.com">
-                        <span class="country__flag Egypt"></span>
-
-                        <div class="country__name">Egypt</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.jo.alico.com" data-country-name="Jordan"
-                       href="http://www.jo.alico.com">
-                        <span class="country__flag Jordan"></span>
-
-                        <div class="country__name">Jordan</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.kw.alico.com" data-country-name="Kuwait"
-                       href="http://www.kw.alico.com">
-                        <span class="country__flag Kuwait"></span>
-
-                        <div class="country__name">Kuwait</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.lb.alico.com" data-country-name="Lebanon"
-                       href="http://www.lb.alico.com">
-                        <span class="country__flag Lebanon"></span>
-
-                        <div class="country__name">Lebanon</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.om.alico.com" data-country-name="Oman"
-                       href="http://www.om.alico.com">
-                        <span class="country__flag Oman"></span>
-
-                        <div class="country__name">Oman</div>
-                    </a>
-                    <a class="country__group" data-redirect="http://www.metlifealico.ae"
-                       data-country-name="United-Arab-Emirates" href="http://www.metlifealico.ae">
-                        <span class="country__flag United-Arab-Emirates"></span>
-
-                        <div class="country__name">United Arab Emirates</div>
-                    </a>
-                    <br class="clearfix">
-                </div>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 footer-language">
-                <a class="language__link" href="https://www.metlife.com">En Español</a>
-                <a class="language__link" href="http://#">中文</a>
-                <a class="language__link" href="http://#">MetLife Worldwide</a>
-            </div>
-            <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
-            <div class="col-xs-6 footer-logo">
-                <img class="img-responsive" src="images/logo_blue.png" alt="Metlife Logo">
-            </div>
-            <div class="col-xs-6 col-sm-3 col-md-4 footer-social">
-                <div class="social-alignment">
-                    <span class="social__label">Follow Us</span>
-                    <a class="social__link" href="https://www.facebook.com/metlife" title="Facebook" target="_blank">
-                        <svg class="icon brand-1st">
-                            <use xlink:href="images/icons-metlife.svg#icon-facebook"></use>
-                        </svg>
-                    </a>
-                    <a class="social__link" href="https://twitter.com/metlife" title="Twitter" target="_blank">
-                        <svg class="icon brand-1st">
-                            <use xlink:href="images/icons-metlife.svg#icon-twitter"></use>
-                        </svg>
-                    </a>
-                    <a class="social__link" href="https://www.linkedin.com/company/metlife" title="LinkedIn"
-                       target="_blank">
-                        <svg class="icon brand-1st">
-                            <use xlink:href="images/icons-metlife.svg#icon-linkedin"></use>
-                        </svg>
-                    </a>
-                    <a class="social__link" href="https://www.youtube.com/user/Metlife" title="YouTube" target="_blank">
-                        <svg class="icon brand-1st">
-                            <use xlink:href="images/icons-metlife.svg#icon-youtube"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row footer-legal">
-            <div class="col-xs-12 col-md-2">
-                <a href="" class="hidden-xs footer-legal__logo"><img
-                        class="img-responsive" src="images/logo_blue.png" alt="Metlife Logo"></a>
-                <a href="tel:1-888-765-4321" class="footer-legal__call">CALL: 1-888-765-4321</a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-10 footer-legal__copy">
-                <div class="footer-legal__link">
-                    <a href="https://www.metlife.com/about/privacy-policy/index.html">Privacy</a>
-                    <span class="footer-legal__bullet footer-legal__bullet--permanent"></span>
-                    <a href="https://www.metlife.com/about/terms-and-conditions/index.html">Legal Notices</a>
-                    <span class="footer-legal__bullet footer-legal__bullet--permanent feedback--link"></span>
-                    <a href="#" class="feedback--link js-feedback">[+] Feedback</a>
-                    <hr class="hidden-sm hidden-md hidden-lg">
-                    <span class="footer-disclaimer">
-                    <span class="footer-legal__bullet"></span>
-                        <div class="footer-legal__copyright">&copy; 2015 Metropolitan Life Insurance Company, New York, NY. All Rights Reserved.<br>
-                        PEANUTS &copy; 2015 <a href="https://www.metlife.com/about/copyright/index.html">Peanuts
-                        Worldwide LLC</a>&nbsp;L0815434097 [exp1016][All States][DC,PR].</div>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- Contact Form -->
@@ -948,7 +366,7 @@
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
             <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar">
+                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -1171,18 +589,447 @@
     </div>
 </div>
 
-<div id="suggestionsbox" class="suggestionsbox ">
-    <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
-        <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">
-        </tbody>
-    </table>
+<!-- Login Overlay -->
+<div class="login-container">
+    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
+        <div class="row login-container-header">
+            <div class="col-xs-2 login-container--close">
+                <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
+                <svg class="icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg>
+                <span class="login-container--close__label">CLOSE</span>
+            </div>
+            <div class="col-xs-8">
+                <a href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+                                                      class="global-header__logo img-responsive"></a>
+            </div>
+        </div>
+        <h2 class="login-popout__title">Select account type to log in:</h2>
+        <div class="login-popout">
+            <div class="form-item login-type-options">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type">
+                        <option value="for_individuals">For Individuals</option>
+                        <option value="for_businesses">For Businesses</option>
+                        <option value="for_brokers">For Brokers</option>
+                    </select>
+                    <svg class="icon info">
+                        <use xlink:href="images/icons-metlife.svg#icon-info"></use>
+                    </svg>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Individuals</span>
+                        <span class="login-popout-msg__copy">
+                            MetLife's Online Service - Life, Annuities, Disability,
+                            Long-Term Care, Critical Illness, Auto, Home, Total Control
+                            Account (eSERVICE)
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            Benefits Through Your Employer (MyBenefits)
+                        </span>
+                    </div>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Businesses</span>
+                        <span class="login-popout-msg__copy">
+                            MetLink - Access your company's benefits data
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            MyBenefits - Benefits Through Your Employer
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            SBR - Manage executive benefits
+                        </span>
+                    </div>
+                </div>
+                <div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
+                    <div class="login-popout-msg">
+                        <span class="login-popout-msg__title">For Brokers</span>
+                    <span class="login-popout-msg__copy">
+                        MetLife's Online Service - Life, Annuities, Disability,
+                        Long-Term Care, Critical Illness, Auto, Home, Total Control
+                        Account (eSERVICE)
+                    </span>
+                    <span class="login-popout-msg__copy">
+                        Benefits Through Your Employer (MyBenefits)
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item login-type-biz-account">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type" id="biz-account-type">
+                        <option value="">Select an option</option>
+                        <option value="metlink">MetLink</option>
+                        <option value="mybenefits">MyBenefits</option>
+                        <option value="sbr">SBR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item login-type-biz-purpose">
+                <div class="form-item__field form-icon-wrapper">
+                    <select class="login-type" id="biz-account-purpose">
+                        <option value="">Select an option</option>
+                        <option value="my-benefits-home">My Benefits Home</option>
+                        <option value="for_businesses">Check your group disability claim</option>
+                        <option value="check-your-group-disability-claim">Check Your Group Disability Claim</option>
+                        <option value="check-your-dental-claim-plan">Check Your Dental Claim/Plan</option>
+                        <option value="check-your-retirement-income">Check Your Retirement Income</option>
+                        <option value="retirement-education">Retirement Education</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-item login-type-username">
+                <div class="form-item__field">
+                    <input type="text" placeholder="Username" name="username" data-required="true">
+                </div>
+            </div>
+            <div class="form-item login-type-password">
+                <div class="form-item__field">
+                    <input type="password" placeholder="Password" name="password" data-required="true">
+                </div>
+            </div>
+        </div>
+        <div class="login-popout">
+            <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Forgot username or password?</a>
+            <a href="#" class="login-popout__action" data-popout-msg="for_businesses">Forgot username or password?</a>
+            <a href="#" class="login-popout__action" data-popout-msg="for_brokers">Forgot your password?</a>
+        </div>
+        <div class="login-popout login-submit">
+            <input type="submit" class="btn-brand-2nd js-submitLogin" value="Login"/>
+        </div>
+        <div class="login-popout" data-popout-msg="for_individuals">
+            <span class="login-popout__not-registered">Not registered?</span>
+            <a href="#" class="login-popout__action">Create a new account</a>
+        </div>
+        <div class="login-popout" data-popout-msg="for_businesses">
+            <span class="login-popout__not-registered">Need an account?</span>
+            <a href="#" class="login-popout__action">Register</a>
+        </div>
+        <div class="login-popout" data-popout-msg="for_brokers">
+            <span class="login-popout__not-registered">By signing in, I agree to the</span><br>
+            <a href="#" class="login-popout__action">Terms of Use</a>
+        </div>
+        <div class="login-popout go-to-benefits" data-popout-msg="for_benefits">
+            <a href="#" class="login-popout__action">Go to MyBenefits without signing in</a>
+        </div>
+        <div class="login-types bg-white">
+            <div class="login-type-trigger">
+                <h2 class="login-type-trigger__title">
+                    other account types
+                    <svg class="icon icon-plus">
+                        <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
+                    </svg>
+                </h2>
+            </div>
+            <div class="row login-type__details">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR RETIREES</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">Retirement Plan Access</a></li>
+                        </ul>
+                    </div>
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR INVESTORS</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">MetLife Securities Client View</a></li>
+                            <li class="login-type__link"><a href="">NetXInvestor</a></li>
+                        </ul>
+                    </div>
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR PROVIDERS</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">Dental Professionals Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR EMPLOYERS</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
+                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
+                            </li>
+                            <li class="login-type__link"><a href="">Annuities Administration</a></li>
+                        </ul>
+                    </div>
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR BROKERS &amp; CONSULTANTS</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
+                            </li>
+                            <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
+                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR METLIFE SECURITIES INC. REPRESENTATIVES</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">Brokerage &amp; Securities Account</a></li>
+                        </ul>
+                    </div>
+                    <div class="login-type__detail">
+                        <h3 class="login-type__title">FOR METLIFE ASSOCIATES</h3>
+                        <svg class="icon icon-chevron-right">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+                        </svg>
+                        <ul>
+                            <li class="login-type__link"><a href="">MyMetLife</a></li>
+                            <li class="login-type__link"><a href="">Associate Information Center (AIC)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="login-type__contact">
+                Account questions? Call <b>1-866-363-8669</b> Monday to Friday 8 a.m. to 8 p.m. ET
+                <p class="hidden-sm hidden-md hidden-lg">
+                    Need an account?
+                    <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
+                </p>
+            </div>
+        </div>
+    </form>
 </div>
 
+<!--Subnav -->
+<div class="container hidden-xs">
+    <nav class="row subnav bg-brand-1st-inv">
+        <ul class="subnav__list">
+            <li class="subnav__list__item">
+                <a href="#" class="subnav__list__item__anchor">
+                    <p class="subnav__list__item__anchor__label">Wellness</p>
+                </a>
+            </li>
+            <li class="subnav__list__item">
+                <a href="#" class="subnav__list__item__anchor">
+                    <p class="subnav__list__item__anchor__label">Money</p>
+                </a>
+            </li>
+            <li class="subnav__list__item">
+                <a href="#" class="subnav__list__item__anchor">
+                    <p class="subnav__list__item__anchor__label">Insurance</p>
+                </a>
+            </li>
+            <li class="subnav__list__item">
+                <a href="#" class="subnav__list__item__anchor">
+                    <p class="subnav__list__item__anchor__label">Security</p>
+                </a>
+            </li>
+            <li class="subnav__list__item">
+                <a href="#" class="subnav__list__item__anchor">
+                    <p class="subnav__list__item__anchor__label">@MetLife</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
-<!-- Find an Office - Google Map -->
+<!-- Breadcrumb-->
+<div class="container bg-gray-1st">
+    <div class="row breadcrumb">
+        <span class="breadcrumb__crumb">
+            <a href="blog-home.html">MetLife Blog</a>
+        </span>
+        <span class="breadcrumb__crumb">
+            Wellness
+        </span>
+    </div>
+</div>
+
+<!-- begin Blog category title -->
+  <div class="container">
+                <div class="row wrapper">
+                    <div class="blog-category-title-wrapper">
+                        <div class="blog-dropdown">
+                            <label for="blog-category-dropdown">Sort by:</label>
+                            <select id="blog-category-dropdown">
+                                <option value="mostRecent" selected>Most Recent</option>
+                                <option value="mostPopular">Most Popular</option>
+
+                            </select>
+                        </div>
+                        <div class="blog-category-title">
+                            <h1>Wellness</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- End Blog category title -->
+
+<!--Blog Category -->
+<div class="container">
+    <div class="row wrapper ">
+        <!---Article list Component Begin-->
+        <div class="blog-article-list col-xs-12 col-sm-8" data-url="someurl">
+          <!--  <div class="results_content">
+              <div class="blog-article">
+                <div class="blog-article-image">
+                    <img src="images/blog/Prevent-Identity-Theft-During-Tax-Season-365x365.jpg" alt="test enlarge" class="enlarge">
+                </div>
+
+                <div class="blog-article-text">
+                    <h5>Prevent Identity Theft During  Tax Season</h5>
+                    <span class="article-date article-date-category">January, 20th 2016</span><span
+                        class="article-date-category">Money, Security</span>
+                    <span class="article-description">Submitting your taxes can be a complicated, stressful process. It’s important to know how to spot a scam and take certain precautions all season long. <a href="#">Protect Yourself from Tax Fraud.</a></span>
+                    &lt;!&ndash;      <a href="#">Read More</a>&ndash;&gt;
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            </div>-->
+            <div class="results_pagination">
+                <ul class="pagination bootpag results_pagination_paginator">
+                    <li><a href="#">Prev</a>
+                    </li>
+                    <li><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!---article list Component End-->
+        <!--sidebar component begin -->
+
+        <div class="blog-sidebar col-xs-12 col-sm-4">
+            <div class="blog-sidebar-header">
+                <span class="showPopular selected-category">Popular</span>
+                <span class="showRecent">Recent</span>
+            </div>
+            <div class="sidebar-content popular-content">
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-content recent-content">
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="sidebar-item-text">
+                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
+                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sidebar component end -->
+        </div>
+    </div>
+
+<!-- Begin you might also like section-->
+<div class="container">
+    <div class="row wrapper">
+        <div class="mightAlsoLike">
+            <p class="mightLikeHead">You might also like: </p>
+            <div class="mightLikeOption col-xs-6">
+                <a href="#">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
+                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
+                </a>
+            </div>
+            <div class="mightLikeOption col-xs-6">
+                <a href="#">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
+                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
+                </a>
+            </div>
+            <div class="mightLikeOption col-xs-6">
+                <a href="#">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
+                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
+                </a>
+            </div>
+            <div class="mightLikeOption col-xs-6">
+                <a href="#">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg" alt="Blog Image"/>
+                    <p class="postImageCaption">Woodstock appears as an image, it seems</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
 <!-- build:js js/vendors.min.js -->
+<script src="js/_plugins/svg4everybody.ie8.js"></script>
 <script src="js/_lib/jquery-1.11.3.js"></script>
 <script src="js/_lib/bootstrap.js"></script>
 <script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.js"></script>
@@ -1212,9 +1059,9 @@
 <script src="js/divider-scroll-to.js"></script>
 <script src="js/product-module.js"></script>
 <script src="js/subnavigation.js"></script>
+<script src="js/login-overlay.js"></script>
 <script src="js/form.js"></script>
 <script src="js/table-variations.js"></script>
-<script src="js/login-overlay.js"></script>
 <script src="js/media-contact.js"></script>
 <script src="js/form-card.js"></script>
 <script src="js/microsite-header.js"></script>
@@ -1234,10 +1081,19 @@
 <script src="js/markerwithlabel.js"></script>
 <script src="js/feedback.js"></script>
 <script src="js/cookie.js"></script>
-<script src="js/blogpost.js"></script>
 <script src="js/ServicesAPI.js"></script>
+<script src="js/campaign-header.js"></script>
+<script src="js/campaign-card.js"></script>
+<script src="js/glossary.js"></script>
+<script src="js/toqjshashtable.js"></script>
+<script src="js/blogpost.js"></script>
+<script src="js/overlay.js"></script>
+<script src="js/aemfixes.js"></script>
+<script src="js/toolkit-contextual-links.js"></script>
+<script src="js/toolkit-search-page.js"></script>
+<script src="js/toolkit-column.js"></script>
+<script src="js/toolkit-page-title-banner.js"></script>
+<script src="js/share-chat.js"></script>
 <!-- /build -->
-
-
 </body>
 </html>
