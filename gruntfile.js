@@ -119,11 +119,16 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/jquery.ddslick.js',
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
-                    'dev/js/_plugins/jquery.bootpag.min.js',
+                    'dev/js/_plugins/jquery.bootpag.min.js'
+                ],
+                dest: 'dist/js/vendors.js'
+            },
+            feedback: {
+                src: [
                     'dev/js/_plugins/oo_engine.min.js',
                     'dev/js/_plugins/oo_conf.js'
                 ],
-                dest: 'dist/js/vendors.js'
+                dest: 'dist/js/feedback.js'
             },
             components: {
                 src: [
@@ -194,6 +199,11 @@ module.exports = function (grunt) {
             target2: {
                 files: {
                     'dist/js/metlife.min.js': 'dist/js/metlife.js'
+                }
+            },
+            target3: {
+                files: {
+                    'dist/js/feedback.min.js': 'dist/js/feedback.js'
                 }
             }
         }, //uglify
