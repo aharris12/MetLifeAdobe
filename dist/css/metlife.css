@@ -7829,6 +7829,9 @@ body{
         top: 0;
         bottom: 0;
     }
+    .skinny-promo-tile .product-row__tile__img-tile__img.product-row__tile__img-tile__img__left{
+        right: 68%;
+    }
     .skinny-promo-tile .product-row__tile--img-tile__text{
         display: block;
     }
