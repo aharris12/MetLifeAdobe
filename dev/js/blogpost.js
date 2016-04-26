@@ -1,18 +1,23 @@
 /***** Blog Post Begins ***********************************************************/
-// Hide/show popular blog posts
+// Hide/show popular blog post
 $(".showPopular").click(function () {
-	$(".blog-sidebar-header span").removeClass("selected-category");
-	$(this).addClass("selected-category");
-	$(".popular-content").show();
-	$(".recent-content").hide();
+	$(".showRecent").removeClass("blog-sidebar__header--selected");
+	$(this).removeClass("blog-sidebar__header--deselected");
+	$(this).addClass("blog-sidebar__header--selected");
+	$(".showRecent").addClass("blog-sidebar__header--deselected");
+	$(".blog-sidebar__content--recent").show();
+	$(".blog-sidebar__content--popular").hide();
 });
 
 //Hide/show recent blog posts
 $(".showRecent").click(function () {
-	$(".blog-sidebar-header span").removeClass("selected-category");
-	$(this).addClass("selected-category");
-	$(".recent-content").show();
-	$(".popular-content").hide();
+	$(".showPopular").removeClass("blog-sidebar__header--selected");
+	$(this).removeClass("blog-sidebar__header--deselected");
+	$(this).addClass("blog-sidebar__header--selected");
+	$(".showPopular").addClass("blog-sidebar__header--deselected");
+	$(".blog-sidebar__content--recent").show();
+	$(".blog-sidebar__content--popular").hide();
+
 });
 
 if ($(".bread-crumb span:last").text().length > 100) {
