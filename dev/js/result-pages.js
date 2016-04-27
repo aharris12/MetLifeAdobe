@@ -100,47 +100,44 @@ QuoteToolAPI.loadEventListenersForResults = function() {
 }
 
 QuoteToolAPI.splitParams = function(){
-    if($(".js-resultsUS").length != 0){
-        var paramslist = window.location.href.split("?")[1],online,editFields;
-        var qvalue="";
-        paramslist = paramslist.split("&");
-        // PROD ISsue fixes code apply.
+    var paramslist = window.location.href.split("?")[1],online,editFields;
+    var qvalue="";
+    paramslist = paramslist.split("&");
+    // PROD ISsue fixes code apply.
 
-        // PROD Issue fixes code ends
-        for(j=0; j<paramslist.length; j++) {
-            var tempKey = paramslist[j].split("=")[0]
-            var tempValue= paramslist[j].split("=")[1]
-            //alert("tempKey"+tempKey);
-            //alert("tempValue"+tempValue);
-            if("ol".match(tempKey)) {
-                online = QuoteToolAPI.base64Decode(tempValue);
-                //alert(online)
-            } else if("fv".match(tempKey)) {
-                editFields = QuoteToolAPI.base64Decode(tempValue);
-                //alert(editFields)
-            } else if("q".match(tempKey)) {
-                qvalue = QuoteToolAPI.base64Decode(tempValue);
-                //alert(qvalue)
-            }
+    // PROD Issue fixes code ends
+    for(j=0; j<paramslist.length; j++) {
+        var tempKey = paramslist[j].split("=")[0]
+        var tempValue= paramslist[j].split("=")[1]
+        //alert("tempKey"+tempKey);
+        //alert("tempValue"+tempValue);
+        if("ol".match(tempKey)) {
+            online = QuoteToolAPI.base64Decode(tempValue);
+            //alert(online)
+        } else if("fv".match(tempKey)) {
+            editFields = QuoteToolAPI.base64Decode(tempValue);
+            //alert(editFields)
+        } else if("q".match(tempKey)) {
+            qvalue = QuoteToolAPI.base64Decode(tempValue);
+            //alert(qvalue)
         }
-        console.log("online"+online);
-        console.log("editFields"+editFields);
-        console.log("qvalue"+qvalue);
-        //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
-        //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
-        if((qvalue!=null && typeof(qvalue)!=undefined )) {
-            $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
-            $("#premium").val(qvalue);
-        }
-        if(online == "y"){
-            $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
-        }
-        else{
-            $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
-        }
-        QuoteToolAPI.prefillEditQuoteFields(editFields);
     }
-
+    console.log("online"+online);
+    console.log("editFields"+editFields);
+    console.log("qvalue"+qvalue);
+    //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
+    //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
+    if((qvalue!=null && typeof(qvalue)!=undefined )) {
+        $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
+        $("#premium").val(qvalue);
+    }
+    if(online == "y"){
+        $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
+    }
+    else{
+        $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
+    }
+    QuoteToolAPI.prefillEditQuoteFields(editFields);
 }
 
 QuoteToolAPI.base64Decode = function(g) {
@@ -351,8 +348,7 @@ QuoteToolAPI.getQuotePremiumGAWLIResults = function(){
 
     $.ajax({
         //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-        //url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-        url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
+        url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         type: 'POST',
         dataType:'json',
         data: reqObjParam,
@@ -386,8 +382,7 @@ QuoteToolAPI.getQuotePremiumSITResults = function(){
     reqObjParam =JSON.stringify(reqObjParam);
     $.ajax({
         //url: "/wps/qadiagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-        //url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
-        url: "/wps/proxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
+        url: "/wps/diagnosticToolProxy/sales/getProdRcmdAndQuoteForJSONInput?CN=USA",
         type: 'POST',
         dataType:'json',
         data: reqObjParam,
@@ -413,30 +408,20 @@ QuoteToolAPI.getQuotePremiumMLTResults = function(){
         "mcid":""
     };
     console.log(jsonData);
-//ALEX 03/11/16
-//    $.ajax({
-//        url: "../../wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
-//        //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
-//        type: 'GET',
-//        contentType:"json",
-//        data: jsonData,
-//        success: function(e) {
-//            console.log('success ',e);
-//            QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["basepremium"]));
-//        },
-//        error: function(e) {
-//            console.log('error ',e);
-//        },
-//        timeout:30000
-//    });
-    
-    $.ajax({url: "/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote ",
-        type: "GET",
-        contentType: "json",
-        data: a,
-        success: function(a) {console.log("success ", a), QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(a.substring(a.indexOf("{"), a.indexOf("}") + 1)).basepremium))},
-        error: function(a) {console.log("error ", a)},
-        timeout: 3e4
+    $.ajax({
+        url: "../../wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
+        //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
+        type: 'GET',
+        contentType:"json",
+        data: jsonData,
+        success: function(e) {
+            console.log('success ',e);
+            QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["basepremium"]));
+        },
+        error: function(e) {
+            console.log('error ',e);
+        },
+        timeout:30000
     });
 }
 
@@ -453,31 +438,20 @@ QuoteToolAPI.getQuotePremiumGLTResults = function(){
         "rating":0,
         "mcid":""
     };
-    
-//ALEX 3/11/16
-//    $.ajax({
-//        url: "../../wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
-//        //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
-//        type: 'GET',
-//        contentType: "json",
-//        data: jsonData,
-//        success: function(e) {
-//            console.log('success ',e);
-//            QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["premium"]));
-//        },
-//        error: function(e) {
-//            console.log('error ',e);
-//        },
-//        timeout:30000
-//    });
-    $.ajax({ 
-        url: "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
-        type: "GET",
-        contentType:"json",
-        data: c,
-        success: function(a) {console.log("success ", a), QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(a.substring(a.indexOf("{"), a.indexOf("}") + 1)).premium))},
-        error: function(a) {console.log("error ", a)},
-        timeout: 3e4
+    $.ajax({
+        url: "../../wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
+        //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
+        type: 'GET',
+        contentType: "json",
+        data: jsonData,
+        success: function(e) {
+            console.log('success ',e);
+            QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["premium"]));
+        },
+        error: function(e) {
+            console.log('error ',e);
+        },
+        timeout:30000
     });
 }
 
@@ -500,54 +474,28 @@ QuoteToolAPI.redirectToResultsPageInResults = function(quotePremium) {
     var x = window.location.pathname;
     var urlBase = x.substring(0, x.lastIndexOf('/')+1);
     var onlineAvailable = "n";
-    
-//ALEX - 03/15/16
-//    if(QuoteToolAPI.quoteToolType == 'GAWLI'){
-//        if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-//            onlineAvailable = "y";
-//        }
-//        //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-//        window.location.href = urlBase + "guaranteed-acceptance.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-//    }
-//    else if(QuoteToolAPI.quoteToolType == 'SIT'){
-//        if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-//            onlineAvailable = "y";
-//        }
-//        window.location.href = urlBase + "simplified-issue.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-//    }
-//    else if(QuoteToolAPI.quoteToolType == 'MLT'){
-//        if(QuoteToolAPI.selectedState != 'NY'){
-//            onlineAvailable = "y";
-//        }
-//        window.location.href = urlBase + "term-life.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-//    }
-//    else if(QuoteToolAPI.quoteToolType == 'GLT'){
-//        window.location.href = urlBase + "guaranteed-level.html?ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-//    }
-    
     if(QuoteToolAPI.quoteToolType == 'GAWLI'){
-        if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-            onlineAvailable = "y";
-        }
-        //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-        window.location.href = urlBase + localStorage.getItem("GAWLIUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    }
-    else if(QuoteToolAPI.quoteToolType == 'SIT'){
-        if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
-            onlineAvailable = "y";
-        }
-        window.location.href = urlBase + localStorage.getItem("SITUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    }
-    else if(QuoteToolAPI.quoteToolType == 'MLT'){
-        if(QuoteToolAPI.selectedState != 'NY'){
-            onlineAvailable = "y";
-        }
-        window.location.href = urlBase + localStorage.getItem("MLTUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    }
-    else if(QuoteToolAPI.quoteToolType == 'GLT'){
-        window.location.href = urlBase + localStorage.getItem("GLTUrl") + "?ol=" + QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-    }
-
+        if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+            onlineAvailable = "y";
+        }
+        //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        window.location.href = urlBase + "guaranteed-acceptance.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'SIT'){
+        if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+            onlineAvailable = "y";
+        }
+        window.location.href = urlBase + "simplified-issue.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'MLT'){
+        if(QuoteToolAPI.selectedState != 'NY'){
+            onlineAvailable = "y";
+        }
+        window.location.href = urlBase + "term-life.html?ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'GLT'){
+        window.location.href = urlBase + "guaranteed-level.html?ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
 }
 
 $(document).ready(function(){
