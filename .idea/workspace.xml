@@ -5,16 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/getaquote-gawli.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/getaquote-sit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/getaquote-glt.html" afterPath="$PROJECT_DIR$/dev/getaquote-glt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dev/getaquote-mlt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/quote-tool.js" afterPath="$PROJECT_DIR$/dev/js/quote-tool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/category.html" afterPath="$PROJECT_DIR$/dev/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-post.html" afterPath="$PROJECT_DIR$/dist/blog-post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/quote-results.html" afterPath="$PROJECT_DIR$/dist/quote-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-assets.html" afterPath="$PROJECT_DIR$/dist/toolkit-assets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-landingpage.html" afterPath="$PROJECT_DIR$/dist/toolkit-landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,148 +84,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getaquote-glt.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/getaquote-glt.html">
+      <file leaf-file-name="category.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.74545455">
-              <caret line="1317" column="112" selection-start-line="1317" selection-start-column="109" selection-end-line="1317" selection-end-column="112" />
+            <state vertical-scroll-proportion="0.83168316">
+              <caret line="998" column="40" selection-start-line="998" selection-start-column="40" selection-end-line="998" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getaquote-mlt.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/getaquote-mlt.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3636364">
-              <caret line="1252" column="107" selection-start-line="1252" selection-start-column="98" selection-end-line="1252" selection-end-column="107" />
-              <folding>
-                <element signature="n#ul#0;n#div#0;n#div#2;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8414634">
-              <caret line="1442" column="18" selection-start-line="1442" selection-start-column="18" selection-end-line="1442" selection-end-column="18" />
-              <folding>
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#17;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#17;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quote-tool.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/js/quote-tool.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3653484">
-              <caret line="632" column="197" selection-start-line="632" selection-start-column="197" selection-end-line="632" selection-end-column="197" />
-              <folding>
-                <element signature="e#3714#6000#0" expanded="false" />
-                <element signature="e#3827#4496#0" expanded="false" />
-                <element signature="e#6046#9512#0" expanded="false" />
-                <element signature="e#9565#13334#0" expanded="false" />
-                <element signature="e#13406#15735#0" expanded="false" />
-                <element signature="e#15783#17017#0" expanded="false" />
-                <element signature="e#17069#17126#0" expanded="false" />
-                <element signature="e#21665#22391#0" expanded="false" />
-                <element signature="e#22442#22497#0" expanded="false" />
-                <element signature="e#37188#38875#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getaquote-gawli.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/getaquote-gawli.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.74545455">
-              <caret line="1039" column="158" selection-start-line="1039" selection-start-column="149" selection-end-line="1039" selection-end-column="158" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getaquote-sit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/getaquote-sit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3636364">
-              <caret line="1319" column="23" selection-start-line="1319" selection-start-column="23" selection-end-line="1319" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get-quote-find-office.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/get-quote-find-office.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1607144">
-              <caret line="64" column="23" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="23" />
-              <folding>
-                <element signature="n#!!block;n#validateFindOffice#0" expanded="false" />
-                <element signature="e#1187#1752#0" expanded="false" />
-                <element signature="e#1812#2409#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="result-pages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/result-pages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="16.875">
-              <caret line="544" column="28" selection-start-line="544" selection-start-column="28" selection-end-line="544" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blog-home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/blog-home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="e#425#5870#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -198,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/fao.html" />
         <option value="$PROJECT_DIR$/dev/form-library.html" />
         <option value="$PROJECT_DIR$/dev/generic-product-details-with-cta.html" />
         <option value="$PROJECT_DIR$/dev/generic-product-details-without-cta.html" />
@@ -249,6 +161,7 @@
         <option value="$PROJECT_DIR$/dev/getaquote-sit.html" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/js/quote-tool.js" />
+        <option value="$PROJECT_DIR$/dev/category.html" />
       </list>
     </option>
   </component>
@@ -376,6 +289,20 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -406,10 +333,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\images\toolkit" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html (1)">
-    <configuration default="false" name="getaquote-mlt.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/getaquote-mlt.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.category.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/homepage.html">
       <method />
     </configuration>
@@ -420,6 +344,9 @@
       <method />
     </configuration>
     <configuration default="false" name="homepage.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/category.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -472,19 +399,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.getaquote-mlt.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.result-pages.js" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html (1)" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.result-pages.js" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.result-pages.js" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.getaquote-mlt.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.result-pages.js" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.blog-home.html" />
       </list>
     </recent_temporary>
   </component>
@@ -757,7 +684,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461770803586</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Quote  Tool fixes">
+      <created>1461781634493</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1461781634493</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -771,7 +704,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3620332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,7 +733,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed file url in css and grunt" />
     <MESSAGE value="grunt" />
     <MESSAGE value="FAQ page fuctionatilty and buttons on category page" />
     <MESSAGE value="faq changes" />
@@ -825,7 +757,8 @@
     <MESSAGE value="quote results" />
     <MESSAGE value="Quote results.js, moved disclaimer out of contact side bar(home page)" />
     <MESSAGE value="Home page fax fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home page fax fix" />
+    <MESSAGE value="Quote  Tool fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quote  Tool fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -834,13 +767,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/glossary-single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.76923">
-          <caret line="1501" column="7" selection-start-line="1501" selection-start-column="7" selection-end-line="1501" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/icon-metlife.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1121,7 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/blog-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
+        <state vertical-scroll-proportion="0.3939394">
           <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
           <folding />
         </state>
@@ -1141,16 +1067,13 @@
           <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
           <folding>
             <element signature="n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/get-quote-find-office.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1607144">
+        <state vertical-scroll-proportion="0.33333334">
           <caret line="64" column="23" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="23" />
           <folding>
             <element signature="n#!!block;n#validateFindOffice#0" expanded="false" />
@@ -1162,7 +1085,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/getaquote-gawli.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.74545455">
+        <state vertical-scroll-proportion="0.33270678">
           <caret line="1039" column="158" selection-start-line="1039" selection-start-column="149" selection-end-line="1039" selection-end-column="158" />
           <folding />
         </state>
@@ -1178,7 +1101,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/result-pages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.875">
+        <state vertical-scroll-proportion="-1.3954803">
           <caret line="544" column="28" selection-start-line="544" selection-start-column="28" selection-end-line="544" selection-end-column="28" />
           <folding />
         </state>
@@ -1196,16 +1119,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/getaquote-sit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3636364">
+        <state vertical-scroll-proportion="0.39661655">
           <caret line="1319" column="23" selection-start-line="1319" selection-start-column="23" selection-end-line="1319" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/quote-tool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3653484">
+          <caret line="632" column="197" selection-start-line="632" selection-start-column="197" selection-end-line="632" selection-end-column="197" />
+          <folding>
+            <element signature="e#3714#6000#0" expanded="false" />
+            <element signature="e#3827#4496#0" expanded="false" />
+            <element signature="e#6046#9512#0" expanded="false" />
+            <element signature="e#9565#13334#0" expanded="false" />
+            <element signature="e#13406#15735#0" expanded="false" />
+            <element signature="e#15783#17017#0" expanded="false" />
+            <element signature="e#17069#17126#0" expanded="false" />
+            <element signature="e#21665#22391#0" expanded="false" />
+            <element signature="e#22442#22497#0" expanded="false" />
+            <element signature="e#37188#38875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8414634">
-          <caret line="1442" column="18" selection-start-line="1442" selection-start-column="18" selection-end-line="1442" selection-end-column="18" />
+        <state vertical-scroll-proportion="-3.2181818">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="44" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1237,22 +1179,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/quote-tool.js">
+    <entry file="file://$PROJECT_DIR$/dev/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3653484">
-          <caret line="632" column="197" selection-start-line="632" selection-start-column="197" selection-end-line="632" selection-end-column="197" />
-          <folding>
-            <element signature="e#3714#6000#0" expanded="false" />
-            <element signature="e#3827#4496#0" expanded="false" />
-            <element signature="e#6046#9512#0" expanded="false" />
-            <element signature="e#9565#13334#0" expanded="false" />
-            <element signature="e#13406#15735#0" expanded="false" />
-            <element signature="e#15783#17017#0" expanded="false" />
-            <element signature="e#17069#17126#0" expanded="false" />
-            <element signature="e#21665#22391#0" expanded="false" />
-            <element signature="e#22442#22497#0" expanded="false" />
-            <element signature="e#37188#38875#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.83168316">
+          <caret line="998" column="40" selection-start-line="998" selection-start-column="40" selection-end-line="998" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
