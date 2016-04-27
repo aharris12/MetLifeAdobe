@@ -6831,44 +6831,46 @@ QuoteToolAPI.loadEventListenersForResults = function() {
 }
 
 QuoteToolAPI.splitParams = function(){
-    var paramslist = window.location.href.split("?")[1],online,editFields;
-    var qvalue="";
-    paramslist = paramslist.split("&");
-    // PROD ISsue fixes code apply.
+    if($(".js-resultsUS").length != 0) {
+        var paramslist = window.location.href.split("?")[1], online, editFields;
+        var qvalue = "";
+        paramslist = paramslist.split("&");
+        // PROD ISsue fixes code apply.
 
-    // PROD Issue fixes code ends
-    for(j=0; j<paramslist.length; j++) {
-        var tempKey = paramslist[j].split("=")[0]
-        var tempValue= paramslist[j].split("=")[1]
-        //alert("tempKey"+tempKey);
-        //alert("tempValue"+tempValue);
-        if("ol".match(tempKey)) {
-            online = QuoteToolAPI.base64Decode(tempValue);
-            //alert(online)
-        } else if("fv".match(tempKey)) {
-            editFields = QuoteToolAPI.base64Decode(tempValue);
-            //alert(editFields)
-        } else if("q".match(tempKey)) {
-            qvalue = QuoteToolAPI.base64Decode(tempValue);
-            //alert(qvalue)
+        // PROD Issue fixes code ends
+        for (j = 0; j < paramslist.length; j++) {
+            var tempKey = paramslist[j].split("=")[0]
+            var tempValue = paramslist[j].split("=")[1]
+            //alert("tempKey"+tempKey);
+            //alert("tempValue"+tempValue);
+            if ("ol".match(tempKey)) {
+                online = QuoteToolAPI.base64Decode(tempValue);
+                //alert(online)
+            } else if ("fv".match(tempKey)) {
+                editFields = QuoteToolAPI.base64Decode(tempValue);
+                //alert(editFields)
+            } else if ("q".match(tempKey)) {
+                qvalue = QuoteToolAPI.base64Decode(tempValue);
+                //alert(qvalue)
+            }
         }
+        console.log("online" + online);
+        console.log("editFields" + editFields);
+        console.log("qvalue" + qvalue);
+        //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
+        //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
+        if ((qvalue != null && typeof(qvalue) != undefined )) {
+            $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
+            $("#premium").val(qvalue);
+        }
+        if (online == "y") {
+            $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
+        }
+        else {
+            $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
+        }
+        QuoteToolAPI.prefillEditQuoteFields(editFields);
     }
-    console.log("online"+online);
-    console.log("editFields"+editFields);
-    console.log("qvalue"+qvalue);
-    //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
-    //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
-    if((qvalue!=null && typeof(qvalue)!=undefined )) {
-        $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
-        $("#premium").val(qvalue);
-    }
-    if(online == "y"){
-        $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
-    }
-    else{
-        $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
-    }
-    QuoteToolAPI.prefillEditQuoteFields(editFields);
 }
 
 QuoteToolAPI.base64Decode = function(g) {
@@ -8140,7 +8142,7 @@ $(document).ready(function(){
 
 
 $("#blog-category-dropdown").on("change", function(){
-		var url = $(".blog-article-list").attr("data-url");
+		var url = $(".blog-list").attr("data-url");
 		var searchType = $(this).val();
 		ServicesAPI.blogsServiceCall(url, searchType)
 });
@@ -8513,8 +8515,8 @@ var ServicesAPI = {
 			ServicesAPI.pressBackQuery();
 			ServicesAPI.newsRoomServiceConstruction();
 		}
-		if($(".blog-article-list").length > 0){
-			var url = $(".blog-article-list").attr("data-url");
+		if($(".blog-list").length > 0){
+			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url , "mostRecent")
 		}
 	},
@@ -9384,24 +9386,25 @@ var ServicesAPI = {
 	blogsServiceCall: function(input, searchType) {
 		resultsListHTML = "";
 		$(".results_content").remove();
+		console.log("fired");
 		count = 0;
 		var url = input + "?" + searchType;
 		/*********LOCAL Blog SERVICE***************/
-		/*var blogSearchResults = $.getJSON("blog.json", function(data) {
+		var blogSearchResults = $.getJSON("blog.json", function(data) {
 		 blogSearchResults = data.response.blogs;
 		 resultsListHTML += "<div class=\"results_content\">";
 		 if (blogSearchResults.length != 0) {
 			for (var i = 0; i < blogSearchResults.length; i++) {
 				count++
-				resultsListHTML += "<div class=\"blog-article \">";
-				resultsListHTML += "<div class=\"blog-article-image \">";
+				resultsListHTML += "<div class=\"blog-list__article \">";
+				resultsListHTML += "<div class=\"blog-list__img \">";
 				resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
 				resultsListHTML += "</div>";
-				resultsListHTML += "<div class=\"blog-article-text\">";
+				resultsListHTML += "<div class=\"blog-list__text\">";
 				resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-				resultsListHTML += "<span class=\"article-date article-date-category\">" + blogSearchResults[i].date +"</span>";
-				resultsListHTML += "<span class=\"article-date-category\">" + blogSearchResults[i].tags +"</span>";
-				resultsListHTML+= "<span class=\"article-description\">" + blogSearchResults[i].description + " ";
+				resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
+				resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
+				resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
 				if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
 					resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
 				}
@@ -9414,50 +9417,50 @@ var ServicesAPI = {
 		 resultsListHTML += "</div>";
 		 $(resultsListHTML).insertBefore($(".results_pagination"));
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 
 		/************LOCAL Blog SERVICE***************/
 
 		/************LIVE Blog SERVICE***************/
-		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-				var blogSearchResults = data.response.blogs;
-				resultsListHTML += "<div class=\"results_content\">";
-				if (blogSearchResults.length != 0) {
-					 for (var i = 0; i < blogSearchResults.length; i++) {
-					 count++
-					 resultsListHTML += "<div class=\"blog-article \">";
-					 resultsListHTML += "<div class=\"blog-article-image \">";
-					 resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
-					 resultsListHTML += "</div>";
-					 resultsListHTML += "<div class=\"blog-article-text\">";
-					 resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-					 resultsListHTML += "<span class=\"article-date article-date-category\">" + blogSearchResults[i].date +"</span>";
-					 resultsListHTML += "<span class=\"article-date-category\">" + blogSearchResults[i].tags +"</span>";
-					 resultsListHTML+= "<span class=\"article-description\">" + blogSearchResults[i].description + " ";
-					 if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
-					 resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
-					 }
-					 resultsListHTML += "</span>";
-					 resultsListHTML += "</div>";
-					 resultsListHTML += "<div class=\"clearfix\"></div>";
-					 resultsListHTML += "</div>";
-					 }
-				}
-				resultsListHTML += "</div>";
-				$(resultsListHTML).insertBefore($(".results_pagination"));
-				ServicesAPI.createPagination(count);
-			},
-			error: function (e) {
-				console.log('error ', e);
-			},
-			timeout: 30000
-		});
+		//$.ajax({
+		//	url: url,
+		//	contentType: "application/json; charset=utf-8",
+		//	async: true,
+		//	dataType: 'json',
+		//	type: 'GET',
+		//	success: function (data) {
+		//		var blogSearchResults = data.response.blogs;
+		//		resultsListHTML += "<div class=\"results_content\">";
+		//		if (blogSearchResults.length != 0) {
+		//			 for (var i = 0; i < blogSearchResults.length; i++) {
+		//			 count++
+		//			 resultsListHTML += "<div class=\"blog-article \">";
+		//			 resultsListHTML += "<div class=\"blog-article-image \">";
+		//			 resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
+		//			 resultsListHTML += "</div>";
+		//			 resultsListHTML += "<div class=\"blog-article-text\">";
+		//			 resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
+		//			 resultsListHTML += "<span class=\"article-date article-date-category\">" + blogSearchResults[i].date +"</span>";
+		//			 resultsListHTML += "<span class=\"article-date-category\">" + blogSearchResults[i].tags +"</span>";
+		//			 resultsListHTML+= "<span class=\"article-description\">" + blogSearchResults[i].description + " ";
+		//			 if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
+		//			 resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
+		//			 }
+		//			 resultsListHTML += "</span>";
+		//			 resultsListHTML += "</div>";
+		//			 resultsListHTML += "<div class=\"clearfix\"></div>";
+		//			 resultsListHTML += "</div>";
+		//			 }
+		//		}
+		//		resultsListHTML += "</div>";
+		//		$(resultsListHTML).insertBefore($(".results_pagination"));
+		//		ServicesAPI.createPagination(count);
+		//	},
+		//	error: function (e) {
+		//		console.log('error ', e);
+		//	},
+		//	timeout: 30000
+		//});
 		/************LIVE Blog SERVICE***************/
 	},
 	formsLibraryServiceCall: function(input){
@@ -10852,20 +10855,25 @@ var Hashtable = (function () {
     return b
 })();
 /***** Blog Post Begins ***********************************************************/
-// Hide/show popular blog posts
+// Hide/show popular blog post
 $(".showPopular").click(function () {
-	$(".blog-sidebar-header span").removeClass("selected-category");
-	$(this).addClass("selected-category");
-	$(".popular-content").show();
-	$(".recent-content").hide();
+	$(".showRecent").removeClass("blog-sidebar__header--selected");
+	$(this).removeClass("blog-sidebar__header--deselected");
+	$(this).addClass("blog-sidebar__header--selected");
+	$(".showRecent").addClass("blog-sidebar__header--deselected");
+	$(".blog-sidebar__content--recent").show();
+	$(".blog-sidebar__content--popular").hide();
 });
 
 //Hide/show recent blog posts
 $(".showRecent").click(function () {
-	$(".blog-sidebar-header span").removeClass("selected-category");
-	$(this).addClass("selected-category");
-	$(".recent-content").show();
-	$(".popular-content").hide();
+	$(".showPopular").removeClass("blog-sidebar__header--selected");
+	$(this).removeClass("blog-sidebar__header--deselected");
+	$(this).addClass("blog-sidebar__header--selected");
+	$(".showPopular").addClass("blog-sidebar__header--deselected");
+	$(".blog-sidebar__content--recent").show();
+	$(".blog-sidebar__content--popular").hide();
+
 });
 
 if ($(".bread-crumb span:last").text().length > 100) {

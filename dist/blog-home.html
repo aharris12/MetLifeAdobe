@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 04/26/2016 @16:24:13 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 04/27/2016 @09:11:07 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -818,20 +818,7 @@
 <div class="container">
     <div class="row wrapper ">
         <!---Article list Component Begin-->
-        <div class="blog-article-list col-xs-12 col-sm-8" data-url="someurl">
-           <!-- <div class="results_content">
-                <div class="blog-article">
-                    <div class="blog-article-image ">
-                        <img src="images/blog/Prevent-Identity-Theft-During-Tax-Season-365x365.jpg" alt="alt text" class="enlarge">
-                    </div>
-                    <div class="blog-article-text">
-                        <h5>Prevent Identity Theft During Tax Season</h5>
-                        <span class="article-date article-date-category">undefined</span>
-                        <span class="article-date-category">Money, Security</span>
-                        <span class="article-description">S <a href="#">Protect Yourself from Tax Fraud.</a></span>
-                    </div>
-                </div>
-            </div>-->
+        <div class="blog-list col-xs-12 col-sm-8" data-url="someurl">
             <div class="results_pagination">
                 <ul class="pagination bootpag results_pagination_paginator">
                     <li><a href="#">Prev</a>
@@ -856,67 +843,66 @@
         <!--sidebar component begin -->
 
         <div class="blog-sidebar col-xs-12 col-sm-4">
-            <div class="blog-sidebar-header">
-                <span class="showPopular selected-category">Popular</span>
-                <span class="showRecent">Recent</span>
+            <div class="blog-sidebar__header">
+                <span class="showPopular blog-sidebar__header--selected">Popular</span>
+                <span class="showRecent blog-sidebar__header--deselected">Recent</span>
             </div>
-            <div class="sidebar-content popular-content">
-                <div class="sidebar-item">
+            <div class="blog-sidebar__content blog-sidebar__content--popular">
+                <div class="blog-sidebar__content__item">
                     <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
 
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
                     </div>
                 </div>
-                <div class="sidebar-item">
+                <div class="blog-sidebar__content__item">
                     <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
 
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
                     </div>
                 </div>
-                <div class="sidebar-item">
+                <div class="blog-sidebar__content__item">
                     <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
 
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar-content recent-content">
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
-
-                    <div class="sidebar-item-text">
-                        <a href="#"><span class="sidebar-item-title">Popular 7 ways to cook in your small kitchen</span></a>
-                        <span class="sidebar-item-description"> Popular On road trips, things don't always go as planned</span>
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="blog-sidebar__content blog-sidebar__content--recent">
+                <div class="blog-sidebar__content__item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
 
-        <!--sidebar component end -->
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="blog-sidebar__content__item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+                <div class="blog-sidebar__content__item">
+                    <img src="images/blog/4-Real-Estate-Red-Flags-to-Watch-Out-For-When-Buying-a-Home-80x50.jpg">
+
+                    <div class="blog-sidebar__content__item__text">
+                        <a href="#"><span>Popular 7 ways to cook in your small kitchen</span></a>
+                        <span> Popular On road trips, things don't always go as planned</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<!--End of Blog Results-->
 
 
 <!-- Global Footer -->

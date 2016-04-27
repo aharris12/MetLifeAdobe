@@ -7,6 +7,10 @@
     "email": "alex.soufi@gmail.com",
     "url": "http://www.metlife.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
   "license": "",
   "devDependencies": {
     "grunt": "^0.4.5",

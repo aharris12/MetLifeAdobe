@@ -100,44 +100,46 @@ QuoteToolAPI.loadEventListenersForResults = function() {
 }
 
 QuoteToolAPI.splitParams = function(){
-    var paramslist = window.location.href.split("?")[1],online,editFields;
-    var qvalue="";
-    paramslist = paramslist.split("&");
-    // PROD ISsue fixes code apply.
+    if($(".js-resultsUS").length != 0) {
+        var paramslist = window.location.href.split("?")[1], online, editFields;
+        var qvalue = "";
+        paramslist = paramslist.split("&");
+        // PROD ISsue fixes code apply.
 
-    // PROD Issue fixes code ends
-    for(j=0; j<paramslist.length; j++) {
-        var tempKey = paramslist[j].split("=")[0]
-        var tempValue= paramslist[j].split("=")[1]
-        //alert("tempKey"+tempKey);
-        //alert("tempValue"+tempValue);
-        if("ol".match(tempKey)) {
-            online = QuoteToolAPI.base64Decode(tempValue);
-            //alert(online)
-        } else if("fv".match(tempKey)) {
-            editFields = QuoteToolAPI.base64Decode(tempValue);
-            //alert(editFields)
-        } else if("q".match(tempKey)) {
-            qvalue = QuoteToolAPI.base64Decode(tempValue);
-            //alert(qvalue)
+        // PROD Issue fixes code ends
+        for (j = 0; j < paramslist.length; j++) {
+            var tempKey = paramslist[j].split("=")[0]
+            var tempValue = paramslist[j].split("=")[1]
+            //alert("tempKey"+tempKey);
+            //alert("tempValue"+tempValue);
+            if ("ol".match(tempKey)) {
+                online = QuoteToolAPI.base64Decode(tempValue);
+                //alert(online)
+            } else if ("fv".match(tempKey)) {
+                editFields = QuoteToolAPI.base64Decode(tempValue);
+                //alert(editFields)
+            } else if ("q".match(tempKey)) {
+                qvalue = QuoteToolAPI.base64Decode(tempValue);
+                //alert(qvalue)
+            }
         }
+        console.log("online" + online);
+        console.log("editFields" + editFields);
+        console.log("qvalue" + qvalue);
+        //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
+        //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
+        if ((qvalue != null && typeof(qvalue) != undefined )) {
+            $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
+            $("#premium").val(qvalue);
+        }
+        if (online == "y") {
+            $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
+        }
+        else {
+            $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
+        }
+        QuoteToolAPI.prefillEditQuoteFields(editFields);
     }
-    console.log("online"+online);
-    console.log("editFields"+editFields);
-    console.log("qvalue"+qvalue);
-    //online = QuoteToolAPI.base64Decode(paramslist[0].split("=")[1]);
-    //editFields = QuoteToolAPI.base64Decode(paramslist[1].split("=")[1]);
-    if((qvalue!=null && typeof(qvalue)!=undefined )) {
-        $("#QuoteValue").html(qvalue.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
-        $("#premium").val(qvalue);
-    }
-    if(online == "y"){
-        $(".online_list,.online_form_title,#resultsBuyNow").removeClass('hidden');
-    }
-    else{
-        $(".online_na_list,.online_na_form_title,#resultsSubmit").removeClass('hidden');
-    }
-    QuoteToolAPI.prefillEditQuoteFields(editFields);
 }
 
 QuoteToolAPI.base64Decode = function(g) {
