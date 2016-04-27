@@ -370,6 +370,8 @@ QuoteToolAPI.loadEventListeners = function() {
                     } else {
                         $(".error_age_coverage").hide();
                         if (!cancelRedirect) {
+                            //localstorage gawli
+                            localStorage.setItem("GAWLIUrl", $(".cta_quote_form_wraper").attr("data-gawli-url"));
                             QuoteToolAPI.getQuotePremiumGAWLI();
                         }
                     }
@@ -395,15 +397,21 @@ QuoteToolAPI.loadEventListeners = function() {
                 } else {
                     $(".error_age_coverage").hide();
                     if (!cancelRedirect) {
+                        //sit local storage
+                        localStorage.setItem("SITUrl", $(".cta_quote_form_wraper").attr("data-sit-url"));
                         QuoteToolAPI.getQuotePremiumSIT();
                     }
                 }
             } else if (QuoteToolAPI.quoteToolType == 'MLT') {
                 if (!cancelRedirect) {
+                    //mlt local storage
+                    localStorage.setItem("MLTUrl", $(".cta_quote_form_wraper").attr("data-mlt-url"));
                     QuoteToolAPI.getQuotePremiumMLT();
                 }
             } else if (QuoteToolAPI.quoteToolType == 'GLT') {
                 if (!cancelRedirect) {
+                    //glt local storage
+                    localStorage.setItem("GLTUrl", $(".cta_quote_form_wraper").attr("data-glt-url"));
                     QuoteToolAPI.getQuotePremiumGLT();
                 }
             }
@@ -585,10 +593,7 @@ QuoteToolAPI.redirectToResultsPage = function(quotePremium) {
             window.location.href = urlBase + localStorage.getItem("GLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
         }
 
-    }
-
-    else
-    {
+    } else {
 
         var urlParamString = '';
         urlParamString += 's=' + $("#state1-mmquote").val() + ',';
