@@ -44,22 +44,22 @@ $('.btn-group .btn').click(function(){
     } else {
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
-        if (selectedBtnGroupOption == "dental") {
-            $(".find-office__zip-city-state").on("focus", function(){
-                $('.find-office__zip-city-state-container').addClass('full-width');
-                $('.find-office__dental-container').css('display','block');
-                $('.find-office__vision-container').css('display','none');
-            });
-
-        } else if (selectedBtnGroupOption == "vision") {
-            $(".find-office__zip-city-state").on("focus", function(){
-                $('.find-office__zip-city-state-container').addClass('full-width');
-                $('.find-office__vision-container').css('display','block');
-                $('.find-office__dental-container').css('display','none');
-            });
-
-        }
     }
+});
+
+$(".find-office__zip-city-state").on("focus", function(){
+    if (selectedBtnGroupOption == "vision"){
+        $('.find-office__zip-city-state-container').addClass('full-width');
+        $('.find-office__vision-container').css('display','block');
+        $('.find-office__dental-container').css('display','none');
+    }else if(selectedBtnGroupOption == "dental") {
+        $('.find-office__vision-container').css('display','none');
+        $('.find-office__dental-container').css('display','block');
+    }else{
+        $('.find-office__vision-container').css('display','none');
+        $('.find-office__dental-container').css('display','none');
+    }
+
 });
 
 $('.find-office__submit').click(function(){
