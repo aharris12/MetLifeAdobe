@@ -410,7 +410,7 @@ QuoteToolAPI.getQuotePremiumMLTResults = function(){
         "mcid":""
     };
     console.log(jsonData);
-    $.ajax({
+   /* $.ajax({
         url: "../../wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
         //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote",
         type: 'GET',
@@ -424,6 +424,14 @@ QuoteToolAPI.getQuotePremiumMLTResults = function(){
             console.log('error ',e);
         },
         timeout:30000
+    });*/
+    $.ajax({url: "/wps/proxy/MCPremiumQuoteWS/MCCDTPremiumQuote ",
+        type: "GET",
+        contentType: "json",
+        data: a,
+        success: function(a) {console.log("success ", a), QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(a.substring(a.indexOf("{"), a.indexOf("}") + 1)).basepremium))},
+        error: function(a) {console.log("error ", a)},
+        timeout: 3e4
     });
 }
 
@@ -440,7 +448,7 @@ QuoteToolAPI.getQuotePremiumGLTResults = function(){
         "rating":0,
         "mcid":""
     };
-    $.ajax({
+   /* $.ajax({
         url: "../../wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
         //url: window.location.origin+"/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
         type: 'GET',
@@ -454,6 +462,15 @@ QuoteToolAPI.getQuotePremiumGLTResults = function(){
             console.log('error ',e);
         },
         timeout:30000
+    });*/
+    $.ajax({
+        url: "/wps/proxy/MCPremiumQuoteWS/MCPremiumQuote",
+        type: "GET",
+        contentType:"json",
+        data: c,
+        success: function(a) {console.log("success ", a), QuoteToolAPI.redirectToResultsPageInResults(QuoteToolAPI.formatQuotePremium(JSON.parse(a.substring(a.indexOf("{"), a.indexOf("}") + 1)).premium))},
+        error: function(a) {console.log("error ", a)},
+        timeout: 3e4
     });
 }
 
@@ -476,7 +493,7 @@ QuoteToolAPI.redirectToResultsPageInResults = function(quotePremium) {
     var x = window.location.pathname;
     var urlBase = x.substring(0, x.lastIndexOf('/')+1);
     var onlineAvailable = "n";
-    if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+    /*if(QuoteToolAPI.quoteToolType == 'GAWLI'){
         if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
             onlineAvailable = "y";
         }
@@ -497,6 +514,28 @@ QuoteToolAPI.redirectToResultsPageInResults = function(quotePremium) {
     }
     else if(QuoteToolAPI.quoteToolType == 'GLT'){
         window.location.href = urlBase + "guaranteed-level.html?ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }*/
+    if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+        if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+            onlineAvailable = "y";
+        }
+        //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        window.location.href = urlBase + localStorage.getItem("GAWLIUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'SIT'){
+        if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+            onlineAvailable = "y";
+        }
+        window.location.href = urlBase + localStorage.getItem("SITUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'MLT'){
+        if(QuoteToolAPI.selectedState != 'NY'){
+            onlineAvailable = "y";
+        }
+        window.location.href = urlBase + localStorage.getItem("MLTUrl") + "?ol=" + QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+    }
+    else if(QuoteToolAPI.quoteToolType == 'GLT'){
+        window.location.href = urlBase + localStorage.getItem("GLTUrl") + "?ol=" + QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
     }
 }
 

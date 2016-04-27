@@ -1295,7 +1295,7 @@ var ServicesAPI = {
 		count = 0;
 		var url = input + "?" + searchType;
 		/*********LOCAL Blog SERVICE***************/
-		var blogSearchResults = $.getJSON("blog.json", function(data) {
+		/*var blogSearchResults = $.getJSON("blog.json", function(data) {
 		 blogSearchResults = data.response.blogs;
 		 resultsListHTML += "<div class=\"results_content\">";
 		 if (blogSearchResults.length != 0) {
@@ -1322,50 +1322,50 @@ var ServicesAPI = {
 		 resultsListHTML += "</div>";
 		 $(resultsListHTML).insertBefore($(".results_pagination"));
 		 ServicesAPI.createPagination(count);
-		 });
+		 });*/
 
 		/************LOCAL Blog SERVICE***************/
 
 		/************LIVE Blog SERVICE***************/
-		//$.ajax({
-		//	url: url,
-		//	contentType: "application/json; charset=utf-8",
-		//	async: true,
-		//	dataType: 'json',
-		//	type: 'GET',
-		//	success: function (data) {
-		//		var blogSearchResults = data.response.blogs;
-		//		resultsListHTML += "<div class=\"results_content\">";
-		//		if (blogSearchResults.length != 0) {
-		//			 for (var i = 0; i < blogSearchResults.length; i++) {
-		//			 count++
-		//			 resultsListHTML += "<div class=\"blog-article \">";
-		//			 resultsListHTML += "<div class=\"blog-article-image \">";
-		//			 resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
-		//			 resultsListHTML += "</div>";
-		//			 resultsListHTML += "<div class=\"blog-article-text\">";
-		//			 resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-		//			 resultsListHTML += "<span class=\"article-date article-date-category\">" + blogSearchResults[i].date +"</span>";
-		//			 resultsListHTML += "<span class=\"article-date-category\">" + blogSearchResults[i].tags +"</span>";
-		//			 resultsListHTML+= "<span class=\"article-description\">" + blogSearchResults[i].description + " ";
-		//			 if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
-		//			 resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
-		//			 }
-		//			 resultsListHTML += "</span>";
-		//			 resultsListHTML += "</div>";
-		//			 resultsListHTML += "<div class=\"clearfix\"></div>";
-		//			 resultsListHTML += "</div>";
-		//			 }
-		//		}
-		//		resultsListHTML += "</div>";
-		//		$(resultsListHTML).insertBefore($(".results_pagination"));
-		//		ServicesAPI.createPagination(count);
-		//	},
-		//	error: function (e) {
-		//		console.log('error ', e);
-		//	},
-		//	timeout: 30000
-		//});
+		$.ajax({
+			url: url,
+			contentType: "application/json; charset=utf-8",
+			async: true,
+			dataType: 'json',
+			type: 'GET',
+			success: function (data) {
+				var blogSearchResults = data.response.blogs;
+				resultsListHTML += "<div class=\"results_content\">";
+				if (blogSearchResults.length != 0) {
+					for (var i = 0; i < blogSearchResults.length; i++) {
+						count++
+						resultsListHTML += "<div class=\"blog-list__article \">";
+						resultsListHTML += "<div class=\"blog-list__img \">";
+						resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
+						resultsListHTML += "</div>";
+						resultsListHTML += "<div class=\"blog-list__text\">";
+						resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
+						resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
+						resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
+						resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
+						if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
+							resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
+						}
+						resultsListHTML += "</span>";
+						resultsListHTML += "</div>";
+						resultsListHTML += "<div class=\"clearfix\"></div>";
+						resultsListHTML += "</div>";
+					}
+				}
+				resultsListHTML += "</div>";
+				$(resultsListHTML).insertBefore($(".results_pagination"));
+				ServicesAPI.createPagination(count);
+			},
+			error: function (e) {
+				console.log('error ', e);
+			},
+			timeout: 30000
+		});
 		/************LIVE Blog SERVICE***************/
 	},
 	formsLibraryServiceCall: function(input){

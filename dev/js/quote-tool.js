@@ -92,28 +92,12 @@ QuoteToolAPI.loadEventListeners = function() {
             $(".dob_cta_quote").removeClass('visible-md');
             var quoteHeight = $(".cta_header_quote").height();
             var findXHeight = $(".cta_header_find_x").height();
-            /*if ($(window).width() <= 751) {
-             //$(".icon_scroll_bar").css("margin-top", "325px");
-             }
-             if ($(window).width() >= 751 && $(window).width() <= 1024) {
-             $(".icon_scroll_bar").css("margin-top", "175px");
-             if (quoteHeight < findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "260px");
-             }
-             }
-             if ($(window).width() >= 1025) {
-             $(".icon_scroll_bar").css("margin-top", "122px");
-             if (quoteHeight < findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "212px");
-             }
 
-             }*/
 
             $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
-            $(".online_cta_check").attr("checked", true);
             $(".rep_cta_check").removeAttr("checked");
             $(".online_cta_check").prop("checked", true);
-            $(".rep_cta_check").prop("checked");
+
             $(".rep_cta_check").siblings("svg").first().hide();
             $(".rep_cta_check").siblings("svg:not(\":first-of-type\")").show();
             $(".online_cta_check").siblings("svg").hide();
@@ -134,31 +118,15 @@ QuoteToolAPI.loadEventListeners = function() {
             $("#ctaHeaderQuoteSubmit").show();
             $(".dob_cta_quote").removeClass('visible-lg');
             $(".dob_cta_quote").removeClass('visible-md');
-            /*if ($(window).width() <= 751) {
-             $(".icon_scroll_bar").css("margin-top", "325px");
-             }
-             if ($(window).width() >= 751 && $(window).width() <= 1024) {
-             $(".icon_scroll_bar").css("margin-top", "235px");
-             if (quoteHeight < findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "260px");
-             }
-             }
-             if ($(window).width() >= 1025) {
-             $(".icon_scroll_bar").css("margin-top", "212px");
-             if (quoteHeight < findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "212px");
-             }*/
             $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
-            $(".online_cta_check").attr("checked", true);
             $(".rep_cta_check").removeAttr("checked");
             $(".online_cta_check").prop("checked", true);
-            $(".rep_cta_check").prop("checked");
-
             $(".rep_cta_check").siblings("svg").first().hide();
             $(".rep_cta_check").siblings("svg:not(\":first-of-type\")").show();
             $(".online_cta_check").siblings("svg").hide();
             $(".online_cta_check").siblings("svg").first().show();
         }
+
 
         if ($("#state1-mmquote").val() != null || $("#state1-mmquote").val() != '') {
             $(".select_state_cta_quote").removeClass('errorField errorArrow');
@@ -280,40 +248,6 @@ QuoteToolAPI.loadEventListeners = function() {
                 }
                 QuoteToolAPI.updateCoverageAmount("#coverage-mmquote");
             }
-
-            /*var quoteHeight = $(".cta_header_quote").height();
-             var findXHeight = $(".cta_header_find_x").height();
-             if ($(window).width() <= 751) {
-             $(".icon_scroll_bar").css("margin-top", "325px");
-             }
-             if ($(window).width() >= 751 && $(window).width() <= 1024) {
-             if ($("#insurance-type").hasClass("errorField") || $("#state1-mmquote").hasClass("errorField")) {
-             if (quoteHeight >= findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "174px");
-             }
-             } else {
-             $(".icon_scroll_bar").css("margin-top", "410px");
-             }
-
-             }
-             if ($(window).width() >= 1025) {
-             if ($("#insurance-type").hasClass("errorField") || $("#state1-mmquote").hasClass("errorField")) {
-             if (quoteHeight >= findXHeight) {
-             $(".icon_scroll_bar").css("margin-top", "122px");
-             }
-             } else {
-             $(".icon_scroll_bar").css("margin-top", "252px");
-             }
-             }
-             if(($("#insurance-type").val() == "term")&&($("#state1-mmquote").val()== "CA" || $("#state1-mmquote").val()== "WA" || $("#state1-mmquote").val()== "NY" || $("#state1-mmquote").val()== "PR")){
-             if ($(window).width() >= 751 && $(window).width() <= 1024) {
-             $(".icon_scroll_bar").css("margin-top", "622px");
-
-             }
-             if ($(window).width() >= 1025) {
-             $(".icon_scroll_bar").css("margin-top", "422px");
-             }
-             }*/
         }
     });
     $("#month-mmquote,#day-mmquote,#year-mmquote").change(function() {
@@ -323,31 +257,11 @@ QuoteToolAPI.loadEventListeners = function() {
             if (typeof(range) == "object") {
                 if (age < range[0] || age > range[1]) {
                     $(".error_age_coverage").show();
-                    /*var quoteHeight = $(".cta_header_quote").height();
-                     var findXHeight = $(".cta_header_find_x").height();
-                     if ($(window).width() >= 751 && $(window).width() <= 1024) {
-                     $(".icon_scroll_bar").css("margin-top", "478px");
-
-                     }
-                     if ($(window).width() >= 1025) {
-                     $(".icon_scroll_bar").css("margin-top", "340px");
-
-                     }*/
                 } else {
                     $(".error_age_coverage").hide();
                 }
             } else if (age < 50 || age > 80) {
                 $(".error_age_coverage").show();
-                /*var quoteHeight = $(".cta_header_quote").height();
-                 var findXHeight = $(".cta_header_find_x").height();
-                 if ($(window).width() >= 751 && $(window).width() <= 1024) {
-                 $(".icon_scroll_bar").css("margin-top", "478px");
-
-                 }
-                 if ($(window).width() >= 1025) {
-                 $(".icon_scroll_bar").css("margin-top", "340px");
-
-                 }*/
             } else {
                 $(".error_age_coverage").hide();
             }
@@ -388,43 +302,20 @@ QuoteToolAPI.loadEventListeners = function() {
                 $(".quoteBottom").hide();
                 $("#term-mmquote,#tobacco-mmquote,#health-mmquote").removeAttr('data-validation').removeClass('errorField')
                 QuoteToolAPI.quoteToolType = 'SIT';
-                //less margin
-                /*if ($(window).width() <= 751) {
-                 $(".icon_scroll_bar").css("margin-top", "325px");
-                 }
-                 if ($(window).width() >= 751 && $(window).width() <= 1024) {
-                 $(".icon_scroll_bar").css("margin-top", "415px");
-                 }
-                 if ($(window).width() >= 1025) {
-                 $(".icon_scroll_bar").css("margin-top", "250px");
-                 }*/
             } else {
                 $(".quoteBottom").show();
                 $("#term-mmquote,#tobacco-mmquote,#health-mmquote").attr('data-validation', true);
                 QuoteToolAPI.verifyMLTorGLT();
-                //more margin
-
-                /*if ($(window).width() <= 751) {
-                 $(".icon_scroll_bar").css("margin-top", "325px");
-                 }
-                 if ($(window).width() >= 751 && $(window).width() <= 1024) {
-                 $(".icon_scroll_bar").css("margin-top", "670px");
-                 }
-                 if ($(window).width() >= 1025) {
-                 $(".icon_scroll_bar").css("margin-top", "442px");
-                 }*/
             }
         }
         if (val > 750000) {
             $(".online_cta_check").removeAttr("checked");
-            $(".rep_cta_check").attr("checked", true);
-            $(".online_cta_check").prop("checked");
             $(".rep_cta_check").prop("checked", true);
-            QuoteToolAPI.quoteToolType = 'GLT';
             $(".online_cta_check").siblings("svg").first().hide();
             $(".online_cta_check").siblings("svg:not(\":first-of-type\")").show();
             $(".rep_cta_check").siblings("svg").hide();
             $(".rep_cta_check").siblings("svg").first().show();
+            QuoteToolAPI.quoteToolType = 'GLT';
         }
     });
     $("input[name='options']").change(function() {
@@ -643,47 +534,110 @@ QuoteToolAPI.updateCoverageAmount = function(id) {
 }
 
 QuoteToolAPI.redirectToResultsPage = function(quotePremium) {
-    var urlParamString = '';
-    urlParamString += 's=' + $("#state1-mmquote").val() + ',';
-    urlParamString += 'd=' + $("#day-mmquote").val() + ',';
-    urlParamString += 'm=' + $("#month-mmquote").val() + ',';
-    urlParamString += 'y=' + $("#year-mmquote").val() + ',';
-    urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
-    urlParamString += 'c=' + $("#coverage-mmquote").val();
-    if (QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT') {
-        urlParamString += ',t=' + $("#term-mmquote").val();
-        urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
-        urlParamString += 'h=' + $("#health-mmquote").val();
+    if(quotePremium == "-100")
+    {
+        var urlParamString = '';
+        urlParamString += 's=' + $("#state1-mmquote").val() + ',';
+        urlParamString += 'd=' + $("#day-mmquote").val() + ',';
+        urlParamString += 'm=' + $("#month-mmquote").val() + ',';
+        urlParamString += 'y=' + $("#year-mmquote").val() + ',';
+        urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
+        urlParamString += 'c=' + $("#coverage-mmquote").val();
+        if(QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT')
+        {
+            urlParamString += ',t=' + $("#term-mmquote").val();
+            urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
+            urlParamString += 'h=' + $("#health-mmquote").val();
+        }
+        urlParamString = QuoteToolAPI.base64Encode(urlParamString);
+        console.log(urlParamString);
+        var x = window.location.pathname;
+        var urlBase = x.substring(0, x.lastIndexOf('/')+1);
+        if($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes')
+        {
+            urlBase= x.substring(0, x.lastIndexOf('/insurance')+1);
+        }
+        var onlineAvailable = "n";
+        if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+            if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+                onlineAvailable = "y";
+            }
+            //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("GAWLIUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'SIT'){
+            if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+                onlineAvailable = "y";
+            }
+
+            //window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href =  urlBase + localStorage.getItem("SITUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'MLT'){
+            if(QuoteToolAPI.selectedState != 'NY'){
+                onlineAvailable = "y";
+            }
+            //window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("MLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+        else if(QuoteToolAPI.quoteToolType == 'GLT'){
+            //window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("GLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium) + "&errorstatus=error";
+        }
+
     }
-    urlParamString = QuoteToolAPI.base64Encode(urlParamString);
-    console.log(urlParamString);
-    var x = window.location.pathname;
-    var urlBase = x.substring(0, x.lastIndexOf('/') + 1);
-    if ($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes') {
-        urlBase = x.substring(0, x.lastIndexOf('/insurance') + 1);
-    }
-    var onlineAvailable = "n";
-    if (QuoteToolAPI.quoteToolType == 'GAWLI') {
-        if (QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
-            onlineAvailable = "y";
+
+    else
+    {
+
+        var urlParamString = '';
+        urlParamString += 's=' + $("#state1-mmquote").val() + ',';
+        urlParamString += 'd=' + $("#day-mmquote").val() + ',';
+        urlParamString += 'm=' + $("#month-mmquote").val() + ',';
+        urlParamString += 'y=' + $("#year-mmquote").val() + ',';
+        urlParamString += 'g=' + $("#gender-mmquote").val() + ',';
+        urlParamString += 'c=' + $("#coverage-mmquote").val();
+        if(QuoteToolAPI.quoteToolType == 'MLT' || QuoteToolAPI.quoteToolType == 'GLT')
+        {
+            urlParamString += ',t=' + $("#term-mmquote").val();
+            urlParamString += ',n=' + $("#tobacco-mmquote").val() + ',';
+            urlParamString += 'h=' + $("#health-mmquote").val();
         }
-        //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-        window.location.href = urlBase + "quote-results/guaranteed-acceptance.html?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-    } else if (QuoteToolAPI.quoteToolType == 'SIT') {
-        if (QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1) {
-            onlineAvailable = "y";
+        urlParamString = QuoteToolAPI.base64Encode(urlParamString);
+        console.log(urlParamString);
+        var x = window.location.pathname;
+        var urlBase = x.substring(0, x.lastIndexOf('/')+1);
+        if($("#submitBtn").attr('data-page') && $("#submitBtn").attr('data-page') == 'quotes')
+        {
+            urlBase= x.substring(0, x.lastIndexOf('/insurance')+1);
         }
-        //window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-        window.location.href = urlBase + "quote-results/simplified-issue.html?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-    } else if (QuoteToolAPI.quoteToolType == 'MLT') {
-        if (QuoteToolAPI.selectedState != 'NY') {
-            onlineAvailable = "y";
+        var onlineAvailable = "n";
+        if(QuoteToolAPI.quoteToolType == 'GAWLI'){
+            if(QuoteToolAPI.gawliOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+                onlineAvailable = "y";
+            }
+            //window.location.href = urlBase + "Other\\GAWLI Results\\guaranteed-acceptance.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("GAWLIUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
         }
-        //window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-        window.location.href = urlBase + "quote-results/term-life.html?" + "ol=" + QuoteToolAPI.base64Encode(onlineAvailable) + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
-    } else if (QuoteToolAPI.quoteToolType == 'GLT') {
-        //window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
-        window.location.href = urlBase + "quote-results/guaranteed-level.html?" + "ol=" + QuoteToolAPI.base64Encode('') + "&fv=" + urlParamString + "&q=" + QuoteToolAPI.base64Encode(quotePremium);
+        else if(QuoteToolAPI.quoteToolType == 'SIT'){
+            if(QuoteToolAPI.sitOnlineAvailableStates.indexOf(QuoteToolAPI.selectedState) != -1){
+                onlineAvailable = "y";
+            }
+
+            //window.location.href = urlBase + "Other\\SIT Results\\simplified-issue.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("SITUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
+        else if(QuoteToolAPI.quoteToolType == 'MLT'){
+            if(QuoteToolAPI.selectedState != 'NY'){
+                onlineAvailable = "y";
+            }
+            //window.location.href = urlBase + "Other\\MLT Results\\term-life.html?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("MLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode(onlineAvailable)+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
+        else if(QuoteToolAPI.quoteToolType == 'GLT'){
+            //window.location.href = urlBase + "Other\\GLT Results\\guaranteed-level.html?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+            window.location.href = urlBase + localStorage.getItem("GLTUrl")+"?"+"ol="+QuoteToolAPI.base64Encode('')+"&fv="+urlParamString+"&q="+QuoteToolAPI.base64Encode(quotePremium);
+        }
     }
 }
 
@@ -1069,10 +1023,9 @@ QuoteToolAPI.goOnBlur = function() {
     if (QuoteToolAPI.selectedInsurance != 'term') {
         $(".quoteBottom,.error_age_coverage,.error_state_coverage").hide();
         $("#month-mmquote,#day-mmquote,#year-mmquote,#gender-mmquote,#term-mmquote,#tobacco-mmquote,#health-mmquote").val("");
-        $(".online_cta_check").attr("checked", true);
         $(".rep_cta_check").removeAttr("checked");
         $(".online_cta_check").prop("checked", true);
-        $(".rep_cta_check").prop("checked");
+
         $(".rep_cta_check").siblings("svg").first().hide();
         $(".rep_cta_check").siblings("svg:not(\":first-of-type\")").show();
         $(".online_cta_check").siblings("svg").hide();
@@ -1093,12 +1046,15 @@ $("#edit-coverage-mmquote").change(function() {
     var val = $(this).val();
     if (val > 750000) {
         $(".online_cta_check").removeAttr("checked");
-        $(".rep_cta_check").attr("checked", true);
-        $(".online_cta_check").prop("checked");
         $(".rep_cta_check").prop("checked", true);
-        $(".rep_cta_check").siblings("svg").first().hide();
-        $(".rep_cta_check").siblings("svg:not(\":first-of-type\")").show();
-        $(".online_cta_check").siblings("svg").hide();
-        $(".online_cta_check").siblings("svg").first().show();
+        $(".online_cta_check").siblings("svg").first().hide();
+        $(".online_cta_check").siblings("svg:not(\":first-of-type\")").show();
+        $(".rep_cta_check").siblings("svg").hide();
+        $(".rep_cta_check").siblings("svg").first().show();
     }
+});
+
+$("#insurance-type").on("change",function(){
+    $('#state1-mmquote').removeAttr("disabled");
+
 });
