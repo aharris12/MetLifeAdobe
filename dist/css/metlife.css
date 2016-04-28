@@ -5497,23 +5497,27 @@ a.product-module__action--tel:hover {
     color: #333333;
 }
 
-.product-module__list {
-    list-style-type: disc;
-    padding: 0 20px 0 40px;
+.product-module__list{
+     padding: 0 20px 0 40px;
+     width: 80%;
+     padding-left: 30px;
+     padding-right: 10px;
+     margin: auto;
+ }
+.product-module__list ul{
+    list-style: disc;
+    line-height: 18px;
     text-align: left;
     font-size: 14px;
-    line-height: 18px;
-    width: 80%;
-    padding-left: 30px;
-    padding-right: 10px;
-    margin: auto;
+    text-align: left;
+
 }
 
 .product-module__top {
     margin-bottom: 15px;
 }
 
-.product-module__list li {
+.product-module__list ul li {
     padding-bottom: 10px;
 }
 
@@ -5638,7 +5642,7 @@ a.product-module__action--tel:hover {
         border-left: 1px solid #e3e3e3;
     }
 
-    .product-module__list {
+    .product-module__list ul{
         font-size: 12px;
         line-height: 16px;
     }
@@ -5726,7 +5730,7 @@ a.product-module__action--tel:hover {
         margin-bottom: 20px;
     }
 
-    .product-module__list {
+    .product-module__list ul{
         font-size: 12px;
         line-height: 16px;
     }
