@@ -5525,7 +5525,7 @@ a.product-module__action--tel:hover {
     width: 80%;
 }
 
-.product-module__list--medium {
+.product-module__list--medium ul {
     margin-top: 20px;
 }
 
