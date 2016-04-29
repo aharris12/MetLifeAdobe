@@ -1,67 +1,36 @@
-
-/* line 1, ../../../sass/_blogAlsoLikeDesktop.scss */
-.mightAlsoLike {
+.blog-suggestions {
     padding-bottom: 50px;
 }
-/* line 3, ../../../sass/_blogAlsoLikeDesktop.scss */
-.mightAlsoLike .mightLikeOption {
+.blog-suggestions__option {
     display: inline;
-    width: 15%;
     margin-right: 2%;
-    margin-bottom: 0px;
+    width: 48%;
+    margin-bottom: 0;
+    float: left;
 }
-/* line 9, ../../../sass/_blogAlsoLikeDesktop.scss */
-.mightAlsoLike .mightLikeOption img {
+.blog-suggestions__option img {
     width: 100%;
 }
-/* line 13, ../../../sass/_blogAlsoLikeDesktop.scss */
-.mightAlsoLike .mightLikeOption .postImageCaption {
+.blog-suggestions__option__img-caption {
     display: inline;
     margin-top: 20px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* line 1, ../../../sass/_blogAlsoLikeTablet.scss */
-    .mightAlsoLike {
-        padding-bottom: 50px;
-    }
-    /* line 3, ../../../sass/_blogAlsoLikeTablet.scss */
-    .mightAlsoLike .mightLikeOption {
+@media (min-width: 768px) {
+    .blog-suggestions__option {
         display: inline-flex;
         width: 15%;
-        margin-right: 2%;
-        margin-bottom: 0px;
     }
-    /* line 9, ../../../sass/_blogAlsoLikeTablet.scss */
-    .mightAlsoLike .mightLikeOption img {
+   .blog-suggestions__option img {
         width: 97%;
-    }
-    /* line 13, ../../../sass/_blogAlsoLikeTablet.scss */
-    .mightAlsoLike .mightLikeOption .postImageCaption {
-        display: inline;
-        margin-top: 20px;
     }
 }
 
 @media (min-width: 1025px) {
-    /* line 1, ../../../sass/_blogAlsoLikeDesktop.scss */
-    .mightAlsoLike {
-        padding-bottom: 50px;
-    }
-    /* line 3, ../../../sass/_blogAlsoLikeDesktop.scss */
-    .mightAlsoLike .mightLikeOption {
+    .blog-suggestions__option {
         display: inline;
-        width: 15%;
-        margin-right: 2%;
-        margin-bottom: 0px;
     }
-    /* line 9, ../../../sass/_blogAlsoLikeDesktop.scss */
-    .mightAlsoLike .mightLikeOption img {
+    .blog-suggestions__option img {
         width: 100%;
-    }
-    /* line 13, ../../../sass/_blogAlsoLikeDesktop.scss */
-    .mightAlsoLike .mightLikeOption .postImageCaption {
-        display: inline;
-        margin-top: 20px;
     }
 }
