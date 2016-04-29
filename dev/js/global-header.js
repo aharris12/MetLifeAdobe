@@ -162,8 +162,9 @@ $('.megamenu__sub-items--action').each(function(){
     }
 });
 
-$('.login-trigger').click(function(){
+$('.login-trigger').click(function(e){
     if(!$(".login-trigger").hasClass("linkOnly")) {
+        e.preventDefault();
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').toggleClass('megamenu--open');
