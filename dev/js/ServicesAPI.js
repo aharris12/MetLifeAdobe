@@ -117,16 +117,33 @@ $('.js-searchSubmit').on('click', function () {
 
 // Site Header Search
 $('.js-searchIcon').click(function () {
-	if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-		ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+		}
+	}else{
+		//For Integration we only need this statment
+		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+		}
 	}
+
 });
 
 $('.search-trigger__search-box').keypress(function (e) {
-	if (e.which == 13) {
-		e.preventDefault();
-		ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+	if($(this).hasClass("js-oldSearch")){
+		if (e.which == 13) {
+			e.preventDefault();
+			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+		}
+	}else{
+		//For Integration we only need this statment
+		if (e.which == 13) {
+			e.preventDefault();
+			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+		}
 	}
+
 });
 
 
@@ -1157,6 +1174,12 @@ var ServicesAPI = {
 			timeout:30000
 		});
 		/************LIVE SERVICE***************/
+	},
+	legacySearch: function(serchQuery){
+		var str = "https://www.metlife.com/searchresults?query=";
+		var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
+		str += serchQuery+val2;
+		window.location.href = str;
 	},
 	redirectToSearchResultsPage: function(input){
 		var searchTerm = sessionStorage.setItem("searchTerm" ,$(input).val());
