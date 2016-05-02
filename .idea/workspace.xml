@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/js/feedback.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/carousel--tabs.js" afterPath="$PROJECT_DIR$/dev/js/carousel--tabs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
@@ -156,11 +158,21 @@
       <file leaf-file-name="carousel--tabs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/carousel--tabs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9438944">
-              <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.6072607">
+              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metlife.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.888889">
+              <caret line="872" column="74" selection-start-line="872" selection-start-column="74" selection-end-line="872" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,7 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/glossary-single.html" />
         <option value="$PROJECT_DIR$/dev/life-insurance-FAQ.html" />
         <option value="$PROJECT_DIR$/dev/life-insurance-quote-global.html" />
         <option value="$PROJECT_DIR$/dev/life-insurance-quote.html" />
@@ -262,6 +273,7 @@
         <option value="$PROJECT_DIR$/dev/js/suggestions.js" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
+        <option value="$PROJECT_DIR$/dist/js/metlife.js" />
         <option value="$PROJECT_DIR$/dev/js/carousel--tabs.js" />
       </list>
     </option>
@@ -382,6 +394,16 @@
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -508,12 +530,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Added missing span">
-      <created>1459974148245</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1459974148245</updated>
     </task>
     <task id="LOCAL-00002" summary="Added missing span">
       <created>1459974163268</created>
@@ -803,7 +819,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461952237385</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="life stages fixes for aem">
+      <created>1462197949643</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1462197949687</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -846,7 +868,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Share and chat button icons" />
     <MESSAGE value="Changed hover states for header and padding o ncontact sidebar" />
     <MESSAGE value="Added toolkit" />
     <MESSAGE value="Blog Service" />
@@ -871,7 +892,8 @@
     <MESSAGE value="product module fixes" />
     <MESSAGE value="login" />
     <MESSAGE value="Legacy Search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Legacy Search" />
+    <MESSAGE value="life stages fixes for aem" />
+    <option name="LAST_COMMIT_MESSAGE" value="life stages fixes for aem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -880,13 +902,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/microsite-faq.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.692307">
-          <caret line="377" column="7" selection-start-line="377" selection-start-column="7" selection-end-line="377" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/microsite-home-insurance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-33.692307">
@@ -1074,6 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="985" column="33" selection-start-line="983" selection-start-column="23" selection-end-line="985" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,10 +1324,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.888889">
+          <caret line="872" column="74" selection-start-line="872" selection-start-column="74" selection-end-line="872" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/carousel--tabs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9438944">
-          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.6072607">
+          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

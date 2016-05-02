@@ -69,13 +69,15 @@ function resetBootstrapItems() {
         $('.carousel--tabs .carousel-item .carousel--tabs__icon').hide();
         $(this).addClass('selected');
         $(this).find('.carousel--tabs__icon').css('display','block');
-        $('.carousel--tabs__items > div').eq($(this).attr('data-target')).show();
+       // $('.carousel--tabs__items > div').eq($(this).attr('data-target')).show();
+        $('.carousel--tabs__items > .carousel--tabs__item').eq($(this).attr('data-target')).show();
         adjustBtnWidth();
     });
 
     // Style first tab after a carousel slide
     $('.carousel[data-carousel="lifeStages"]').bind('slid.bs.carousel', function (e) {
-        $('.carousel--tabs__items > div').hide();
+        //$('.carousel--tabs__items > div').hide();
+        $('.carousel--tabs__items > .carousel--tabs__item').hide();
         $('.carousel--tabs .carousel-item').removeClass('selected');
         $('.carousel--tabs .carousel-item .carousel--tabs__icon').hide();
         var nextIndex = $('.item.active > .carousel-item').attr('data-target');
