@@ -34,8 +34,8 @@ function resetBootstrapItems() {
     $('.carousel--tabs .carousel--tabs__item').hide();
     $('.carousel--tabs .carousel-item:first-child').addClass('selected');
     $('.carousel--tabs .carousel-item:first-child .carousel--tabs__icon').css('display','block');
-    $('.carousel--tabs .carousel--tabs__item:first-child').show();
-
+   // $('.carousel--tabs .carousel--tabs__item:first-child').show();
+    $('.carousel--tabs .carousel--tabs__item').first().show();
     //How many blocks to show per carousel slide? PASS USER INPUT FROM CMS
     var splitter = 3;
 
@@ -63,7 +63,8 @@ function resetBootstrapItems() {
 
     // Style tab based on clicked block
     $('.carousel--tabs .carousel-item').click(function () {
-        $('.carousel--tabs__items > div').hide();
+       // $('.carousel--tabs__items > div').hide();
+        $('.carousel--tabs__items > .carousel--tabs__item').hide();
         $('.carousel--tabs .carousel-item').removeClass('selected');
         $('.carousel--tabs .carousel-item .carousel--tabs__icon').hide();
         $(this).addClass('selected');
@@ -78,7 +79,8 @@ function resetBootstrapItems() {
         $('.carousel--tabs .carousel-item').removeClass('selected');
         $('.carousel--tabs .carousel-item .carousel--tabs__icon').hide();
         var nextIndex = $('.item.active > .carousel-item').attr('data-target');
-        $('.carousel--tabs__items > div').eq(nextIndex).show();
+       // $('.carousel--tabs__items > div').eq(nextIndex).show();
+        $('.carousel--tabs__items > .carousel--tabs__item').eq(nextIndex).show();
         $('.carousel--tabs .carousel-item').eq(nextIndex).addClass('selected');
         $('.carousel--tabs .carousel-item').eq(nextIndex).find('.carousel--tabs__icon').show();
         adjustBtnWidth();
