@@ -1,6 +1,20 @@
 //Global Header
 var currentView;
 
+function optionalHeaderCTA() {
+    var fao = $('.find-office__container');
+    var office = $('.get-quote__container');
+    if (fao.length == 0) {
+        $(".get-quote__container").addClass("noFao");
+    }
+    if(office.length == 0){
+        $(".find-office__container").addClass("noOffice");
+    }
+}
+$(window).load(function () {
+    optionalHeaderCTA();
+});
+
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
     var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
