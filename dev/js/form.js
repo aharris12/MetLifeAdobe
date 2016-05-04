@@ -182,10 +182,20 @@ $('.contactsClose').click(function (e) {
 function postLeadform($formid){
     var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    if(typeof FormData !== 'undefined'){ 
+
+   var ajaxUrl;
+    if($(".productPolicy").find('option').eq(1).val('New Product/Planning Services')){
+        ajaxUrl = "/wps/glsproxy/gls/processlead.do";
+    }
+    if($(".productPolicy").find('option').eq(2).val('Existing Product/Policy')){
+        ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+    }
+
+    $(this).find('option').eq(2).val('Existing Product/Policy');
+    if(typeof FormData !== 'undefined'){
         var formData = new FormData($('form[name='+formName+']')[0]);
         $.ajax({
-            url: '/wps/proxy/MCWebForms5KSales/WebFormServletAction',
+            url: ajaxUrl,
             type: 'POST',
             data: formData,
             async: false,
@@ -201,7 +211,7 @@ function postLeadform($formid){
     } else { 
         var formData = postSerialize($('form[name='+formName+']'));
         $.ajax({
-            url: '/wps/proxy/MCWebForms5KSales/WebFormServletAction',
+            url: ajaxUrl,
             type: 'POST',
             data: formData,
             async: false,
