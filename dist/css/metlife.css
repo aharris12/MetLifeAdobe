@@ -3632,9 +3632,10 @@ a:visited {
     .login-container--close {
         height:50px;
     }
+
     .login-container--close .icon {
-        top: 4px;
-        left:30px;
+        top: 15px;
+        left: 15px;
         cursor: pointer;
     }
     .login-container--close .login-container--close__label {
@@ -3643,6 +3644,31 @@ a:visited {
         font-size:14px;
         cursor: pointer;
     }
+
+    @media (max-width: 1024px) {
+        .login-container--close .login-container--close__label {
+            display: none;
+        }
+    }
+    @media (min-width: 768px) {
+        .login-container--close .icon {
+            top: 15px;
+            left:15px;
+        }
+
+    }
+@media (min-width: 1024px) {
+    .login-container--close .icon {
+        top: 4px;
+        left: 30px;
+        cursor: pointer;
+    }
+
+}
+
+
+
+
     .login-container--close .megamenu-trigger__label {
         cursor: pointer;
     }
@@ -3996,6 +4022,43 @@ a:visited {
 .login-submit .btn-brand-2nd {
     margin-bottom:0;
 }
+
+
+.login-container-alert{
+    margin-top:-40px;
+    margin-bottom: 20px;
+    background-color: #FAF9A9;
+}
+
+.login-container-alert div{
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-container-alert h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.login-container-alert p{
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left:10px;
+    padding-right:10px;
+}
+@media (min-width: 1024px) {
+    .login-container-alert{
+        margin-top:-20px;
+        margin-bottom: 20px;
+        background-color: #FAF9A9;
+    }
+    .login-container-alert div{
+        width: 550px;
+    }
+    .login-container-alert h2{
+        margin-bottom: 20px;
+    }
+}
+
+
 .wrapper.breadcrumb {
     width:100%;
     padding: 0 10px;
