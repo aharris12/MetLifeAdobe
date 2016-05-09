@@ -61,6 +61,7 @@ function closeSearchBox () {
 
 $('.megamenu-trigger').on('click', function(){
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
+    $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
     closeContactForm();
     $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
