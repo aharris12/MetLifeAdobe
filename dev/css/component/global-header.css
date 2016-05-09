@@ -355,7 +355,7 @@
 .login-trigger:hover span{
     color: rgba(255, 255, 255, 0.6);
 }
-.contact-trigger {
+.contact-trigger, .user-trigger {
     display:none;
     cursor: pointer;
 }
@@ -364,21 +364,24 @@
     height: 13px;
     top: 2px;
 }
-.contact-trigger:hover a{
+.contact-trigger:hover a, .user-trigger:hover a{
     color: rgba(255, 255, 255, 0.6);
 }
 .login-trigger__label,
-.contact-trigger__label {
+.contact-trigger__label,
+.user-trigger__label{
     text-decoration: none;
     color:#fff;
 }
 .login-trigger__label:hover,
-.contact-trigger__label:hover {
+.contact-trigger__label:hover,
+.user-trigger__label:hover{
     text-decoration: none;
     color:#fff;
 }
 
-.contact-trigger__label:focus{
+.contact-trigger__label:focus,
+.user-trigger__label:focus{
     text-decoration: none;
     color:#fff;
 }
@@ -397,7 +400,8 @@
 */
 @media screen and (min-width: 768px) {
     .login-trigger,
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         background-color: #0e5dae;
         display:block;
         width: 130px;
@@ -414,18 +418,21 @@
         padding-left: 15px;
 
     }
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         background-color: transparent;
 
     }
 }
 @media screen and (min-width: 1024px) {
     .login-trigger,
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         line-height: 6em;
     }
     .login-trigger--minimized,
-    .contact-trigger--minimized {
+    .contact-trigger--minimized,
+    .user-trigger--minimized{
         line-height: 4.5em;
     }
 }
@@ -435,7 +442,8 @@
 .home-trigger__label:hover,
 .search-trigger:hover,
 .login-trigger__label:hover,
-.contact-trigger__label:hover {
+.contact-trigger__label:hover,
+.user-trigger__label:hover{
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 }

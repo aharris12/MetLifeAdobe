@@ -3339,7 +3339,7 @@ a:visited {
 .login-trigger:hover span{
     color: rgba(255, 255, 255, 0.6);
 }
-.contact-trigger {
+.contact-trigger, .user-trigger {
     display:none;
     cursor: pointer;
 }
@@ -3348,21 +3348,24 @@ a:visited {
     height: 13px;
     top: 2px;
 }
-.contact-trigger:hover a{
+.contact-trigger:hover a, .user-trigger:hover a{
     color: rgba(255, 255, 255, 0.6);
 }
 .login-trigger__label,
-.contact-trigger__label {
+.contact-trigger__label,
+.user-trigger__label{
     text-decoration: none;
     color:#fff;
 }
 .login-trigger__label:hover,
-.contact-trigger__label:hover {
+.contact-trigger__label:hover,
+.user-trigger__label:hover{
     text-decoration: none;
     color:#fff;
 }
 
-.contact-trigger__label:focus{
+.contact-trigger__label:focus,
+.user-trigger__label:focus{
     text-decoration: none;
     color:#fff;
 }
@@ -3381,7 +3384,8 @@ a:visited {
 */
 @media screen and (min-width: 768px) {
     .login-trigger,
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         background-color: #0e5dae;
         display:block;
         width: 130px;
@@ -3398,18 +3402,21 @@ a:visited {
         padding-left: 15px;
 
     }
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         background-color: transparent;
 
     }
 }
 @media screen and (min-width: 1024px) {
     .login-trigger,
-    .contact-trigger {
+    .contact-trigger,
+    .user-trigger{
         line-height: 6em;
     }
     .login-trigger--minimized,
-    .contact-trigger--minimized {
+    .contact-trigger--minimized,
+    .user-trigger--minimized{
         line-height: 4.5em;
     }
 }
@@ -3419,7 +3426,8 @@ a:visited {
 .home-trigger__label:hover,
 .search-trigger:hover,
 .login-trigger__label:hover,
-.contact-trigger__label:hover {
+.contact-trigger__label:hover,
+.user-trigger__label:hover{
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 }
@@ -14761,7 +14769,7 @@ The following code is Copyright 1998-2013 Opinionlab, Inc.  All rights reserved.
 #oo_bar .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; overflow: hidden; }
 #oo_bar span { background: url(/assets/opinionlab/oo_bar_icon.gif) left no-repeat; display: block; margin: 0 15px; height: 100%; padding-left: 17px; }
 
-#oo_tab { background-color: #ffffff; border: 1px solid #becadf; display: block; position: fixed; top: 40%; padding: 55px 0px 55px 0px; _height: 110px; _padding: 0px; _top: 45%; width: 35px; z-index: 999995; cursor: pointer; }
+#oo_tab { background-color: #ffffff; border: 1px solid #becadf; display: block; position: fixed; top: 40%; padding: 55px 0px 55px 0px; _height: 110px; _padding: 0px; _top: 45%; width: 35px; z-index: 1999; cursor: pointer; }
 #oo_tab span { bottom: 15px; _bottom: 5px; display: block; background: url(/assets/opinionlab/oo_tab_icon.gif) no-repeat; height: 9px; position: absolute; width: 9px; }
 #oo_tab div { background-image: url(/assets/opinionlab/oo_tab.png); _background-image: url(/assets/opinionlab/oo_tabie6.png); background-repeat: no-repeat; position: absolute; display: block; height: 100%; left: 0; top: 0; width: 100%; }
 #oo_tab.wcag a { background: url(/assets/opinionlab/oo_tab_icon.gif) no-repeat; background-repeat: no-repeat; background-position: center bottom; border: none; outline: none; position: absolute; display: block; bottom: 15px; left: -6px; top: 0; width: 100%; }

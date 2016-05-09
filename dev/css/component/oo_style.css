@@ -34,7 +34,7 @@ The following code is Copyright 1998-2013 Opinionlab, Inc.  All rights reserved.
 #oo_bar .screen_reader { color: transparent; display: block; position: relative; height: 0; width: 0; line-height: 0; overflow: hidden; }
 #oo_bar span { background: url(/assets/opinionlab/oo_bar_icon.gif) left no-repeat; display: block; margin: 0 15px; height: 100%; padding-left: 17px; }
 
-#oo_tab { background-color: #ffffff; border: 1px solid #becadf; display: block; position: fixed; top: 40%; padding: 55px 0px 55px 0px; _height: 110px; _padding: 0px; _top: 45%; width: 35px; z-index: 999995; cursor: pointer; }
+#oo_tab { background-color: #ffffff; border: 1px solid #becadf; display: block; position: fixed; top: 40%; padding: 55px 0px 55px 0px; _height: 110px; _padding: 0px; _top: 45%; width: 35px; z-index: 1999; cursor: pointer; }
 #oo_tab span { bottom: 15px; _bottom: 5px; display: block; background: url(/assets/opinionlab/oo_tab_icon.gif) no-repeat; height: 9px; position: absolute; width: 9px; }
 #oo_tab div { background-image: url(/assets/opinionlab/oo_tab.png); _background-image: url(/assets/opinionlab/oo_tabie6.png); background-repeat: no-repeat; position: absolute; display: block; height: 100%; left: 0; top: 0; width: 100%; }
 #oo_tab.wcag a { background: url(/assets/opinionlab/oo_tab_icon.gif) no-repeat; background-repeat: no-repeat; background-position: center bottom; border: none; outline: none; position: absolute; display: block; bottom: 15px; left: -6px; top: 0; width: 100%; }
