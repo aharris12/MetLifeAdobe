@@ -25,8 +25,10 @@ function scrollMoreBouncing() {
 
 function scrollForMoreFunction() {
     $(window).scroll(function () {
+        console.log('$("#carouselHero").length != 0 && $(".scroll-form-more-container").length != 0 ', $("#carouselHero").length != 0 && $(".scroll-form-more-container").length != 0)
         if ($("#carouselHero").length != 0 && $(".scroll-form-more-container").length != 0) {
-            if ($(".hidden-sm").is(":visible") && $(".hidden-xs").is(":visible")) {
+            console.log('$(".hidden-sm").is(":visible") && $(".hidden-xs").is(":visible") ', $(".hidden-sm").is(":visible") && $(".hidden-xs").is(":visible"))
+            if ($(".scroll-form-more-container").is(":visible")) {
 
                 var height = $(".global_header").height();
                 if ($(window).scroll(200) && $(".scroll-form-more-container").css("display") != "none") {

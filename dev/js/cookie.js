@@ -1,49 +1,46 @@
 /***** Cookie Banner Begins ***********************************************************/
 var domain = getDomain(document.URL);
 var gaReferrer = false;
-//var hasAcceptanceCookie = false;
+var hasAcceptanceCookie = false;
 
-if ($(".cookieShell").length > 0) {
-	if (createCookie === undefined) {
-		var createCookie = false;
-	}
-	//if (cookieName === undefined) {
-	//    var cookieName = "MLALUKCookiesAccepted";
-	//}
-	$("a").click(function () {
-		if ($(this).attr("class") != "privacyPolicy" && createCookie == true) {
+$(document).ready(function() {
+	if ($(".cookieShell").length > 0) {
+		if (createCookie === undefined) {
+			var createCookie = false;
+		}
+		//if (cookieName === undefined) {
+		//    var cookieName = "MLALUKCookiesAccepted";
+		//}
+
+
+		//if the cookie acceptance checkox is unchecked, drop the cookie right away
+		if (createCookie == false) {
 			checkExistance(cookieName);
 			if (hasAcceptanceCookie == false) {
 				setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
 			}
 		}
-	});
 
-	//if the cookie acceptance checkox is unchecked, drop the cookie right away
-	if (createCookie == false) {
-		checkExistance(cookieName);
-		if (hasAcceptanceCookie == false) {
-			setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
-		}
-	}
+		// Will not do anything unless checkbox for creating cookies is selected
+		if (createCookie == true || Allowimmediatesiteanalytics == true) {
+			checkExistance(cookieName);
 
-	// Will not do anything unless checkbox for creating cookies is selected
-	if (createCookie == true || Allowimmediatesiteanalytics == true) {
-		checkExistance(cookieName);
+			if (hasAcceptanceCookie == false) {
+				enterCookie();
+			}
 
-		if (hasAcceptanceCookie == false) {
-			enterCookie();
+			deleteCookies();
 		}
 
-		deleteCookies();
+
+		//var cookieHeight = $(".cookieShell").height();
+		$(".global-header").addClass("cookie__header");
+		$(".megamenu").addClass("cookie__megamenu");
+		$(".search-trigger__container").addClass("cookie__search");
 	}
+});
 
 
-	//var cookieHeight = $(".cookieShell").height();
-	$(".global-header").addClass("cookie__header");
-	$(".megamenu").addClass("cookie__megamenu");
-	$(".search-trigger__container").addClass("cookie__search");
-}
 
 
 $(".js-cookieAccept").click(function () {
@@ -51,6 +48,15 @@ $(".js-cookieAccept").click(function () {
 	$(".megamenu").removeClass("cookie__megamenu");
 	$(".search-trigger__container").removeClass("cookie__search");
 	$(".megamenu").removeClass('cookie-megamenu--minimized');
+});
+
+$("a").click(function () {
+	if ($(this).attr("class") != "privacyPolicy" && createCookie == true) {
+		checkExistance(cookieName);
+		if (hasAcceptanceCookie == false) {
+			setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
+		}
+	}
 });
 
 function checkExistance() {
