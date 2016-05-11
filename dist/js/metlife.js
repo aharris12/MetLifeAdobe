@@ -7982,17 +7982,33 @@ $(".js-feedback").click(function(e){
 /***** Cookie Banner Begins ***********************************************************/
 var domain = getDomain(document.URL);
 var gaReferrer = false;
-
+var hasAcceptanceCookie;
+console.log('cookieName ', cookieName)
+console.log('createCookie ', createCookie)
+console.log('Allowimmediatesiteanalytics ', Allowimmediatesiteanalytics)
+console.log('cookieExpiry ', cookieExpiry)
+console.log('cookieDelete ', cookieDelete)
+console.log('cookieNamesDelete ', cookieNamesDelete)
+	console.log('$(".cookieShell").length > 0 ', $(".cookieShell").length > 0)
 	if ($(".cookieShell").length > 0) {
+		console.log('checking if createCookie === undefined ', createCookie === undefined)
 		if (createCookie === undefined) {
+			console.log("enter Statement")
 			var createCookie = false;
 		}
+		//if (cookieName === undefined) {
+		//    var cookieName = "MLALUKCookiesAccepted";
+		//}
 
 
 		//if the cookie acceptance checkox is unchecked, drop the cookie right away
+		console.log("checking if createCookie == false ", createCookie == false)
 		if (createCookie == false) {
+			console.log("enter Statement")
 			checkExistance(cookieName);
+			console.log("checking if hasAcceptanceCookie == false ", hasAcceptanceCookie == false)
 			if (hasAcceptanceCookie == false) {
+				console.log("enter Statement")
 				setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
 			}
 		}
@@ -8000,9 +8016,13 @@ var gaReferrer = false;
 
 
 		// Will not do anything unless checkbox for creating cookies is selected
+		console.log('checking if createCookie == true || Allowimmediatesiteanalytics == true ', createCookie == true || Allowimmediatesiteanalytics == true)
 		if (createCookie == true || Allowimmediatesiteanalytics == true) {
+			console.log("enter Statement")
 			checkExistance(cookieName);
+			console.log('checking if hasAcceptanceCookie == false ', hasAcceptanceCookie == false)
 			if (hasAcceptanceCookie == false) {
+				console.log("enter Statement")
 				enterCookie();
 			}
 
@@ -8034,8 +8054,12 @@ $(".js-cookieAccept").click(function () {
 });
 
 $("a").click(function () {
+	console.log("creating cookie click")
+	console.log('checking if $(this).attr("class") != "privacyPolicy" && createCookie == true ', $(this).attr("class") != "privacyPolicy" && createCookie == true)
 	if ($(this).attr("class") != "privacyPolicy" && createCookie == true) {
+		console.log('enter cookie')
 		checkExistance(cookieName);
+		console.log('checking if hasAcceptanceCookie == false ', hasAcceptanceCookie == false)
 		if (hasAcceptanceCookie == false) {
 			setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
 		}
@@ -8043,20 +8067,29 @@ $("a").click(function () {
 });
 
 function checkExistance() {
+	console.log('checking if $.cookie(cookieName) != undefined ', $.cookie(cookieName) != undefined)
+	console.log(' line 78 -  cookieName ', cookieName)
+	console.log('line 78 - $.cookie(cookieName) ', $.cookie(cookieName))
 	if ($.cookie(cookieName) != undefined) {
 		hasAcceptanceCookie = true;
+		console.log(hasAcceptanceCookie)
 	}
 	else {
 		hasAcceptanceCookie = false;
 	}
+	console.log(hasAcceptanceCookie)
 }
 
 function enterCookie() {
+	console.log('checking if Allowimmediatesiteanalytics == false ', Allowimmediatesiteanalytics == false)
 	if (Allowimmediatesiteanalytics == false) {
+		console.log("enter Statement if")
 		showCookieBannerMessage();
 	}
 	else {
+		console.log("enter Statement else")
 		setCookie(cookieName, "yes", cookieExpiry, "/", domain, "");
+		console.log(setCookie(cookieName, "yes", cookieExpiry, "/", domain, ""))
 		showCookieBannerMessage();
 	}
 }
@@ -8066,6 +8099,7 @@ function getDomain(url) {
 }
 
 function showCookieBannerMessage() {
+	console.log('removing hidden ', $('.cookieShell').removeClass("hidden"))
 	$('.cookieShell').removeClass("hidden");
 }
 
@@ -8082,19 +8116,34 @@ function deleteCookies() {
 }
 
 function setCookie(name, value, expires, path, domain, secure) {
+	console.log('enter setCookie')
+	console.log('check if expires == 0 ', expires == 0)
 	if (expires == 0) {
+		console.log("if")
 		$.cookie(name, value, {
 			path: path,
 			domain: domain,
 			secure: secure
 		});
+		console.log($.cookie(name, value, {
+			path: path,
+			domain: domain,
+			secure: secure
+		}))
 	}
 	else {
+		console.log("else")
 		$.cookie(name, value, {
 			expires: expires,
 			path: path,
+			domain: domain,
 			secure: secure
 		});
+		console.log($.cookie(name, value, {
+			expires: expires,
+			path: path,
+			secure: secure
+		}))
 	}
 }
 
