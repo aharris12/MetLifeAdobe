@@ -5449,8 +5449,9 @@ ol.promocard_content__list li:after {
     .subnav__list__item__anchor__label{
         display: table-cell;
         vertical-align: middle;
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: 1px;
     }
 
     .subnav__list__item:first-child:nth-last-child(5),
