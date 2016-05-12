@@ -1,7 +1,7 @@
 //Global variables
 var breakpointMobile = 480;
-var breakpointTablet = 767;
-var breakpointDesktop = 1024;
+var breakpointTablet = 751;
+var breakpointDesktop = 1011;
 var imagesPath = "";
 
 if ( localStorage.getItem("contextPath") ) {

@@ -2,16 +2,76 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/dev/css/theme/button.css" description="@media screen and (min-width: 768px){&#10;" line="262" />
-    <bookmark url="file://$PROJECT_DIR$/dev/js/cookie.js" line="97" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/dev/js/cookie.js" line="73" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/cookie.js" afterPath="$PROJECT_DIR$/dev/js/cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/utility.js" afterPath="$PROJECT_DIR$/dev/js/utility.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/variable.js" afterPath="$PROJECT_DIR$/dev/js/variable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-post.html" afterPath="$PROJECT_DIR$/dist/blog-post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/quote-results.html" afterPath="$PROJECT_DIR$/dist/quote-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-assets.html" afterPath="$PROJECT_DIR$/dist/toolkit-assets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-landingpage.html" afterPath="$PROJECT_DIR$/dist/toolkit-landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5604396">
-              <caret line="135" column="30" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -49,8 +109,50 @@
       <file leaf-file-name="cookie.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/cookie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.137932">
-              <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+            <state vertical-scroll-proportion="4.1034484">
+              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.592592">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utility.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/utility.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.6296296">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="40" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.06681766">
+              <caret line="505" column="30" selection-start-line="505" selection-start-column="30" selection-end-line="505" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -83,8 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/microsite-service.html" />
-        <option value="$PROJECT_DIR$/dev/microsite-tables.html" />
         <option value="$PROJECT_DIR$/dev/news-article.html" />
         <option value="$PROJECT_DIR$/dev/newsroom-list.html" />
         <option value="$PROJECT_DIR$/dev/opt-out.html" />
@@ -121,8 +221,6 @@
         <option value="$PROJECT_DIR$/dev/js/form.js" />
         <option value="$PROJECT_DIR$/dev/css/component/subnavigation.css" />
         <option value="$PROJECT_DIR$/dev/css/component/oo_style.css" />
-        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
-        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
@@ -134,6 +232,10 @@
         <option value="$PROJECT_DIR$/dev/product-details-page1-expand.html" />
         <option value="$PROJECT_DIR$/dev/product-details-page1.html" />
         <option value="$PROJECT_DIR$/dev/js/cookie.js" />
+        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
+        <option value="$PROJECT_DIR$/dev/js/utility.js" />
+        <option value="$PROJECT_DIR$/dev/js/variable.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
       </list>
     </option>
   </component>
@@ -215,6 +317,46 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="js">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -415,12 +557,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00014" summary="grunt">
-      <created>1460560198053</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1460560198053</updated>
     </task>
     <task id="LOCAL-00015" summary="grunt">
       <created>1460560283205</created>
@@ -710,12 +846,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462979359608</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Cookies">
+      <created>1462995987201</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1462995987202</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -724,7 +866,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17697228" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3620332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -753,7 +895,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Removed Login Dropdown" />
     <MESSAGE value="loging fuctionality" />
     <MESSAGE value="Removed unused ID's" />
     <MESSAGE value="Removed Unused IDS" />
@@ -778,7 +919,8 @@
     <MESSAGE value="Related links match height --removed box shadow and js" />
     <MESSAGE value="FAQ &amp; VIDEO fix for duration" />
     <MESSAGE value="Cookies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cookies" />
+    <MESSAGE value="Mega menu fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mega menu fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -787,20 +929,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/getaquote-gawli.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33270678">
-          <caret line="1039" column="158" selection-start-line="1039" selection-start-column="149" selection-end-line="1039" selection-end-column="158" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/getaquote-glt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.74545455">
-          <caret line="1317" column="112" selection-start-line="1317" selection-start-column="109" selection-end-line="1317" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/result-pages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3954803">
@@ -870,14 +998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="886" column="74" selection-start-line="886" selection-start-column="74" selection-end-line="886" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -992,14 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.609756">
-          <caret line="602" column="19" selection-start-line="602" selection-start-column="19" selection-end-line="602" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.793104">
@@ -1012,14 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6607144">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1199,23 +1303,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/cookie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.137932">
-          <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5604396">
-          <caret line="135" column="30" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2905983">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/cookie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.1034484">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.592592">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6296296">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06681766">
+          <caret line="505" column="30" selection-start-line="505" selection-start-column="30" selection-end-line="505" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
