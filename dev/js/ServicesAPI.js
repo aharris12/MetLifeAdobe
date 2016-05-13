@@ -1825,12 +1825,21 @@ var ServicesAPI = {
 		var latitude = startPointGeoCode.lat();
 		var longitude = startPointGeoCode.lng();
 		var baseServiceUrl = $("[data-fao-url]").attr("data-fao-url");
-
+		var faoMarket = '';
+		if($('.directions_button').length != 0){
+			faoMarket = $('.directions_button').attr("data-fao-market");
+		}
+		if($(".find-office__submit").length != 0){
+			faoMarket = $(".find-office__submit").attr("data-fao-market");
+		}
 		radiusInMiles = $('.find_an_office_radius').val();
-		specialty = $('.different_services_dropdown').val();
-
-		var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty)
-
+		if(faoMarket.toLowerCase() == "us"){
+			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
+			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
+		}else{
+			specialty = $('.different_services_dropdown').val();
+			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
+		}
 		/************LIVE FAO SERVICE***************/
 		$.ajax({
 			 type: 'GET',
@@ -2305,5 +2314,13 @@ var ServicesAPI = {
 			specialtySelector = '.specialty=' + specialty;
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+	},
+	buildServiceUrlUS: function(baseUrl, lat, lng, radius, specialty) {
+		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
+			lngSelector = '&longitude=' + lng.toString(),
+			radiusSelector = '&radius=' + radius,
+			specialtySelector = '&specialty=' + specialty;
+
+		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 	}
 };

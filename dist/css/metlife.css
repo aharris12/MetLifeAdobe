@@ -2920,7 +2920,7 @@ a:visited {
     .btn-brand-3rd-inv,
     .btn-brand-4th,
     .btn-brand-4th-inv {
-        font-size: 11px;
+        font-size: 10px;
     }
 }
 .pagination {
@@ -4945,7 +4945,7 @@ a:visited {
     background-size: contain;
     min-height: 190px;
     padding: 0 15px;
-    background-image: url('../images/life_stage_divider.png');
+    background-image: url('http://localhost:63348/MetLifeAdobe/dev/images/life_stage_divider.png');
 }
 
 .carousel--tabs .two-column-container .v-divider-arrow .row {
@@ -7760,7 +7760,8 @@ body{
 
 .product-row__tile__copy {
     width: 90%;
-    margin: 0 auto 15px;
+    margin: 0;
+    padding-bottom: 15px;
 }
 
 .product-row__tile--img-tile__text {
@@ -7814,12 +7815,12 @@ body{
         float: left;
         padding: 0px 10px 25px 10px;
         margin-bottom: 10px;
-        height: 320px;
+        min-height: 320px;
     }
 
     .product-row__tile__top {
         padding-top: 50px;
-        height: 217px;
+        min-height: 217px;
         width: 80%;
         margin: auto;
     }
@@ -7849,7 +7850,7 @@ body{
     }
 
     .product-row__tile--img-tile__text--left {
-        width: 75%;
+        width: 70%;
         display: table-cell;
     }
 
@@ -9931,11 +9932,11 @@ ul.bullet-list {
     padding: 0;
     display: inline-block;
 }
-.global-footer--microsite .footer-legal__link a, footer-legal__call--microsite a{
+.global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
     font-size: 14px;
     line-height: 15px;
 }
-.global-footer--microsite .footer-legal__link a:hover, footer-legal__call--microsite a:hover{
+.global-footer--microsite .footer-legal__link a:hover, .footer-legal__call--microsite a:hover{
     text-decoration: none;
 }
 
@@ -9950,7 +9951,7 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 768px) {
-    .global-footer--microsite .footer-legal__link a, footer-legal__call--microsite a{
+    .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
         font-size: 1em;
         line-height: 1.55em;
     }

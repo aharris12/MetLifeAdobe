@@ -28,7 +28,7 @@ function productTileHeight() {
                 elements.css('min-height', '0px');
                 elements.each(function () {
 
-                    height = $(this).height() > height ? $(this).height() : height;
+                    height = $(this).outerHeight() > height ? $(this).outerHeight() : height;
 
                 });
                 elements.css('min-height', height + 'px');
@@ -38,7 +38,7 @@ function productTileHeight() {
                 bottomElements.css('min-height', '0px');
                 bottomElements.each(function () {
 
-                    bottomHeight = $(this).height() > bottomHeight ? $(this).height() : bottomHeight;
+                    bottomHeight = $(this).outerHeight() > bottomHeight ? $(this).outerHeight() : bottomHeight;
 
                 });
 
