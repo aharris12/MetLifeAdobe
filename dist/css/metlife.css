@@ -9939,7 +9939,9 @@ ul.bullet-list {
     text-decoration: none;
 }
 
-
+.footer-legal__bullet {
+    display: inline-block;
+}
 
 .footer-legal__copyright {
     font-size: 1em;
