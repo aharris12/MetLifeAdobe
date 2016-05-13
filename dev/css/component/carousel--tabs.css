@@ -162,7 +162,6 @@
 
 @media screen and (max-width: 768px) {
     .carousel--tabs .two-column-container .v-divider-arrow {
-        background-image: none;
         padding: 0 15px;
     }
     .carousel--tabs .two-column-container .v-divider-arrow .row {

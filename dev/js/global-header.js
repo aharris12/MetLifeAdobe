@@ -18,7 +18,7 @@ $(window).load(function () {
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
     var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
-    if (getViewport() == "mobile" || getViewport() == "tablet") {
+    if (getViewport() == "mobile") {
         $('.megamenu__main-item:nth-child(n+4)').css('width', '100%');
     } else {
         $('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
