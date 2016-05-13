@@ -115,7 +115,7 @@ $(window).load(function () {
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
     var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
-    if (getViewport() == "mobile" || getViewport() == "tablet") {
+    if (getViewport() == "mobile") {
         $('.megamenu__main-item:nth-child(n+4)').css('width', '100%');
     } else {
         $('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
@@ -134,7 +134,7 @@ $("body").on("click tap", function (e) {
 function openSearchBox () {
     $('.search-trigger__container').toggle();
     $('.search-trigger').toggleClass('search-trigger--open');
-    if (getViewport() == "mobile" || getViewport() == "tablet"){
+    if (getViewport() == "mobile"){
         if( $('.megamenu').is(':visible') ){
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__icon').removeClass('megamenu-trigger__icon--open');
@@ -166,7 +166,7 @@ $('.megamenu-trigger').on('click', function(){
 
 
 
-    if (getViewport() == "desktop") {
+    if (getViewport() == "desktop" || getViewport() == "tablet") {
         if($('.login-trigger').length != 0) {
             $('.login-trigger').toggle();
         }
@@ -188,7 +188,7 @@ $('.megamenu-trigger').on('click', function(){
                 closeSearchBox();
             }
         }
-    } else {
+    } else{
         $("html, body").animate({ scrollTop: 0 }, "slow");
         closeSearchBox();
     }

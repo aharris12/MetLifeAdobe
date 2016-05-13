@@ -45,7 +45,7 @@
 .global-header [class*="col-sm-"] {
     height:100%;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .global-header {
         height:70px;
     }
@@ -79,7 +79,7 @@
     }
 }
 
-        
+
 /* Mega Menu Trigger Animation */
 .megamenu-trigger {
     width: 41px;
@@ -103,7 +103,7 @@
     transform: translateX(-50%) translateY(-50%);
 
 }
-.megamenu-trigger__icon::before, 
+.megamenu-trigger__icon::before,
 .megamenu-trigger__icon:after {
     content: '';
     width: 100%;
@@ -114,7 +114,7 @@
 }
 .megamenu-trigger__icon::before {
     top: -7px;
-}      
+}
 .megamenu-trigger__icon::after {
     top: 7px;
 }
@@ -137,7 +137,7 @@
     -o-transform: rotate(225deg);
     transform: rotate(225deg);
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .megamenu-trigger {
         width: auto;
         padding: 25px 0;
@@ -149,13 +149,17 @@
         top:auto;
     }
     .megamenu-trigger__label {
-        display:block;
         margin-left: 26px;
         margin-top: -10px;
     }
 }
+@media screen and (min-width: 1024px) {
+    .megamenu-trigger__label {
+        display:block;
+    }
+}
 
-        
+
 /* Go Home Trigger */
 .home-trigger {
     display:none;
@@ -231,13 +235,18 @@
     }
 
     .home-trigger__label {
-        display:inline-block;
         vertical-align: top;
         margin-left: 4px;
     }
 }
-   
-        
+
+@media screen and (min-width: 1024px) {
+    .home-trigger__label {
+        display:inline-block;
+    }
+}
+
+
 /* Global Search Box Trigger */
 .search-trigger {
     position:relative;
@@ -269,7 +278,7 @@
 
 .search-trigger__label {
     display:none;
-}      
+}
 .search-trigger__search-box {
     background: #fff;
     height: 38px;
@@ -300,7 +309,7 @@
     padding: 10px;
     z-index: 910;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .search-trigger {
         position:relative;
         width:190px;
@@ -325,7 +334,6 @@
         fill: #0e5dae;
     }
     .search-trigger__label {
-        display: inline-block;
         margin-left: 26px;
     }
     .search-trigger__container {
@@ -343,6 +351,11 @@
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .search-trigger__label {
+        display: inline-block;
+    }
+}
 
 /* Go Home Trigger */
 .login-trigger {
@@ -424,7 +437,7 @@
 
     }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .login-trigger,
     .contact-trigger,
     .user-trigger{
@@ -522,7 +535,7 @@
     height: 12px;
     fill: rgba(255,255,255,0.5);
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .megamenu {
         top: 70px;
         padding:30px 5% 0 5%;
@@ -589,7 +602,7 @@
     .megamenu__main-item .icon-chevron-down {
         display:none;
     }
-    
+
     .megamenu__sub-items--two-col .megamenu__sub-item {
         width:50%;
         float:left;
