@@ -6,18 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" afterPath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-footer.css" afterPath="$PROJECT_DIR$/dev/css/component/global-footer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/product-tile.css" afterPath="$PROJECT_DIR$/dev/css/component/product-tile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/button.css" afterPath="$PROJECT_DIR$/dev/css/theme/button.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/fao.html" afterPath="$PROJECT_DIR$/dev/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/product-tile.js" afterPath="$PROJECT_DIR$/dev/js/product-tile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dev/subcategory-page-2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -29,8 +21,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -79,7 +69,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.923077">
-              <caret line="1769" column="148" selection-start-line="1769" selection-start-column="20" selection-end-line="1769" selection-end-column="148" />
+              <caret line="1769" column="130" selection-start-line="1769" selection-start-column="128" selection-end-line="1769" selection-end-column="130" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -128,8 +117,8 @@
       <file leaf-file-name="fao.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/fao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5243902">
-              <caret line="837" column="32" selection-start-line="831" selection-start-column="18" selection-end-line="837" selection-end-column="32" />
+            <state vertical-scroll-proportion="-4.280488">
+              <caret line="838" column="67" selection-start-line="838" selection-start-column="67" selection-end-line="838" selection-end-column="67" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -137,7 +126,6 @@
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -146,8 +134,8 @@
       <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58739257">
-              <caret line="1841" column="9" selection-start-line="1827" selection-start-column="8" selection-end-line="1841" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.53724927">
+              <caret line="1850" column="45" selection-start-line="1850" selection-start-column="45" selection-end-line="1850" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -218,8 +206,8 @@
         <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
         <option value="$PROJECT_DIR$/dev/js/product-tile.js" />
         <option value="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
-        <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/fao.html" />
+        <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       </list>
     </option>
@@ -270,6 +258,38 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="images">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -378,7 +398,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.fao.html">
     <configuration default="false" name="subcategory-page-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-2.html">
       <method />
     </configuration>
@@ -452,8 +472,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page-2.html" />
@@ -470,12 +490,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Share and chat button icons">
-      <created>1460578598047</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1460578598047</updated>
     </task>
     <task id="LOCAL-00019" summary="Share and chat button icons">
       <created>1460637554496</created>
@@ -765,7 +779,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463167164119</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="fao fix">
+      <created>1463167612771</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1463167612771</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -773,7 +793,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1945629" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1945629" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -808,7 +828,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Set up button and image swapping" />
     <MESSAGE value="removed background image from promo card in subcat 2" />
     <MESSAGE value="button color swapping and image side swapping" />
     <MESSAGE value="Contact us results functionaility" />
@@ -833,7 +852,8 @@
     <MESSAGE value="grunt" />
     <MESSAGE value="Changes to footer to align with axshare in mobile view" />
     <MESSAGE value="Defects and FAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defects and FAO" />
+    <MESSAGE value="fao fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fao fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1208,7 +1228,7 @@
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.923077">
-          <caret line="1769" column="148" selection-start-line="1769" selection-start-column="20" selection-end-line="1769" selection-end-column="148" />
+          <caret line="1769" column="130" selection-start-line="1769" selection-start-column="128" selection-end-line="1769" selection-end-column="130" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1230,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/fao.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5243902">
-          <caret line="837" column="32" selection-start-line="831" selection-start-column="18" selection-end-line="837" selection-end-column="32" />
+        <state vertical-scroll-proportion="-4.280488">
+          <caret line="838" column="67" selection-start-line="838" selection-start-column="67" selection-end-line="838" selection-end-column="67" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1239,15 +1259,14 @@
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58739257">
-          <caret line="1841" column="9" selection-start-line="1827" selection-start-column="8" selection-end-line="1841" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.53724927">
+          <caret line="1850" column="45" selection-start-line="1850" selection-start-column="45" selection-end-line="1850" selection-end-column="45" />
           <folding />
         </state>
       </provider>

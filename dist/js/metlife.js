@@ -9981,10 +9981,10 @@ var ServicesAPI = {
 		var longitude = startPointGeoCode.lng();
 		var baseServiceUrl = $("[data-fao-url]").attr("data-fao-url");
 		var faoMarket = '';
-		if($('.directions_button').length != 0){
+		if($('.directions_button').attr("data-fao-market") !== undefined && $('.directions_button').attr("data-fao-market") !== "" && $('.directions_button').attr("data-fao-market") !== " " ){
 			faoMarket = $('.directions_button').attr("data-fao-market");
 		}
-		if($(".find-office__submit").length != 0){
+		if($(".find-office__submit").attr("data-fao-market") !== undefined && $(".find-office__submit").attr("data-fao-market") !== "" && $(".find-office__submit").attr("data-fao-market") !== " "){
 			faoMarket = $(".find-office__submit").attr("data-fao-market");
 		}
 		radiusInMiles = $('.find_an_office_radius').val();
