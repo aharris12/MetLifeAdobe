@@ -219,7 +219,7 @@ $(".find_an_office_radius").on('change',function () {
 	ServicesAPI.showLocation();
 });
 
-$(document).on('click touchstart',".results_office_name",function(){
+$(document).on('click',".results_office_name",function(){
 	var i= $(this).closest('.results_office_result').index();
 	var index = ((i + 1) + ((bootPagNum) * listCount))
 	google.maps.event.trigger(markersArray[index], 'click');
@@ -298,7 +298,7 @@ $(window).on('load',function(e) {
 	}
 	if($(".find-office__zip-city-state").length > 0){
 		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
-		googleautocomplete.bindTo('bounds', map);
+		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
 			if (!place || !place.geometry) {
