@@ -450,7 +450,6 @@
 
 /* Mega Menu */
 .megamenu {
-    overflow:hidden;
     display:none;
     position: relative;
     left: 0;
@@ -529,7 +528,7 @@
         padding:30px 5% 0 5%;
         padding:30px 0 150px 0;
         position:fixed;
-        overflow:hidden;
+        overflow:auto;
         z-index: 2000;
     }
     .megamenu--minimized {

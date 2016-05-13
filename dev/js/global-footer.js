@@ -406,7 +406,7 @@ function processCountrySelection(evt) {
     } else {
         if($('.country__list').is(':visible')) {
             closeCountryList();
-        } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {    
+        } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {
             $('.country__list').slideDown(400).scrollTop(0);
         }
     }
@@ -418,8 +418,7 @@ function processCountrySelection(evt) {
 //$('body').on("tap", function(e) {
 //    processCountrySelection(e);
 //});
-
-$('body').on('touchstart click', function(e) {
+$('body').on('click', function(e) {
     processCountrySelection(e);
 });
 
@@ -433,4 +432,3 @@ function footerBorder(){
         $(".global-footer .wrapper").css("padding-top", "0");
     }
 }
-

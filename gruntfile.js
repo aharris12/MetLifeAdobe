@@ -336,19 +336,6 @@ module.exports = function (grunt) {
             }
         },
 
-        imagemin: {
-            dist: {
-                options: {
-                    optimizationLevel: 5
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'dev/images',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'dist/images/'
-                }]
-            }
-        }, //imagemin
 
         copy: {
             main: {
@@ -412,7 +399,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-css-import');
     grunt.loadNpmTasks('grunt-cssjoin');
 
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','imagemin','processhtml','copy','compress']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','compress']);
 
 }; //wrapper function
 

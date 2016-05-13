@@ -16,7 +16,6 @@ if ( localStorage.getItem("contextPath") ) {
 
 function getViewport() {
     var vWidth = $(window).width();
-    console.log(vWidth)
     var screenMode = "mobile";
     switch (true) {
         case vWidth >= breakpointDesktop:
@@ -163,18 +162,21 @@ $('.megamenu-trigger').on('click', function(){
     $('.login-container').hide();
     closeContactForm();
     $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
-    if($('.login-trigger').length != 0) {
-        $('.login-trigger').toggle();
-    }
-    if($('.contact-trigger').length != 0) {
-        $('.contact-trigger').toggle();
-    }
-    if($('.user-trigger').length != 0) {
-        $('.user-trigger').toggle();
-    }
+
+
 
 
     if (getViewport() == "desktop") {
+        if($('.login-trigger').length != 0) {
+            $('.login-trigger').toggle();
+        }
+        if($('.contact-trigger').length != 0) {
+            $('.contact-trigger').toggle();
+        }
+        if($('.user-trigger').length != 0) {
+            $('.user-trigger').toggle();
+        }
+
         if( $('.' + $(this).attr('data-target')).hasClass('megamenu--open')) {
             if( !$('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
@@ -737,7 +739,7 @@ function processCountrySelection(evt) {
     } else {
         if($('.country__list').is(':visible')) {
             closeCountryList();
-        } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {    
+        } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {
             $('.country__list').slideDown(400).scrollTop(0);
         }
     }
@@ -749,8 +751,7 @@ function processCountrySelection(evt) {
 //$('body').on("tap", function(e) {
 //    processCountrySelection(e);
 //});
-
-$('body').on('touchstart click', function(e) {
+$('body').on('click', function(e) {
     processCountrySelection(e);
 });
 
@@ -764,7 +765,6 @@ function footerBorder(){
         $(".global-footer .wrapper").css("padding-top", "0");
     }
 }
-
 
 var timer;
 var homepageSubMenuSelected;

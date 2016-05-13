@@ -65,18 +65,21 @@ $('.megamenu-trigger').on('click', function(){
     $('.login-container').hide();
     closeContactForm();
     $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
-    if($('.login-trigger').length != 0) {
-        $('.login-trigger').toggle();
-    }
-    if($('.contact-trigger').length != 0) {
-        $('.contact-trigger').toggle();
-    }
-    if($('.user-trigger').length != 0) {
-        $('.user-trigger').toggle();
-    }
+
+
 
 
     if (getViewport() == "desktop") {
+        if($('.login-trigger').length != 0) {
+            $('.login-trigger').toggle();
+        }
+        if($('.contact-trigger').length != 0) {
+            $('.contact-trigger').toggle();
+        }
+        if($('.user-trigger').length != 0) {
+            $('.user-trigger').toggle();
+        }
+
         if( $('.' + $(this).attr('data-target')).hasClass('megamenu--open')) {
             if( !$('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
