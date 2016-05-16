@@ -1,5 +1,8 @@
 .gitignore
 node_modules
+workspace.xml
+.idea/workspace.xml
+**/.idea/workspace.xml
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
