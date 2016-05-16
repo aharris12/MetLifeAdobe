@@ -1,4 +1,5 @@
-*.idea
+.idea/
+Add .idea/*
 node_modules
 workspace.xml
 .idea/workspace.xml
