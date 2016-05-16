@@ -7,6 +7,71 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-post.html" afterPath="$PROJECT_DIR$/dist/blog-post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-gawli.html" afterPath="$PROJECT_DIR$/dist/getaquote-gawli.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-sit.html" afterPath="$PROJECT_DIR$/dist/getaquote-sit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/quote-results.html" afterPath="$PROJECT_DIR$/dist/quote-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-assets.html" afterPath="$PROJECT_DIR$/dist/toolkit-assets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-landingpage.html" afterPath="$PROJECT_DIR$/dist/toolkit-landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +92,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63978493">
+            <state vertical-scroll-proportion="-13.076923">
               <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12665406">
+              <caret line="539" column="18" selection-start-line="539" selection-start-column="18" selection-end-line="539" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -158,8 +243,6 @@
         <option value="$PROJECT_DIR$/dev/product-details-page-image-no-cta.html" />
         <option value="$PROJECT_DIR$/dev/js/utility.js" />
         <option value="$PROJECT_DIR$/dev/js/global-footer.js" />
-        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
-        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
         <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/css/component/global-footer.css" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -177,6 +260,8 @@
         <option value="$PROJECT_DIR$/dist/homepage.html" />
         <option value="$PROJECT_DIR$/dev/generic-product-details-with-cta.html" />
         <option value="$PROJECT_DIR$/dev/css/component/accordion.css" />
+        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
       </list>
     </option>
   </component>
@@ -226,20 +311,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -332,6 +403,22 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="826" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="151" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="150" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="152" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="826" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -348,7 +435,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.generic-product-details-with-cta.html">
+  <component name="RunManager" selected="JavaScript Debug.homepage.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
@@ -422,9 +509,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-FAQ.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.life-insurance-FAQ.html" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html (1)" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
       </list>
@@ -440,12 +527,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Removed Login Dropdown">
-      <created>1461248850894</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1461248850894</updated>
     </task>
     <task id="LOCAL-00032" summary="loging fuctionality">
       <created>1461265425045</created>
@@ -735,7 +816,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463412473416</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="faq">
+      <created>1463412505846</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1463412505850</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -748,7 +835,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22821577" sideWeight="0.5042644" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22821577" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22712418" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1002,20 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
@@ -1195,8 +1268,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63978493">
+        <state vertical-scroll-proportion="-13.076923">
           <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12665406">
+          <caret line="539" column="18" selection-start-line="539" selection-start-column="18" selection-end-line="539" selection-end-column="18" />
           <folding />
         </state>
       </provider>

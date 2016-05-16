@@ -3197,7 +3197,7 @@ a:visited {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     #overlayerback{
         text-align: start;
         position: absolute;
@@ -3525,7 +3525,7 @@ a:visited {
         padding:30px 5% 0 5%;
         padding:30px 0 150px 0;
         position:fixed;
-        overflow:auto;
+        overflow:hidden;
         z-index: 2000;
     }
     .megamenu--minimized {
