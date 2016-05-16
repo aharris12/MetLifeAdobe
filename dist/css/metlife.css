@@ -9249,6 +9249,9 @@ ul.bullet-list {
     font-weight: 600;
     font-size: 1.35em;
 }
+.accordion div:last-of-type{
+    border-bottom: 1px solid #ccc;
+}
 
 .accordion .accordion__toggle-all{
     text-align: right;
