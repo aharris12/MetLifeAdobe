@@ -5854,6 +5854,20 @@ a.product-module__action--tel:hover {
         background-color: #efefef;
     }
 
+    .product-module__bottom {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .product-module__action--medium {
+        display: table-cell;
+        vertical-align: bottom;
+    }
+
+    a.product-module__action--medium {
+        max-width: 100%;
+    }
+
 }
 
 .product-row__tile--img-tile.box-shadow.skinny-promo-tile {
