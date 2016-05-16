@@ -243,6 +243,7 @@ function headerPosition() {
 function adjustMegaMenu(){
     var scroll = $(window).scrollTop();
     if (scroll > 5) {
+        console.log("true")
         if ($(".cookieShell").length > 0) {
             $('.megamenu').addClass('cookie-megamenu--minimized');
         }
@@ -262,6 +263,7 @@ function adjustMegaMenu(){
             $('body').css('padding-top','0px');
         }
     } else {
+        console.log("false")
         if ($(".cookieShell").length > 0) {
             $('.megamenu').removeClass('cookie-megamenu--minimized');
         }

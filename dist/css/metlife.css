@@ -3035,6 +3035,10 @@ a:visited {
     }
     .global-header--minimized {
         height:50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
     }
     .global-header__logo {
@@ -3197,7 +3201,7 @@ a:visited {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     #overlayerback{
         text-align: start;
         position: absolute;
@@ -3431,6 +3435,10 @@ a:visited {
     .contact-trigger--minimized,
     .user-trigger--minimized{
         line-height: 4.5em;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 }
 
@@ -3460,14 +3468,18 @@ a:visited {
     background-color: #2377c5;
     border-top: 1px solid #0e5dae;
     overflow:scroll;
-    -webkit-transition: top 0.3s ease 0s;
-    -moz-transition: top 0.3s ease 0s;
-    -o-transition: top 0.3s ease 0s;
-    transition: top 0.3s ease 0s;
+    webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .megamenu--minimized {
     top: 50px;
+    webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 .megamenu--open{
@@ -3525,7 +3537,7 @@ a:visited {
         padding:30px 5% 0 5%;
         padding:30px 0 150px 0;
         position:fixed;
-        overflow:hidden;
+        overflow:auto;
         z-index: 2000;
     }
     .megamenu--minimized {
@@ -4293,9 +4305,8 @@ a:visited {
 }
 
 .homepage-sub-side__link {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
-    letter-spacing: 0.5px;
     line-height: 14px;
     color: #666;
     margin-bottom: 5px;
