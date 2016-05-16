@@ -32,8 +32,6 @@ function scrollForMoreFunction() {
                 if ($(window).scroll(200) && $(".scroll-form-more-container").css("display") != "none") {
                    $('html, body').animate({scrollTop: $(".divider--snoopy").offset().top - height - 30}, 500);
                    $(".scroll-form-more-container").hide();
-
-
                 }
             }
         }
