@@ -59,7 +59,10 @@
     font-size: 13px;
     line-height: 20px;
 }
-
+.accordion__content li{
+    margin-left: 20px;
+    list-style: disc;
+}
 .accordion__copy{
     padding-bottom: 0;
     padding-top: 20px
