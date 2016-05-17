@@ -8278,12 +8278,33 @@ body{
 .contextual-link__content{
     line-height: 60px;
     padding-left: 25px;
+    height:100%;
 }
 
 .contextual-link__content svg{
     position: relative;
     top: 20px;
     right: 10px;
+}
+.contextual-link__content__label{
+    position: relative;
+    height:100%;
+}
+
+.contextual-link__content__label p{
+    padding-top: 7%;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 16px;
+    text-transform: uppercase;
+    height: 100%;
+}
+.contextual-link__content__label svg {
+    position: absolute;
+    top: 35%;
+    left: 90%;
 }
 
 @media screen and (min-width: 768px) {
@@ -8335,14 +8356,15 @@ body{
         letter-spacing: 1px;
     }
 
-    .contextual-link__content__label{
+    .contextual-link__content__label p{
+        padding: 0;
         width: 140px;
         margin: 0 auto;
-        font-weight: 600;
+        font-weight:600;
         text-align:center;
         height:32px;
+        font-size: 11px;
     }
-
     .contextual-link__content svg{
         display: none;
     }
