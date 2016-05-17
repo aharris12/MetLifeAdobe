@@ -7,7 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/divider-scroll-to.js" afterPath="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -19,6 +19,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -33,7 +35,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -172,11 +173,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51428574">
-              <caret line="225" column="13" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+            <state vertical-scroll-proportion="-3.5660377">
+              <caret line="217" column="132" selection-start-line="217" selection-start-column="132" selection-end-line="217" selection-end-column="132" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -191,6 +192,16 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7327044">
+              <caret line="653" column="39" selection-start-line="653" selection-start-column="39" selection-end-line="653" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -210,16 +221,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.4827585">
               <caret line="186" column="13" selection-start-line="186" selection-start-column="13" selection-end-line="187" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="166" column="12" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -283,7 +284,6 @@
         <option value="$PROJECT_DIR$/dist/homepage.html" />
         <option value="$PROJECT_DIR$/dev/generic-product-details-with-cta.html" />
         <option value="$PROJECT_DIR$/dev/css/component/accordion.css" />
-        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
         <option value="$PROJECT_DIR$/dev/category.html" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/css/component/contextual-links.css" />
@@ -293,6 +293,7 @@
         <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
         <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
         <option value="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
       </list>
     </option>
   </component>
@@ -356,6 +357,46 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -572,12 +613,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00040" summary="quote results">
-      <created>1461702288866</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1461702288866</updated>
     </task>
     <task id="LOCAL-00041" summary="Quote results.js, moved disclaimer out of contact side bar(home page)">
       <created>1461762916145</created>
@@ -867,7 +902,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463494116468</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Scroll More">
+      <created>1463496617437</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1463496617437</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -910,7 +951,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Login Overlay Alert" />
     <MESSAGE value="clr processing for new/existing customers." />
     <MESSAGE value="mega menu fixes" />
     <MESSAGE value="Cookie" />
@@ -935,7 +975,8 @@
     <MESSAGE value="header scroll issue" />
     <MESSAGE value="mega menu label fix" />
     <MESSAGE value="Product Tile alignment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product Tile alignment" />
+    <MESSAGE value="Scroll More" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scroll More" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1241,14 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3018868">
-          <caret line="555" column="23" selection-start-line="555" selection-start-column="23" selection-end-line="555" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1346,8 +1379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51428574">
-          <caret line="225" column="13" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+        <state vertical-scroll-proportion="-3.5660377">
+          <caret line="217" column="132" selection-start-line="217" selection-start-column="132" selection-end-line="217" selection-end-column="132" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1362,6 +1395,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7327044">
+          <caret line="653" column="39" selection-start-line="653" selection-start-column="39" selection-end-line="653" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
