@@ -7,10 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/utility.css" afterPath="$PROJECT_DIR$/dev/css/theme/utility.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dev/subcategory-page-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dev/subcategory-page-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/divider-scroll-to.js" afterPath="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -22,8 +19,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -38,6 +33,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -96,10 +92,10 @@
       <file leaf-file-name="divider-scroll-to.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/divider-scroll-to.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2592592">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.2962964">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
-                <marker date="1463489092210" expanded="true" signature="218:220" placeholder="{...}" />
+                <marker date="1463496493309" expanded="true" signature="218:220" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -108,8 +104,8 @@
       <file leaf-file-name="subcategory-page-1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3414633">
-              <caret line="1189" column="0" selection-start-line="1189" selection-start-column="0" selection-end-line="1256" selection-end-column="6" />
+            <state vertical-scroll-proportion="-3.1707318">
+              <caret line="1258" column="20" selection-start-line="1258" selection-start-column="20" selection-end-line="1258" selection-end-column="20" />
               <folding>
                 <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -117,14 +113,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subcategory-page-2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="category.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/category.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.9454546">
+              <caret line="907" column="7" selection-start-line="907" selection-start-column="7" selection-end-line="907" selection-end-column="7" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subcategory-page-2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43589744">
-              <caret line="1101" column="88" selection-start-line="1101" selection-start-column="88" selection-end-line="1101" selection-end-column="88" />
+            <state vertical-scroll-proportion="-9.290909">
+              <caret line="990" column="24" selection-start-line="990" selection-start-column="24" selection-end-line="990" selection-end-column="24" />
               <folding>
+                <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-tile.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/product-tile.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.0188675">
+              <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,11 +172,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6037736">
-              <caret line="223" column="48" selection-start-line="223" selection-start-column="48" selection-end-line="223" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.51428574">
+              <caret line="225" column="13" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -241,7 +274,6 @@
         <option value="$PROJECT_DIR$/dev/css/component/global-footer.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dev/css/theme/button.css" />
-        <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
         <option value="$PROJECT_DIR$/dev/js/product-tile.js" />
         <option value="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
@@ -253,13 +285,14 @@
         <option value="$PROJECT_DIR$/dev/css/component/accordion.css" />
         <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
         <option value="$PROJECT_DIR$/dev/category.html" />
-        <option value="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/css/component/contextual-links.css" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
-        <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
         <option value="$PROJECT_DIR$/dev/css/theme/utility.css" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
+        <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
+        <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
+        <option value="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
       </list>
     </option>
   </component>
@@ -323,24 +356,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -465,7 +480,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.subcategory-page-2.html">
+  <component name="RunManager" selected="JavaScript Debug.homepage.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
@@ -539,9 +554,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page-2.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
       </list>
@@ -557,18 +572,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00038" summary="button color swapping and image side swapping">
-      <created>1461353899223</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1461353899223</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Contact us results functionaility">
-      <created>1461357354127</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1461357354127</updated>
     </task>
     <task id="LOCAL-00040" summary="quote results">
       <created>1461702288866</created>
@@ -852,7 +855,19 @@
       <option name="project" value="LOCAL" />
       <updated>1463491648527</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="mega menu label fix">
+      <created>1463493398393</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1463493398393</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Product Tile alignment">
+      <created>1463494116468</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1463494116468</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -895,8 +910,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="life stages fixes for aem" />
-    <MESSAGE value="Quote tool/fax center on page if they are by them selves" />
     <MESSAGE value="Login Overlay Alert" />
     <MESSAGE value="clr processing for new/existing customers." />
     <MESSAGE value="mega menu fixes" />
@@ -920,7 +933,9 @@
     <MESSAGE value="Fixed scroll more" />
     <MESSAGE value="faq border bottom on last element" />
     <MESSAGE value="header scroll issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="header scroll issue" />
+    <MESSAGE value="mega menu label fix" />
+    <MESSAGE value="Product Tile alignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product Tile alignment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1113,13 +1128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/product-tile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2452831">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/product-tile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.6896553">
@@ -1241,27 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9488722">
-          <caret line="1186" column="0" selection-start-line="1186" selection-start-column="0" selection-end-line="1186" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1275,47 +1262,6 @@
         <state vertical-scroll-proportion="-4.231707">
           <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3414633">
-          <caret line="1189" column="0" selection-start-line="1189" selection-start-column="0" selection-end-line="1256" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/divider-scroll-to.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2592592">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1463489092210" expanded="true" signature="218:220" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6037736">
-          <caret line="223" column="48" selection-start-line="223" selection-start-column="48" selection-end-line="223" selection-end-column="48" />
-          <folding>
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#68403#89283#0" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1337,10 +1283,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43589744">
-          <caret line="1101" column="88" selection-start-line="1101" selection-start-column="88" selection-end-line="1101" selection-end-column="88" />
+        <state vertical-scroll-proportion="-9.290909">
+          <caret line="990" column="24" selection-start-line="990" selection-start-column="24" selection-end-line="990" selection-end-column="24" />
           <folding>
+            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/product-tile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0188675">
+          <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1707318">
+          <caret line="1258" column="20" selection-start-line="1258" selection-start-column="20" selection-end-line="1258" selection-end-column="20" />
+          <folding>
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.9454546">
+          <caret line="907" column="7" selection-start-line="907" selection-start-column="7" selection-end-line="907" selection-end-column="7" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/divider-scroll-to.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2962964">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <marker date="1463496493309" expanded="true" signature="218:220" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51428574">
+          <caret line="225" column="13" selection-start-line="225" selection-start-column="13" selection-end-line="225" selection-end-column="13" />
+          <folding>
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#68403#89283#0" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
