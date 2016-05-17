@@ -116,6 +116,10 @@
         min-height: 217px;
         width: 80%;
         margin: auto;
+        margin-bottom: 20px;
+    }
+    .product-row__tile__top p{
+        margin-bottom: 0;
     }
 
     .product-row__tile:not(:last-child) {
