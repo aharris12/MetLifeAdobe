@@ -2112,8 +2112,8 @@ strong {
 }
 
 .visible-xs {
-    display: inline-block !important;
-}
+     display: inline-block !important;
+ }
 
 @media screen and (max-width: 767px) {
     .three-quarters-width{
@@ -2264,13 +2264,13 @@ a[href*='tel'] {
 }
 
 @media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 1024px) {
     .visible-xs {
         display: none !important;
     }
+}
+
+@media screen and (min-width: 1024px) {
+
     .width-80{
         width: 80%;
         margin-left: auto;
