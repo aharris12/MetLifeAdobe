@@ -9961,7 +9961,7 @@ ul.bullet-list {
     text-align: center;
     display: block;
     margin: 0 auto 15px;
-    font-size: 0.90em;
+    font-size: 14px;
 }
 
 .footer-legal__call--microsite {
@@ -9982,7 +9982,7 @@ ul.bullet-list {
 
 .footer-legal__link a{
     margin: 0 5px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 15px;
 }
 
@@ -10010,7 +10010,7 @@ ul.bullet-list {
 }
 
 .footer-legal__copyright {
-    font-size: 1em;
+    font-size: 12px;
     line-height: 1.55em;
     text-align: left;
 }
@@ -10200,7 +10200,7 @@ ul.bullet-list {
     }
 
     .footer-legal__call {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 15px;
         padding: 0;
         text-align: left;

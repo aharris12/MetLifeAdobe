@@ -6,10 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/js/aem_form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-footer.css" afterPath="$PROJECT_DIR$/dev/css/component/global-footer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -37,7 +35,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -73,7 +70,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gruntfile.js" afterPath="$PROJECT_DIR$/gruntfile.js" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40150377">
-              <caret line="2962" column="48" selection-start-line="2962" selection-start-column="48" selection-end-line="2962" selection-end-column="48" />
+            <state vertical-scroll-proportion="-3.1132076">
+              <caret line="2957" column="68" selection-start-line="2957" selection-start-column="68" selection-end-line="2957" selection-end-column="68" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -213,11 +209,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global-footer.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="global-footer.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/css/component/global-footer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.2545457">
-              <caret line="967" column="17" selection-start-line="967" selection-start-column="17" selection-end-line="967" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.40271494">
+              <caret line="812" column="21" selection-start-line="812" selection-start-column="21" selection-end-line="812" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -579,12 +575,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00043" summary="Home page fax fix">
-      <created>1461770803586</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1461770803586</updated>
-    </task>
     <task id="LOCAL-00044" summary="Quote  Tool fixes">
       <created>1461781634493</created>
       <option name="number" value="00044" />
@@ -873,7 +863,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463497335196</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Footer css for phone number and social icons">
+      <created>1463577876934</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1463577876934</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -881,7 +877,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -916,7 +912,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="mega menu fixes" />
     <MESSAGE value="Cookie" />
     <MESSAGE value="Related links match height" />
     <MESSAGE value="Related links match height --removed box shadow and js" />
@@ -941,7 +936,8 @@
     <MESSAGE value="Scroll More" />
     <MESSAGE value="Mega Menu Min Height on anchor" />
     <MESSAGE value="Grunt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grunt" />
+    <MESSAGE value="Footer css for phone number and social icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Footer css for phone number and social icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1327,14 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2545457">
-          <caret line="967" column="17" selection-start-line="967" selection-start-column="17" selection-end-line="967" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/category.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.076923">
@@ -1367,8 +1355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40150377">
-          <caret line="2962" column="48" selection-start-line="2962" selection-start-column="48" selection-end-line="2962" selection-end-column="48" />
+        <state vertical-scroll-proportion="-3.1132076">
+          <caret line="2957" column="68" selection-start-line="2957" selection-start-column="68" selection-end-line="2957" selection-end-column="68" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1382,6 +1370,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40271494">
+          <caret line="812" column="21" selection-start-line="812" selection-start-column="21" selection-end-line="812" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
