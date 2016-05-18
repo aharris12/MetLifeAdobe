@@ -96,3 +96,9 @@ $(window).load(function () {
 $(window).resize(function () {
     resetBootstrapItems();
 });
+
+$(document).ready(function() {
+    $('.carousel--tabs .carousel.slide').carousel({
+        interval: false
+    });
+});

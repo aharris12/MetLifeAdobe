@@ -2,13 +2,9 @@
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 
-    $('.carousel.slide').carousel({
+    $('#carouselHero').carousel({
         //interval: false
         interval: carouselInterval
-    });
-
-    $('.carousel--tabs .carousel.slide').carousel({
-        interval: false
     });
     
     if(typeof swipe == 'function') { //check if function is defined
