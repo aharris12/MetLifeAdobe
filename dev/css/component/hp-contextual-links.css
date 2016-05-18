@@ -37,7 +37,6 @@
     .more-content {
         background-color: #ffffff;
         padding: 40px 0;
-        border-top: 1px solid #ddd;
     }
     .more-content__title {
         color: #333;
@@ -84,6 +83,6 @@
 
 @media screen and (min-width: 1024px) {
     .more-content {
-        padding: 50px 0;
+        padding: 0;
     }
 }
