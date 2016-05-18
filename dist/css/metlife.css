@@ -2034,6 +2034,7 @@ strong {
 }
 
 .padding-50-0-sm,
+.padding-20-0-sm,
 .padding-80-0-sm {
     padding: 0
 }
@@ -2136,6 +2137,9 @@ strong {
 
     .padding-50-0-sm {
         padding: 50px 0 !important;
+    }
+    .padding-20-0-sm{
+        padding: 20px 0 !important;
     }
 
     .padding-80-0-sm {
@@ -5637,7 +5641,6 @@ a.product-module__action--tel:hover {
 
 .product-module__medium {
     text-align: center;
-    margin-bottom: 10px;
     padding: 20px;
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
@@ -8020,7 +8023,8 @@ body{
     }
 
     .triple-promo{
-        padding: 30px 0 25px;
+        padding: 0px;
+        margin: 0;
     }
 }
 
@@ -8263,7 +8267,8 @@ body{
 
 @media screen and (min-width: 1024px){
     .office-search{
-        padding: 35px 0 30px;
+        padding-top: 50px;
+        padding-bottom: 0px;
     }
 }
 

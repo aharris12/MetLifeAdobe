@@ -82,7 +82,8 @@
 
 @media screen and (min-width: 1024px){
     .office-search{
-        padding: 35px 0 30px;
+        padding-top: 50px;
+        padding-bottom: 0px;
     }
 }
 
