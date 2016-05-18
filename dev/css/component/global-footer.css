@@ -571,7 +571,7 @@
     text-align: center;
     display: block;
     margin: 0 auto 15px;
-    font-size: 0.90em;
+    font-size: 14px;
 }
 
 .footer-legal__call--microsite {
@@ -592,7 +592,7 @@
 
 .footer-legal__link a{
     margin: 0 5px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 15px;
 }
 
@@ -620,7 +620,7 @@
 }
 
 .footer-legal__copyright {
-    font-size: 1em;
+    font-size: 12px;
     line-height: 1.55em;
     text-align: left;
 }
@@ -810,11 +810,12 @@
     }
 
     .footer-legal__call {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 15px;
         padding: 0;
         text-align: left;
         margin: 0;
+        margin-top:15px;
     }
 
     .footer-legal__call--microsite {
@@ -964,7 +965,7 @@
         line-height:16px;
     }
     .social__link {
-        margin: 7px 0 0 15px;
+        margin: 8px 0 0 15px;
     }
     .social__label{
         font-size: 16px;

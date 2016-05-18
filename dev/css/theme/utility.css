@@ -130,6 +130,7 @@ strong {
 }
 
 .padding-50-0-sm,
+.padding-20-0-sm,
 .padding-80-0-sm {
     padding: 0
 }
@@ -232,6 +233,9 @@ strong {
 
     .padding-50-0-sm {
         padding: 50px 0 !important;
+    }
+    .padding-20-0-sm{
+        padding: 20px 0 !important;
     }
 
     .padding-80-0-sm {

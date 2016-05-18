@@ -622,6 +622,10 @@
     .megamenu__sub-items--two-col .megamenu__sub-item:nth-child(2n+3) {
         clear:left;
     }
+    .megamenu__main-item-label,
+    .megamenu__main-item-label:visited {
+        min-height: 85px;
+    }
 }
 
 .contact-container {
@@ -646,4 +650,10 @@
     min-height: 100%;
     box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
     padding-bottom: 100px;
+}
+@media screen and (min-width: 1024px) {
+    .megamenu__main-item-label,
+    .megamenu__main-item-label:visited {
+        min-height: 50px;
+    }
 }
