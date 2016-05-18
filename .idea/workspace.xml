@@ -6,11 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/hp-contextual-links.css" afterPath="$PROJECT_DIR$/dev/css/component/hp-contextual-links.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/get-quote-find-office.js" afterPath="$PROJECT_DIR$/dev/js/get-quote-find-office.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepageUS.html" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -22,8 +19,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -36,9 +31,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepageUS.html" afterPath="$PROJECT_DIR$/dist/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -94,11 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71662766">
-              <caret line="1282" column="14" selection-start-line="1268" selection-start-column="7" selection-end-line="1282" selection-end-column="14" />
+            <state vertical-scroll-proportion="-3.109756">
+              <caret line="1586" column="0" selection-start-line="1586" selection-start-column="0" selection-end-line="1586" selection-end-column="0" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -132,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.26923">
-              <caret line="1307" column="29" selection-start-line="1307" selection-start-column="29" selection-end-line="1307" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.46703297">
+              <caret line="1132" column="21" selection-start-line="1132" selection-start-column="21" selection-end-line="1132" selection-end-column="21" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -144,7 +139,6 @@
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -315,8 +309,8 @@
         <option value="$PROJECT_DIR$/dev/css/component/subnavigationwithgoback.css" />
         <option value="$PROJECT_DIR$/dev/js/get-quote-find-office.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
-        <option value="$PROJECT_DIR$/dev/homepageUS.html" />
         <option value="$PROJECT_DIR$/dev/css/component/hp-contextual-links.css" />
+        <option value="$PROJECT_DIR$/dev/homepageUS.html" />
       </list>
     </option>
   </component>
@@ -385,7 +379,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
+            <PATH_ELEMENT USER_OBJECT="dist">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -400,50 +394,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -578,10 +528,10 @@
     <configuration default="false" name="subcategory-page-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-2.html">
       <method />
     </configuration>
-    <configuration default="false" name="category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/category.html">
+    <configuration default="false" name="homepageUS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepageUS.html">
       <method />
     </configuration>
-    <configuration default="false" name="homepageUS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepageUS.html">
+    <configuration default="false" name="homepageUS.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/homepageUS.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -637,16 +587,16 @@
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html (1)" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -660,18 +610,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Legacy Search">
-      <created>1461952237385</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1461952237385</updated>
-    </task>
-    <task id="LOCAL-00050" summary="life stages fixes for aem">
-      <created>1462197949643</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1462197949687</updated>
     </task>
     <task id="LOCAL-00051" summary="life stages fixes for aem">
       <created>1462198801729</created>
@@ -955,7 +893,19 @@
       <option name="project" value="LOCAL" />
       <updated>1463601200038</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="TA3369 Product Selector for homepageUS.html">
+      <created>1463604878870</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1463604878870</updated>
+    </task>
+    <task id="LOCAL-00099" summary="TA3369 Product Selector for homepageUS.html">
+      <created>1463604909411</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1463604909411</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -969,7 +919,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36099586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -998,7 +948,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Mega menu fixes" />
     <MESSAGE value="grunt" />
     <MESSAGE value="Changes to footer to align with axshare in mobile view" />
     <MESSAGE value="Defects and FAO" />
@@ -1023,7 +972,8 @@
     <MESSAGE value="Defect 8927, removed reference to toolkitcss from grunt. No changes needed." />
     <MESSAGE value="Defect 8925 product spacing, Removed class product-row and added class row-wrapper" />
     <MESSAGE value="No defect NUmber, fixing issues with sub navigation with go back. No html changes needed." />
-    <option name="LAST_COMMIT_MESSAGE" value="No defect NUmber, fixing issues with sub navigation with go back. No html changes needed." />
+    <MESSAGE value="TA3369 Product Selector for homepageUS.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="TA3369 Product Selector for homepageUS.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1459,25 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.26923">
-          <caret line="1307" column="29" selection-start-line="1307" selection-start-column="29" selection-end-line="1307" selection-end-column="29" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/hp-contextual-links.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.309091">
@@ -1488,8 +1419,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71662766">
-          <caret line="1282" column="14" selection-start-line="1268" selection-start-column="7" selection-end-line="1282" selection-end-column="14" />
+        <state vertical-scroll-proportion="-3.109756">
+          <caret line="1586" column="0" selection-start-line="1586" selection-start-column="0" selection-end-line="1586" selection-end-column="0" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1518,6 +1449,24 @@
             <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#17;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46703297">
+          <caret line="1132" column="21" selection-start-line="1132" selection-start-column="21" selection-end-line="1132" selection-end-column="21" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
