@@ -131,7 +131,7 @@ $(function() {
 });
 
 function headerPosition() {
-    if (getViewport() == "desktop") {
+    if (getViewport() == "desktop" || getViewport() == "tablet") {
         $('body').css('padding-top','70px');
         //$('.login-container').css('top','70px');
     } else {

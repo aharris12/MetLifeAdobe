@@ -10556,16 +10556,6 @@ ul.bullet-list {
     }
 
 
-    .subnav-go-back__list__item:first-child:nth-last-child(4),
-    .subnav-go-back__list__item:first-child:nth-last-child(4) ~ .subnav-go-back__list__item:first-of-type {
-        margin-left: 20%;
-    }
-
-    .subnav-go-back__list__item:first-child:nth-last-child(3),
-    .subnav-go-back__list__item:first-child:nth-last-child(3) ~ .subnav-go-back__list__item:first-of-type {
-        margin-left: 40%;
-
-    }
 
     .subnav-go-back__list__item__anchor div{
         display:table;

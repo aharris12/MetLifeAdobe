@@ -228,7 +228,7 @@ $(function() {
 });
 
 function headerPosition() {
-    if (getViewport() == "desktop") {
+    if (getViewport() == "desktop" || getViewport() == "tablet") {
         $('body').css('padding-top','70px');
         //$('.login-container').css('top','70px');
     } else {
@@ -804,13 +804,9 @@ $(window).scroll(function () {
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 
-    $('.carousel.slide').carousel({
+    $('#carouselHero').carousel({
         //interval: false
         interval: carouselInterval
-    });
-
-    $('.carousel--tabs .carousel.slide').carousel({
-        interval: false
     });
     
     if(typeof swipe == 'function') { //check if function is defined
@@ -958,6 +954,12 @@ $(window).load(function () {
 });
 $(window).resize(function () {
     resetBootstrapItems();
+});
+
+$(document).ready(function() {
+    $('.carousel--tabs .carousel.slide').carousel({
+        interval: false
+    });
 });
 // Expand All Accordions
 //Test comment
@@ -4955,30 +4957,8 @@ $(".subnav-go-back .subnav-go-back__list li a").each(function () {
     }
 });
 
-function resizeSubNav(){
-    var liTtl       = $("ul.subnav-go-back__list li").length,
-        subnavWith  = document.getElementById('subnav-goback'),
-        windowWidth = $(window).width();
 
-    if (subnavWith) subnavWith = subnavWith.offsetWidth;
 
-    if (windowWidth >=768){
-        $( ".subnav-go-back__list__item" ).each(function( index ) {
-            //for desktop we need to split the width by the total number of objects
-            //$(this).width(subnavWith/liTtl-1);
-            $(this).width(parseFloat(100/liTtl)+'%');
-        });
-    }else{
-        $( ".subnav-go-back__list__item" ).each(function( index ) {
-            //for mobile we need to inherit our default of full width
-            $(this).removeAttr('style');
-        });
-    }
-
-}
-$( window ).resize(function() {
-    resizeSubNav();
-});
 
 
 $(".privacy-policy-index__linkContainer a").on("click", function (evt) {
