@@ -10205,6 +10205,7 @@ ul.bullet-list {
         padding: 0;
         text-align: left;
         margin: 0;
+        margin-top:15px;
     }
 
     .footer-legal__call--microsite {
@@ -10354,7 +10355,7 @@ ul.bullet-list {
         line-height:16px;
     }
     .social__link {
-        margin: 7px 0 0 15px;
+        margin: 8px 0 0 15px;
     }
     .social__label{
         font-size: 16px;
