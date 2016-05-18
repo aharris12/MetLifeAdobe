@@ -8,11 +8,6 @@
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/category.html" afterPath="$PROJECT_DIR$/dev/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/office-search.css" afterPath="$PROJECT_DIR$/dev/css/component/office-search.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/product-module.css" afterPath="$PROJECT_DIR$/dev/css/component/product-module.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/product-tile.css" afterPath="$PROJECT_DIR$/dev/css/component/product-tile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/utility.css" afterPath="$PROJECT_DIR$/dev/css/theme/utility.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dev/subcategory-page-2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -40,6 +35,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -75,6 +71,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-login.html" afterPath="$PROJECT_DIR$/dist/toolkit-login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" afterPath="$PROJECT_DIR$/dist/toolkit-product-icon-set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/toolkit-search.html" afterPath="$PROJECT_DIR$/dist/toolkit-search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gruntfile.js" afterPath="$PROJECT_DIR$/gruntfile.js" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,8 +95,8 @@
       <file leaf-file-name="category.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6463416">
-              <caret line="983" column="30" selection-start-line="983" selection-start-column="30" selection-end-line="983" selection-end-column="30" />
+            <state vertical-scroll-proportion="-4.6463413">
+              <caret line="1723" column="38" selection-start-line="1723" selection-start-column="38" selection-end-line="1723" selection-end-column="38" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -113,10 +110,31 @@
                 <element signature="n#div#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toolkit-page-title.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/toolkit-page-title.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6392758">
+              <caret line="282" column="69" selection-start-line="282" selection-start-column="69" selection-end-line="282" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,10 +180,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="office-search.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="office-search.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/office-search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7849624">
+            <state vertical-scroll-proportion="-9.849056">
               <caret line="84" column="23" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="23" />
               <folding />
             </state>
@@ -250,16 +268,16 @@
         <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
         <option value="$PROJECT_DIR$/dev/js/divider-scroll-to.js" />
         <option value="$PROJECT_DIR$/dev/js/form.js" />
-        <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/css/component/global-footer.css" />
         <option value="$PROJECT_DIR$/dev/css/component/product-module.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/utility.css" />
-        <option value="$PROJECT_DIR$/dev/category.html" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
         <option value="$PROJECT_DIR$/dev/css/theme/main.css" />
         <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
         <option value="$PROJECT_DIR$/dev/css/component/office-search.css" />
+        <option value="$PROJECT_DIR$/dev/category.html" />
+        <option value="$PROJECT_DIR$/gruntfile.js" />
       </list>
     </option>
   </component>
@@ -308,22 +326,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="External Dependencies">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="C:">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Users">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="aharris12">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -345,50 +347,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="theme">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -605,12 +563,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Quote  Tool fixes">
-      <created>1461786501872</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1461786501872</updated>
     </task>
     <task id="LOCAL-00046" summary="product module fixes">
       <created>1461846296177</created>
@@ -900,7 +852,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463578528811</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Defect 8924 &amp; 8925, Spacing Issues, Css update only">
+      <created>1463595237693</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1463595237693</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -908,7 +866,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -943,7 +901,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Related links match height" />
     <MESSAGE value="Related links match height --removed box shadow and js" />
     <MESSAGE value="FAQ &amp; VIDEO fix for duration" />
     <MESSAGE value="Cookies" />
@@ -968,7 +925,8 @@
     <MESSAGE value="Grunt" />
     <MESSAGE value="Footer css for phone number and social icons" />
     <MESSAGE value="footer font-size" />
-    <option name="LAST_COMMIT_MESSAGE" value="footer font-size" />
+    <MESSAGE value="Defect 8924 &amp; 8925, Spacing Issues, Css update only" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defect 8924 &amp; 8925, Spacing Issues, Css update only" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -977,13 +935,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/product-details-page-image-with-cta.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/product-details-page1-expand.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1296,14 +1247,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.88889">
-          <caret line="150" column="32" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/campaign-footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.51589596">
@@ -1391,10 +1334,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/office-search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.849056">
+          <caret line="84" column="23" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/toolkit-page-title.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6463416">
-          <caret line="983" column="30" selection-start-line="983" selection-start-column="30" selection-end-line="983" selection-end-column="30" />
+        <state vertical-scroll-proportion="-4.6463413">
+          <caret line="1723" column="38" selection-start-line="1723" selection-start-column="38" selection-end-line="1723" selection-end-column="38" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1408,17 +1367,18 @@
             <element signature="n#div#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/office-search.css">
+    <entry file="file://$PROJECT_DIR$/gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7849624">
-          <caret line="84" column="23" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.6392758">
+          <caret line="282" column="69" selection-start-line="282" selection-start-column="69" selection-end-line="282" selection-end-column="69" />
           <folding />
         </state>
       </provider>
