@@ -195,7 +195,7 @@ a:hover,
 a:focus,
 a:active,
 a:visited {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .brand-1st {

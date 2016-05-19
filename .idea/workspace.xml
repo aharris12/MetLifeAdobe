@@ -6,53 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-column-layouts.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-contentblock.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-contextual-links.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-divider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-download-farm.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-element-title.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-footer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-idea-submit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-page-title.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-search-page.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/toolkit-searchbox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/1column.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/bookmark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/contextual_arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/contextual_download.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/download-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/dropdown-arrow-gray.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/dropdown-arrow-inverse.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/dropdown-arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/hyperlink-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/icon_search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/icon_search_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/image-blank.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/login-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/logo-header-toolkit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/metlife-logo-sizing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/metlife-logo-spacing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/open-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/pdf-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/searchPageImage1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/searchPageImage2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/toolkit/share.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/js/toolkit-column.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/js/toolkit-contextual-links.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/js/toolkit-page-title-banner.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/js/toolkit-search-page.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/toolkit-assets.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/toolkit-landingpage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/toolkit-login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/toolkit-product-icon-set.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/toolkit-search.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" afterPath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-footer.js" afterPath="$PROJECT_DIR$/dev/js/global-footer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/main.css" afterPath="$PROJECT_DIR$/dev/css/theme/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -81,7 +36,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepageUS.html" afterPath="$PROJECT_DIR$/dist/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -170,11 +124,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel--tabs.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="carousel--tabs.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--tabs.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17214043">
+            <state vertical-scroll-proportion="-2.8679245">
               <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subcategory-page-1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41098902">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <folding>
+                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5636363">
+              <caret line="197" column="25" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -250,42 +226,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subcategory-page-2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.682927">
-              <caret line="1210" column="14" selection-start-line="1210" selection-start-column="14" selection-end-line="1210" selection-end-column="14" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subnavigationwithgoback.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/subnavigationwithgoback.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.018182">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -339,7 +279,6 @@
         <option value="$PROJECT_DIR$/dev/css/component/global-footer.css" />
         <option value="$PROJECT_DIR$/dev/css/component/product-module.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/utility.css" />
-        <option value="$PROJECT_DIR$/dev/css/theme/main.css" />
         <option value="$PROJECT_DIR$/dev/css/component/office-search.css" />
         <option value="$PROJECT_DIR$/dev/category.html" />
         <option value="$PROJECT_DIR$/gruntfile.js" />
@@ -354,6 +293,7 @@
         <option value="$PROJECT_DIR$/dev/homepageUS.html" />
         <option value="$PROJECT_DIR$/dev/js/global-footer.js" />
         <option value="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
+        <option value="$PROJECT_DIR$/dev/css/theme/main.css" />
       </list>
     </option>
   </component>
@@ -444,6 +384,10 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="theme">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -459,10 +403,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -587,11 +527,8 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.subcategory-page-1.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="homepageUS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepageUS.html">
       <method />
     </configuration>
     <configuration default="false" name="product-details-page1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/product-details-page1.html">
@@ -601,6 +538,9 @@
       <method />
     </configuration>
     <configuration default="false" name="subcategory-page-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-2.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/category.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -654,18 +594,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -679,12 +619,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00054" summary="clr processing for new/existing customers.">
-      <created>1462391851864</created>
-      <option name="number" value="00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1462391851864</updated>
     </task>
     <task id="LOCAL-00055" summary="clr processing for new/existing customers.">
       <created>1462561139247</created>
@@ -974,7 +908,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463606238944</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Defect 8934 , Text color for life stages">
+      <created>1463665415542</created>
+      <option name="number" value="00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1463665415542</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1017,7 +957,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Changes to footer to align with axshare in mobile view" />
     <MESSAGE value="Defects and FAO" />
     <MESSAGE value="fao fix" />
     <MESSAGE value="Gitignore" />
@@ -1042,7 +981,8 @@
     <MESSAGE value="No defect NUmber, fixing issues with sub navigation with go back. No html changes needed." />
     <MESSAGE value="TA3369 Product Selector for homepageUS.html" />
     <MESSAGE value="Defect 8867 Social Icons. Need to update the SVG in AEM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defect 8867 Social Icons. Need to update the SVG in AEM" />
+    <MESSAGE value="Defect 8934 , Text color for life stages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defect 8934 , Text color for life stages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1183,16 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1707318">
-          <caret line="1258" column="20" selection-start-line="1258" selection-start-column="20" selection-end-line="1258" selection-end-column="20" />
-          <folding>
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7327044">
@@ -1291,14 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.413522">
           <caret line="236" column="20" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34393063">
-          <caret line="134" column="25" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1490,6 +1412,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--tabs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8679245">
+          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5636363">
+          <caret line="197" column="25" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9390244">
@@ -1526,11 +1464,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--tabs.css">
+    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17214043">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-          <folding />
+        <state vertical-scroll-proportion="0.41098902">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
