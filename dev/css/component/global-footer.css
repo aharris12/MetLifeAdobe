@@ -597,9 +597,9 @@
 }
 
 .footer-legal__bullet:before {
-    content: "";
+    content: "\2022";
     padding: 0;
-    display: block;
+    display: inline-block;
 }
 
 .global-footer--microsite .footer-legal__bullet:before{
@@ -831,13 +831,6 @@
         margin: 0;
         float: left;
         margin-right: 5px;
-    }
-
-    .footer-legal__bullet:before {
-        content: "\2022";
-        padding: 0;
-        display: inline-block;
-        margin: 0 10px;
     }
 }
 
