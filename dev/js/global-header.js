@@ -23,6 +23,19 @@ function resizeMegaMenu () {
     } else {
         $('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
     }
+    if(getViewport() == "tablet" || getViewport() == "desktop"){
+        if($(".megamenu__sub-items").css("display") == "none"){
+            $(".megamenu__sub-items").show()
+        }
+        if($(".contact-trigger").css("display") == "none"){
+            $(".contact-trigger").show()
+        }
+        contact-trigger
+    }else{
+        if($(".contact-trigger").css("display") != "none"){
+            $(".contact-trigger").hide()
+        }
+    }
 }
 
 $("body").on("click tap", function (e) {
@@ -70,13 +83,13 @@ $('.megamenu-trigger').on('click', function(){
 
 
     if (getViewport() == "desktop") {
-        if($('.login-trigger').length != 0) {
+        if($('.login-trigger').length != 0 && $('.login-trigger').css("display") != "none" ) {
             $('.login-trigger').toggle();
         }
-        if($('.contact-trigger').length != 0) {
+        if($('.contact-trigger').length != 0 && $('.contact-trigge').css("display") != "none" ) {
             $('.contact-trigger').toggle();
         }
-        if($('.user-trigger').length != 0) {
+        if($('.user-trigger').length != 0 && $('.user-trigger').css("display") != "none" ) {
             $('.user-trigger').toggle();
         }
 
@@ -92,13 +105,13 @@ $('.megamenu-trigger').on('click', function(){
             }
         }
     } else if(getViewport() == "tablet") {
-        if($('.login-trigger').length != 0) {
+        if($('.login-trigger').length != 0 && $('.login-trigger').css("display") != "none") {
             $('.login-trigger').toggle();
         }
-        if($('.contact-trigger').length != 0) {
+        if($('.contact-trigger').length != 0 && $('.contact-trigge').css("display") != "none" ) {
             $('.contact-trigger').toggle();
         }
-        if($('.user-trigger').length != 0) {
+        if($('.user-trigger').length != 0  && $('.user-trigger').css("display") != "none") {
             $('.user-trigger').toggle();
         }
         if( $('.' + $(this).attr('data-target')).hasClass('megamenu--open')) {

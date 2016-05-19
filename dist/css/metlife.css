@@ -3511,7 +3511,6 @@ a:visited {
 }
 .megamenu__main-item-label:hover {
     color: rgba(255,255,255,1);
-    text-decoration: underline;
 }
 .megamenu__sub-items {
     display:none;
@@ -8187,7 +8186,7 @@ body{
 }
 }
 .office-search {
-    padding: 20px 30px 10px;
+    padding: 20px 20px 10px;
 }
 
 .office-search .wrapper {
@@ -8203,12 +8202,15 @@ body{
     width: 45px;
     height: 45px;
     vertical-align: middle;
-    margin-right: 5px;
+   /* left: -15px;
+    top: -5px;*/
 }
 
 .office-search__label {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
+    display: inline-block;
+    width: 82%;
 }
 
 .office-search__input-container {
@@ -8238,6 +8240,8 @@ body{
 
     .office-search__icon {
         vertical-align: sub;
+       /* left: initial;
+        top: initial;*/
     }
 
     .office-search__label {
@@ -8273,6 +8277,11 @@ body{
         padding-top: 50px;
         padding-bottom: 0px;
     }
+    .office-search__label {
+        font-size: 20px;
+        max-width: 285px;
+    }
+
 }
 
 

@@ -523,7 +523,6 @@
 }
 .megamenu__main-item-label:hover {
     color: rgba(255,255,255,1);
-    text-decoration: underline;
 }
 .megamenu__sub-items {
     display:none;

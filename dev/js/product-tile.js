@@ -4,14 +4,17 @@
 
 $(document).ready(function () {
     productTilesLayout();
+    productTilePullRight();
 });
 
 $(window).load(function () {
     productTileHeight();
+    productTilePullRight();
 });
 
 $(window).resize(function (e) {
     productTileHeight();
+    productTilePullRight();
 });
 
 function productTileHeight() {
@@ -104,6 +107,18 @@ function productTileHeight() {
     }
 };
 
+function productTilePullRight(){
+
+    if (getViewport() == "mobile") {
+        if ($(".product-row__tile--img-tile__text").hasClass("pull-right")) {
+            $(this).addClass("pull-left");
+        }
+    }else {
+        if ($(".product-row__tile--img-tile__text").hasClass("pull-right")) {
+            $(this).removeClass("pull-left");
+        }
+    }
+}
 function productTilesLayout() {
 
     if ($(".product-row").length != 0) {
