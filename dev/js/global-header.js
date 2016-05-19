@@ -21,19 +21,34 @@ function resizeMegaMenu () {
     if (getViewport() == "mobile") {
         $('.megamenu__main-item:nth-child(n+4)').css('width', '100%');
     } else {
-        $('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
+        /*$('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');*/
+        $('.megamenu__main-item:nth-child(n+4)').css('width', '25%');
     }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         if($(".megamenu__sub-items").css("display") == "none"){
             $(".megamenu__sub-items").show()
         }
-        if($(".contact-trigger").css("display") == "none"){
-            $(".contact-trigger").show()
+        if( $('.megamenu').hasClass('megamenu--open')) {
+
+            if($(".contact-trigger").css("display") != "none"){
+                $(".contact-trigger").hide()
+            }
+            if($(".login-trigger").css("display")!= "none"){
+                $(".login-trigger").hide()
+            }
         }
-        contact-trigger
+
     }else{
+        if($(".megamenu__sub-items").css("display") == "none"){
+            $(".megamenu__sub-items").hide()
+        }
         if($(".contact-trigger").css("display") != "none"){
             $(".contact-trigger").hide()
+        }
+        if(!$('.megamenu').hasClass('megamenu--open')) {
+            if($(".login-trigger").css("display")!= "none"){
+                $(".login-trigger").show()
+            }
         }
     }
 }
@@ -83,46 +98,65 @@ $('.megamenu-trigger').on('click', function(){
 
 
     if (getViewport() == "desktop") {
-        if($('.login-trigger').length != 0 && $('.login-trigger').css("display") != "none" ) {
-            $('.login-trigger').toggle();
-        }
-        if($('.contact-trigger').length != 0 && $('.contact-trigge').css("display") != "none" ) {
-            $('.contact-trigger').toggle();
-        }
-        if($('.user-trigger').length != 0 && $('.user-trigger').css("display") != "none" ) {
-            $('.user-trigger').toggle();
-        }
 
         if( $('.' + $(this).attr('data-target')).hasClass('megamenu--open')) {
             if( !$('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
             }
+            if($('.login-trigger').length != 0 ) {
+                $('.login-trigger').hide();
+            }
+            if($('.contact-trigger').length != 0 ) {
+                $('.contact-trigger').hide();
+            }
+            if($('.user-trigger').length != 0 ) {
+                $('.user-trigger').hide();
+            }
         }else{
             if( $('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
             } else {
                 closeSearchBox();
             }
+            if($('.login-trigger').length != 0 ) {
+                $('.login-trigger').show();
+            }
+            if($('.contact-trigger').length != 0) {
+                $('.contact-trigger').show();
+            }
+            if($('.user-trigger').length != 0 ) {
+                $('.user-trigger').show();
+            }
         }
     } else if(getViewport() == "tablet") {
-        if($('.login-trigger').length != 0 && $('.login-trigger').css("display") != "none") {
-            $('.login-trigger').toggle();
-        }
-        if($('.contact-trigger').length != 0 && $('.contact-trigge').css("display") != "none" ) {
-            $('.contact-trigger').toggle();
-        }
-        if($('.user-trigger').length != 0  && $('.user-trigger').css("display") != "none") {
-            $('.user-trigger').toggle();
-        }
+
         if( $('.' + $(this).attr('data-target')).hasClass('megamenu--open')) {
             if( !$('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
             }
+            if($('.login-trigger').length != 0 ) {
+                $('.login-trigger').hide();
+            }
+            if($('.contact-trigger').length != 0 ) {
+                $('.contact-trigger').hide();
+            }
+            if($('.user-trigger').length != 0 ) {
+                $('.user-trigger').hide();
+            }
         }else{
             if( $('.search-trigger__container').is(':visible') ) {
                 openSearchBox();
             } else {
                 closeSearchBox();
+            }
+            if($('.login-trigger').length != 0 ) {
+                $('.login-trigger').show();
+            }
+            if($('.contact-trigger').length != 0) {
+                $('.contact-trigger').show();
+            }
+            if($('.user-trigger').length != 0 ) {
+                $('.user-trigger').show();
             }
         }
     }else{

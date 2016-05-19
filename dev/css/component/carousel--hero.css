@@ -85,7 +85,7 @@
     }
     .carousel-indicators{
         display: block;
-        bottom: 30%;
+        bottom: 27.5%;
     }
     .carousel--microsite{
         max-height: none;
@@ -119,11 +119,11 @@
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
     .carousel-inner > .item > a > img{
-        min-height:440px;
+        min-height:400px;
     }
 
     .carousel {
-        max-height:440px;
+        max-height:400px;
     }
     .carousel--microsite{
         max-height: none;
@@ -154,8 +154,8 @@
 }
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
-    .carousel {
-        max-height:440px;
+    .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
+        max-height:400px;
     }
     .carousel--microsite{
         max-height: none;
@@ -181,7 +181,7 @@
 /* Image size 2600*1000 */
 @media screen and (min-width: 1900px) {
     .carousel {
-        max-height:600px;
+        height:400px;
     }
     .carousel--microsite{
         max-height: none;
