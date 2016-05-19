@@ -10105,10 +10105,10 @@ ul.bullet-list {
     line-height: 15px;
 }
 
-.footer-legal__bullet:before {
-    content: "";
+.footer-legal__link > .footer-legal__bullet:before {
+    content: "\2022";
     padding: 0;
-    display: block;
+    display: inline-block;
 }
 
 .global-footer--microsite .footer-legal__bullet:before{
@@ -10340,13 +10340,6 @@ ul.bullet-list {
         margin: 0;
         float: left;
         margin-right: 5px;
-    }
-
-    .footer-legal__bullet:before {
-        content: "\2022";
-        padding: 0;
-        display: inline-block;
-        margin: 0 10px;
     }
 }
 
