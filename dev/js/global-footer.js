@@ -412,13 +412,7 @@ function processCountrySelection(evt) {
     }
 }
 
-//$('body').click(function(e){ 
-//    processCountrySelection(e);
-//});
-//$('body').on("tap", function(e) {
-//    processCountrySelection(e);
-//});
-$('body').on('click', function(e) {
+$('body').on('touchstart', function(e) {
     processCountrySelection(e);
 });
 
