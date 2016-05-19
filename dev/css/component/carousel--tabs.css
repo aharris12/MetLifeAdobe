@@ -43,7 +43,6 @@
     border: 1px solid transparent;
     border-radius: 2px;
     background-color: #fff;
-    color: #7a9816;
     font-size: 0.85em;
     font-weight: 600;
     text-decoration: none;
@@ -119,8 +118,13 @@
     .carousel--tabs .carousel-control.right {
         right: 2%;
     }
-}
 
+}
+@media screen and (min-width: 728px) {
+    .carousel--tabs .carousel-item {
+        color: #7a9816;
+    }
+}
 @media screen and (min-width: 1025px) {
     .carousel--tabs .carousel-control.left,
     .carousel--tabs .carousel-control.right {

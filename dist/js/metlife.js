@@ -703,9 +703,39 @@ function closeContactForm(){
 //    }   
 //});
 
+
+
+
+function resizeSubNav(){
+    var liTtl       = $("ul.subnav-go-back__list li").length,
+        subnavWith  = document.getElementById('subnav-goback'),
+        windowWidth = $(window).width();
+
+    if (subnavWith) subnavWith = subnavWith.offsetWidth;
+
+    if (windowWidth >=768){
+        $( ".subnav-go-back__list__item" ).each(function( index ) {
+            //for desktop we need to split the width by the total number of objects
+            //$(this).width(subnavWith/liTtl-1);
+            $(this).width(parseFloat(100/liTtl)+'%');
+        });
+    }else{
+        $( ".subnav-go-back__list__item" ).each(function( index ) {
+            //for mobile we need to inherit our default of full width
+            $(this).removeAttr('style');
+       });
+    }
+
+}
+$( window ).resize(function() {
+    resizeSubNav();
+});
+
 $(document).ready(function(){
     footerBorder();
 });
+
+resizeSubNav();
 
 function closeCountryList() {
     $('.country__list').slideUp(200).scrollTop(0);
