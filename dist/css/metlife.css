@@ -3488,23 +3488,19 @@ a:visited {
 }
 .megamenu--promobox{
     font-size: 0;
-    min-height: 215px;
     position: relative;
     width: 100%;
     margin-bottom: 10px;
     border: 1px solid #fff;
 }
 .megamenu--promobox--img{
-
     width:100%;
-    min-height: 215px;
     background-size: cover;
     background-position: center top;
 }
 
 
 .megamenu--promobox--content{
-
      width:100%;
      padding:10px;
  }
@@ -3521,10 +3517,18 @@ a:visited {
     line-height: 24px;
 }
 @media screen and (max-width: 768px){
+    .megamenu--promobox{
+        min-height: 215px;
+    }
     .megamenu--promobox--content{
         text-align: center;
     }
+    .megamenu--promobox--img{
 
+
+        min-height: 215px;
+
+    }
 }
 @media screen and (min-width: 768px){
     .megamenu--promoboxes{
@@ -3533,7 +3537,7 @@ a:visited {
     }
     .megamenu--promobox{
         margin-top: 0;
-        height: 200px;
+        height: 150px;
     }
     .megamenu--promobox--content{
         vertical-align: top;
@@ -3542,6 +3546,7 @@ a:visited {
     }
     .megamenu--promobox--img{
         width:30%;
+        height:150px;
     }
     .megamenu--promobox--content--header {
         font-size: 18px;

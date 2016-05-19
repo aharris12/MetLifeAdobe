@@ -356,12 +356,12 @@ $('.megamenu__main-item').click(function() {
 
 //Create two columns in mega menu when more than 4 items
 // add megamenu__sub-items--two-col to the ul that requires this functionality
-$('.megamenu__sub-items--action').each(function(){
+/*$('.megamenu__sub-items--action').each(function(){
     var len = $(this).find('li').length;
     if (len > 4){
         $(this).addClass('megamenu__sub-items--two-col');
     }
-});
+});*/
 
 $('.login-trigger').click(function(e){
     if(!$(".login-trigger").hasClass("linkOnly")) {
