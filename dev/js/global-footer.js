@@ -412,7 +412,7 @@ function processCountrySelection(evt) {
     }
 }
 
-$('body').on('touchstart click', function(e) {
+$('body').on('touchstart', function(e) {
     processCountrySelection(e);
 });
 
