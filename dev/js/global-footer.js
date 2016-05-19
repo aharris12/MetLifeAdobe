@@ -363,8 +363,9 @@ function closeCountryList() {
 }
 
 function processCountrySelection(evt) {
-    var countrySelectActivationClasses = ['countryNameSelected','countryFlagSelected','countrySelected','countrySVG'];
-    if (evt.target.id == "" || evt.target.id == "countryList" || evt.target.className == "country_continent") {
+    var countrySelectActivationClasses = ['countryNameSelected','countryFlagSelected','countrySelected','countrySVG', 'country__label'];
+    if (evt.target.id == "" || evt.target.id == "countryList" || evt.target.className == "country_continent" ) {
+
         //evt.stopPropagation();
         closeCountryList();
         return;
@@ -387,9 +388,20 @@ function processCountrySelection(evt) {
     }
 }
 
-$('body').on('touchstart', function(e) {
-    processCountrySelection(e);
+$('body').on ('click touchstart', function(e){
+    var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+    switch(clickEvent) {
+        case 'click':
+            processCountrySelection(e);
+            break;
+        case 'touchstart':
+            processCountrySelection(e);
+            break;
+        default:
+            break;
+    }
 });
+
 
 /*
  When disclaimer is not present, remove top-border from footer

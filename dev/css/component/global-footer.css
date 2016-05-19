@@ -442,7 +442,9 @@
     text-align: center;
     position: relative;
 }
-
+.footer-country:hover, .select-country:hover{
+    cursor: pointer;
+}
 .footer-country .form-icon-wrapper svg {
     right: 25px;
 }
