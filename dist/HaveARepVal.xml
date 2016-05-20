@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<validationxml>
+	<region>NA</region>
+	<country>USA</country>
+	<publishdate>3/30/2015 9:45:17 PM</publishdate>
+	<request_type>lead</request_type>
+	<fields>
+		<field>
+			<field_id>firstName</field_id>
+			<field_type>Text</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>lastName</field_id>
+			<field_type>Text</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>address</field_id>
+			<field_type>Text</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>city</field_id>
+			<field_type>Text</field_type>
+			<validation_rule>
+				<validation_type>none</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>state</field_id>
+			<field_type>Select</field_type>
+			<validation_rule>
+				<validation_type>none</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>zip</field_id>
+			<field_type>text</field_type>
+			<validation_rule>
+				<validation_type>none</validation_type>
+				<validation_message>Please provide numeric zip code
+				</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>email</field_id>
+			<field_type>text</field_type>
+			<validation_rule>
+				<validation_type>none</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>phone</field_id>
+			<field_type>Phno</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<validation_message>Please provide numeric phone
+				</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>requestType</field_id>
+			<field_type>select</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+		<field>
+			<field_id>prodInt</field_id>
+			<field_type>checkBox</field_type>
+			<validation_rule>
+				<validation_type>required</validation_type>
+				<regex></regex>
+				<mask></mask>
+				<validation_message>All fields are required</validation_message>
+				<ishidden>no</ishidden>
+			</validation_rule>
+		</field>
+	</fields>
+</validationxml>
+	
+	
