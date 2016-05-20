@@ -87,7 +87,6 @@ var metlifeRedesign = {
     },
     onFSubmit: function ($this) {
         var fid = $this.attr('data-fsubmit');
-        console.log(fid);
         var $formid = $('[data-fid=' + fid + ']');
         var formStatus = true;
         // alert("form submitted.")
@@ -184,12 +183,14 @@ function postLeadform($formid){
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $(".productPolicy").find(':selected').val();
     var ajaxUrl;
-    if(requestType == 'New Product/Planning Services'){
-        ajaxUrl = "/wps/glsproxy/gls/processlead.do";
 
+    if(requestType == 'New Product/Planning Services'){
+        ajaxUrl = $('[data-fid="contact-sidebar"]').attr("data-new-url");
+        //ajaxUrl = "/wps/glsproxy/gls/processlead.do";
     }
     if(requestType == 'Existing Product/Policy'){
-        ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+        ajaxUrl = $('[data-fid="contact-sidebar"]').attr("data-existing-url");
+        //ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
 
     if(typeof FormData !== 'undefined'){
@@ -240,7 +241,6 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 
         var fid = $this.attr('data-fsubmit');
         var $formid = $('[data-fid=' + fid + ']');
-
         postLeadform($formid);
         $('.productUserType').hide();
 
@@ -574,31 +574,31 @@ function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exception
     //AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
     if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
     if (null != mmrep && "" != mmrep) {
-        console.debug(subContentGroupDirectory);
+       /* console.debug(subContentGroupDirectory);
         console.debug(contentGroupDirectory);
-        console.debug(audience);
+        console.debug(audience);*/
         var lsubContentGroupDirectory = "";
         var lcontentGroupDirectory = "";
         var laudience = "";
         if ("" != subContentGroupDirectory) {
-            console.debug("1.1" + subContentGroupDirectory);
+            //console.debug("1.1" + subContentGroupDirectory);
             lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
             lcontentGroupDirectory = contentGroupDirectory;
             laudience = audience;
         } else if ("" != contentGroupDirectory) {
-            console.debug("2.1" + contentGroupDirectory);
+           // console.debug("2.1" + contentGroupDirectory);
             lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
             lsubContentGroupDirectory = subContentGroupDirectory;
             laudience = audience;
         } else if ("" != audience) {
-            console.debug("3.1" + audience);
+           // console.debug("3.1" + audience);
             laudience = audience + "-" + mmrep;
             lcontentGroupDirectory = contentGroupDirectory;
             lsubContentGroupDirectory = subContentGroupDirectory;
         }
-        console.debug(lsubContentGroupDirectory);
+       /* console.debug(lsubContentGroupDirectory);
         console.debug(lcontentGroupDirectory);
-        console.debug(laudience);
+        console.debug(laudience);*/
         if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
         else AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
         if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
@@ -645,7 +645,7 @@ function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exception
         lead = "NonLeadForm";
         if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
     }
-    console.debug("Lead type: " + lead);
+   // console.debug("Lead type: " + lead);
     var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
     if (null != results) {
         var fullID = unescape(results[2]);
@@ -657,7 +657,7 @@ function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exception
     var urlNode = document.URL;
     urlNode = getPageFromURLNode(formObjectName, mmrep);
     if ("requestFormRightNav" == formName) {
-        console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
+        //console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
         if (document.requestFormRightNav.coverage)
             if (document.requestFormRightNav.coverage.value < 1e5) {
                 urlNode = urlNode.split("?");
@@ -693,9 +693,9 @@ function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exception
 }
 
 function AddInputParameter(a, b, c, d, e) {
-    console.log('adding params');
+   /* console.log('adding params');
     console.debug("form param nam eis" + c);
-    console.debug("form param value is" + d);
+    console.debug("form param value is" + d);*/
     var f = e.createElement(b);
     f.setAttribute("type", "hidden");
     f.setAttribute("name", c);
@@ -727,7 +727,7 @@ function getQueryString(a) {
 
 function getPageFromURLNode(a, b) {
     var c = document.URL;
-    console.debug("url node is" + c);
+   // console.debug("url node is" + c);
     var d = "";
     var e = window.location.search.split("?");
     var f = "";
@@ -758,8 +758,8 @@ function getPageFromURLNode(a, b) {
                 } else if (j == i.length - 1) g += i[j];
                 else g = g + i[j] + "&";
         }
-        console.debug("pageFrmCheck:" + h);
-        console.debug("newURLnodeParams:" + g);
+        //console.debug("pageFrmCheck:" + h);
+        //console.debug("newURLnodeParams:" + g);
         if (h) {
             var l = document.URL;
             var m = l.split("?");
@@ -768,8 +768,8 @@ function getPageFromURLNode(a, b) {
             else c = m[0] + "?" + g + "#" + f;
         }
     }
-    console.debug("urlNode:" + c);
-    console.debug("After Changing urlNode is " + c);
+   // console.debug("urlNode:" + c);
+   // console.debug("After Changing urlNode is " + c);
     return c;
 }
 
