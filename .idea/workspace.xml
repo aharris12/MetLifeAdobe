@@ -7,10 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-footer.css" afterPath="$PROJECT_DIR$/dev/css/component/global-footer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepageUS.html" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-footer.js" afterPath="$PROJECT_DIR$/dev/js/global-footer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -90,38 +90,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="global-footer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.777779">
-              <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global-footer.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/global-footer.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5731707">
-              <caret line="445" column="19" selection-start-line="445" selection-start-column="19" selection-end-line="445" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1636364">
-              <caret line="2642" column="85" selection-start-line="2642" selection-start-column="66" selection-end-line="2642" selection-end-column="85" />
+            <state vertical-scroll-proportion="-1.8545455">
+              <caret line="198" column="58" selection-start-line="198" selection-start-column="36" selection-end-line="198" selection-end-column="58" />
               <folding>
+                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#6132#6164#0" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#4;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#5;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#6;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#68600#89480#0" expanded="false" />
-                <element signature="e#89529#105922#0" expanded="false" />
+                <element signature="e#68623#89503#0" expanded="false" />
+                <element signature="e#89552#105945#0" expanded="false" />
                 <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -139,16 +130,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="1449" column="85" selection-start-line="1449" selection-start-column="85" selection-end-line="1449" selection-end-column="85" />
+            <state vertical-scroll-proportion="-3.4512196">
+              <caret line="295" column="10" selection-start-line="295" selection-start-column="10" selection-end-line="295" selection-end-column="10" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#li#1;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#li#2;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#ul#0;n#li#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -160,6 +160,26 @@
                 <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.4">
+              <caret line="687" column="67" selection-start-line="687" selection-start-column="67" selection-end-line="687" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4674385">
+              <caret line="262" column="56" selection-start-line="262" selection-start-column="43" selection-end-line="262" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -226,12 +246,12 @@
         <option value="$PROJECT_DIR$/dev/css/component/carousel--hero.css" />
         <option value="$PROJECT_DIR$/dev/css/component/get-quote-find-office.css" />
         <option value="$PROJECT_DIR$/dev/js/carousel--hero.js" />
-        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
-        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
-        <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/js/global-footer.js" />
         <option value="$PROJECT_DIR$/dev/css/component/global-footer.css" />
         <option value="$PROJECT_DIR$/dev/homepageUS.html" />
+        <option value="$PROJECT_DIR$/dev/homepage.html" />
+        <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
+        <option value="$PROJECT_DIR$/dev/js/global-header.js" />
       </list>
     </option>
   </component>
@@ -425,7 +445,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.homepageUS.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
@@ -499,8 +519,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html (1)" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
@@ -517,12 +537,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Mega menu fixes">
-      <created>1463057104023</created>
-      <option name="number" value="00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1463057104025</updated>
     </task>
     <task id="LOCAL-00065" summary="grunt">
       <created>1463084656529</created>
@@ -812,7 +826,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463687473452</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Defect 8807: Country selector css/js, Need to add id=country__label&quot; to the div wit hclass country__label">
+      <created>1463689872202</created>
+      <option name="number" value="00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1463689872203</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -826,7 +846,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21641791" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21641791" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36099586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -855,7 +875,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="faq border bottom on last element" />
     <MESSAGE value="header scroll issue" />
     <MESSAGE value="mega menu label fix" />
     <MESSAGE value="Product Tile alignment" />
@@ -880,7 +899,8 @@
     <MESSAGE value="Changes for retail separation - removed all but A&amp;H and Life Insuranec from contact side bar new products." />
     <MESSAGE value="Changes for retail separation - Removed JS that split columns for mega menu" />
     <MESSAGE value="Changes for retail separation - Grunt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes for retail separation - Grunt" />
+    <MESSAGE value="Defect 8807: Country selector css/js, Need to add id=country__label&quot; to the div wit hclass country__label" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defect 8807: Country selector css/js, Need to add id=country__label&quot; to the div wit hclass country__label" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1307,22 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8414633">
-          <caret line="501" column="17" selection-start-line="501" selection-start-column="17" selection-end-line="501" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5892857">
-          <caret line="275" column="9" selection-start-line="275" selection-start-column="9" selection-end-line="275" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/global-footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5731707">
@@ -1339,17 +1343,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4">
+          <caret line="687" column="67" selection-start-line="687" selection-start-column="67" selection-end-line="687" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1636364">
-          <caret line="2642" column="85" selection-start-line="2642" selection-start-column="66" selection-end-line="2642" selection-end-column="85" />
+        <state vertical-scroll-proportion="-1.8545455">
+          <caret line="198" column="58" selection-start-line="198" selection-start-column="36" selection-end-line="198" selection-end-column="58" />
           <folding>
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#6132#6164#0" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#0;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#1;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#2;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#4;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#5;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#6;n#ul#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#68600#89480#0" expanded="false" />
-            <element signature="e#89529#105922#0" expanded="false" />
+            <element signature="e#68623#89503#0" expanded="false" />
+            <element signature="e#89552#105945#0" expanded="false" />
             <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1368,13 +1391,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="1449" column="85" selection-start-line="1449" selection-start-column="85" selection-end-line="1449" selection-end-column="85" />
+        <state vertical-scroll-proportion="-3.4512196">
+          <caret line="295" column="10" selection-start-line="295" selection-start-column="10" selection-end-line="295" selection-end-column="10" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#li#1;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#li#2;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1386,6 +1418,14 @@
             <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4674385">
+          <caret line="262" column="56" selection-start-line="262" selection-start-column="43" selection-end-line="262" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
