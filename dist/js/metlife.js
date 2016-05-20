@@ -5000,7 +5000,7 @@ function productTileHeight() {
 };
 
 function productTilePullRight(){
-
+/*
     if (getViewport() == "mobile") {
         if ($(".product-row__tile--img-tile__text").hasClass("pull-right")) {
             $(this).addClass("pull-left");
@@ -5009,7 +5009,7 @@ function productTilePullRight(){
         if ($(".product-row__tile--img-tile__text").hasClass("pull-right")) {
             $(this).removeClass("pull-left");
         }
-    }
+    }*/
 }
 function productTilesLayout() {
 

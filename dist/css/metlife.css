@@ -7904,6 +7904,7 @@ body{
 }
 
 .product-row__tile--img-tile__text {
+    background-color: #0E5DAE;
     padding: 20px;
     text-align: center;
 }
@@ -8079,7 +8080,6 @@ body{
     .large-promo-tile{
         height: auto;
         width: 100%;
-        margin-bottom: 20px;
     }
 
     .large-promo-tile .product-row__tile__img-tile__img {
@@ -8113,9 +8113,6 @@ body{
         font-size: 26px;
     }
 
-    .large-promo-tile{
-        margin-bottom: 30px;
-    }
 
     .large-promo-tile .product-row__tile__promo {
         font-size: 30px;
@@ -8374,8 +8371,8 @@ body{
 
 @media screen and (min-width: 1024px){
     .office-search{
-        padding-top: 50px;
-        padding-bottom: 0px;
+        padding-top: 35px;
+        margin-bottom: -15px;
     }
     .office-search__label {
         font-size: 20px;
