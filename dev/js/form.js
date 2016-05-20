@@ -191,6 +191,7 @@ function postLeadform($formid){
     if(requestType == 'Existing Product/Policy'){
         ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
+
     if(typeof FormData !== 'undefined'){
         var formData = new FormData($('form[name='+formName+']')[0]);
         $.ajax({
@@ -264,7 +265,7 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
                     $('.form-minimize').trigger('click');
                 });
             }, 5000);
-        } else if (fid == "contact-sidebar") {
+        } else if (fid == "contactSidebarQuote") {
             $(".results-form__text").addClass("hidden");
             $(".results-form__inputs").addClass("hidden");
             $(".apply-disclaimer").addClass("hidden");
