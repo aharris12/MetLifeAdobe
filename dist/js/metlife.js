@@ -1627,7 +1627,7 @@ function resetForm(fid) {
             $('#requestFormRightNav_Acc').trigger("reset");
             $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
             $('.contactSideForm').toggle();
-            $('.contact-container--global').css("right", "-640px");
+            $('.contact-container--global').css("right", "-640px");k
         }, 1000);
         break;        
             
