@@ -182,12 +182,13 @@ $('.contactsClose').click(function (e) {
 function postLeadform($formid){
     var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-
-   var ajaxUrl;
-    if($(".productPolicy").find('option').eq(1).val('New Product/Planning Services')){
+    var requestType = $("#requestType").find(':selected').val();
+    var ajaxUrl;
+    if(requestType == 'New Product/Planning Services'){
         ajaxUrl = "/wps/glsproxy/gls/processlead.do";
+
     }
-    if($(".productPolicy").find('option').eq(2).val('Existing Product/Policy')){
+    if(requestType == 'Existing Product/Policy'){
         ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
 
@@ -410,7 +411,6 @@ $('[data-valid-type=phone]').on('keyup', function (evt) {
 var validateOnType = function (val, $this, re) {
     var placeholder = $this.attr('placeholder');
     if (val.length > 0 && val != placeholder) {
-        console.log(val)
         if (val.match(re)) {
             $this.removeClass('error');
             $this.removeClass('formatError');
