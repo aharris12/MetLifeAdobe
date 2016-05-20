@@ -14,20 +14,18 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
-
+var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
+
     var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
     if (getViewport() == "mobile") {
-        $('.megamenu__main-item:nth-child(n+4)').css('width', '100%');
+        $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', '100%');
     } else {
-        /*$('.megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');*/
-        $('.megamenu__main-item:nth-child(n+4)').css('width', '25%');
+        $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
     }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
-        if($(".megamenu__sub-items").css("display") == "none"){
-            $(".megamenu__sub-items").show()
-        }
+        $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
 
             if($(".contact-trigger").css("display") != "none"){
@@ -36,21 +34,45 @@ function resizeMegaMenu () {
             if($(".login-trigger").css("display")!= "none"){
                 $(".login-trigger").hide()
             }
-        }
-
-    }else{
-        if($(".megamenu__sub-items").css("display") == "none"){
-            $(".megamenu__sub-items").hide()
-        }
-        if($(".contact-trigger").css("display") != "none"){
-            $(".contact-trigger").hide()
-        }
-        if(!$('.megamenu').hasClass('megamenu--open')) {
+        }else{
+            if($(".contact-trigger").css("display") != "none"){
+                $(".contact-trigger").show()
+            }
             if($(".login-trigger").css("display")!= "none"){
                 $(".login-trigger").show()
             }
         }
+        resizeMenu = true;
+    }else{
+
+
+        if($(window).width() < 751){
+            if(resizeMenu == true) {
+                if ($(".megamenu__sub-items").css("display") != "none") {
+                    $(".megamenu__sub-items").hide()
+                }
+
+                $(".megamenu__main-item").each(function(){
+                    console.log($(this).find('svg').attr('class') == "icon icon-chevron-down")
+                    if ($(this).find('svg').attr('class') == "icon icon-chevron-down") {
+                        $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+                    }
+                });
+
+            }
+        }
+
+        resizeMenu = false;
+
+        if($(".contact-trigger").css("display") != "none"){
+            $(".contact-trigger").hide()
+        }
+
+        if($(".login-trigger").css("display")== "none"){
+            $(".login-trigger").show()
+        }
     }
+
 }
 
 $("body").on("click tap", function (e) {
@@ -238,8 +260,10 @@ $(window).resize(function(){
 });
 
 // Show sub menu (mobile only)
+var optionsOpen = false;
 $('.megamenu__main-item').click(function() {
     if ($(window).width() < breakpointDesktop ) {
+
         //if (getViewport() == "mobile" || getViewport() == "tablet") {
         if ($(this).find('.megamenu__sub-items').is(':visible')) {
             $(this).find('.megamenu__sub-items').slideUp();
@@ -248,11 +272,31 @@ $('.megamenu__main-item').click(function() {
             $(this).find('.megamenu__sub-items').slideToggle();
         }
         //Toggle main menu item's chevron
-        if ($(this).find('svg').attr('class') == "icon icon-chevron-right") {
+        if(optionsOpen == false){
+            console.log("open")
+            optionsOpen = true;
+            $('.megamenu__main-item').each(function(){
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            });
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
-        } else {
-            $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+        }else{
+            console.log("close")
+            optionsOpen = false;
+           /* if ($(this).find('svg').attr('class') == "icon icon-chevron-right") {
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
+            } else {
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            }*/
+            $('.megamenu__main-item').each(function(){
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            });
         }
+
+
+
+
+
+
     }
 
 });
