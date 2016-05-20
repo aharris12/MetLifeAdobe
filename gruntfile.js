@@ -360,8 +360,30 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'dist/', src: ['**'], dest: 'AEM-'+ grunt.template.today("mmddyy-HHMMss")}, // makes all src relative to cwd
                 ]
             }
-        } //compress
+        }, //compress
 
+        'string-replace' : {
+          dist: {
+            files: {
+              'dist/css/metlifeAEM.css' : 'dist/css/metlife.css'
+            },
+            options: {
+              replacements: [{
+                pattern: /..[/]images[/]/g,
+                replacement: '/static/images/'
+              },{
+                pattern: /[']images[/]/g,
+                replacement: '\'/static/images/'
+              },
+              {
+                pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]d[/]static[/]images[/]/g,
+                replacement: '/static/images/'
+              },
+            ]
+            }
+          }
+
+        }
     }); //initConfig
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -373,8 +395,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-css-import');
     grunt.loadNpmTasks('grunt-cssjoin');
-
+    grunt.loadNpmTasks('grunt-string-replace');
     grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','compress']);
-
+    grunt.registerTask('aemupdate', ['string-replace']);
 }; //wrapper function
-

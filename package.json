@@ -22,6 +22,7 @@
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-css-import": "^0.1.7",
     "grunt-cssjoin": "^0.3.0",
-    "grunt-processhtml": "^0.3.8"
+    "grunt-processhtml": "^0.3.8",
+    "grunt-string-replace": "^1.2.1"
   }
 }
