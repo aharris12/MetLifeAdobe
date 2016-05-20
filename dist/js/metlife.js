@@ -1776,7 +1776,7 @@ $('.contactsClose').click(function (e) {
 function postLeadform($formid){
     var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $("#requestType").find(':selected').val();
+    var requestType = $(".productPolicy").find(':selected').val();
     var ajaxUrl;
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = "/wps/glsproxy/gls/processlead.do";
