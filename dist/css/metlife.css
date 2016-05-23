@@ -3463,6 +3463,7 @@ a:visited {
 
 /* Mega Menu */
 .megamenu {
+    font-size: 0;
     display:none;
     position: relative;
     left: 0;
@@ -3489,7 +3490,6 @@ a:visited {
 .megamenu--promobox{
     font-size: 0;
     margin-top: 0;
-    background-color: #0e5dae;
     margin-bottom: 10px;
 }
 .megamenu--promobox--img{
@@ -3499,6 +3499,7 @@ a:visited {
 
 
 .megamenu--promobox--content{
+     color: #333;
      width:100%;
      padding:10px;
  }
@@ -3515,6 +3516,7 @@ a:visited {
     line-height: 18px;
 }
 .megamenu--promobox--content--header--body span{
+    color: #2c77c5;
   text-decoration: underline;
 }
 @media screen and (max-width: 767px){
@@ -3527,7 +3529,10 @@ a:visited {
     .megamenu--promoboxes{
         display: inline-block;
         width: 50%;
-
+        padding-left: 20px;
+    }
+    .megamenu--promoboxes:last-of-type{
+        padding-right: 20px;
     }
     .megamenu--promobox{
         height: 200px;
@@ -3536,27 +3541,30 @@ a:visited {
         vertical-align: top;
         width:50%;
         height: 200px;
-        padding: 10px 0 0 10px;
+        padding: 15px
     }
     .megamenu--promobox--img{
         width:50%;
         height: 200px;
     }
     .megamenu--promobox--content--header {
-        font-size: 14px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height:18px;
+        margin-bottom: 5px;
+        text-decoration: none;
     }
     .megamenu--promobox--content--header--body{
-        font-size: 12px;
+        text-decoration: none;
+        font-size: 11px;
+        line-height:14px;
     }
     .megamenu--promobox--content button{
         margin: 0px;
     }
 }
 @media screen and (min-width: 1024px) {
-    .megamenu--promoboxes {
-        display: inline-block;
-        width: 45%;
-    }
+
     .megamenu--promobox{
         height: 150px;
     }
@@ -3569,10 +3577,12 @@ a:visited {
         height: 150px;
     }
     .megamenu--promobox--content--header {
-        font-size: 20px;
+        font-size: 16px;
+        line-height:20px;
     }
     .megamenu--promobox--content--header--body{
-        font-size: 14px;
+        font-size: 12px;
+        line-height:16px;
     }
 }
 
@@ -3617,7 +3627,8 @@ a:visited {
 .megamenu__sub-item-label {
     display:block;
     padding: 10px 10px 10px 20px;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 14px;
     color:#fff;
     text-decoration: none;
 }
@@ -3634,7 +3645,7 @@ a:visited {
 @media screen and (min-width: 768px) {
     .megamenu {
         top: 70px;
-        padding:30px 5% 0 5%;
+        /*padding:30px 5% 0 5%;*/
         padding:30px 0 150px 0;
         position:fixed;
         overflow:hidden;
@@ -3644,7 +3655,9 @@ a:visited {
         top: 50px;
     }
     .megamenu__main-items {
-        max-width:70%;
+        font-size: 0;
+        width: 80%;
+        max-width:1300px;
         margin: 0 auto;
     }
     .megamenu__main-item {
@@ -3668,20 +3681,22 @@ a:visited {
         color: #fff;
         text-decoration: none;
     }
-    .megamenu__top--columns > .megamenu__main-item {
-        width:33.333333333334%;
-        float:left;
-    }
+
     .megamenu__top--promo > .megamenu__main-item, .megamenu__bottom--promo > .megamenu__main-item {
         width:25%;
         float:left;
     }
+    .megamenu__top--promo > .megamenu__main-item.megamenu__two--columns {
+        width:50%;
+        float:left;
+    }
+
     .megamenu__divider{
         border-top: 1px solid #0e5dae;
         width: 100%;
         display: inline-block;
     }
-    .megamenu__top--columns > .megamenu__main-item:nth-child(n+4) {
+    /*.megamenu__top--columns > .megamenu__main-item:nth-child(n+4) {
         width:25%;
         padding-top: 20px;
     }
@@ -3695,7 +3710,7 @@ a:visited {
        width:50%;
         float:left;
 
-    }
+    }*/
     .megamenu__main-item .icon-chevron-right,
     .megamenu__main-item .icon-chevron-down {
         display:none;
@@ -3741,6 +3756,19 @@ a:visited {
     .megamenu__main-item-label,
     .megamenu__main-item-label:visited {
         min-height: 50px;
+    }
+    .megamenu__top--promo > .megamenu__main-item {
+        padding-left: 20px;
+    }
+    .megamenu__bottom--promo > .megamenu__main-item {
+        padding-left: 20px;
+    }
+    .megamenu__top--promo > .megamenu__main-item:last-of-type {
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+    .megamenu__bottom--promo > .megamenu__main-item:nth-of-type(1n+2) {
+        padding-right: 0px;
     }
 }
 

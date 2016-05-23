@@ -114,13 +114,13 @@ $(window).load(function () {
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
-
+    /*
     var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
-    if (getViewport() == "mobile") {
+   if (getViewport() == "mobile") {
         $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', '100%');
     } else {
         $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
-    }
+    }*/
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
@@ -388,12 +388,6 @@ $('.megamenu__main-item').click(function() {
                 $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
             });
         }
-
-
-
-
-
-
     }
 
 });
@@ -401,7 +395,7 @@ $('.megamenu__main-item').click(function() {
 //Create two columns in mega menu when more than 4 items
 // add megamenu__sub-items--two-col to the ul that requires this functionality
 $('.megamenu__sub-items--action').each(function(){
-    if($(this).parent().parent().hasClass('megamenu__top--columns')){
+    if($(this).parent().hasClass('megamenu__two--columns')){
         var len = $(this).find('li').length;
         if (len > 4){
             $(this).addClass('megamenu__sub-items--two-col');
