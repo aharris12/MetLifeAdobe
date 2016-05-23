@@ -3488,13 +3488,11 @@ a:visited {
 }
 .megamenu--promobox{
     font-size: 0;
-    position: relative;
-    width: 100%;
+    margin-top: 0;
+    background-color: #0e5dae;
     margin-bottom: 10px;
-    border: 1px solid #fff;
 }
 .megamenu--promobox--img{
-    width:100%;
     background-size: cover;
     background-position: center top;
 }
@@ -3514,42 +3512,38 @@ a:visited {
 .megamenu--promobox--content--header--body{
     margin-bottom: 5px;
     font-size: 10px;
-    line-height: 24px;
+    line-height: 18px;
 }
-@media screen and (max-width: 768px){
-    .megamenu--promobox{
-        min-height: 215px;
+.megamenu--promobox--content--header--body span{
+  text-decoration: underline;
+}
+@media screen and (max-width: 767px){
+    .megamenu--promoboxes{
+        display: none;
     }
-    .megamenu--promobox--content{
-        text-align: center;
-    }
-    .megamenu--promobox--img{
 
-
-        min-height: 215px;
-
-    }
 }
 @media screen and (min-width: 768px){
     .megamenu--promoboxes{
         display: inline-block;
-        width: 60%;
+        width: 50%;
+
     }
     .megamenu--promobox{
-        margin-top: 0;
-        height: 150px;
+        height: 200px;
     }
     .megamenu--promobox--content{
         vertical-align: top;
-        width:70%;
-        height:150px;
+        width:50%;
+        height: 200px;
+        padding: 10px 0 0 10px;
     }
     .megamenu--promobox--img{
-        width:30%;
-        height:150px;
+        width:50%;
+        height: 200px;
     }
     .megamenu--promobox--content--header {
-        font-size: 18px;
+        font-size: 14px;
     }
     .megamenu--promobox--content--header--body{
         font-size: 12px;
@@ -3563,12 +3557,17 @@ a:visited {
         display: inline-block;
         width: 45%;
     }
-   /* .megamenu--promobox{
+    .megamenu--promobox{
         height: 150px;
     }
     .megamenu--promobox--img{
-        min-height: 150px;
-    }*/
+        width:30%;
+        height: 150px;
+    }
+    .megamenu--promobox--content{
+        width:70%;
+        height: 150px;
+    }
     .megamenu--promobox--content--header {
         font-size: 20px;
     }
@@ -4976,6 +4975,7 @@ a:visited {
     text-align: center;
     box-sizing: border-box;
     cursor: pointer;
+    min-height: 175px;
 }
 
 .carousel--tabs .carousel-item:hover {
@@ -10522,6 +10522,7 @@ ul.bullet-list {
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 3px 5px 0px #CCC;
+    text-transform: none;
 }
 
 .subnav-go-back .subnav-go-back__menu a{

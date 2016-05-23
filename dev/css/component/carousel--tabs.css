@@ -50,6 +50,7 @@
     text-align: center;
     box-sizing: border-box;
     cursor: pointer;
+    min-height: 175px;
 }
 
 .carousel--tabs .carousel-item:hover {
