@@ -333,8 +333,8 @@
             <span class="form__title">Have a rep contact me:</span>
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
-            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
+            <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
+                  method="post" class="userForm" data-fid="contactSidebar"  data-url="glu or clr" data-new-url="/wps/glsproxy/gls/processlead.do" data-existing-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -1450,8 +1450,8 @@
                 <span class="form__title white">Have a rep contact me:</span>
                 <span class="form__subtitle hidden-field">All fields are required</span>
 
-                <form id="requestFormContactCard_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                      method="post" class="userForm" data-fid="contactCard">
+                <form id="contactCard" name="contactCard" enctype="multipart/form-data"
+                      method="post" class="userForm" data-fid="contactCard" data-url="glu or clr" data-new-url="test" data-existing-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">
                     <input type="hidden" id="thankYouPage" name="thankYouPage">
                     <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                     <input type="hidden" id="isLead" name="isLead" value="true">
@@ -1583,12 +1583,12 @@
                             <svg class="icon">
                                 <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
                             </svg>
-                            <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
+                            <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy productPolicy"
                                     title="In reference to ..." data-required="true" aria-required="true"
                                     data-valid-status="failed">
                                 <option value="">In reference to ...</option>
                                 <option value="New Product/Planning Services">New Product/Policy</option>
-                                <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+                                <option value="Existing Product/Policy">Exisiting Product/Policy</option>
                             </select>
                         </div>
                         <div class="productUserType newProductUser">

@@ -33,7 +33,7 @@ function resetForm(fid) {
             $('#requestFormRightNav_Acc').trigger("reset");
             $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
             $('.contactSideForm').toggle();
-            $('.contact-container--global').css("right", "-640px");k
+            $('.contact-container--global').css("right", "-640px");
         }, 1000);
         break;        
             
@@ -179,20 +179,20 @@ $('.contactsClose').click(function (e) {
 });
 
 function postLeadform($formid){
-    var formName = $formid.attr('name');
-    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $(".productPolicy").find(':selected').val();
-    var ajaxUrl;
 
+   console.log($formid)
+   var formName = $formid.attr('name');
+    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+    var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+    var ajaxUrl;
     if(requestType == 'New Product/Planning Services'){
-        ajaxUrl = $('[data-fid="contact-sidebar"]').attr("data-new-url");
+        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-url");
         //ajaxUrl = "/wps/glsproxy/gls/processlead.do";
     }
     if(requestType == 'Existing Product/Policy'){
-        ajaxUrl = $('[data-fid="contact-sidebar"]').attr("data-existing-url");
+        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-url");
         //ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
-
     if(typeof FormData !== 'undefined'){
         var formData = new FormData($('form[name='+formName+']')[0]);
         $.ajax({
@@ -203,7 +203,7 @@ function postLeadform($formid){
             contentType: false,
             processData: false,
             success: function (returndata) {
-                console.log(returndata);
+                //console.log(returndata);
             },
             error: function(){
                 console.log("error in ajax form submission");
@@ -219,7 +219,7 @@ function postLeadform($formid){
             contentType: 'application/x-www-form-urlencoded',
             processData: false,
             success: function (returndata) {
-                console.log(returndata);
+                //console.log(returndata);
             },
             error: function(){
                 console.log("error in ajax form submission");
@@ -735,23 +735,23 @@ function getPageFromURLNode(a, b) {
     var h = false;
     if (null != document.getElementById("WT.mc_id")) {
         mcid = getCookie("SessionMCID");
-        console.debug("mcid is empty for mc_id " + mcid);
+        /*console.debug("mcid is empty for mc_id " + mcid);*/
         AddInputParameter(a, "input", "wb_code", mcid, document);
         AddInputParameter(a, "input", "WT.mc_id", mcid, document);
     }
     if (2 == e.length) {
         var i = e[1].split("&");
-        console.debug("urlParams Length: " + i.length);
+       /* console.debug("urlParams Length: " + i.length);*/
         for (var j = 0; j < i.length; j++) {
             var k = i[j].split("=");
             if ("wt.mc_id" == k[0].toLowerCase()) {
-                console.debug("value for  wt_mc_id is " + k[1]);
+                /*console.debug("value for  wt_mc_id is " + k[1]);*/
                 AddInputParameter(a, "input", "wb_code", k[1], document);
             }
             if ("" != b)
                 if ("pagefrom" == k[0].toLowerCase()) {
                     d = k[1] + "-" + b;
-                    console.debug("newPageFrom:" + d);
+                   /* console.debug("newPageFrom:" + d);*/
                     if (j == i.length - 1) g = g + k[0] + "=" + d;
                     else g = g + k[0] + "=" + d + "&";
                     h = true;
