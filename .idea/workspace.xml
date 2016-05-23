@@ -7,69 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/global-header.css" afterPath="$PROJECT_DIR$/dev/css/component/global-header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepageUS.html" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-post.html" afterPath="$PROJECT_DIR$/dist/blog-post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-a.html" afterPath="$PROJECT_DIR$/dist/campaign-page-a.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-b.html" afterPath="$PROJECT_DIR$/dist/campaign-page-b.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-c.html" afterPath="$PROJECT_DIR$/dist/campaign-page-c.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/campaign-page-d.html" afterPath="$PROJECT_DIR$/dist/campaign-page-d.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-with-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" afterPath="$PROJECT_DIR$/dist/generic-product-details-without-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-gawli.html" afterPath="$PROJECT_DIR$/dist/getaquote-gawli.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-glt.html" afterPath="$PROJECT_DIR$/dist/getaquote-glt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-mlt.html" afterPath="$PROJECT_DIR$/dist/getaquote-mlt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/getaquote-sit.html" afterPath="$PROJECT_DIR$/dist/getaquote-sit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-group.html" afterPath="$PROJECT_DIR$/dist/glossary-group.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/glossary-single.html" afterPath="$PROJECT_DIR$/dist/glossary-single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepage.html" afterPath="$PROJECT_DIR$/dist/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepageUS.html" afterPath="$PROJECT_DIR$/dist/homepageUS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote-global.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-quote.html" afterPath="$PROJECT_DIR$/dist/life-insurance-quote.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" afterPath="$PROJECT_DIR$/dist/microsite-a&amp;h.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-auto-insurance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" afterPath="$PROJECT_DIR$/dist/microsite-boxescomparison.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-claims.html" afterPath="$PROJECT_DIR$/dist/microsite-claims.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-faq.html" afterPath="$PROJECT_DIR$/dist/microsite-faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home-insurance.html" afterPath="$PROJECT_DIR$/dist/microsite-home-insurance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-home.html" afterPath="$PROJECT_DIR$/dist/microsite-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page-home.html" afterPath="$PROJECT_DIR$/dist/microsite-page-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-page.html" afterPath="$PROJECT_DIR$/dist/microsite-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-service.html" afterPath="$PROJECT_DIR$/dist/microsite-service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/microsite-tables.html" afterPath="$PROJECT_DIR$/dist/microsite-tables.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/news-article.html" afterPath="$PROJECT_DIR$/dist/news-article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/newsroom-list.html" afterPath="$PROJECT_DIR$/dist/newsroom-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/opt-out.html" afterPath="$PROJECT_DIR$/dist/opt-out.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/privacy-policy.html" afterPath="$PROJECT_DIR$/dist/privacy-policy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-2.html" afterPath="$PROJECT_DIR$/dist/product-details-page-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-no-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" afterPath="$PROJECT_DIR$/dist/product-details-page-image-with-cta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1-expand.html" afterPath="$PROJECT_DIR$/dist/product-details-page1-expand.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/product-details-page1.html" afterPath="$PROJECT_DIR$/dist/product-details-page1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/quote-results.html" afterPath="$PROJECT_DIR$/dist/quote-results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/search-results.html" afterPath="$PROJECT_DIR$/dist/search-results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sitemap.html" afterPath="$PROJECT_DIR$/dist/sitemap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/subcategory-page-2.html" afterPath="$PROJECT_DIR$/dist/subcategory-page-2.html" />
     </list>
     <ignored path="MetLifeAdobe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,114 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1034484">
-              <caret line="292" column="9" selection-start-line="292" selection-start-column="9" selection-end-line="292" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.024390243">
-              <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="365" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.4864865">
+              <caret line="261" column="11" selection-start-line="261" selection-start-column="11" selection-end-line="261" selection-end-column="11" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#2;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#ul#0;n#li#3;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#20272#21995#0" expanded="false" />
-                <element signature="n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#1;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15422885">
-              <caret line="562" column="24" selection-start-line="562" selection-start-column="24" selection-end-line="562" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utility.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.454545">
-              <caret line="309" column="12" selection-start-line="309" selection-start-column="1" selection-end-line="309" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2641509">
-              <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
-              <folding>
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#6132#6164#0" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#1;n#div#0;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#1;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#a#1;n#div#1;n#ul#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#72528#93408#0" expanded="false" />
-                <element signature="e#93457#109850#0" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#a#0;n#div#0;n#div#0;n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#17;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#8089#8639#0" expanded="false" />
+                <element signature="e#8738#9211#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -266,11 +108,11 @@
         <option value="$PROJECT_DIR$/dev/product-details-page-image-no-cta.html" />
         <option value="$PROJECT_DIR$/dev/css/component/subnavigationwithgoback.css" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
-        <option value="$PROJECT_DIR$/dev/js/form.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/homepageUS.html" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
+        <option value="$PROJECT_DIR$/dev/js/form.js" />
       </list>
     </option>
   </component>
@@ -326,78 +168,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="theme">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -614,12 +384,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00084" summary="header scroll issue">
-      <created>1463428371696</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1463428371696</updated>
     </task>
     <task id="LOCAL-00085" summary="header scroll issue">
       <created>1463428481735</created>
@@ -909,7 +673,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464024542105</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Retail Sepration: Mega Menu">
+      <created>1464032217143</created>
+      <option name="number" value="00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1464032217143</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -923,7 +693,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162046" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162046" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037344" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -952,7 +722,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="TA3369 Product Selector for homepageUS.html" />
     <MESSAGE value="Defect 8867 Social Icons. Need to update the SVG in AEM" />
     <MESSAGE value="Defect 8934 , Text color for life stages" />
     <MESSAGE value="Defect 8935 changes main.css for styling of anchors to nont underline when hover" />
@@ -977,7 +746,8 @@
     <MESSAGE value="CLR integration" />
     <MESSAGE value="CLR" />
     <MESSAGE value="grunt" />
-    <option name="LAST_COMMIT_MESSAGE" value="grunt" />
+    <MESSAGE value="Retail Sepration: Mega Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Retail Sepration: Mega Menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -986,16 +756,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/js/divider-scroll-to.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9259257">
-          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding>
-            <marker date="1463498234588" expanded="true" signature="218:220" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/aem_form/aem_form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1427,14 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/theme/utility.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -1445,7 +1197,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.454545">
+        <state vertical-scroll-proportion="0.7380952">
           <caret line="309" column="12" selection-start-line="309" selection-start-column="1" selection-end-line="309" selection-end-column="12" />
           <folding />
         </state>
@@ -1473,8 +1225,8 @@
             <element signature="n#li#1;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#20272#21995#0" expanded="false" />
             <element signature="n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#1;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#1;n#div#0;n#ul#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1492,7 +1244,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2641509">
+        <state vertical-scroll-proportion="0.27373418">
           <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1530,9 +1282,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15422885">
-          <caret line="562" column="24" selection-start-line="562" selection-start-column="24" selection-end-line="562" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.54892206">
+          <caret line="576" column="1" selection-start-line="576" selection-start-column="1" selection-end-line="576" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3328467">
+          <caret line="2147" column="0" selection-start-line="2147" selection-start-column="0" selection-end-line="2147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4864865">
+          <caret line="261" column="11" selection-start-line="261" selection-start-column="11" selection-end-line="261" selection-end-column="11" />
+          <folding>
+            <element signature="e#8089#8639#0" expanded="false" />
+            <element signature="e#8738#9211#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
