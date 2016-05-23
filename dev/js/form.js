@@ -191,62 +191,22 @@ function postLeadform($formid){
         console.log(requestType == 'New Product/Planning Services')
         console.log($('[data-fid="' + formName + '"]').attr("data-new-product"))
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
-        var formData = postSerialize($('form[name='+formName+']'));
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            data: formData,
-            async: false,
-            contentType: 'application/x-www-form-urlencoded',
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
+        //ajaxUrl = "/wps/glsproxy/gls/processlead.do";
     }
     if(requestType == 'Existing Product/Policy'){
         console.log(requestType == 'Existing Product/Policy')
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
-        if(typeof FormData !== 'undefined'){
-            var formData = new FormData($('form[name='+formName+']')[0]);
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: false,
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        } else {
-            var formData = postSerialize($('form[name='+formName+']'));
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        }
+        //ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
-   /* if(typeof FormData !== 'undefined'){
-        var formData = new FormData($('form[name='+formName+']')[0]);
-        $.ajax({
+    console.log(typeof FormData)
+
+
+    if(typeof FormData !== 'undefined'){
+
+        var formData = JSON.parse(JSON.stringify(jQuery($('form[name='+formName+']')[0]).serializeArray()))
+        /*var formData = new FormData($('form[name='+formName+']')[0]);*/
+        console.log(formData)
+         $.ajax({
             url: ajaxUrl,
             type: 'POST',
             data: formData,
@@ -276,7 +236,7 @@ function postLeadform($formid){
                 console.log("error in ajax form submission");
             }
         });
-    }*/
+    }
 }
 
 $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
