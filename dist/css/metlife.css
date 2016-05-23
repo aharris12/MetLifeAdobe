@@ -12447,6 +12447,8 @@ manner*/
     margin-bottom: 0;
 }
 .more-content__section a:nth-child(2) {
+    font-size: 22px;
+    line-height:26px;
     color: #333;
     padding: 20px;
     display: inline-block;
@@ -12479,6 +12481,9 @@ manner*/
         background-color: transparent;
     }
     .more-content__section a:nth-child(2) {
+        font-size: 20px;
+        line-height:24px;
+        font-weight: 400;
         padding: 10px 0;
     }
     
@@ -12507,6 +12512,10 @@ manner*/
 @media screen and (min-width: 1024px) {
     .more-content {
         padding: 0;
+    }
+    .more-content__section a:nth-child(2) {
+        font-size: 16px;
+        line-height:20px;
     }
 }
 .suggestionsbox {
