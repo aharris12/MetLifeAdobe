@@ -1781,9 +1781,8 @@ function postLeadform($formid){
 
 
     if(typeof FormData !== 'undefined'){
-
-        var formData = JSON.parse(JSON.stringify(jQuery($('form[name='+formName+']')[0]).serializeArray()))
-        /*var formData = new FormData($('form[name='+formName+']')[0]);*/
+        
+        var formData = new FormData($('form[name='+formName+']')[0]);
         console.log(formData)
          $.ajax({
             url: ajaxUrl,
