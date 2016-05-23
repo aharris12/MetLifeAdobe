@@ -182,17 +182,23 @@ function postLeadform($formid){
 
    console.log($formid)
    var formName = $formid.attr('name');
+    console.log(formName)
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
     var ajaxUrl;
+    console.log(requestType)
     if(requestType == 'New Product/Planning Services'){
-        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-url");
+        console.log(requestType == 'New Product/Planning Services')
+        console.log($('[data-fid="' + formName + '"]').attr("data-new-product"))
+        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         //ajaxUrl = "/wps/glsproxy/gls/processlead.do";
     }
     if(requestType == 'Existing Product/Policy'){
-        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-url");
+        console.log(requestType == 'Existing Product/Policy')
+        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
         //ajaxUrl = "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
     }
+    console.log(ajaxUrl)
     if(typeof FormData !== 'undefined'){
         var formData = new FormData($('form[name='+formName+']')[0]);
         $.ajax({
