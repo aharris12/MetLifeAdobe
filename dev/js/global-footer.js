@@ -388,19 +388,27 @@ function processCountrySelection(evt) {
     }
 }
 
+var clickDisabled = false;
+
+
 $('body').on ('click touchstart', function(e){
-    var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
-    switch(clickEvent) {
-        case 'click':
-            processCountrySelection(e);
-            break;
-        case 'touchstart':
-            processCountrySelection(e);
-            break;
-        default:
-            break;
+    if (clickDisabled != true){
+        var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+        switch(clickEvent) {
+            case 'click':
+                processCountrySelection(e);
+                break;
+            case 'touchstart':
+                processCountrySelection(e);
+                break;
+            default:
+                break;
+        }
+        clickDisabled = true;
+        setTimeout(function(){clickDisabled = false;}, 1000);
     }
 });
+
 
 
 /*

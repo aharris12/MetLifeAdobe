@@ -497,7 +497,7 @@
 .megamenu--promoboxes{
     display: block;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 .megamenu--promobox{
     font-size: 0;
@@ -585,7 +585,7 @@
         min-height: 110px;
     }
     .megamenu--promobox--content{
-        width:66%;
+        width:67%;
         min-height: 110px;
     }
     .megamenu--promobox--content--header {
@@ -707,6 +707,8 @@
         border-top: 1px solid #0e5dae;
         width: 100%;
         display: inline-block;
+        margin-top: 40px;
+        margin-bottom: 30px;
     }
     /*.megamenu__top--columns > .megamenu__main-item:nth-child(n+4) {
         width:25%;
