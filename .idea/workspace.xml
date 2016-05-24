@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -34,7 +33,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepageUS.html" afterPath="$PROJECT_DIR$/dist/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -88,8 +86,8 @@
       <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28181818">
-              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.59090906">
+              <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -620,12 +618,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00097" summary="No defect NUmber, fixing issues with sub navigation with go back. No html changes needed.">
-      <created>1463601200038</created>
-      <option name="number" value="00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1463601200038</updated>
-    </task>
     <task id="LOCAL-00098" summary="TA3369 Product Selector for homepageUS.html">
       <created>1463604878870</created>
       <option name="number" value="00098" />
@@ -914,7 +906,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464102852663</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="CLR">
+      <created>1464104142962</created>
+      <option name="number" value="00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1464104142962</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -974,7 +972,6 @@
     <MESSAGE value="life Stages min height. Working on new mega menu." />
     <MESSAGE value="CLR integration" />
     <MESSAGE value="Retail Sepration: Mega Menu" />
-    <MESSAGE value="CLR" />
     <MESSAGE value="grunt" />
     <MESSAGE value="clr" />
     <MESSAGE value="Mega Menu" />
@@ -982,7 +979,8 @@
     <MESSAGE value="MegaMenu" />
     <MESSAGE value="Defect 8976" />
     <MESSAGE value="Defect 8973 css change only" />
-    <option name="LAST_COMMIT_MESSAGE" value="Defect 8973 css change only" />
+    <MESSAGE value="CLR" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLR" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1524,8 +1522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28181818">
-          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.59090906">
+          <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
           <folding />
         </state>
       </provider>
