@@ -2008,11 +2008,11 @@ $('[data-valid-type=phone]').on('blur', function (evt) {
     var $this = $(this);
     $this.trigger('keyup')
     var val = $this.val();
-    var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
-    validateOnType(val, $this, re);
+    //var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
+    validateOnType(val, $this);
 });
 
-$('[data-valid-type=phone]').on('keyup', function (evt) {
+/*$('[data-valid-type=phone]').on('keyup', function (evt) {
     var regexp = /[^0-9]/;
     var input_value = $(this).val();
     if (input_value.match(regexp)) {
@@ -2033,7 +2033,7 @@ $('[data-valid-type=phone]').on('keyup', function (evt) {
         }
     }
     $(this).val(input_value);
-});
+});*/
 
 var validateOnType = function (val, $this, re) {
     var placeholder = $this.attr('placeholder');
