@@ -1801,9 +1801,7 @@ function postLeadform($formid){
             type: 'POST',
             dataType: 'json',
             data: JSON.stringify(jsonData),
-            async: false,
-            contentType: false,
-            processData: false,
+            async: true,
             success: function (returndata) {
                 //console.log(returndata);
             },
