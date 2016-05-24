@@ -402,6 +402,15 @@ $('.megamenu__sub-items--action').each(function(){
     }
 });
 
+$( ".megamenu--promobox--img" ).each(function() {
+    var attr = $(this).attr('data-image-src');
+
+    if (typeof attr !== typeof undefined && attr !== false) {
+        $(this).css('background', 'url('+attr+')');
+    }
+
+});
+
 $('.login-trigger').click(function(e){
     if(!$(".login-trigger").hasClass("linkOnly")) {
         e.preventDefault();
