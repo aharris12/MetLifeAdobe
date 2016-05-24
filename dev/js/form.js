@@ -207,6 +207,8 @@ function postLeadform($formid){
             dataType: 'json',
             data: JSON.stringify(jsonData),
             async: true,
+            contentType: 'application/json',
+            processData: false,
             success: function (returndata) {
                 //console.log(returndata);
             },
