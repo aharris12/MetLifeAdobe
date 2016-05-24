@@ -150,7 +150,6 @@ function resizeMegaMenu () {
                 }
 
                 $(".megamenu__main-item").each(function(){
-                    console.log($(this).find('svg').attr('class') == "icon icon-chevron-down")
                     if ($(this).find('svg').attr('class') == "icon icon-chevron-down") {
                         $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
                     }
@@ -1782,46 +1781,77 @@ function postLeadform($formid){
     var ajaxUrl;
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
+        var jsonData = {};
+        var formData = $('form[name='+formName+']')[0].serializeArray();
+        $.each(formData, function() {
+            if (jsonData[this.name]) {
+                if (!jsonData[this.name].push) {
+                    jsonData[this.name] = [jsonData[this.name]];
+                }
+                jsonData[this.name].push(this.value || '');
+            } else {
+                jsonData[this.name] = this.value || '';
+            }
+
+        });
+        console.log(jsonData);
+        $.ajax({
+            url: ajaxUrl,
+            type: 'POST',
+            data: jsonData,
+            async: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) {
+                //console.log(returndata);
+            },
+            error: function(){
+                console.log("error in ajax form submission");
+            }
+        });
     }
+
     if(requestType == 'Existing Product/Policy'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
+        if(typeof FormData !== 'undefined'){
+            var formData = new FormData($('form[name='+formName+']')[0]);
+
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        } else {
+            var formData = postSerialize($('form[name='+formName+']'));
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: 'application/x-www-form-urlencoded',
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        }
     }
 
 
-    if(typeof FormData !== 'undefined'){
-        var formData = new FormData($('form[name='+formName+']')[0]);
 
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            data: formData,
-            async: false,
-            contentType: false,
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
-    } else {
-        var formData = postSerialize($('form[name='+formName+']'));
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            data: formData,
-            async: false,
-            contentType: 'application/x-www-form-urlencoded',
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
-    }
+
 }
 
 $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {

@@ -53,7 +53,6 @@ function resizeMegaMenu () {
                 }
 
                 $(".megamenu__main-item").each(function(){
-                    console.log($(this).find('svg').attr('class') == "icon icon-chevron-down")
                     if ($(this).find('svg').attr('class') == "icon icon-chevron-down") {
                         $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
                     }

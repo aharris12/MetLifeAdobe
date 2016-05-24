@@ -443,7 +443,7 @@
     position: relative;
 }
 
-.footer-country .select-country{
+.footer-country, .select-country{
     min-height: 36px;
 }
 .footer-country:hover, .select-country:hover{
