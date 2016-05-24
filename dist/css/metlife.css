@@ -3482,18 +3482,23 @@ a:visited {
     -o-transition: all 0.2s;
     transition: all 0.2s;
 }
+
 .megamenu--promoboxes{
     display: block;
     width: 100%;
     margin-top: 35px;
 }
 .megamenu--promobox{
+    display: table;
     font-size: 0;
     margin-top: 0;
     margin-bottom: 10px;
 }
 .megamenu--promobox--img{
+    display: table-cell;
     background-size: cover;
+    height: 100%;
+    vertical-align: middle;
     background-position: center top;
 }
 
@@ -3526,6 +3531,9 @@ a:visited {
 
 }
 @media screen and (min-width: 768px){
+    .megamenu__main-items{
+        width:95%;
+    }
     .megamenu--promoboxes{
         display: inline-block;
         width: 50%;
@@ -3539,12 +3547,12 @@ a:visited {
     }
     .megamenu--promobox--content{
         vertical-align: top;
-        width:50%;
+        width:67%;
         min-height: 110px;
         padding: 15px
     }
     .megamenu--promobox--img{
-        width:50%;
+        width:33%;
         min-height: 110px;
     }
     .megamenu--promobox--content--header {
