@@ -88,8 +88,18 @@
       <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59090906">
-              <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.74545455">
+              <caret line="206" column="29" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aem_form.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/aem_form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.62069">
+              <caret line="748" column="41" selection-start-line="748" selection-start-column="24" selection-end-line="748" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -217,16 +227,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="396" column="25" selection-start-line="396" selection-start-column="15" selection-end-line="396" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-card.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/product-card.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.346154">
-              <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -363,6 +363,24 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="js">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -619,12 +637,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00099" summary="TA3369 Product Selector for homepageUS.html">
-      <created>1463604909411</created>
-      <option name="number" value="00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1463604909411</updated>
     </task>
     <task id="LOCAL-00100" summary="TA3369 Product Selector for homepageUS.html">
       <created>1463605106085</created>
@@ -914,7 +926,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464105191037</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="clr">
+      <created>1464105648817</created>
+      <option name="number" value="00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1464105648817</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -975,14 +993,14 @@
     <MESSAGE value="CLR integration" />
     <MESSAGE value="Retail Sepration: Mega Menu" />
     <MESSAGE value="grunt" />
-    <MESSAGE value="clr" />
     <MESSAGE value="Mega Menu" />
     <MESSAGE value="Footer country selector, CLR," />
     <MESSAGE value="MegaMenu" />
     <MESSAGE value="Defect 8976" />
     <MESSAGE value="Defect 8973 css change only" />
     <MESSAGE value="CLR" />
-    <option name="LAST_COMMIT_MESSAGE" value="CLR" />
+    <MESSAGE value="clr" />
+    <option name="LAST_COMMIT_MESSAGE" value="clr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -991,14 +1009,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/campaign-footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.51589596">
@@ -1522,10 +1532,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/aem_form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.62069">
+          <caret line="748" column="41" selection-start-line="748" selection-start-column="24" selection-end-line="748" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59090906">
-          <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.74545455">
+          <caret line="206" column="29" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="29" />
           <folding />
         </state>
       </provider>

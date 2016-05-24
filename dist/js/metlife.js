@@ -1799,6 +1799,7 @@ function postLeadform($formid){
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
+            dataType: 'json',
             data: JSON.stringify(jsonData),
             async: false,
             contentType: false,
