@@ -48,6 +48,7 @@
     height: 18px;
     position: relative;
     top: 3px;
+    left: 40px;
 }
 
 .accordion__title__icon--hide{
