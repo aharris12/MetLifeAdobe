@@ -1794,11 +1794,12 @@ function postLeadform($formid){
             }
 
         });
-        console.log(jsonData);
+
+        console.log(JSON.stringify(jsonData));
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
-            data: jsonData,
+            data: JSON.stringify(jsonData),
             async: false,
             contentType: false,
             processData: false,

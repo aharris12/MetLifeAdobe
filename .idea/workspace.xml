@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -33,6 +34,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/homepageUS.html" afterPath="$PROJECT_DIR$/dist/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/icon-metlife.html" afterPath="$PROJECT_DIR$/dist/icon-metlife.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/feedback.min.js" afterPath="$PROJECT_DIR$/dist/js/feedback.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.js" afterPath="$PROJECT_DIR$/dist/js/metlife.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/metlife.min.js" afterPath="$PROJECT_DIR$/dist/js/metlife.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/vendors.min.js" afterPath="$PROJECT_DIR$/dist/js/vendors.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" afterPath="$PROJECT_DIR$/dist/life-insurance-FAQ.html" />
@@ -87,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.59090906">
-              <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
+              <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -618,12 +620,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00098" summary="TA3369 Product Selector for homepageUS.html">
-      <created>1463604878870</created>
-      <option name="number" value="00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1463604878870</updated>
-    </task>
     <task id="LOCAL-00099" summary="TA3369 Product Selector for homepageUS.html">
       <created>1463604909411</created>
       <option name="number" value="00099" />
@@ -912,7 +908,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464104142962</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="CLR">
+      <created>1464105191037</created>
+      <option name="number" value="00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1464105191037</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1523,7 +1525,7 @@
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59090906">
-          <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
+          <caret line="198" column="13" selection-start-line="198" selection-start-column="13" selection-end-line="198" selection-end-column="13" />
           <folding />
         </state>
       </provider>
