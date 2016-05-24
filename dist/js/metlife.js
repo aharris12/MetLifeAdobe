@@ -1782,7 +1782,7 @@ function postLeadform($formid){
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         var jsonData = {};
-        var formData = $('form[name='+formName+']')[0].serializeArray();
+        var formData = $('form[name='+formName+']').serializeArray();
         $.each(formData, function() {
             if (jsonData[this.name]) {
                 if (!jsonData[this.name].push) {
