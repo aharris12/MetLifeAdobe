@@ -1768,15 +1768,16 @@
             <div class="find-office">
                 <h2 class="quote-office__heading">I want to find a MetLife:</h2>
                 <div class="row btn-group full-width">
+                    <!--Begin of fix for QC DE8974 5/24/16-->
                     <a href="#" class="col-xs-3 col-sm-3 col-md-4 btn pill" data-btn-group-option="office" data-service-url="/my/service.json" data-href="http://localhost:63348/MetLifeAdobe/dev/fao.html">
                     Office
-                    <div class="btn-group__icon">
-                        <svg class="icon icon-arrow-up-triangle brand-1st-inv">
-                            <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
-                        </svg>
-                    </div>
-                </a>
-
+                        <div class="btn-group__icon">
+                            <svg class="icon icon-arrow-up-triangle brand-1st-inv">
+                                <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <!--End of fix for QC DE8974 5/24/16-->
                     <a href="#" class="col-xs-3 col-sm-3 col-md-4 btn pill" data-btn-group-option="dental">
                         Dentist
                         <div class="btn-group__icon">
@@ -1796,7 +1797,7 @@
                     <input type="hidden" class="btn-group-selected" value="">
                 </div>
                 <div class="row">
-                    <div class="col-sm-9 find-office__zip-city-state-container">
+                    <div class="col-sm-8 col-md-9 find-office__zip-city-state-container">
                         <div class="form-item">
                             <div class="form-item__field">
                                 <input type="text" class="form-input find-office__zip-city-state"
@@ -1832,7 +1833,9 @@
                         </div>
                         <a href="#" class="white" data-target="vision_overlay">Don't Know your plan?</a>
                     </div>
-                    <div class="col-sm-3"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right" data-fao-market="us">Submit</a></div>
+                    <!--Begin of fix for DE8974 5/24/16-->
+                    <div class="col-sm-offset-1 col-sm-3 col-md-3 col-md-offset-0"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right" data-fao-market="us">Submit</a></div>
+                    <!--End of fix for DE8974 5/24/16-->
                 </div>
             </div>
         </div>
