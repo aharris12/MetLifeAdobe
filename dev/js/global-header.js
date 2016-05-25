@@ -14,6 +14,7 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
+//DE8968
 $(window).bind('pageshow', function() {
     $('.search-trigger__search-box').val("");
 });
