@@ -733,7 +733,8 @@
     }
     .megamenu__main-item-label,
     .megamenu__main-item-label:visited {
-        min-height: 85px;
+      /*  min-height: 85px;*/
+        min-height: 30px;
     }
 }
 
