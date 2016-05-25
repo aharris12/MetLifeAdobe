@@ -309,7 +309,9 @@ $( ".megamenu--promobox--img" ).each(function() {
     var attr = $(this).attr('data-image-src');
 
     if (typeof attr !== typeof undefined && attr !== false) {
-        $(this).css('background', 'url('+attr+')');
+        $(this).css({'background' : 'url('+attr+')',
+            'background-position' : 'center top',
+            'background-size': 'cover'});
     }
 
 });
