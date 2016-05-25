@@ -15188,13 +15188,17 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 
 
 
-.cta_search__container .find-an-x-input__container .search_location_image{
+.cta_search__container .find-an-x-input__container .search_location_image, .find-office__zip-city-state-container .search_location_image{
      position:absolute;
      right: 25px;
      top: 7px;
  }
 
-.cta_search__container .find-an-x-input__container .search_location_image svg{
+.find-office__zip-city-state-container .search_location_image{
+    right: 15px;
+}
+
+.cta_search__container .find-an-x-input__container .search_location_image svg , .find-office__zip-city-state-container .search_location_image svg{
     height: 26px;
     width: 26px;
 }

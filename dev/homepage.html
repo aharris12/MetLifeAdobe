@@ -1714,10 +1714,14 @@
                         <div class="form-item">
                             <div class="form-item__field">
                                 <input type="text" class="form-input find-office__zip-city-state" placeholder="Zip or City, State">
-                                <svg class="icon brand-gray-4th icon-crosshair location_search_image">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         xlink:href="images/icons-metlife.svg#icon-crosshair"></use>
-                                </svg>
+                                <!--Begin of fix for QC DE8978 5/25/16-->
+                                <a href="#" class="search_location_image">
+                                    <svg class="icon brand-gray-4th icon-crosshair location_search_image">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="images/icons-metlife.svg#icon-crosshair"></use>
+                                    </svg>
+                                </a>
+                                <!--End of fix for DE8978 5/25/16-->
                             </div>
                         </div>
                     </div>

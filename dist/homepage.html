@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 05/25/2016 @09:54:12 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 05/25/2016 @10:14:30 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -1631,10 +1631,14 @@
                         <div class="form-item">
                             <div class="form-item__field">
                                 <input type="text" class="form-input find-office__zip-city-state" placeholder="Zip or City, State">
-                                <svg class="icon brand-gray-4th icon-crosshair location_search_image">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         xlink:href="images/icons-metlife.svg#icon-crosshair"></use>
-                                </svg>
+                                <!--Begin of fix for QC DE8978 5/25/16-->
+                                <a href="#" class="search_location_image">
+                                    <svg class="icon brand-gray-4th icon-crosshair location_search_image">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="images/icons-metlife.svg#icon-crosshair"></use>
+                                    </svg>
+                                </a>
+                                <!--End of fix for DE8978 5/25/16-->
                             </div>
                         </div>
                     </div>
