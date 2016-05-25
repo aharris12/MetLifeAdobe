@@ -118,7 +118,21 @@ $('.js-searchSubmit').on('click', function () {
 // Site Header Search
 $('.js-searchIcon').click(function () {
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
+			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+		}
+	}else{
+		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+		}
+	}
+
+});
+
+$('.js-searchIconMobile').click(function () {
+	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
 			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 		}
 	}else{
@@ -706,7 +720,6 @@ var ServicesAPI = {
 			data : JSON.stringify(quoteRequest),
 			type: 'POST',
 			success: function(response) {
-				console.log(response)
 				var numObjects = Object.keys(response.solution).length;
 				window.sessionStorage.clear();
 				ServicesAPI.setQuoteSessionStorage();
