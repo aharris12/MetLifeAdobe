@@ -50,7 +50,7 @@ $('.btn-group .btn:first-child').find('.btn-group__icon').show();
 $('.btn-group .btn:first-child').addClass('active');
 $('.btn-group-selected').val($('.btn-group .btn:first-child').attr('data-btn-group-option'));
 // Manage button group
-$('.btn-group .btn').click(function(){
+$('.btn-group .btn').click(function(event){
     event.preventDefault();
     if ($(this).hasClass('active')) {
         //un-comment to allow "no button selected" state 
@@ -1220,7 +1220,7 @@ function validateFindOffice() {
 }
 
 
-$('.btn-group .btn').click(function(){
+$(".btn-group .btn").click(function(){
     //reset
     $('.find-office__zip-city-state-container').removeClass('full-width');
     $('.find-office__dental-container, .find-office__vision-container').css('display','none');
