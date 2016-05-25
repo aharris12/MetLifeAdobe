@@ -233,6 +233,7 @@
     .expand-open-close li {
         font-size: 13px;
         line-height: 16px;
+        font-weight: 300;
     }
 
     .pc-tel-number {
@@ -245,7 +246,7 @@
     }
     .expand-content {
         display: none;
-        font-weight: 400;
+        font-weight: 300;
     }
     .expand-open,
     .expand-close {
@@ -290,6 +291,7 @@
     .expand-open-close li {
         font-size: 14px;
         line-height: 18px;
+        font-weight: 300;
     }
     .company-search-label {
         display: inline;
@@ -299,10 +301,6 @@
     .content-body input {
         margin-top: 20px;
         width: 45%;
-    }
-    .expand-content {
-        display: none;
-        font-weight: 400;
     }
     .expand-open-close .visible-xs {
         display: block !important;
