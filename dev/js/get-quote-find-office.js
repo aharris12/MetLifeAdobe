@@ -40,7 +40,7 @@ function validateFindOffice() {
 }
 
 
-$('.btn-group .btn').click(function(){
+$(".btn-group .btn").click(function(){
     //reset
     $('.find-office__zip-city-state-container').removeClass('full-width');
     $('.find-office__dental-container, .find-office__vision-container').css('display','none');
