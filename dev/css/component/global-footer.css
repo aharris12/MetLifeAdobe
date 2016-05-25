@@ -544,6 +544,7 @@
 
 .social__link {
     display: inline-block;
+    margin-left: 5px;
 }
 
 .social__link svg {
@@ -578,6 +579,7 @@
     display: block;
     margin: 0 auto 15px;
     font-size: 14px;
+    line-height: 15px;
 }
 
 .footer-legal__call--microsite {
