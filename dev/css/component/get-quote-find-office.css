@@ -34,6 +34,7 @@
 .find-office__vision-container {
     display:none;
 }
+
 .error-span {
     background-color: #EB4646;
     color: white;
@@ -47,10 +48,12 @@
     padding: 0 10px;
     line-height: 2.5em;
 }
+
 .error-span .icon.error {
     position: absolute;
     top: -14px;
 }
+
 .error-span .icon.info {
     top:4px;
 }
@@ -64,6 +67,11 @@
 .find-office__dental-container a:hover,.find-office__dental-container a:focus,
 .find-office__vision-container a:hover, .find-office__vision-container a:focus{
     color: #fff;
+}
+
+.icon-crosshair {
+    position: absolute;
+    right: 10px;
 }
 
 @media screen and (min-width: 768px) {
