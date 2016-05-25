@@ -40,8 +40,12 @@ var newsYear;
 var newsTopic;
 var newsConcatenator;
 
-$(document).ready(function(){
+$(document).ready(function() {
 	ServicesAPI.loadEventListeners();
+	if ($("#searchInPage").length != 0) {
+		$("#searchInPage").val("");
+	}
+
 });
 /****Blog Search****************************************/
 
