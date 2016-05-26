@@ -73,9 +73,6 @@ a.product-module__action--tel:hover {
  }
 .product-module__list ul{
     list-style: disc;
-    line-height: 18px;
-    text-align: left;
-    font-size: 14px;
     text-align: left;
 
 }
@@ -86,6 +83,8 @@ a.product-module__action--tel:hover {
 
 .product-module__list ul li {
     padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .product-module__top p{
@@ -174,7 +173,7 @@ a.product-module__action--tel:hover {
     margin-bottom:0;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .product-module__large {
         width: 32%;
         text-align: center;
@@ -206,11 +205,6 @@ a.product-module__action--tel:hover {
 
     .product-module__medium:not(:first-child) {
         border-left: 1px solid #e3e3e3;
-    }
-
-    .product-module__list ul{
-        font-size: 12px;
-        line-height: 16px;
     }
 
     .product-module--table {
@@ -254,9 +248,15 @@ a.product-module__action--tel:hover {
     .product-module--microsite-wrapper .product-module {
         padding-bottom: 0;
     }
+
+    .product-module__list ul li {
+        padding-bottom: 10px;
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .product-module__large {
         width: 32%;
         text-align: center;
@@ -296,8 +296,9 @@ a.product-module__action--tel:hover {
         margin-bottom: 20px;
     }
 
-    .product-module__list ul{
-        font-size: 12px;
+    .product-module__list ul li {
+        padding-bottom: 10px;
+        font-size: 13px;
         line-height: 16px;
     }
 
