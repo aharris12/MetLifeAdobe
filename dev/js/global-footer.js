@@ -421,3 +421,39 @@ function footerBorder(){
         $(".global-footer .wrapper").css("padding-top", "0");
     }
 }
+
+function matchFooterSectionHeights(){
+    if ($(".footer-country-language-social").length != 0) {
+        $(".footer-country-language-social").each(function (index) {
+            var footerItems = $(this).find("div.col-md-4:nth-of-type(-n+2)");
+            var footerItemHeight = 0;
+
+            footerItems.css('min-height', '0px');
+           footerItems.each(function () {
+
+                footerItemHeight = $(this).outerHeight() > footerItemHeight ? $(this).outerHeight() : footerItemHeight;
+
+            });
+
+            footerItems.css('min-height', footerItemHeight + 'px');
+
+
+        });
+    }
+}
+
+$(window).on("load",function(){
+   if(!$(".hidden-xs").is(":visible")){
+       matchFooterSectionHeights();
+   }
+
+});
+$(window).on("resize",function(){
+    if(!$(".hidden-xs").is(":visible")){
+        matchFooterSectionHeights();
+    }else{
+        $(".footer-country-language-social").find("div.col-md-4:nth-of-type(-n+2)").removeAttr("style");
+
+    }
+});
+
