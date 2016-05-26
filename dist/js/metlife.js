@@ -111,6 +111,11 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
+//DE8968
+$(window).bind('pageshow', function() {
+    $('.search-trigger__search-box').val("");
+});
+
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {

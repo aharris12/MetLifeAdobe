@@ -5,11 +5,8 @@
     <bookmark url="file://$PROJECT_DIR$/dev/js/cookie.js" line="73" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="DE">
+    <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/get-quote-find-office.css" afterPath="$PROJECT_DIR$/dev/css/component/get-quote-find-office.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/get-quote-find-office.js" afterPath="$PROJECT_DIR$/dev/js/get-quote-find-office.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -153,13 +150,15 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57417893">
-              <caret line="1760" column="0" selection-start-line="1760" selection-start-column="0" selection-end-line="1760" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7068677">
+              <caret line="168" column="26" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
               <folding>
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#66366#87246#0" expanded="false" />
                 <element signature="e#87295#103688#0" expanded="false" />
@@ -580,12 +579,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00115" summary="New Development for Retail Sepratation -- Mega menu columns and mega menu promo">
-      <created>1463751203471</created>
-      <option name="number" value="00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1463751203471</updated>
-    </task>
     <task id="LOCAL-00116" summary="DEFECT 8925 - Spacing Issues - Remove class 'padding-50-0-sm' from the below container bg-gray-1st&#10;&#10;&lt;!--Large Product Tile--&gt;&#10;&lt;div class=&quot;container bg-gray-1st&quot;&gt;&#10;    &lt;div class=&quot;row wrapper&quot;&gt;&#10;        &lt;!--Changed 5/18/16 by anthony harris --&gt;&#10;            &lt;div class=&quot;product-row__tile--img-tile box-shadow large-promo-tile&quot;&gt;&#10;                &lt;div class=&quot;product-row__tile--img-tile__text&quot;&gt;&#10;                    &lt;div class=&quot;product-row__tile__promo white&quot;&gt;Headline Copy of 55 Characters maximum.&#10;                    &lt;/div&gt;&#10;                    &lt;p class=&quot;white&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo tempor&#10;                        incididunt ut labore et dolore magna aliqua ut enad.&lt;/p&gt;&#10;                    &lt;button href=&quot;#&quot; class=&quot;btn-brand-2nd table&quot;&gt;Call to Action&lt;/button&gt;&#10;&#10;                &lt;/div&gt;&#10;                &lt;div class=&quot;product-row__tile__img-tile__img&quot;&#10;                     style=&quot;background-image: url('images/product_card/subcat_promo_card.png');&quot;&gt;&#10;                &lt;/div&gt;&#10;            &lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;">
       <created>1463753860642</created>
       <option name="number" value="00116" />
@@ -874,7 +867,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464202518749</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="DE 8977 - FAX tool classes and css and js">
+      <created>1464269797774</created>
+      <option name="number" value="00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1464269797774</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -884,7 +883,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36099586" sideWeight="0.5021322" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2966805" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2966805" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -917,7 +916,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="CLR - Fixes" />
     <MESSAGE value="clr fixes" />
     <MESSAGE value="Adding validation.xml" />
     <MESSAGE value="git ignore" />
@@ -942,7 +940,8 @@
     <MESSAGE value="Megamenu retail" />
     <MESSAGE value="Honestly I forgot What I did." />
     <MESSAGE value="Footer fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer fixes" />
+    <MESSAGE value="DE 8977 - FAX tool classes and css and js" />
+    <option name="LAST_COMMIT_MESSAGE" value="DE 8977 - FAX tool classes and css and js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1287,7 +1286,7 @@
         <state vertical-scroll-proportion="0.3227848">
           <caret line="115" column="58" selection-start-line="115" selection-start-column="58" selection-end-line="115" selection-end-column="58" />
           <folding>
-            <marker date="1464269739567" expanded="true" signature="101643:101678" placeholder="..." />
+            <marker date="1464273614562" expanded="true" signature="101643:101678" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1480,13 +1479,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57417893">
-          <caret line="1760" column="0" selection-start-line="1760" selection-start-column="0" selection-end-line="1760" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7068677">
+          <caret line="168" column="26" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
           <folding>
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#66366#87246#0" expanded="false" />
             <element signature="e#87295#103688#0" expanded="false" />

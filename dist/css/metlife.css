@@ -8494,6 +8494,7 @@ body{
 .contextual-link__content__label{
     position: relative;
     height:100%;
+    margin-top: 10px;
 }
 
 .contextual-link__content__label p{
@@ -11027,25 +11028,32 @@ ul.bullet-list {
         font-weight: 300;
     }
 
-    .product-card .content .intro {
+    .product-card .content .intro,
+    .product-card .content .intro p,
+    .product-card .content .content-body p,
+    .expand-content__intro,
+    .expand-content__intro p,
+    .expand-open-close p {
         font-size: 16px;
         line-height: 20px;
     }
 
-    .product-card .action{
+    .product-card .action {
         width: 20%;
     }
 
-    .content-body__action{
+    .content-body__action {
         text-align: left;
     }
-    .product-card .content .content-body ul{
+    .product-card .content .content-body ul {
         margin-bottom: 20px;
     }
 
-    .product-card .content .content-body li {
+    .product-card .content .content-body li,
+    .expand-open-close li {
         font-size: 13px;
         line-height: 16px;
+        font-weight: 300;
     }
 
     .pc-tel-number {
@@ -11058,7 +11066,7 @@ ul.bullet-list {
     }
     .expand-content {
         display: none;
-        font-weight: 400;
+        font-weight: 300;
     }
     .expand-open,
     .expand-close {
@@ -11066,7 +11074,7 @@ ul.bullet-list {
         width: 100%;
         font-size: 11px;
         font-weight: 600;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         padding: 20px;
         text-align: center;
         text-transform: uppercase;
@@ -11090,13 +11098,20 @@ ul.bullet-list {
         width: 50%;
         padding: 40px 10px 40px 40px;
     }
-    .product-card .content .intro {
+    .product-card .content .intro,
+    .product-card .content .intro p,
+    .product-card .content .content-body p,
+    .expand-content__intro,
+    .expand-content__intro p,
+    .expand-open-close p {
         font-size: 18px;
         line-height: 22px;
     }
-    .product-card .content .content-body li {
+    .product-card .content .content-body li,
+    .expand-open-close li {
         font-size: 14px;
         line-height: 18px;
+        font-weight: 300;
     }
     .company-search-label {
         display: inline;
@@ -11106,10 +11121,6 @@ ul.bullet-list {
     .content-body input {
         margin-top: 20px;
         width: 45%;
-    }
-    .expand-content {
-        display: none;
-        font-weight: 400;
     }
     .expand-open-close .visible-xs {
         display: block !important;
