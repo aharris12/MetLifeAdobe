@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" afterPath="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/divider-scroll-to.css" afterPath="$PROJECT_DIR$/dev/css/component/divider-scroll-to.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/variable.js" afterPath="$PROJECT_DIR$/dev/js/variable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -23,8 +17,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -123,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3636363">
-              <caret line="335" column="223" selection-start-line="335" selection-start-column="223" selection-end-line="335" selection-end-column="237" />
+            <state vertical-scroll-proportion="0.36806723">
+              <caret line="335" column="268" selection-start-line="334" selection-start-column="10" selection-end-line="335" selection-end-column="268" />
               <folding>
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -216,10 +208,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5072464">
+            <state vertical-scroll-proportion="-3.2413793">
               <caret line="2356" column="70" selection-start-line="2356" selection-start-column="70" selection-end-line="2356" selection-end-column="70" />
               <folding />
             </state>
@@ -230,7 +222,7 @@
         <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="402" column="22" selection-start-line="402" selection-start-column="22" selection-end-line="402" selection-end-column="22" />
+              <caret line="438" column="0" selection-start-line="438" selection-start-column="0" selection-end-line="438" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -377,24 +369,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -611,12 +585,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00117" summary="DEFECT 8925 - Spacing Issues - Remove class 'padding-50-0-sm' from the below container bg-gray-1st&#10;&#10;&lt;!--Large Product Tile--&gt;&#10;&lt;div class=&quot;container bg-gray-1st&quot;&gt;&#10;    &lt;div class=&quot;row wrapper&quot;&gt;&#10;        &lt;!--Changed 5/18/16 by anthony harris --&gt;&#10;            &lt;div class=&quot;product-row__tile--img-tile box-shadow large-promo-tile&quot;&gt;&#10;                &lt;div class=&quot;product-row__tile--img-tile__text&quot;&gt;&#10;                    &lt;div class=&quot;product-row__tile__promo white&quot;&gt;Headline Copy of 55 Characters maximum.&#10;                    &lt;/div&gt;&#10;                    &lt;p class=&quot;white&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo tempor&#10;                        incididunt ut labore et dolore magna aliqua ut enad.&lt;/p&gt;&#10;                    &lt;button href=&quot;#&quot; class=&quot;btn-brand-2nd table&quot;&gt;Call to Action&lt;/button&gt;&#10;&#10;                &lt;/div&gt;&#10;                &lt;div class=&quot;product-row__tile__img-tile__img&quot;&#10;                     style=&quot;background-image: url('images/product_card/subcat_promo_card.png');&quot;&gt;&#10;                &lt;/div&gt;&#10;            &lt;/div&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;">
-      <created>1463754060965</created>
-      <option name="number" value="00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1463754060965</updated>
     </task>
     <task id="LOCAL-00118" summary="grunt">
       <created>1463754145117</created>
@@ -906,7 +874,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464273629701</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="CLR, added fuctionaity to make the pageFrom dynamic">
+      <created>1464293498091</created>
+      <option name="number" value="00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1464293498091</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -920,7 +894,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162046" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162046" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26037344" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -949,7 +923,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="clr fixes" />
     <MESSAGE value="Adding validation.xml" />
     <MESSAGE value="git ignore" />
     <MESSAGE value="DE2834 css update" />
@@ -974,7 +947,8 @@
     <MESSAGE value="Footer fixes" />
     <MESSAGE value="DE 8977 - FAX tool classes and css and js" />
     <MESSAGE value="grunt" />
-    <option name="LAST_COMMIT_MESSAGE" value="grunt" />
+    <MESSAGE value="CLR, added fuctionaity to make the pageFrom dynamic" />
+    <option name="LAST_COMMIT_MESSAGE" value="CLR, added fuctionaity to make the pageFrom dynamic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1227,7 +1201,7 @@
         <state vertical-scroll-proportion="0.3227848">
           <caret line="115" column="58" selection-start-line="115" selection-start-column="58" selection-end-line="115" selection-end-column="58" />
           <folding>
-            <marker date="1464293471832" expanded="true" signature="101643:101678" placeholder="..." />
+            <marker date="1464293935940" expanded="true" signature="101643:101678" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1471,7 +1445,7 @@
     <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="402" column="22" selection-start-line="402" selection-start-column="22" selection-end-line="402" selection-end-column="22" />
+          <caret line="438" column="0" selection-start-line="438" selection-start-column="0" selection-end-line="438" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1492,10 +1466,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.857143">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#postLeadform#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2413793">
+          <caret line="2356" column="70" selection-start-line="2356" selection-start-column="70" selection-end-line="2356" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3636363">
-          <caret line="335" column="223" selection-start-line="335" selection-start-column="223" selection-end-line="335" selection-end-column="237" />
+        <state vertical-scroll-proportion="0.36806723">
+          <caret line="335" column="268" selection-start-line="334" selection-start-column="10" selection-end-line="335" selection-end-column="268" />
           <folding>
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1509,24 +1501,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.857143">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="262" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#postLeadform#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5072464">
-          <caret line="2356" column="70" selection-start-line="2356" selection-start-column="70" selection-end-line="2356" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
