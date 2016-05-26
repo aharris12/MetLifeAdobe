@@ -8059,7 +8059,7 @@ body{
 
     .product-row__tile--img-tile{
         height: 320px;
-        display:inline-block;
+        display:table;
     }
 
     .product-row__tile__img-tile__img {
