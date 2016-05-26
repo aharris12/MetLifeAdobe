@@ -4603,6 +4603,14 @@ a:visited {
     margin-bottom:25px;
     min-height: 210px;
 }
+.find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
+    width: 64%;
+    float: left;
+}
+.find-office--submit{
+    margin-left: 1%;
+    float: right;
+}
 .find-office__container {
     background-color:#2c77c5;
     float:right;
@@ -4673,6 +4681,12 @@ a:visited {
     }
     .get-quote, .find-office {
         padding: 30px 35px;
+    }
+    .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
+        width: 70%;
+    }
+    .find-office--submit{
+        margin-left: 3%;
     }
 }
 @media screen and (min-width: 1280px) {
