@@ -4,6 +4,7 @@
 
 .carousel--tabs .carousel {
     overflow:initial;
+    z-index: 1;
 }
 .carousel--tabs .carousel-control {
     padding-top: 50px;
@@ -126,7 +127,7 @@
         color: #7a9816;
     }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .carousel--tabs .carousel-control.left,
     .carousel--tabs .carousel-control.right {
         display: none;

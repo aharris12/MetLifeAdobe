@@ -633,6 +633,19 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
+		console.log(vars)
+		return vars;
+	},
+	getQueryStringNoHash: function(){
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		console.log(vars)
 		return vars;
 	},
 	createPagination : function (result) {
@@ -2339,5 +2352,17 @@ var ServicesAPI = {
 			specialtySelector = '&specialty=' + specialty;
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+	},
+	updatePageFrom: function(input, name){
+		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+		if(pageFrom != undefined){
+			name.val(pageFrom);
+			return;
+		}
+		pageFrom = input;
+		if(pageFrom != undefined && pageFrom != null && pageFrom != "" && pageFrom != " "){
+			name.val(pageFrom);
+			return;
+		}
 	}
 };

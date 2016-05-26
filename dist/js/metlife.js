@@ -1,7 +1,7 @@
 //Global variables
 var breakpointMobile = 480;
 var breakpointTablet = 751;
-var breakpointDesktop = 1011;
+var breakpointDesktop = 1007;
 var imagesPath = "";
 
 if ( localStorage.getItem("contextPath") ) {
@@ -1795,6 +1795,7 @@ function postLeadform($formid){
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+    ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
@@ -10269,6 +10270,19 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
+		console.log(vars)
+		return vars;
+	},
+	getQueryStringNoHash: function(){
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		console.log(vars)
 		return vars;
 	},
 	createPagination : function (result) {
@@ -11975,6 +11989,18 @@ var ServicesAPI = {
 			specialtySelector = '&specialty=' + specialty;
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+	},
+	updatePageFrom: function(input, name){
+		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+		if(pageFrom != undefined){
+			name.val(pageFrom);
+			return;
+		}
+		pageFrom = input;
+		if(pageFrom != undefined && pageFrom != null && pageFrom != "" && pageFrom != " "){
+			name.val(pageFrom);
+			return;
+		}
 	}
 };
 
