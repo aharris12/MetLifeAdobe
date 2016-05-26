@@ -32,6 +32,7 @@
 .contextual-link__content__label{
     position: relative;
     height:100%;
+    margin-top: 10px;
 }
 
 .contextual-link__content__label p{
