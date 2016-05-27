@@ -10881,7 +10881,8 @@ ul.bullet-list {
     text-indent: -16px;
 }
 
-.product-card .content .content-body li:before{
+.product-card .content .content-body li:before,
+.expand-content li:before {
     content: "\0387";
     font-size: 26px;
     vertical-align: middle;
@@ -13954,13 +13955,7 @@ body  .quote_edit_form .submit_quote_edit_form {
 }
 
 .cookieShell--button {
-
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 0px;
-	margin-top: 1%;
-	margin-left: 12%;
-	margin-bottom: 20px;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px){
