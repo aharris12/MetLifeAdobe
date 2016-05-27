@@ -52,13 +52,7 @@
 }
 
 .cookieShell--button {
-
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 0px;
-	margin-top: 1%;
-	margin-left: 12%;
-	margin-bottom: 20px;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px){
