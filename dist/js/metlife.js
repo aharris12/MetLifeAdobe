@@ -881,12 +881,16 @@ function footerBorder(){
 function matchFooterSectionHeights(){
     if ($(".footer-country-language-social").length != 0) {
         $(".footer-country-language-social").each(function (index) {
-            var footerItems = $(this).find("div.col-md-4:nth-of-type(-n+2)");
+            console.log($(this).find("div.col-md-4:nth-of-type(-n+2)"))
+            var footerItems = $(".js-footerMatchHeights");
             var footerItemHeight = 0;
 
             footerItems.css('min-height', '0px');
            footerItems.each(function () {
-
+                console.log(footerItemHeight)
+                console.log($(this).outerHeight())
+               console.log($(this).outerHeight() > footerItemHeight)
+               console.log($(this).outerHeight())
                 footerItemHeight = $(this).outerHeight() > footerItemHeight ? $(this).outerHeight() : footerItemHeight;
 
             });
