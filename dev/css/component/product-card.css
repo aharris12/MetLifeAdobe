@@ -57,7 +57,8 @@
     text-indent: -16px;
 }
 
-.product-card .content .content-body li:before{
+.product-card .content .content-body li:before,
+.expand-content li:before {
     content: "\0387";
     font-size: 26px;
     vertical-align: middle;
