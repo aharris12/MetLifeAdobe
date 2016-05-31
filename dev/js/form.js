@@ -165,6 +165,10 @@ var metlifeRedesign = {
 
 $('.globalContact').on('click', function (evt) {
     evt.preventDefault();
+    $(".contactSidebar").find(".form-user-grp").each(function () {
+        $(this).find("input, select, textarea").removeClass('error');
+        $(this)[0].reset();
+    });
     $('.contactSliderOuterCon').show();
     $('.contactSliderOuterCon').stop().animate({
         right: '0'
@@ -185,6 +189,7 @@ function postLeadform($formid){
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
     //ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
+   $('[data-valid-type=phone]').val($('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         var jsonData = {};
@@ -414,11 +419,11 @@ $('[data-valid-type=phone]').on('blur', function (evt) {
     var $this = $(this);
     $this.trigger('keyup')
     var val = $this.val();
-    //var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
-    validateOnType(val, $this);
+    var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
+    validateOnType(val, $this, re);
 });
 
-/*$('[data-valid-type=phone]').on('keyup', function (evt) {
+$('[data-valid-type=phone]').on('keyup', function (evt) {
     var regexp = /[^0-9]/;
     var input_value = $(this).val();
     if (input_value.match(regexp)) {
@@ -439,7 +444,7 @@ $('[data-valid-type=phone]').on('blur', function (evt) {
         }
     }
     $(this).val(input_value);
-});*/
+});
 
 var validateOnType = function (val, $this, re) {
     var placeholder = $this.attr('placeholder');
