@@ -1856,11 +1856,13 @@ var ServicesAPI = {
 		var longitude = startPointGeoCode.lng();
 		var baseServiceUrl = $("[data-fao-url]").attr("data-fao-url");
 		var faoMarket = '';
-		if($('.directions_button').attr("data-fao-market") !== undefined && $('.directions_button').attr("data-fao-market") !== "" && $('.directions_button').attr("data-fao-market") !== " " ){
-			faoMarket = $('.directions_button').attr("data-fao-market");
+		var directionButton = $('.directions_button').attr("data-fao-market");
+		var officeSubmitButton = $(".find-office__submit").attr("data-fao-market");
+		if(directionButton !== undefined && directionButton !== "" && directionButton !== " " ){
+			faoMarket = directionButton;
 		}
-		if($(".find-office__submit").attr("data-fao-market") !== undefined && $(".find-office__submit").attr("data-fao-market") !== "" && $(".find-office__submit").attr("data-fao-market") !== " "){
-			faoMarket = $(".find-office__submit").attr("data-fao-market");
+		if(officeSubmitButton !== undefined && officeSubmitButton !== "" && officeSubmitButton !== " "){
+			faoMarket = officeSubmitButton;
 		}
 		radiusInMiles = $('.find_an_office_radius').val();
 		if(faoMarket.toLowerCase() == "us"){

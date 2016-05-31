@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/contact-form.css" afterPath="$PROJECT_DIR$/dev/css/component/contact-form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepage.html" afterPath="$PROJECT_DIR$/dev/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepageUS.html" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/fao.html" afterPath="$PROJECT_DIR$/dev/fao.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -22,8 +19,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/category.html" afterPath="$PROJECT_DIR$/dist/category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -93,8 +88,8 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2073171">
-              <caret line="489" column="49" selection-start-line="489" selection-start-column="36" selection-end-line="489" selection-end-column="49" />
+            <state vertical-scroll-proportion="-3.1818182">
+              <caret line="2013" column="10" selection-start-line="2013" selection-start-column="10" selection-end-line="2013" selection-end-column="10" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -120,7 +115,7 @@
       <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.695122">
+            <state vertical-scroll-proportion="0.0">
               <caret line="333" column="45" selection-start-line="333" selection-start-column="22" selection-end-line="333" selection-end-column="45" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -132,17 +127,17 @@
       <file leaf-file-name="contact-form.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/contact-form.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.836364">
+            <state vertical-scroll-proportion="0.0">
               <caret line="351" column="61" selection-start-line="351" selection-start-column="61" selection-end-line="351" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31955484">
+            <state vertical-scroll-proportion="0.0">
               <caret line="335" column="32" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
               <folding />
             </state>
@@ -152,7 +147,7 @@
       <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.125">
+            <state vertical-scroll-proportion="0.0">
               <caret line="167" column="3" selection-start-line="167" selection-start-column="3" selection-end-line="170" selection-end-column="7" />
               <folding>
                 <element signature="n#!!block;n#postLeadform#0" expanded="false" />
@@ -176,7 +171,7 @@
       <file leaf-file-name="contact-us__single.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/contact-us__single.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="983" column="0" selection-start-line="983" selection-start-column="0" selection-end-line="1264" selection-end-column="6" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -196,12 +191,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5172415">
-              <caret line="826" column="8" selection-start-line="826" selection-start-column="8" selection-end-line="829" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.2764317">
+              <caret line="1870" column="14" selection-start-line="1870" selection-start-column="14" selection-end-line="1870" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fao.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/fao.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.127273">
+              <caret line="831" column="10" selection-start-line="831" selection-start-column="10" selection-end-line="837" selection-end-column="25" />
+              <folding>
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,7 +256,6 @@
         <option value="$PROJECT_DIR$/dev/js/utility.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dev/css/theme/button.css" />
-        <option value="$PROJECT_DIR$/dev/fao.html" />
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/dev/generic-product-details-with-cta.html" />
         <option value="$PROJECT_DIR$/dev/css/component/contextual-links.css" />
@@ -278,7 +288,6 @@
         <option value="$PROJECT_DIR$/dev/css/component/divider-scroll-to.css" />
         <option value="$PROJECT_DIR$/dev/css/component/carousel--tabs.css" />
         <option value="$PROJECT_DIR$/dev/js/variable.js" />
-        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-2.html" />
         <option value="$PROJECT_DIR$/dev/css/component/product-tile.css" />
         <option value="$PROJECT_DIR$/dev/css/component/product-module.css" />
@@ -289,6 +298,8 @@
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/js/form.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
+        <option value="$PROJECT_DIR$/dev/fao.html" />
+        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       </list>
     </option>
   </component>
@@ -330,84 +341,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="External Dependencies">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="C:">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -482,7 +416,34 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -528,11 +489,8 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.fao.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="subcategory-page-1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-1.html">
       <method />
     </configuration>
     <configuration default="false" name="subcategory-page-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-2.html">
@@ -542,6 +500,9 @@
       <method />
     </configuration>
     <configuration default="false" name="homepageUS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepageUS.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="fao.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/fao.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -594,16 +555,17 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.contact-us__single.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.contact-us__single.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.contact-us__single.html" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.contact-us__single.html" />
       </list>
     </recent_temporary>
   </component>
@@ -617,12 +579,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00123" summary="CLR - Fixes">
-      <created>1463767909535</created>
-      <option name="number" value="00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1463767909535</updated>
     </task>
     <task id="LOCAL-00124" summary="clr fixes">
       <created>1463768912766</created>
@@ -912,24 +868,28 @@
       <option name="project" value="LOCAL" />
       <updated>1464701790589</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="fixed js validation">
+      <created>1464719873957</created>
+      <option name="number" value="00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1464719873957</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22228146" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2966805" sideWeight="0.50852877" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2966805" sideWeight="0.4914712" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22014925" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037344" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1705757" sideWeight="0.5041494" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.047668394" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -940,10 +900,12 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037344" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1116,13 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/fao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5592949">
-          <caret line="823" column="19" selection-start-line="823" selection-start-column="19" selection-end-line="828" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/content-header.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33277312">
@@ -1267,25 +1222,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1303" column="48" selection-start-line="1303" selection-start-column="48" selection-end-line="1304" selection-end-column="76" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#12;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1317,13 +1253,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7758242">
           <caret line="2897" column="0" selection-start-line="2897" selection-start-column="0" selection-end-line="2901" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/contact-form.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.836364">
+        <state vertical-scroll-proportion="0.0">
           <caret line="351" column="61" selection-start-line="351" selection-start-column="61" selection-end-line="351" selection-end-column="61" />
           <folding />
         </state>
@@ -1331,7 +1266,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.695122">
+        <state vertical-scroll-proportion="0.0">
           <caret line="333" column="45" selection-start-line="333" selection-start-column="22" selection-end-line="333" selection-end-column="45" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1347,17 +1282,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5172415">
-          <caret line="826" column="8" selection-start-line="826" selection-start-column="8" selection-end-line="829" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/contact-us__single.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="983" column="0" selection-start-line="983" selection-start-column="0" selection-end-line="1264" selection-end-column="6" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1376,34 +1303,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2073171">
-          <caret line="489" column="49" selection-start-line="489" selection-start-column="36" selection-end-line="489" selection-end-column="49" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#83632#104512#0" expanded="false" />
-            <element signature="e#104561#120954#0" expanded="false" />
-            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="167" column="3" selection-start-line="167" selection-start-column="3" selection-end-line="170" selection-end-column="7" />
           <folding>
             <element signature="n#!!block;n#postLeadform#0" expanded="false" />
@@ -1425,8 +1327,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31955484">
+        <state vertical-scroll-proportion="0.0">
           <caret line="335" column="32" selection-start-line="335" selection-start-column="32" selection-end-line="335" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1818182">
+          <caret line="2013" column="10" selection-start-line="2013" selection-start-column="10" selection-end-line="2013" selection-end-column="10" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#83632#104512#0" expanded="false" />
+            <element signature="e#104561#120954#0" expanded="false" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/fao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.127273">
+          <caret line="831" column="10" selection-start-line="831" selection-start-column="10" selection-end-line="837" selection-end-column="25" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2764317">
+          <caret line="1870" column="14" selection-start-line="1870" selection-start-column="14" selection-end-line="1870" selection-end-column="14" />
           <folding />
         </state>
       </provider>
