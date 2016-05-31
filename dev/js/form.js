@@ -183,7 +183,7 @@ function postLeadform($formid){
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-    ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
+    //ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
