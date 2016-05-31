@@ -9500,6 +9500,8 @@ ul.bullet-list {
     text-align: right;
     cursor: pointer;
     padding:0 20px 20px;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 .accordion .accordion__toggle-all .collapseAll{
@@ -9551,6 +9553,12 @@ ul.bullet-list {
     font-size: 13px;
     line-height: 20px;
 }
+
+.accordion__content p {
+    font-size: 13px;
+    line-height: 20px;
+}
+
 .accordion__content li{
     margin-left: 20px;
     list-style: disc;
