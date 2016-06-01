@@ -3315,7 +3315,7 @@ a:visited {
     }
     .search-trigger {
         position:relative;
-        width:190px;
+        width:auto;
         background-color: transparent;
         box-sizing: border-box;
         margin:auto;
