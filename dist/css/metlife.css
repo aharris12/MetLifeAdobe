@@ -8364,106 +8364,67 @@ body{
     border-top: 1px solid #ccc;
 }
 }
-.office-search {
-    padding: 20px 20px 10px;
+.office-search{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
-
-.office-search .wrapper {
-    padding: 0;
-}
-
-.office-search__top {
-    text-align: left;
-    height: auto;
-}
-
-.office-search__icon {
-    width: 45px;
-    height: 45px;
-    vertical-align: middle;
-   /* left: -15px;
-    top: -5px;*/
-}
-
-.office-search__label {
+.office-search__label{
     font-size: 16px;
     line-height: 20px;
+}
+.office-search__icon svg{
+    vertical-align: middle;
+    height:40px;
+    width: 40px;
+}
+.office-search__label, .office-search__icon,.office-search__input, .office-search__action{
     display: inline-block;
-    width: 82%;
+    width:auto;
 }
-
-.office-search__input-container {
-    text-align: left;
-}
-
-.office-search__input {
-    height: 40px;
-    margin-bottom:10px;
-}
-
-.office-search__action {
-    width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-    .office-search {
-        text-align: center;
-        padding: 25px 0 20px;
+@media screen and (max-width: 768px) {
+    .office-search__icon{
+        position: absolute;
+        left: -15px;
+        top: -5px;
     }
-
-    .office-search__top {
-        display: inline-block;
+    .office-search__label{
+        width: 100%;
+        float: right;
         text-align: right;
-        padding-right: 10px;
     }
-
-    .office-search__icon {
-        vertical-align: sub;
-       /* left: initial;
-        top: initial;*/
+    .office-search__input{
+        width: 100%;
+        margin-bottom: 10px;
     }
-
-    .office-search__label {
+    .office-search__action{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .office-search__label, .office-search__icon,.office-search__input, .office-search__action{
+        display: inline-block;
+        width:auto;
+    }
+    .office-search__icon{
+        vertical-align: middle;
+    }
+    .office-search__label{
         font-size: 18px;
         line-height: 40px;
     }
 
-    .office-search__input {
-        display: inline-block;
-        width: 250px;
-    }
-
-    .office-search__action {
-        width: 70px;
-        margin-left: 5px;
-    }
 }
-
-@media screen and (min-width: 768px) {
-    .office-search {
-
-    }
-
-    .office-search__label {
+@media screen and (min-width: 1024px) {
+    .office-search__label{
         font-size: 20px;
-        top: -12px;
-        position: relative;
+    }
+    .office-search__icon svg{
+        height:60px;
+        width: 60px;
     }
 }
-
-@media screen and (min-width: 1024px){
-    .office-search{
-        padding-top: 35px;
-        margin-bottom: -15px;
-    }
-    .office-search__label {
-        font-size: 20px;
-        max-width: 285px;
-    }
-
-}
-
-
 .divider-title__title{
     text-align: center;
     font-size: 20px;
