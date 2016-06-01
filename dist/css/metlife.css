@@ -4604,13 +4604,17 @@ a:visited {
     min-height: 210px;
 }
 .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-    width: 64%;
+    width: 100%;
     float: left;
+    margin-bottom: 5px;
+}
+.find-office__dental-container{
+    margin-bottom: 10px;
 }
 .find-office--submit{
-    margin-left: 1%;
-    float: right;
-}
+     margin-left: 0;
+     float: left;
+ }
 .find-office__container {
     background-color:#2c77c5;
     float:right;
@@ -4680,20 +4684,28 @@ a:visited {
         margin-right: 1%;
     }
     .get-quote, .find-office {
-        padding: 30px 35px;
+        padding: 30px 20px;
     }
     .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-        width: 70%;
+        width: 56%;
+        margin-bottom: 0;
     }
     .find-office--submit{
         margin-left: 3%;
+        float: right;
     }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+@media screen and (min-width: 1024px) {
     .quote-office {
         margin-top:-85px;
         width: 85%;
         max-width: 1300px;
+    }
+    .get-quote, .find-office {
+        padding: 30px 35px;
     }
     .get-quote__container {
         width: 47%;
@@ -4702,6 +4714,9 @@ a:visited {
     .find-office__container {
         width: 47%;
         margin-right: 2%;
+    }
+    .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
+        width: 59%;
     }
 }
 
