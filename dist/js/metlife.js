@@ -1195,6 +1195,13 @@ $(".js-faqSelect").on("change", function(){
     $(("[data-faq='"+faqItem+ "']")).removeClass("hidden");
 });
 
+if ($(".contextual-links-container").length > 0) {
+    if ($(".contextual-links-container").next().filter($(".faq")).length !== 0) {
+        $('.faq').css("margin-top", "30px");
+    }
+}
+
+
 
 $(window).load(function () {
     formatCTABoxes();
