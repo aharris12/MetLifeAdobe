@@ -6242,7 +6242,7 @@ a.product-module__action--tel:hover {
     .list-filter {
         max-width: 1040px;
         font-size: 1em;
-        margin: 40px auto 20px;
+        margin: 40px auto 0;
         text-align: center;
     }
 
@@ -6290,9 +6290,9 @@ a.product-module__action--tel:hover {
 }
 
 @media (min-width: 1024px) {
-    .list-filter--microsite .list-filter {
-        margin-bottom: 10px;
-    }
+    /*.list-filter--microsite .list-filter {*/
+        /*margin-bottom: 10px;*/
+    /*}*/
 
     .list [data-form-library-msg] .list__title{
         font-size: 20px;
