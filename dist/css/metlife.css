@@ -2642,6 +2642,12 @@ a:visited {
     }
 }
 
+.disabled-anchor{
+    color: #999999 !important;
+    text-decoration: none !important;
+    cursor: text !important;
+}
+
 /*
 @media screen and (min-width: 480px) {}
 
@@ -12206,6 +12212,8 @@ manner*/
 .productUserType {
     margin-top:10px;
 }
+
+
 .privacy-policy-index {
     margin-top: 20px;
 }
