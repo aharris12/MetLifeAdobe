@@ -13959,9 +13959,7 @@ body  .quote_edit_form .submit_quote_edit_form {
 .cookie__header{
 	top:342px;
 }
-.cookie__search{
-	top: 392px;
-}
+
 .cookie__megamenu{
 	top:392px;
 }
@@ -14035,7 +14033,7 @@ body  .quote_edit_form .submit_quote_edit_form {
 		padding:30px;
 	}
 	.cookie__header{
-		top:133px;
+		top:159px;
 	}
 
 	.cookie__megamenu{
@@ -14045,10 +14043,15 @@ body  .quote_edit_form .submit_quote_edit_form {
 		top:183px;
 	}
 	.cookieShell {
-		height: 75px;
+		height: 160px;
+	}
+
+}
+@media screen and (max-width: 767px) {
+	.cookie__search{
+		top: 392px;
 	}
 }
-
 
 .blog-carousel{
     margin-top: 50px;

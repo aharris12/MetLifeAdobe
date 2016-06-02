@@ -2056,6 +2056,17 @@ $('[data-required=true]').on('blur', function () {
     }
 });
 
+$('[data-valid-type=text]').on('blur', function (evt) {
+    evt.preventDefault();
+    var $this = $(this);
+    var val = $this.val();
+    console.log("running")
+    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+   /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+    validateOnType(val, $this, re);
+});
+
+
 $('[data-valid-type=email]').on('blur', function (evt) {
     evt.preventDefault();
     var $this = $(this);
@@ -9917,7 +9928,6 @@ $(".find-an-x-search__container .cta_search").on('focus',function (e) {
 $("body").on("click tap", function (e) {
 	var faoTrigger = $('.cta_search');
 	var container = $(".find-an-x-search__container");
-	console.log(!container.is(e.target) && container.has(e.target).length === 0)
 	if (!container.is(e.target) && container.has(e.target).length === 0) {
 		$('.find-an-x-search--expand').hide();
 	}
@@ -11592,7 +11602,7 @@ var ServicesAPI = {
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
 		/************LIVE FAO SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			 type: 'GET',
 			 url: serviceUrl,
 			 success: function(data) {
@@ -11601,14 +11611,14 @@ var ServicesAPI = {
 			 error: function() {
 			 ServicesAPI.handleServiceError()
 			 }
-		 });*/
+		 });
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-		var faoSearchResults = $.getJSON("fao.json", function(data) {
+		/*var faoSearchResults = $.getJSON("fao.json", function(data) {
 			ServicesAPI.generateOfficeItems(data);
 			ServicesAPI.createPagination(count);
-		 });
+		 });*/
 		/************LOCAL FAO SERVICE***************/
 
 	},

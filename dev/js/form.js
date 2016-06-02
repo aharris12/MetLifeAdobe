@@ -383,6 +383,17 @@ $('[data-required=true]').on('blur', function () {
     }
 });
 
+$('[data-valid-type=text]').on('blur', function (evt) {
+    evt.preventDefault();
+    var $this = $(this);
+    var val = $this.val();
+    console.log("running")
+    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+   /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+    validateOnType(val, $this, re);
+});
+
+
 $('[data-valid-type=email]').on('blur', function (evt) {
     evt.preventDefault();
     var $this = $(this);
