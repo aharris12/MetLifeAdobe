@@ -3844,14 +3844,10 @@ a:visited {
 }
 
 .login-container {
-    padding: 30px 0 0 0;
     padding: 0;
-    top: 50px;
     top: 0;
-    z-index: 1999;
     z-index: 4999;
     position: fixed;
-    overflow-x: auto;
     display: none;
     left: 0;
     right: 0;

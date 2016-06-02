@@ -2024,7 +2024,7 @@ $('[data-required=true]').on('blur', function () {
     var val = $this.val();
     if (val.length == 0) {
         $this.addClass('error');
-        $this.val(placeholder);
+        //$this.val(placeholder);
     } else {
         var attrDVS = $this.attr('data-valid-status');
         if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
