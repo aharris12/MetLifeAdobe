@@ -3542,12 +3542,13 @@ a:visited {
     color: #2c77c5;
   text-decoration: underline;
 }
+
 @media screen and (max-width: 767px){
     .megamenu--promoboxes{
         display: none;
     }
-
 }
+
 @media screen and (min-width: 768px){
 
     .megamenu--promoboxes{
@@ -3633,6 +3634,41 @@ a:visited {
     color:#fff;
     text-decoration: none;
 }
+@media screen and (max-width: 767px){
+    .megamenu__sub-items{
+        padding-bottom:0px;
+    }
+    .megamenu__sub-item {
+        height: 50px;
+        font-size: 14px;
+        color: #ADD0F0;
+        padding-left: 0;
+
+    }
+    .megamenu__sub-item-label {
+        display:block;
+        font-size: 12px;
+        line-height: 14px;
+        color:#fff;
+        text-decoration: none;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-weight: 400;
+    }
+    .megamenu__sub-item-label:hover{
+        color: #FFF;
+    }
+    .megamenu__sub-item:hover{
+        color: #FFF;
+        text-decoration: none;
+        background-color: #1d6fc2;
+    }
+
+
+
+
+}
+
 .megamenu__main-item .icon-chevron-right,
 .megamenu__main-item .icon-chevron-down {
     position: absolute;
