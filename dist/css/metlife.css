@@ -4311,7 +4311,6 @@ a:visited {
     width: 100% !important;
     height: 100% !important;
     overflow-y: scroll !important;
-  /*  padding-right: 17px !important;*/
 }
 .wrapper.breadcrumb {
     width:100%;
@@ -15450,7 +15449,6 @@ div.email-unsub ~ div.contact-us > div.wrapper {
     text-align: left;
     font-weight: 600;
     width: 65%;
-    cursor: hand;
     cursor: pointer;
 }
 
@@ -15487,6 +15485,11 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 }
 .fax-results__container .results_list_container .results_office_result .results_office_get_directions a{
     text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+    .fax-results__container .results_list_container .results_office_result .results_office_get_directions a{
+        display: none;
+    }
 }
 
 .fax-results__container .results_list_container .results_office_result .results_office_street_address, .results_office_education, .results_office_languages, .results_office_gender{
@@ -15877,23 +15880,39 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 
 .fax-results__container .results_list_container .results_office_result .results_office_get_directions_dentist {
     display: block;
-    width: 50%;
+    width: 100%;
     text-align: right;
 }
 
 .fax-results__container .results_list_container .results_office_result .results_office_type_dentist{
-    width: 50%;
+    width: 100%;
 }
 
 .fax-results__container .results_list_container .results_office_result .dentist_left{
-    width: 51%;
+    width: 100%;
     display: inline-block;
     clear: both;
 }
 
 .fax-results__container .results_list_container .results_office_result .dentist_right{
     display: inline-block;
-    width: 47%;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .fax-results__container .results_list_container .results_office_result .results_office_get_directions_dentist {
+        width: 50%;
+    }
+
+    .fax-results__container .results_list_container .results_office_result .results_office_type_dentist{
+        width: 50%;
+    }
+    .fax-results__container .results_list_container .results_office_result .dentist_left{
+        width: 51%;
+    }
+
+    .fax-results__container .results_list_container .results_office_result .dentist_right{
+        width: 47%;
+    }
 }
 .glossary {
     padding: 20px 0;

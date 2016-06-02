@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/fax.css" afterPath="$PROJECT_DIR$/dev/css/component/fax.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/login-popout.css" afterPath="$PROJECT_DIR$/dev/css/component/login-popout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/login-overlay.js" afterPath="$PROJECT_DIR$/dev/js/login-overlay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -88,44 +88,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/homepage.html">
+      <file leaf-file-name="fao.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/fao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1829268">
-              <caret line="927" column="32" selection-start-line="927" selection-start-column="20" selection-end-line="927" selection-end-column="32" />
+            <state vertical-scroll-proportion="-8.418181">
+              <caret line="830" column="52" selection-start-line="830" selection-start-column="28" selection-end-line="830" selection-end-column="52" />
               <folding>
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#select#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#35239#53462#0" expanded="false" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#84278#105158#0" expanded="false" />
-                <element signature="e#105207#121600#0" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-popout.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login-popout.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/login-popout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86523217">
-              <caret line="469" column="4" selection-start-line="469" selection-start-column="2" selection-end-line="469" selection-end-column="39" />
+            <state vertical-scroll-proportion="-31.076923">
+              <caret line="469" column="1" selection-start-line="469" selection-start-column="1" selection-end-line="469" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/theme/main.css">
+      <file leaf-file-name="fao.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/fao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9390244">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state vertical-scroll-proportion="1.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.75862">
+              <caret line="212" column="31" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fax.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/fax.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25707814">
+              <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -134,8 +147,8 @@
       <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="53.5">
-              <caret line="130" column="55" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="87" selection-end-column="3" />
               <folding>
                 <element signature="e#5769#6224#0" expanded="false" />
               </folding>
@@ -143,71 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login-overlay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
+      <file leaf-file-name="variable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.88889">
-              <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global-header.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1585364">
-              <caret line="648" column="23" selection-start-line="648" selection-start-column="23" selection-end-line="648" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.884615">
-              <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/form.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.827586">
-              <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
-              <folding>
-                <element signature="e#12095#12361#0" expanded="false" />
-                <element signature="e#12599#12880#0" expanded="false" />
-                <element signature="e#16602#18625#0" expanded="false" />
-                <element signature="e#18673#19723#0" expanded="false" />
-                <element signature="e#19776#20526#0" expanded="false" />
-                <element signature="n#!!block;n#AddInputParameter#0" expanded="false" />
-                <element signature="n#!!block;n#getPageFromURLNode#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fax.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/fax.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.792453">
-              <caret line="495" column="21" selection-start-line="495" selection-start-column="21" selection-end-line="495" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-card.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/form-card.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.111111">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -277,15 +230,15 @@
         <option value="$PROJECT_DIR$/dev/js/form.js" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
         <option value="$PROJECT_DIR$/dev/js/form-card.js" />
-        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
         <option value="$PROJECT_DIR$/dev/css/theme/form-metlife.css" />
         <option value="$PROJECT_DIR$/dev/css/component/global-header.css" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
-        <option value="$PROJECT_DIR$/dev/css/component/fax.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/main.css" />
         <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/css/component/login-popout.css" />
+        <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
+        <option value="$PROJECT_DIR$/dev/css/component/fax.css" />
       </list>
     </option>
   </component>
@@ -389,10 +342,6 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="theme">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -408,6 +357,10 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="component">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -533,7 +486,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.fao.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
@@ -606,8 +559,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
@@ -624,12 +577,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00139" summary="clr">
-      <created>1464034519907</created>
-      <option name="number" value="00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1464034519907</updated>
     </task>
     <task id="LOCAL-00140" summary="clr">
       <created>1464035693552</created>
@@ -919,7 +866,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464888398615</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="de 9044">
+      <created>1464890629955</created>
+      <option name="number" value="00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1464890629955</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -967,7 +920,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="QC DE8978 FAX missing crosshair image." />
     <MESSAGE value="DE8990 Search icon missing" />
     <MESSAGE value="DE8967 Login icon alignment" />
     <MESSAGE value="DE8968 js update" />
@@ -992,7 +944,8 @@
     <MESSAGE value="de 9049" />
     <MESSAGE value="DE9051" />
     <MESSAGE value="de 9039" />
-    <option name="LAST_COMMIT_MESSAGE" value="de 9039" />
+    <MESSAGE value="de 9044" />
+    <option name="LAST_COMMIT_MESSAGE" value="de 9044" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1004,13 +957,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/css/component/promo-card.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/subnavigation.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -1169,14 +1115,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="429" column="0" selection-start-line="429" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/contact-us__single.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1184,39 +1122,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/fao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.127273">
-          <caret line="831" column="10" selection-start-line="831" selection-start-column="10" selection-end-line="837" selection-end-column="25" />
-          <folding>
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/overlay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1327,14 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13793103">
-          <caret line="1884" column="14" selection-start-line="1875" selection-start-column="8" selection-end-line="1884" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/theme/form-metlife.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.735849">
@@ -1345,7 +1246,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.884615">
+        <state vertical-scroll-proportion="0.65384614">
           <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1353,17 +1254,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1585364">
-          <caret line="648" column="23" selection-start-line="648" selection-start-column="23" selection-end-line="648" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.827586">
+        <state vertical-scroll-proportion="0.2183021">
           <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
           <folding>
             <element signature="e#12095#12361#0" expanded="false" />
@@ -1377,17 +1270,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/fax.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.792453">
-          <caret line="495" column="21" selection-start-line="495" selection-start-column="21" selection-end-line="495" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form-card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.111111">
+        <state vertical-scroll-proportion="0.44884488">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
@@ -1398,16 +1283,6 @@
         <state vertical-scroll-proportion="-3.9390244">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="53.5">
-          <caret line="130" column="55" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
-          <folding>
-            <element signature="e#5769#6224#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1440,10 +1315,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/global-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5913349">
+          <caret line="648" column="23" selection-start-line="648" selection-start-column="23" selection-end-line="648" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33296582">
+          <caret line="318" column="63" selection-start-line="318" selection-start-column="60" selection-end-line="318" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/fao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/fao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.418181">
+          <caret line="830" column="52" selection-start-line="830" selection-start-column="28" selection-end-line="830" selection-end-column="52" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/login-popout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86523217">
-          <caret line="469" column="4" selection-start-line="469" selection-start-column="2" selection-end-line="469" selection-end-column="39" />
+        <state vertical-scroll-proportion="-31.076923">
+          <caret line="469" column="1" selection-start-line="469" selection-start-column="1" selection-end-line="469" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4465814">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="87" selection-end-column="3" />
+          <folding>
+            <element signature="e#5769#6224#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.75862">
+          <caret line="212" column="31" selection-start-line="212" selection-start-column="29" selection-end-line="212" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/fax.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25707814">
+          <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
           <folding />
         </state>
       </provider>
