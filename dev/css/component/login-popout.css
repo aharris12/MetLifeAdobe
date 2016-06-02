@@ -454,3 +454,18 @@
     }
 }
 
+.login-popout[data-popout-msg]{
+    height:100px;
+}
+
+.overlay-scroll__parent{
+    height: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+}
+.overlay-scroll__child{
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: scroll !important;
+  /*  padding-right: 17px !important;*/
+}

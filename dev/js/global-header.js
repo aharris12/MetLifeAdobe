@@ -120,7 +120,19 @@ $('.megamenu-trigger').on('click', function(){
     closeContactForm();
     $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
 
+console.log('run')
+        if($('body').hasClass('overlay-scroll__parent')){
+            $('body').removeClass('overlay-scroll__parent')
+        }else{
+            $('body').addClass('overlay-scroll__parent')
+        }
 
+
+    if($('.megamenu').hasClass('overlay-scroll__child')){
+        $('.megamenu').removeClass('overlay-scroll__child')
+    }else{
+        $('.megamenu').addClass('overlay-scroll__child')
+    }
 
 
     if (getViewport() == "desktop") {
@@ -324,8 +336,11 @@ $( ".megamenu--promobox--img" ).each(function() {
 $('.login-trigger').click(function(e){
     if(!$(".login-trigger").hasClass("linkOnly")) {
         e.preventDefault();
+        $('body').addClass('overlay-scroll__parent');
+        $('.login-container').addClass('overlay-scroll__child');
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
+            $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
             $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
         }

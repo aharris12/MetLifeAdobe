@@ -3,6 +3,8 @@ var loginTypesPosition = 0;
 $('.login-types').css('top',$(window).height() - 70 + 'px');
 $('.login-container--close').click(function(){
     $('.login-container').hide();
+    $('.login-container').removeClass('overlay-scroll__child');
+    $('body').removeClass('overlay-scroll__parent');
 })
 
 //Show login info popout on hover
