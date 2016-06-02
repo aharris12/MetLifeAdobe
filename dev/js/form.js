@@ -565,11 +565,11 @@ $('.productUserQuestion').on('blur', function () {
     }
 });
 
-$(document).on('focus', '.advFormOff .adFormFocus .form-user-ctrl', function () {
+/*$(document).on('focus', '.advFormOff .adFormFocus .form-user-ctrl', function () {
     $('.advFormOff').removeClass('advFormOff')
-});
+});*/
 
-$('.advisorClose').on('click', function (evt) {
+/*$('.advisorClose').on('click', function (evt) {
     evt.preventDefault();
     $('.adImageWidgetFormCon').addClass('advFormOff');
     $('.adImageWidgetFormCon select').val("").trigger('change').removeClass('error').removeClass('formatError');
@@ -581,7 +581,7 @@ $('.advisorClose').on('click', function (evt) {
             $this.val(placeholder);
         }
     })
-});
+});*/
 
 /***** Header End ********************************************************************/
 

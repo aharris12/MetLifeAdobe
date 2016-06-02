@@ -1360,18 +1360,16 @@
 </div>
 
 <!--Office Search-->
-<div class="container office-search bg-gray-1st">
+<div class="container bg-gray-1st">
     <div class="row wrapper">
-        <div class="col-xs-12 col-sm-6 office-search__top">
-            <svg class="icon icon-blue-map brand-1st office-search__icon">
-                <use xlink:href="images/icons-metlife.svg#icon-blue-map"></use>
-            </svg>
-            <span class="office-search__label">Find a MetLife Office Near You</span>
-        </div>
-        <div class="col-xs-12 col-sm-6 office-search__input-container">
-            <div class="office-search__input">
-                <input type="text" placeholder="Zip or City, State" data-required="true" aria-required="true">
-            </div>
+        <div class="office-search">
+            <span class="office-search__icon">
+                <svg class="icon icon-blue-map brand-1st">
+                    <use xlink:href="images/icons-metlife.svg#icon-blue-map"></use>
+                </svg>
+           </span>
+            <p class="office-search__label">Find a MetLife Office Near You</p>
+            <input class="office-search__input" type="text" placeholder="Zip or City, State" data-required="true" aria-required="true">
             <a href="#" class="btn-brand-4th office-search__action">Find</a>
         </div>
     </div>
@@ -1380,7 +1378,9 @@
 <!--Contact Form Card-->
 <div class="container bg-gray-1st padding-50-0-sm">
     <div class="row wrapper form-card">
-        <div class="form-card__img" style="background-size:cover;background-position:center center;background-image: url('images/contact_a_rep_large.jpg');">
+
+        <div class="form-card__img" >
+            <div class="form-card__img__inner" style="background-size:cover;background-position:center center;background-image: url('images/contact_a_rep_large.jpg');"></div>
             <div class="form-card__img__text white">
                 <h3>Find the right life insurance today.</h3>
                 <p>
@@ -2212,10 +2212,6 @@
 <script src="js/blogpost.js"></script>
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
-<script src="js/toolkit-contextual-links.js"></script>
-<script src="js/toolkit-search-page.js"></script>
-<script src="js/toolkit-column.js"></script>
-<script src="js/toolkit-page-title-banner.js"></script>
 <script src="js/share-chat.js"></script>
 <script src="js/contact-us.js"></script>
 <!-- /build -->

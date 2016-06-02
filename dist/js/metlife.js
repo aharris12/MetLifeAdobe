@@ -2223,11 +2223,11 @@ $('.productUserQuestion').on('blur', function () {
     }
 });
 
-$(document).on('focus', '.advFormOff .adFormFocus .form-user-ctrl', function () {
+/*$(document).on('focus', '.advFormOff .adFormFocus .form-user-ctrl', function () {
     $('.advFormOff').removeClass('advFormOff')
-});
+});*/
 
-$('.advisorClose').on('click', function (evt) {
+/*$('.advisorClose').on('click', function (evt) {
     evt.preventDefault();
     $('.adImageWidgetFormCon').addClass('advFormOff');
     $('.adImageWidgetFormCon select').val("").trigger('change').removeClass('error').removeClass('formatError');
@@ -2239,7 +2239,7 @@ $('.advisorClose').on('click', function (evt) {
             $this.val(placeholder);
         }
     })
-});
+});*/
 
 /***** Header End ********************************************************************/
 
@@ -4692,11 +4692,12 @@ function formCardExpand(){
 
 function formCardMinimize(){
     $(".contact-container--form-card .form-minimize").click(function() {
-        $('#requestFormContactCard_Acc').trigger("reset");
+        $('#contactCard').trigger("reset");
         $('.contact-container--form-card .hidden-field').hide();
-        $('#requestFormContactCard_Acc').find('.error').removeClass('error');
-        $('#requestFormContactCard_Acc').find('.errorSpan').removeClass('errorSpanOpen');
-        $('#requestFormContactCard_Acc').find('svg').css('fill','#666');
+        $('#contactCard').find('.error').removeClass('error');
+        $('#contactCard').find('.errorSpan').removeClass('errorSpanOpen');
+        $('#contactCard' +
+            '').find('svg').css('fill','#666');
     });
 };
 

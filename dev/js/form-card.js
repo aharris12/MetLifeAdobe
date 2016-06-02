@@ -17,11 +17,12 @@ function formCardExpand(){
 
 function formCardMinimize(){
     $(".contact-container--form-card .form-minimize").click(function() {
-        $('#requestFormContactCard_Acc').trigger("reset");
+        $('#contactCard').trigger("reset");
         $('.contact-container--form-card .hidden-field').hide();
-        $('#requestFormContactCard_Acc').find('.error').removeClass('error');
-        $('#requestFormContactCard_Acc').find('.errorSpan').removeClass('errorSpanOpen');
-        $('#requestFormContactCard_Acc').find('svg').css('fill','#666');
+        $('#contactCard').find('.error').removeClass('error');
+        $('#contactCard').find('.errorSpan').removeClass('errorSpanOpen');
+        $('#contactCard' +
+            '').find('svg').css('fill','#666');
     });
 };
 
