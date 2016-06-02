@@ -176,13 +176,8 @@ function resizeMegaMenu () {
 
 }
 
-$("body").on("click tap", function (e) {
-    var megaMenuTrigger = $('.megamenu-trigger');
-    var container = $(".search-trigger");
-    if (!container.is(e.target) && container.has(e.target).length === 0 && !megaMenuTrigger) {
-        closeSearchBox();
-    }
-});
+
+
 
 
 function openSearchBox () {
@@ -209,6 +204,15 @@ function closeSearchBox () {
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__search-box').css('width',"0");
 }
+
+$(document).on("click tap", function (e) {
+    var megaMenuTrigger = $(".megamenu-trigger");
+    var container = $(".search-trigger");
+    if (!container.is(e.target) && container.has(e.target).length === 0 &&!megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length==0) {
+        closeSearchBox();
+    }
+});
+
 
 $('.megamenu-trigger').on('click', function(){
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
