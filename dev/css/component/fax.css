@@ -611,6 +611,9 @@
     /**************************** End Directions containcer css ****************************/
 
 }
+.cta_search__container .find-an-x-input__container .cta_search{
+    padding-right: 20%;
+}
 
 @media screen and (min-width: 1024px) {
     /************************** search container css ********************************************/
