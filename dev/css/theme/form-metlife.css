@@ -18,6 +18,9 @@ input, select, textarea {
     outline: none;
     height:40px;
 }
+select{
+    text-align: center;
+}
 textarea {
     height:120px;
     resize: none;
