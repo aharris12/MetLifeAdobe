@@ -9583,12 +9583,12 @@ var hasAcceptanceCookie;
 		if ($(".cookieShell").hasClass("hidden")) {
 			$(".global-header").removeClass("cookie__header");
 			$(".megamenu").removeClass("cookie__megamenu");
-			$(".search-trigger__container").removeClass("cookie__search");
+
 		}else{
 			//var cookieHeight = $(".cookieShell").height();
 			$(".global-header").addClass("cookie__header");
 			$(".megamenu").addClass("cookie__megamenu");
-			$(".search-trigger__container").addClass("cookie__search");
+
 		}
 
 
@@ -9600,7 +9600,7 @@ var hasAcceptanceCookie;
 $(".js-cookieAccept").click(function () {
 	$(".global-header").removeClass("cookie__header");
 	$(".megamenu").removeClass("cookie__megamenu");
-	$(".search-trigger__container").removeClass("cookie__search");
+	
 	$(".megamenu").removeClass('cookie-megamenu--minimized');
 });
 
