@@ -363,7 +363,7 @@ $(window).resize(function(){
 // Show sub menu (mobile only)
 var optionsOpen = false;
 $('.megamenu__main-item').click(function() {
-    if ($(window).width() < breakpointDesktop ) {
+    if ($(window).width() < breakpointTablet ) {
 
         //if (getViewport() == "mobile" || getViewport() == "tablet") {
         if ($(this).find('.megamenu__sub-items').is(':visible')) {
