@@ -45,6 +45,7 @@
         vertical-align: middle;
     }
     .office-search__label{
+        padding-right: 10px;
         font-size: 18px;
         line-height: 40px;
     }
