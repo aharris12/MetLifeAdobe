@@ -141,7 +141,7 @@ function resizeMegaMenu () {
         }
         if ($('.megamenu').hasClass('overlay-scroll__child')) {
             $('.megamenu').removeClass('overlay-scroll__child')
-        } 
+        }
     }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
@@ -1757,6 +1757,7 @@ var metlifeRedesign = {
         });
     },
     onFSubmit: function ($this) {
+        console.log($this);
         var fid = $this.attr('data-fsubmit');
         var $formid = $('[data-fid=' + fid + ']');
         var formStatus = true;
