@@ -14656,7 +14656,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     position: fixed;
     top: 0;
     height: 50px;
-    z-index: 10000;
+    z-index: 1000;
     display: table;
     float: none;
     -webkit-transition: height 500ms ease 0s;
