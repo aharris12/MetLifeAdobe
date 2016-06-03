@@ -3597,6 +3597,7 @@ a:visited {
 }
 
 .megamenu--open{
+    transition: all 0.90s;
     display:block;
     position: absolute;
     top: 50px;
@@ -3611,6 +3612,7 @@ a:visited {
 
 .megamenu__main-item-label,
 .megamenu__main-item-label:visited {
+
     display:block;
     padding: 14px 10px;
     font-size: 14px;
@@ -3636,16 +3638,24 @@ a:visited {
 }
 @media screen and (max-width: 767px){
     .megamenu__sub-items{
-        padding-bottom:0px;
+       padding-bottom:0px;
+
     }
     .megamenu__sub-item {
-        height: 50px;
-        font-size: 14px;
-        color: #ADD0F0;
-        padding-left: 0;
+         height: 50px;
+         font-size: 14px;
+         color: #ADD0F0;
+         padding-left: 0;
+
+     }
+    .megamenu__sub-item:first-of-type {
+    /*    height:51px;
+        margin-top: -10px;*/
 
     }
     .megamenu__sub-item-label {
+        margin: 0;
+        margin-left: 20px;
         display:block;
         font-size: 12px;
         line-height: 14px;

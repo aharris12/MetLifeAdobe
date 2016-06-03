@@ -2,6 +2,10 @@
 var breakpointMobile = 480;
 var breakpointTablet = 751;
 var breakpointDesktop = 1007;
+
+var breakpointMobileOverlay = 480;
+var breakpointTabletOverlay = 768;
+var breakpointDesktopOverlay = 1023;
 var imagesPath = "";
 
 if ( localStorage.getItem("contextPath") ) {
@@ -17,14 +21,26 @@ if ( localStorage.getItem("contextPath") ) {
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-    switch (true) {
-        case vWidth >= breakpointDesktop:
-            screenMode = "desktop";
-            break;
-        case vWidth >= breakpointTablet:
-            screenMode = "tablet";
-            break;
+    if($('body').hasClass("overlay-scroll__parent")){
+        switch (true) {
+            case vWidth >= breakpointDesktopOverlay:
+                screenMode = "desktop";
+                break;
+            case vWidth >= breakpointTabletOverlay:
+                screenMode = "tablet";
+                break;
+        }
+    }else{
+        switch (true) {
+            case vWidth >= breakpointDesktop:
+                screenMode = "desktop";
+                break;
+            case vWidth >= breakpointTablet:
+                screenMode = "tablet";
+                break;
+        }
     }
+
     return screenMode;
 }
 
@@ -119,13 +135,14 @@ $(window).bind('pageshow', function() {
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
-    /*
-    var numSecondMenu = $('.megamenu__main-item:nth-child(n+4)').length;
-   if (getViewport() == "mobile") {
-        $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', '100%');
-    } else {
-        $('.megamenu__top--columns > .megamenu__main-item:nth-child(n+4)').css('width', parseInt(100 / numSecondMenu) + '%');
-    }*/
+    if(getViewport() == "mobile") {
+        if ($('body').hasClass('overlay-scroll__parent')) {
+            $('body').removeClass('overlay-scroll__parent')
+        }
+        if ($('.megamenu').hasClass('overlay-scroll__child')) {
+            $('.megamenu').removeClass('overlay-scroll__child')
+        } 
+    }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
@@ -148,20 +165,17 @@ function resizeMegaMenu () {
     }else{
 
 
-        if($(window).width() < 751){
             if(resizeMenu == true) {
                 if ($(".megamenu__sub-items").css("display") != "none") {
                     $(".megamenu__sub-items").hide()
                 }
 
                 $(".megamenu__main-item").each(function(){
-                    if ($(this).find('svg').attr('class') == "icon icon-chevron-down") {
-                        $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-                    }
+                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
                 });
 
             }
-        }
 
         resizeMenu = false;
 
@@ -221,20 +235,18 @@ $('.megamenu-trigger').on('click', function(){
     closeContactForm();
     $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
 
-console.log('run')
-        if($('body').hasClass('overlay-scroll__parent')){
+    if(getViewport() != "mobile") {
+        if ($('body').hasClass('overlay-scroll__parent')) {
             $('body').removeClass('overlay-scroll__parent')
-        }else{
+        } else {
             $('body').addClass('overlay-scroll__parent')
         }
-
-
-    if($('.megamenu').hasClass('overlay-scroll__child')){
-        $('.megamenu').removeClass('overlay-scroll__child')
-    }else{
-        $('.megamenu').addClass('overlay-scroll__child')
+        if ($('.megamenu').hasClass('overlay-scroll__child')) {
+            $('.megamenu').removeClass('overlay-scroll__child')
+        } else {
+            $('.megamenu').addClass('overlay-scroll__child')
+        }
     }
-
 
     if (getViewport() == "desktop") {
 
@@ -301,6 +313,7 @@ console.log('run')
     }else{
         $("html, body").animate({ scrollTop: 0 }, "slow");
         closeSearchBox();
+
     }
 });
 
@@ -379,9 +392,8 @@ $(window).resize(function(){
 // Show sub menu (mobile only)
 var optionsOpen = false;
 $('.megamenu__main-item').click(function() {
-    if ($(window).width() < breakpointTablet ) {
 
-        //if (getViewport() == "mobile" || getViewport() == "tablet") {
+    if (getViewport() == "mobile" ) {
         if ($(this).find('.megamenu__sub-items').is(':visible')) {
             $(this).find('.megamenu__sub-items').slideUp();
         } else {
@@ -389,21 +401,13 @@ $('.megamenu__main-item').click(function() {
             $(this).find('.megamenu__sub-items').slideToggle();
         }
         //Toggle main menu item's chevron
-        if(optionsOpen == false){
-            console.log("open")
-            optionsOpen = true;
+
+        if($(this).find('svg').attr("class").split(' ')[1] == "icon-chevron-right"){
             $('.megamenu__main-item').each(function(){
                 $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
             });
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
         }else{
-            console.log("close")
-            optionsOpen = false;
-           /* if ($(this).find('svg').attr('class') == "icon icon-chevron-right") {
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
-            } else {
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            }*/
             $('.megamenu__main-item').each(function(){
                 $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
             });
@@ -412,16 +416,6 @@ $('.megamenu__main-item').click(function() {
 
 });
 
-//Create two columns in mega menu when more than 4 items
-// add megamenu__sub-items--two-col to the ul that requires this functionality
-/*$('.megamenu__sub-items--action').each(function(){
-    if($(this).parent().hasClass('megamenu__two--columns')){
-        var len = $(this).find('li').length;
-        if (len > 4){
-            $(this).addClass('megamenu__sub-items--two-col');
-        }
-    }
-});*/
 
 $( ".megamenu--promobox--img" ).each(function() {
     var attr = $(this).attr('data-image-src');

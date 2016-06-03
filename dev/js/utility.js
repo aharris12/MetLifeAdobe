@@ -5,14 +5,26 @@
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-    switch (true) {
-        case vWidth >= breakpointDesktop:
-            screenMode = "desktop";
-            break;
-        case vWidth >= breakpointTablet:
-            screenMode = "tablet";
-            break;
+    if($('body').hasClass("overlay-scroll__parent")){
+        switch (true) {
+            case vWidth >= breakpointDesktopOverlay:
+                screenMode = "desktop";
+                break;
+            case vWidth >= breakpointTabletOverlay:
+                screenMode = "tablet";
+                break;
+        }
+    }else{
+        switch (true) {
+            case vWidth >= breakpointDesktop:
+                screenMode = "desktop";
+                break;
+            case vWidth >= breakpointTablet:
+                screenMode = "tablet";
+                break;
+        }
     }
+
     return screenMode;
 }
 
