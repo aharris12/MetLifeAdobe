@@ -142,10 +142,10 @@ var ss_cached = [];
 
 var ss_gsa_host = null;
 
-var ajaxURL = "/suggest";
+var ajaxURL = "/wps/suggest";
 
 if (window.location.href.indexOf("metlife.com/mmi", 0) >= 0) {
-    ajaxURL = "/mmi/suggest";
+    ajaxURL = "/wps/mmi/suggest";
 }
 
 
