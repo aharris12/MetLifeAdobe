@@ -86,6 +86,7 @@ var metlifeRedesign = {
         });
     },
     onFSubmit: function ($this) {
+        console.log($this);
         var fid = $this.attr('data-fsubmit');
         var $formid = $('[data-fid=' + fid + ']');
         var formStatus = true;

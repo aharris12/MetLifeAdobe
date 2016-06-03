@@ -463,7 +463,7 @@
 }
 /****************** End Directions Container css *******************/
 .fax-results__container .contact-container--form-card{
-    width: 100%;
+    /*width: 100%;*/
 }
 .googleMarkerInfo p{
     margin-bottom: 0;
