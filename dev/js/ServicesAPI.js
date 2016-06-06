@@ -208,13 +208,13 @@ $(".find-an-x-search__container .cta_search").on('focus',function (e) {
 		$('.find-an-x-search--expand').show();
 	}
 });
-$("body").on("click tap", function (e) {
-	var faoTrigger = $('.cta_search');
-	var container = $(".find-an-x-search__container");
-	if (!container.is(e.target) && container.has(e.target).length === 0) {
-		$('.find-an-x-search--expand').hide();
-	}
-});
+/*$("body").on("click tap", function (e) {
+ var faoTrigger = $('.cta_search');
+ var container = $(".find-an-x-search__container");
+ if (!container.is(e.target) && container.has(e.target).length === 0) {
+ $('.find-an-x-search--expand').hide();
+ }
+ });*/
 
 $(".find-an-x-search__container .directions_button").on('click',function (e) {
 	//handle empty val

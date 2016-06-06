@@ -4208,7 +4208,7 @@ a:visited {
     display:block;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .login-popout-msg-container {
         right: -235px;
     }
@@ -4309,7 +4309,7 @@ a:visited {
 }
 
 .login-popout[data-popout-msg]{
-    height:100px;
+    height:135px;
 }
 
 .overlay-scroll__parent{
@@ -4670,6 +4670,9 @@ a:visited {
     width: 100%;
     float: left;
     margin-bottom: 5px;
+}
+.find-office__zip-city-state{
+    padding-right: 50px;
 }
 .find-office__dental-container{
     margin-bottom: 10px;
@@ -15308,7 +15311,7 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 }
 
 .cta_search__container .find-an-x-search--expand{
-    display:none;
+   /* display:none;*/
     padding: 0 20px;
 }
 

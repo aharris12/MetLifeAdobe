@@ -24,6 +24,9 @@
     float: left;
     margin-bottom: 5px;
 }
+.find-office__zip-city-state{
+    padding-right: 50px;
+}
 .find-office__dental-container{
     margin-bottom: 10px;
 }

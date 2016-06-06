@@ -172,7 +172,7 @@ function resizeMegaMenu () {
 
                 $(".megamenu__main-item").each(function(){
                     $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+                    /*$(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')*/
                 });
 
             }
@@ -4506,7 +4506,7 @@ $('#biz-account-purpose').change(function(){
     
 //Show/hide other login types
 //loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').click(function(e){ 
+$('.login-type-trigger').on('click',function(e){
     e.preventDefault();
     //Toggle main menu item's chevron    
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
@@ -9924,13 +9924,13 @@ $(".find-an-x-search__container .cta_search").on('focus',function (e) {
 		$('.find-an-x-search--expand').show();
 	}
 });
-$("body").on("click tap", function (e) {
-	var faoTrigger = $('.cta_search');
-	var container = $(".find-an-x-search__container");
-	if (!container.is(e.target) && container.has(e.target).length === 0) {
-		$('.find-an-x-search--expand').hide();
-	}
-});
+/*$("body").on("click tap", function (e) {
+ var faoTrigger = $('.cta_search');
+ var container = $(".find-an-x-search__container");
+ if (!container.is(e.target) && container.has(e.target).length === 0) {
+ $('.find-an-x-search--expand').hide();
+ }
+ });*/
 
 $(".find-an-x-search__container .directions_button").on('click',function (e) {
 	//handle empty val

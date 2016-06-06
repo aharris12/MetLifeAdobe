@@ -354,7 +354,7 @@
     display:block;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .login-popout-msg-container {
         right: -235px;
     }
@@ -455,7 +455,7 @@
 }
 
 .login-popout[data-popout-msg]{
-    height:100px;
+    height:135px;
 }
 
 .overlay-scroll__parent{

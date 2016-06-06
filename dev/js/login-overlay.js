@@ -91,7 +91,7 @@ $('#biz-account-purpose').change(function(){
     
 //Show/hide other login types
 //loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').click(function(e){ 
+$('.login-type-trigger').on('click',function(e){
     e.preventDefault();
     //Toggle main menu item's chevron    
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
