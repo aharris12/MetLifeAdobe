@@ -12,7 +12,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/06/2016 @17:31:36 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/06/2016 @17:34:15 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -885,11 +885,13 @@
                     <!-- Chris edit 3/30/2016 -->
                     <div class="company-search-container">
                         <p class="company-search-label"><b>Find out if your eligible:</b></p>
-                        <input type="search" id="companyName" class="comapny-name-search"
-                               placeholder="Enter your company name...">
-                        <button class="btn-brand-2nd" type="submit"
-                                onclick="getCode(document.getElementById('companyName').value);">Go
-                        </button>
+                        <div class="company-search-input-container">
+                            <input type="search" id="companyName" class="comapny-name-search"
+                                   placeholder="Enter your company name...">
+                            <button class="btn-brand-2nd" type="submit"
+                                    onclick="getCode(document.getElementById('companyName').value);">Go
+                            </button>
+                        </div>
                     </div>
 
                     <p>Employees and members of participating companies or associations can enjoy these

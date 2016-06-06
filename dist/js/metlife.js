@@ -11562,4 +11562,18 @@ $(".product-card .read-more").click(function (e) {
     var height = $(".global_header").height();
     $('html, body').animate({scrollTop: $(".faq_background").offset().top - height}, 500);
 });
+
+$(function() {
+    console.log("fired");
+    console.log("this works".toLowerCase().replace(/ /g, ''));
+    console.log("this works".toLowerCase().trim() === "thisworks");
+    $.each($('.product-card .action .btn-brand-2nd'), function(index, value) {
+        console.log(value.text.toLowerCase().replace(/ /g, ''));
+        var str = "getmyquote";
+        if(value.text.toLowerCase().trim() === str) {
+            console.log('fired again');
+            value.css("width", "140px");
+        }
+    });
+});
 /***** Product Card Module End ************************************************************/

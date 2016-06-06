@@ -10992,6 +10992,13 @@ ul.bullet-list {
     text-align: center;
     margin-bottom: 0;
 }
+.company-search-input-container button {
+    margin-left: 5px;
+}
+
+.company-search-input-container {
+    text-align: center;
+}
 .content-body input {
     width: 65%;
     height: 40px;
@@ -11137,6 +11144,8 @@ ul.bullet-list {
     .company-search-label {
         text-align: left;
         margin-bottom: 10px;
+        font-size: 13px !important;
+        line-height:40px !important;
     }
     .expand-content {
         display: none;
@@ -11165,6 +11174,10 @@ ul.bullet-list {
         top: 79px !important;
     }
 
+    .company-search-input-container {
+        text-align: left;
+    }
+
 }
 
 @media screen and (min-width: 1024px){
@@ -11191,6 +11204,7 @@ ul.bullet-list {
         display: inline;
         width: 30%;
         text-align: left;
+        font-size: 14px !important;
     }
     .content-body input {
         margin-top: 20px;
@@ -11201,9 +11215,13 @@ ul.bullet-list {
     }
     .shadow {
         left: 158px!important;
-
         top: 62px!important;
-
+    }
+    .company-search-input-container {
+        display: inline;
+    }
+    .company-search-input-container input {
+        margin-left: 5px;
     }
 }
 .wrapper__quote-card {
