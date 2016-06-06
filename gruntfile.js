@@ -137,7 +137,6 @@ module.exports = function (grunt) {
                     'dev/js/product-module.js',
                     'dev/js/subnavigation.js',
                     'dev/js/form.js',
-                    'dev/js/aem_form.js',
                     'dev/js/table-variations.js',
                     'dev/js/login-overlay.js',
                     'dev/js/media-contact.js',
