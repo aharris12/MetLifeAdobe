@@ -979,11 +979,13 @@
                     <!-- Chris edit 3/30/2016 -->
                     <div class="company-search-container">
                         <p class="company-search-label"><b>Find out if your eligible:</b></p>
-                        <input type="search" id="companyName" class="comapny-name-search"
-                               placeholder="Enter your company name...">
-                        <button class="btn-brand-2nd" type="submit"
-                                onclick="getCode(document.getElementById('companyName').value);">Go
-                        </button>
+                        <div class="company-search-input-container">
+                            <input type="search" id="companyName" class="comapny-name-search"
+                                   placeholder="Enter your company name...">
+                            <button class="btn-brand-2nd" type="submit"
+                                    onclick="getCode(document.getElementById('companyName').value);">Go
+                            </button>
+                        </div>
                     </div>
 
                     <p>Employees and members of participating companies or associations can enjoy these
@@ -2019,6 +2021,7 @@
 <script src="js/glossary.js"></script>
 <script src="js/toqjshashtable.js"></script>
 <script src="js/blogpost.js"></script>
+<script src="js/product-card.js"></script>
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
 <script src="js/toolkit-contextual-links.js"></script>
