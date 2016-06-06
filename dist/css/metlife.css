@@ -8653,6 +8653,11 @@ body{
     }
 }
 
+@media screen and (max-width: 767px) {
+    .contextual-link {
+        width: 100%;
+    }
+}
 .cta-box {
 
     display: inline-table;
