@@ -1720,16 +1720,6 @@ function resetForm(fid) {
     
 }
 
-/*contact sidebar*/
-/*$('[placeholder][data-required=true]').each(function () {
-    console.log("broken")
-    $(this).val($(this).attr('placeholder'));
-});
-$('[placeholder][data-placeholder]').each(function () {
-    console.log("broken")
-    $(this).val($(this).attr('placeholder'));
-});*/
-
 $('#productPolicy option[value=""]').attr('selected', true);
 
 
@@ -1758,7 +1748,6 @@ var metlifeRedesign = {
         });
     },
     onFSubmit: function ($this) {
-        console.log($this);
         var fid = $this.attr('data-fsubmit');
         var $formid = $('[data-fid=' + fid + ']');
         var formStatus = true;
@@ -1822,10 +1811,6 @@ var metlifeRedesign = {
                 formStatus = false;
             }
         });
-        
-        
-        console.log(fid);
-
         if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
             formPass(fid);
         } else {
@@ -1862,7 +1847,7 @@ function postLeadform($formid){
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
     //ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
-   $('[data-valid-type=phone]').val($('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         var jsonData = {};
