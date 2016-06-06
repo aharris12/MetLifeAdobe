@@ -16,7 +16,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/06/2016 @15:56:31 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/06/2016 @16:05:20 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
     <!--Staging -->
@@ -84,8 +84,9 @@
             <span class="search-trigger__label">Search</span>
 
             <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
-                <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search"
-                       data-placeholder="">
+                <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+                <input type="text" id="Search" class="search-trigger__search-box js-oldSearch search_openTwo" autocomplete="off" name="query" onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search" data-placeholder="">
                 <input id="overlayerback" class="search-trigger__search-box js-oldSearch" autocomplete="off" type="text">
                 <!--Begin of fix for QC DE8990 5/25/16-->
                 <a href="#" class="search_location_image">
