@@ -7,6 +7,9 @@
     text-transform: uppercase;
     padding: 0;
 }
+.contextual-links-row>div{
+    display: inline-block;
+}
 
 .contextual-links-row a:hover{
     text-decoration: none;
