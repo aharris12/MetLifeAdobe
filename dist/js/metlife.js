@@ -11,7 +11,7 @@ var imagesPath = "";
 if ( localStorage.getItem("contextPath") ) {
     imagesPath = localStorage.getItem("contextPath") + "/images/";
 } else {
-    imagesPath = "/static/images/";
+    imagesPath = "images/";
 }
 
 //
@@ -1317,8 +1317,9 @@ $(".find-office__zip-city-state").on("focus", function(){
 $('.find-office__submit').click(function(){
     event.preventDefault();
     selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
+    var urlStr = "";
     if (validateFindOffice()) {
-        var urlStr = "";
+
         if (selectedBtnGroupOption == "office") {
             urlStr = $('.btn-group .btn.active').attr('data-href') + "?zip=" + zipcode;
             sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());
@@ -9894,7 +9895,16 @@ $(".js-searchSubmit").keypress(function (e) {
 		$('.js-searchSubmit').click();//Trigger search button click event
 	}
 });
-
+$('.js-SearchBox').click(function(e){
+	e.preventDefault();
+	var zipcode = $(".office-search__input").val();
+	var urlStr;
+	if ($(this).hasClass("office-search__action")){
+		sessionStorage.setItem("faoZipCode", $(".office-search__input").val());
+		urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
+		window.location.href = urlStr;
+	}
+});
 $('.search-results-container__correction-text > a').on('click', function (e) {
 	e.preventDefault();
 	var correctionClickedOn = $(this).text();
@@ -11602,14 +11612,14 @@ var ServicesAPI = {
 		}
 		/************LIVE FAO SERVICE***************/
 		$.ajax({
-			 type: 'GET',
-			 url: serviceUrl,
-			 success: function(data) {
-			 ServicesAPI.generateOfficeItems(data)
-			 },
-			 error: function() {
-			 ServicesAPI.handleServiceError()
-			 }
+		 type: 'GET',
+		 url: serviceUrl,
+		 success: function(data) {
+		 ServicesAPI.generateOfficeItems(data)
+		 },
+		 error: function() {
+		 ServicesAPI.handleServiceError()
+		 }
 		 });
 		/************LIVE FAO SERVICE***************/
 

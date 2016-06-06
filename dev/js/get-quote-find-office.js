@@ -73,8 +73,9 @@ $(".find-office__zip-city-state").on("focus", function(){
 $('.find-office__submit').click(function(){
     event.preventDefault();
     selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
+    var urlStr = "";
     if (validateFindOffice()) {
-        var urlStr = "";
+
         if (selectedBtnGroupOption == "office") {
             urlStr = $('.btn-group .btn.active').attr('data-href') + "?zip=" + zipcode;
             sessionStorage.setItem("faoZipCode", $(".find-office__zip-city-state").val());

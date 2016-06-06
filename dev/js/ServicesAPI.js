@@ -178,7 +178,16 @@ $(".js-searchSubmit").keypress(function (e) {
 		$('.js-searchSubmit').click();//Trigger search button click event
 	}
 });
-
+$('.js-SearchBox').click(function(e){
+	e.preventDefault();
+	var zipcode = $(".office-search__input").val();
+	var urlStr;
+	if ($(this).hasClass("office-search__action")){
+		sessionStorage.setItem("faoZipCode", $(".office-search__input").val());
+		urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
+		window.location.href = urlStr;
+	}
+});
 $('.search-results-container__correction-text > a').on('click', function (e) {
 	e.preventDefault();
 	var correctionClickedOn = $(this).text();
@@ -1886,14 +1895,14 @@ var ServicesAPI = {
 		}
 		/************LIVE FAO SERVICE***************/
 		$.ajax({
-			 type: 'GET',
-			 url: serviceUrl,
-			 success: function(data) {
-			 ServicesAPI.generateOfficeItems(data)
-			 },
-			 error: function() {
-			 ServicesAPI.handleServiceError()
-			 }
+		 type: 'GET',
+		 url: serviceUrl,
+		 success: function(data) {
+		 ServicesAPI.generateOfficeItems(data)
+		 },
+		 error: function() {
+		 ServicesAPI.handleServiceError()
+		 }
 		 });
 		/************LIVE FAO SERVICE***************/
 
