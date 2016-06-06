@@ -150,7 +150,6 @@
     margin-bottom: 15px;
     height: 40px;
     background-color: white;
-    background-image: url("../images/form/icon_selection_arrow.png");
     background-position: top 50% right 0px;
     background-size: 18px 40px;
     background-repeat: no-repeat;
@@ -393,7 +392,6 @@
 
 /* line 311, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote .errorArrow {
-    background-image: url("../images/form/icon_select_arrows_error.png");
     background-position: top 50% right 0px !important;
     background-size: 18px !important;
     background-repeat: no-repeat !important;
