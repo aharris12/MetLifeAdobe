@@ -2670,7 +2670,7 @@ a:visited {
 .btn-brand-4th,
 .btn-brand-4th-inv {
     font-size: 12px;
-    line-height: 40px;
+    line-height: 20px;
     font-weight: 600;
     letter-spacing: .5px;
     text-transform: uppercase;
@@ -2683,7 +2683,7 @@ a:visited {
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     margin: 0 auto 10px;
-    padding: 0 20px;
+    padding: 10px 20px;
     display: inline-block;
 }
 
