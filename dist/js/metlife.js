@@ -5670,7 +5670,8 @@ ss_Debugger.prototype.addWaitDebugLine = function (query, type, time) {
     }
 };
 
-
+var ss_use = {};
+ss_use.g = ss_seq.indexOf('g') >= 0 ? true : false;
 // Copyright 2004-2006 Google Inc.
 // All Rights Reserved.
 
