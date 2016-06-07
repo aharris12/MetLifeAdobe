@@ -654,7 +654,6 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
-		console.log(vars)
 		return vars;
 	},
 	getQueryStringNoHash: function(){
@@ -666,7 +665,6 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
-		console.log(vars)
 		return vars;
 	},
 	createPagination : function (result) {
@@ -1365,7 +1363,6 @@ var ServicesAPI = {
 	blogsServiceCall: function(input, searchType) {
 		resultsListHTML = "";
 		$(".results_content").remove();
-		console.log("fired");
 		count = 0;
 		var url = input + "?" + searchType;
 		/*********LOCAL Blog SERVICE***************/
@@ -2378,7 +2375,6 @@ var ServicesAPI = {
 	},
 	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		console.log(pageFrom)
 		if(pageFrom != undefined){
 			name.val(pageFrom);
 			return;

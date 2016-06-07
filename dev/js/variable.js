@@ -11,5 +11,5 @@ var imagesPath = "";
 if ( localStorage.getItem("contextPath") ) {
     imagesPath = localStorage.getItem("contextPath") + "/images/";
 } else {
-    imagesPath = "/static/images/";
+    imagesPath = "images/";
 }

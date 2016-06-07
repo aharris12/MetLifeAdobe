@@ -23,12 +23,15 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
     if(getViewport() == "mobile") {
-        if ($('body').hasClass('overlay-scroll__parent')) {
+        /*if ($('body').hasClass('overlay-scroll__parent')) {
             $('body').removeClass('overlay-scroll__parent')
         }
         if ($('.megamenu').hasClass('overlay-scroll__child')) {
             $('.megamenu').removeClass('overlay-scroll__child')
         }
+        if ($('.login-container').hasClass('overlay-scroll__child')) {
+            $('.login-container').removeClass('overlay-scroll__child')
+        }*/
     }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
@@ -133,6 +136,11 @@ $('.megamenu-trigger').on('click', function(){
         } else {
             $('.megamenu').addClass('overlay-scroll__child')
         }
+        if( $('.login-types').hasClass('overlay-scroll__child')){
+            $('.login-types').removeClass('overlay-scroll__child');
+            $('.login-container').removeClass('overlay-scroll__child');
+        }
+
     }
 
     if (getViewport() == "desktop") {
@@ -267,16 +275,13 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
-  /*  var thisView = getViewport();
-    console.log(thisView)
+    var thisView = getViewport();
     headerPosition();
     resizeMegaMenu();
-    console.log(currentView)
-    console.log(thisView != currentView)
     if(thisView != currentView){
         closeSearchBox();
         closeContactForm();
-    }*/
+    }
 
 });
 
@@ -324,6 +329,7 @@ $('.login-trigger').click(function(e){
         e.preventDefault();
         $('body').addClass('overlay-scroll__parent');
         $('.login-container').addClass('overlay-scroll__child');
+        $('.login-types').addClass('overlay-scroll__child');
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').removeClass("overlay-scroll__child")

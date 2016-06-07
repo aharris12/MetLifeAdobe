@@ -11,7 +11,7 @@ var imagesPath = "";
 if ( localStorage.getItem("contextPath") ) {
     imagesPath = localStorage.getItem("contextPath") + "/images/";
 } else {
-    imagesPath = "/static/images/";
+    imagesPath = "images/";
 }
 
 //
@@ -136,12 +136,15 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
     if(getViewport() == "mobile") {
-        if ($('body').hasClass('overlay-scroll__parent')) {
+        /*if ($('body').hasClass('overlay-scroll__parent')) {
             $('body').removeClass('overlay-scroll__parent')
         }
         if ($('.megamenu').hasClass('overlay-scroll__child')) {
             $('.megamenu').removeClass('overlay-scroll__child')
         }
+        if ($('.login-container').hasClass('overlay-scroll__child')) {
+            $('.login-container').removeClass('overlay-scroll__child')
+        }*/
     }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
@@ -246,6 +249,11 @@ $('.megamenu-trigger').on('click', function(){
         } else {
             $('.megamenu').addClass('overlay-scroll__child')
         }
+        if( $('.login-types').hasClass('overlay-scroll__child')){
+            $('.login-types').removeClass('overlay-scroll__child');
+            $('.login-container').removeClass('overlay-scroll__child');
+        }
+
     }
 
     if (getViewport() == "desktop") {
@@ -380,16 +388,13 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
-  /*  var thisView = getViewport();
-    console.log(thisView)
+    var thisView = getViewport();
     headerPosition();
     resizeMegaMenu();
-    console.log(currentView)
-    console.log(thisView != currentView)
     if(thisView != currentView){
         closeSearchBox();
         closeContactForm();
-    }*/
+    }
 
 });
 
@@ -437,6 +442,7 @@ $('.login-trigger').click(function(e){
         e.preventDefault();
         $('body').addClass('overlay-scroll__parent');
         $('.login-container').addClass('overlay-scroll__child');
+        $('.login-types').addClass('overlay-scroll__child');
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').removeClass("overlay-scroll__child")
@@ -3124,6 +3130,7 @@ var loginTypesPosition = 0;
 $('.login-types').css('top',$(window).height() - 70 + 'px');
 $('.login-container--close').click(function(){
     $('.login-container').hide();
+    $('.login-types').removeClass('overlay-scroll__child');
     $('.login-container').removeClass('overlay-scroll__child');
     $('body').removeClass('overlay-scroll__parent');
 })
@@ -3209,12 +3216,9 @@ $('#biz-account-type').change(function(){
 $('#biz-account-purpose').change(function(){
     $('[data-popout-msg=for_businesses]').show();
 });
-    
-//Show/hide other login types
-//loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').on('click',function(e){
-    e.preventDefault();
-    //Toggle main menu item's chevron    
+
+function toggleLoginTypes() {
+    //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
     } else {
@@ -3232,6 +3236,29 @@ $('.login-type-trigger').on('click',function(e){
         loginTypesPosition = parseInt($('.global-header').height());
     }
     $('.login-type__details').slideToggle(500);
+}
+
+//Show/hide other login types
+//loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
+$('.login-type-trigger').on('click touchstart',function(e){
+    e.preventDefault();
+
+    var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+    switch(clickEvent) {
+        case 'click':
+console.log(clickEvent)
+            toggleLoginTypes()
+            break;
+        case 'touchstart':
+            console.log(clickEvent)
+            toggleLoginTypes()
+
+            break;
+        default:
+            break;
+    }
+
+
     return false;
 });
 
@@ -9077,7 +9104,6 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
-		console.log(vars)
 		return vars;
 	},
 	getQueryStringNoHash: function(){
@@ -9089,7 +9115,6 @@ var ServicesAPI = {
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
-		console.log(vars)
 		return vars;
 	},
 	createPagination : function (result) {
@@ -9788,7 +9813,6 @@ var ServicesAPI = {
 	blogsServiceCall: function(input, searchType) {
 		resultsListHTML = "";
 		$(".results_content").remove();
-		console.log("fired");
 		count = 0;
 		var url = input + "?" + searchType;
 		/*********LOCAL Blog SERVICE***************/
@@ -10801,7 +10825,6 @@ var ServicesAPI = {
 	},
 	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		console.log(pageFrom)
 		if(pageFrom != undefined){
 			name.val(pageFrom);
 			return;

@@ -3,6 +3,7 @@ var loginTypesPosition = 0;
 $('.login-types').css('top',$(window).height() - 70 + 'px');
 $('.login-container--close').click(function(){
     $('.login-container').hide();
+    $('.login-types').removeClass('overlay-scroll__child');
     $('.login-container').removeClass('overlay-scroll__child');
     $('body').removeClass('overlay-scroll__parent');
 })
@@ -88,12 +89,9 @@ $('#biz-account-type').change(function(){
 $('#biz-account-purpose').change(function(){
     $('[data-popout-msg=for_businesses]').show();
 });
-    
-//Show/hide other login types
-//loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').on('click',function(e){
-    e.preventDefault();
-    //Toggle main menu item's chevron    
+
+function toggleLoginTypes() {
+    //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
     } else {
@@ -111,6 +109,29 @@ $('.login-type-trigger').on('click',function(e){
         loginTypesPosition = parseInt($('.global-header').height());
     }
     $('.login-type__details').slideToggle(500);
+}
+
+//Show/hide other login types
+//loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
+$('.login-type-trigger').on('click touchstart',function(e){
+    e.preventDefault();
+
+    var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+    switch(clickEvent) {
+        case 'click':
+console.log(clickEvent)
+            toggleLoginTypes()
+            break;
+        case 'touchstart':
+            console.log(clickEvent)
+            toggleLoginTypes()
+
+            break;
+        default:
+            break;
+    }
+
+
     return false;
 });
 
