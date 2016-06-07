@@ -528,7 +528,7 @@
     /******************************* End search container css **********************************/
 
     .fax__container .contact-container--form-card{
-        padding: 40px;
+        padding: 40px 20px;
     }
 
     /************************ Begin Google Maps css ********************************/
@@ -638,6 +638,10 @@
         display:block;
     }
     /**************************** End Results containcer css ****************************/
+
+    .fax__container .contact-container--form-card{
+        padding: 40px;
+    }
 }
 
 .fax-results__container .results_list_container .results_office_result .results_office_get_directions_dentist {

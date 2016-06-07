@@ -15,7 +15,6 @@ $('.expand-open, .expand-close').click(function () {
         }
         expand.removeAttr("style");
     });
-
     expand.siblings('.expand-open').toggle();
     expand.siblings('.expand-close').toggle();
 });
@@ -29,12 +28,19 @@ $(".product-card .read-more").click(function (e) {
 
 $(function() {
     if ($('.product-card .action .btn-brand-2nd').length != 0) {
+        console.log("fired");
+        console.log($('.product-card .action .btn-brand-2nd'));
+        $('.product-card .action .btn-brand-2nd').filter(function () {
+            var str = "getmyquote";
+            $(this).text.toLowerCase().replace(/ /g,'') == str;
+        });
         $.each($('.product-card .action .btn-brand-2nd'), function (index, value) {
             var str = "getmyquote";
-            if (value.text.toLowerCase().trim() === str) {
+            if (value.text.toLowerCase().replace(/ /g,'') == str) {
+                console.log(value);
                 value.css("width", "140px");
             }
         });
-}
+    }
 });
 /***** Product Card Module End ************************************************************/
