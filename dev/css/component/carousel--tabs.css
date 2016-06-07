@@ -148,7 +148,7 @@
     background-size: contain;
     min-height: 190px;
     padding: 0 15px;
-    background-image: url('http://localhost:63348/MetLifeAdobe/dev/images/life_stage_divider.png');
+    background-image: url('/images/life_stage_divider.png');
 }
 
 .carousel--tabs .two-column-container .v-divider-arrow .row {
