@@ -9,7 +9,7 @@ var breakpointDesktopOverlay = 1023;
 var imagesPath = "";
 
 if ( localStorage.getItem("contextPath") ) {
-    imagesPath = localStorage.getItem("contextPath") + "/images/";
+    imagesPath = localStorage.getItem("contextPath") + "/static/images/";
 } else {
-    imagesPath = "images/";
+    imagesPath = "/satic/images/";
 }
