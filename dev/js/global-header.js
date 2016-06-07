@@ -267,17 +267,16 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
-    var thisView = getViewport();
-    currentView = getViewport();
+  /*  var thisView = getViewport();
+    console.log(thisView)
     headerPosition();
     resizeMegaMenu();
-    while(thisView = getViewport()){
-
-    }
-    if(currentView != getViewport()){
+    console.log(currentView)
+    console.log(thisView != currentView)
+    if(thisView != currentView){
         closeSearchBox();
         closeContactForm();
-    }
+    }*/
 
 });
 
@@ -349,7 +348,9 @@ $('.contact-close').click(function(){
     closeContactForm();
 
 });
-
+$('.productPolicyTypes').on('change', function(){
+    currentView = getViewport();
+})
 function closeContactForm(){
     $('.contact-container--global').stop().animate({right: '-640'}, 400);
     $('.contactSideForm').find('.error-mandatory').removeClass('error-mandatory');

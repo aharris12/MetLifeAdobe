@@ -380,17 +380,16 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
-    var thisView = getViewport();
-    currentView = getViewport();
+  /*  var thisView = getViewport();
+    console.log(thisView)
     headerPosition();
     resizeMegaMenu();
-    while(thisView = getViewport()){
-
-    }
-    if(currentView != getViewport()){
+    console.log(currentView)
+    console.log(thisView != currentView)
+    if(thisView != currentView){
         closeSearchBox();
         closeContactForm();
-    }
+    }*/
 
 });
 
@@ -462,7 +461,9 @@ $('.contact-close').click(function(){
     closeContactForm();
 
 });
-
+$('.productPolicyTypes').on('change', function(){
+    currentView = getViewport();
+})
 function closeContactForm(){
     $('.contact-container--global').stop().animate({right: '-640'}, 400);
     $('.contactSideForm').find('.error-mandatory').removeClass('error-mandatory');
@@ -1850,7 +1851,7 @@ function postLeadform($formid){
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-    //ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
+   // ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
@@ -2047,9 +2048,9 @@ $('[data-required=true]').on('blur', function () {
 });
 
 $(".form-user-ctrl").on('click', function(evt){
-    if($(this).hasClass("error"))
-     console.log("runn");
-    $(this).val("");
+    if($(this).hasClass("error")) {
+        $(this).val("");
+    }
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
@@ -2702,7 +2703,6 @@ function UnsubscribeProcessorSubmit(emailId)  {
 $("[data-fid='contactCard'] input").click(function() {
     console.log("fired contactCard");
     if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        console.log("fired in if statement");
         $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
     }
 });
@@ -8468,7 +8468,7 @@ $(document).ready(function() {
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
-
+	ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
 });
 /****Blog Search****************************************/
 
@@ -10799,14 +10799,10 @@ var ServicesAPI = {
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 	},
-	updatePageFrom: function(input, name){
+	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+		console.log(pageFrom)
 		if(pageFrom != undefined){
-			name.val(pageFrom);
-			return;
-		}
-		pageFrom = input;
-		if(pageFrom != undefined && pageFrom != null && pageFrom != "" && pageFrom != " "){
 			name.val(pageFrom);
 			return;
 		}

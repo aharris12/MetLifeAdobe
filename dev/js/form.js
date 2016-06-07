@@ -173,7 +173,7 @@ function postLeadform($formid){
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-    //ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').attr("data-page-from"), $('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
+   // ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
     var ajaxUrl;
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
@@ -370,9 +370,9 @@ $('[data-required=true]').on('blur', function () {
 });
 
 $(".form-user-ctrl").on('click', function(evt){
-    if($(this).hasClass("error"))
-     console.log("runn");
-    $(this).val("");
+    if($(this).hasClass("error")) {
+        $(this).val("");
+    }
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
@@ -1025,7 +1025,6 @@ function UnsubscribeProcessorSubmit(emailId)  {
 $("[data-fid='contactCard'] input").click(function() {
     console.log("fired contactCard");
     if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        console.log("fired in if statement");
         $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
     }
 });

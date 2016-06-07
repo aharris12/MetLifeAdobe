@@ -45,7 +45,7 @@ $(document).ready(function() {
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
-
+	ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
 });
 /****Blog Search****************************************/
 
@@ -2376,14 +2376,10 @@ var ServicesAPI = {
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 	},
-	updatePageFrom: function(input, name){
+	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+		console.log(pageFrom)
 		if(pageFrom != undefined){
-			name.val(pageFrom);
-			return;
-		}
-		pageFrom = input;
-		if(pageFrom != undefined && pageFrom != null && pageFrom != "" && pageFrom != " "){
 			name.val(pageFrom);
 			return;
 		}
