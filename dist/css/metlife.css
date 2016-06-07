@@ -9889,7 +9889,7 @@ ul.bullet-list {
     position: relative;
     top: -2px;
     top: 0;
-    background-image: url("../images/country-flags-sprite.png");
+    background-image: url("/images/country-flags-sprite.png");
     background-position: 0 0;
 }
 
@@ -14993,7 +14993,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     text-decoration: none;
     text-align: center;
     color: blue;
-    background: url("../images/c2c_face.png") no-repeat 93%;
+    background: url("/images/c2c_face.png") no-repeat 93%;
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position-x: 93%;
@@ -15238,7 +15238,7 @@ a#oo_launch_prompt:hover { background: #009966; }
 }
 
 .oo_tab_right div, #oo_tab div {
-    background-image: url("../images/icon_fb_text_plus.png");
+    background-image: url("/images/icon_fb_text_plus.png");
     background-size: 113%;
     background-position-x: -9px;
     background-position-y: 1px;
@@ -15764,7 +15764,7 @@ div.email-unsub ~ div.contact-us > div.wrapper {
 .fax-directions__container .driving-directions-panel .adp-placemark{
     background-size: 30px 40px;
     display: inline-block;
-    background-image: url("../images/icon_locpin_blue.png");
+    background-image: url("/images/icon_locpin_blue.png");
     background-repeat: no-repeat;
     height: 42px;
     padding-left: 50px;
@@ -16714,6 +16714,6 @@ text-align: center;
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {
     select {
-        background-image:url('images/icon_selectionarrows_white.png')!important; 
+        background-image:url('/images/icon_selectionarrows_white.png')!important;
     }
 } 

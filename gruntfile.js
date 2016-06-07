@@ -369,14 +369,14 @@ module.exports = function (grunt) {
             options: {
               replacements: [{
                 pattern: /..[/]images[/]/g,
-                replacement: '/static/images/'
+                replacement: '/images/'
               },{
                 pattern: /[']images[/]/g,
-                replacement: '\'/static/images/'
+                replacement: '\'/images/'
               },
               {
                 pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]dev[/]images[/]/g,
-                replacement: '/static/images/'
+                replacement: '/images/'
               },
             ]
             }
