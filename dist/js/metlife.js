@@ -112,7 +112,7 @@ if (isDesktop) {
 
 
 //Global Header
-var currentView;
+var currentView = getViewport();
 
 function optionalHeaderCTA() {
     var fao = $('.find-office__container');
@@ -380,8 +380,13 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
+    var thisView = getViewport();
+    currentView = getViewport();
     headerPosition();
     resizeMegaMenu();
+    while(thisView = getViewport()){
+
+    }
     if(currentView != getViewport()){
         closeSearchBox();
         closeContactForm();
@@ -2675,7 +2680,7 @@ function unsubscribeEmailDNSS() {
 }
 // End Validations For Unsubscribe Email
 
-function UnsubscribeProcessorSubmit(emailId)  {    
+function UnsubscribeProcessorSubmit(emailId)  {
     	
 	 var i = "/wps/proxy/MCDNSSService/emailPost.do?email="+emailId;
 	 $.ajax({
@@ -2693,6 +2698,18 @@ function UnsubscribeProcessorSubmit(emailId)  {
          }
    });
 }
+
+$("[data-fid='contactCard'] input").click(function() {
+    console.log("fired contactCard");
+    if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+        console.log("fired in if statement");
+        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
+    }
+});
+
+$('.contactCard .form-minimize').click(function() {
+    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+});
 /**
  * Created by jfeng2 on 12/22/2015.
  */

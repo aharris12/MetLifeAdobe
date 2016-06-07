@@ -1,5 +1,5 @@
 //Global Header
-var currentView;
+var currentView = getViewport();
 
 function optionalHeaderCTA() {
     var fao = $('.find-office__container');
@@ -267,8 +267,13 @@ function adjustMegaMenu(){
 }
 
 $(window).resize(function(){
+    var thisView = getViewport();
+    currentView = getViewport();
     headerPosition();
     resizeMegaMenu();
+    while(thisView = getViewport()){
+
+    }
     if(currentView != getViewport()){
         closeSearchBox();
         closeContactForm();
