@@ -369,11 +369,16 @@ $('[data-required=true]').on('blur', function () {
     }
 });
 
+$(".form-user-ctrl").on('click', function(evt){
+    if($(this).hasClass("error"))
+     console.log("runn");
+    $(this).val("");
+});
+
 $('[data-valid-type=text]').on('blur', function (evt) {
     evt.preventDefault();
     var $this = $(this);
     var val = $this.val();
-    console.log("running")
     var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
     validateOnType(val, $this, re);

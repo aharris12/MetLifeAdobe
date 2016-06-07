@@ -2041,11 +2041,16 @@ $('[data-required=true]').on('blur', function () {
     }
 });
 
+$(".form-user-ctrl").on('click', function(evt){
+    if($(this).hasClass("error"))
+     console.log("runn");
+    $(this).val("");
+});
+
 $('[data-valid-type=text]').on('blur', function (evt) {
     evt.preventDefault();
     var $this = $(this);
     var val = $this.val();
-    console.log("running")
     var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
     validateOnType(val, $this, re);
@@ -11564,16 +11569,13 @@ $(".product-card .read-more").click(function (e) {
 });
 
 $(function() {
-    console.log("fired");
-    console.log("this works".toLowerCase().replace(/ /g, ''));
-    console.log("this works".toLowerCase().trim() === "thisworks");
-    $.each($('.product-card .action .btn-brand-2nd'), function(index, value) {
-        console.log(value.text.toLowerCase().replace(/ /g, ''));
-        var str = "getmyquote";
-        if(value.text.toLowerCase().trim() === str) {
-            console.log('fired again');
-            value.css("width", "140px");
-        }
-    });
+    if ($('.product-card .action .btn-brand-2nd').length != 0) {
+        $.each($('.product-card .action .btn-brand-2nd'), function (index, value) {
+            var str = "getmyquote";
+            if (value.text.toLowerCase().trim() === str) {
+                value.css("width", "140px");
+            }
+        });
+}
 });
 /***** Product Card Module End ************************************************************/
