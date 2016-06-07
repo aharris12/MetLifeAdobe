@@ -375,7 +375,7 @@ module.exports = function (grunt) {
                 replacement: '\'/static/images/'
               },
               {
-                pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]d[/]static[/]images[/]/g,
+                pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]d[/]images[/]/g,
                 replacement: '/static/images/'
               },
             ]
