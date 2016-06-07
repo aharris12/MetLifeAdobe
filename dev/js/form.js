@@ -1021,3 +1021,15 @@ function UnsubscribeProcessorSubmit(emailId)  {
          }
    });
 }
+
+$("[data-fid='contactCard'] input").click(function() {
+    console.log("fired contactCard");
+    if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+        console.log("fired in if statement");
+        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
+    }
+});
+
+$('.contactCard .form-minimize').click(function() {
+    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+});
