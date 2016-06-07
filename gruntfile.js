@@ -364,19 +364,19 @@ module.exports = function (grunt) {
         'string-replace' : {
           dist: {
             files: {
-              'dist/css/metlifeAEM.css' : 'dist/css/metlife.css'
+              'dist/css/metlife.css' : 'dist/css/metlife.css'
             },
             options: {
               replacements: [{
                 pattern: /..[/]images[/]/g,
-                replacement: '/images/'
+                replacement: '/static/images/'
               },{
                 pattern: /[']images[/]/g,
-                replacement: '\'/images/'
+                replacement: '\'/static/images/'
               },
               {
                 pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]dev[/]images[/]/g,
-                replacement: '/images/'
+                replacement: '/static/images/'
               },
             ]
             }
@@ -396,5 +396,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-cssjoin');
     grunt.loadNpmTasks('grunt-string-replace');
     grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','compress']);
-    grunt.registerTask('aemupdate', ['string-replace']);
+
 }; //wrapper function

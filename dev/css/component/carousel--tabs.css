@@ -148,7 +148,7 @@
     background-size: contain;
     min-height: 190px;
     padding: 0 15px;
-    background-image: url('/images/life_stage_divider.png');
+    background-image: url('/static/images/life_stage_divider.png');
 }
 
 .carousel--tabs .two-column-container .v-divider-arrow .row {
