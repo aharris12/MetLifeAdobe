@@ -172,8 +172,8 @@ function postLeadform($formid){
 
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-   // ServicesAPI.updatePageFrom($('[data-fid="' + formName + '"]').find('[name="pageFrom"]'));
+   // var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+    var requestType = $('[data-fid="' + formName + '"]').find("#productPolicy").find(':selected').val()
     var ajaxUrl;
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
@@ -924,7 +924,6 @@ var sessionVars = {
 /***** Radio Selector Begin ***********************************************************/
 // Sets the radio button image
 $(".form-radio-grp svg, .image_radio svg").on('click', function(){
-    console.log("I've been clicked");
     var radioButton = $(this).siblings('input');
     if (!radioButton.prop('checked')){
         radioButton.prop('checked', true);
