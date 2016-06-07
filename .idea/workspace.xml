@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/login-overlay.js" afterPath="$PROJECT_DIR$/dev/js/login-overlay.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/variable.js" afterPath="$PROJECT_DIR$/dev/js/variable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
@@ -87,8 +88,8 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1923077">
-              <caret line="3188" column="0" selection-start-line="3188" selection-start-column="0" selection-end-line="3188" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="170" column="51" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="51" />
               <folding>
                 <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -115,11 +116,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="variable.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="variable.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32922536">
-              <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global-header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="282" column="26" selection-start-line="282" selection-start-column="8" selection-end-line="282" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login-overlay.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7306338">
+              <caret line="136" column="184" selection-start-line="136" selection-start-column="184" selection-end-line="136" selection-end-column="184" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fao.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/fao.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -192,7 +223,6 @@
         <option value="$PROJECT_DIR$/dev/js/product-card.js" />
         <option value="$PROJECT_DIR$/dev/fao.html" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
-        <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
         <option value="$PROJECT_DIR$/dev/contact-advisor.html" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
@@ -208,6 +238,7 @@
         <option value="$PROJECT_DIR$/dev/css/component/feedback.css" />
         <option value="$PROJECT_DIR$/dist/css/metlife.css" />
         <option value="$PROJECT_DIR$/dev/js/variable.js" />
+        <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
       </list>
     </option>
   </component>
@@ -219,8 +250,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="32" />
-    <option name="y" value="22" />
+    <option name="x" value="2" />
     <option name="width" value="1364" />
     <option name="height" value="728" />
   </component>
@@ -447,7 +477,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.homepage.html">
+  <component name="RunManager" selected="JavaScript Debug.fao.html">
     <configuration default="false" name="homepage.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepage.html">
       <method />
     </configuration>
@@ -520,10 +550,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.contact-advisor.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page-2.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.fao.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepage.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.contact-advisor.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page-2.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
       </list>
     </recent_temporary>
@@ -538,12 +568,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00179" summary="de9025">
-      <created>1464806929207</created>
-      <option name="number" value="00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1464806929209</updated>
     </task>
     <task id="LOCAL-00180" summary="grunt">
       <created>1464812239801</created>
@@ -833,11 +857,17 @@
       <option name="project" value="LOCAL" />
       <updated>1465333584381</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="GRuntt">
+      <created>1465335660130</created>
+      <option name="number" value="00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1465335660131</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="22" width="1364" height="728" extended-state="0" />
+    <frame x="2" y="0" width="1364" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1141,14 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/fao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="17.836363">
-          <caret line="1104" column="25" selection-start-line="1104" selection-start-column="25" selection-end-line="1104" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/login-popout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
@@ -1161,22 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71057516">
           <caret line="405" column="9" selection-start-line="395" selection-start-column="8" selection-end-line="405" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.875">
-          <caret line="134" column="61" selection-start-line="134" selection-start-column="56" selection-end-line="134" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53515625">
-          <caret line="125" column="35" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1389,8 +1395,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1923077">
-          <caret line="3188" column="0" selection-start-line="3188" selection-start-column="0" selection-end-line="3188" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="170" column="51" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="51" />
           <folding>
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1416,10 +1422,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/fao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/global-header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="282" column="26" selection-start-line="282" selection-start-column="8" selection-end-line="282" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32922536">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7306338">
+          <caret line="136" column="184" selection-start-line="136" selection-start-column="184" selection-end-line="136" selection-end-column="184" />
           <folding />
         </state>
       </provider>

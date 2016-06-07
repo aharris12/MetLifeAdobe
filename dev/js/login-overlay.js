@@ -119,19 +119,15 @@ $('.login-type-trigger').on('click touchstart',function(e){
     var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
     switch(clickEvent) {
         case 'click':
-console.log(clickEvent)
             toggleLoginTypes()
             break;
         case 'touchstart':
             console.log(clickEvent)
             toggleLoginTypes()
-
             break;
         default:
             break;
     }
-
-
     return false;
 });
 
