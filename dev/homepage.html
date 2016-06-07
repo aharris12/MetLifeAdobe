@@ -674,16 +674,17 @@
                             </svg>
                             <select name="requestType" id="requestType" class="form-user-ctrl user-select"
                                     data-required="true" aria-required="true"
-                                    data-valid-status="failed">
+                                    data-valid-status="failed"
+                                    data-request-type>
                                 <option value="">In reference to ...</option>
-                                <option value="New Product/Planning Services">New Product/Planning Services</option>
-                                <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+                                <option value="New Product/Planning Services"  data-product-url="/wps/glsproxy/gls/processlead.do" >New Product/Planning Services</option>
+                                <option value="Exisiting Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Exisiting Product/Policy</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
                     <div class="col-xs-12">
                         <div class="form-user-grp form-check-grp">
 
@@ -702,7 +703,7 @@
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
@@ -712,7 +713,7 @@
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                              <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"

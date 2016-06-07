@@ -16,7 +16,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/07/2016 @14:54:31 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/07/2016 @15:44:29 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
     <!--Staging -->
@@ -592,16 +592,17 @@
                             </svg>
                             <select name="requestType" id="requestType" class="form-user-ctrl user-select"
                                     data-required="true" aria-required="true"
-                                    data-valid-status="failed">
+                                    data-valid-status="failed"
+                                    data-request-type>
                                 <option value="">In reference to ...</option>
-                                <option value="New Product/Planning Services">New Product/Planning Services</option>
-                                <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+                                <option value="New Product/Planning Services"  data-product-url="/wps/glsproxy/gls/processlead.do" >New Product/Planning Services</option>
+                                <option value="Exisiting Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Exisiting Product/Policy</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
                     <div class="col-xs-12">
                         <div class="form-user-grp form-check-grp">
 
@@ -620,7 +621,7 @@
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
@@ -630,7 +631,7 @@
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="" data-observes-value="">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                              <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"

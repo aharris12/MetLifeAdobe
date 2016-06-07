@@ -168,12 +168,12 @@ $('.contactsClose').click(function (e) {
     metlifeRedesign.closeContacts();
 });
 
+//Current
 function postLeadform($formid){
 
    var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-   // var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-    var requestType = $('[data-fid="' + formName + '"]').find("#productPolicy").find(':selected').val()
+   var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
     var ajaxUrl;
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
     if(requestType == 'New Product/Planning Services'){
@@ -252,6 +252,93 @@ function postLeadform($formid){
 
 
 }
+
+
+//New
+/*function postLeadform($formid){
+
+    var formName = $formid.attr('name');
+    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val()
+    var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val().attr('data-product-url');
+    console.log(ajaxUrl)
+    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+    if(requestType == 'New Product/Planning Services'){
+        //ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
+        var jsonData = {};
+        var formData = $('form[name='+formName+']').serializeArray();
+        $.each(formData, function() {
+            if (jsonData[this.name]) {
+                if (!jsonData[this.name].push) {
+                    jsonData[this.name] = [jsonData[this.name]];
+                }
+                jsonData[this.name].push(this.value || '');
+            } else {
+                jsonData[this.name] = this.value || '';
+            }
+
+        });
+
+        console.log(JSON.stringify(jsonData));
+        $.ajax({
+            url: ajaxUrl,
+            type: 'POST',
+            dataType: 'json',
+            data: JSON.stringify(jsonData),
+            async: true,
+            contentType: 'application/json',
+            processData: false,
+            success: function (returndata) {
+                //console.log(returndata);
+            },
+            error: function(){
+                console.log("error in ajax form submission");
+            }
+        });
+    }
+
+    if(requestType == 'Existing Product/Policy'){
+        //ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
+        if(typeof FormData !== 'undefined'){
+            var formData = new FormData($('form[name='+formName+']')[0]);
+
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        } else {
+            var formData = postSerialize($('form[name='+formName+']'));
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: 'application/x-www-form-urlencoded',
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        }
+    }
+
+
+
+
+}*/
 
 $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 
@@ -521,6 +608,56 @@ $('.productPolicy').on('change', function () {
         $con.find('.productUserType').hide();
     }
 });
+
+/*$('[data-request-type]').on('change', function () {
+    $(this).find('option').eq(1).val('New Product/Planning Services');
+    $(this).find('option').eq(2).val('Existing Product/Policy');
+    var val = $(this).val();
+    var $this = $(this);
+    var $con = $this.closest('.productPolicyTypes');
+    if (val == "New Product/Planning Services") {
+        /!*$con.find('.productUserType').hide();
+        $con.find('.newProductUser').show();*!/
+        var count = 0;
+        $con.find('.newProductUser input[type=checkbox]').each(function () {
+            if ($(this).is(':checked')) {
+                count++;
+            }
+        });
+        //if (count > 0 && count <= 5) {
+        //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+        if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+            $this.attr('data-valid-status', 'success');
+            $this.removeClass('error');
+            $con.find('.productCount').removeClass('errorText');
+        } else {
+            $this.attr('data-valid-status', 'failed');
+            //$this.addClass('error');
+        }
+        if ($this.hasClass('error')) {
+            $con.find('.productCount').addClass('errorText');
+        } else {
+            $con.find('.productCount').removeClass('errorText');
+        }
+    } else if (val == "Existing Product/Policy") {
+        /!*$con.find('.productUserType').hide();
+        $con.find('.existingProductUser').show();*!/
+        var val = $con.find('.productUserQuestion').val();
+        var placeholder = $con.find('.productUserQuestion').attr('placeholder');
+        if (val == "" || val == placeholder) {
+            $this.attr('data-valid-status', 'failed');
+            //$this.addClass('error');
+        } else {
+            $this.attr('data-valid-status', 'success');
+            $this.removeClass('error');
+        }
+        if ($this.hasClass('error')) {
+            $con.find('.productUserQuestion').addClass('error');
+        }
+    } else {
+        $con.find('.productUserType').hide();
+    }
+});*/
 
 $('.user-checkbox').on('click', function () {
     var count = 0;
@@ -1022,7 +1159,6 @@ function UnsubscribeProcessorSubmit(emailId)  {
 }
 
 $("[data-fid='contactCard'] input").click(function() {
-    console.log("fired contactCard");
     if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
         $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
     }
@@ -1031,3 +1167,19 @@ $("[data-fid='contactCard'] input").click(function() {
 $('.contactCard .form-minimize').click(function() {
     $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
 });
+
+$("[data-request-type]").on("change", function(){
+    var thisValue = $(this).val()
+    var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+    var $formid = $('[data-fid=' + thisForm + ']');
+
+    $formid.find('[data-observes-id]').each(function () {
+
+        if($(this).attr('data-observes-value') == thisValue ){
+            $(this).show();
+
+        }else{
+            $(this).hide();
+        }
+    });
+})
