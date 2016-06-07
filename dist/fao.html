@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/06/2016 @17:45:35 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/07/2016 @09:52:17 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -1000,7 +1000,7 @@
                             <span>0</span>
                             <span class="hidden-xs">&nbsp;| Displaying&nbsp;</span>
                         </div>
-                        <select class="page-count drop-down form-control hidden-xs">
+                      <!--  <select class="page-count drop-down form-control hidden-xs">
                             <option selected value="10">10</option>
                             <option value="20">20</option>
                             <option value="50">50</option>
@@ -1012,7 +1012,30 @@
                             <option value="5">5 mi</option>
                             <option value="10">10 mi</option>
                             <option value="30" selected="">30 mi</option>
-                        </select>
+                        </select>-->
+
+                        <div class="form-icon-wrapper hidden-xs">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select class="page-count drop-down form-control hidden-xs">
+                                <option selected value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                            </select>
+                        </div>
+                        <div class="form-icon-wrapper pull-right">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select class="find_an_office_radius form-control">
+                                <option value="1">1 mi</option>
+                                <option value="3">3 mi</option>
+                                <option value="5">5 mi</option>
+                                <option value="10">10 mi</option>
+                                <option value="30" selected="">30 mi</option>
+                            </select>
+                        </div>
 
                         <div class="clearfix "></div>
                     </div>
