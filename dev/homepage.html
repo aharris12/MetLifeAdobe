@@ -610,12 +610,7 @@
                 <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com" />
                 <input type="hidden" name="xmlPath" id="xmlPath" value="/cwa/metlife/system/assets/gls/validationxmls/" />
                 <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal" />
-                &lt;!&ndash; Current &ndash;&gt;
-                <div class="form-user-grp">
-                    <label for="firstName_Acc" class="hidden">First Name</label>
-                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="First Name" data-required="true" aria-required="true" data-valid-type="text">
-                </div>
+
 
                  <div class="row form-row">
 					 <div class="col-xs-12">
@@ -784,14 +779,28 @@
 
                 <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
                     <div class="col-xs-12">
-                        <div class="form-user-grp form-radio-grp">
+                        <div class="form-radio-grp">
                             <label>
-                                <input type="radio" class="user-radio" id="prodInt_Acc_Auto_Home" name="prodInt" value="Auto &amp; Home"><span>Auto &amp; Home</span>
+                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="radio"
+                                       class="user-radio" value="MPC"><span>Auto &amp; Home</span>
                             </label>
                             <label>
-                                <input type="radio" class="user-radio" id="prodInt_Acc_Life" name="prodInt" value="Life Insurance"><span>Life Insurance</span>
+                                <input name="prodInt" id="prodInt_Acc_Life" type="radio"
+                                       class="user-radio" value="LIF"><span>Life Insurance</span>
                             </label>
                         </div>
+
+                        <div class="form-check-grp">
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
+                                       class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
+                            </label>
+                            <label>
+                                <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
+                                       class="user-checkbox" value="LIF"><span>Life Insurance</span>
+                            </label>
+                        </div>
+
                     </div>
                 </div>
 
@@ -996,12 +1005,14 @@
         </div>
         <div class="login-types bg-white">
             <div class="login-type-trigger">
-            <h2 class="login-type-trigger__title">
-                other account types
-                <svg class="icon icon-plus">
-                    <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
-                </svg>
-            </h2>
+	            <a href="#" class="login-type-trigger__title">
+		            <h2 class="">
+		                other account types
+		                <svg class="icon icon-plus">
+		                    <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
+		                </svg>
+		            </h2>
+		        </a>
         </div>
             <div class="row login-type__details">
                 <div class="col-xs-12 col-sm-4">
@@ -1392,10 +1403,10 @@
 </div>
 
 <!-- Get Quote / Find Office -->
-<div class="quote-office">
+<!--<div class="quote-office">
     <div class="row no-padding-top">
 
-        <!-- Product Selector -->
+        &lt;!&ndash; Product Selector &ndash;&gt;
         <div class="get-quote__container home-quote__container cta_header_quote">
             <p>I am interestead in:</p>
 
@@ -1414,8 +1425,8 @@
             <a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
         </div>
 
-        <!-- Quote Tool non-us markets -->
-        <!--<div class="get-quote__container home-quote__container cta_header_quote">
+        &lt;!&ndash; Quote Tool non-us markets &ndash;&gt;
+        &lt;!&ndash;<div class="get-quote__container home-quote__container cta_header_quote">
             <p>I want to get a quote:</p>
 
             <div class="select_wrapper cta_header_quote_type_of_insurance quoteInsurance">
@@ -1715,10 +1726,10 @@
                     </form>
                 </div>
             </div>
-        </div>-->
+        </div>&ndash;&gt;
 
-        <!-- Quote Tool us markets -->
-       <!-- <div class="get-quote__container home-quote__container cta_header_quote">
+        &lt;!&ndash; Quote Tool us markets &ndash;&gt;
+        <div class="get-quote__container home-quote__container cta_header_quote">
 
             <p>I want to get a quote:</p>
 
@@ -1977,10 +1988,10 @@
                 </div>
             </form>
             <a href="#" class="btn btn-brand-2nd cta_header_expand" id="ctaHeaderQuoteSubmit">Go</a>
-        </div>-->
+        </div>
 
 
-        <!-- FAX -->
+        &lt;!&ndash; FAX &ndash;&gt;
         <div class="find-office__container">
             <div class="find-office">
                 <h2 class="quote-office__heading">I want to find a MetLife:</h2>
@@ -2014,19 +2025,19 @@
                     <input type="hidden" class="btn-group-selected" value="">
                 </div>
                 <div class="row">
-                    <!--Begin of fix for QC DE8974 5/24/16-->
+                    &lt;!&ndash;Begin of fix for QC DE8974 5/24/16&ndash;&gt;
                     <div class="find-office__zip-city-state-container">
                         <div class="form-item">
                             <div class="form-item__field">
                                 <input type="text" class="form-input find-office__zip-city-state" placeholder="Zip or City, State">
-                                <!--Begin of fix for QC DE8978 5/25/16-->
+                                &lt;!&ndash;Begin of fix for QC DE8978 5/25/16&ndash;&gt;
                                 <a href="#" class="search_location_image">
                                     <svg class="icon brand-gray-4th icon-crosshair location_search_image">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                              xlink:href="images/icons-metlife.svg#icon-crosshair"></use>
                                     </svg>
                                 </a>
-                                <!--End of fix for DE8978 5/25/16-->
+                                &lt;!&ndash;End of fix for DE8978 5/25/16&ndash;&gt;
                             </div>
                         </div>
                     </div>
@@ -2064,15 +2075,15 @@
                         </div>
                         <a href="#" class="white" data-target="vision_overlay">Don't Know your plan?</a>
                     </div>
-                    <!--Begin of fix for DE8974 5/24/16-->
-                    <div class="find-office--submit"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right" data-fao-market="us">Find an office</a></div>
-                    <!--End of fix for DE8974 5/24/16-->
+                    &lt;!&ndash;Begin of fix for DE8974 5/24/16&ndash;&gt;
+                    <div class="find-office&#45;&#45;submit"><a href="#" class="btn btn-brand-2nd find-office__submit pull-right" data-fao-market="us">Find an office</a></div>
+                    &lt;!&ndash;End of fix for DE8974 5/24/16&ndash;&gt;
                 </div>
             </div>
         </div>
 
     </div>
-</div>
+</div>-->
 
 <!-- Begin Health Guidelines Overlay Section-->
 <div class="container rates-overlay health-guidelines-overlay">

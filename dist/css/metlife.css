@@ -4092,18 +4092,18 @@ a:visited {
     padding: 30px 0 10px 0;
     font-weight:400;
 }
-.login-type-trigger__title {
+.login-type-trigger__title h2{
     text-transform: none;
     font-weight:400;
     font-size: 1.45em;
 }
-.login-type-trigger__title:hover {
+.login-type-trigger__title h2:hover {
     cursor:pointer;
 }
-.login-type-trigger__title:before {
+.login-type-trigger__title h2:before {
     content:"Show "
 }
-.login-type-trigger__title--open:before {
+.login-type-trigger__title--open h2:before {
     content:"Hide "
 }
 .login-type-trigger .icon {
@@ -11938,7 +11938,7 @@ manner*/
     box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
 }
 .contact-container .productUserType,
-.contact-container .form-check-grp label input + span {
+.contact-container .form-check-grp label input + span, .contact-container .form-radio-grp label input + span {
     color:#fff;
 }
 
@@ -12091,19 +12091,19 @@ manner*/
 .productCount {
     margin-bottom: 5px;
 }
-.form-check-grp label {
+.form-check-grp label, .form-radio-grp label {
     display: block;
     position: relative;
     line-height: 20px;
 }
-.form-check-grp label input {
+.form-check-grp label input , .form-radio-grp label input {
     visibility: hidden;
     position: absolute;
 }
-.form-check-grp label input + span {
+.form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
 }
-.form-check-grp label span {
+.form-check-grp label span, .form-radio-grp label span {
     color: #999;
     padding-left: 5px;
     font-weight: normal;
@@ -12243,11 +12243,11 @@ manner*/
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected.png") left top no-repeat;
+    background: url("../../images/form/form_radio_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
-    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected.png") left top no-repeat;
+    background: url("../../images/form/form_radio_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -12291,7 +12291,7 @@ manner*/
     margin-top:0px;
 }
 
-#requestFormRContactUs_Acc .form-check-grp{
+#requestFormRContactUs_Acc .form-check-grp, #requestFormRContactUs_Acc .form-radio-grp{
     padding-top:5px;
     padding-bottom:5px;
 }

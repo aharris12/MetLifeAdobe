@@ -91,6 +91,7 @@ $('#biz-account-purpose').change(function(){
 });
 
 function toggleLoginTypes() {
+    console.log("runn")
     //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
