@@ -182,12 +182,20 @@ function postLeadform($formid){
         var formData = $('form[name='+formName+']').serializeArray();
         $.each(formData, function() {
             if (jsonData[this.name]) {
+
                 if (!jsonData[this.name].push) {
                     jsonData[this.name] = [jsonData[this.name]];
+
                 }
                 jsonData[this.name].push(this.value || '');
             } else {
                 jsonData[this.name] = this.value || '';
+                if (!jsonData[this.name].push) {
+                    if(jsonData[this.name]){
+                        jsonData[this.name] = [jsonData[this.name]];
+
+                    }
+                }
             }
 
         });
@@ -259,7 +267,8 @@ function postLeadform($formid){
 
     var formName = $formid.attr('name');
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val()
+    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+    console.log(requestType)
     var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val().attr('data-product-url');
     console.log(ajaxUrl)
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
