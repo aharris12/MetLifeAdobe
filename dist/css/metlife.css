@@ -12263,7 +12263,7 @@ manner*/
     background-size: 17px 17px;
 }
 .form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
-    background: url("....//images/form/form_slider_chkbx_selected.png") left top no-repeat;
+    background: url("../../images/form/form_slider_chkbx_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
