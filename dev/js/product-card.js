@@ -28,18 +28,20 @@ $(".product-card .read-more").click(function (e) {
 
 $(function() {
     if ($('.product-card .action .btn-brand-2nd').length != 0) {
-        console.log("fired");
-        console.log($('.product-card .action .btn-brand-2nd'));
-        $('.product-card .action .btn-brand-2nd').filter(function () {
+        var buttonsSelected;
+        buttonsSelected = $('.product-card .action .btn-brand-2nd')
+            .filter(function () {
+                var str = "getmyquote";
+                var strlength = str.length;
+                console.log(strlength);
+                console.log("length: " + $(this).text().toLowerCase().replace(/ /g, '').length);
+                $(this).text().toLowerCase().replace(/ /g, '') == str;
+            });
+        console.log(buttonsSelected);
+        console.log(buttonsSelected instanceof jQuery);
+        buttonsSelected.each(function () {
             var str = "getmyquote";
-            $(this).text.toLowerCase().replace(/ /g,'') == str;
-        });
-        $.each($('.product-card .action .btn-brand-2nd'), function (index, value) {
-            var str = "getmyquote";
-            if (value.text.toLowerCase().replace(/ /g,'') == str) {
-                console.log(value);
-                value.css("width", "140px");
-            }
+            $(this).css("width", "140px");
         });
     }
 });
