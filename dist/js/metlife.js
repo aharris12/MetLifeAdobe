@@ -1865,7 +1865,6 @@ function postLeadform($formid){
         var jsonData = {};
         var formData = $('form[name='+formName+']').serializeArray();
         $.each(formData, function() {
-         
             if (jsonData[this.name]) {
 
                 if (!jsonData[this.name].push) {
@@ -1874,11 +1873,12 @@ function postLeadform($formid){
                 }
                 jsonData[this.name].push(this.value || '');
             } else {
-
                 jsonData[this.name] = this.value || '';
                 if (!jsonData[this.name].push) {
-                    jsonData[this.name] = [jsonData[this.name]];
-                    console.log(jsonData[this.name])
+                    if(jsonData[this.name]){
+                        jsonData[this.name] = [jsonData[this.name]];
+
+                    }
                 }
             }
 
@@ -11779,6 +11779,7 @@ $(function() {
         console.log(buttonsSelected instanceof jQuery);
         buttonsSelected.each(function () {
             var str = "getmyquote";
+            console.log("in the each loop");
             $(this).css("width", "140px");
         });
     }
