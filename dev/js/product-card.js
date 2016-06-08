@@ -28,22 +28,14 @@ $(".product-card .read-more").click(function (e) {
 
 $(function() {
     if ($('.product-card .action .btn-brand-2nd').length != 0) {
-        var buttonsSelected;
-        buttonsSelected = $('.product-card .action .btn-brand-2nd')
+        $('.product-card .action .btn-brand-2nd')
             .filter(function () {
-                var str = "getmyquote";
-                var strlength = str.length;
-                console.log(strlength);
-                console.log("length: " + $(this).text().toLowerCase().replace(/ /g, '').length);
-                $(this).text().toLowerCase().replace(/ /g, '') == str;
+                return $(this).text().toLowerCase().length >= 12;
+            }).each(function (i) {
+                $(this).css("width", "140px");
             });
-        console.log(buttonsSelected);
-        console.log(buttonsSelected instanceof jQuery);
-        buttonsSelected.each(function () {
-            var str = "getmyquote";
-            console.log("in the each loop");
-            $(this).css("width", "140px");
-        });
     }
 });
+
+
 /***** Product Card Module End ************************************************************/
