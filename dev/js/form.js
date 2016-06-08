@@ -100,18 +100,13 @@ var metlifeRedesign = {
         //        });
 
         var flag;
-        //console.log($formid)
         $formid.find('[data-required=true]').each(function () {
-//console.log($(this))
             var $this = $(this);
             var placeholder = $this.attr('placeholder');
-            //console.log(placeholder)
-            //console.log($this.val() == placeholder)
             if ($this.val() == placeholder) {
                 $this.val("");
             }
             var val = $this.val();
-            //console.log(val)
             if (val == "New Product/Planning Services") {
                 flag = "New";
             }
@@ -173,300 +168,7 @@ $('.contactsClose').click(function (e) {
     metlifeRedesign.closeContacts();
 });
 
-//Current
-function postLeadform($formid){
 
-   var formName = $formid.attr('name');
-    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-   var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-    var ajaxUrl;
-    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-    if(requestType == 'New Product/Planning Services'){
-        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
-        var jsonData = {};
-        var formData = $('form[name='+formName+']').serializeArray();
-        console.log(formData)
-        $.each(formData, function() {
-            console.log(this.name == "prodInt")
-            if (jsonData[this.name]) {
-
-                if (!jsonData[this.name].push) {
-                    jsonData[this.name] = [jsonData[this.name]];
-
-                }
-                jsonData[this.name].push(this.value || '');
-            } else {
-
-                jsonData[this.name] = this.value || '';
-                if (!jsonData[this.name].push) {
-                    if(this.name == "prodInt"){
-                        jsonData[this.name] = [jsonData[this.name]];
-
-                    }
-                }
-            }
-
-        });
-
-        console.log(JSON.stringify(jsonData));
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            dataType: 'json',
-            data: JSON.stringify(jsonData),
-            async: true,
-            contentType: 'application/json',
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
-    }
-
-    if(requestType == 'Existing Product/Policy'){
-        ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
-        if(typeof FormData !== 'undefined'){
-            var formData = new FormData($('form[name='+formName+']')[0]);
-
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: false,
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        } else {
-            var formData = postSerialize($('form[name='+formName+']'));
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        }
-    }
-
-
-
-
-}
-
-
-//New
-/*function postLeadform($formid){
-    var formName = $formid.attr('name');
-    console.log(formName)
-    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
-    console.log(requestType)
-    var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val().attr('data-product-url');
-    console.log(ajaxUrl)
-    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-
-
-    if(requestType == 'New Product/Planning Services'){
-        var jsonData = {};
-        var formData = $('form[name='+formName+']').serializeArray();
-        $.each(formData, function() {
-            if (jsonData[this.name]) {
-                if (!jsonData[this.name].push) {
-                    jsonData[this.name] = [jsonData[this.name]];
-                }
-                jsonData[this.name].push(this.value || '');
-            } else {
-                jsonData[this.name] = this.value || '';
-            }
-
-        });
-        console.log(JSON.stringify(jsonData));
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            dataType: 'json',
-            data: JSON.stringify(jsonData),
-            async: true,
-            contentType: 'application/json',
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
-    }
-
-    if(requestType == 'Existing Product/Policy'){
-        if(typeof FormData !== 'undefined'){
-            var formData = new FormData($('form[name='+formName+']')[0]);
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: false,
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        } else {
-            var formData = postSerialize($('form[name='+formName+']'));
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        }
-    }
-}*/
-
-//Current
-$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
-
-    //alert("contact from submitted");
-    e.preventDefault();
-    var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
-
-    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
-    if (isValid) {
-
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        postLeadform($formid);
-        $('.productUserType').hide();
-
-        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-            $('.aidFormCon').hide();
-            $('.aiwHeading').hide();
-            $('.advisorClose').hide();
-            $('.adImageThankYou').css("display", "table-cell");
-        } else if (fid == "quoteleadform") {
-            $(this).closest('.quote_right_mlt').hide();
-            $(this).closest('.quote_right_sit').hide();
-            $('.quote_results_thank_you').show();
-        } else if (fid == "contactCard") {
-            var temp = "[data-fid='" + fid + "']";
-            //$("[data-fid='contactCard']").hide();
-            $('.contactCard').hide();
-            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-            setTimeout(function () {
-                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-                    $('.contactCard').show();
-                    $('#requestFormContactCard_Acc').trigger("reset");
-                    $('.form-minimize').trigger('click');
-                });
-            }, 5000);
-        } else if (fid == "contactSidebarQuote") {
-            $(".results-form__text").addClass("hidden");
-            $(".results-form__inputs").addClass("hidden");
-            $(".apply-disclaimer").addClass("hidden");
-            $(".contact-thanks").removeClass("hidden");
-
-        } else {
-            $('.' + fid).fadeOut('slow', function () {
-                setTimeout(function () {
-                    $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
-                }, 5000)
-            });
-        }
-    } else {
-        //alert("invalid");
-    }
-});
-
-//new
-/*$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
-
-    //alert("contact from submitted");
-    e.preventDefault();
-    var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
-
-    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
-    if (isValid) {
-
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        postLeadform($formid);
-
-        $formid.find('[data-observes-id]').each(function () {
-            $(this).hide();
-        });
-
-        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-            $('.aidFormCon').hide();
-            $('.aiwHeading').hide();
-            $('.advisorClose').hide();
-            $('.adImageThankYou').css("display", "table-cell");
-        } else if (fid == "quoteleadform") {
-            $(this).closest('.quote_right_mlt').hide();
-            $(this).closest('.quote_right_sit').hide();
-            $('.quote_results_thank_you').show();
-        } else if (fid == "contactCard") {
-            var temp = "[data-fid='" + fid + "']";
-            //$("[data-fid='contactCard']").hide();
-            $('.contactCard').hide();
-            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-            setTimeout(function () {
-                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-                    $('.contactCard').show();
-                    $('#requestFormContactCard_Acc').trigger("reset");
-                    $('.form-minimize').trigger('click');
-                });
-            }, 5000);
-        } else if (fid == "contactSidebarQuote") {
-            $(".results-form__text").addClass("hidden");
-            $(".results-form__inputs").addClass("hidden");
-            $(".apply-disclaimer").addClass("hidden");
-            $(".contact-thanks").removeClass("hidden");
-
-        } else {
-            $('.' + fid).fadeOut('slow', function () {
-                setTimeout(function () {
-                    $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
-                }, 5000)
-            });
-        }
-    } else {
-        //alert("invalid");
-    }
-});*/
 
 
 $('select[data-required=true]').on('change', function () {
@@ -602,130 +304,9 @@ var validateOnType = function (val, $this, re) {
     }
 };
 
-//Current
-$('.productPolicy').on('change', function () {
-    $(this).find('option').eq(1).val('New Product/Planning Services');
-    $(this).find('option').eq(2).val('Existing Product/Policy');
-    var val = $(this).val();
-    var $this = $(this);
-    var $con = $this.closest('.productPolicyTypes');
-    if (val == "New Product/Planning Services") {
-        $con.find('.productUserType').hide();
-        $con.find('.newProductUser').show();
-        var count = 0;
-        $con.find('.newProductUser input[type=checkbox]').each(function () {
-            if ($(this).is(':checked')) {
-                count++;
-            }
-        });
-        //if (count > 0 && count <= 5) {
-        //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
-        if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
-            $this.attr('data-valid-status', 'success');
-            $this.removeClass('error');
-            $con.find('.productCount').removeClass('errorText');
-        } else {
-            $this.attr('data-valid-status', 'failed');
-            //$this.addClass('error');
-        }
-        if ($this.hasClass('error')) {
-            $con.find('.productCount').addClass('errorText');
-        } else {
-            $con.find('.productCount').removeClass('errorText');
-        }
-    } else if (val == "Existing Product/Policy") {
-        $con.find('.productUserType').hide();
-        $con.find('.existingProductUser').show();
-        var val = $con.find('.productUserQuestion').val();
-        var placeholder = $con.find('.productUserQuestion').attr('placeholder');
-        if (val == "" || val == placeholder) {
-            $this.attr('data-valid-status', 'failed');
-            //$this.addClass('error');
-        } else {
-            $this.attr('data-valid-status', 'success');
-            $this.removeClass('error');
-        }
-        if ($this.hasClass('error')) {
-            $con.find('.productUserQuestion').addClass('error');
-        }
-    } else {
-        $con.find('.productUserType').hide();
-    }
-});
-
-//New
-/*$('[data-request-type]').on('change', function () {
-    $(this).find('option').eq(1).val('New Product/Planning Services');
-    $(this).find('option').eq(2).val('Existing Product/Policy');
-    var val = $(this).val();
-    var $this = $(this);
 
 
-    switch(val) {
-        case 'New Product/Planning Services':
-            console.log("New Product/Planning Services");
-           var thisCheckBox = $(this).parent().parent().parent().parent().find('[data-observes-value="New Product/Planning Services"]');
-            var count = 0;
-            thisCheckBox.find('.input[type=radio]').each(function () {
-                if ($(this).is(':checked')) {
-                    count++;
-                    console.log(count)
-                }
-            });
 
-            break;
-        case 'Existing Product/Policy':
-            console.log("Existing Product/Policy");
-            break;
-        default:
-            break;
-    }
-    /!*if (val == "New Product/Planning Services") {
-        /!*$con.find('.productUserType').hide();
-        $con.find('.newProductUser').show();*!/
-        var count = 0;
-        //$con.find('[data-observes-value="New Product/Planning Services"]')
-        //console.log($con.find('[data-observes-value="New Product/Planning Services"]'))
-        $con.find('.newProductUser input[type=checkbox]').each(function () {
-            if ($(this).is(':checked')) {
-                count++;
-            }
-        });
-        //if (count > 0 && count <= 5) {
-        //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
-
-        if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
-            $this.attr('data-valid-status', 'success');
-            $this.removeClass('error');
-            $con.find('.productCount').removeClass('errorText');
-        } else {
-            $this.attr('data-valid-status', 'failed');
-            //$this.addClass('error');
-        }
-        if ($this.hasClass('error')) {
-            $con.find('.productCount').addClass('errorText');
-        } else {
-            $con.find('.productCount').removeClass('errorText');
-        }
-    } else if (val == "Existing Product/Policy") {
-        /!*$con.find('.productUserType').hide();
-        $con.find('.existingProductUser').show();*!/
-        var val = $con.find('.productUserQuestion').val();
-        var placeholder = $con.find('.productUserQuestion').attr('placeholder');
-        if (val == "" || val == placeholder) {
-            $this.attr('data-valid-status', 'failed');
-            //$this.addClass('error');
-        } else {
-            $this.attr('data-valid-status', 'success');
-            $this.removeClass('error');
-        }
-        if ($this.hasClass('error')) {
-            $con.find('.productUserQuestion').addClass('error');
-        }
-    } else {
-        $con.find('.productUserType').hide();
-    }*!/
-});*/
 
 $('.user-checkbox').on('click', function () {
     var count = 0;
@@ -751,6 +332,25 @@ $('.user-checkbox').on('click', function () {
     }
 });
 
+
+$('.user-radio').on('click', function () {
+        var val = $('[data-request-type]').val();
+        var $this = $(this);
+    switch(val) {
+        case 'New Product/Planning Services':
+            var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
+            sucessInput.attr('data-valid-status', 'success');
+            sucessInput.removeClass('error');
+            $('.productPolicyTypes').find('svg').css('fill', '#fff');
+            break;
+        case 'Existing Product/Policy':
+            break;
+        default:
+            break;
+    }
+});
+
+
 $('.productUserQuestion').on('blur', function () {
     var $this = $(this);
     var $con = $this.closest('.productPolicyTypes');
@@ -771,27 +371,6 @@ $('.productUserQuestion').on('blur', function () {
         $('.productPolicyTypes').find('svg').css('fill', '#666');
     }
 });
-
-/*$(document).on('focus', '.advFormOff .adFormFocus .form-user-ctrl', function () {
-    $('.advFormOff').removeClass('advFormOff')
-});*/
-
-/*$('.advisorClose').on('click', function (evt) {
-    evt.preventDefault();
-    $('.adImageWidgetFormCon').addClass('advFormOff');
-    $('.adImageWidgetFormCon select').val("").trigger('change').removeClass('error').removeClass('formatError');
-    $('.adImageWidgetFormCon input,.adImageWidgetFormCon textarea').val("").removeClass('error').removeClass('formatError');
-    $('.adImageWidgetFormCon input,.adImageWidgetFormCon textarea').each(function () {
-        var $this = $(this);
-        var placeholder = $this.attr('placeholder');
-        if (typeof placeholder != typeof undefined) {
-            $this.val(placeholder);
-        }
-    })
-});*/
-
-/***** Header End ********************************************************************/
-
 
 /***** Expanded Contact Advisor Form Begin *****************************************************/
 $(".firstName, .lastName, .phoneNumber, .emailAddress").click(function () {
@@ -1251,3 +830,366 @@ $("[data-request-type]").on("change", function(){
         }
     });
 })
+
+//Current
+$('.productPolicy').on('change', function () {
+ $(this).find('option').eq(1).val('New Product/Planning Services');
+ $(this).find('option').eq(2).val('Existing Product/Policy');
+ var val = $(this).val();
+ var $this = $(this);
+ var $con = $this.closest('.productPolicyTypes');
+ if (val == "New Product/Planning Services") {
+ $con.find('.productUserType').hide();
+ $con.find('.newProductUser').show();
+ var count = 0;
+ $con.find('.newProductUser input[type=checkbox]').each(function () {
+ if ($(this).is(':checked')) {
+ count++;
+ }
+ });
+ //if (count > 0 && count <= 5) {
+ //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+ if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+ $this.attr('data-valid-status', 'success');
+ $this.removeClass('error');
+ $con.find('.productCount').removeClass('errorText');
+ } else {
+ $this.attr('data-valid-status', 'failed');
+ //$this.addClass('error');
+ }
+ if ($this.hasClass('error')) {
+ $con.find('.productCount').addClass('errorText');
+ } else {
+ $con.find('.productCount').removeClass('errorText');
+ }
+ } else if (val == "Existing Product/Policy") {
+ $con.find('.productUserType').hide();
+ $con.find('.existingProductUser').show();
+ var val = $con.find('.productUserQuestion').val();
+ var placeholder = $con.find('.productUserQuestion').attr('placeholder');
+ if (val == "" || val == placeholder) {
+ $this.attr('data-valid-status', 'failed');
+ //$this.addClass('error');
+ } else {
+ $this.attr('data-valid-status', 'success');
+ $this.removeClass('error');
+ }
+ if ($this.hasClass('error')) {
+ $con.find('.productUserQuestion').addClass('error');
+ }
+ } else {
+ $con.find('.productUserType').hide();
+ }
+ });
+
+function postLeadform($formid){
+
+ var formName = $formid.attr('name');
+ formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+ var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+ var ajaxUrl;
+ $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+ if(requestType == 'New Product/Planning Services'){
+ ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
+ var jsonData = {};
+ var formData = $('form[name='+formName+']').serializeArray();
+ console.log(formData)
+ $.each(formData, function() {
+ console.log(this.name == "prodInt")
+ if (jsonData[this.name]) {
+
+ if (!jsonData[this.name].push) {
+ jsonData[this.name] = [jsonData[this.name]];
+
+ }
+ jsonData[this.name].push(this.value || '');
+ } else {
+
+ jsonData[this.name] = this.value || '';
+ if (!jsonData[this.name].push) {
+ if(this.name == "prodInt"){
+ jsonData[this.name] = [jsonData[this.name]];
+
+ }
+ }
+ }
+
+ });
+
+ console.log(JSON.stringify(jsonData));
+ $.ajax({
+ url: ajaxUrl,
+ type: 'POST',
+ dataType: 'json',
+ data: JSON.stringify(jsonData),
+ async: true,
+ contentType: 'application/json',
+ processData: false,
+ success: function (returndata) {
+ //console.log(returndata);
+ },
+ error: function(){
+ console.log("error in ajax form submission");
+ }
+ });
+ }
+
+ if(requestType == 'Existing Product/Policy'){
+ ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
+ if(typeof FormData !== 'undefined'){
+ var formData = new FormData($('form[name='+formName+']')[0]);
+
+ $.ajax({
+ url: ajaxUrl,
+ type: 'POST',
+ data: formData,
+ async: false,
+ contentType: false,
+ processData: false,
+ success: function (returndata) {
+ //console.log(returndata);
+ },
+ error: function(){
+ console.log("error in ajax form submission");
+ }
+ });
+ } else {
+ var formData = postSerialize($('form[name='+formName+']'));
+ $.ajax({
+ url: ajaxUrl,
+ type: 'POST',
+ data: formData,
+ async: false,
+ contentType: 'application/x-www-form-urlencoded',
+ processData: false,
+ success: function (returndata) {
+ //console.log(returndata);
+ },
+ error: function(){
+ console.log("error in ajax form submission");
+ }
+ });
+ }
+ }
+
+
+
+
+ }
+
+$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
+
+    //alert("contact from submitted");
+    e.preventDefault();
+    var $this = $(this);
+    var isValid = metlifeRedesign.onFSubmit($(this));
+
+    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+    if (isValid) {
+
+        var fid = $this.attr('data-fsubmit');
+        var $formid = $('[data-fid=' + fid + ']');
+        postLeadform($formid);
+        $('.productUserType').hide();
+
+        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+            $('.aidFormCon').hide();
+            $('.aiwHeading').hide();
+            $('.advisorClose').hide();
+            $('.adImageThankYou').css("display", "table-cell");
+        } else if (fid == "quoteleadform") {
+            $(this).closest('.quote_right_mlt').hide();
+            $(this).closest('.quote_right_sit').hide();
+            $('.quote_results_thank_you').show();
+        } else if (fid == "contactCard") {
+            var temp = "[data-fid='" + fid + "']";
+            //$("[data-fid='contactCard']").hide();
+            $('.contactCard').hide();
+            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+            setTimeout(function () {
+                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+                    $('.contactCard').show();
+                    $('#requestFormContactCard_Acc').trigger("reset");
+                    $('.form-minimize').trigger('click');
+                });
+            }, 5000);
+        } else if (fid == "contactSidebarQuote") {
+            $(".results-form__text").addClass("hidden");
+            $(".results-form__inputs").addClass("hidden");
+            $(".apply-disclaimer").addClass("hidden");
+            $(".contact-thanks").removeClass("hidden");
+
+        } else {
+            $('.' + fid).fadeOut('slow', function () {
+                setTimeout(function () {
+                    $('.contactSliderOuterCon').fadeOut(2000);
+                    $('.contactsClose').trigger('click');
+                }, 5000)
+            });
+        }
+    } else {
+        //alert("invalid");
+    }
+});
+
+//new
+/*$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
+
+    //alert("contact from submitted");
+    e.preventDefault();
+    var $this = $(this);
+    var isValid = metlifeRedesign.onFSubmit($(this));
+
+    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+    if (isValid) {
+
+        var fid = $this.attr('data-fsubmit');
+        var $formid = $('[data-fid=' + fid + ']');
+        postLeadform($formid);
+
+        $formid.find('[data-observes-id]').each(function () {
+            $(this).hide();
+        });
+
+        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+            $('.aidFormCon').hide();
+            $('.aiwHeading').hide();
+            $('.advisorClose').hide();
+            $('.adImageThankYou').css("display", "table-cell");
+        } else if (fid == "quoteleadform") {
+            $(this).closest('.quote_right_mlt').hide();
+            $(this).closest('.quote_right_sit').hide();
+            $('.quote_results_thank_you').show();
+        } else if (fid == "contactCard") {
+            var temp = "[data-fid='" + fid + "']";
+            //$("[data-fid='contactCard']").hide();
+            $('.contactCard').hide();
+            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+            setTimeout(function () {
+                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+                    $('.contactCard').show();
+                    $('#requestFormContactCard_Acc').trigger("reset");
+                    $('.form-minimize').trigger('click');
+                });
+            }, 5000);
+        } else if (fid == "contactSidebarQuote") {
+            $(".results-form__text").addClass("hidden");
+            $(".results-form__inputs").addClass("hidden");
+            $(".apply-disclaimer").addClass("hidden");
+            $(".contact-thanks").removeClass("hidden");
+
+        } else {
+            $('.' + fid).fadeOut('slow', function () {
+                setTimeout(function () {
+                    $('.contactSliderOuterCon').fadeOut(2000);
+                    $('.contactsClose').trigger('click');
+                }, 5000)
+            });
+        }
+    } else {
+        //alert("invalid");
+    }
+});
+
+function postLeadform($formid){
+    var formName = $formid.attr('name');
+    //console.log(formName)
+    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+    //console.log(requestType)
+    var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+    // console.log(ajaxUrl)
+    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+
+
+    if(requestType == 'New Product/Planning Services'){
+        var jsonData = {};
+        var formData = $('form[name='+formName+']').serializeArray();
+        $.each(formData, function() {
+            console.log(this.name == "prodInt")
+            if (jsonData[this.name]) {
+
+                if (!jsonData[this.name].push) {
+                    jsonData[this.name] = [jsonData[this.name]];
+
+                }
+                jsonData[this.name].push(this.value || '');
+            } else {
+
+                jsonData[this.name] = this.value || '';
+                if (!jsonData[this.name].push) {
+                    if(this.name == "prodInt"){
+                        jsonData[this.name] = [jsonData[this.name]];
+
+                    }
+                }
+            }
+
+        });
+        /!* $.each(formData, function() {
+         if (jsonData[this.name]) {
+         if (!jsonData[this.name].push) {
+         jsonData[this.name] = [jsonData[this.name]];
+         }
+         jsonData[this.name].push(this.value || '');
+         } else {
+         jsonData[this.name] = this.value || '';
+         }
+
+         });*!/
+        console.log(JSON.stringify(jsonData));
+        $.ajax({
+            url: ajaxUrl,
+            type: 'POST',
+            dataType: 'json',
+            data: JSON.stringify(jsonData),
+            async: true,
+            contentType: 'application/json',
+            processData: false,
+            success: function (returndata) {
+                //console.log(returndata);
+            },
+            error: function(){
+                console.log("error in ajax form submission");
+            }
+        });
+    }
+
+    if(requestType == 'Existing Product/Policy'){
+        if(typeof FormData !== 'undefined'){
+            var formData = new FormData($('form[name='+formName+']')[0]);
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: false,
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        } else {
+            var formData = postSerialize($('form[name='+formName+']'));
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: formData,
+                async: false,
+                contentType: 'application/x-www-form-urlencoded',
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function(){
+                    console.log("error in ajax form submission");
+                }
+            });
+        }
+    }
+}*/

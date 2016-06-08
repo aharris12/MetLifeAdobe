@@ -8,7 +8,8 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="robots" content="noindex, nofollow"/>
-    <title>MetLife - Get a Quote (GLT)</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>MetLife - Subcategory Page (1)</title>
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -17,47 +18,15 @@
 
 </head>
 <body>
-<!--Cookie Banner Start -->
-<script type="text/javascript">
-    // Cookie is automatically added
-    // If false, cookie needs a required button press or navigation to be added
-    var createCookie = true;
-    var cookieName = "MLALUKCookiesAccepted";
-    var Allowimmediatesiteanalytics = false;
 
-    var cookieExpiry = 365;
-    var cookieDelete = false;
-    var cookieNamesDelete = '';
-</script>
-<div class="container">
-    <div class="row cookieShell">
-
-        <div class="wrapper">
-            <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
-                <p>Cookies on Metlife's UK Website</p>
-            </div>
-
-            <div class="inline-block col-sm-8 col-xs-12 cookieShell--description">
-                <p>Metlife.co.uk uses cookies - by continuing to browse our site, you're agreeing to our use of cookies. To learn more about the cookies we use, please see our <a href="#">privacy policy</a>.</p>
-                <p>Cookies will not be set on your computer, phone, or tablet if you visit our privacy policy from this banner.</p>
-            </div>
-
-            <div class="inline-block col-sm-2 col-xs-2 cookieShell--button">
-                <a href="JavaScript:setAcceptCookieDesktop(true);" class="btn btn-brand-2nd js-cookieAccept">Continue</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-<!--Cookie Banner End -->
 
 <!-- Global Header -->
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
         <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
             <div><span class="megamenu-trigger__icon"></span></div>
-
-            <span class="megamenu-trigger__label">MENU</span>
+            <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+            <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
         </div>
         <div class="col home-trigger" title="HOME" data-target="home">
             <a href="#" class="home-trigger__link">
@@ -74,9 +43,17 @@
             <span class="search-trigger__label">Search</span>
 
             <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
-                <input type="text" id="searchInPage" class="search-trigger__search-box" placeholder="Search"
-                       data-placeholder="">
-                <input id="overlayerback" class="search-trigger__search-box" autocomplete="off" type="text">
+                <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+                <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch search_openTwo" autocomplete="off" name="query" onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search" data-placeholder="">
+                <input id="overlayerback" class="search-trigger__search-box js-oldSearch hdinputsearch_gsa_back hidden" autocomplete="off" type="text">
+                <!--Begin of fix for QC DE8990 5/25/16-->
+                <a href="#" class="search_location_image">
+                    <svg class="icon brand-1st icon-search js-searchIconMobile">
+                        <use xlink:href="images/icons-metlife.svg#icon-search"></use>
+                    </svg>
+                </a>
+                <!--End of fix for DE8990 5/25/16-->
             </form>
 
         </div>
@@ -93,35 +70,34 @@
         </div>
         <!-- Login Trigger -->
         <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
-            <span class="login-trigger__label">
+            <a class="login-trigger__label" href="#">
                 Log in
                 <svg class="icon icon-secure-locked">
                     <use xlink:href="images/icons-metlife.svg#icon-secure-locked"></use>
                 </svg>
-            </span>
+            </a>
         </div>
         <!-- User Logged In Trigger-->
-        <!--<div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
-            <a href="#" class="contact-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
+        <!--<div class="col user-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="user-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
             </svg></a>
         </div>-->
     </div>
 </div>
 
-<!-- Mega Menu -->
+<!--New Mega Menu -->
 <div class="row megamenu">
-    <ul class="megamenu__main-items">
+    <ul class="megamenu__main-items megamenu__top--promo">
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label ">INSURANCE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">INSURANCE</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">INSURANCE</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="/Insurance/Life-Insurance/Index.html">Life</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Auto</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Disability</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Dental</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Vision</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp; Health</a></li>
@@ -129,67 +105,22 @@
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">RETIREMENT &amp; INVESTMENTS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BUSINESS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BUSINESS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Annuities</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">IRAs</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Mutual Funds</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Benefits for Employees</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Small Business</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Retirement & Benefit Funding</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Healthcare Reform</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"href="http://#">Thought Leadership</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FINANCIAL PLANNING</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Planning for the Future</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Special Needs Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">LGBT Financial
-                    Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Financial Workshop</a></li>
-
-            </ul>
-        </li>
-        <div class="hidden-xs hidden-sm megamenu__divider"></div>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BUSINESS</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Benefits for Employees</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Small Business</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Retirement
-                    &amp; Benefit Funding</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Healthcare Reform</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Thought Leadership</a></li>
-            </ul>
-        </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BROKERS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BROKERS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BROKERS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -207,7 +138,8 @@
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">ABOUT METLIFE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">About Metlife</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">About Metlife</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -231,30 +163,56 @@
                                                   href="/Press-Room/Index.html">Press Room</a></li>
             </ul>
         </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">SUPPORT &amp; MANAGE</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Contact Us</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">File A Claim</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find an Office
-                    or Advisors</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Dentist</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Vision Provider</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Forms Library</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Unsubscribe/Opt Out</a></li>
-            </ul>
-        </li>
+        <div class="hidden-xs megamenu__divider"></div>
     </ul>
+
+    <ul class="megamenu__main-items megamenu__bottom--promo">
+        <div class="megamenu--promoboxes">
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_1.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Insurance for Your Employees</div>
+                        <div class="megamenu--promobox--content--header--body">Attract and retain top talent with employee benefit solutions that are compelling-and cost effective. <span>Learn More</span></div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_2.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Corprate Reponsibility</div>
+                        <div class="megamenu--promobox--content--header--body">To learn how we are delevering strong returns and creating long-term value, view our new corprate responsibility report. <span>Learn More</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="megamenu--promoboxes">
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_1.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Insurance for Your Employees</div>
+                        <div class="megamenu--promobox--content--header--body">Attract and retain top talent with employee benefit solutions that are compelling-and cost effective. <span>Learn More</span></div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_2.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Corprate Reponsibility</div>
+                        <div class="megamenu--promobox--content--header--body">To learn how we are delevering strong returns and creating long-term value, view our new corprate responsibility report. <span>Learn More</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ul>
+
 </div>
 
 <!-- Contact Form -->
@@ -270,8 +228,8 @@
             <span class="form__title">Have a rep contact me:</span>
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
-            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
+            <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
+                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr" data-new-product="/wps/glsproxy/gls/processlead.do" data-existing-product="/wps/proxy/MCWebForms5KSales/WebFormServletAction">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -292,186 +250,375 @@
                 <input type="hidden" name="bWFCompleted" value="Y">
                 <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
                 <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+                <input type="hidden" name="isSync" id="isSync" value="no" />
+                <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com" />
+                <input type="hidden" name="xmlPath" id="xmlPath" value="/cwa/metlife/system/assets/gls/validationxmls/" />
+                <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal" />
 
-                <div class="form-user-grp">
-                    <label for="firstName_Acc" class="hidden">First Name</label>
-                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="First Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="lastName_Acc">Last Name</label>
-                    <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Last Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="address_Acc">Address</label>
-                    <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="city_Acc">City</label>
-                    <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-statezip-grp row">
-                    <div class="form-user-grp form-state form-icon-wrapper">
+                <!-- <div class="form-user-grp">
+				   <label for="firstName_Acc" class="hidden">First Name</label>
+				   <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+						  placeholder="First Name" data-required="true" aria-required="true" data-valid-type="text">
+			   </div>-->
 
-                        <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
-                                data-required="true" aria-required="true">
-                            <option value="" selected="selected">State</option>
-                            <option class="general" value="AL">AL</option>
-                            <option class="general" value="AK">AK</option>
-                            <option class="general" value="AZ">AZ</option>
-                            <option class="general" value="AR">AR</option>
-                            <option class="general" value="CA">CA</option>
-                            <option class="general" value="CO">CO</option>
-                            <option class="general" value="CT">CT</option>
-                            <option class="general" value="DC">DC</option>
-                            <option class="general" value="DE">DE</option>
-                            <option class="general" value="FL">FL</option>
-                            <option class="general" value="GA">GA</option>
-                            <option class="general" value="HI">HI</option>
-                            <option class="general" value="IA">IA</option>
-                            <option class="general" value="ID">ID</option>
-                            <option class="general" value="IL">IL</option>
-                            <option class="general" value="IN">IN</option>
-                            <option class="general" value="KS">KS</option>
-                            <option class="general" value="KY">KY</option>
-                            <option class="general" value="LA">LA</option>
-                            <option class="general" value="MA">MA</option>
-                            <option class="general" value="MD">MD</option>
-                            <option class="general" value="ME">ME</option>
-                            <option class="general" value="MI">MI</option>
-                            <option class="general" value="MN">MN</option>
-                            <option class="general" value="MO">MO</option>
-                            <option class="general" value="MS">MS</option>
-                            <option class="general" value="MT">MT</option>
-                            <option class="general" value="NC">NC</option>
-                            <option class="general" value="ND">ND</option>
-                            <option class="general" value="NE">NE</option>
-                            <option class="general" value="NH">NH</option>
-                            <option class="general" value="NJ">NJ</option>
-                            <option class="general" value="NM">NM</option>
-                            <option class="general" value="NV">NV</option>
-                            <option class="general" value="NY">NY</option>
-                            <option class="general" value="OH">OH</option>
-                            <option class="general" value="OK">OK</option>
-                            <option class="general" value="OR">OR</option>
-                            <option class="general" value="PA">PA</option>
-                            <option class="general" value="PR">PR</option>
-                            <option class="general" value="RI">RI</option>
-                            <option class="general" value="SC">SC</option>
-                            <option class="general" value="SD">SD</option>
-                            <option class="general" value="TN">TN</option>
-                            <option class="general" value="TX">TX</option>
-                            <option class="general" value="UT">UT</option>
-                            <option class="general" value="VA">VA</option>
-                            <option class="general" value="VT">VT</option>
-                            <option class="general" value="WA">WA</option>
-                            <option class="general" value="WI">WI</option>
-                            <option class="general" value="WV">WV</option>
-                            <option class="general" value="WY">WY</option>
-                        </select>
-                    </div>
-                    <div class="form-user-grp form-zip">
-                        <label class="hidden" for="zip_Acc">Zip</label>
-                        <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
-                               data-required="true" aria-required="true" data-valid-type="zip">
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label for="firstName_Acc" class="hidden">First Name</label>
+                            <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="First Name" data-required="true" aria-required="true" data-valid-type="text">
+                        </div>
                     </div>
                 </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="email_Acc">Email</label>
-                    <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
-                           data-required="true" aria-required="true" data-valid-type="email">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid email address.</span>
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="phone_Acc">Phone</label>
-                    <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
-                           data-valid-type="phone">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid phone number.</span>
-                </div>
-                <div class="productPolicyTypes">
-                    <div class="form-user-grp form-icon-wrapper">
 
-                        <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
-                                title="In reference to ..." data-required="true" aria-required="true"
-                                data-valid-status="failed">
-                            <option value="">In reference to ...</option>
-                            <option value="New Product/Planning Services">New Product/Policy</option>
-                            <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
-                        </select>
+                <!--   <div class="form-user-grp">
+					   <label class="hidden" for="lastName_Acc">Last Name</label>
+					   <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+							  placeholder="Last Name" data-required="true" aria-required="true" data-valid-type="text">
+				   </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="lastName_Acc">Last Name</label>
+                            <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Last Name" data-required="true" aria-required="true" data-valid-type="text">
+                        </div>
                     </div>
-                    <div class="productUserType newProductUser">
-                        <div class="form-check-grp">
-                            <div class="productCount">- Select up to 5 -</div>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox"
-                                       class="user-checkbox" value="ANN"><span>Annuity</span>
-                            </label>
+                </div>
+
+                <!--  <div class="form-user-grp">
+					  <label class="hidden" for="address_Acc">Address</label>
+					  <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
+							 data-required="true" aria-required="true">
+				  </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="address_Acc">Address</label>
+                            <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
+                                   data-required="true" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+
+                <!--  <div class="form-user-grp">
+						 <label class="hidden" for="city_Acc">City</label>
+						 <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+								data-required="true" aria-required="true" data-valid-type="text">
+					 </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="city_Acc">City</label>
+                            <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+                                   data-required="true" aria-required="true" data-valid-type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!--  <div class="form-statezip-grp row">
+					  <div class="form-user-grp form-state form-icon-wrapper">
+						  <svg class="icon">
+							  <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+						  </svg>
+						  <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+								  data-required="true" aria-required="true">
+							  <option value="" selected="selected">State</option>
+							  <option class="general" value="AL">AL</option>
+							  <option class="general" value="AK">AK</option>
+							  <option class="general" value="AZ">AZ</option>
+							  <option class="general" value="AR">AR</option>
+							  <option class="general" value="CA">CA</option>
+							  <option class="general" value="CO">CO</option>
+							  <option class="general" value="CT">CT</option>
+							  <option class="general" value="DC">DC</option>
+							  <option class="general" value="DE">DE</option>
+							  <option class="general" value="FL">FL</option>
+							  <option class="general" value="GA">GA</option>
+							  <option class="general" value="HI">HI</option>
+							  <option class="general" value="IA">IA</option>
+							  <option class="general" value="ID">ID</option>
+							  <option class="general" value="IL">IL</option>
+							  <option class="general" value="IN">IN</option>
+							  <option class="general" value="KS">KS</option>
+							  <option class="general" value="KY">KY</option>
+							  <option class="general" value="LA">LA</option>
+							  <option class="general" value="MA">MA</option>
+							  <option class="general" value="MD">MD</option>
+							  <option class="general" value="ME">ME</option>
+							  <option class="general" value="MI">MI</option>
+							  <option class="general" value="MN">MN</option>
+							  <option class="general" value="MO">MO</option>
+							  <option class="general" value="MS">MS</option>
+							  <option class="general" value="MT">MT</option>
+							  <option class="general" value="NC">NC</option>
+							  <option class="general" value="ND">ND</option>
+							  <option class="general" value="NE">NE</option>
+							  <option class="general" value="NH">NH</option>
+							  <option class="general" value="NJ">NJ</option>
+							  <option class="general" value="NM">NM</option>
+							  <option class="general" value="NV">NV</option>
+							  <option class="general" value="NY">NY</option>
+							  <option class="general" value="OH">OH</option>
+							  <option class="general" value="OK">OK</option>
+							  <option class="general" value="OR">OR</option>
+							  <option class="general" value="PA">PA</option>
+							  <option class="general" value="PR">PR</option>
+							  <option class="general" value="RI">RI</option>
+							  <option class="general" value="SC">SC</option>
+							  <option class="general" value="SD">SD</option>
+							  <option class="general" value="TN">TN</option>
+							  <option class="general" value="TX">TX</option>
+							  <option class="general" value="UT">UT</option>
+							  <option class="general" value="VA">VA</option>
+							  <option class="general" value="VT">VT</option>
+							  <option class="general" value="WA">WA</option>
+							  <option class="general" value="WI">WI</option>
+							  <option class="general" value="WV">WV</option>
+							  <option class="general" value="WY">WY</option>
+						  </select>
+					  </div>
+					  <div class="form-user-grp form-zip">
+						  <label class="hidden" for="zip_Acc">Zip</label>
+						  <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+								 data-required="true" aria-required="true" data-valid-type="zip">
+					  </div>
+				  </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+                                    data-required="true" aria-required="true">
+                                <option value="" selected="selected">State</option>
+                                <option class="general" value="AL">AL</option>
+                                <option class="general" value="AK">AK</option>
+                                <option class="general" value="AZ">AZ</option>
+                                <option class="general" value="AR">AR</option>
+                                <option class="general" value="CA">CA</option>
+                                <option class="general" value="CO">CO</option>
+                                <option class="general" value="CT">CT</option>
+                                <option class="general" value="DC">DC</option>
+                                <option class="general" value="DE">DE</option>
+                                <option class="general" value="FL">FL</option>
+                                <option class="general" value="GA">GA</option>
+                                <option class="general" value="HI">HI</option>
+                                <option class="general" value="IA">IA</option>
+                                <option class="general" value="ID">ID</option>
+                                <option class="general" value="IL">IL</option>
+                                <option class="general" value="IN">IN</option>
+                                <option class="general" value="KS">KS</option>
+                                <option class="general" value="KY">KY</option>
+                                <option class="general" value="LA">LA</option>
+                                <option class="general" value="MA">MA</option>
+                                <option class="general" value="MD">MD</option>
+                                <option class="general" value="ME">ME</option>
+                                <option class="general" value="MI">MI</option>
+                                <option class="general" value="MN">MN</option>
+                                <option class="general" value="MO">MO</option>
+                                <option class="general" value="MS">MS</option>
+                                <option class="general" value="MT">MT</option>
+                                <option class="general" value="NC">NC</option>
+                                <option class="general" value="ND">ND</option>
+                                <option class="general" value="NE">NE</option>
+                                <option class="general" value="NH">NH</option>
+                                <option class="general" value="NJ">NJ</option>
+                                <option class="general" value="NM">NM</option>
+                                <option class="general" value="NV">NV</option>
+                                <option class="general" value="NY">NY</option>
+                                <option class="general" value="OH">OH</option>
+                                <option class="general" value="OK">OK</option>
+                                <option class="general" value="OR">OR</option>
+                                <option class="general" value="PA">PA</option>
+                                <option class="general" value="PR">PR</option>
+                                <option class="general" value="RI">RI</option>
+                                <option class="general" value="SC">SC</option>
+                                <option class="general" value="SD">SD</option>
+                                <option class="general" value="TN">TN</option>
+                                <option class="general" value="TX">TX</option>
+                                <option class="general" value="UT">UT</option>
+                                <option class="general" value="VA">VA</option>
+                                <option class="general" value="VT">VT</option>
+                                <option class="general" value="WA">WA</option>
+                                <option class="general" value="WI">WI</option>
+                                <option class="general" value="WV">WV</option>
+                                <option class="general" value="WY">WY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-4">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="zip_Acc">Zip</label>
+                            <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+                                   data-required="true" aria-required="true" data-valid-type="zip">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- <div class="form-user-grp">
+					 <label class="hidden" for="email_Acc">Email</label>
+					 <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+							data-required="true" aria-required="true" data-valid-type="email">
+					 <span class="errorSpan"><img class="errorSpanImg"
+												  src="images/form/icon_form_error.png"
+												  alt="! Error Image">Please enter a valid email address.</span>
+				 </div>-->
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="email_Acc">Email</label>
+                            <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+                                   data-required="true" aria-required="true" data-valid-type="email">
+                        </div>
+                    </div>
+                </div>
+
+                <!--   <div class="form-user-grp">
+					   <label class="hidden" for="phone_Acc">Phone</label>
+					   <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+							  placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+							  data-valid-type="phone">
+					   <span class="errorSpan"><img class="errorSpanImg"
+													src="images/form/icon_form_error.png"
+													alt="! Error Image">Please enter a valid phone number.</span>
+				   </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="phone_Acc">Phone</label>
+                            <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+                                   data-valid-type="phone">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="productPolicyTypes">
+					 <div class="form-user-grp form-icon-wrapper">
+						 <svg class="icon">
+							 <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+						 </svg>
+						 <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
+								 title="In reference to ..." data-required="true" aria-required="true"
+								 data-valid-status="failed">
+							 <option value="">In reference to ...</option>
+							 <option value="New Product/Planning Services">New Product/Policy</option>
+							 <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+						 </select>
+					 </div>
+					 <div class="productUserType newProductUser">
+						 <div class="form-check-grp">
+							 <label>
+								 <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
+										class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
+							 </label>
+							 <label>
+								 <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
+										class="user-checkbox" value="LIF"><span>Life Insurance</span>
+							 </label>
+						 </div>
+					 </div>
+					 <div class="productUserType existingProductUser">
+						 <div class="form-user-grp">
+							 <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
+							 <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
+									placeholder="Policy/Contract #" data-placeholder="">
+						 </div>
+						 <div class="form-user-grp">
+							 <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
+									   rows="3" class="form-user-ctrl productUserQuestion"
+									   data-placeholder=""></textarea>
+						 </div>
+					 </div>
+				 </div>-->
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="requestType" id="requestType" class="form-user-ctrl user-select"
+                                    data-required="true" aria-required="true"
+                                    data-valid-status="failed">
+                                <option value="">In reference to ...</option>
+                                <option value="New Product/Planning Services">New Product/Planning Services</option>
+                                <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row" data-observes-id="" data-observes-value="">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp form-check-grp">
+
+
                             <label>
                                 <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
                                        class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
                             </label>
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
-                                       class="user-checkbox" value="B01"><span>Disability Income</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
-                                       class="user-checkbox" value="L06"><span>Financial Review</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
-                                       class="user-checkbox" value="INV"><span>Investments</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox"
-                                       class="user-checkbox" value="IRA"><span>IRA</span>
-                            </label>
-                            <label>
                                 <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
                                        class="user-checkbox" value="LIF"><span>Life Insurance</span>
                             </label>
+
+
                         </div>
                     </div>
-                    <div class="productUserType existingProductUser">
+                </div>
+
+                <div class="row form-row" data-observes-id="" data-observes-value="">
+                    <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
                                    placeholder="Policy/Contract #" data-placeholder="">
                         </div>
+                    </div>
+                </div>
+
+                <div class="row form-row" data-observes-id="" data-observes-value="">
+                    <div class="col-xs-12">
                         <div class="form-user-grp">
-                            <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
-                                      rows="3" class="form-user-ctrl productUserQuestion"
-                                      data-placeholder=""></textarea>
+                             <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
+                                       rows="3" class="form-user-ctrl productUserQuestion"
+                                       data-placeholder=""></textarea>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="text-right contactSidebarBtns">
                     <button id="headerContactSideBarSumbit" type="submit"
                             class="contatMeSidebarBtn border-radius-rounded btn btn-brand-2nd"
                             data-fsubmit="contactSidebar">SUBMIT
                     </button>
                 </div>
-                <p class="contactDisclaimer">
-                    By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
-                    using automated technology or a prerecorded voice, to talk about our products and services. If
-                    you don't want to give this permission, you can still get a quote or make a purchase by calling
-                    us directly at 1-800-638-5433.
-                </p>
-
-                <p class="contactDisclaimer">
-                    *<a id="headerContactSideBarMetlifeLink"
-                        href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
-                    company</a> or third party acting on MetLife's behalf.
-                </p>
             </form>
+            <p class="contactDisclaimer">
+                By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
+                using automated technology or a prerecorded voice, to talk about our products and services. If
+                you don't want to give this permission, you can still get a quote or make a purchase by calling
+                us directly at <a class="disabled-anchor" href="tel:1-800-638-5433">1-800-638-5433.</a>
+            </p>
+
+            <p class="contactDisclaimer">
+                *<a id="headerContactSideBarMetlifeLink"
+                    href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
+                company</a> or third party acting on MetLife's behalf.
+            </p>
         </div>
         <div class="contactSideThankyou" id="contactus_lead_thankyou">
             <div class="thanksHeaderText">Thank you for contacting us.</div>
@@ -510,10 +657,20 @@
                                                       class="global-header__logo img-responsive"></a>
             </div>
         </div>
+        <div class="row login-popout__title login-container-alert">
+            <div>
+                <h2>Maintenance Alert</h2>
+                <p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be unavailable. We'are sorry for the inconvinience.</p>
+            </div>
+        </div>
         <h2 class="login-popout__title">Select account type to log in:</h2>
+
         <div class="login-popout">
             <div class="form-item login-type-options">
                 <div class="form-item__field form-icon-wrapper">
+                    <svg class="icon">
+                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                    </svg>
                     <select class="login-type">
                         <option value="for_individuals">For Individuals</option>
                         <option value="for_businesses">For Businesses</option>
@@ -723,509 +880,383 @@
                     <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
                 </p>
             </div>
+
+
         </div>
     </form>
 </div>
 
+<!--Subnav with go back -->
+<div class="container ">
+    <nav class="row subnav-go-back bg-brand-1st-inv">
+        <div class="subnav-go-back__menu">
+            <a href="#">
+                <span><img class="hidden-xs" src="images/subnav_back_arrow.png" alt="back arrow"></span>
+                <span>All Insurance Products</span>
+                <span><img class="hidden-sm hidden-md hidden-lg" src="images/icon_selectionarrows_white.png"
+                           alt="back arrow"></span>
+            </a>
+        </div>
+        <ul class="subnav-go-back__list" id='subnav-goback'>
+            <li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
+                    <div>
+                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
-<!--Jessica edit 3-11-2016-->
-<!--Page Title -->
+<!-- Breadcrumb-->
 <div class="container bg-gray-1st">
-    <div class="row wrapper page-title page-title--results">
-        <h1 class="page-title__heading">Guaranteed Level Term Life Insurance</h1>
-
-        <p>Help cover financial responsibilities for a set time period at a fixed price,
-            with the option to convert to a permanent policy later</p>
+    <div class="row breadcrumb">
+        <span class="breadcrumb__crumb">
+            <a href="#">Home</a>
+        </span>
+        <span>Page Title</span>
     </div>
 </div>
 
-<!--Begin the Results Card-->
+<!--Page Title -->
 <div class="container bg-gray-1st">
-    <div class="row wrapper__quote-card">
-        <div class="results-card__premium-card js-resultsUS">
-            <div class="results-card__premium-card__container">
-                <h2 class="results-card__premium-card__title">Here's your quote!</h2>
+    <div class="row wrapper page-title">
+        <h1 class="page-title__heading">Contact an advisor</h1>
+        <p>
+            Whether you’re just starting to research life insurance policies or you’re ready to apply today, you’ve come
+            to the right place!
+        </p>
+    </div>
+</div>
 
-                <div class="results-card__quoteinfo" data-thousands="," data-cents=".">
-                    <div class="results-card__quoteinfo__arrow-down"></div>
-                    <div class="bottom-padding-20">
-                        <span class="results-card__quoteinfo__currency">$</span>
-                        <span class="results-card__quoteinfo__value" id="QuoteValue"></span>
-                        <span class="results-card__quoteinfo__frequency">/ month</span>
-                    </div>
-                    <div class="results-card__quoteinfo__terms">
-                        <div data-field="coverage">
-                            <span>for </span><span class="value" id="CoverageAmt"></span><span> of coverage</span>
-                        </div>
-                        <div data-field="term">
-                            <span>(</span><span class="value" id="TermLengthValue"></span><span> year term)</span>
-                        </div>
-                    </div>
-                    <div class="inline-block padding-t-20">
-                        <a class="results-card__quoteinfo__viewrates rate-overlay-trigger" data-target="view-all-rates-overlay">View All Rates</a>
+<!--Contact Form Card-->
+<div class="container bg-gray-1st padding-50-0-sm">
+    <div class="row wrapper form-card">
 
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="results-card__quoteinfo__edit inline-block">
-                        <svg class="icon icon-edit">
-                            <use xlink:href="images/icons-metlife.svg#icon-edit"></use>
-                        </svg>
-                        <a class="results-card__quoteinfo__anchor">Edit Your Quote</a>
-                    </div>
-                </div>
+        <div class="form-card__img" >
+            <div class="form-card__img__inner" style="background-size:cover;background-position:center center;background-image: url('images/contact_a_rep_large.jpg');"></div>
+            <div class="form-card__img__text white">
+                <h3>Find the right life insurance today.</h3>
+                <p>
+                    The MetLife Premier Client Group can help you find solutions to
+                    meet your unique needs. Just fill out the form—there's no obligation.
+                </p>
             </div>
         </div>
-        <!--Begin call to apply 2/19/16 Ian-->
-        <div id="lpButtonDiv" style="visibility: visible;">
-            <div class="hider" style="display:none">
-                <div class="ctcShort" id="ctcShort">
-                    <div class="ctcShortCTA">APPLY BY PHONE NOW:</div>
-                    <div class="ctcShortNum">
-                        <a class="disabled-anchor">1-800-792-5773</a>
+        <div class="contact-container contact-container--form-card">
+            <div class="contactCard">
+                <span class="pull-right form-minimize hidden-field hidden-xs"><svg class="icon white">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                         xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg></span>
+                <span class="form__title white">Have a rep contact me:</span>
+                <span class="form__subtitle hidden-field">All fields are required</span>
+
+                <form id="contactCard" name="contactCard" enctype="multipart/form-data"
+                      method="post" class="userForm" data-fid="contactCard" data-url="glu or clr" data-new-product="test" data-existing-product="/wps/proxy/MCWebForms5KSales/WebFormServletAction">
+                    <input type="hidden" id="thankYouPage" name="thankYouPage">
+                    <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
+                    <input type="hidden" id="isLead" name="isLead" value="true">
+                    <input type="hidden" id="subject" value="Consult with a MetLife Representative" name="subject">
+                    <input type="hidden" id="site" value="MetLife Online: Consult with a MetLife Representative"
+                           name="site">
+                    <input type="hidden" id="requiredFields"
+                           value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType"
+                           name="requiredFields">
+                    <input type="hidden" id="confirmationmailText"
+                           value="*****PLEASE DO NOT REPLY TO THIS AUTO-ACKNOWLEDGEMENT***** Dear 'Name', Thank You for contacting MetLife Online Support. We have received your inquiry, which will be personally reviewed by one of our consultants. Our normal response time is within 1-2 business days. We believe in world class service and will do everything we can to make sure that your inquiry is answered promptly and accurately. Should you wish to speak with a Customer Service Consultant you may call 866-881-0784 between the hours of 8am and 5pm, Central Time, Monday through Friday. Please be advised that some computers may have a firwewall or spam blocker, which may not allow our email to be received to you. Please be sure to add our email address to your address book, so that it will not be blocked. If you experience additional difficulties in receiving your email, we might suggest using a different computer. Your message identification number is 'MessageID'. Thank you, MetLife Online Customer Support 'Gurantees for the if in life.'"
+                           name="confirmationmailText">
+                    <input type="hidden"
+                           value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInt,policyNo,questionOrComment,pageFrom"
+                           id="sortOrder" name="sortOrder">
+                    <input type="hidden" value="ML_ST_Home_sidebar" name="pageFrom">
+                    <input type="hidden" value="state,email,prodInt" name="lstPnPParameters">
+                    <input type="hidden" name="bWFCompleted" value="Y">
+                    <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
+                    <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+
+                    <div class="form-user-grp">
+                        <label for="firstName_Acc" class="hidden">First Name</label>
+                        <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+                               placeholder="First Name" data-required="true" aria-required="true">
                     </div>
-                </div>
-                <div class="ctcTall topped" id="ctcTall">
-                    <div class="ctcRow1">Apply by phone now:</div>
-                    <div class="ctcRow2">
-                        <div class="ctcRow2Text">Let us call now</div>
-                        <input class="ctcPhoneField" type="text" id="phone" tabindex="1" maxlength="12" onkeyup="ctcUP(this,event);" onkeydown="ctcDOWN(this,event);" onblur="ctcBlur(this);" onfocus="ctcFocus(this);click2calltcpa();" name="phone" value="Phone">
-                        <a href="javascript:;" tabindex="2" onclick="ctcSubmit(this);">
-                            <div class="ctcButton" onclick="javascript:lpMTagConfig.dynButton0.actionHook();">&nbsp;</div>
-                        </a>
+                    <div class="form-user-grp">
+                        <label class="hidden" for="lastName_Acc">Last Name</label>
+                        <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+                               placeholder="Last Name" data-required="true" aria-required="true">
                     </div>
-                    <div class="ctcRow3">
-                        <div class="ctcRow3Text">Or call us at</div>
-                        <div class="ctcPhoneNum">
-                            <a class="disabled-anchor">1-800-792-5773</a>
+                    <div class="form-user-grp hidden-field">
+                        <label class="hidden" for="address_Acc">Address</label>
+                        <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
+                               data-required="true" aria-required="true">
+                    </div>
+                    <div class="form-user-grp hidden-field">
+                        <label class="hidden" for="city_Acc">City</label>
+                        <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+                               data-required="true" aria-required="true">
+                    </div>
+                    <div class="form-statezip-grp row hidden-field">
+                        <div class="form-user-grp form-state form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+                                    data-required="true" aria-required="true">
+                                <option value="" selected="selected">State</option>
+                                <option class="general" value="AL">AL</option>
+                                <option class="general" value="AK">AK</option>
+                                <option class="general" value="AZ">AZ</option>
+                                <option class="general" value="AR">AR</option>
+                                <option class="general" value="CA">CA</option>
+                                <option class="general" value="CO">CO</option>
+                                <option class="general" value="CT">CT</option>
+                                <option class="general" value="DC">DC</option>
+                                <option class="general" value="DE">DE</option>
+                                <option class="general" value="FL">FL</option>
+                                <option class="general" value="GA">GA</option>
+                                <option class="general" value="HI">HI</option>
+                                <option class="general" value="IA">IA</option>
+                                <option class="general" value="ID">ID</option>
+                                <option class="general" value="IL">IL</option>
+                                <option class="general" value="IN">IN</option>
+                                <option class="general" value="KS">KS</option>
+                                <option class="general" value="KY">KY</option>
+                                <option class="general" value="LA">LA</option>
+                                <option class="general" value="MA">MA</option>
+                                <option class="general" value="MD">MD</option>
+                                <option class="general" value="ME">ME</option>
+                                <option class="general" value="MI">MI</option>
+                                <option class="general" value="MN">MN</option>
+                                <option class="general" value="MO">MO</option>
+                                <option class="general" value="MS">MS</option>
+                                <option class="general" value="MT">MT</option>
+                                <option class="general" value="NC">NC</option>
+                                <option class="general" value="ND">ND</option>
+                                <option class="general" value="NE">NE</option>
+                                <option class="general" value="NH">NH</option>
+                                <option class="general" value="NJ">NJ</option>
+                                <option class="general" value="NM">NM</option>
+                                <option class="general" value="NV">NV</option>
+                                <option class="general" value="NY">NY</option>
+                                <option class="general" value="OH">OH</option>
+                                <option class="general" value="OK">OK</option>
+                                <option class="general" value="OR">OR</option>
+                                <option class="general" value="PA">PA</option>
+                                <option class="general" value="PR">PR</option>
+                                <option class="general" value="RI">RI</option>
+                                <option class="general" value="SC">SC</option>
+                                <option class="general" value="SD">SD</option>
+                                <option class="general" value="TN">TN</option>
+                                <option class="general" value="TX">TX</option>
+                                <option class="general" value="UT">UT</option>
+                                <option class="general" value="VA">VA</option>
+                                <option class="general" value="VT">VT</option>
+                                <option class="general" value="WA">WA</option>
+                                <option class="general" value="WI">WI</option>
+                                <option class="general" value="WV">WV</option>
+                                <option class="general" value="WY">WY</option>
+                            </select>
+                        </div>
+                        <div class="form-user-grp form-zip hidden-field">
+                            <label class="hidden" for="zip_Acc">Zip</label>
+                            <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+                                   data-required="true" aria-required="true" data-valid-type="zip">
                         </div>
                     </div>
-                </div>
-                <div id="tcpa_c2c" style="display: none;">By clicking Call Me Now, you agree that we* may contact you at the number you've provided, possibly using automated technology or a prerecorded voice, to talk about our products and services. If you don't want to give this permission, you can still get a quote or make a purchase by calling us directly at 1-800-792-5773.
-                    <p>
-                        *<a target="_blank" href="/about/corporate-profile/affiliates/index.html">A MetLife company or a third party</a> acting on MetLife's behalf
+                    <div class="form-user-grp">
+                        <label class="hidden" for="email_Acc">Email</label>
+                        <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+                               data-required="true" aria-required="true" data-valid-type="email">
+                        <span class="errorSpan"><img class="errorSpanImg"
+                                                     src="images/form/icon_form_error.png"
+                                                     alt="! Error Image">Please enter a valid email address.</span>
+                    </div>
+                    <div class="form-user-grp">
+                        <label class="hidden" for="phone_Acc">Phone</label>
+                        <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+                               placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+                               data-valid-type="phone">
+                    <span class="errorSpan"><img class="errorSpanImg"
+                                                 src="images/form/icon_form_error.png"
+                                                 alt="! Error Image">Please enter a valid phone number.</span>
+                    </div>
+                    <div class="productPolicyTypes hidden-field">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy productPolicy"
+                                    title="In reference to ..." data-required="true" aria-required="true"
+                                    data-valid-status="failed">
+                                <option value="">In reference to ...</option>
+                                <option value="New Product/Planning Services">New Product/Policy</option>
+                                <option value="Existing Product/Policy">Exisiting Product/Policy</option>
+                            </select>
+                        </div>
+                        <div class="productUserType newProductUser">
+                            <div class="form-check-grp">
+                                <div class="productCount">- Select up to 5 -</div>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox" class="user-checkbox"
+                                           value="ANN"><span>Annuity</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
+                                           class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
+                                           class="user-checkbox" value="B01"><span>Disability Income</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
+                                           class="user-checkbox" value="L06"><span>Financial Review</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
+                                           class="user-checkbox" value="INV"><span>Investments</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox" class="user-checkbox"
+                                           value="IRA"><span>IRA</span>
+                                </label>
+                                <label>
+                                    <input name="prodInt" id="prodInt_Acc_Life" type="checkbox" class="user-checkbox"
+                                           value="LIF"><span>Life Insurance</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="productUserType existingProductUser">
+                            <div class="form-user-grp">
+                                <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
+                                <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
+                                       placeholder="Policy/Contract #" data-placeholder="">
+                            </div>
+                            <div class="form-user-grp">
+                                <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
+                                          rows="3" class="form-user-ctrl productUserQuestion"
+                                          data-placeholder=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-left contactSidebarBtns">
+                        <button id="headerContactSideBarSumbit" type="submit"
+                                class="contatMeContactCardBtn border-radius-rounded btn btn-brand-2nd"
+                                data-fsubmit="contactCard">SUBMIT
+                        </button>
+                    </div>
+                    <p class="contactDisclaimer hidden-field hidden-field">
+                        By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
+                        using automated technology or a prerecorded voice, to talk about our products and services. If
+                        you don't want to give this permission, you can still get a quote or make a purchase by calling
+                        us directly at 1-800-638-5433.
                     </p>
-                </div>
-            </div>
-        </div>
-        <!--End call to apply 2/19/16 Ian-->
-        <div class="results-form__wrapper bg-brand-1st white">
-            <div class="results-form__text">
-                <h2>Want to buy this insurance? It's easy:</h2>
-                <ul class="results-form__text__list">
-                    <li>Fill out the form or call to apply</li>
-                    <li>You can't be turned down for medical reasons</li>
-                    <li>Coverage can start today!</li>
-                </ul>
-                <!--Begin Remove image html Ian Cunningham 2/12/16-->
-                <!--<div class="result-form__image visible-md visible-lg">
-                    <img src="images/quote_woodstock.png">
-                </div>-->
-                <!--End Remove image html Ian Cunningham 2/12/16-->
-            </div>
-            <div class="results-form__inputs">
-                <div class="results-form__header">Start by telling us how to reach you:</div>
-                <form>
-                    <div class="form-user-grp">
-                        <label for="FirstName" class="hidden">First Name</label>
-                        <input type="text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="FirstName" title="First Name"
-                               placeholder="First Name" data-valid-type>
-                    </div>
-                    <div class="form-user-grp">
-                        <label for="LastName" class="hidden">Last Name</label>
-                        <input type="text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="LastName" title="Last Name"
-                               placeholder="Last Name" data-valid-type>
-                    </div>
-                    <div class="form-user-grp">
-                        <label for="Phone" class="hidden">Phone</label>
-                        <input type="text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="Phone" title="Phone"
-                               placeholder="Phone" data-valid-type>
-                    </div>
-                    <div class="form-user-grp">
-                        <label for="Email" class="hidden">Email</label>
-                        <input type = "text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="Email" title="Email"
-                               placeholder="Email*" data-valid-type>
-                    </div>
-                    <div class="form-user-grp hidden">
-                        <label for="Address" class="hidden">Address</label>
-                        <input type = "text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="Address" title="Address"
-                               placeholder="Address" data-valid-type>
-                    </div>
-                    <!--Changed class name for div that holds state selector and city input 2/25/16 Ian-->
-                    <div class="form-user-grp-location hidden">
-                        <!--Added div around selector class 2/26/16 Ian-->
-                        <div class="form-user-grp-location--state">
-                            <select class="state_select" name="state" required="required" data-validation="true">
-                                <option value="">State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                        </div>
-                        <!--End of added div around selector class 2/26/16 Ian-->
-                        <!--Added div around input class 2/26/16 Ian-->
-                        <div class="form-user-grp-location--zip">
-                            <label for="City" class="hidden">City</label>
-                            <input type="text" class="form-user-ctrl" data-required="true"
-                                   aria-required="true" id="City" title="City"
-                                   placeholder="City*" data-valid-type>
-                        </div>
-                        <!--End of added div around input class 2/26/16 Ian-->
-                    </div>
-                    <!--End of change for div that hold state selector and city input 2/25/16 Ian-->
-                    <!--Remove HTML here Ian Cunningham 2/12/16-->
-                    <!--<div class="form-user-grp">
-                        <label for="Email" class="hidden">Email</label>
-                        <input type = "text" class="form-user-ctrl" data-required="true"
-                               aria-required="true" id="Email" title="Email"
-                               placeholder="Email*" data-valid-type>
-                    </div>-->
-                    <!--<div class="form-user-grp">
-                        <label for="LastName" class="hidden">Last Name</label>
-                        <input type = "text" class="form-user-ctrl">
-                    </div>-->
-                    <!--End of where to remove code Ian Cunningham 2/12/16-->
-                </form>
-                <!--Unhide buttons here 3/1/16 Ian-->
-                <div class="results-form__button">
-                    <!--<a class="btn-brand-2nd">Apply Now</a>-->
-                    <button id="resultsSubmit" type="submit" class="btn-brand-2nd contatMeSidebarBtn submit_reach_form" data-fsubmit="quoteleadform" data-flow="GLT">Submit</button>
-                    <button id="resultsBuyNow" type="submit" class="=btn-brand-2nd submit_reach_form hidden" data-fsubmit="quoteleadform" data-flow="GLT">Continue</button>
-                    <!--Unhide buttons here 3/1/16 Ian-->
-                </div>
-            </div>
 
-
-            <div class="apply-disclaimer padding-t-10 hidden">
-
-                By clicking "Continue", you agree that we* may contact you at the number you’ve provided,
-                possibly using automated technology or a prerecorded voice, to talk about our products and
-                services. If you don’t want to give this permission, you can still get a quote or make a purchase
-                by calling us directly at 1-800-638-5433.
-
-
-                <p>A* <a href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">MetLife
-                    company</a>
-                    or third party acting on MetLife's behalf</p>
-
-            </div>
-            <div class="contact-thanks hidden">
-                <div class="thanks-header">
-                    <p>Thanks for contacting us!</p>
-                </div>
-                <div class="thanks-subheader">
-                    <p>A MetLife Premier Client Group financial professional will be contacting you within the
-                        next several days.</p>
-                </div>
-                <div class="thanks-content">
-                    <p>He or she will be able to:</p>
-                    <ul>
-                        <li>Answer any questions you may have</li>
-                        <li>Give more quotes</li>
-                        <li>Help find a policy that's right for you</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="contact-error hidden">
-                <div class="error-header"><p>error messsage1</p></div>
-                <div class="error-subheader"><p>error sub message</p></div>
-            </div>
-        </div>
-        <div class="edit-quote__form__wrapper hidden">
-            <div class="row edit-quote__form">
-                <div class="form-close pull-right">
-                    <svg class="icon icon-close">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="images/icons-metlife.svg#icon-close"></use>
-                    </svg>
-                </div>
-                <div class="edit-quote__form__title">Get an Instant Quote:</div>
-                <form class="quote_edit_form">
-                    <div class="dob hidden-xs hidden-sm">Date of Birth</div>
-                    <div class="state_selector_and_error_wrapper">
-                        <div class="select_state">
-                            <select class="state_select" name="state" required="required" id="edit-state1-mmquote"
-                                    data-validation="true">
-                                <option value="">State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                        </div>
-                        <div class="errorSpan error_state_coverage">
-                            <img class="error_arrow_img" src="images/form/icon_form_error_up_arrow.png"
-                                 alt=" "/>
-                            <img class="errorSpanImg" src="images/form/icon_form_error.png"
-                                 alt="error image"/>This product is not available for the state you chose.
-                        </div>
-                    </div>
-                    <div class="dob_input">
-                        <div class="dob_label hidden-md hidden-lg">Date of Birth</div>
-                        <select id="edit-month-mmquote" name="birth_month_cta_quote" class="birth_month_cta_quote"
-                                data-validation="true">
-                            <option value="">MM</option>
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-
-                        <select id="edit-day-mmquote" name="birth_day_cta_quote" class="birth_day_cta_quote"
-                                data-validation="true">
-                            <option value="">DD</option>
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                        </select>
-                        <select id="edit-year-mmquote" name="birth_year_cta_quote" class="birth_year_cta_quote"
-                                data-validation="true">
-                            <option value="">YYYY</option>
-
-                        </select>
-                    </div>
-                    <div class="gender_select">
-                        <select name="quote_gender" required="required" id="edit-gender-mmquote" data-validation="true">
-                            <option value="">Gender</option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                        </select>
-                    </div>
-                    <div class="coverage_amount">
-                        <select name="coverage" required="required" id="edit-coverage-mmquote" data-validation="true">
-                            <option value="">Coverage Amount</option>
-                            <option value="10000">$10,000</option>
-                            <option value="20000">$20,000</option>
-                            <option value="30000">$30,000</option>
-                            <option value="50000">$50,000</option>
-                            <option value="100000">$100,000</option>
-                            <option value="150000">$150,000</option>
-                            <option value="200000">$200,000</option>
-                            <option value="250000">$250,000</option>
-                            <option value="300000">$300,000</option>
-                            <option value="400000">$400,000</option>
-                            <option value="500000">$500,000</option>
-                            <option value="750000">$750,000</option>
-                            <option value="1000000">$1,000,000</option>
-                            <option value="1500000">$1,500,000</option>
-                            <option value="2000000">$2,000,000</option>
-                            <option value="2500000">$2,500,000</option>
-                            <option value="3000000">$3,000,000</option>
-                            <option value="3500000">$3,500,000</option>
-                            <option value="4000000">$4,000,000</option>
-                            <option value="4500000">$4,500,000</option>
-                            <option value="5000000">$5,000,000</option>
-                        </select>
-                                <span><a
-                                        href="https://www.metlife.com/financial-tools/insurance/life-insurance/life-insurance-calculator?source=qq"
-                                        target="_blank">
-                                    <!--Changed svg to calculator Ian 3/9/16-->
-                                    <svg class="icon info">
-                                        <use xlink:href="images/icons-metlife.svg#icon-calc"></use>
-                                    </svg>
-                                    <!--End changed svg to calculator Ian 3/9/16-->
-                                </a></span>
-                    </div>
-
-
-                    <div class="term_length">
-                        <select name="term_length" required="required" id="edit-term-mmquote" data-validation="true">
-                            <option value="">Term Length</option>
-                            <option value="10">10 Years</option>
-                            <option value="15">15 Years</option>
-                            <option value="20">20 Years</option>
-                            <option value="30">30 Years</option>
-                        </select>
-                    </div>
-
-                    <div class="tobacco_nicotine_users">
-                        <select name="tobacco_use" required="required" id="edit-tobacco-mmquote" data-validation="true">
-                            <option value="">Tobacco Use</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-
-                    <div class="your_health">
-                        <select name="your_health" required="required" id="edit-health-mmquote" data-validation="true">
-                            <option value="">Your Health</option>
-                            <option value="E">Excellent: I could be a professional athlete</option>
-                            <option value="VG">Very Good: I usually work our and eat right</option>
-                            <option value="G">Good: I take medication for minor health issues</option>
-                            <option value="F">Fair: My health could be much better</option>
-                        </select>
-                        <span class="open_health_overlay"><svg class="icon icon-question rate-overlay-trigger"
-                                                               data-target="health-guidelines-overlay">
-                            <use xlink:href="images/icons-metlife.svg#icon-question"></use>
-                        </svg></span>
-                    </div>
-
-
-                    <div class="apply_option">
-                        I want a quote with the option to apply:
-                    </div>
-                    <div class="apply_type">
-                                <span class="image_radio radio_online">
-                                <!--Ian's changes 3/9/16-->
-                                    <svg class="icon icon-radio-on-2"><use xlink:href="images/icons-metlife.svg#icon-radio-on-2"></use></svg>
-                                    <svg class="icon icon-radio-off form-radio-icon--hidden"><use xlink:href="images/icons-metlife.svg#icon-radio-off"></use></svg>
-                                    <!--End of Ian's changes 3/9/16-->
-                                <input type="radio" name="applyType" value="0" class="apply_radio online_cta_check"
-                                       checked="checked"/>Online
-
-                            </span>
-                                <span class="image_radio radio_rep">
-                               <!--Ian's changes 3/9/16-->
-                                    <svg class="icon icon-radio-on-2 form-radio-icon--hidden"><use xlink:href="images/icons-metlife.svg#icon-radio-on-2"></use></svg>
-                                    <svg class="icon icon-radio-off"><use xlink:href="images/icons-metlife.svg#icon-radio-off"></use></svg>
-                                    <!--End of Ian's changes 3/9/16-->
-                                <input type="radio" name="applyType" value="1" class="apply_radio rep_cta_check"/>With a Rep<sup>&dagger;</sup>
-
-                            </span>
-                    </div>
-                    <a href="#" class="btn btn-brand-2nd submit_reach_form" id="recalculateQuote" data-flow="GLT">Recalculate
-                        Quote</a>
+                    <p class="contactDisclaimer hidden-field">
+                        *<a id="headerContactSideBarMetlifeLink"
+                            href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
+                        company</a> or third party acting on MetLife's behalf.
+                    </p>
                 </form>
             </div>
+            <div class="contactSideThankyou" id="contactus_lead_thankyou">
+                <div class="thanksHeaderText">Thank you for contacting us.</div>
+                <div class="thanksSubText">Someone from MetLife will be reaching shortly to provide you help.</div>
+            </div>
+            <div class="contactOtherDetails">
+                <div class="contactSideCall">
+                    <a href="tel://+1-800-638-5433">CALL: 1-800-METLIFE</a>
+                </div>
+                <div class="otherContactOptions">
+                    <a id="headerContactSideBarAllOtherOptionsLink" href="https://www.metlife.com/about/corporate-profile/contact/metlife/index.html">ALL OTHER CONTACT OPTIONS</a>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
+<!--Disclaimer -->
+<div class="container bg-gray-1st">
+    <div class="row wrapper metlife-brand-9">
+        <p class="disclaimer">
+            *Sample rate shown is for Simplified Issue Term Life Insurance for a 30 year-old female, $10,000
+            coverage.
+            Rates based on current age, gender and face amount. Premiums will increase every 5 years up to age 90 on
+            the
+            policy anniversary date after you reach an age ending in "1" or "6” (for example: 41, 46, 51). There is
+            no
+            medical exam for this product, just some health questions. Coverage is guaranteed to age 90 so long as
+            premiums are paid. Product features and availability may vary by state. Monthly premium rates shown are
+            as
+            of June 2015 and may be subject to change. If the insured dies by suicide within the first two policy
+            years,
+            we will refund the premiums paid, less any policy loans. Simplified Issue Term Life insurance is issued
+            by
+            MetLife Insurance Company USA, Charlotte, NC 28277 (form #5E-26-13), and in New York by Metropolitan
+            Life
+            Insurance Company, New York, NY 10166 (form #1E-26-13-NY).
+        </p>
+
+        <p class="disclaimer">
+            **Average annual savings based on national savings figures reported by new MetLife Auto & Home®
+            policyholders who called our call center and switched their auto policies to MetLife Auto & Home from
+            1/14,
+            to 12/14. Source: MetLife Auto & Home internal research (2015).
+        </p>
+
+        <p class="disclaimer">
+            Like most group benefit programs, benefit programs offered by MetLife and its affiliates contain certain
+            exclusions, exceptions, waiting periods, reductions, limitations and terms for keeping them in force.
+            Please
+            contact MetLife or your plan administrator for complete details.
+        </p>
+
+        <p class="disclaimer">
+            Disability insurance is issued by Metropolitan Life Insurance Company on IDI2000-P/NC, IDI2000-P/NC-ML,
+            IDI2000-P/GR, AH 5-88, AH 6-90, AH 7-96-CA, AH 8-96-CA and IDIP12-01-IDIP12-05, IDIP12-08. April 2014
+            All
+            policies, riders and provisions may not be available in all states, at all issue ages and to all
+            occupational classes. Ask your representative for complete details. Eligibility is subject to
+            underwriting
+            approval. For policies issued in New York: These policies provide disability income insurance only. They
+            do
+            NOT provide basic hospital, basic medical or major medical insurance as defined by the New York State
+            Department of Financial Services. The expected benefit ratio for these policies is at least 50%. This
+            ratio
+            is the portion of future premiums that MetLife expects to return as benefits when averaged over all
+            people
+            with the applicable policy.
+        </p>
+
+        <p class="disclaimer">
+            Group dental insurance policies featuring the MetLife Preferred Dentist Program are underwritten by
+            Metropolitan Life Insurance Company, New York, NY. Dental Managed Care Plan benefits are provided by
+            Metropolitan Life Insurance Company, a New York corporation in NY. Dental HMO plan benefits are provided
+            by:
+            SafeGuard Health Plans, Inc., a California corporation in CA; SafeGuard Health Plans, Inc., a Florida
+            corporation in FL; SafeGuard Health Plans, Inc., a Texas corporation in TX; and MetLife Health Plans,
+            Inc.,
+            a Delaware corporation and Metropolitan Life Insurance Company, a New York corporation in NJ. The Dental
+            HMO/Managed Care companies are part of the MetLife family of companies. "DHMO" is used to refer to
+            product
+            designs that may differ by state of residence of the enrollee, including but not limited to:
+            "Specialized
+            Health Care Service Plans" in California; "Prepaid Limited Health Service Organizations" as described in
+            Chapter 636 of the Florida statutes in Florida; "Single Service Health Maintenance Organizations" in
+            Texas;
+            and "Dental Plan Organizations" as described in the Dental Plan Organization Act in New Jersey.
+        </p>
+
+        <p class="disclaimer">
+            MetLife Vision benefits are underwritten by Metropolitan Life Insurance Company, New York, NY. Certain
+            claims and network administration services are provided through Vision Service Plan (VSP), Rancho
+            Cordova,
+            CA. VSP is not affiliated with Metropolitan Life Insurance Company or its affiliates. In certain states,
+            availability of MetLife's Group Vision benefits is subject to regulatory approval. MetLife VisionAccess
+            is a
+            discount program and not an insured benefit. It is provided through VSP.
+        </p>
     </div>
 </div>
 
@@ -1312,12 +1343,12 @@
             </li>
         </ul>
         <div class="row footer-country-language-social">
-            <div class="col-xs-6 col-sm-5 col-md-4 footer-country">
+            <div class="col-xs-6 col-sm-5 col-md-4 footer-country js-footerMatchHeights">
                 <div class="row form-icon-wrapper select-country">
                     <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
                         <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
                     </svg>
-                    <div class="col-xs-6 col-sm-3 country__label">country</div>
+                    <div class="col-xs-6 col-sm-3 country__label" id="country__label">country</div>
                     <div class="col-xs-6 col-sm-9 country__selected" id="countrySelected">
                         <input type="hidden" id="selectedCountry">
                         <span class="country__flag--selected USA" id="countryFlagSelected"></span>
@@ -1601,7 +1632,7 @@
                     <br class="clearfix">
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 footer-language">
+            <div class="col-xs-6 col-sm-4 col-md-4 footer-language js-footerMatchHeights">
                 <a class="language__link" href="https://www.metlife.com">En Español</a>
                 <a class="language__link" href="http://#">中文</a>
                 <a class="language__link" href="http://#">MetLife Worldwide</a>
@@ -1662,7 +1693,6 @@
         </div>
     </div>
 </div>
-
 <div id="suggestionsbox" class="suggestionsbox ">
     <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
         <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">

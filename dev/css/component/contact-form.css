@@ -346,11 +346,11 @@
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url("../../images/form/form_radio_unselected_gray.png") left top no-repeat;
+    background: url("/satic/images/form/form_radio_unselected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
-    background: url("../../images/form/form_radio_selected_gray.png") left top no-repeat;
+    background: url("/satic/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -362,11 +362,11 @@
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url("../../images/form/form_slider_chkbx_unselected.png") left top no-repeat;
+    background: url("/satic/images/form/form_slider_chkbx_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
-    background: url("../../images/form/form_slider_chkbx_selected.png") left top no-repeat;
+    background: url("/satic/images/form/form_slider_chkbx_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
