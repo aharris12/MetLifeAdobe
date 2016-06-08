@@ -41,11 +41,12 @@ var newsTopic;
 var newsConcatenator;
 
 $(document).ready(function() {
+
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
-	ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
+
 });
 /****Blog Search****************************************/
 
@@ -463,7 +464,9 @@ function isNonblank (s) {
 }
 
 var ServicesAPI = {
+
 	loadEventListeners: function(){
+		ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
 		ServicesAPI.gmapsAutoCompleteInit();
 		if($(".search-results-container").length > 0)
 			ServicesAPI.searchResultsPageLoad();
@@ -2375,8 +2378,10 @@ var ServicesAPI = {
 	},
 	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+		console.log($("[name=pageFrom]").val())
 		if(pageFrom != undefined){
 			name.val(pageFrom);
+			console.log($("[name=pageFrom]").val())
 			return;
 		}
 	}
