@@ -1784,13 +1784,18 @@ var metlifeRedesign = {
         //        });
 
         var flag;
+        //console.log($formid)
         $formid.find('[data-required=true]').each(function () {
+//console.log($(this))
             var $this = $(this);
             var placeholder = $this.attr('placeholder');
+            //console.log(placeholder)
+            //console.log($this.val() == placeholder)
             if ($this.val() == placeholder) {
                 $this.val("");
             }
             var val = $this.val();
+            //console.log(val)
             if (val == "New Product/Planning Services") {
                 flag = "New";
             }
@@ -1951,16 +1956,17 @@ function postLeadform($formid){
 
 //New
 /*function postLeadform($formid){
-
     var formName = $formid.attr('name');
+    console.log(formName)
     formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
     var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
     console.log(requestType)
     var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val().attr('data-product-url');
     console.log(ajaxUrl)
     $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+
+
     if(requestType == 'New Product/Planning Services'){
-        //ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         var jsonData = {};
         var formData = $('form[name='+formName+']').serializeArray();
         $.each(formData, function() {
@@ -1974,7 +1980,6 @@ function postLeadform($formid){
             }
 
         });
-
         console.log(JSON.stringify(jsonData));
         $.ajax({
             url: ajaxUrl,
@@ -1994,10 +1999,8 @@ function postLeadform($formid){
     }
 
     if(requestType == 'Existing Product/Policy'){
-        //ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
         if(typeof FormData !== 'undefined'){
             var formData = new FormData($('form[name='+formName+']')[0]);
-
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
@@ -2030,12 +2033,9 @@ function postLeadform($formid){
             });
         }
     }
-
-
-
-
 }*/
 
+//Current
 $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 
     //alert("contact from submitted");
@@ -2092,35 +2092,66 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
     }
 });
 
-/* contact sidebar script */
-/*$('[placeholder][data-placeholder]').on('focus', function () {
-    console.log("broken")
-    $this = $(this);
-    var placeholder = $(this).attr('placeholder');
-    console.log($(this).val())
-    if ($this.val() == placeholder) {
-        $this.val("");
+//new
+/*$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
+
+    //alert("contact from submitted");
+    e.preventDefault();
+    var $this = $(this);
+    var isValid = metlifeRedesign.onFSubmit($(this));
+
+    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+    if (isValid) {
+
+        var fid = $this.attr('data-fsubmit');
+        var $formid = $('[data-fid=' + fid + ']');
+        postLeadform($formid);
+
+        $formid.find('[data-observes-id]').each(function () {
+            $(this).hide();
+        });
+
+        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+            $('.aidFormCon').hide();
+            $('.aiwHeading').hide();
+            $('.advisorClose').hide();
+            $('.adImageThankYou').css("display", "table-cell");
+        } else if (fid == "quoteleadform") {
+            $(this).closest('.quote_right_mlt').hide();
+            $(this).closest('.quote_right_sit').hide();
+            $('.quote_results_thank_you').show();
+        } else if (fid == "contactCard") {
+            var temp = "[data-fid='" + fid + "']";
+            //$("[data-fid='contactCard']").hide();
+            $('.contactCard').hide();
+            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+            setTimeout(function () {
+                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+                    $('.contactCard').show();
+                    $('#requestFormContactCard_Acc').trigger("reset");
+                    $('.form-minimize').trigger('click');
+                });
+            }, 5000);
+        } else if (fid == "contactSidebarQuote") {
+            $(".results-form__text").addClass("hidden");
+            $(".results-form__inputs").addClass("hidden");
+            $(".apply-disclaimer").addClass("hidden");
+            $(".contact-thanks").removeClass("hidden");
+
+        } else {
+            $('.' + fid).fadeOut('slow', function () {
+                setTimeout(function () {
+                    $('.contactSliderOuterCon').fadeOut(2000);
+                    $('.contactsClose').trigger('click');
+                }, 5000)
+            });
+        }
+    } else {
+        //alert("invalid");
     }
 });*/
 
-/*$('[placeholder][data-placeholder]').on('blur', function () {
-    console.log("broken")
-    $this = $(this);
-    var placeholder = $(this).attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
-});*/
-
-/*$('[placeholder][data-required=true]').on('focus', function () {
-    console.log("broken")
-    $this = $(this);
-    var placeholder = $(this).attr('placeholder');
-    if ($this.val() == placeholder) {
-        $this.val("");
-    }
-    $this.removeClass('error formatError');
-});*/
 
 $('select[data-required=true]').on('change', function () {
     $(this).trigger('blur');
@@ -2255,6 +2286,7 @@ var validateOnType = function (val, $this, re) {
     }
 };
 
+//Current
 $('.productPolicy').on('change', function () {
     $(this).find('option').eq(1).val('New Product/Planning Services');
     $(this).find('option').eq(2).val('Existing Product/Policy');
@@ -2305,16 +2337,39 @@ $('.productPolicy').on('change', function () {
     }
 });
 
+//New
 /*$('[data-request-type]').on('change', function () {
     $(this).find('option').eq(1).val('New Product/Planning Services');
     $(this).find('option').eq(2).val('Existing Product/Policy');
     var val = $(this).val();
     var $this = $(this);
-    var $con = $this.closest('.productPolicyTypes');
-    if (val == "New Product/Planning Services") {
+
+
+    switch(val) {
+        case 'New Product/Planning Services':
+            console.log("New Product/Planning Services");
+           var thisCheckBox = $(this).parent().parent().parent().parent().find('[data-observes-value="New Product/Planning Services"]');
+            var count = 0;
+            thisCheckBox.find('.input[type=radio]').each(function () {
+                if ($(this).is(':checked')) {
+                    count++;
+                    console.log(count)
+                }
+            });
+
+            break;
+        case 'Existing Product/Policy':
+            console.log("Existing Product/Policy");
+            break;
+        default:
+            break;
+    }
+    /!*if (val == "New Product/Planning Services") {
         /!*$con.find('.productUserType').hide();
         $con.find('.newProductUser').show();*!/
         var count = 0;
+        //$con.find('[data-observes-value="New Product/Planning Services"]')
+        //console.log($con.find('[data-observes-value="New Product/Planning Services"]'))
         $con.find('.newProductUser input[type=checkbox]').each(function () {
             if ($(this).is(':checked')) {
                 count++;
@@ -2322,6 +2377,7 @@ $('.productPolicy').on('change', function () {
         });
         //if (count > 0 && count <= 5) {
         //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+
         if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
             $this.attr('data-valid-status', 'success');
             $this.removeClass('error');
@@ -2352,7 +2408,7 @@ $('.productPolicy').on('change', function () {
         }
     } else {
         $con.find('.productUserType').hide();
-    }
+    }*!/
 });*/
 
 $('.user-checkbox').on('click', function () {
