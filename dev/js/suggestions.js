@@ -448,7 +448,6 @@ function ss_composeSuggestUri(qVal, suggestForm) {
         // Same param names for other two formats.
         uri = uri + '?q=' + encodeURIComponent(qVal) +
             '&max=' + ss_g_max_to_display + '&cts=' + timeStamp;
-        ;
     }
     /*
      * '&site=' + encodeURIComponent(siteVal)+ '&client=' +
@@ -958,6 +957,7 @@ function ss_handleQuery(query, waiting1) {
  * Puts search box in focus.
  */
 function ss_sf() {
+    console.log("ss_sf");
     document.getElementById(ss_form_element).query.focus();
     ss_dismissed = false;
 }
@@ -971,6 +971,7 @@ function ss_sf() {
  *            search button(s).
  */
 function ss_clear(nofocus) {
+    console.log("ss_clear");
     drawTextBox('');
     ss_qshown = null;
     var fo = document.getElementById(ss_form_element);
@@ -988,6 +989,7 @@ function ss_clear(nofocus) {
  *            qry The query to which suggestions to be closed.
  */
 function ss_hide(qry) {
+    console.log("ss_hide");
     var tbl = document.getElementById(ss_popup_element);
     if (tbl.style.visibility == 'visible') {
         if (ss_panic) {
