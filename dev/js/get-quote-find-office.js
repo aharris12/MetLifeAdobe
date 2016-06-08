@@ -9,7 +9,6 @@ $(".product__selector").on("change", function(){
     $(".js-productSelector").attr("href", productSelectorPage);
 });
 
-
 $(".find-office__zip-city-state").on("keyup", function(){
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
     $('.error-span').hide();
@@ -73,7 +72,6 @@ $(".find-office__zip-city-state").on("focus", function(){
         $('.find-office__vision-container').css('display','none');
         $('.find-office__dental-container').css('display','none');
     }
-
 });
 
 $('.find-office__submit').click(function(event){
