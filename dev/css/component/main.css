@@ -14,7 +14,6 @@ table {
         padding-top:70px;
     }
 }
-
 /* Global Structure */
 .container {
     width: 100%;
@@ -196,6 +195,8 @@ a:focus,
 a:active,
 a:visited {
     text-decoration: underline;
+    outline: none; !important;
+    outline-offset: initial; !important
 }
 
 .brand-1st {

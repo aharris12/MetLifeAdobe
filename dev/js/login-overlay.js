@@ -1,6 +1,7 @@
 var loginTypesPosition = 0;
 
 $('.login-types').css('top',$(window).height() - 70 + 'px');
+
 $('.login-container--close').click(function(){
     $('.login-container').hide();
     $('.login-types').removeClass('overlay-scroll__child');
@@ -91,13 +92,15 @@ $('#biz-account-purpose').change(function(){
 });
 
 function toggleLoginTypes() {
-    console.log("runn")
+
     //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
     } else {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>')
     }
+    $('.login-types').toggleClass('overlay-scroll__child');
+    $('.login-container').toggleClass('overlay-scroll__child');
     $('.login-type__contact').toggle();
     $('.login-type-trigger__title').toggleClass('login-type-trigger__title--open');
     var winHeight = $(window).height() - 100;
@@ -114,7 +117,7 @@ function toggleLoginTypes() {
 
 //Show/hide other login types
 //loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').on('click touchstart',function(e){
+$('.login-type-trigger__title').on('click touchstart',function(e){
     e.preventDefault();
 
     var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');

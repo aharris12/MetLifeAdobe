@@ -1265,7 +1265,6 @@ $(".product__selector").on("change", function(){
     $(".js-productSelector").attr("href", productSelectorPage);
 });
 
-
 $(".find-office__zip-city-state").on("keyup", function(){
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
     $('.error-span').hide();
@@ -1329,7 +1328,6 @@ $(".find-office__zip-city-state").on("focus", function(){
         $('.find-office__vision-container').css('display','none');
         $('.find-office__dental-container').css('display','none');
     }
-
 });
 
 $('.find-office__submit').click(function(event){
@@ -1803,6 +1801,7 @@ var metlifeRedesign = {
             if (val == "Existing Product/Policy") {
                 flag = "Existing";
             }
+            console.log(flag)
             if (val.length == 0) {
                 if (flag == "New") {
                     if (placeholder == "Policy/Contract #" || placeholder == "Question") {
@@ -2808,7 +2807,7 @@ function postLeadform($formid){
 
                 jsonData[this.name] = this.value || '';
                 if (!jsonData[this.name].push) {
-                    if(this.name == "prodInt"){
+                    if(this.name == "prodInt" || this.name == "prodInterest"){
                         jsonData[this.name] = [jsonData[this.name]];
 
                     }
@@ -2816,17 +2815,7 @@ function postLeadform($formid){
             }
 
         });
-        /!* $.each(formData, function() {
-         if (jsonData[this.name]) {
-         if (!jsonData[this.name].push) {
-         jsonData[this.name] = [jsonData[this.name]];
-         }
-         jsonData[this.name].push(this.value || '');
-         } else {
-         jsonData[this.name] = this.value || '';
-         }
 
-         });*!/
         console.log(JSON.stringify(jsonData));
         $.ajax({
             url: ajaxUrl,
@@ -3294,6 +3283,7 @@ $(".view-nav li").click(function () {
 var loginTypesPosition = 0;
 
 $('.login-types').css('top',$(window).height() - 70 + 'px');
+
 $('.login-container--close').click(function(){
     $('.login-container').hide();
     $('.login-types').removeClass('overlay-scroll__child');
@@ -3384,13 +3374,15 @@ $('#biz-account-purpose').change(function(){
 });
 
 function toggleLoginTypes() {
-    console.log("runn")
+
     //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
     } else {
         $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>')
     }
+    $('.login-types').toggleClass('overlay-scroll__child');
+    $('.login-container').toggleClass('overlay-scroll__child');
     $('.login-type__contact').toggle();
     $('.login-type-trigger__title').toggleClass('login-type-trigger__title--open');
     var winHeight = $(window).height() - 100;
@@ -3407,7 +3399,7 @@ function toggleLoginTypes() {
 
 //Show/hide other login types
 //loginTypesPosition = parseInt($(".login-types").css('top').replace('px',''));
-$('.login-type-trigger').on('click touchstart',function(e){
+$('.login-type-trigger__title').on('click touchstart',function(e){
     e.preventDefault();
 
     var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');

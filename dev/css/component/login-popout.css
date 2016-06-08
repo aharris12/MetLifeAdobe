@@ -91,7 +91,7 @@
     color: #fff;
 }
 */
-        
+
 @media (min-width: 768px) {
     .login-container {
         top: 50px;
@@ -141,7 +141,7 @@
     padding:0;
 }
 .login-popout .form-item__field {
-    font-size: 0.9em;  
+    font-size: 0.9em;
 }
 .login-popout .form-item__field .icon.info{
 /*
@@ -194,7 +194,7 @@
 }
 
 
-.login-container .form-item .icon-arrow-left-triangle { 
+.login-container .form-item .icon-arrow-left-triangle {
     position: absolute;
     z-index: 2001;
     left: -15px;
@@ -234,9 +234,16 @@
     font-weight:400;
     font-size: 1.45em;
 }
-.login-type-trigger__title h2:hover {
+
+.login-type-trigger__title:hover {
     cursor:pointer;
 }
+
+.login-type-trigger__title:focus {
+/*    outline: hidden !important;
+    outline-offset:0 !important;*/
+}
+
 .login-type-trigger__title h2:before {
     content:"Show "
 }
@@ -269,7 +276,7 @@
 }
 .login-type-biz-account .form-item__field,
 .login-type-biz-purpose .form-item__field {
-    width:250px;    
+    width:250px;
 }
 .login-type__details {
     padding: 0 0 20px 0;
@@ -369,7 +376,7 @@
         font-size: 1em;
         border-top: 0px solid #ddd;
         padding:0;
-    }    
+    }
     .login-type__contact {
         padding:20px 0 40px 0;
         font-size: 1em;

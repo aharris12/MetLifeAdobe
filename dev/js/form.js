@@ -113,6 +113,7 @@ var metlifeRedesign = {
             if (val == "Existing Product/Policy") {
                 flag = "Existing";
             }
+            console.log(flag)
             if (val.length == 0) {
                 if (flag == "New") {
                     if (placeholder == "Policy/Contract #" || placeholder == "Question") {
@@ -1118,7 +1119,7 @@ function postLeadform($formid){
 
                 jsonData[this.name] = this.value || '';
                 if (!jsonData[this.name].push) {
-                    if(this.name == "prodInt"){
+                    if(this.name == "prodInt" || this.name == "prodInterest"){
                         jsonData[this.name] = [jsonData[this.name]];
 
                     }
@@ -1126,17 +1127,7 @@ function postLeadform($formid){
             }
 
         });
-        /!* $.each(formData, function() {
-         if (jsonData[this.name]) {
-         if (!jsonData[this.name].push) {
-         jsonData[this.name] = [jsonData[this.name]];
-         }
-         jsonData[this.name].push(this.value || '');
-         } else {
-         jsonData[this.name] = this.value || '';
-         }
 
-         });*!/
         console.log(JSON.stringify(jsonData));
         $.ajax({
             url: ajaxUrl,
