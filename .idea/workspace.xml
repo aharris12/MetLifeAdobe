@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/form.js" afterPath="$PROJECT_DIR$/dev/js/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -87,7 +86,7 @@
       <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36523438">
+            <state vertical-scroll-proportion="0.5483871">
               <caret line="184" column="47" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="47" />
               <folding />
             </state>
@@ -510,12 +509,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00189" summary="DE9053">
-      <created>1464891857494</created>
-      <option name="number" value="00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1464891857494</updated>
-    </task>
     <task id="LOCAL-00190" summary="DE9019">
       <created>1464894988775</created>
       <option name="number" value="00190" />
@@ -804,7 +797,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465401579925</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="Array for Contact Side">
+      <created>1465402554554</created>
+      <option name="number" value="00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1465402554554</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -814,11 +813,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30369127" sideWeight="0.50852877" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28691274" sideWeight="0.4914712" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28691274" sideWeight="0.4914712" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26993865" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26993865" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6627517" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -879,7 +878,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="de 9039" />
     <MESSAGE value="de 9044" />
     <MESSAGE value="DE9053" />
     <MESSAGE value="DE9019" />
@@ -904,7 +902,8 @@
     <MESSAGE value="FAO container" />
     <MESSAGE value="Grunt" />
     <MESSAGE value="grunt" />
-    <option name="LAST_COMMIT_MESSAGE" value="grunt" />
+    <MESSAGE value="Array for Contact Side" />
+    <option name="LAST_COMMIT_MESSAGE" value="Array for Contact Side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1424,7 +1423,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36523438">
+        <state vertical-scroll-proportion="0.5483871">
           <caret line="184" column="47" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="47" />
           <folding />
         </state>
