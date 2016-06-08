@@ -180,7 +180,9 @@ function postLeadform($formid){
         ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
         var jsonData = {};
         var formData = $('form[name='+formName+']').serializeArray();
+        console.log(formData)
         $.each(formData, function() {
+            console.log(this.name == "prodInt")
             if (jsonData[this.name]) {
 
                 if (!jsonData[this.name].push) {
@@ -189,9 +191,10 @@ function postLeadform($formid){
                 }
                 jsonData[this.name].push(this.value || '');
             } else {
+
                 jsonData[this.name] = this.value || '';
                 if (!jsonData[this.name].push) {
-                    if(jsonData[this.name]){
+                    if(this.name == "prodInt"){
                         jsonData[this.name] = [jsonData[this.name]];
 
                     }
