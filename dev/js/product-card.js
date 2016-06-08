@@ -41,6 +41,7 @@ $(function() {
         console.log(buttonsSelected instanceof jQuery);
         buttonsSelected.each(function () {
             var str = "getmyquote";
+            console.log("in the each loop");
             $(this).css("width", "140px");
         });
     }
