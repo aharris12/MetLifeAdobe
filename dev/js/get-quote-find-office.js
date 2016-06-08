@@ -70,7 +70,7 @@ $(".find-office__zip-city-state").on("focus", function(){
 
 });
 
-$('.find-office__submit').click(function(){
+$('.find-office__submit').click(function(event){
     event.preventDefault();
     selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
     var urlStr = "";
