@@ -366,7 +366,7 @@
     background-size: 17px 17px;
 }
 .form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
-    background: url("/satic/images/form/form_slider_chkbx_selected.png") left top no-repeat;
+    background: url("/static/images/form/form_slider_chkbx_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
