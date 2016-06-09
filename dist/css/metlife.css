@@ -10735,12 +10735,9 @@ ul.bullet-list {
     text-align: left;
     padding: 10px 20px;
 }
-@media screen and (max-width: 767px) {
-    .subnav-go-back__mobile--title {
-        display: inline-block;
-    }
-}
+
 @media screen and (min-width: 768px){
+
     .subnav-go-back{
         box-shadow: none;
     }
@@ -10898,6 +10895,20 @@ ul.bullet-list {
 
 }
 
+.subnav-go-back__desktop--title {
+    display: none !important;
+}
+.subnav-go-back__mobile--title {
+    display: table-cell !important;
+}
+@media screen and (min-width: 768px){
+    .subnav-go-back__desktop--title {
+        display: table-cell !important;
+    }
+    .subnav-go-back__mobile--title {
+        display: none !important;
+    }
+}
 .product-card{
     display:block;
     background:  #fff;
