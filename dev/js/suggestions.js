@@ -990,8 +990,10 @@ function ss_clear(nofocus) {
  */
 function ss_hide(qry) {
     console.log("ss_hide");
+    //ss_popup_element = search_suggest
     var tbl = document.getElementById(ss_popup_element);
     if (tbl.style.visibility == 'visible') {
+        //ss_panic = false;  Never initialized anywhere
         if (ss_panic) {
             // alert('close suggestion box');
         }
