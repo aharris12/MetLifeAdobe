@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/main.css" afterPath="$PROJECT_DIR$/dev/css/component/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/bootstrap-metlife.css" afterPath="$PROJECT_DIR$/dev/css/theme/bootstrap-metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/theme/form-metlife.css" afterPath="$PROJECT_DIR$/dev/css/theme/form-metlife.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/aemfixes.js" afterPath="$PROJECT_DIR$/dev/js/aemfixes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/subcategory-page-1.html" afterPath="$PROJECT_DIR$/dev/subcategory-page-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/login-overlay.js" afterPath="$PROJECT_DIR$/dev/js/login-overlay.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -23,8 +20,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-advisor.html" afterPath="$PROJECT_DIR$/dist/contact-advisor.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -91,11 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/js/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.482143">
-              <caret line="823" column="3" selection-start-line="823" selection-start-column="3" selection-end-line="823" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.3313783">
+              <caret line="924" column="39" selection-start-line="924" selection-start-column="39" selection-end-line="924" selection-end-column="39" />
               <folding>
                 <element signature="n#!!block;n#AddInputParameter#0" expanded="false" />
                 <element signature="n#!!block;n#getCookie#0" expanded="false" />
@@ -116,8 +111,8 @@
       <file leaf-file-name="login-overlay.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5">
-              <caret line="98" column="179" selection-start-line="98" selection-start-column="179" selection-end-line="98" selection-end-column="179" />
+            <state vertical-scroll-proportion="-1.375">
+              <caret line="97" column="93" selection-start-line="97" selection-start-column="93" selection-end-line="97" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -158,8 +153,8 @@
       <file leaf-file-name="aemfixes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/aemfixes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.275862">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state vertical-scroll-proportion="-0.5862069">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -167,10 +162,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subcategory-page-1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="subcategory-page-1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22633745">
+            <state vertical-scroll-proportion="0.9390244">
               <caret line="794" column="4" selection-start-line="794" selection-start-column="4" selection-end-line="812" selection-end-column="10" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -275,13 +270,13 @@
         <option value="$PROJECT_DIR$/dev/css/component/login-popout.css" />
         <option value="$PROJECT_DIR$/dev/js/form.js" />
         <option value="$PROJECT_DIR$/dev/js/variable.js" />
-        <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
-        <option value="$PROJECT_DIR$/dev/js/aemfixes.js" />
         <option value="$PROJECT_DIR$/dev/css/component/main.css" />
         <option value="$PROJECT_DIR$/dev/css/theme/form-metlife.css" />
         <option value="$PROJECT_DIR$/dev/category.html" />
         <option value="$PROJECT_DIR$/dev/css/theme/bootstrap-metlife.css" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
+        <option value="$PROJECT_DIR$/dev/js/aemfixes.js" />
+        <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
       </list>
     </option>
   </component>
@@ -620,12 +615,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00202" summary="grunt">
-      <created>1465228662612</created>
-      <option name="number" value="00202" />
-      <option name="project" value="LOCAL" />
-      <updated>1465228662612</updated>
-    </task>
     <task id="LOCAL-00203" summary="qC 9066">
       <created>1465236658744</created>
       <option name="number" value="00203" />
@@ -914,7 +903,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465479957868</updated>
     </task>
-    <option name="localTasksCounter" value="251" />
+    <task id="LOCAL-00251" summary="DE2851">
+      <created>1465484589062</created>
+      <option name="number" value="00251" />
+      <option name="project" value="LOCAL" />
+      <updated>1465484589062</updated>
+    </task>
+    <option name="localTasksCounter" value="252" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -924,7 +919,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30369127" sideWeight="0.50852877" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28691274" sideWeight="0.4914712" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28691274" sideWeight="0.4914712" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -989,7 +984,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value=" Defect #9050" />
     <MESSAGE value="FIND and XBOX padding right" />
     <MESSAGE value="Reduce z-index camp" />
     <MESSAGE value="Fixing some defects" />
@@ -1014,7 +1008,8 @@
     <MESSAGE value="CLR" />
     <MESSAGE value="Fxes" />
     <MESSAGE value="9064" />
-    <option name="LAST_COMMIT_MESSAGE" value="9064" />
+    <MESSAGE value="DE2851" />
+    <option name="LAST_COMMIT_MESSAGE" value="DE2851" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1415,49 +1410,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.482143">
-          <caret line="823" column="3" selection-start-line="823" selection-start-column="3" selection-end-line="823" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!block;n#AddInputParameter#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="n#!!block;n#getQueryString#0" expanded="false" />
-            <element signature="n#!!block;n#getPageFromURLNode#0" expanded="false" />
-            <element signature="e#25329#29071#0" expanded="false" />
-            <element signature="e#30645#30828#0" expanded="false" />
-            <element signature="e#30911#31201#0" expanded="false" />
-            <element signature="n#!!block;n#isValidEmailAddress#0" expanded="false" />
-            <element signature="n#!!block;n#unsubscribeEmailDNSS#0" expanded="false" />
-            <element signature="n#!!block;n#UnsubscribeProcessorSubmit#0" expanded="false" />
-            <element signature="e#33744#34127#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/variable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5">
-          <caret line="98" column="179" selection-start-line="98" selection-start-column="179" selection-end-line="98" selection-end-column="179" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/js/aemfixes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.275862">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1522,7 +1479,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/subcategory-page-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22633745">
+        <state vertical-scroll-proportion="0.9390244">
           <caret line="794" column="4" selection-start-line="794" selection-start-column="4" selection-end-line="812" selection-end-column="10" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1532,6 +1489,44 @@
             <element signature="n#div#3;n#div#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#div#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#div#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/aemfixes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5862069">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.375">
+          <caret line="97" column="93" selection-start-line="97" selection-start-column="93" selection-end-line="97" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/js/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3313783">
+          <caret line="924" column="39" selection-start-line="924" selection-start-column="39" selection-end-line="924" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!block;n#AddInputParameter#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0" expanded="false" />
+            <element signature="n#!!block;n#getQueryString#0" expanded="false" />
+            <element signature="n#!!block;n#getPageFromURLNode#0" expanded="false" />
+            <element signature="e#25329#29071#0" expanded="false" />
+            <element signature="e#30645#30828#0" expanded="false" />
+            <element signature="e#30911#31201#0" expanded="false" />
+            <element signature="n#!!block;n#isValidEmailAddress#0" expanded="false" />
+            <element signature="n#!!block;n#unsubscribeEmailDNSS#0" expanded="false" />
+            <element signature="n#!!block;n#UnsubscribeProcessorSubmit#0" expanded="false" />
+            <element signature="e#33744#34127#0" expanded="false" />
           </folding>
         </state>
       </provider>

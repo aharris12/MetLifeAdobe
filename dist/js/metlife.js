@@ -3385,12 +3385,10 @@ function toggleLoginTypes() {
     var plus = '<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>';
     //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
-    /*    $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')*/
         $('.login-type-trigger__title').find("svg").remove();
         $('.login-type-trigger__title').find('h2').append(minus);
 
     } else {
-      /*  $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>')*/
         $('.login-type-trigger__title').find("svg").remove();
         $('.login-type-trigger__title').find('h2').append(plus);
     }
@@ -5263,8 +5261,10 @@ function ss_clear(nofocus) {
  */
 function ss_hide(qry) {
     console.log("ss_hide");
+    //ss_popup_element = search_suggest
     var tbl = document.getElementById(ss_popup_element);
     if (tbl.style.visibility == 'visible') {
+        //ss_panic = false;  Never initialized anywhere
         if (ss_panic) {
             // alert('close suggestion box');
         }
@@ -11578,9 +11578,7 @@ function positionOverlay(){
 
 /*AEM Specific Funcitons*/
 function subNavClassSwitch(){
-	console.log('$(".subnav-go-back").length > 0 ', $(".subnav-go-back").length > 0)
 	if($(".subnav-go-back").length > 0){
-		console.log('$(".subnav-go-back__menu").length == 0 ', $(".subnav-go-back__menu").length == 0)
 		if($(".subnav-go-back__menu").length == 0){
 			$('.subnav-go-back__list__item__anchor').each(function(){
 				var subNavLabel = $(this).find('.subnav-go-back__list__item__anchor__label');
@@ -11599,19 +11597,7 @@ function subNavClassSwitch(){
 			})
 			$(".subnav-go-back__list").addClass('subnav__list').removeClass('subnav-go-back__list');
 			$(".subnav-go-back").addClass("subnav").removeClass("subnav-go-back")
-		}/*else{
-			$('.subnav__list__item__anchor__label').each(function(){
-				$(this).addClass("subnav-go-back__list__item__anchor__label").removeClass("subnav__list__item__anchor__label")
-			})
-			$('.subnav__list__item__anchor').each(function(){
-				$(this).addClass("subnav-go-back__list__item__anchor").removeClass("subnav__list__item__anchor");
-			})
-			$('.subnav__list__item').each(function(){
-				$(this).addClass("subnav-go-back__list__item").removeClass("subnav__list__item");
-			})
-			$(".subnav__list").addClass('subnav__list').removeClass('subnav-go-back__list');
-			$(".subnav").addClass("subnav-go-back").removeClass("subnav");
-		}*/
+		}
 		}
 }
 function productCardAEM(){

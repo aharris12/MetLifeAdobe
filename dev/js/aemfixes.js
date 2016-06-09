@@ -1,8 +1,6 @@
 /*AEM Specific Funcitons*/
 function subNavClassSwitch(){
-	console.log('$(".subnav-go-back").length > 0 ', $(".subnav-go-back").length > 0)
 	if($(".subnav-go-back").length > 0){
-		console.log('$(".subnav-go-back__menu").length == 0 ', $(".subnav-go-back__menu").length == 0)
 		if($(".subnav-go-back__menu").length == 0){
 			$('.subnav-go-back__list__item__anchor').each(function(){
 				var subNavLabel = $(this).find('.subnav-go-back__list__item__anchor__label');
@@ -21,19 +19,7 @@ function subNavClassSwitch(){
 			})
 			$(".subnav-go-back__list").addClass('subnav__list').removeClass('subnav-go-back__list');
 			$(".subnav-go-back").addClass("subnav").removeClass("subnav-go-back")
-		}/*else{
-			$('.subnav__list__item__anchor__label').each(function(){
-				$(this).addClass("subnav-go-back__list__item__anchor__label").removeClass("subnav__list__item__anchor__label")
-			})
-			$('.subnav__list__item__anchor').each(function(){
-				$(this).addClass("subnav-go-back__list__item__anchor").removeClass("subnav__list__item__anchor");
-			})
-			$('.subnav__list__item').each(function(){
-				$(this).addClass("subnav-go-back__list__item").removeClass("subnav__list__item");
-			})
-			$(".subnav__list").addClass('subnav__list').removeClass('subnav-go-back__list');
-			$(".subnav").addClass("subnav-go-back").removeClass("subnav");
-		}*/
+		}
 		}
 }
 function productCardAEM(){
