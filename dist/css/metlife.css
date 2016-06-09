@@ -10735,7 +10735,11 @@ ul.bullet-list {
     text-align: left;
     padding: 10px 20px;
 }
-
+@media screen and (max-width: 767px) {
+    .subnav-go-back__mobile--title {
+        display: inline-block;
+    }
+}
 @media screen and (min-width: 768px){
     .subnav-go-back{
         box-shadow: none;
