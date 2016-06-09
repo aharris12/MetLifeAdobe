@@ -44,16 +44,16 @@ function resizeMegaMenu () {
     }else{
 
 
-            if(resizeMenu == true) {
-                if ($(".megamenu__sub-items").css("display") != "none") {
-                    $(".megamenu__sub-items").hide()
-                }
-
-                $(".megamenu__main-item").each(function(){
-                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-                });
-
+        if(resizeMenu == true) {
+            if ($(".megamenu__sub-items").css("display") != "none") {
+                $(".megamenu__sub-items").hide()
             }
+
+            $(".megamenu__main-item").each(function(){
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            });
+
+        }
 
         resizeMenu = false;
 
@@ -95,13 +95,8 @@ function closeSearchBox () {
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__search-box').css('width',"0");
-<<<<<<< HEAD
-
-};
-=======
     $("#searchInPage").val('');
 }
->>>>>>> origin/master
 
 $(document).on("click tap", function (e) {
     var megaMenuTrigger = $(".megamenu-trigger");

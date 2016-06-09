@@ -104,7 +104,7 @@ $('[data-fsubmit]').on('click', function (e) {
 
 		var fid = $this.attr('data-fsubmit');
 		var $formid = $('[data-fid=' + fid + ']');
-		postLeadform($formid);
+		ServicesAPI.postLeadform($formid);
 
 		$formid.find('[data-observes-id]').each(function () {
 			$(this).hide();
@@ -192,7 +192,7 @@ $('[data-valid-type=text]').on('blur', function (evt) {
 	var val = $this.val();
 	var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
 	/* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
-	validateOnType(val, $this, re);
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('.user-checkbox').on('click', function () {
@@ -241,7 +241,7 @@ $('[data-valid-type=email]').on('blur', function (evt) {
 	var $this = $(this);
 	var val = $this.val();
 	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-	validateOnType(val, $this, re);
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=zip]').on('blur', function (evt) {
@@ -249,7 +249,7 @@ $('[data-valid-type=zip]').on('blur', function (evt) {
 	var $this = $(this);
 	var val = $this.val();
 	var re = /^\d{5}$/i;
-	validateOnType(val, $this, re);
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=zip]').on('keyup', function (evt) {
@@ -273,7 +273,7 @@ $('[data-valid-type=phone]').on('blur', function (evt) {
 	$this.trigger('keyup')
 	var val = $this.val();
 	var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
-	validateOnType(val, $this, re);
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=phone]').on('keyup', function (evt) {
@@ -319,370 +319,7 @@ $('.productUserQuestion').on('blur', function () {
 		$('.productPolicyTypes').find('svg').css('fill', '#666');
 	}
 });
-
-/* lead form functions */
-function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
-	var lead = "";
-	var scenarioName = "";
-	var mmrep = "";
-	var formObjectName = document.getElementById(formName);
-	var reserveid = getCookie("ReserveID");
-	if (null != reserveid) AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
-	else;
-
-	//AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
-	if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
-	if (null != mmrep && "" != mmrep) {
-		var lsubContentGroupDirectory = "";
-		var lcontentGroupDirectory = "";
-		var laudience = "";
-		if ("" != subContentGroupDirectory) {
-			lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
-			lcontentGroupDirectory = contentGroupDirectory;
-			laudience = audience;
-		} else if ("" != contentGroupDirectory) {
-			lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
-			lsubContentGroupDirectory = subContentGroupDirectory;
-			laudience = audience;
-		} else if ("" != audience) {
-			laudience = audience + "-" + mmrep;
-			lcontentGroupDirectory = contentGroupDirectory;
-			lsubContentGroupDirectory = subContentGroupDirectory;
-		}
-		if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-		else AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
-		if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-		else AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
-		if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
-		else AddInputParameter(formObjectName, "input", "audience", laudience, document);
-	} else {
-		var CGFrQS = "";
-		var SCGFrQS = "";
-		var AUFrQS = "";
-		CGFrQS = getQueryString("CG");
-		SCGFrQS = getQueryString("SCG");
-		AUFrQS = getQueryString("AU");
-		if ("" != CGFrQS) AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
-		else if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-		else AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
-		if ("" != SCGFrQS) AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
-		else if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-		else AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
-		if ("" != AUFrQS) AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
-		else if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
-		else AddInputParameter(formObjectName, "input", "audience", audience, document);
-	}
-	if ("requestFormRightNav_Acc" == formName) {
-		var prodType = document.getElementById("requestType").value;
-		if ("" != prodType)
-			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-			else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-	} else if ("requestFormRightNav" == formName) {
-		var prodType = "";
-		if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
-		else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-		if ("" != prodType)
-			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-			else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-	} else {
-		var prodType = "";
-		if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-		if ("" != prodType)
-			if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-			else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-	}
-	if ("NewLead" != lead && "ServiceLead" != lead) {
-		lead = "NonLeadForm";
-		if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
-	}
-	// console.debug("Lead type: " + lead);
-	var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
-	if (null != results) {
-		var fullID = unescape(results[2]);
-		var partID = fullID.split(":");
-		var visitorID = partID[0].split("=");
-	}
-	if ("undefined" == typeof visitorID) AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
-	else AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
-	var urlNode = document.URL;
-	urlNode = getPageFromURLNode(formObjectName, mmrep);
-	if ("requestFormRightNav" == formName) {
-		//console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
-		if (document.requestFormRightNav.coverage)
-			if (document.requestFormRightNav.coverage.value < 1e5) {
-				urlNode = urlNode.split("?");
-				urlNode = urlNode[0];
-			}
-	}
-	AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
-	var validationSuccess = true;
-	if (validationSuccess) {
-		/*var tempURL = "www.metlife.com";
-		 if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
-		 if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
-		 var preFill = formObjectName.lstPnPPreFillParameters;
-		 console.debug("Prefill Parameters is: " + preFill);
-		 if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
-		 var prefillParam = preFill.value;
-		 var prefillList = prefillParam.split(",");
-		 var PnPPreFillValues = "";
-		 for (i = 0; i < prefillList.length; i++) {
-		 //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
-		 //console.debug("prefillListParam is: " + prefillListParam);
-		 //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
-		 }
-		 document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
-		 }
-		 varwebformID = formObjectName.webformId;
-		 if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
-		 addSessionParameters(formObjectName);
-		 console.debug("Doing Webform submit to: " + submitUrl);
-		 */
-
-	}
-}
-
-var validateOnType = function (val, $this, re) {
-	var placeholder = $this.attr('placeholder');
-	if (val.length > 0 && val != placeholder) {
-		if (val.match(re)) {
-			$this.removeClass('error');
-			$this.removeClass('formatError');
-			$this.removeAttr('data-valid-status');
-		} else {
-			$this.addClass('error');
-			$this.addClass('formatError');
-			$this.attr('data-valid-status', 'failed');
-		}
-	} else {
-		$this.removeClass('formatError');
-		var attrDVS = $this.attr('data-required');
-		if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
-
-		} else {
-			$this.removeClass('error');
-			$this.removeAttr('data-valid-status');
-		}
-	}
-};
-
-function AddInputParameter(a, b, c, d, e) {
-	var f = e.createElement(b);
-	f.setAttribute("type", "hidden");
-	f.setAttribute("name", c);
-	f.setAttribute("value", d);
-	a.appendChild(f);
-}
-
-function getCookie(c_name) {
-	if (document.cookie.length > 0) {
-		c_start = document.cookie.indexOf(c_name + "=");
-		if (c_start != -1) {
-			c_start = c_start + c_name.length + 1;
-			c_end = document.cookie.indexOf(";", c_start);
-			if (c_end == -1) c_end = document.cookie.length;
-			return unescape(document.cookie.substring(c_start, c_end));
-		}
-	}
-	return "";
-}
-
-function getQueryString(a) {
-	a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-	var b = "[\\?&]" + a + "=([^&#]*)";
-	var c = new RegExp(b);
-	var d = c.exec(window.location.href);
-	if (null == d) return "";
-	else return d[1];
-}
-
-function getPageFromURLNode(a, b) {
-	var c = document.URL;
-	var d = "";
-	var e = window.location.search.split("?");
-	var f = "";
-	var g = "";
-	var h = false;
-	if (null != document.getElementById("WT.mc_id")) {
-		mcid = getCookie("SessionMCID");
-		AddInputParameter(a, "input", "wb_code", mcid, document);
-		AddInputParameter(a, "input", "WT.mc_id", mcid, document);
-	}
-	if (2 == e.length) {
-		var i = e[1].split("&");
-		for (var j = 0; j < i.length; j++) {
-			var k = i[j].split("=");
-			if ("wt.mc_id" == k[0].toLowerCase()) {
-				AddInputParameter(a, "input", "wb_code", k[1], document);
-			}
-			if ("" != b)
-				if ("pagefrom" == k[0].toLowerCase()) {
-					d = k[1] + "-" + b;
-					if (j == i.length - 1) g = g + k[0] + "=" + d;
-					else g = g + k[0] + "=" + d + "&";
-					h = true;
-				} else if (j == i.length - 1) g += i[j];
-				else g = g + i[j] + "&";
-		}
-		if (h) {
-			var l = document.URL;
-			var m = l.split("?");
-			f = window.location.href.split("#")[1];
-			if ("" != f) c = m[0] + "?" + g;
-			else c = m[0] + "?" + g + "#" + f;
-		}
-	}
-	return c;
-}
-
-function addSessionParameters(a) {
-	var b = sessionVars.getSessionParams();
-	for (var c in b)
-		if (b.hasOwnProperty(c))
-			if ("" !== b[c])
-				if (checkFormField(a, c)) AddInputParameter(a, "input", c, b[c], document);
-				else a.elements[c].value = b[c];
-}
-
-function checkFormField(a, b) {
-	if (void 0 == a.elements[b]) return true;
-	else return false;
-}
-
-function postLeadform($formid){
-	var formName = $formid.attr('name');
-	formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-	var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
-	var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
-	$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-
-
-	if(requestType == 'New Product/Planning Services'){
-		var jsonData = {};
-		var formData = $('form[name='+formName+']').serializeArray();
-		$.each(formData, function() {
-			if (jsonData[this.name]) {
-
-				if (!jsonData[this.name].push) {
-					jsonData[this.name] = [jsonData[this.name]];
-
-				}
-				jsonData[this.name].push(this.value || '');
-			} else {
-
-				jsonData[this.name] = this.value || '';
-				if (!jsonData[this.name].push) {
-					if(this.name == "prodInt" || this.name == "prodInterest"){
-						jsonData[this.name] = [jsonData[this.name]];
-
-					}
-				}
-			}
-
-		});
-
-		console.log(JSON.stringify(jsonData));
-		$.ajax({
-			url: ajaxUrl,
-			type: 'POST',
-			dataType: 'json',
-			data: JSON.stringify(jsonData),
-			async: true,
-			contentType: 'application/json',
-			processData: false,
-			success: function (returndata) {
-				//console.log(returndata);
-			},
-			error: function(){
-				console.log("error in ajax form submission");
-			}
-		});
-	}
-
-	if(requestType == 'Existing Product/Policy'){
-		if(typeof FormData !== 'undefined'){
-			var formData = new FormData($('form[name='+formName+']')[0]);
-			$.ajax({
-				url: ajaxUrl,
-				type: 'POST',
-				data: formData,
-				async: false,
-				contentType: false,
-				processData: false,
-				success: function (returndata) {
-					//console.log(returndata);
-				},
-				error: function(){
-					console.log("error in ajax form submission");
-				}
-			});
-		} else {
-			var formData = postSerialize($('form[name='+formName+']'));
-			$.ajax({
-				url: ajaxUrl,
-				type: 'POST',
-				data: formData,
-				async: false,
-				contentType: 'application/x-www-form-urlencoded',
-				processData: false,
-				success: function (returndata) {
-					//console.log(returndata);
-				},
-				error: function(){
-					console.log("error in ajax form submission");
-				}
-			});
-		}
-	}
-}
-
-function formPass(fid) {
-
-	switch (fid){
-		case "contactSidebar":
-			$('.contactSideForm').fadeOut(2000);
-			$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
-			break;
-
-		case "contactSingle":
-			$('.contact-us__contact-form').fadeOut(1000);
-			$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
-			break;
-
-	}
-
-	$('.info-mandatory').removeClass("error-mandatory");
-	$('.form-user-ctrl').removeClass("error");
-	$('.form-user-grp').find('svg').css('fill', '#666');
-
-	setTimeout(function () {
-		resetForm(fid);
-	}, 5000);
-}
-
-function resetForm(fid) {
-
-	switch (fid){
-		case "contactSidebar":
-			//in a timeout to avoid visual conflict with animation
-			setTimeout(function () {
-				$('#requestFormRightNav_Acc').trigger("reset");
-				$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-				$('.contactSideForm').toggle();
-				$('.contact-container--global').css("right", "-640px");
-			}, 1000);
-			break;
-
-		case "contactSingle":
-			$('#requestFormRContactUs_Acc').trigger("reset");
-			$('.contact-us__contact-form').fadeIn(1000);
-			$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
-			break;
-
-	}
-
-
-}
+//Contact Forms
 
 //Forms Lib Variables
 var searchAgainFlag = false;
@@ -3082,10 +2719,362 @@ var ServicesAPI = {
 			}
 		});
 		if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
-			formPass(fid);
+			ServicesAPI.formPass(fid);
 		} else {
 			$formid.find('.info-mandatory').addClass('error-mandatory');
 		}
 		return formStatus;
+	},
+	formProcessorSubmit : function(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
+	var lead = "";
+	var scenarioName = "";
+	var mmrep = "";
+	var formObjectName = document.getElementById(formName);
+	var reserveid = ServicesAPI.getCookie("ReserveID");
+	if (null != reserveid) ServicesAPI.AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
+	else;
+
+	//AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
+	if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
+	if (null != mmrep && "" != mmrep) {
+		var lsubContentGroupDirectory = "";
+		var lcontentGroupDirectory = "";
+		var laudience = "";
+		if ("" != subContentGroupDirectory) {
+			lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			laudience = audience;
+		} else if ("" != contentGroupDirectory) {
+			lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+			laudience = audience;
+		} else if ("" != audience) {
+			laudience = audience + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+		}
+		if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
+		if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
+		if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", laudience, document);
+	} else {
+		var CGFrQS = "";
+		var SCGFrQS = "";
+		var AUFrQS = "";
+		CGFrQS = ServicesAPI.getQueryString("CG");
+		SCGFrQS = ServicesAPI.getQueryString("SCG");
+		AUFrQS = ServicesAPI.getQueryString("AU");
+		if ("" != CGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
+		else if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
+		if ("" != SCGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
+		else if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
+		if ("" != AUFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
+		else if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", audience, document);
+	}
+	if ("requestFormRightNav_Acc" == formName) {
+		var prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else if ("requestFormRightNav" == formName) {
+		var prodType = "";
+		if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
+		else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else {
+		var prodType = "";
+		if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+			else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+	}
+	if ("NewLead" != lead && "ServiceLead" != lead) {
+		lead = "NonLeadForm";
+		if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
+	}
+	// console.debug("Lead type: " + lead);
+	var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
+	if (null != results) {
+		var fullID = unescape(results[2]);
+		var partID = fullID.split(":");
+		var visitorID = partID[0].split("=");
+	}
+	if ("undefined" == typeof visitorID) ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
+	else ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
+	var urlNode = document.URL;
+	urlNode = ServicesAPI.getPageFromURLNode(formObjectName, mmrep);
+	if ("requestFormRightNav" == formName) {
+		//console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
+		if (document.requestFormRightNav.coverage)
+			if (document.requestFormRightNav.coverage.value < 1e5) {
+				urlNode = urlNode.split("?");
+				urlNode = urlNode[0];
+			}
+	}
+	ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+	var validationSuccess = true;
+	if (validationSuccess) {
+		/*var tempURL = "www.metlife.com";
+		 if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
+		 if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
+		 var preFill = formObjectName.lstPnPPreFillParameters;
+		 console.debug("Prefill Parameters is: " + preFill);
+		 if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
+		 var prefillParam = preFill.value;
+		 var prefillList = prefillParam.split(",");
+		 var PnPPreFillValues = "";
+		 for (i = 0; i < prefillList.length; i++) {
+		 //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
+		 //console.debug("prefillListParam is: " + prefillListParam);
+		 //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
+		 }
+		 document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
+		 }
+		 varwebformID = formObjectName.webformId;
+		 if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+		 ServicesAPI.addSessionParameters(formObjectName);
+		 console.debug("Doing Webform submit to: " + submitUrl);
+		 */
+
+	}
+},
+	validateOnType : function (val, $this, re) {
+		var placeholder = $this.attr('placeholder');
+		if (val.length > 0 && val != placeholder) {
+			if (val.match(re)) {
+				$this.removeClass('error');
+				$this.removeClass('formatError');
+				$this.removeAttr('data-valid-status');
+			} else {
+				$this.addClass('error');
+				$this.addClass('formatError');
+				$this.attr('data-valid-status', 'failed');
+			}
+		} else {
+			$this.removeClass('formatError');
+			var attrDVS = $this.attr('data-required');
+			if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+
+			} else {
+				$this.removeClass('error');
+				$this.removeAttr('data-valid-status');
+			}
+		}
+	},
+	AddInputParameter : function(a, b, c, d, e) {
+		var f = e.createElement(b);
+		f.setAttribute("type", "hidden");
+		f.setAttribute("name", c);
+		f.setAttribute("value", d);
+		a.appendChild(f);
+	},
+	getCookie : function(c_name) {
+		if (document.cookie.length > 0) {
+			c_start = document.cookie.indexOf(c_name + "=");
+			if (c_start != -1) {
+				c_start = c_start + c_name.length + 1;
+				c_end = document.cookie.indexOf(";", c_start);
+				if (c_end == -1) c_end = document.cookie.length;
+				return unescape(document.cookie.substring(c_start, c_end));
+			}
+		}
+		return "";
+	},
+	getQueryString : function(a) {
+		a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var b = "[\\?&]" + a + "=([^&#]*)";
+		var c = new RegExp(b);
+		var d = c.exec(window.location.href);
+		if (null == d) return "";
+		else return d[1];
+	},
+	getPageFromURLNode : function(a, b) {
+		var c = document.URL;
+		var d = "";
+		var e = window.location.search.split("?");
+		var f = "";
+		var g = "";
+		var h = false;
+		if (null != document.getElementById("WT.mc_id")) {
+			mcid = ServicesAPI.getCookie("SessionMCID");
+			ServicesAPI.AddInputParameter(a, "input", "wb_code", mcid, document);
+			ServicesAPI.AddInputParameter(a, "input", "WT.mc_id", mcid, document);
+		}
+		if (2 == e.length) {
+			var i = e[1].split("&");
+			for (var j = 0; j < i.length; j++) {
+				var k = i[j].split("=");
+				if ("wt.mc_id" == k[0].toLowerCase()) {
+					ServicesAPI.AddInputParameter(a, "input", "wb_code", k[1], document);
+				}
+				if ("" != b)
+					if ("pagefrom" == k[0].toLowerCase()) {
+						d = k[1] + "-" + b;
+						if (j == i.length - 1) g = g + k[0] + "=" + d;
+						else g = g + k[0] + "=" + d + "&";
+						h = true;
+					} else if (j == i.length - 1) g += i[j];
+					else g = g + i[j] + "&";
+			}
+			if (h) {
+				var l = document.URL;
+				var m = l.split("?");
+				f = window.location.href.split("#")[1];
+				if ("" != f) c = m[0] + "?" + g;
+				else c = m[0] + "?" + g + "#" + f;
+			}
+		}
+		return c;
+	},
+	addSessionParameters : function(a) {
+		var b = sessionVars.getSessionParams();
+		for (var c in b)
+			if (b.hasOwnProperty(c))
+				if ("" !== b[c])
+					if (ServicesAPI.checkFormField(a, c)) ServicesAPI.AddInputParameter(a, "input", c, b[c], document);
+					else a.elements[c].value = b[c];
+	},
+	checkFormField : function (a, b) {
+		if (void 0 == a.elements[b]) return true;
+		else return false;
+	},
+	postLeadform : function ($formid){
+		var formName = $formid.attr('name');
+		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+		var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+		var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+
+
+		if(requestType == 'New Product/Planning Services'){
+			var jsonData = {};
+			var formData = $('form[name='+formName+']').serializeArray();
+			$.each(formData, function() {
+				if (jsonData[this.name]) {
+
+					if (!jsonData[this.name].push) {
+						jsonData[this.name] = [jsonData[this.name]];
+
+					}
+					jsonData[this.name].push(this.value || '');
+				} else {
+
+					jsonData[this.name] = this.value || '';
+					if (!jsonData[this.name].push) {
+						if(this.name == "prodInt" || this.name == "prodInterest"){
+							jsonData[this.name] = [jsonData[this.name]];
+
+						}
+					}
+				}
+
+			});
+
+			console.log(JSON.stringify(jsonData));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				dataType: 'json',
+				data: JSON.stringify(jsonData),
+				async: true,
+				contentType: 'application/json',
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		}
+
+		if(requestType == 'Existing Product/Policy'){
+			if(typeof FormData !== 'undefined'){
+				var formData = new FormData($('form[name='+formName+']')[0]);
+				$.ajax({
+					url: ajaxUrl,
+					type: 'POST',
+					data: formData,
+					async: false,
+					contentType: false,
+					processData: false,
+					success: function (returndata) {
+						//console.log(returndata);
+					},
+					error: function(){
+						console.log("error in ajax form submission");
+					}
+				});
+			} else {
+				var formData = postSerialize($('form[name='+formName+']'));
+				$.ajax({
+					url: ajaxUrl,
+					type: 'POST',
+					data: formData,
+					async: false,
+					contentType: 'application/x-www-form-urlencoded',
+					processData: false,
+					success: function (returndata) {
+						//console.log(returndata);
+					},
+					error: function(){
+						console.log("error in ajax form submission");
+					}
+				});
+			}
+		}
+	},
+	formPass : function (fid) {
+
+		switch (fid){
+			case "contactSidebar":
+				$('.contactSideForm').fadeOut(2000);
+				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+				break;
+
+			case "contactSingle":
+				$('.contact-us__contact-form').fadeOut(1000);
+				$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+				break;
+
+		}
+
+		$('.info-mandatory').removeClass("error-mandatory");
+		$('.form-user-ctrl').removeClass("error");
+		$('.form-user-grp').find('svg').css('fill', '#666');
+
+		setTimeout(function () {
+			ServicesAPI.resetForm(fid);
+		}, 5000);
+	},
+	resetForm : function (fid) {
+
+		switch (fid){
+			case "contactSidebar":
+				//in a timeout to avoid visual conflict with animation
+				setTimeout(function () {
+					$('#requestFormRightNav_Acc').trigger("reset");
+					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+					$('.contactSideForm').toggle();
+					$('.contact-container--global').css("right", "-640px");
+				}, 1000);
+				break;
+
+			case "contactSingle":
+				$('#requestFormRContactUs_Acc').trigger("reset");
+				$('.contact-us__contact-form').fadeIn(1000);
+				$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+				break;
+
+		}
+
+
 	}
 };
