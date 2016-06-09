@@ -92,12 +92,18 @@ $('#biz-account-purpose').change(function(){
 });
 
 function toggleLoginTypes() {
-
+    var minus = '<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>';
+    var plus = '<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>';
     //Toggle main menu item's chevron
     if ($('.login-type-trigger__title').find('svg').attr('class').indexOf('icon-plus') > 0) {
-        $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')
+    /*    $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>')*/
+        $('.login-type-trigger__title').find("svg").remove();
+        $('.login-type-trigger__title').find('h2').append(minus);
+
     } else {
-        $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>')
+      /*  $('.login-type-trigger__title').find('use').unwrap().wrap('<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>')*/
+        $('.login-type-trigger__title').find("svg").remove();
+        $('.login-type-trigger__title').find('h2').append(plus);
     }
     $('.login-types').toggleClass('overlay-scroll__child');
     $('.login-container').toggleClass('overlay-scroll__child');

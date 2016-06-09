@@ -200,6 +200,13 @@ $('[data-required=true]').on('blur', function () {
             $this.parent('.form-user-grp').find('svg').css('fill', '#666');
         }
     }
+    /*if($(this).parent().parent().parent().attr("data-observes-value") == 'Exisiting Product/Policy'){
+        if (val.length != 0) {
+            $this.removeClass('error');
+            $("[data-request-type]").removeClass('error');
+            $("[data-request-type]").attr("data-valid-status=success");
+        }
+    }*/
 });
 
 $(".form-user-ctrl").on('click', function(evt){
