@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     background: #2c77c5;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .subnav__list {

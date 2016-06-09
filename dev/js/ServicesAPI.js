@@ -29,6 +29,661 @@ var dir_markerArray = [];
 var dir_to_flag=true;
 var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
 
+//Contact Forms
+
+$(".form-radio-grp svg, .image_radio svg").on('click', function(){
+	var radioButton = $(this).siblings('input');
+	if (!radioButton.prop('checked')){
+		radioButton.prop('checked', true);
+		var radioName = radioButton.prop('name');
+		$('input[name=' + radioName + ']').siblings('svg').toggle();
+	};
+});
+
+$('#productPolicy option[value=""]').attr('selected', true);
+
+$("[data-fid='contactCard'] input").click(function() {
+	if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+		$('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
+	}
+});
+
+$('.contactCard .form-minimize').click(function() {
+	$('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+});
+
+$("[data-request-type]").on("change", function(){
+	var thisValue = $(this).val()
+	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+	var $formid = $('[data-fid=' + thisForm + ']');
+	$("[data-observes-id]").find('input:radio').each(function(){
+		$(this).prop('checked', false);
+	});
+	$formid.find('[data-observes-id]').each(function () {
+
+		if($(this).attr('data-observes-value') == thisValue ){
+			$(this).show();
+
+		}else{
+			$(this).hide();
+		}
+	});
+})
+
+$("[data-observes-id]").find('textarea').on("change", function(){
+	val = $("[data-observes-id]").find('textarea').val();
+	var placeholder  = $("[data-observes-id]").find('textarea').attr('placeholder');
+	if (val == "" || val == placeholder) {
+		$("[data-request-type]").attr('data-valid-status', 'failed');
+	} else {
+		$("[data-request-type]").attr('data-valid-status', 'success');
+		$("[data-request-type]").removeClass('error');
+	}
+})
+
+$("[data-observes-id]").find('input:text').on("change", function(){
+	val = $("[data-observes-id]").find('input:text').val();
+	var placeholder  = $("[data-observes-id]").find('input:text').attr('placeholder');
+	if (val == "" || val == placeholder) {
+		$("[data-request-type]").attr('data-valid-status', 'failed');
+	} else {
+		$("[data-request-type]").attr('data-valid-status', 'success');
+		$("[data-request-type]").removeClass('error');
+	}
+})
+
+//new
+$('[data-fsubmit]').on('click', function (e) {
+	e.preventDefault();
+	var $this = $(this);
+	var isValid = ServicesAPI.onFSubmit($(this));
+
+	//25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+	if (isValid) {
+
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		postLeadform($formid);
+
+		$formid.find('[data-observes-id]').each(function () {
+			$(this).hide();
+		});
+
+		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+			$('.aidFormCon').hide();
+			$('.aiwHeading').hide();
+			$('.advisorClose').hide();
+			$('.adImageThankYou').css("display", "table-cell");
+		} else if (fid == "quoteleadform") {
+			$(this).closest('.quote_right_mlt').hide();
+			$(this).closest('.quote_right_sit').hide();
+			$('.quote_results_thank_you').show();
+		} else if (fid == "contactCard") {
+			var temp = "[data-fid='" + fid + "']";
+			//$("[data-fid='contactCard']").hide();
+			$('.contactCard').hide();
+			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+			setTimeout(function () {
+				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+					$('.contactCard').show();
+					$('#requestFormContactCard_Acc').trigger("reset");
+					$('.form-minimize').trigger('click');
+				});
+			}, 5000);
+		} else if (fid == "contactSidebarQuote") {
+			$(".results-form__text").addClass("hidden");
+			$(".results-form__inputs").addClass("hidden");
+			$(".apply-disclaimer").addClass("hidden");
+			$(".contact-thanks").removeClass("hidden");
+
+		} else {
+			$('.' + fid).fadeOut('slow', function () {
+				setTimeout(function () {
+					$('.contactSliderOuterCon').fadeOut(2000);
+					$('.contactsClose').trigger('click');
+				}, 5000)
+			});
+		}
+	} else {
+		//alert("invalid");
+	}
+});
+
+$('select[data-required=true]').on('change', function () {
+	$(this).trigger('blur');
+});
+
+$('[data-required=true]').on('blur', function () {
+	var $this = $(this);
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == placeholder) {
+		$this.val("");
+	}
+	var val = $this.val();
+	if (val.length == 0) {
+		$this.addClass('error');
+		//$this.val(placeholder);
+	} else {
+		var attrDVS = $this.attr('data-valid-status');
+		if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+			//do nothing
+			if (attrDVS == 'failed') {
+				//$(this).addClass('error');
+				formStatus = false;
+			}
+		} else {
+			$this.removeClass('error');
+			$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
+			$this.parent('.form-user-grp').find('svg').css('fill', '#666');
+		}
+	}
+});
+
+$(".form-user-ctrl").on('click', function(evt){
+	if($(this).hasClass("error")) {
+		$(this).val("");
+	}
+});
+
+$('[data-valid-type=text]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+	/* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+	validateOnType(val, $this, re);
+});
+
+$('.user-checkbox').on('click', function () {
+	var count = 0;
+	//var $con = $(this).closest('.productPolicyTypes');
+	var $con = $(this).parents().find('.productPolicyTypes');
+	$con.find('.newProductUser input[type=checkbox]').each(function () {
+		if ($(this).is(':checked')) {
+			count++;
+		}
+	});
+	//if (count > 0 && count <= 5) {
+	//if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+	if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+		$con.find('.productPolicy').attr('data-valid-status', 'success');
+		$con.find('.productPolicy').removeClass('error');
+		$con.find('.productCount').removeClass('errorText');
+		$('.productPolicyTypes').find('svg').css('fill', '#666');
+	} else {
+		$con.find('.productPolicy').attr('data-valid-status', 'failed');
+		$con.find('.productPolicy').addClass('error');
+		$con.find('.productCount').addClass('errorText');
+		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
+	}
+});
+
+$('.user-radio').on('click', function () {
+	var val = $('[data-request-type]').val();
+	var $this = $(this);
+	switch(val) {
+		case 'New Product/Planning Services':
+			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
+			sucessInput.attr('data-valid-status', 'success');
+			sucessInput.removeClass('error');
+			$('.productPolicyTypes').find('svg').css('fill', '#fff');
+			break;
+		case 'Existing Product/Policy':
+			break;
+		default:
+			break;
+	}
+});
+
+$('[data-valid-type=email]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=zip]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^\d{5}$/i;
+	validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=zip]').on('keyup', function (evt) {
+	var regexp = /[^0-9]/;
+	var str = $(this).val();
+	if (str.match(regexp)) {
+		str = str.replace(/\D/g, "");
+		$(this).val(str);
+	}
+	var len = str.length;
+	if (len > 5) {
+		str = str.substr(0, 5);
+		$(this).val(str);
+		return false;
+	}
+});
+
+$('[data-valid-type=phone]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	$this.trigger('keyup')
+	var val = $this.val();
+	var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
+	validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=phone]').on('keyup', function (evt) {
+	var regexp = /[^0-9]/;
+	var input_value = $(this).val();
+	if (input_value.match(regexp)) {
+		input_value = input_value.replace(/\D/g, "");
+		$(this).val(input_value);
+	}
+	var num_len = $(this).val().length;
+	if (num_len >= 3 && num_len < 7) {
+		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, num_len);
+	} else if (num_len >= 7) {
+		input_value = input_value.substring(0, 10)
+		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, 6) + "-" + input_value.substring(6, num_len);
+	}
+	if (evt.keyCode == 8) {
+		var str = input_value.charAt(input_value.length - 1);
+		if (str == "-") {
+			input_value = input_value.substring(0, input_value.length - 1)
+		}
+	}
+	$(this).val(input_value);
+});
+
+$('.productUserQuestion').on('blur', function () {
+	var $this = $(this);
+	var $con = $this.closest('.productPolicyTypes');
+	var val = $this.val();
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == "") {
+		$this.val(placeholder);
+	}
+	if (val == "" || val == placeholder) {
+		$con.find('.productPolicy').attr('data-valid-status', 'failed');
+		$con.find('.productPolicy').addClass('error');
+		$this.addClass('error');
+		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
+	} else {
+		$con.find('.productPolicy').attr('data-valid-status', 'success');
+		$con.find('.productPolicy').removeClass('error');
+		$this.removeClass('error');
+		$('.productPolicyTypes').find('svg').css('fill', '#666');
+	}
+});
+
+/* lead form functions */
+function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
+	var lead = "";
+	var scenarioName = "";
+	var mmrep = "";
+	var formObjectName = document.getElementById(formName);
+	var reserveid = getCookie("ReserveID");
+	if (null != reserveid) AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
+	else;
+
+	//AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
+	if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
+	if (null != mmrep && "" != mmrep) {
+		var lsubContentGroupDirectory = "";
+		var lcontentGroupDirectory = "";
+		var laudience = "";
+		if ("" != subContentGroupDirectory) {
+			lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			laudience = audience;
+		} else if ("" != contentGroupDirectory) {
+			lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+			laudience = audience;
+		} else if ("" != audience) {
+			laudience = audience + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+		}
+		if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
+		if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
+		if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
+		else AddInputParameter(formObjectName, "input", "audience", laudience, document);
+	} else {
+		var CGFrQS = "";
+		var SCGFrQS = "";
+		var AUFrQS = "";
+		CGFrQS = getQueryString("CG");
+		SCGFrQS = getQueryString("SCG");
+		AUFrQS = getQueryString("AU");
+		if ("" != CGFrQS) AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
+		else if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
+		if ("" != SCGFrQS) AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
+		else if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
+		if ("" != AUFrQS) AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
+		else if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
+		else AddInputParameter(formObjectName, "input", "audience", audience, document);
+	}
+	if ("requestFormRightNav_Acc" == formName) {
+		var prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else if ("requestFormRightNav" == formName) {
+		var prodType = "";
+		if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
+		else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else {
+		var prodType = "";
+		if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+			else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+	}
+	if ("NewLead" != lead && "ServiceLead" != lead) {
+		lead = "NonLeadForm";
+		if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
+	}
+	// console.debug("Lead type: " + lead);
+	var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
+	if (null != results) {
+		var fullID = unescape(results[2]);
+		var partID = fullID.split(":");
+		var visitorID = partID[0].split("=");
+	}
+	if ("undefined" == typeof visitorID) AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
+	else AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
+	var urlNode = document.URL;
+	urlNode = getPageFromURLNode(formObjectName, mmrep);
+	if ("requestFormRightNav" == formName) {
+		//console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
+		if (document.requestFormRightNav.coverage)
+			if (document.requestFormRightNav.coverage.value < 1e5) {
+				urlNode = urlNode.split("?");
+				urlNode = urlNode[0];
+			}
+	}
+	AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+	var validationSuccess = true;
+	if (validationSuccess) {
+		/*var tempURL = "www.metlife.com";
+		 if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
+		 if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
+		 var preFill = formObjectName.lstPnPPreFillParameters;
+		 console.debug("Prefill Parameters is: " + preFill);
+		 if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
+		 var prefillParam = preFill.value;
+		 var prefillList = prefillParam.split(",");
+		 var PnPPreFillValues = "";
+		 for (i = 0; i < prefillList.length; i++) {
+		 //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
+		 //console.debug("prefillListParam is: " + prefillListParam);
+		 //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
+		 }
+		 document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
+		 }
+		 varwebformID = formObjectName.webformId;
+		 if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+		 addSessionParameters(formObjectName);
+		 console.debug("Doing Webform submit to: " + submitUrl);
+		 */
+
+	}
+}
+
+var validateOnType = function (val, $this, re) {
+	var placeholder = $this.attr('placeholder');
+	if (val.length > 0 && val != placeholder) {
+		if (val.match(re)) {
+			$this.removeClass('error');
+			$this.removeClass('formatError');
+			$this.removeAttr('data-valid-status');
+		} else {
+			$this.addClass('error');
+			$this.addClass('formatError');
+			$this.attr('data-valid-status', 'failed');
+		}
+	} else {
+		$this.removeClass('formatError');
+		var attrDVS = $this.attr('data-required');
+		if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+
+		} else {
+			$this.removeClass('error');
+			$this.removeAttr('data-valid-status');
+		}
+	}
+};
+
+function AddInputParameter(a, b, c, d, e) {
+	var f = e.createElement(b);
+	f.setAttribute("type", "hidden");
+	f.setAttribute("name", c);
+	f.setAttribute("value", d);
+	a.appendChild(f);
+}
+
+function getCookie(c_name) {
+	if (document.cookie.length > 0) {
+		c_start = document.cookie.indexOf(c_name + "=");
+		if (c_start != -1) {
+			c_start = c_start + c_name.length + 1;
+			c_end = document.cookie.indexOf(";", c_start);
+			if (c_end == -1) c_end = document.cookie.length;
+			return unescape(document.cookie.substring(c_start, c_end));
+		}
+	}
+	return "";
+}
+
+function getQueryString(a) {
+	a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var b = "[\\?&]" + a + "=([^&#]*)";
+	var c = new RegExp(b);
+	var d = c.exec(window.location.href);
+	if (null == d) return "";
+	else return d[1];
+}
+
+function getPageFromURLNode(a, b) {
+	var c = document.URL;
+	var d = "";
+	var e = window.location.search.split("?");
+	var f = "";
+	var g = "";
+	var h = false;
+	if (null != document.getElementById("WT.mc_id")) {
+		mcid = getCookie("SessionMCID");
+		AddInputParameter(a, "input", "wb_code", mcid, document);
+		AddInputParameter(a, "input", "WT.mc_id", mcid, document);
+	}
+	if (2 == e.length) {
+		var i = e[1].split("&");
+		for (var j = 0; j < i.length; j++) {
+			var k = i[j].split("=");
+			if ("wt.mc_id" == k[0].toLowerCase()) {
+				AddInputParameter(a, "input", "wb_code", k[1], document);
+			}
+			if ("" != b)
+				if ("pagefrom" == k[0].toLowerCase()) {
+					d = k[1] + "-" + b;
+					if (j == i.length - 1) g = g + k[0] + "=" + d;
+					else g = g + k[0] + "=" + d + "&";
+					h = true;
+				} else if (j == i.length - 1) g += i[j];
+				else g = g + i[j] + "&";
+		}
+		if (h) {
+			var l = document.URL;
+			var m = l.split("?");
+			f = window.location.href.split("#")[1];
+			if ("" != f) c = m[0] + "?" + g;
+			else c = m[0] + "?" + g + "#" + f;
+		}
+	}
+	return c;
+}
+
+function addSessionParameters(a) {
+	var b = sessionVars.getSessionParams();
+	for (var c in b)
+		if (b.hasOwnProperty(c))
+			if ("" !== b[c])
+				if (checkFormField(a, c)) AddInputParameter(a, "input", c, b[c], document);
+				else a.elements[c].value = b[c];
+}
+
+function checkFormField(a, b) {
+	if (void 0 == a.elements[b]) return true;
+	else return false;
+}
+
+function postLeadform($formid){
+	var formName = $formid.attr('name');
+	formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+	var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+	var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+	$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+
+
+	if(requestType == 'New Product/Planning Services'){
+		var jsonData = {};
+		var formData = $('form[name='+formName+']').serializeArray();
+		$.each(formData, function() {
+			if (jsonData[this.name]) {
+
+				if (!jsonData[this.name].push) {
+					jsonData[this.name] = [jsonData[this.name]];
+
+				}
+				jsonData[this.name].push(this.value || '');
+			} else {
+
+				jsonData[this.name] = this.value || '';
+				if (!jsonData[this.name].push) {
+					if(this.name == "prodInt" || this.name == "prodInterest"){
+						jsonData[this.name] = [jsonData[this.name]];
+
+					}
+				}
+			}
+
+		});
+
+		console.log(JSON.stringify(jsonData));
+		$.ajax({
+			url: ajaxUrl,
+			type: 'POST',
+			dataType: 'json',
+			data: JSON.stringify(jsonData),
+			async: true,
+			contentType: 'application/json',
+			processData: false,
+			success: function (returndata) {
+				//console.log(returndata);
+			},
+			error: function(){
+				console.log("error in ajax form submission");
+			}
+		});
+	}
+
+	if(requestType == 'Existing Product/Policy'){
+		if(typeof FormData !== 'undefined'){
+			var formData = new FormData($('form[name='+formName+']')[0]);
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				data: formData,
+				async: false,
+				contentType: false,
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		} else {
+			var formData = postSerialize($('form[name='+formName+']'));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				data: formData,
+				async: false,
+				contentType: 'application/x-www-form-urlencoded',
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		}
+	}
+}
+
+function formPass(fid) {
+
+	switch (fid){
+		case "contactSidebar":
+			$('.contactSideForm').fadeOut(2000);
+			$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+			break;
+
+		case "contactSingle":
+			$('.contact-us__contact-form').fadeOut(1000);
+			$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+			break;
+
+	}
+
+	$('.info-mandatory').removeClass("error-mandatory");
+	$('.form-user-ctrl').removeClass("error");
+	$('.form-user-grp').find('svg').css('fill', '#666');
+
+	setTimeout(function () {
+		resetForm(fid);
+	}, 5000);
+}
+
+function resetForm(fid) {
+
+	switch (fid){
+		case "contactSidebar":
+			//in a timeout to avoid visual conflict with animation
+			setTimeout(function () {
+				$('#requestFormRightNav_Acc').trigger("reset");
+				$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+				$('.contactSideForm').toggle();
+				$('.contact-container--global').css("right", "-640px");
+			}, 1000);
+			break;
+
+		case "contactSingle":
+			$('#requestFormRContactUs_Acc').trigger("reset");
+			$('.contact-us__contact-form').fadeIn(1000);
+			$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+			break;
+
+	}
+
+
+}
+
 //Forms Lib Variables
 var searchAgainFlag = false;
 
@@ -2378,11 +3033,59 @@ var ServicesAPI = {
 	},
 	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		console.log($("[name=pageFrom]").val())
 		if(pageFrom != undefined){
 			name.val(pageFrom);
-			console.log($("[name=pageFrom]").val())
-			return;
 		}
+	},
+	onFSubmit: function ($this) {
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		var formStatus = true;
+		var flag;
+		$formid.find('[data-required=true]').each(function () {
+			var $this = $(this);
+			var placeholder = $this.attr('placeholder');
+			if ($this.val() == placeholder) {
+				$this.val("");
+			}
+			var val = $this.val();
+			if (val == "New Product/Planning Services") {
+				flag = "New";
+			}
+			if (val == "Existing Product/Policy") {
+				flag = "Existing";
+			}
+			if (val.length == 0) {
+				if (flag == "New") {
+					if (placeholder == "Policy/Contract #" || placeholder == "Question") {
+						$this.removeClass('error');
+						$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
+						$this.parent('.form-user-grp').find('svg').css('fill', '#666');
+					}
+				}
+				else {
+					$this.addClass('error');
+					$this.parent().find('.errorSpan').addClass('errorSpanOpen');
+					$('.contactSideForm .info-mandatory').addClass('error-mandatory');
+					$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
+					$this.val(placeholder);
+					formStatus = false;
+				}
+			}
+		});
+
+		$formid.find('[data-valid-status]').each(function () {
+			var attrDVS = $(this).attr('data-valid-status');
+			if (attrDVS == 'failed') {
+				$(this).addClass('error');
+				formStatus = false;
+			}
+		});
+		if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
+			formPass(fid);
+		} else {
+			$formid.find('.info-mandatory').addClass('error-mandatory');
+		}
+		return formStatus;
 	}
 };
