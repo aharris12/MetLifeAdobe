@@ -1,0 +1,984 @@
+/* Footer Nav */
+
+.global-footer {
+    color: #666666;
+}
+
+.global-footer-no-border {
+    color: #666666;
+    padding-top: 0;
+}
+
+.global-footer .wrapper {
+    padding-top: 0;
+}
+
+.global-footer a:hover {
+    color: #2377C5;
+}
+
+.global-footer--microsite {
+    border-top: 0px solid #ccc;
+    padding-top: 10px;
+}
+
+
+
+.footer-main__items {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.footer-main__label {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.footer-main__item {
+    width: 100%;
+}
+
+.footer-sub__item {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.footer-sub__label,
+.footer-sub__label:visited {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.social-alignment {
+    float: right;
+}
+
+/* Country Selector */
+.dd-select {
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dd-desc {
+    color: #aaa;
+    display: block;
+    overflow: hidden;
+    font-weight: normal;
+}
+
+.dd-selected {
+    overflow: hidden;
+    display: block;
+    font-weight: bold;
+}
+
+.dd-pointer {
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -13px;
+}
+
+.dd-options {
+    border: solid 1px #ccc;
+    border-top: none;
+    list-style: none;
+    box-shadow: 0px 1px 5px #ddd;
+    display: none;
+    position: absolute;
+    z-index: 2000;
+    padding: 0;
+    background: #fff;
+    overflow: auto;
+}
+
+.dd-option {
+    padding: 2px 10px;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+}
+
+.dd-options > li:last-child > .dd-option {
+    border-bottom: none;
+}
+
+.dd-option:hover {
+    background: #f3f3f3;
+}
+
+.dd-selected-description-truncated {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dd-option-selected {
+    background: #f6f6f6;
+}
+
+.dd-option-image,
+.dd-selected-image {
+    vertical-align: middle;
+    float: left;
+    max-width: 30px;
+}
+
+.dd-image-right {
+    float: right;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.dd-container {
+    position: relative;
+}
+
+.dd-selected-text {
+    font-weight: bold
+}
+
+.dd-select {
+    margin-left: 10px;
+}
+
+.dd-select:hover {
+    background: #FFF;
+}
+
+.dd-selected {
+    padding: 0px 10px;
+    text-align: left;
+}
+
+.dd-pointer .icon {
+    fill: #666;
+}
+
+.dd-option-image,
+.dd-selected-image {
+    margin-right: 12px;
+    margin-top: 5px;
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dd-option-image img,
+.dd-selected-image img {
+    min-height: 24px;
+    min-width: 1056px;
+    position: absolute;
+}
+
+.dd-options {
+    left: 10px;
+    width: 100%;
+    text-align: left;
+    max-height: 200px;
+}
+
+.dd-container label:hover {
+    cursor: pointer;
+}
+
+.dd-container a:hover {
+    text-decoration: none;
+}
+
+.dd-option {
+    height: 40px;
+}
+
+.dd-select,
+.dd-option,
+.dd-option.header label {
+    font-family: 'Open Sans';
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dd-option.header label {
+    color: #000;
+    font-size: 13px;
+}
+
+.country_continent {
+    padding: 5px 0 0px 12px;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+}
+
+.country__flag,
+.country__flag--selected {
+    margin-right: 12px;
+    float: left;
+    width: 24px;
+    height: 24px;
+    max-width: 100%;
+    position: relative;
+    top: -2px;
+    top: 0;
+    background-image: url("/static/images/country-flags-sprite.png");
+    background-position: 0 0;
+}
+
+.country__list .country__flag {
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+/* South America */
+
+.Argentina {
+    background-position: -24px 0px;
+}
+
+.Brazil {
+    background-position: -48px 0px;
+}
+
+.Chile {
+    background-position: -72px 0px;
+}
+
+.Chile-ProVida {
+    background-position: -96px 0px;
+}
+
+.Colombia {
+    background-position: -120px 0px;
+}
+
+.Mexico {
+    background-position: -144px 0px;
+}
+
+.Uruguay {
+    background-position: -168px 0px;
+}
+
+.USA {
+    background-position: 0 0;
+}
+
+/* Asia */
+
+.Australia {
+    background-position: -192px 0px;
+}
+
+.Bangladesh {
+    background-position: -216px 0px;
+}
+
+.China {
+    background-position: -240px 0px;
+}
+
+.Hong-Kong {
+    background-position: -264px 0px;
+}
+
+.India {
+    background-position: -288px 0px;
+}
+
+.Japan {
+    background-position: -312px 0px;
+}
+
+.Korea {
+    background-position: -336px 0px;
+}
+
+.Malaysia {
+    background-position: -360px 0px;
+}
+
+.Nepal {
+    background-position: -384px 0px;
+}
+
+.Vietnam {
+    background-position: -408px 0px;
+}
+
+/* Europe */
+
+.Bulgaria {
+    background-position: -432px 0px;
+}
+
+.Cyprus {
+    background-position: -456px 0px;
+}
+
+.Czech-Republic {
+    background-position: -480px 0px;
+}
+
+.France {
+    background-position: -504px 0px;
+}
+
+.Greece {
+    background-position: -528px 0px;
+}
+
+.Hungary {
+    background-position: -552px 0px;
+}
+
+.Ireland {
+    background-position: -576px 0px;
+}
+
+.Italy {
+    background-position: -600px 0px;
+}
+
+.Latvia {
+    background-position: -624px 0px;
+}
+
+.Lithuania {
+    background-position: -648px 0px;
+}
+
+.Poland {
+    background-position: -672px 0px;
+}
+
+.Portugal {
+    background-position: -696px 0px;
+}
+
+.Romania {
+    background-position: -720px 0px;
+}
+
+.Russia {
+    background-position: -744px 0px;
+}
+
+.Slovakia {
+    background-position: -768px 0px;
+}
+
+.Spain {
+    background-position: -792px 0px;
+}
+
+.Turkey {
+    background-position: -816px 0px;
+}
+
+.Ukraine {
+    background-position: -840px 0px;
+}
+
+.United-Kingdom {
+    background-position: -864px 0px;
+}
+
+/* Middle East */
+
+.Bahrain {
+    background-position: -888px 0px;
+}
+
+.Egypt {
+    background-position: -912px 0px;
+}
+
+.Jordan {
+    background-position: -936px 0px;
+}
+
+.Kuwait {
+    background-position: -960px 0px;
+}
+
+.Lebanon {
+    background-position: -984px 0px;
+}
+
+.Oman {
+    background-position: -1008px 0px;
+}
+
+.United-Arab-Emirates {
+    background-position: -1032px 0px;
+}
+
+.footer-country-language-social {
+    margin: 0 -15px;
+}
+
+.footer-country,
+.footer-language {
+    border: 1px solid #ccc;
+    border-left-width: 0;
+    border-right-width: 0;
+    line-height: 2.26em;
+    padding: 15px 0;
+}
+
+.footer-country {
+    border-right-width: 1px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-country, .select-country{
+    min-height: 36px;
+}
+.footer-country:hover, .select-country:hover{
+    cursor: pointer;
+}
+.footer-country .form-icon-wrapper svg {
+    right: 25px;
+}
+
+.footer-language {
+    text-align: center;
+}
+
+.footer-logo {
+    display: block;
+    font-size: 2em;
+    padding: 25px 15px;
+}
+
+.footer-logo img {
+    width: 130px;
+}
+
+.footer-social {
+    text-align: right;
+    padding-top: 32px;
+    padding-right: 15px;
+}
+
+.country__selector {
+    position: absolute;
+    z-index: 100;
+    right: 10px;
+    font-size: 1.25em;
+}
+
+.country__label {
+    font-size: 16px;
+    line-height: 2.3em;
+    text-align: left;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+.country__name {
+    display: block;
+    text-align: left;
+    margin-top: -8px;
+    margin-top: 0;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.country__name--selected {
+    display: none;
+}
+
+.dd-select {
+    border: solid 1px #ccc;
+}
+
+.country__selected {
+    border-width: 0;
+    height: 35px;
+    padding: 7px 10px 8px;
+    border-right-width: 1px;
+    font-size: 15px;
+}
+
+.country__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 65px;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 175px;
+    min-width: 215px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 5px 0 15px 12px;
+    z-index: 905;
+    text-align: left;
+}
+
+.language__link {
+    display: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.language__link:nth-child(3) {
+    display: inline-block;
+}
+
+.social__link {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.social__link svg {
+    height: 15px;
+    width: 15px;
+}
+
+.social__label {
+    display: none;
+}
+
+.footer-legal {
+    color: #999;
+    font-size: 0.98em;
+}
+
+.footer-legal__disclaimer {
+    display: block;
+    margin: 10px 0;
+}
+
+.global-footer--microsite .footer-legal__logo img {
+    width: 130px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.footer-legal__call {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 0 auto 15px;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.footer-legal__call--microsite {
+    padding-left: 0;
+}
+
+.footer-legal__copy {
+    font-size: 0.75em;
+    line-height: 1.75;
+}
+
+.footer-legal__link {
+    text-align: center;
+    font-size: 1em;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.footer-legal__link a{
+    margin: 0 5px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.footer-legal__link > .footer-legal__bullet:before {
+    content: "\2022";
+    padding: 0;
+    display: inline-block;
+}
+
+.global-footer--microsite .footer-legal__bullet:before{
+    content: "\2022";
+    padding: 0;
+    display: inline-block;
+}
+.global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
+    font-size: 14px;
+    line-height: 15px;
+}
+.global-footer--microsite .footer-legal__link a:hover, .footer-legal__call--microsite a:hover{
+    text-decoration: none;
+}
+
+.footer-legal__bullet {
+    display: inline-block;
+}
+
+.footer-legal__copyright {
+    font-size: 12px;
+    line-height: 1.55em;
+    text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
+        font-size: 1em;
+        line-height: 1.55em;
+    }
+
+    .global-footer{
+        padding-bottom: 110px;
+    }
+    .global-footer .wrapper {
+        padding-top: 40px;
+    }
+
+    .footer-main__item {
+        width: 20%;
+    }
+
+    .global-footer--microsite {
+        padding-top: 20px;
+    }
+
+    .footer-legal__link {
+        margin: 0 10px 0 -15px;
+    }
+    .footer-legal__link a{
+        margin: 0;
+    }
+
+    .footer-legal--quote-results {
+        padding-top: 40px;
+    }
+
+    .footer-country {
+        padding-bottom: 15px;
+    }
+
+    .global-footer .wrapper {
+        border-top: 1px solid #ddd;
+    }
+
+    .footer-logo{
+        display: none;
+    }
+    .footer-legal__logo {
+        width: 130px;
+        padding: 4px 0 5px 0;
+        display: block;
+    }
+    .footer-legal__copy{
+        margin-top: 20px;
+    }
+
+    .footer-main__label {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .footer-sub__label,
+    .footer-sub__label:visited {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .social-alignment {
+        float: right;
+    }
+    .social__link {
+        float: left;
+        margin:9px 0 0 10px;
+    }
+
+    .footer-country-language-social {
+        padding-bottom: 25px;
+        border-bottom: 1px solid #cccccc;
+        width: 100%;
+        margin: 0 0 35px 0;
+    }
+
+    .footer-legal__copyright {
+        line-height: 1.55em;
+        display: inline;
+    }
+
+    .footer-country,
+    .footer-language {
+        border: 0;
+    }
+
+    .footer-country {
+        width: 315px;
+    }
+
+    .footer-language {
+        text-align: left;
+        max-width: 220px;
+    }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-social {
+        text-align: right;
+        float: right;
+        padding: 15px 0;
+    }
+
+    .country__selector {
+        right: 15px;
+        top: 15px;
+        font-size: 20px;
+    }
+
+    .country__label {
+        /*width: 70px;*/
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+
+    .country__name {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 2px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .country__name--selected {
+        display: block;
+        left: 45px;
+        top: 0;
+        position: absolute;
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #2c77c5;
+    }
+
+    .country__selected {
+        border: 1px solid #cccccc;
+        background-color: transparent;
+        /*width: 100%;*/
+        max-width: 215px;
+        height: 38px;
+        padding: 7px 10px 8px;
+    }
+
+    .country__selected:hover {
+        background-color: #fff;
+    }
+
+    .country__list {
+        left: 79px;
+        top: 49px;
+        width: 200px;
+        overflow-x: hidden;
+    }
+
+    .language__link {
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 11px;
+        line-height: 15px;
+        font-weight: 600;
+    }
+
+    .social__label {
+        font-size: 12px;
+        display: inline-block;
+        float: left;
+        margin-top: 6px;
+        line-height: 2.3em;
+    }
+
+    .footer-legal__logo {
+        width: 130px;
+        padding: 4px 0 5px 0;
+        display: block;
+    }
+
+    .footer-legal__logo i {
+        font-size: 36px;
+    }
+
+    .footer-legal__call {
+        font-size: 13px;
+        line-height: 15px;
+        padding: 0;
+        text-align: left;
+        margin: 0;
+        margin-top:15px;
+    }
+
+    .footer-legal__call--microsite {
+        padding-left: 25px;
+    }
+
+    .footer-legal__link {
+        text-align: left;
+        font-size: 1em;
+        line-height: 1.5em;
+        padding-bottom: 0;
+        border-bottom: 0px solid #ccc;
+        margin: 0;
+        float: left;
+        margin-right: 5px;
+    }
+}
+
+.dd-option.header .dd-option-image {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .dd-selected label {
+        display: none;
+    }
+
+    .dd-select {
+        width: 43%;
+        float: right;
+        border: none;
+    }
+
+    .dd-options {
+        margin-top: 52px;
+    }
+
+    .dd-selected-image {
+        height: 28px;
+    }
+}
+
+@media (min-width: 769px) {
+    .dd-container {
+        width: 75%;
+        float: right;
+    }
+
+    .country__label {
+        text-align: left;
+        margin-top: 6px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dd-container {
+        width: 74%;
+    }
+
+    .dd-options {
+        width: 95.5%;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .country__selected {
+        padding: 7px 4px 8px;
+    }
+}
+
+.country_header {
+    display: block;
+    cursor: default;
+}
+
+.country_header:hover {
+    text-decoration: none;
+}
+
+.country__list {
+    background-color: #fff;
+    padding: 0;
+}
+
+.country__group {
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.country__group:hover {
+    background-color: #f2f2f2;
+    text-decoration: none;
+    color: #2377c5;
+}
+
+.global-footer hr {
+    margin: 25px -25px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.footer-disclaimer {
+    display: inline;
+    text-align: left;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .dd-pointer.dd-pointer-down svg {
+        top: 3px;
+        right: 0;
+    }
+    .footer-disclaimer {
+        display: inline;
+        text-align: left;
+        width: auto;
+    }
+    .global-footer {
+        padding-bottom: 150px;
+    }
+    .country__label{
+        font-size: 16px;
+        margin-top:0;
+    }
+    .footer-legal__copy{
+        margin-top: 0;
+    }
+    .country__label{
+        padding-left:0;
+    }
+    .footer-language {
+        text-align: left;
+        max-width: none;
+    }
+    .language__link {
+        font-size: 12px;
+        line-height:16px;
+    }
+    .social__link {
+        margin: 8px 0 0 15px;
+    }
+    .social__label{
+        font-size: 16px;
+        margin-top: 0;
+    }
+    .social__link svg {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.global-footer .wrapper.padding-80-0.quote {
+    border: 0;
+}
+

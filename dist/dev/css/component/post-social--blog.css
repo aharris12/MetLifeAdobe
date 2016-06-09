@@ -1,0 +1,19 @@
+/* line 1, ../../../sass/_blogPostSocialSidebarMobile.scss */
+.social_sidebar {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/* line 8, ../../../sass/_blogPostSocialSidebarMobile.scss */
+.social_sidebar img {
+    display: block;
+}
+
+@media (min-width: 1025px) {
+    /* line 1, ../../../sass/_blogPostSocialSidebarDesktop.scss */
+    .social_sidebar {
+        display: inline;
+    }
+}

@@ -1,0 +1,260 @@
+.campaign-card .campaign-card-image {
+    height: 150px;
+}
+
+.campaign-card .campaign-card-content {
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+/*.campaign-card .campaign-card-content p, h3, a, .video-text__document, ul {*/
+.campaign-card .campaign-card-content p, .video-text__document {
+    text-align: left;
+}
+
+.campaign-card .page__d p, .campaign-card .campaign-card-content .campaign-card-content-title {
+    text-align: center;
+}
+
+.campaign-card .campaign-card-content ul {
+    list-style: disc;
+    margin-left: 40px;
+}
+
+.campaign-card .campaign-contact-form {
+    padding: 30px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #666;
+    font-size: .85em;
+    min-height: 100%;
+    overflow: visible;
+}
+
+.campaign-card .campaign-card-content .campaign-card-content__subtitle {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.campaign-card .campaign-card-content .campaign-card-content-title {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.campaign-card .campaign-card-content .campaign-tel {
+    display: inline-block;
+    font-weight: 400;
+}
+
+.campaign-card .campaign-card-content .campaign-title__d {
+    font-weight: 400;
+}
+
+.campaign-card .campaign-card-content .campaign-title__d strong, b {
+    font-weight: 700;
+}
+
+.campaign-card-section .campaign-contact-form .contact-close{
+    display:none;
+}
+
+.campaign-card .campaign-contact-form select {
+    background-color: #fff;
+    z-index: 0;
+}
+
+.campaign-card .campaign-contact-form select svg {
+    fill: #666;
+}
+
+.campaign-content-linksection a{
+    display:inline-block;
+}
+
+.campaign-card .campaign-card-content .campaign-d-content-section{
+    text-align: center;
+}
+
+.campaign-card .campaign-card-content .campaign-card-addendum{
+    padding-top:20px;
+    margin-top:20px;
+    border-top: 1px solid #ccc;
+
+}
+
+.campaign-card .campaign-card-content .campaign-card-addendum span{
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.campaign-card .campaign-card-content .campaign-card-addendum ul{
+    text-align: left;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    padding-left: 75px;
+    list-style: none;
+}
+
+.campaign-card .campaign-card-content .campaign-card-addendum ul li{
+    margin: 10px 0px;
+}
+
+.campaign-card .campaign-card-content .campaign-card-addendum ul li span{
+    display:inline-block;
+}
+
+/*This is just filler css for the lp button div which is vendor script */
+.campaign-content-linksection .campaign-card-ctc{
+    min-width: 164px;
+    margin: 0 auto;
+    height: 40px;
+    padding: 11.5px 45px 11.5px 13px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+    background: url("/static/images/c2c_face.png") no-repeat 93%;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position-x: 93%;
+    background-position-y: center;
+    background-size: 13%;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px;
+}
+
+.campaign-card .campaign-card-section {
+    position:relative;
+
+}
+@media screen and (min-width: 768px) {
+
+    .campaign-card {
+        width: 96%;
+        display: table;
+        table-layout: fixed;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .campaign-card .campaign-card-section {
+        display: table-cell;
+        vertical-align: top;
+
+    }
+
+    .campaign-card .campaign-card-content .campaign-tel {
+        pointer-events: none;
+        color: #333;
+    }
+
+    .campaign-card .campaign-card-content {
+        padding: 0 30px 30px 30px;
+        text-align: left;
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-content-title{
+        text-align: left;
+    }
+
+    .campaign-card .page__d .campaign-card-content__subtitle, .campaign-card .page__d .campaign-card-content-title {
+        text-align: center;
+    }
+
+    .campaign-card-content p:last-of-type{
+        margin-bottom: 40px;
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-content-title {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .campaign-card-section:first-child:nth-last-child(1),
+    .campaign-card-section:first-child:nth-last-child(1) ~ .campaign-card-section {
+        width: 100%;
+    }
+
+    .campaign-card-section:first-child:nth-last-child(2),
+    .campaign-card-section:first-child:nth-last-child(2) ~ .campaign-card-section:last-of-type {
+        width: 33.33333333%;
+
+    }
+
+    .campaign-card-section:first-child:nth-last-child(2),
+    .campaign-card-section:first-child:nth-last-child(2) ~ .campaign-card-section:first-of-type {
+        width: 66.66666667%;
+    }
+
+    .campaign-card .campaign-card-content .campaign-content-linksection a{
+        vertical-align: top;
+        display: inline-block;
+        margin: 0px 15px;
+    }
+
+    .campaign-card .campaign-card-content .campaign-content-linksection br{
+        display:none;
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-addendum{
+        padding-top:30px;
+        margin-top:30px;
+
+    }
+
+
+    .campaign-card .campaign-card-content .campaign-card-addendum ul{
+        text-align: center;
+        padding:0;
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-addendum ul li{
+        display:inline-block;
+        margin-right:40px;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1025px) {
+    .campaign-card .campaign-card-image {
+        height: 235px;
+    }
+
+    .campaign-card {
+        width: 85%;
+        max-width: 1300px;
+        margin-bottom: 50px;
+
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-content-title {
+        font-size: 44px;
+        line-height: 48px;
+    }
+
+    .campaign-card .campaign-card-content {
+        padding: 0 40px 40px 40px;
+    }
+
+    .campaign-card .campaign-card-section .campaign-contact-form {
+        padding: 40px auto 40px auto;
+    }
+
+    .campaign-card .campaign-card-content .campaign-card-addendum{
+        padding-top:40px;
+        margin-top:40px;
+    }
+
+}
