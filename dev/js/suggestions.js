@@ -982,6 +982,11 @@ function ss_clear(nofocus) {
      */
 }
 
+$(".search-trigger__search-box").blur( function() {
+    ss_clear();
+});
+
+
 /**
  * Hides search suggestions.
  *
