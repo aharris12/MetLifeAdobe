@@ -1,5 +1,27 @@
 /*AEM Specific Funcitons*/
+function subNavClassSwitch(){
+	if($(".subnav-go-back").length > 0){
+		if($(".subnav-go-back__menu").length == 0){
+			$('.subnav-go-back__list__item__anchor').each(function(){
+				var subNavLabel = $(this).find('.subnav-go-back__list__item__anchor__label');
+				$(this).find('div').remove();
+				$(this).append(subNavLabel);
+			})
+			$('.subnav-go-back__list__item__anchor__label').each(function(){
+				$(this).addClass("subnav__list__item__anchor__label").removeClass("subnav-go-back__list__item__anchor__label");
 
+			})
+			$('.subnav-go-back__list__item__anchor').each(function(){
+				$(this).addClass("subnav__list__item__anchor").removeClass("subnav-go-back__list__item__anchor");
+			})
+			$('.subnav-go-back__list__item').each(function(){
+				$(this).addClass("subnav__list__item").removeClass("subnav-go-back__list__item");
+			})
+			$(".subnav-go-back__list").addClass('subnav__list').removeClass('subnav-go-back__list');
+			$(".subnav-go-back").addClass("subnav").removeClass("subnav-go-back")
+		}
+		}
+}
 function productCardAEM(){
 	$(".subcat-row").each(function () {
 
@@ -65,12 +87,14 @@ $(window).resize(function(){
 });
 
 $(window).load(function(){
+
 	productCardAEM();
 	largeProductCardAEM();
 	quoteToolImageLink();
 });
 
 $(document).ready(function(){
+	subNavClassSwitch();
 	if($(".cta_wrapper").length != 0 && $(".cta_wrapper").parent().parent().parent().find(".find_an_x_wrap:first").find(".cta_wrapper").siblings(".dental_vision_wrap").length == 0){
 		$(".cta_wrapper").parent().parent().parent().find(".find_an_x_wrap:first").find(".cta_wrapper").css("width", "calc(100% - 100px)");
 	}
