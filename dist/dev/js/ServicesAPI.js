@@ -2889,7 +2889,7 @@ var ServicesAPI = {
 		currentPageCrumb.wrapInner("<a href=\"\"> </a>");
 		currentPageCrumb.addClass("breadcrumb__crumb");
 		currentPageCrumb.find("a").attr("href", faoURL);
-		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span");
+		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span>");
 	},
 	removeBreadCrumb: function(){
 		$(".breadcrumb").find("span:last-of-type").remove();
