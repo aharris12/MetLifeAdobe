@@ -127,7 +127,7 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
-//DE8968
+
 $(window).bind('pageshow', function() {
     $('.search-trigger__search-box').val("");
 });
@@ -135,17 +135,6 @@ $(window).bind('pageshow', function() {
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
-    if(getViewport() == "mobile") {
-        /*if ($('body').hasClass('overlay-scroll__parent')) {
-            $('body').removeClass('overlay-scroll__parent')
-        }
-        if ($('.megamenu').hasClass('overlay-scroll__child')) {
-            $('.megamenu').removeClass('overlay-scroll__child')
-        }
-        if ($('.login-container').hasClass('overlay-scroll__child')) {
-            $('.login-container').removeClass('overlay-scroll__child')
-        }*/
-    }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
@@ -168,17 +157,16 @@ function resizeMegaMenu () {
     }else{
 
 
-            if(resizeMenu == true) {
-                if ($(".megamenu__sub-items").css("display") != "none") {
-                    $(".megamenu__sub-items").hide()
-                }
-
-                $(".megamenu__main-item").each(function(){
-                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-                    /*$(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')*/
-                });
-
+        if(resizeMenu == true) {
+            if ($(".megamenu__sub-items").css("display") != "none") {
+                $(".megamenu__sub-items").hide()
             }
+
+            $(".megamenu__main-item").each(function(){
+                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            });
+
+        }
 
         resizeMenu = false;
 
@@ -228,7 +216,6 @@ $(document).on("click tap", function (e) {
     var container = $(".search-trigger");
     if (!container.is(e.target) && container.has(e.target).length === 0 &&!megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length==0) {
         closeSearchBox();
-        $("#search_suggest").children().remove();
     }
 });
 
@@ -482,360 +469,6 @@ function closeContactForm(){
     $('.productPolicyTypes').find('select').prop('selectedIndex',0);
     $('#state_Acc').prop('selectedIndex',0);
 }
-
-
-
-//Dropdown plugin data
-
-//Commenting this out since we switched to HTML, leaving them here in case there's a reason to revert. Note, this list is missing a few things, compare to HTML for correct list.
-//var imageSrc = "images/country-flags-sprite.png";
-//var countryList = [
-//    {
-//        text: "Americas",
-//        selected: false,
-//        header: "header",
-//        imageSrc: imageSrc,
-//        pos: 40
-//    },
-//    {
-//        text: "Argentina",
-//        selected: false,
-//        url: "http://www.metlife.com.ar",
-//        pos: -24,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Brazil",
-//        selected: false,
-//        url: "http://www.metlife.com.br",
-//        pos: -48,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Chile",
-//        selected: false,
-//        url: "http://www.metlife.cl",
-//        pos: -72,
-//        imageSrc: imageSrc
-//    },   
-//    {
-//        text: "Chile-ProVida",
-//        selected: false,
-//        url: "http://www.provida.cl",
-//        pos: -96,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Columbia",
-//        value: 3,
-//        selected: false,
-//        url: "http://www.co.alico.com",
-//        pos: -120,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Mexico",
-//        selected: false,
-//        url: "http://www.metlife.com.mx",
-//        pos: -144,
-//        imageSrc: imageSrc
-//    },   
-//    {
-//        text: "United States",
-//        selected: true,
-//        url: "javascript:void(0);",
-//        country: "USA",
-//        pos: 0,
-//        imageSrc: imageSrc
-//    },   
-//    {
-//        text: "Uruguay",
-//        selected: false,
-//        url: "http://www.metlife.com.uy",
-//        pos: -168,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Asia",
-//        selected: false,
-//        header: "header",
-//        imageSrc: imageSrc,
-//        pos: 40
-//    },
-//    {
-//        text: "Australia",
-//        selected: false,
-//        url: "http://www.metlife.com.au",
-//        pos: -192,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Bangladesh",
-//        selected: false,
-//        url: "http://www.metlifealico.com.bd",
-//        pos: -216,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "China",
-//        selected: false,
-//        url: "http://www.metlife.com.cn",
-//        pos: -240,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Hong Kong",
-//        selected: false,
-//        url: "http://www.metlife.com.hk",
-//        pos: -264,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "India",
-//        selected: false,
-//        url: "http://pnbmetlife.co.in",
-//        pos: -288,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Japan",
-//        selected: false,
-//        url: "http://www.metlife.co.jp",
-//        pos: -312,
-//        imageSrc: imageSrc
-//    },
-//     {
-//        text: "Korea",
-//        selected: false,
-//        url: "http://www.metlife.co.kr",
-//        pos: -336,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Malaysia",
-//        selected: false,
-//        url: "http://www.ammetlife.com",
-//        pos: -360,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Nepal",
-//        selected: false,
-//        url: "http://www.alico.com.np",
-//        pos: -384,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Vietnam",
-//        selected: false,
-//        url: "http://www.bidvmetlife.com.vn",
-//        pos: -408,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Bulgaria",
-//        selected: false,
-//        url: "http://www.alico.bg",
-//        pos: -432,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Cyprus",
-//        selected: false,
-//        url: "http://www.alico.com.cy",
-//        pos: -456,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Czech Republic",
-//        selected: false,
-//        url: "http://www.metlifeamcico.cz",
-//        pos: -480,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "France",
-//        selected: false,
-//        url: "http://metlife.fr",
-//        pos: -504,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Greece",
-//        selected: false,
-//        url: "http://www.metlifealico.gr",
-//        pos: -528,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Hungary",
-//        selected: false,
-//        url: "http://www.metlife.hu",
-//        pos: -552,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Ireland",
-//        selected: false,
-//        url: "http://www.metlife.co.uk",
-//        pos: -576,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Italy",
-//        selected: false,
-//        url: "http://www.metlife.it",
-//        pos: -600,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Latvia",
-//        selected: false,
-//        url: "http://www.metlifeamplico.lv",
-//        pos: -624,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Lithuania",
-//        selected: false,
-//        url: "http://www.metlifeamplico.lt",
-//        pos: -648,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Poland",
-//        selected: false,
-//        url: "http://www.metlife.pl",
-//        pos: -672,
-//        imageSrc: imageSrc
-//    },   
-//    {
-//        text: "Portugal",
-//        selected: false,
-//        url: "http://www.alico.pt",
-//        pos: -696,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Romania",
-//        selected: false,
-//        url: "http://www.alico.ro",
-//        pos: -720,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Russia",
-//        selected: false,
-//        url: "http://www.metlifealico.ru",
-//        pos: -744,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Slovakia",
-//        selected: false,
-//        url: "http://www.metlifeamslico.sk",
-//        pos: -768,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Spain",
-//        selected: false,
-//        url: "http://www.alico.es",
-//        pos: -792,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Turkey",
-//        selected: false,
-//        url: "http://www.metlife.com.tr",
-//        pos: -816,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Ukraine",
-//        selected: false,
-//        url: "http://www.metlifealico.com.ua",
-//        pos: -840,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "United Kingdom",
-//        value: 3,
-//        selected: false,
-//        url: "http://www.metlife.co.uk",
-//        pos: -864,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Middle East and Africa",
-//        selected: false,
-//        url: "javascript:void(0);",
-//        pos: -00,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Bahrain",
-//        selected: false,
-//        url: "http://www.bh.alico.com",
-//        pos: -888,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Egypt",
-//        selected: false,
-//        url: "http://www.eg.alico.com",
-//        pos: -912,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Jordan",
-//        selected: false,
-//        url: "http://www.jo.alico.com",
-//        pos: -936,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Kuwait",
-//        selected: false,
-//        url: "http://www.kw.alico.com",
-//        pos: -960,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Lebanon",
-//        selected: false,
-//        url: "http://www.lb.alico.com",
-//        pos: -984,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "Oman",
-//        selected: false,
-//        url: "http://www.om.alico.com",
-//        pos: -1008,
-//        imageSrc: imageSrc
-//    },
-//    {
-//        text: "United Arab Emirates",
-//        selected: false,
-//        url: "http://www.metlifealico.ae",
-//        pos: -1032,
-//        imageSrc: imageSrc
-//    }
-//];
-
-
-//$('#country__dropdown').ddslick({
-//    //data:countryList, //used for JS version of the dropdown
-//    onSelected: function(e){
-//        var a = e.selectedData.url;
-//        
-//        if(typeof a !== 'undefined'){
-//           window.location.href = a;
-//        }     
-//    }   
-//});
-
 
 
 
@@ -1688,1198 +1321,6 @@ function matchSubnavHeight() {
         });
     }
 };
-//Thankyou message functionality
-
-function formPass(fid) {
-    
-    switch (fid){
-        case "contactSidebar":
-            $('.contactSideForm').fadeOut(2000);
-            $('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);  
-        break;           
-            
-        case "contactSingle":
-            $('.contact-us__contact-form').fadeOut(1000);
-            $('#contact-single_thankyou, #contact-single_other').fadeIn(800);      
-        break;    
-                  
-    } 
-    
-    $('.info-mandatory').removeClass("error-mandatory");
-    $('.form-user-ctrl').removeClass("error");
-    $('.form-user-grp').find('svg').css('fill', '#666');    
-
-    setTimeout(function () {
-        resetForm(fid);
-    }, 5000);
-}
-
-function resetForm(fid) {
- 
-        switch (fid){
-        case "contactSidebar":
-          //in a timeout to avoid visual conflict with animation
-           setTimeout(function () {
-            $('#requestFormRightNav_Acc').trigger("reset");
-            $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-            $('.contactSideForm').toggle();
-            $('.contact-container--global').css("right", "-640px");
-        }, 1000);
-        break;        
-            
-        case "contactSingle":
-            $('#requestFormRContactUs_Acc').trigger("reset"); 
-            $('.contact-us__contact-form').fadeIn(1000);
-            $('#contact-single_thankyou, #contact-single_other').fadeOut(2000);    
-        break;
-                  
-    }
-    
-    
-}
-
-$('#productPolicy option[value=""]').attr('selected', true);
-
-
-/***** Name Space Begin **************************************************************************/
-var metlifeRedesign = {
-    closeContacts: function () {
-        $('.contactSliderOuterCon').animate({
-            right: '-320'
-        }, 200, function () {
-            // $('.contactSideForm').removeClass('hidden');
-            // $('.contactSideThankyou').addClass('hidden');
-            $('.contactSideForm').show();
-            $('.contactSideThankyou, .contactOtherDetails').hide();
-            $('.contactSliderOuterCon').hide();
-            $('.contactSideForm select').val("").trigger('change').removeClass('error').removeClass('formatError');
-            $('.contactSideForm input,.contactSideForm textarea').val("").removeClass('error').removeClass('formatError');
-            $('.contactSideForm input,.contactSideForm textarea').each(function () {
-                var $this = $(this);
-                var placeholder = $this.attr('placeholder');
-                if (typeof placeholder != typeof undefined) {
-                    $this.val(placeholder);
-                }
-            });
-            $('.contactSideForm .info-mandatory').removeClass('error-mandatory');
-            $('.feedbackLink').removeClass('hidden');
-        });
-    },
-    onFSubmit: function ($this) {
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        var formStatus = true;
-        // alert("form submitted.")
-
-        //        var flag;
-        //        $formid.find('[data-required=true]').each(function () {
-        //            var $this = $(this);
-        //            var placeholder = $this.attr('placeholder');
-        //            if ($this.val() == placeholder) {
-        //                $this.val("");
-        //            }
-        //            var val = $this.val();
-        //            if (val.length == 0) {
-        //                $this.addClass('error');
-        //                $this.parent().find('.errorSpan').addClass('errorSpanOpen');
-        //                $('.contactSideForm .info-mandatory').addClass('error-mandatory');
-        //                $this.parent('.form-user-grp').find('svg').css('fill','#db3535');
-        //                $this.val(placeholder);
-        //                formStatus = false;
-        //            }
-        //        });
-
-        var flag;
-        $formid.find('[data-required=true]').each(function () {
-            var $this = $(this);
-            var placeholder = $this.attr('placeholder');
-            if ($this.val() == placeholder) {
-                $this.val("");
-            }
-            var val = $this.val();
-            if (val == "New Product/Planning Services") {
-                flag = "New";
-            }
-            if (val == "Existing Product/Policy") {
-                flag = "Existing";
-            }
-            console.log(flag)
-            if (val.length == 0) {
-                if (flag == "New") {
-                    if (placeholder == "Policy/Contract #" || placeholder == "Question") {
-                        $this.removeClass('error');
-                        $this.parent().find('.errorSpan').removeClass('errorSpanOpen');
-                        $this.parent('.form-user-grp').find('svg').css('fill', '#666');
-                    }
-                }
-                else {
-                    $this.addClass('error');
-                    $this.parent().find('.errorSpan').addClass('errorSpanOpen');
-                    $('.contactSideForm .info-mandatory').addClass('error-mandatory');
-                    $this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-                    $this.val(placeholder);
-                    formStatus = false;
-                }
-            }
-        });
-
-        $formid.find('[data-valid-status]').each(function () {
-            var attrDVS = $(this).attr('data-valid-status');
-            if (attrDVS == 'failed') {
-                $(this).addClass('error');
-                formStatus = false;
-            }
-        });
-        if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
-            formPass(fid);
-        } else {
-            $formid.find('.info-mandatory').addClass('error-mandatory');
-        }
-        return formStatus;
-    }
-};
-/***** Name Space End ****************************************************************************/
-
-$('.globalContact').on('click', function (evt) {
-    evt.preventDefault();
-    $(".contactSidebar").find(".form-user-grp").each(function () {
-        $(this).find("input, select, textarea").removeClass('error');
-        $(this)[0].reset();
-    });
-    $('.contactSliderOuterCon').show();
-    $('.contactSliderOuterCon').stop().animate({
-        right: '0'
-    }, 200);
-    $('.feedbackLink').addClass('hidden');
-});
-
-// Closes contacts
-$('.contactsClose').click(function (e) {
-    e.preventDefault();
-    metlifeRedesign.closeContacts();
-});
-
-
-
-
-$('select[data-required=true]').on('change', function () {
-    $(this).trigger('blur');
-});
-
-$('[data-required=true]').on('blur', function () {
-    var $this = $(this);
-    var placeholder = $this.attr('placeholder');
-    if ($this.val() == placeholder) {
-        $this.val("");
-    }
-    var val = $this.val();
-    if (val.length == 0) {
-        $this.addClass('error');
-        //$this.val(placeholder);
-    } else {
-        var attrDVS = $this.attr('data-valid-status');
-        if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
-            //do nothing
-            if (attrDVS == 'failed') {
-                //$(this).addClass('error');
-                formStatus = false;
-            }
-        } else {
-            $this.removeClass('error');
-            $this.parent().find('.errorSpan').removeClass('errorSpanOpen');
-            $this.parent('.form-user-grp').find('svg').css('fill', '#666');
-        }
-    }
-    /*if($(this).parent().parent().parent().attr("data-observes-value") == 'Exisiting Product/Policy'){
-        if (val.length != 0) {
-            $this.removeClass('error');
-            $("[data-request-type]").removeClass('error');
-            $("[data-request-type]").attr("data-valid-status=success");
-        }
-    }*/
-});
-
-$(".form-user-ctrl").on('click', function(evt){
-    if($(this).hasClass("error")) {
-        $(this).val("");
-    }
-});
-
-$('[data-valid-type=text]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    var val = $this.val();
-    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
-   /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
-    validateOnType(val, $this, re);
-});
-
-
-$('[data-valid-type=email]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    var val = $this.val();
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    validateOnType(val, $this, re);
-});
-
-$('[data-valid-type=zip]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    var val = $this.val();
-    var re = /^\d{5}$/i;
-    validateOnType(val, $this, re);
-});
-
-$('[data-valid-type=zip]').on('keyup', function (evt) {
-    var regexp = /[^0-9]/;
-    var str = $(this).val();
-    if (str.match(regexp)) {
-        str = str.replace(/\D/g, "");
-        $(this).val(str);
-    }
-    var len = str.length;
-    if (len > 5) {
-        str = str.substr(0, 5);
-        $(this).val(str);
-        return false;
-    }
-});
-
-$('[data-valid-type=phone]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    $this.trigger('keyup')
-    var val = $this.val();
-    var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
-    validateOnType(val, $this, re);
-});
-
-$('[data-valid-type=phone]').on('keyup', function (evt) {
-    var regexp = /[^0-9]/;
-    var input_value = $(this).val();
-    if (input_value.match(regexp)) {
-        input_value = input_value.replace(/\D/g, "");
-        $(this).val(input_value);
-    }
-    var num_len = $(this).val().length;
-    if (num_len >= 3 && num_len < 7) {
-        input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, num_len);
-    } else if (num_len >= 7) {
-        input_value = input_value.substring(0, 10)
-        input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, 6) + "-" + input_value.substring(6, num_len);
-    }
-    if (evt.keyCode == 8) {
-        var str = input_value.charAt(input_value.length - 1);
-        if (str == "-") {
-            input_value = input_value.substring(0, input_value.length - 1)
-        }
-    }
-    $(this).val(input_value);
-});
-
-var validateOnType = function (val, $this, re) {
-    var placeholder = $this.attr('placeholder');
-    if (val.length > 0 && val != placeholder) {
-        if (val.match(re)) {
-            $this.removeClass('error');
-            $this.removeClass('formatError');
-            $this.removeAttr('data-valid-status');
-        } else {
-            $this.addClass('error');
-            $this.addClass('formatError');
-            $this.attr('data-valid-status', 'failed');
-        }
-    } else {
-        $this.removeClass('formatError');
-        var attrDVS = $this.attr('data-required');
-        if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
-
-        } else {
-            $this.removeClass('error');
-            $this.removeAttr('data-valid-status');
-        }
-    }
-};
-
-
-
-
-
-$('.user-checkbox').on('click', function () {
-    var count = 0;
-    //var $con = $(this).closest('.productPolicyTypes');
-    var $con = $(this).parents().find('.productPolicyTypes');
-    $con.find('.newProductUser input[type=checkbox]').each(function () {
-        if ($(this).is(':checked')) {
-            count++;
-        }
-    });
-    //if (count > 0 && count <= 5) {
-    //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
-    if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
-        $con.find('.productPolicy').attr('data-valid-status', 'success');
-        $con.find('.productPolicy').removeClass('error');
-        $con.find('.productCount').removeClass('errorText');
-        $('.productPolicyTypes').find('svg').css('fill', '#666');
-    } else {
-        $con.find('.productPolicy').attr('data-valid-status', 'failed');
-        $con.find('.productPolicy').addClass('error');
-        $con.find('.productCount').addClass('errorText');
-        $('.productPolicyTypes').find('svg').css('fill', '#db3535');
-    }
-});
-
-
-$('.user-radio').on('click', function () {
-        var val = $('[data-request-type]').val();
-        var $this = $(this);
-    switch(val) {
-        case 'New Product/Planning Services':
-            var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
-            sucessInput.attr('data-valid-status', 'success');
-            sucessInput.removeClass('error');
-            $('.productPolicyTypes').find('svg').css('fill', '#fff');
-            break;
-        case 'Existing Product/Policy':
-            break;
-        default:
-            break;
-    }
-});
-
-
-$('.productUserQuestion').on('blur', function () {
-    var $this = $(this);
-    var $con = $this.closest('.productPolicyTypes');
-    var val = $this.val();
-    var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
-    if (val == "" || val == placeholder) {
-        $con.find('.productPolicy').attr('data-valid-status', 'failed');
-        $con.find('.productPolicy').addClass('error');
-        $this.addClass('error');
-        $('.productPolicyTypes').find('svg').css('fill', '#db3535');
-    } else {
-        $con.find('.productPolicy').attr('data-valid-status', 'success');
-        $con.find('.productPolicy').removeClass('error');
-        $this.removeClass('error');
-        $('.productPolicyTypes').find('svg').css('fill', '#666');
-    }
-});
-
-/***** Expanded Contact Advisor Form Begin *****************************************************/
-$(".firstName, .lastName, .phoneNumber, .emailAddress").click(function () {
-    $(".city, .state, .zip, .address, .disclaimer_text").addClass("display_on_click");
-    $(".close_button").addClass("display_close_button_click");
-});
-
-$(".close_button").click(function () {
-    $(".city, .state, .zip, .address, .disclaimer_text, .box_hidden_types").removeClass("display_on_click");
-    $(".close_button").removeClass("display_close_button_click");
-});
-/***** Expanded Contact Advisor Form End *****************************************************/
-
-
-
-/* lead form functions */
-function formProcessorSubmit(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
-    var lead = "";
-    var scenarioName = "";
-    var mmrep = "";
-    var formObjectName = document.getElementById(formName);
-    var reserveid = getCookie("ReserveID");
-    if (null != reserveid) AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
-    else;
-
-    //AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
-    if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
-    if (null != mmrep && "" != mmrep) {
-       /* console.debug(subContentGroupDirectory);
-        console.debug(contentGroupDirectory);
-        console.debug(audience);*/
-        var lsubContentGroupDirectory = "";
-        var lcontentGroupDirectory = "";
-        var laudience = "";
-        if ("" != subContentGroupDirectory) {
-            //console.debug("1.1" + subContentGroupDirectory);
-            lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
-            lcontentGroupDirectory = contentGroupDirectory;
-            laudience = audience;
-        } else if ("" != contentGroupDirectory) {
-           // console.debug("2.1" + contentGroupDirectory);
-            lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
-            lsubContentGroupDirectory = subContentGroupDirectory;
-            laudience = audience;
-        } else if ("" != audience) {
-           // console.debug("3.1" + audience);
-            laudience = audience + "-" + mmrep;
-            lcontentGroupDirectory = contentGroupDirectory;
-            lsubContentGroupDirectory = subContentGroupDirectory;
-        }
-       /* console.debug(lsubContentGroupDirectory);
-        console.debug(lcontentGroupDirectory);
-        console.debug(laudience);*/
-        if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-        else AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
-        if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-        else AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
-        if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
-        else AddInputParameter(formObjectName, "input", "audience", laudience, document);
-    } else {
-        var CGFrQS = "";
-        var SCGFrQS = "";
-        var AUFrQS = "";
-        CGFrQS = getQueryString("CG");
-        SCGFrQS = getQueryString("SCG");
-        AUFrQS = getQueryString("AU");
-        if ("" != CGFrQS) AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
-        else if ("undefined" == typeof contentGroupDirectory) AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-        else AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
-        if ("" != SCGFrQS) AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
-        else if ("undefined" == typeof subContentGroupDirectory) AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-        else AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
-        if ("" != AUFrQS) AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
-        else if ("undefined" == typeof audience) AddInputParameter(formObjectName, "input", "audience", "", document);
-        else AddInputParameter(formObjectName, "input", "audience", audience, document);
-    }
-    if ("requestFormRightNav_Acc" == formName) {
-        var prodType = document.getElementById("requestType").value;
-        if ("" != prodType)
-            if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-            else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-    } else if ("requestFormRightNav" == formName) {
-        var prodType = "";
-        if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
-        else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-        if ("" != prodType)
-            if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-            else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-    } else {
-        var prodType = "";
-        if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-        if ("" != prodType)
-            if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-            else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-    }
-    if ("NewLead" != lead && "ServiceLead" != lead) {
-        lead = "NonLeadForm";
-        if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
-    }
-   // console.debug("Lead type: " + lead);
-    var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
-    if (null != results) {
-        var fullID = unescape(results[2]);
-        var partID = fullID.split(":");
-        var visitorID = partID[0].split("=");
-    }
-    if ("undefined" == typeof visitorID) AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
-    else AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
-    var urlNode = document.URL;
-    urlNode = getPageFromURLNode(formObjectName, mmrep);
-    if ("requestFormRightNav" == formName) {
-        //console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
-        if (document.requestFormRightNav.coverage)
-            if (document.requestFormRightNav.coverage.value < 1e5) {
-                urlNode = urlNode.split("?");
-                urlNode = urlNode[0];
-            }
-    }
-    AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
-    var validationSuccess = true;
-    if (validationSuccess) {
-        /*var tempURL = "www.metlife.com";
-         if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
-         if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
-         var preFill = formObjectName.lstPnPPreFillParameters;
-         console.debug("Prefill Parameters is: " + preFill);
-         if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
-         var prefillParam = preFill.value;
-         var prefillList = prefillParam.split(",");
-         var PnPPreFillValues = "";
-         for (i = 0; i < prefillList.length; i++) {
-         //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
-         //console.debug("prefillListParam is: " + prefillListParam);
-         //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
-         }
-         document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
-         }
-         varwebformID = formObjectName.webformId;
-         if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
-         addSessionParameters(formObjectName);
-         console.debug("Doing Webform submit to: " + submitUrl);
-         */
-
-    }
-}
-
-function AddInputParameter(a, b, c, d, e) {
-   /* console.log('adding params');
-    console.debug("form param nam eis" + c);
-    console.debug("form param value is" + d);*/
-    var f = e.createElement(b);
-    f.setAttribute("type", "hidden");
-    f.setAttribute("name", c);
-    f.setAttribute("value", d);
-    a.appendChild(f);
-}
-
-function getCookie(c_name) {
-    if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1) {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) c_end = document.cookie.length;
-            return unescape(document.cookie.substring(c_start, c_end));
-        }
-    }
-    return "";
-}
-
-function getQueryString(a) {
-    a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var b = "[\\?&]" + a + "=([^&#]*)";
-    var c = new RegExp(b);
-    var d = c.exec(window.location.href);
-    if (null == d) return "";
-    else return d[1];
-}
-
-function getPageFromURLNode(a, b) {
-    var c = document.URL;
-   // console.debug("url node is" + c);
-    var d = "";
-    var e = window.location.search.split("?");
-    var f = "";
-    var g = "";
-    var h = false;
-    if (null != document.getElementById("WT.mc_id")) {
-        mcid = getCookie("SessionMCID");
-        /*console.debug("mcid is empty for mc_id " + mcid);*/
-        AddInputParameter(a, "input", "wb_code", mcid, document);
-        AddInputParameter(a, "input", "WT.mc_id", mcid, document);
-    }
-    if (2 == e.length) {
-        var i = e[1].split("&");
-       /* console.debug("urlParams Length: " + i.length);*/
-        for (var j = 0; j < i.length; j++) {
-            var k = i[j].split("=");
-            if ("wt.mc_id" == k[0].toLowerCase()) {
-                /*console.debug("value for  wt_mc_id is " + k[1]);*/
-                AddInputParameter(a, "input", "wb_code", k[1], document);
-            }
-            if ("" != b)
-                if ("pagefrom" == k[0].toLowerCase()) {
-                    d = k[1] + "-" + b;
-                   /* console.debug("newPageFrom:" + d);*/
-                    if (j == i.length - 1) g = g + k[0] + "=" + d;
-                    else g = g + k[0] + "=" + d + "&";
-                    h = true;
-                } else if (j == i.length - 1) g += i[j];
-                else g = g + i[j] + "&";
-        }
-        //console.debug("pageFrmCheck:" + h);
-        //console.debug("newURLnodeParams:" + g);
-        if (h) {
-            var l = document.URL;
-            var m = l.split("?");
-            f = window.location.href.split("#")[1];
-            if ("" != f) c = m[0] + "?" + g;
-            else c = m[0] + "?" + g + "#" + f;
-        }
-    }
-   // console.debug("urlNode:" + c);
-   // console.debug("After Changing urlNode is " + c);
-    return c;
-}
-
-function addSessionParameters(a) {
-    var b = sessionVars.getSessionParams();
-    for (var c in b)
-        if (b.hasOwnProperty(c))
-            if ("" !== b[c])
-                if (checkFormField(a, c)) AddInputParameter(a, "input", c, b[c], document);
-                else a.elements[c].value = b[c];
-}
-
-function checkFormField(a, b) {
-    if (void 0 == a.elements[b]) return true;
-    else return false;
-}
-var sessionVars = {
-    init: function (a) {
-        var b = "";
-        if (a.override.length > 0 && a.no_override.length > 0) b = a.override + "," + a.no_override;
-        else if (a.override.length > 0) b = a.override;
-        else if (a.no_override.length > 0) b = a.no_override;
-        if (b.length > 0) {
-            var c = a.override.split(",");
-            for (var d = 0; d < c.length; d++) c[d] = c[d].toLowerCase();
-            var e = b.split(",");
-            var f = sessionVars.getCookie("SESS_VARS");
-            if (f.length > 0) {
-                var g = sessionVars.getArrayFromString(f);
-                for (var d in g)
-                    if (g.hasOwnProperty(d))
-                        if ("" == g[d] || sessionVars.isOverrideParam(c, d.toLowerCase()))
-                            if ("" !== sessionVars.getParameterFromURL(d)) g[d] = sessionVars.getParameterFromURL(d);
-                var h = "";
-                for (var d in g)
-                    if (g.hasOwnProperty(d)) h += d + "=" + g[d] + ":";
-                if (h.length > 0) h = h.substring(0, h.length - 1);
-                sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
-            } else {
-                var h = "";
-                for (var d = 0; d < e.length; d++)
-                    if (d == e.length - 1) h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]);
-                    else h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]) + ":";
-                sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
-            }
-        }
-    },
-    isOverrideParam: function (a, b) {
-        if (a.indexOf(b) >= 0) return true;
-        else return false;
-    },
-    getSessionParams: function () {
-        var a = sessionVars.getCookie("SESS_VARS");
-        if (a.length > 0) return sessionVars.getArrayFromString(a);
-        else return null;
-    },
-    getArrayFromString: function (a) {
-        var b = [];
-        var c = a.split(":");
-        for (var d = 0; d < c.length; d++) {
-            var e = c[d].split("=");
-            b[e[0]] = e[1];
-        }
-        return b;
-    },
-    setCookie: function (a, b, c) {
-        var d = new Date();
-        d.setDate(d.getDate() + c);
-        document.cookie = a + "=" + escape(b) + (null == c ? "" : ";expires=" + d.toGMTString()) + ";path=/";
-    },
-    expairSecureCookie: function (a, b, c, d, e) {
-        var f = new Date();
-        f.setTime(f.getTime());
-        if (c) c = 365 * c * 1e3 * 60 * 60 * 24;
-        var g = new Date(f.getTime() + c);
-        document.cookie = a + "=" + escape(b) + (c ? ";expires=" + g.toGMTString() : "") + (d ? ";path=" + d : "") + (e ? ";secure" : "");
-    },
-    getCookie: function (a) {
-        if (document.cookie.length > 0) {
-            c_start = document.cookie.indexOf(a + "=");
-            if (c_start != -1) {
-                c_start = c_start + a.length + 1;
-                c_end = document.cookie.indexOf(";", c_start);
-                if (c_end == -1) c_end = document.cookie.length;
-                return unescape(document.cookie.substring(c_start, c_end));
-            }
-        }
-        return "";
-    },
-    getParameterFromURL: function (a) {
-        var b = window.location.search.substring(1);
-        var c = function (b) {
-            var c = b.split("=");
-            var d = decodeURIComponent(c[0]);
-            var e = decodeURIComponent(c[1]);
-            if (d.toLowerCase() == a.toLowerCase()) return e;
-            return "";
-        };
-        var d = "";
-        if (b.indexOf("&") > -1) {
-            var e = b.split("&");
-            for (var f = 0; f < e.length; f++) {
-                d = c(e[f]);
-                if ("" !== d) break;
-            }
-        } else d = c(b);
-        return d;
-    }
-};
-
-/***** Radio Selector Begin ***********************************************************/
-// Sets the radio button image
-$(".form-radio-grp svg, .image_radio svg").on('click', function(){
-    var radioButton = $(this).siblings('input');
-    if (!radioButton.prop('checked')){
-        radioButton.prop('checked', true);
-        var radioName = radioButton.prop('name');
-        $('input[name=' + radioName + ']').siblings('svg').toggle();
-    };
-});
-
-
-// Sets the radio button image
-
-/***** Radio Selector End ***********************************************************/
-
-
-/***** Begin Country Selector ***********************************************************/
-$('.country_selector_container').click(function () {
-    $('.country_list_container').slideToggle(500).scrollTop(0);
-    return false;
-});
-
-$('.country_group').click(function () {
-    var selectedCountry = $('.country_selector_container .selected');
-    selectedCountry.find('.country_flag').attr('src', $(this).find('.country_flag').attr('src'));
-    selectedCountry.find('.country_name').text($(this).find('div.country_name').text());
-    if ($(this).attr('data-redirect') !== "" && $(this).attr('data-redirect')) {
-        window.location.href = $(this).attr('data-redirect');
-    } else {
-        alert("Missing URL for " + $(this).find('div.country_name').text());
-    }
-});
-/***** End Country Selector *************************************************************/
-
-/****** GLT Results expanded form functionality *********/
-$(".first_name, .last_name, .phone_number, .email_address").click(function () {
-    if ($(".disclaimer_apply").hasClass('hidden')) {
-        $(".disclaimer_apply").removeClass('hidden');
-    } else {
-        $(".disclaimer_apply").removeClass('hidden');
-    }
-});
-
-
-$(".first_name, .last_name, .phone_number, .email_address").click(function () {
-    $(".htr_address").removeClass('hidden');
-    $(".htr_city").removeClass('hidden');
-    $(".htr_select_state").removeClass('hidden');
-    $(".htr_zip_code").removeClass('hidden');
-    $(".disclaimer_apply").removeClass('hidden-lg');
-    $(".disclaimer_apply").addClass('visible-lg');
-});
-
-
-function isValidEmailAddress(emailAddress) {
-    var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-    return pattern.test(emailAddress);
-};
-
-//Start Validations For Unsubscribe Email
-function unsubscribeEmailDNSS() {	
-	 
-	var emailId = document.getElementById("email").value;
-	var isValidEmailId = isValidEmailAddress(emailId)
-	 
-	if (isValidEmailId == false) {	
-		document.getElementById('email').value = "";
-		document.getElementById('errorText').style.visibility = "visible";
-		document.getElementById('errorText').style.color = "red";
-		document.getElementById('enterEmail').style.display = "block";
-		document.getElementById('thanksMessage').style.display = "none";
-	} else {	
-		document.getElementById('enterEmail').style.display = "none";
-		document.getElementById('thanksMessage').style.display = "block";
-		document.getElementById('errorText').style.visibility = "hidden";		 
-		UnsubscribeProcessorSubmit(emailId);
-	}
-}
-// End Validations For Unsubscribe Email
-
-function UnsubscribeProcessorSubmit(emailId)  {
-    	
-	 var i = "/wps/proxy/MCDNSSService/emailPost.do?email="+emailId;
-	 $.ajax({
-		 url: i,
-		 type: 'POST',      
-         async: false,
-         contentType: false,
-         processData: false,
-         handleAs: "text",
-         enctype:"multipart/form-data",       
-         success: function (data) {
-               console.log(data);    
-         },
-         error: function(){         	
-         }
-   });
-}
-
-$("[data-fid='contactCard'] input").click(function() {
-    if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
-    }
-});
-
-$('.contactCard .form-minimize').click(function() {
-    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
-});
-
-$("[data-request-type]").on("change", function(){
-    var thisValue = $(this).val()
-    var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
-    var $formid = $('[data-fid=' + thisForm + ']');
-
-    $formid.find('[data-observes-id]').each(function () {
-
-        if($(this).attr('data-observes-value') == thisValue ){
-            $(this).show();
-
-        }else{
-            $(this).hide();
-        }
-    });
-})
-
-//Current
-$('.productPolicy').on('change', function () {
- $(this).find('option').eq(1).val('New Product/Planning Services');
- $(this).find('option').eq(2).val('Existing Product/Policy');
- var val = $(this).val();
- var $this = $(this);
- var $con = $this.closest('.productPolicyTypes');
- if (val == "New Product/Planning Services") {
- $con.find('.productUserType').hide();
- $con.find('.newProductUser').show();
- var count = 0;
- $con.find('.newProductUser input[type=checkbox]').each(function () {
- if ($(this).is(':checked')) {
- count++;
- }
- });
- //if (count > 0 && count <= 5) {
- //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
- if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
- $this.attr('data-valid-status', 'success');
- $this.removeClass('error');
- $con.find('.productCount').removeClass('errorText');
- } else {
- $this.attr('data-valid-status', 'failed');
- //$this.addClass('error');
- }
- if ($this.hasClass('error')) {
- $con.find('.productCount').addClass('errorText');
- } else {
- $con.find('.productCount').removeClass('errorText');
- }
- } else if (val == "Existing Product/Policy") {
- $con.find('.productUserType').hide();
- $con.find('.existingProductUser').show();
- var val = $con.find('.productUserQuestion').val();
- var placeholder = $con.find('.productUserQuestion').attr('placeholder');
- if (val == "" || val == placeholder) {
- $this.attr('data-valid-status', 'failed');
- //$this.addClass('error');
- } else {
- $this.attr('data-valid-status', 'success');
- $this.removeClass('error');
- }
- if ($this.hasClass('error')) {
- $con.find('.productUserQuestion').addClass('error');
- }
- } else {
- $con.find('.productUserType').hide();
- }
- });
-
-function postLeadform($formid){
-
- var formName = $formid.attr('name');
- formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
- var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
- var ajaxUrl;
- $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
- if(requestType == 'New Product/Planning Services'){
- ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
- var jsonData = {};
- var formData = $('form[name='+formName+']').serializeArray();
- $.each(formData, function() {
- if (jsonData[this.name]) {
-
- if (!jsonData[this.name].push) {
- jsonData[this.name] = [jsonData[this.name]];
-
- }
- jsonData[this.name].push(this.value || '');
- } else {
-
- jsonData[this.name] = this.value || '';
- if (!jsonData[this.name].push) {
- if(this.name == "prodInt" || this.name == "prodInterest"){
- jsonData[this.name] = [jsonData[this.name]];
-
- }
- }
- }
-
- });
-
- console.log(JSON.stringify(jsonData));
- $.ajax({
- url: ajaxUrl,
- type: 'POST',
- dataType: 'json',
- data: JSON.stringify(jsonData),
- async: true,
- contentType: 'application/json',
- processData: false,
- success: function (returndata) {
- //console.log(returndata);
- },
- error: function(){
- console.log("error in ajax form submission");
- }
- });
- }
-
- if(requestType == 'Existing Product/Policy'){
- ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
- if(typeof FormData !== 'undefined'){
- var formData = new FormData($('form[name='+formName+']')[0]);
-
- $.ajax({
- url: ajaxUrl,
- type: 'POST',
- data: formData,
- async: false,
- contentType: false,
- processData: false,
- success: function (returndata) {
- //console.log(returndata);
- },
- error: function(){
- console.log("error in ajax form submission");
- }
- });
- } else {
- var formData = postSerialize($('form[name='+formName+']'));
- $.ajax({
- url: ajaxUrl,
- type: 'POST',
- data: formData,
- async: false,
- contentType: 'application/x-www-form-urlencoded',
- processData: false,
- success: function (returndata) {
- //console.log(returndata);
- },
- error: function(){
- console.log("error in ajax form submission");
- }
- });
- }
- }
-
-
-
-
- }
-
-$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
-
-    //alert("contact from submitted");
-    e.preventDefault();
-    var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
-
-    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
-    if (isValid) {
-
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        postLeadform($formid);
-        $('.productUserType').hide();
-
-        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-            $('.aidFormCon').hide();
-            $('.aiwHeading').hide();
-            $('.advisorClose').hide();
-            $('.adImageThankYou').css("display", "table-cell");
-        } else if (fid == "quoteleadform") {
-            $(this).closest('.quote_right_mlt').hide();
-            $(this).closest('.quote_right_sit').hide();
-            $('.quote_results_thank_you').show();
-        } else if (fid == "contactCard") {
-            var temp = "[data-fid='" + fid + "']";
-            //$("[data-fid='contactCard']").hide();
-            $('.contactCard').hide();
-            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-            setTimeout(function () {
-                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-                    $('.contactCard').show();
-                    $('#requestFormContactCard_Acc').trigger("reset");
-                    $('.form-minimize').trigger('click');
-                });
-            }, 5000);
-        } else if (fid == "contactSidebarQuote") {
-            $(".results-form__text").addClass("hidden");
-            $(".results-form__inputs").addClass("hidden");
-            $(".apply-disclaimer").addClass("hidden");
-            $(".contact-thanks").removeClass("hidden");
-
-        } else {
-            $('.' + fid).fadeOut('slow', function () {
-                setTimeout(function () {
-                    $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
-                }, 5000)
-            });
-        }
-    } else {
-        //alert("invalid");
-    }
-});
-
-//new
-/*$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
-
-    //alert("contact from submitted");
-    e.preventDefault();
-    var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
-
-    //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
-    if (isValid) {
-
-        var fid = $this.attr('data-fsubmit');
-        var $formid = $('[data-fid=' + fid + ']');
-        postLeadform($formid);
-
-        $formid.find('[data-observes-id]').each(function () {
-            $(this).hide();
-        });
-
-        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-            $('.aidFormCon').hide();
-            $('.aiwHeading').hide();
-            $('.advisorClose').hide();
-            $('.adImageThankYou').css("display", "table-cell");
-        } else if (fid == "quoteleadform") {
-            $(this).closest('.quote_right_mlt').hide();
-            $(this).closest('.quote_right_sit').hide();
-            $('.quote_results_thank_you').show();
-        } else if (fid == "contactCard") {
-            var temp = "[data-fid='" + fid + "']";
-            //$("[data-fid='contactCard']").hide();
-            $('.contactCard').hide();
-            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-            setTimeout(function () {
-                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-                    $('.contactCard').show();
-                    $('#requestFormContactCard_Acc').trigger("reset");
-                    $('.form-minimize').trigger('click');
-                });
-            }, 5000);
-        } else if (fid == "contactSidebarQuote") {
-            $(".results-form__text").addClass("hidden");
-            $(".results-form__inputs").addClass("hidden");
-            $(".apply-disclaimer").addClass("hidden");
-            $(".contact-thanks").removeClass("hidden");
-
-        } else {
-            $('.' + fid).fadeOut('slow', function () {
-                setTimeout(function () {
-                    $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
-                }, 5000)
-            });
-        }
-    } else {
-        //alert("invalid");
-    }
-});
-
-function postLeadform($formid){
-    var formName = $formid.attr('name');
-    //console.log(formName)
-    formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-    var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
-    //console.log(requestType)
-    var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
-    // console.log(ajaxUrl)
-    $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-
-
-    if(requestType == 'New Product/Planning Services'){
-        var jsonData = {};
-        var formData = $('form[name='+formName+']').serializeArray();
-        $.each(formData, function() {
-            console.log(this.name == "prodInt")
-            if (jsonData[this.name]) {
-
-                if (!jsonData[this.name].push) {
-                    jsonData[this.name] = [jsonData[this.name]];
-
-                }
-                jsonData[this.name].push(this.value || '');
-            } else {
-
-                jsonData[this.name] = this.value || '';
-                if (!jsonData[this.name].push) {
-                    if(this.name == "prodInt" || this.name == "prodInterest"){
-                        jsonData[this.name] = [jsonData[this.name]];
-
-                    }
-                }
-            }
-
-        });
-
-        console.log(JSON.stringify(jsonData));
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            dataType: 'json',
-            data: JSON.stringify(jsonData),
-            async: true,
-            contentType: 'application/json',
-            processData: false,
-            success: function (returndata) {
-                //console.log(returndata);
-            },
-            error: function(){
-                console.log("error in ajax form submission");
-            }
-        });
-    }
-
-    if(requestType == 'Existing Product/Policy'){
-        if(typeof FormData !== 'undefined'){
-            var formData = new FormData($('form[name='+formName+']')[0]);
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: false,
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        } else {
-            var formData = postSerialize($('form[name='+formName+']'));
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: formData,
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (returndata) {
-                    //console.log(returndata);
-                },
-                error: function(){
-                    console.log("error in ajax form submission");
-                }
-            });
-        }
-    }
-}*/
-
 /**
  * Created by jfeng2 on 12/22/2015.
  */
@@ -5254,6 +3695,11 @@ function ss_clear(nofocus) {
      * if (!nofocus) { ss_sf(); }
      */
 }
+
+$(".search-trigger__search-box").blur( function() {
+    ss_clear();
+});
+
 
 /**
  * Hides search suggestions.
@@ -8651,6 +7097,698 @@ var dir_markerArray = [];
 var dir_to_flag=true;
 var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
 
+//Contact Forms
+/*IS THIS USED??*/
+/*
+ $('.globalContact').on('click', function (evt) {
+ evt.preventDefault();
+ $(".contactSidebar").find(".form-user-grp").each(function () {
+ $(this).find("input, select, textarea").removeClass('error');
+ $(this)[0].reset();
+ });
+ $('.contactSliderOuterCon').show();
+ $('.contactSliderOuterCon').stop().animate({
+ right: '0'
+ }, 200);
+ $('.feedbackLink').addClass('hidden');
+ });
+
+ $('.contactsClose').click(function (e) {
+ e.preventDefault();
+ metlifeRedesign.closeContacts();
+ });
+
+ function AddInputParameter(a, b, c, d, e) {
+ var f = e.createElement(b);
+ f.setAttribute("type", "hidden");
+ f.setAttribute("name", c);
+ f.setAttribute("value", d);
+ a.appendChild(f);
+ }
+
+ function getCookie(c_name) {
+ if (document.cookie.length > 0) {
+ c_start = document.cookie.indexOf(c_name + "=");
+ if (c_start != -1) {
+ c_start = c_start + c_name.length + 1;
+ c_end = document.cookie.indexOf(";", c_start);
+ if (c_end == -1) c_end = document.cookie.length;
+ return unescape(document.cookie.substring(c_start, c_end));
+ }
+ }
+ return "";
+ }
+
+ function getQueryString(a) {
+ a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+ var b = "[\\?&]" + a + "=([^&#]*)";
+ var c = new RegExp(b);
+ var d = c.exec(window.location.href);
+ if (null == d) return "";
+ else return d[1];
+ }
+
+ function getPageFromURLNode(a, b) {
+ var c = document.URL;
+ var d = "";
+ var e = window.location.search.split("?");
+ var f = "";
+ var g = "";
+ var h = false;
+ if (null != document.getElementById("WT.mc_id")) {
+ mcid = getCookie("SessionMCID");
+ AddInputParameter(a, "input", "wb_code", mcid, document);
+ AddInputParameter(a, "input", "WT.mc_id", mcid, document);
+ }
+ if (2 == e.length) {
+ var i = e[1].split("&");
+ for (var j = 0; j < i.length; j++) {
+ var k = i[j].split("=");
+ if ("wt.mc_id" == k[0].toLowerCase()) {
+ AddInputParameter(a, "input", "wb_code", k[1], document);
+ }
+ if ("" != b)
+ if ("pagefrom" == k[0].toLowerCase()) {
+ d = k[1] + "-" + b;
+ if (j == i.length - 1) g = g + k[0] + "=" + d;
+ else g = g + k[0] + "=" + d + "&";
+ h = true;
+ } else if (j == i.length - 1) g += i[j];
+ else g = g + i[j] + "&";
+ }
+ if (h) {
+ var l = document.URL;
+ var m = l.split("?");
+ f = window.location.href.split("#")[1];
+ if ("" != f) c = m[0] + "?" + g;
+ else c = m[0] + "?" + g + "#" + f;
+ }
+ }
+ return c;
+ }
+
+ function addSessionParameters(a) {
+ var b = sessionVars.getSessionParams();
+ for (var c in b)
+ if (b.hasOwnProperty(c))
+ if ("" !== b[c])
+ if (checkFormField(a, c)) AddInputParameter(a, "input", c, b[c], document);
+ else a.elements[c].value = b[c];
+ }
+
+ function checkFormField(a, b) {
+ if (void 0 == a.elements[b]) return true;
+ else return false;
+ }
+
+ var sessionVars = {
+ init: function (a) {
+ var b = "";
+ if (a.override.length > 0 && a.no_override.length > 0) b = a.override + "," + a.no_override;
+ else if (a.override.length > 0) b = a.override;
+ else if (a.no_override.length > 0) b = a.no_override;
+ if (b.length > 0) {
+ var c = a.override.split(",");
+ for (var d = 0; d < c.length; d++) c[d] = c[d].toLowerCase();
+ var e = b.split(",");
+ var f = sessionVars.getCookie("SESS_VARS");
+ if (f.length > 0) {
+ var g = sessionVars.getArrayFromString(f);
+ for (var d in g)
+ if (g.hasOwnProperty(d))
+ if ("" == g[d] || sessionVars.isOverrideParam(c, d.toLowerCase()))
+ if ("" !== sessionVars.getParameterFromURL(d)) g[d] = sessionVars.getParameterFromURL(d);
+ var h = "";
+ for (var d in g)
+ if (g.hasOwnProperty(d)) h += d + "=" + g[d] + ":";
+ if (h.length > 0) h = h.substring(0, h.length - 1);
+ sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
+ } else {
+ var h = "";
+ for (var d = 0; d < e.length; d++)
+ if (d == e.length - 1) h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]);
+ else h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]) + ":";
+ sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
+ }
+ }
+ },
+ isOverrideParam: function (a, b) {
+ if (a.indexOf(b) >= 0) return true;
+ else return false;
+ },
+ getSessionParams: function () {
+ var a = sessionVars.getCookie("SESS_VARS");
+ if (a.length > 0) return sessionVars.getArrayFromString(a);
+ else return null;
+ },
+ getArrayFromString: function (a) {
+ var b = [];
+ var c = a.split(":");
+ for (var d = 0; d < c.length; d++) {
+ var e = c[d].split("=");
+ b[e[0]] = e[1];
+ }
+ return b;
+ },
+ setCookie: function (a, b, c) {
+ var d = new Date();
+ d.setDate(d.getDate() + c);
+ document.cookie = a + "=" + escape(b) + (null == c ? "" : ";expires=" + d.toGMTString()) + ";path=/";
+ },
+ expairSecureCookie: function (a, b, c, d, e) {
+ var f = new Date();
+ f.setTime(f.getTime());
+ if (c) c = 365 * c * 1e3 * 60 * 60 * 24;
+ var g = new Date(f.getTime() + c);
+ document.cookie = a + "=" + escape(b) + (c ? ";expires=" + g.toGMTString() : "") + (d ? ";path=" + d : "") + (e ? ";secure" : "");
+ },
+ getCookie: function (a) {
+ if (document.cookie.length > 0) {
+ c_start = document.cookie.indexOf(a + "=");
+ if (c_start != -1) {
+ c_start = c_start + a.length + 1;
+ c_end = document.cookie.indexOf(";", c_start);
+ if (c_end == -1) c_end = document.cookie.length;
+ return unescape(document.cookie.substring(c_start, c_end));
+ }
+ }
+ return "";
+ },
+ getParameterFromURL: function (a) {
+ var b = window.location.search.substring(1);
+ var c = function (b) {
+ var c = b.split("=");
+ var d = decodeURIComponent(c[0]);
+ var e = decodeURIComponent(c[1]);
+ if (d.toLowerCase() == a.toLowerCase()) return e;
+ return "";
+ };
+ var d = "";
+ if (b.indexOf("&") > -1) {
+ var e = b.split("&");
+ for (var f = 0; f < e.length; f++) {
+ d = c(e[f]);
+ if ("" !== d) break;
+ }
+ } else d = c(b);
+ return d;
+ }
+ };
+
+ //Begin Country Selector
+ $('.country_selector_container').click(function () {
+ $('.country_list_container').slideToggle(500).scrollTop(0);
+ return false;
+ });
+
+ $('.country_group').click(function () {
+ var selectedCountry = $('.country_selector_container .selected');
+ selectedCountry.find('.country_flag').attr('src', $(this).find('.country_flag').attr('src'));
+ selectedCountry.find('.country_name').text($(this).find('div.country_name').text());
+ if ($(this).attr('data-redirect') !== "" && $(this).attr('data-redirect')) {
+ window.location.href = $(this).attr('data-redirect');
+ } else {
+ alert("Missing URL for " + $(this).find('div.country_name').text());
+ }
+ });
+ //End Country Selector
+
+
+ //GLT Results expanded form functionality
+ $(".first_name, .last_name, .phone_number, .email_address").click(function () {
+ if ($(".disclaimer_apply").hasClass('hidden')) {
+ $(".disclaimer_apply").removeClass('hidden');
+ } else {
+ $(".disclaimer_apply").removeClass('hidden');
+ }
+ });
+
+
+ $(".first_name, .last_name, .phone_number, .email_address").click(function () {
+ $(".htr_address").removeClass('hidden');
+ $(".htr_city").removeClass('hidden');
+ $(".htr_select_state").removeClass('hidden');
+ $(".htr_zip_code").removeClass('hidden');
+ $(".disclaimer_apply").removeClass('hidden-lg');
+ $(".disclaimer_apply").addClass('visible-lg');
+ });
+
+ function isValidEmailAddress(emailAddress) {
+ var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+ return pattern.test(emailAddress);
+ };
+
+ //Start Validations For Unsubscribe Email
+ function unsubscribeEmailDNSS() {
+
+ var emailId = document.getElementById("email").value;
+ var isValidEmailId = isValidEmailAddress(emailId)
+
+ if (isValidEmailId == false) {
+ document.getElementById('email').value = "";
+ document.getElementById('errorText').style.visibility = "visible";
+ document.getElementById('errorText').style.color = "red";
+ document.getElementById('enterEmail').style.display = "block";
+ document.getElementById('thanksMessage').style.display = "none";
+ } else {
+ document.getElementById('enterEmail').style.display = "none";
+ document.getElementById('thanksMessage').style.display = "block";
+ document.getElementById('errorText').style.visibility = "hidden";
+ UnsubscribeProcessorSubmit(emailId);
+ }
+ }
+ // End Validations For Unsubscribe Email
+
+ function UnsubscribeProcessorSubmit(emailId)  {
+
+ var i = "/wps/proxy/MCDNSSService/emailPost.do?email="+emailId;
+ $.ajax({
+ url: i,
+ type: 'POST',
+ async: false,
+ contentType: false,
+ processData: false,
+ handleAs: "text",
+ enctype:"multipart/form-data",
+ success: function (data) {
+ console.log(data);
+ },
+ error: function(){
+ }
+ });
+ }
+
+ $(".firstName, .lastName, .phoneNumber, .emailAddress").click(function () {
+ $(".city, .state, .zip, .address, .disclaimer_text").addClass("display_on_click");
+ $(".close_button").addClass("display_close_button_click");
+ });
+
+ $(".close_button").click(function () {
+ $(".city, .state, .zip, .address, .disclaimer_text, .box_hidden_types").removeClass("display_on_click");
+ $(".close_button").removeClass("display_close_button_click");
+ });
+ */
+/*IS THIS USED??*/
+
+
+
+$(".form-radio-grp svg, .image_radio svg").on('click', function(){
+	var radioButton = $(this).siblings('input');
+	if (!radioButton.prop('checked')){
+		radioButton.prop('checked', true);
+		var radioName = radioButton.prop('name');
+		$('input[name=' + radioName + ']').siblings('svg').toggle();
+	};
+});
+
+$('#productPolicy option[value=""]').attr('selected', true);
+
+$("[data-fid='contactCard'] input").click(function() {
+	if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+		$('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
+	}
+});
+
+$('.contactCard .form-minimize').click(function() {
+	$('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+});
+
+$("[data-request-type]").on("change", function(){
+	var thisValue = $(this).val()
+	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+	var $formid = $('[data-fid=' + thisForm + ']');
+	$("[data-observes-id]").find('input:radio').each(function(){
+		$(this).prop('checked', false);
+	});
+	$formid.find('[data-observes-id]').each(function () {
+
+		if($(this).attr('data-observes-value') == thisValue ){
+			$(this).show();
+
+		}else{
+			$(this).hide();
+		}
+	});
+})
+
+$("[data-observes-id]").find('textarea').on("change", function(){
+	val = $("[data-observes-id]").find('textarea').val();
+	var placeholder  = $("[data-observes-id]").find('textarea').attr('placeholder');
+	if (val == "" || val == placeholder) {
+		$("[data-request-type]").attr('data-valid-status', 'failed');
+	} else {
+		$("[data-request-type]").attr('data-valid-status', 'success');
+		$("[data-request-type]").removeClass('error');
+	}
+})
+
+$("[data-observes-id]").find('input:text').on("change", function(){
+	val = $("[data-observes-id]").find('input:text').val();
+	var placeholder  = $("[data-observes-id]").find('input:text').attr('placeholder');
+	if (val == "" || val == placeholder) {
+		$("[data-request-type]").attr('data-valid-status', 'failed');
+	} else {
+		$("[data-request-type]").attr('data-valid-status', 'success');
+		$("[data-request-type]").removeClass('error');
+	}
+})
+
+//Current
+$('.productPolicy').on('change', function () {
+	$(this).find('option').eq(1).val('New Product/Planning Services');
+	$(this).find('option').eq(2).val('Existing Product/Policy');
+	var val = $(this).val();
+	var $this = $(this);
+	var $con = $this.closest('.productPolicyTypes');
+	if (val == "New Product/Planning Services") {
+		$con.find('.productUserType').hide();
+		$con.find('.newProductUser').show();
+		var count = 0;
+		$con.find('.newProductUser input[type=checkbox]').each(function () {
+			if ($(this).is(':checked')) {
+				count++;
+			}
+		});
+		//if (count > 0 && count <= 5) {
+		//if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+		if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+			$this.attr('data-valid-status', 'success');
+			$this.removeClass('error');
+			$con.find('.productCount').removeClass('errorText');
+		} else {
+			$this.attr('data-valid-status', 'failed');
+			//$this.addClass('error');
+		}
+		if ($this.hasClass('error')) {
+			$con.find('.productCount').addClass('errorText');
+		} else {
+			$con.find('.productCount').removeClass('errorText');
+		}
+	} else if (val == "Existing Product/Policy") {
+		$con.find('.productUserType').hide();
+		$con.find('.existingProductUser').show();
+		var val = $con.find('.productUserQuestion').val();
+		var placeholder = $con.find('.productUserQuestion').attr('placeholder');
+		if (val == "" || val == placeholder) {
+			$this.attr('data-valid-status', 'failed');
+			//$this.addClass('error');
+		} else {
+			$this.attr('data-valid-status', 'success');
+			$this.removeClass('error');
+		}
+		if ($this.hasClass('error')) {
+			$con.find('.productUserQuestion').addClass('error');
+		}
+	} else {
+		$con.find('.productUserType').hide();
+	}
+});
+
+$('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
+
+	//alert("contact from submitted");
+	e.preventDefault();
+	var $this = $(this);
+	var isValid = ServicesAPI.onFSubmit($(this));
+
+	//25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+	if (isValid) {
+
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		ServicesAPI.postLeadformOld($formid);
+		$('.productUserType').hide();
+
+		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+			$('.aidFormCon').hide();
+			$('.aiwHeading').hide();
+			$('.advisorClose').hide();
+			$('.adImageThankYou').css("display", "table-cell");
+		} else if (fid == "quoteleadform") {
+			$(this).closest('.quote_right_mlt').hide();
+			$(this).closest('.quote_right_sit').hide();
+			$('.quote_results_thank_you').show();
+		} else if (fid == "contactCard") {
+			var temp = "[data-fid='" + fid + "']";
+			//$("[data-fid='contactCard']").hide();
+			$('.contactCard').hide();
+			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+			setTimeout(function () {
+				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+					$('.contactCard').show();
+					$('#requestFormContactCard_Acc').trigger("reset");
+					$('.form-minimize').trigger('click');
+				});
+			}, 5000);
+		} else if (fid == "contactSidebarQuote") {
+			$(".results-form__text").addClass("hidden");
+			$(".results-form__inputs").addClass("hidden");
+			$(".apply-disclaimer").addClass("hidden");
+			$(".contact-thanks").removeClass("hidden");
+
+		} else {
+			$('.' + fid).fadeOut('slow', function () {
+				setTimeout(function () {
+					$('.contactSliderOuterCon').fadeOut(2000);
+					$('.contactsClose').trigger('click');
+				}, 5000)
+			});
+		}
+	} else {
+		//alert("invalid");
+	}
+});
+
+//new
+/*$('[data-fsubmit]').on('click', function (e) {
+	e.preventDefault();
+	var $this = $(this);
+	var isValid = ServicesAPI.onFSubmit($(this));
+
+	//25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
+
+	if (isValid) {
+
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		ServicesAPI.postLeadform($formid);
+
+		$formid.find('[data-observes-id]').each(function () {
+			$(this).hide();
+		});
+
+		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+			$('.aidFormCon').hide();
+			$('.aiwHeading').hide();
+			$('.advisorClose').hide();
+			$('.adImageThankYou').css("display", "table-cell");
+		} else if (fid == "quoteleadform") {
+			$(this).closest('.quote_right_mlt').hide();
+			$(this).closest('.quote_right_sit').hide();
+			$('.quote_results_thank_you').show();
+		} else if (fid == "contactCard") {
+			var temp = "[data-fid='" + fid + "']";
+			//$("[data-fid='contactCard']").hide();
+			$('.contactCard').hide();
+			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+			setTimeout(function () {
+				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+					$('.contactCard').show();
+					$('#requestFormContactCard_Acc').trigger("reset");
+					$('.form-minimize').trigger('click');
+				});
+			}, 5000);
+		} else if (fid == "contactSidebarQuote") {
+			$(".results-form__text").addClass("hidden");
+			$(".results-form__inputs").addClass("hidden");
+			$(".apply-disclaimer").addClass("hidden");
+			$(".contact-thanks").removeClass("hidden");
+
+		} else {
+			$('.' + fid).fadeOut('slow', function () {
+				setTimeout(function () {
+					$('.contactSliderOuterCon').fadeOut(2000);
+					$('.contactsClose').trigger('click');
+				}, 5000)
+			});
+		}
+	} else {
+		//alert("invalid");
+	}
+});*/
+
+$('select[data-required=true]').on('change', function () {
+	$(this).trigger('blur');
+});
+
+$('[data-required=true]').on('blur', function () {
+	var $this = $(this);
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == placeholder) {
+		$this.val("");
+	}
+	var val = $this.val();
+	if (val.length == 0) {
+		$this.addClass('error');
+		//$this.val(placeholder);
+	} else {
+		var attrDVS = $this.attr('data-valid-status');
+		if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+			//do nothing
+			if (attrDVS == 'failed') {
+				//$(this).addClass('error');
+				formStatus = false;
+			}
+		} else {
+			$this.removeClass('error');
+			$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
+			$this.parent('.form-user-grp').find('svg').css('fill', '#666');
+		}
+	}
+});
+
+$(".form-user-ctrl").on('click', function(evt){
+	if($(this).hasClass("error")) {
+		$(this).val("");
+	}
+});
+
+$('[data-valid-type=text]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+	/* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+$('.user-checkbox').on('click', function () {
+	var count = 0;
+	//var $con = $(this).closest('.productPolicyTypes');
+	var $con = $(this).parents().find('.productPolicyTypes');
+	$con.find('.newProductUser input[type=checkbox]').each(function () {
+		if ($(this).is(':checked')) {
+			count++;
+		}
+	});
+	//if (count > 0 && count <= 5) {
+	//if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+	if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+		$con.find('.productPolicy').attr('data-valid-status', 'success');
+		$con.find('.productPolicy').removeClass('error');
+		$con.find('.productCount').removeClass('errorText');
+		$('.productPolicyTypes').find('svg').css('fill', '#666');
+	} else {
+		$con.find('.productPolicy').attr('data-valid-status', 'failed');
+		$con.find('.productPolicy').addClass('error');
+		$con.find('.productCount').addClass('errorText');
+		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
+	}
+});
+
+$('.user-radio').on('click', function () {
+	var val = $('[data-request-type]').val();
+	var $this = $(this);
+	switch(val) {
+		case 'New Product/Planning Services':
+			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
+			sucessInput.attr('data-valid-status', 'success');
+			sucessInput.removeClass('error');
+			$('.productPolicyTypes').find('svg').css('fill', '#fff');
+			break;
+		case 'Existing Product/Policy':
+			break;
+		default:
+			break;
+	}
+});
+
+$('[data-valid-type=email]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=zip]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /^\d{5}$/i;
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=zip]').on('keyup', function (evt) {
+	var regexp = /[^0-9]/;
+	var str = $(this).val();
+	if (str.match(regexp)) {
+		str = str.replace(/\D/g, "");
+		$(this).val(str);
+	}
+	var len = str.length;
+	if (len > 5) {
+		str = str.substr(0, 5);
+		$(this).val(str);
+		return false;
+	}
+});
+
+$('[data-valid-type=phone]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	$this.trigger('keyup')
+	var val = $this.val();
+	var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+$('[data-valid-type=phone]').on('keyup', function (evt) {
+	var regexp = /[^0-9]/;
+	var input_value = $(this).val();
+	if (input_value.match(regexp)) {
+		input_value = input_value.replace(/\D/g, "");
+		$(this).val(input_value);
+	}
+	var num_len = $(this).val().length;
+	if (num_len >= 3 && num_len < 7) {
+		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, num_len);
+	} else if (num_len >= 7) {
+		input_value = input_value.substring(0, 10)
+		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, 6) + "-" + input_value.substring(6, num_len);
+	}
+	if (evt.keyCode == 8) {
+		var str = input_value.charAt(input_value.length - 1);
+		if (str == "-") {
+			input_value = input_value.substring(0, input_value.length - 1)
+		}
+	}
+	$(this).val(input_value);
+});
+
+$('.productUserQuestion').on('blur', function () {
+	var $this = $(this);
+	var $con = $this.closest('.productPolicyTypes');
+	var val = $this.val();
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == "") {
+		$this.val(placeholder);
+	}
+	if (val == "" || val == placeholder) {
+		$con.find('.productPolicy').attr('data-valid-status', 'failed');
+		$con.find('.productPolicy').addClass('error');
+		$this.addClass('error');
+		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
+	} else {
+		$con.find('.productPolicy').attr('data-valid-status', 'success');
+		$con.find('.productPolicy').removeClass('error');
+		$this.removeClass('error');
+		$('.productPolicyTypes').find('svg').css('fill', '#666');
+	}
+});
+//Contact Forms
+
 //Forms Lib Variables
 var searchAgainFlag = false;
 
@@ -9270,7 +8408,7 @@ var ServicesAPI = {
 		$('.results_content').remove();
 		$('.results_pagination,.find_an_office_pagecount_wrap,.maps-button, .google-maps-container').addClass('hidden');
 	},
-	getQueryString: function(){
+	getQueryStringNew: function(){
 		var vars = [], hash;
 		var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
 		for(var i = 0; i < hashes.length; i++)
@@ -9776,7 +8914,7 @@ var ServicesAPI = {
 	searchServiceCall: function(input){
 		count = 0;
 		var url = input;
-		var querySearch = ServicesAPI.getQueryString()["query"];
+		var querySearch = ServicesAPI.getQueryStringNew()["query"];
 		if(querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " "){
 			url += "?query=" + querySearch;
 		}
@@ -10409,59 +9547,6 @@ var ServicesAPI = {
 			}
 		}
 	},
-	//showLocation : function() {
-	//	$('.fax-results-container, .maps-button, .get-directions-form, .find_an_x_cta_search, .contact_advisor_input_container,.wrapper_container_cta_search,.bread_crumb_fao').removeClass('hidden');
-	//	$('.directions-container, .bread_crumb_dir, #googleDrivingMapsContainer').addClass('hidden');
-	//	if(dir_to_flag ==true){
-	//		$('.get-directions-form .from-address').val('');
-	//	}
-	//	var endsWith = function(str, suffix) {
-	//		return str.indexOf(suffix, str.length - suffix.length) !== -1;
-	//	};
-	//	var startsWith = function(string, searchString, position){
-	//		position = position || 0;
-	//		return string.substr(position, searchString.length) === searchString;
-	//
-	//	};
-	//	$('.errorSpan.error_zip_code').html($('.errorMsgtext_no_office_found').text());
-	//	ServicesAPI.initializeGoogleMapObject();
-	//	var address;
-	//	var zip = sessionStorage.getItem("faoZipCode");
-	//	if (document.referrer == "" ||  endsWith(document.referrer, "/cf") || startsWith(document.referrer, document.origin+document.location.pathname)) {
-	//		address = $('.find_an_x_cta_search .cta_search').val();
-	//	}else{
-	//		$('.find_an_x_cta_search .cta_search').val(zip);
-	//		$('.find_an_x_cta_search .cta_search').text(zip);
-	//		address = $('.find_an_x_cta_search .cta_search').val();
-	//	}
-	//	var validateAddress = address.trim();
-	//	var isNumber =  /^\d+$/.test(validateAddress);
-	//	if((!isNumber) || (isNumber && (address.length===5))){
-	//		$('.errorSpan.error_zip_code').addClass('hidden');
-	//		if(address!=null && address!='' && address!=undefined && address!=' '){
-	//			geocoder.geocode({"address":address},function(response, status) {
-	//				if (status == google.maps.GeocoderStatus.OK) {
-	//					ServicesAPI.addAddressToMap(response, status);
-	//				}else{
-	//					ServicesAPI.resetMap();
-	//					ServicesAPI.showSorryUnableToLocateMessage();
-	//				}
-	//			});
-	//		}else{
-	//			ServicesAPI.resetMap();
-	//		}
-	//	}else{
-	//		$('.errorSpan.error_zip_code').removeClass('hidden');
-	//		if ($(".hidden-xs").is(":visible") == true) {
-	//
-	//			$(".mobile_expand_close").click();
-	//			$(".error_zip_code").insertAfter(".mobile_expand");
-	//		}
-	//		if (($(".hidden-xs").is(":visible") == false) && ($(".mobile_expand").is(":visible"))) {
-	//			$(".error_zip_code").insertAfter(".mobile_expand_open");
-	//		}
-	//	}
-	//},
 	addAddressToMap: function(response,status) {
 		ServicesAPI.clearOverlays();
 		if (!response || status!= google.maps.GeocoderStatus.OK) {
@@ -10819,7 +9904,7 @@ var ServicesAPI = {
 		currentPageCrumb.wrapInner("<a href=\"\"> </a>");
 		currentPageCrumb.addClass("breadcrumb__crumb");
 		currentPageCrumb.find("a").attr("href", faoURL);
-		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span");
+		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span>");
 	},
 	removeBreadCrumb: function(){
 		$(".breadcrumb").find("span:last-of-type").remove();
@@ -10918,8 +10003,7 @@ var ServicesAPI = {
 				}
 			});
 
-		}
-	,
+		},
 	formatDestination : function(destAddress){
 		var regex = new RegExp("[0-9]TH|[0-9]RD|[0-9]ND", "i");
 		while(regex.test(destAddress)){
@@ -11000,12 +10084,504 @@ var ServicesAPI = {
 	},
 	updatePageFrom: function(name){
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		console.log($("[name=pageFrom]").val())
 		if(pageFrom != undefined){
 			name.val(pageFrom);
-			console.log($("[name=pageFrom]").val())
-			return;
 		}
+	},
+	onFSubmit: function ($this) {
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		var formStatus = true;
+		var flag;
+		$formid.find('[data-required=true]').each(function () {
+			var $this = $(this);
+			var placeholder = $this.attr('placeholder');
+			if ($this.val() == placeholder) {
+				$this.val("");
+			}
+			var val = $this.val();
+			if (val == "New Product/Planning Services") {
+				flag = "New";
+			}
+			if (val == "Existing Product/Policy") {
+				flag = "Existing";
+			}
+			if (val.length == 0) {
+				if (flag == "New") {
+					if (placeholder == "Policy/Contract #" || placeholder == "Question") {
+						$this.removeClass('error');
+						$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
+						$this.parent('.form-user-grp').find('svg').css('fill', '#666');
+					}
+				}
+				else {
+					$this.addClass('error');
+					$this.parent().find('.errorSpan').addClass('errorSpanOpen');
+					$('.contactSideForm .info-mandatory').addClass('error-mandatory');
+					$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
+					$this.val(placeholder);
+					formStatus = false;
+				}
+			}
+		});
+
+		$formid.find('[data-valid-status]').each(function () {
+			var attrDVS = $(this).attr('data-valid-status');
+			if (attrDVS == 'failed') {
+				$(this).addClass('error');
+				formStatus = false;
+			}
+		});
+		if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
+			ServicesAPI.formPass(fid);
+		} else {
+			$formid.find('.info-mandatory').addClass('error-mandatory');
+		}
+		return formStatus;
+	},
+	formProcessorSubmit : function(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
+	var lead = "";
+	var scenarioName = "";
+	var mmrep = "";
+	var formObjectName = document.getElementById(formName);
+	var reserveid = ServicesAPI.getCookie("ReserveID");
+	if (null != reserveid) ServicesAPI.AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
+	else;
+
+	//AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
+	if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
+	if (null != mmrep && "" != mmrep) {
+		var lsubContentGroupDirectory = "";
+		var lcontentGroupDirectory = "";
+		var laudience = "";
+		if ("" != subContentGroupDirectory) {
+			lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			laudience = audience;
+		} else if ("" != contentGroupDirectory) {
+			lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+			laudience = audience;
+		} else if ("" != audience) {
+			laudience = audience + "-" + mmrep;
+			lcontentGroupDirectory = contentGroupDirectory;
+			lsubContentGroupDirectory = subContentGroupDirectory;
+		}
+		if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
+		if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
+		if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", laudience, document);
+	} else {
+		var CGFrQS = "";
+		var SCGFrQS = "";
+		var AUFrQS = "";
+		CGFrQS = ServicesAPI.getQueryString("CG");
+		SCGFrQS = ServicesAPI.getQueryString("SCG");
+		AUFrQS = ServicesAPI.getQueryString("AU");
+		if ("" != CGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
+		else if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
+		if ("" != SCGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
+		else if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
+		if ("" != AUFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
+		else if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+		else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", audience, document);
+	}
+	if ("requestFormRightNav_Acc" == formName) {
+		var prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else if ("requestFormRightNav" == formName) {
+		var prodType = "";
+		if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
+		else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+			else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+	} else {
+		var prodType = "";
+		if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+		if ("" != prodType)
+			if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+			else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+	}
+	if ("NewLead" != lead && "ServiceLead" != lead) {
+		lead = "NonLeadForm";
+		if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
+	}
+	// console.debug("Lead type: " + lead);
+	var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
+	if (null != results) {
+		var fullID = unescape(results[2]);
+		var partID = fullID.split(":");
+		var visitorID = partID[0].split("=");
+	}
+	if ("undefined" == typeof visitorID) ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
+	else ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
+	var urlNode = document.URL;
+	urlNode = ServicesAPI.getPageFromURLNode(formObjectName, mmrep);
+	if ("requestFormRightNav" == formName) {
+		//console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
+		if (document.requestFormRightNav.coverage)
+			if (document.requestFormRightNav.coverage.value < 1e5) {
+				urlNode = urlNode.split("?");
+				urlNode = urlNode[0];
+			}
+	}
+	ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+	var validationSuccess = true;
+	if (validationSuccess) {
+		/*var tempURL = "www.metlife.com";
+		 if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
+		 if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
+		 var preFill = formObjectName.lstPnPPreFillParameters;
+		 console.debug("Prefill Parameters is: " + preFill);
+		 if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
+		 var prefillParam = preFill.value;
+		 var prefillList = prefillParam.split(",");
+		 var PnPPreFillValues = "";
+		 for (i = 0; i < prefillList.length; i++) {
+		 //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
+		 //console.debug("prefillListParam is: " + prefillListParam);
+		 //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
+		 }
+		 document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
+		 }
+		 varwebformID = formObjectName.webformId;
+		 if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+		 ServicesAPI.addSessionParameters(formObjectName);
+		 console.debug("Doing Webform submit to: " + submitUrl);
+		 */
+
+	}
+},
+	validateOnType : function (val, $this, re) {
+		var placeholder = $this.attr('placeholder');
+		if (val.length > 0 && val != placeholder) {
+			if (val.match(re)) {
+				$this.removeClass('error');
+				$this.removeClass('formatError');
+				$this.removeAttr('data-valid-status');
+			} else {
+				$this.addClass('error');
+				$this.addClass('formatError');
+				$this.attr('data-valid-status', 'failed');
+			}
+		} else {
+			$this.removeClass('formatError');
+			var attrDVS = $this.attr('data-required');
+			if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+
+			} else {
+				$this.removeClass('error');
+				$this.removeAttr('data-valid-status');
+			}
+		}
+	},
+	AddInputParameter : function(a, b, c, d, e) {
+		var f = e.createElement(b);
+		f.setAttribute("type", "hidden");
+		f.setAttribute("name", c);
+		f.setAttribute("value", d);
+		a.appendChild(f);
+	},
+	getCookie : function(c_name) {
+		if (document.cookie.length > 0) {
+			c_start = document.cookie.indexOf(c_name + "=");
+			if (c_start != -1) {
+				c_start = c_start + c_name.length + 1;
+				c_end = document.cookie.indexOf(";", c_start);
+				if (c_end == -1) c_end = document.cookie.length;
+				return unescape(document.cookie.substring(c_start, c_end));
+			}
+		}
+		return "";
+	},
+	getQueryString : function(a) {
+		a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var b = "[\\?&]" + a + "=([^&#]*)";
+		var c = new RegExp(b);
+		var d = c.exec(window.location.href);
+		if (null == d) return "";
+		else return d[1];
+	},
+	getPageFromURLNode : function(a, b) {
+		var c = document.URL;
+		var d = "";
+		var e = window.location.search.split("?");
+		var f = "";
+		var g = "";
+		var h = false;
+		if (null != document.getElementById("WT.mc_id")) {
+			mcid = ServicesAPI.getCookie("SessionMCID");
+			ServicesAPI.AddInputParameter(a, "input", "wb_code", mcid, document);
+			ServicesAPI.AddInputParameter(a, "input", "WT.mc_id", mcid, document);
+		}
+		if (2 == e.length) {
+			var i = e[1].split("&");
+			for (var j = 0; j < i.length; j++) {
+				var k = i[j].split("=");
+				if ("wt.mc_id" == k[0].toLowerCase()) {
+					ServicesAPI.AddInputParameter(a, "input", "wb_code", k[1], document);
+				}
+				if ("" != b)
+					if ("pagefrom" == k[0].toLowerCase()) {
+						d = k[1] + "-" + b;
+						if (j == i.length - 1) g = g + k[0] + "=" + d;
+						else g = g + k[0] + "=" + d + "&";
+						h = true;
+					} else if (j == i.length - 1) g += i[j];
+					else g = g + i[j] + "&";
+			}
+			if (h) {
+				var l = document.URL;
+				var m = l.split("?");
+				f = window.location.href.split("#")[1];
+				if ("" != f) c = m[0] + "?" + g;
+				else c = m[0] + "?" + g + "#" + f;
+			}
+		}
+		return c;
+	},
+	addSessionParameters : function(a) {
+		var b = sessionVars.getSessionParams();
+		for (var c in b)
+			if (b.hasOwnProperty(c))
+				if ("" !== b[c])
+					if (ServicesAPI.checkFormField(a, c)) ServicesAPI.AddInputParameter(a, "input", c, b[c], document);
+					else a.elements[c].value = b[c];
+	},
+	checkFormField : function (a, b) {
+		if (void 0 == a.elements[b]) return true;
+		else return false;
+	},
+	postLeadform : function ($formid){
+		var formName = $formid.attr('name');
+		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+		var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+		var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+
+
+		if(requestType == 'New Product/Planning Services'){
+			var jsonData = {};
+			var formData = $('form[name='+formName+']').serializeArray();
+			$.each(formData, function() {
+				if (jsonData[this.name]) {
+
+					if (!jsonData[this.name].push) {
+						jsonData[this.name] = [jsonData[this.name]];
+
+					}
+					jsonData[this.name].push(this.value || '');
+				} else {
+
+					jsonData[this.name] = this.value || '';
+					if (!jsonData[this.name].push) {
+						if(this.name == "prodInt" || this.name == "prodInterest"){
+							jsonData[this.name] = [jsonData[this.name]];
+
+						}
+					}
+				}
+
+			});
+
+			console.log(JSON.stringify(jsonData));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				dataType: 'json',
+				data: JSON.stringify(jsonData),
+				async: true,
+				contentType: 'application/json',
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		}
+
+		if(requestType == 'Existing Product/Policy'){
+			if(typeof FormData !== 'undefined'){
+				var formData = new FormData($('form[name='+formName+']')[0]);
+				$.ajax({
+					url: ajaxUrl,
+					type: 'POST',
+					data: formData,
+					async: false,
+					contentType: false,
+					processData: false,
+					success: function (returndata) {
+						//console.log(returndata);
+					},
+					error: function(){
+						console.log("error in ajax form submission");
+					}
+				});
+			} else {
+				var formData = postSerialize($('form[name='+formName+']'));
+				$.ajax({
+					url: ajaxUrl,
+					type: 'POST',
+					data: formData,
+					async: false,
+					contentType: 'application/x-www-form-urlencoded',
+					processData: false,
+					success: function (returndata) {
+						//console.log(returndata);
+					},
+					error: function(){
+						console.log("error in ajax form submission");
+					}
+				});
+			}
+		}
+	},
+	postLeadformOld : function($formid){
+
+	var formName = $formid.attr('name');
+	ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+	var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+	var ajaxUrl;
+	$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+	if(requestType == 'New Product/Planning Services'){
+		ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
+		var jsonData = {};
+		var formData = $('form[name='+formName+']').serializeArray();
+		$.each(formData, function() {
+			if (jsonData[this.name]) {
+
+				if (!jsonData[this.name].push) {
+					jsonData[this.name] = [jsonData[this.name]];
+
+				}
+				jsonData[this.name].push(this.value || '');
+			} else {
+
+				jsonData[this.name] = this.value || '';
+				if (!jsonData[this.name].push) {
+					if(this.name == "prodInt" || this.name == "prodInterest"){
+						jsonData[this.name] = [jsonData[this.name]];
+
+					}
+				}
+			}
+
+		});
+
+		console.log(JSON.stringify(jsonData));
+		$.ajax({
+			url: ajaxUrl,
+			type: 'POST',
+			dataType: 'json',
+			data: JSON.stringify(jsonData),
+			async: true,
+			contentType: 'application/json',
+			processData: false,
+			success: function (returndata) {
+				//console.log(returndata);
+			},
+			error: function(){
+				console.log("error in ajax form submission");
+			}
+		});
+	}
+
+	if(requestType == 'Existing Product/Policy'){
+		ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
+		if(typeof FormData !== 'undefined'){
+			var formData = new FormData($('form[name='+formName+']')[0]);
+
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				data: formData,
+				async: false,
+				contentType: false,
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		} else {
+			var formData = postSerialize($('form[name='+formName+']'));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				data: formData,
+				async: false,
+				contentType: 'application/x-www-form-urlencoded',
+				processData: false,
+				success: function (returndata) {
+					//console.log(returndata);
+				},
+				error: function(){
+					console.log("error in ajax form submission");
+				}
+			});
+		}
+	}
+
+
+
+
+},
+	formPass : function (fid) {
+
+		switch (fid){
+			case "contactSidebar":
+				$('.contactSideForm').fadeOut(2000);
+				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+				break;
+
+			case "contactSingle":
+				$('.contact-us__contact-form').fadeOut(1000);
+				$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+				break;
+
+		}
+
+		$('.info-mandatory').removeClass("error-mandatory");
+		$('.form-user-ctrl').removeClass("error");
+		$('.form-user-grp').find('svg').css('fill', '#666');
+
+		setTimeout(function () {
+			ServicesAPI.resetForm(fid);
+		}, 5000);
+	},
+	resetForm : function (fid) {
+
+		switch (fid){
+			case "contactSidebar":
+				//in a timeout to avoid visual conflict with animation
+				setTimeout(function () {
+					$('#requestFormRightNav_Acc').trigger("reset");
+					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+					$('.contactSideForm').toggle();
+					$('.contact-container--global').css("right", "-640px");
+				}, 1000);
+				break;
+
+			case "contactSingle":
+				$('#requestFormRContactUs_Acc').trigger("reset");
+				$('.contact-us__contact-form').fadeIn(1000);
+				$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+				break;
+
+		}
+
+
 	}
 };
 
