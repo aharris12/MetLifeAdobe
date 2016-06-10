@@ -7348,13 +7348,16 @@ $("[data-fid='contactCard'] input").click(function() {
 
 $('.contactCard .form-minimize').click(function() {
 	$('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+	$('[data-request-type] option[value=""]').attr('selected', true);
+	$("[data-request-type]").change();
+	$('[data-request-type] option[value=""]').attr('selected', true);
 });
 
 $("[data-request-type]").on("change", function(){
 	var thisValue = $(this).val()
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
 	var $formid = $('[data-fid=' + thisForm + ']');
-	$("[data-observes-id]").find('input:radio').each(function(){
+	$formid.find("[data-observes-id]").find('input:radio').each(function(){
 		$(this).prop('checked', false);
 	});
 	$formid.find('[data-observes-id]').each(function () {
@@ -7369,8 +7372,10 @@ $("[data-request-type]").on("change", function(){
 })
 
 $("[data-observes-id]").find('textarea').on("change", function(){
-	val = $("[data-observes-id]").find('textarea').val();
-	var placeholder  = $("[data-observes-id]").find('textarea').attr('placeholder');
+	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+	var $formid = $('[data-fid=' + thisForm + ']');
+	var val = $formid.find("[data-observes-id]").find('textarea').val();
+	var placeholder  = $formid.find("[data-observes-id]").find('textarea').attr('placeholder');
 	if (val == "" || val == placeholder) {
 		$("[data-request-type]").attr('data-valid-status', 'failed');
 	} else {
@@ -7380,8 +7385,10 @@ $("[data-observes-id]").find('textarea').on("change", function(){
 })
 
 $("[data-observes-id]").find('input:text').on("change", function(){
-	val = $("[data-observes-id]").find('input:text').val();
-	var placeholder  = $("[data-observes-id]").find('input:text').attr('placeholder');
+	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+	var $formid = $('[data-fid=' + thisForm + ']');
+	var val = $formid.find("[data-observes-id]").find('input:text').val();
+	var placeholder  = $formid.find("[data-observes-id]").find('input:text').attr('placeholder');
 	if (val == "" || val == placeholder) {
 		$("[data-request-type]").attr('data-valid-status', 'failed');
 	} else {
@@ -7390,8 +7397,28 @@ $("[data-observes-id]").find('input:text').on("change", function(){
 	}
 })
 
+$("[data-observes-id]").find('input:radio').on('click', function () {
+	var thisForm = $(this).parent().parent().parent().parent().parent().attr('data-fid');
+	var $formid = $('[data-fid=' + thisForm + ']');
+	var val = $formid.find('[data-request-type]').val();
+	var $this = $(this);
+	switch(val) {
+		case 'New Product/Planning Services':
+			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
+			sucessInput.attr('data-valid-status', 'success');
+			sucessInput.removeClass('error');
+			break;
+		case 'Existing Product/Policy':
+			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
+			sucessInput.attr('data-valid-status', 'success');
+			sucessInput.removeClass('error');
+			break;
+		default:
+			break;
+	}
+});
 //Current This should be removed once form builder is in palce
-/*$('.productPolicy').on('change', function () {
+$('.productPolicy').on('change', function () {
 	$(this).find('option').eq(1).val('New Product/Planning Services');
 	$(this).find('option').eq(2).val('Existing Product/Policy');
 	var val = $(this).val();
@@ -7495,11 +7522,11 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});*/
+});
 //Current This should be removed once form builder is in palce
 
 //New This should be uncommented once form builder is in palce
-$('[data-fsubmit]').on('click', function (e) {
+/*$('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -7550,7 +7577,7 @@ $('[data-fsubmit]').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});
+});*/
 //New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
@@ -7619,23 +7646,6 @@ $('.user-checkbox').on('click', function () {
 		$con.find('.productPolicy').addClass('error');
 		$con.find('.productCount').addClass('errorText');
 		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
-	}
-});
-
-$('.user-radio').on('click', function () {
-	var val = $('[data-request-type]').val();
-	var $this = $(this);
-	switch(val) {
-		case 'New Product/Planning Services':
-			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
-			sucessInput.attr('data-valid-status', 'success');
-			sucessInput.removeClass('error');
-			$('.productPolicyTypes').find('svg').css('fill', '#fff');
-			break;
-		case 'Existing Product/Policy':
-			break;
-		default:
-			break;
 	}
 });
 
@@ -10024,7 +10034,7 @@ var ServicesAPI = {
 		}
 	},
 	onFSubmit: function ($this) {
-		var fid = $this.attr('data-fsubmit');
+		var fid = $this.attr('data-fsubmit')
 		var $formid = $('[data-fid=' + fid + ']');
 		var formStatus = true;
 		var flag;
