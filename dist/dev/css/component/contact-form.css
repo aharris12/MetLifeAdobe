@@ -346,20 +346,20 @@
      display: inline-block;
      width: 17px;
      height: 17px;
-     background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected_gray.png") left top no-repeat;
+     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
      background-size: 17px 17px;
  }
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
-    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected_gray.png") left top no-repeat;
+    background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
 .form-radio-grp label input.user-radio.blueBackground + span:before {
-    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected.png") left top no-repeat;
+    background: url("/static/images/form/form_radio_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-radio-grp label input.user-radio[type=radio].blueBackground:checked + span:before{
-    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected.png") left top no-repeat;
+    background: url("/static/images/form/form_radio_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
