@@ -42,7 +42,7 @@ if ($(".wrapper__quote-card").length > 0) {
 $('#resultsBuyNow').on('click',function(e){
     e.preventDefault();
     var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
+    var isValid = ServicesAPI.onFSubmit($(this));
     if (isValid) {
           var fid = $this.attr('data-fsubmit');
           var $formid = $('[data-fid=' + fid + ']');

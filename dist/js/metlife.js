@@ -2650,7 +2650,7 @@ if ($(".wrapper__quote-card").length > 0) {
 $('#resultsBuyNow').on('click',function(e){
     e.preventDefault();
     var $this = $(this);
-    var isValid = metlifeRedesign.onFSubmit($(this));
+    var isValid = ServicesAPI.onFSubmit($(this));
     if (isValid) {
           var fid = $this.attr('data-fsubmit');
           var $formid = $('[data-fid=' + fid + ']');
@@ -10308,6 +10308,7 @@ var ServicesAPI = {
 		var formName = $formid.attr('name');
 		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
 		var requestExist = $('[data-fid="' + formName + '"]').find("[data-request-type]").length;
+		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
 		var requestType;
 		var ajaxUrl;
 		if(requestExist > 0){
