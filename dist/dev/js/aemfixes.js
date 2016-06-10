@@ -179,7 +179,6 @@ function getActionLink(el){
 $(".login_open").click(function (e) {
 	if(!$(".login_open").hasClass("linkOnly")){
 		e.preventDefault();
-		metlifeRedesign.login();
 	}
 });
 

@@ -29,6 +29,25 @@ var dir_markerArray = [];
 var dir_to_flag=true;
 var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
 
+//Forms Lib Variables
+var searchAgainFlag = false;
+
+
+//News Room Variables
+var firstTimeRunNewsRoom = true;
+var newsMonth;
+var newsYear;
+var newsTopic;
+var newsConcatenator;
+
+$(document).ready(function() {
+
+	ServicesAPI.loadEventListeners();
+	if ($("#searchInPage").length != 0) {
+		$("#searchInPage").val("");
+	}
+
+});
 //Contact Forms
 /*IS THIS USED??*/
 /*
@@ -729,25 +748,7 @@ $('.productUserQuestion').on('blur', function () {
 });
 //Contact Forms
 
-//Forms Lib Variables
-var searchAgainFlag = false;
 
-
-//News Room Variables
-var firstTimeRunNewsRoom = true;
-var newsMonth;
-var newsYear;
-var newsTopic;
-var newsConcatenator;
-
-$(document).ready(function() {
-
-	ServicesAPI.loadEventListeners();
-	if ($("#searchInPage").length != 0) {
-		$("#searchInPage").val("");
-	}
-
-});
 /****Blog Search****************************************/
 
 
