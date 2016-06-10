@@ -386,7 +386,7 @@ $("[data-observes-id]").find('input:text').on("change", function(){
 })
 
 //Current
-$('.productPolicy').on('change', function () {
+/*$('.productPolicy').on('change', function () {
 	$(this).find('option').eq(1).val('New Product/Planning Services');
 	$(this).find('option').eq(2).val('Existing Product/Policy');
 	var val = $(this).val();
@@ -490,10 +490,10 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});
+});*/
 
 //new
-/*$('[data-fsubmit]').on('click', function (e) {
+$('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -548,7 +548,7 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});*/
+});
 
 $('select[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
@@ -3294,54 +3294,90 @@ var ServicesAPI = {
 	postLeadform : function ($formid){
 		var formName = $formid.attr('name');
 		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
-		var requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
-		var ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
-		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+		var requestExist = $('[data-fid="' + formName + '"]').find("[data-request-type]").length;
+		var requestType;
+		var ajaxUrl;
+		if(requestExist > 0){
+			requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+			ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+			if(requestType == 'New Product/Planning Services'){
+				var jsonData = {};
+				var formData = $('form[name='+formName+']').serializeArray();
+				$.each(formData, function() {
+					if (jsonData[this.name]) {
 
-
-		if(requestType == 'New Product/Planning Services'){
-			var jsonData = {};
-			var formData = $('form[name='+formName+']').serializeArray();
-			$.each(formData, function() {
-				if (jsonData[this.name]) {
-
-					if (!jsonData[this.name].push) {
-						jsonData[this.name] = [jsonData[this.name]];
-
-					}
-					jsonData[this.name].push(this.value || '');
-				} else {
-
-					jsonData[this.name] = this.value || '';
-					if (!jsonData[this.name].push) {
-						if(this.name == "prodInt" || this.name == "prodInterest"){
+						if (!jsonData[this.name].push) {
 							jsonData[this.name] = [jsonData[this.name]];
 
 						}
+						jsonData[this.name].push(this.value || '');
+					} else {
+
+						jsonData[this.name] = this.value || '';
+						if (!jsonData[this.name].push) {
+							if(this.name == "prodInt" || this.name == "prodInterest"){
+								jsonData[this.name] = [jsonData[this.name]];
+
+							}
+						}
 					}
+
+				});
+
+				console.log(JSON.stringify(jsonData));
+				$.ajax({
+					url: ajaxUrl,
+					type: 'POST',
+					dataType: 'json',
+					data: JSON.stringify(jsonData),
+					async: true,
+					contentType: 'application/json',
+					processData: false,
+					success: function (returndata) {
+						//console.log(returndata);
+					},
+					error: function(){
+						console.log("error in ajax form submission");
+					}
+				});
+			}
+			if(requestType == 'Existing Product/Policy'){
+				if(typeof FormData !== 'undefined'){
+					var formData = new FormData($('form[name='+formName+']')[0]);
+					$.ajax({
+						url: ajaxUrl,
+						type: 'POST',
+						data: formData,
+						async: false,
+						contentType: false,
+						processData: false,
+						success: function (returndata) {
+							//console.log(returndata);
+						},
+						error: function(){
+							console.log("error in ajax form submission");
+						}
+					});
+				} else {
+					var formData = postSerialize($('form[name='+formName+']'));
+					$.ajax({
+						url: ajaxUrl,
+						type: 'POST',
+						data: formData,
+						async: false,
+						contentType: 'application/x-www-form-urlencoded',
+						processData: false,
+						success: function (returndata) {
+							//console.log(returndata);
+						},
+						error: function(){
+							console.log("error in ajax form submission");
+						}
+					});
 				}
-
-			});
-
-			console.log(JSON.stringify(jsonData));
-			$.ajax({
-				url: ajaxUrl,
-				type: 'POST',
-				dataType: 'json',
-				data: JSON.stringify(jsonData),
-				async: true,
-				contentType: 'application/json',
-				processData: false,
-				success: function (returndata) {
-					//console.log(returndata);
-				},
-				error: function(){
-					console.log("error in ajax form submission");
-				}
-			});
-		}
-
-		if(requestType == 'Existing Product/Policy'){
+			}
+		}else{
+			ajaxUrl = $('[data-fid="' + formName + '"]').attr("[data-product-url]");
 			if(typeof FormData !== 'undefined'){
 				var formData = new FormData($('form[name='+formName+']')[0]);
 				$.ajax({
@@ -3376,6 +3412,12 @@ var ServicesAPI = {
 				});
 			}
 		}
+		if($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').length > 0) {
+			$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''));
+		}
+
+
+
 	},
 	postLeadformOld : function($formid){
 

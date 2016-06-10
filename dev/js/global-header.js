@@ -107,7 +107,6 @@ function closeSearchBox () {
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__search-box').css('width',"0");
-    $("#searchInPage").val('');
 };
 
 $(document).on("click tap", function (e) {
@@ -115,7 +114,6 @@ $(document).on("click tap", function (e) {
     var container = $(".search-trigger");
     if (!container.is(e.target) && container.has(e.target).length === 0 &&!megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length==0) {
         closeSearchBox();
-        $("#search_suggest").children().remove();
     }
 });
 
