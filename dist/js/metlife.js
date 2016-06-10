@@ -127,7 +127,7 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
-
+//DE8968
 $(window).bind('pageshow', function() {
     $('.search-trigger__search-box').val("");
 });
@@ -135,6 +135,17 @@ $(window).bind('pageshow', function() {
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
+    if(getViewport() == "mobile") {
+        /*if ($('body').hasClass('overlay-scroll__parent')) {
+            $('body').removeClass('overlay-scroll__parent')
+        }
+        if ($('.megamenu').hasClass('overlay-scroll__child')) {
+            $('.megamenu').removeClass('overlay-scroll__child')
+        }
+        if ($('.login-container').hasClass('overlay-scroll__child')) {
+            $('.login-container').removeClass('overlay-scroll__child')
+        }*/
+    }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
@@ -157,16 +168,17 @@ function resizeMegaMenu () {
     }else{
 
 
-        if(resizeMenu == true) {
-            if ($(".megamenu__sub-items").css("display") != "none") {
-                $(".megamenu__sub-items").hide()
+            if(resizeMenu == true) {
+                if ($(".megamenu__sub-items").css("display") != "none") {
+                    $(".megamenu__sub-items").hide()
+                }
+
+                $(".megamenu__main-item").each(function(){
+                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+                    /*$(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')*/
+                });
+
             }
-
-            $(".megamenu__main-item").each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
-
-        }
 
         resizeMenu = false;
 
@@ -208,8 +220,7 @@ function closeSearchBox () {
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__search-box').css('width',"0");
-    $("#searchInPage").val('');
-}
+};
 
 $(document).on("click tap", function (e) {
     var megaMenuTrigger = $(".megamenu-trigger");
@@ -2712,75 +2723,6 @@ function redirectToOEA(e) {
     window.location = e
 }
 
-// Copyright 2009 Google Inc.  All Rights Reserved.
-
-/**
- * @fileoverview JavaScript for GSA Suggest (Core).
- *
- * List of global variables defined in other files. We define these variables in
- * an XSLT accessible to customers so that they can customize it. Look at the
- * stylesheet_template.enterprise for detailed descriptions of these variables.
- * Listing here with short descriptions:
- * <ul>
- * <li> ss_form_element {string} Name of search form.
- * <li> ss_popup_element {string} Name of search suggestion drop down.
- * <li> ss_seq {array} Types of suggestions to include.
- * <li> ss_g_one_name_to_display {string} name to display to user.
- * <li> ss_g_more_names_to_display {string} name to display to user.
- * <li> ss_g_max_to_display {number} Max number of query suggestions to display.
- * <li> ss_max_to_display {number} Max number of all types of suggestions to
- * display.
- * <li> ss_wait_millisec {number} Idling internval for fast typers.
- * <li> ss_delay_millisec {number} Delay time to avoid contention when drawing
- * the suggestion box by various par allel processes.
- * <li> ss_gsa_host {string} Host name or IP address of GSA.
- * <li> SS_OUTPUT_FORMAT_LEGACY {string} Constant that contains the value for
- * legacy output format.
- * <li> SS_OUTPUT_FORMAT_OPEN_SEARCH {string} Constant that contains the value
- * for OpenSearch output format.
- * <li> SS_OUTPUT_FORMAT_RICH {string} Constant that contains the value for rich
- * output format.
- * <li> ss_g_protocol {string} Output format protocol to use.
- * <li> ss_allow_debug {boolean} Whether debugging is allowed.
- * </ul>
- */
-
-
-var ss_form_element = "metSearchForm";
-
-//var ss_form_element = 'metSearchForm'; // search form
-
-var enableSuggestions = true;
-
-var ss_popup_element = 'search_suggest'; // search suggestion drop-down
-
-var ss_popup_element_table = 'search_suggest_table';
-
-var ss_allow_debug = false;
-
-var ss_wait_millisec = 500;
-
-var ss_delay_millisec = 30;
-
-var ss_seq = ['g'];
-
-/**
- * Suggestion type name to display when there is only one suggestion.
- *
- * @type {string}
- */
-var ss_g_one_name_to_display =
-    "Suggestion";
-
-/**
- * Suggestion type name to display when there are more than one suggestions.
- *
- * @type {string}
- */
-var ss_g_more_names_to_display =
-    "Suggestions";
-
-
 // Copyright 2009 Google Inc. All Rights Reserved.
 
 /**
@@ -3356,6 +3298,7 @@ function ss_processed(qVal) {
     return true;
 }
 
+
 /**
  * Handles key stroke events for turning debug console on and off.
  */
@@ -3409,7 +3352,6 @@ function ss_handleAllKey(e) {
     }
 }
 
-
 function isBlockedChar(kid) {
     keyArr = [17, 20, 16, 18, 9, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 91, 92, 93, 45, 33, 34, 144, 145, 19];
     Array.prototype.contains = function (element) {
@@ -3423,7 +3365,6 @@ function isBlockedChar(kid) {
 
     return keyArr.contains(kid);
 }
-
 
 /**
  * Handles key stroke events for the search box.
@@ -3671,7 +3612,6 @@ function ss_handleQuery(query, waiting1) {
  * Puts search box in focus.
  */
 function ss_sf() {
-    console.log("ss_sf");
     document.getElementById(ss_form_element).query.focus();
     ss_dismissed = false;
 }
@@ -3685,7 +3625,6 @@ function ss_sf() {
  *            search button(s).
  */
 function ss_clear(nofocus) {
-    console.log("ss_clear");
     drawTextBox('');
     ss_qshown = null;
     var fo = document.getElementById(ss_form_element);
@@ -3700,7 +3639,6 @@ $(".search-trigger__search-box").blur( function() {
     ss_clear();
 });
 
-
 /**
  * Hides search suggestions.
  *
@@ -3708,7 +3646,6 @@ $(".search-trigger__search-box").blur( function() {
  *            qry The query to which suggestions to be closed.
  */
 function ss_hide(qry) {
-    console.log("ss_hide");
     //ss_popup_element = search_suggest
     var tbl = document.getElementById(ss_popup_element);
     if (tbl.style.visibility == 'visible') {
@@ -4338,7 +4275,7 @@ ss_Debugger.prototype.addWaitDebugLine = function (query, type, time) {
 };
 
 var ss_use = {};
-ss_use.g = ss_seq.indexOf('g') >= 0 ? true : false;
+ss_use.g = ss_seq.indexOf('g') >= 0;
 // Copyright 2004-2006 Google Inc.
 // All Rights Reserved.
 
@@ -7566,11 +7503,7 @@ $('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
-
-	//25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
 	if (isValid) {
-
 		var fid = $this.attr('data-fsubmit');
 		var $formid = $('[data-fid=' + fid + ']');
 		ServicesAPI.postLeadform($formid);

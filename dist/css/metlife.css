@@ -12756,8 +12756,8 @@ manner*/
     visibility: visible;
     width: 346px;
     position: fixed;
-    top: 101px;
-    left: 12px;
+    top: 97px;
+    left: 10px;
     z-index: 999999999;
     border-radius: 0px 0px 2px 2px;
     background: white;
@@ -12790,9 +12790,9 @@ manner*/
 
 @media (min-width: 768px) {
     .suggestionsbox table {
-        width: 168px;
-        /*left: 134px;
-        top: 54px;*/
+        width: 170px;
+        top: 52px;
+        left: 134px;
     }
 
 }
@@ -12800,7 +12800,6 @@ manner*/
 @media (min-width: 1025px) {
     .suggestionsbox table {
         width: 170px;
-        top: 52px;
         left: 224px;
     }
 

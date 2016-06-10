@@ -14,7 +14,7 @@ function optionalHeaderCTA() {
 $(window).load(function () {
     optionalHeaderCTA();
 });
-
+//DE8968
 $(window).bind('pageshow', function() {
     $('.search-trigger__search-box').val("");
 });
@@ -22,6 +22,17 @@ $(window).bind('pageshow', function() {
 var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu () {
+    if(getViewport() == "mobile") {
+        /*if ($('body').hasClass('overlay-scroll__parent')) {
+            $('body').removeClass('overlay-scroll__parent')
+        }
+        if ($('.megamenu').hasClass('overlay-scroll__child')) {
+            $('.megamenu').removeClass('overlay-scroll__child')
+        }
+        if ($('.login-container').hasClass('overlay-scroll__child')) {
+            $('.login-container').removeClass('overlay-scroll__child')
+        }*/
+    }
     if(getViewport() == "tablet" || getViewport() == "desktop"){
         $(".megamenu__sub-items").show();
         if( $('.megamenu').hasClass('megamenu--open')) {
@@ -44,16 +55,17 @@ function resizeMegaMenu () {
     }else{
 
 
-        if(resizeMenu == true) {
-            if ($(".megamenu__sub-items").css("display") != "none") {
-                $(".megamenu__sub-items").hide()
+            if(resizeMenu == true) {
+                if ($(".megamenu__sub-items").css("display") != "none") {
+                    $(".megamenu__sub-items").hide()
+                }
+
+                $(".megamenu__main-item").each(function(){
+                    $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+                    /*$(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')*/
+                });
+
             }
-
-            $(".megamenu__main-item").each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
-
-        }
 
         resizeMenu = false;
 
@@ -95,8 +107,7 @@ function closeSearchBox () {
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__search-box').css('width',"0");
-    $("#searchInPage").val('');
-}
+};
 
 $(document).on("click tap", function (e) {
     var megaMenuTrigger = $(".megamenu-trigger");

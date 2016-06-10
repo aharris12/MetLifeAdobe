@@ -498,11 +498,7 @@ $('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
-
-	//25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
 	if (isValid) {
-
 		var fid = $this.attr('data-fsubmit');
 		var $formid = $('[data-fid=' + fid + ']');
 		ServicesAPI.postLeadform($formid);
