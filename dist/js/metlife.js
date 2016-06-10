@@ -7453,8 +7453,8 @@ $("[data-observes-id]").find('input:text').on("change", function(){
 	}
 })
 
-//Current
-/*$('.productPolicy').on('change', function () {
+//Current This should be removed once form builder is in palce
+$('.productPolicy').on('change', function () {
 	$(this).find('option').eq(1).val('New Product/Planning Services');
 	$(this).find('option').eq(2).val('Existing Product/Policy');
 	var val = $(this).val();
@@ -7558,10 +7558,11 @@ $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});*/
+});
+//Current This should be removed once form builder is in palce
 
-//new
-$('[data-fsubmit]').on('click', function (e) {
+//New This should be uncommented once form builder is in palce
+/*$('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -7616,7 +7617,8 @@ $('[data-fsubmit]').on('click', function (e) {
 	} else {
 		//alert("invalid");
 	}
-});
+});*/
+//New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
