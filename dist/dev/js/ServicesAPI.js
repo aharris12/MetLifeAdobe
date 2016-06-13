@@ -383,6 +383,12 @@ $("[data-request-type]").on("change", function(){
 			$(this).hide();
 		}
 	});
+	if(thisValue != ""){
+		console.log(thisValue)
+		$("[data-request-type]").removeClass('error');
+		$(this).attr('data-valid-status', 'success');
+		$(this).parent('.form-user-grp').find('svg').css('fill', '#666');
+	}
 })
 /*$("[data-request-type]").on("change", function(){
 	var thisValue = $(this).val()

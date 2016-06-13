@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/13/2016 @15:00:37 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/13/2016 @15:10:05 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -430,6 +430,7 @@
                                 <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
                             </svg>
                             <select name="requestType" id="requestType" class="form-user-ctrl user-select"
+                                    data-required="true" aria-required="true"
                                     data-valid-status="failed"
                                     data-request-type>
                                 <option value="">In reference to ...</option>
@@ -445,7 +446,7 @@
                         <div class="form-radio-grp">
                             <label>
                                 <input name="prodInt" id="prodInt_Acc_Auto_Home" type="radio"
-                                       class="user-radio" value="MPC"><span>Auto &amp; Home</span>
+                                       class="user-radio" value="MPC" data-required><span>Auto &amp; Home</span>
                             </label>
                             <label>
                                 <input name="prodInt" id="prodInt_Acc_Life" type="radio"
