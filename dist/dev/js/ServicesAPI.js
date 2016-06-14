@@ -638,6 +638,10 @@ $('select[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
 });
 
+$('[data-required=true]').on('change', function () {
+	$(this).trigger('blur');
+});
+
 $('[data-required=true]').on('blur', function () {
 	var $this = $(this);
 	var placeholder = $this.attr('placeholder');
@@ -3082,28 +3086,13 @@ var ServicesAPI = {
 					$this.val("");
 				}
 				var val = $this.val();
-				if (val == "New Product/Planning Services") {
-					flag = "New";
-				}
-				if (val == "Existing Product/Policy") {
-					flag = "Existing";
-				}
 				if (val.length == 0) {
-					if (flag == "New") {
-						if (placeholder == "Policy/Contract #" || placeholder == "Question") {
-							$this.removeClass('error');
-							$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
-							$this.parent('.form-user-grp').find('svg').css('fill', '#666');
-						}
-					}
-					else {
 						$this.addClass('error');
 						$this.parent().find('.errorSpan').addClass('errorSpanOpen');
 						$('.contactSideForm .info-mandatory').addClass('error-mandatory');
 						$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
 						$this.val(placeholder);
 						formStatus = false;
-					}
 				}
 			}
 
