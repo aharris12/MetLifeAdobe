@@ -12366,6 +12366,10 @@ span.errorRadio {
     color: #EB4646 !important;
 }
 
+.campaign-contact-form .contactOtherDetails {
+    position: static;
+}
+
 .privacy-policy-index {
     margin-top: 20px;
 }
