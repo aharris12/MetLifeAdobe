@@ -257,12 +257,12 @@ a:visited {
     fill:#999;
 }
 .error {
-    border-color: #eb4646;
-    color: #EB4646;
-    background-color: #f5d0d0 !important;
-    background-color: rgba(245, 208, 208, 0.35);
-    fill: #EB4646;
-}
+     border-color: #eb4646;
+     color: #EB4646;
+     background-color: #f5d0d0 !important;
+     background-color: rgba(245, 208, 208, 0.35);
+     fill: #EB4646;
+ }
 
 .warning {
     color: #ff8400;

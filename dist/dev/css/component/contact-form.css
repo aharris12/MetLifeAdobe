@@ -346,11 +346,11 @@
      display: inline-block;
      width: 17px;
      height: 17px;
-     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
+     background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected_gray.png") left top no-repeat;
      background-size: 17px 17px;
  }
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
-    background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -448,3 +448,6 @@
     display: none;
 }
 
+span.errorRadio {
+    color: #EB4646 !important;
+}

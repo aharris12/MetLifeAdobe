@@ -7045,6 +7045,9 @@ var newsYear;
 var newsTopic;
 var newsConcatenator;
 
+
+//Contact Variables
+var radioDials = false;
 $(document).ready(function() {
 
 	ServicesAPI.loadEventListeners();
@@ -7376,8 +7379,9 @@ $("[data-request-type]").on("change", function(){
 	var thisValue = $(this).val()
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
 	var $formid = $('[data-fid=' + thisForm + ']');
+	radioDials = false;
 	$formid.find("[data-observes-id]").find('input:radio').each(function(){
-		$(this).prop('checked', false);
+		$(this).next('span').removeClass('errorRadio');
 	});
 	$formid.find('[data-observes-id]').each(function () {
 
@@ -7389,37 +7393,12 @@ $("[data-request-type]").on("change", function(){
 		}
 	});
 	if(thisValue != ""){
-		console.log(thisValue)
 		$("[data-request-type]").removeClass('error');
 		$(this).attr('data-valid-status', 'success');
 		$(this).parent('.form-user-grp').find('svg').css('fill', '#666');
 	}
 })
-/*$("[data-request-type]").on("change", function(){
-	var thisValue = $(this).val()
-	console.log(thisValue)
-	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
-	var $formid = $('[data-fid=' + thisForm + ']');
-	$formid.find("[data-observes-id]").find('input:radio').each(function(){
-		$(this).prop('checked', false);
-	});
-	$formid.find('[data-observes-id]').each(function () {
 
-		if($(this).attr('data-observes-value') == thisValue ){
-			$(this).show();
-
-		}else{
-			$(this).hide();
-		}
-	});
-	if(thisValue != ""){
-		$("[data-request-type]").removeClass('error');
-		$(this).attr('data-valid-status', 'success');
-
-	}else{
-		$(this).attr('data-valid-status', 'failed');
-	}
-})*/
 
 $("[data-observes-id]").find('textarea').on("change", function(){
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
@@ -7447,31 +7426,14 @@ $("[data-observes-id]").find('input:text').on("change", function(){
 	}
 })
 
-/*$("[data-observes-id]").find('input:radio').on('click', function () {
-	var thisForm = $(this).parent().parent().parent().parent().parent().attr('data-fid');
-	var $formid = $('[data-fid=' + thisForm + ']');
-	var val = $formid.find('[data-request-type]').val();
-	var $this = $(this);
-	switch(val) {
-		case 'New Product/Planning Services':
-			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
-			sucessInput.attr('data-valid-status', 'success');
-			sucessInput.removeClass('error');
-			break;
-		case 'Existing Product/Policy':
-			var sucessInput = $this.parent().parent().parent().parent().parent().find("[data-request-type]");
-			sucessInput.attr('data-valid-status', 'success');
-			sucessInput.removeClass('error');
-			break;
-		default:
-			break;
-	}
-});*/
+
 $("[data-observes-id]").find('input:radio').on('click', function () {
-	$("[data-observes-id]").find("input:radio").each(function(){
-		var val = $(this).attr('checked', 'false')
+	/*$("[data-observes-id]").find("input:radio").each(function(){
+		$(this).removeAttr("checked");
+		$(this).next('span').removeClass('errorRadio');
 	});
-	$(this).attr('checked' , 'true')
+	$(this).attr('checked', true);*/
+	radioDials = true;
 	$("[data-request-type]").attr('data-valid-status', 'success');
 	$("[data-request-type]").removeClass('error');
 	$("[data-request-type]").parent().find('svg').css('fill', '#666');
@@ -10083,6 +10045,22 @@ var ServicesAPI = {
 		var $formid = $('[data-fid=' + fid + ']');
 		var formStatus = true;
 		var flag;
+
+
+		if($("[data-observes-id]").find("input:radio").parent().parent().parent().parent().css("display") != "none") {
+		/*	$("[data-observes-id]").find("input:radio").each(function () {
+				if ($(this).attr('checked') == "checked") {
+					radioDials = true;
+				}
+			});*/
+			if (radioDials != true) {
+				$("[data-observes-id]").find("input:radio").each(function () {
+					$(this).next('span').addClass('errorRadio');
+				});
+				$('.contactSideForm .info-mandatory').addClass('error-mandatory');
+				formStatus = false;
+			}
+		}
 		$formid.find('[data-required=true]').each(function () {
 			var $this = $(this);
 			if($this.parent().parent().parent().css("display") != "none"){
@@ -10093,7 +10071,7 @@ var ServicesAPI = {
 				var val = $this.val();
 				if (val.length == 0) {
 						$this.addClass('error');
-						$this.parent().find('.errorSpan').addClass('errorSpanOpen');
+						//$this.parent().find('.errorSpan').addClass('errorSpanOpen');
 						$('.contactSideForm .info-mandatory').addClass('error-mandatory');
 						$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
 						$this.val(placeholder);

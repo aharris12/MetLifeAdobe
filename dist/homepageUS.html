@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/14/2016 @08:29:05 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/14/2016 @09:55:55 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -445,12 +445,12 @@
                     <div class="col-xs-12">
                         <div class="form-radio-grp">
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="radio"
-                                       class="user-radio" value="MPC" data-required><span>Auto &amp; Home</span>
+                                <input name="prodInterest" id="prodInt_Acc_Auto_Home" type="radio"
+                                       class="user-radio" value="MPC" data-required="true"><span>Auto &amp; Home</span>
                             </label>
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Life" type="radio"
-                                       class="user-radio" value="LIF"><span>Life Insurance</span>
+                                <input name="prodInterest" id="prodInt_Acc_Life" type="radio"
+                                       class="user-radio" value="LIF" data-required="true"><span>Life Insurance</span>
                             </label>
                         </div>
                     </div>
@@ -461,7 +461,7 @@
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true">
+                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true" aria-required="true">
                         </div>
                     </div>
                 </div>
@@ -471,7 +471,7 @@
                         <div class="form-user-grp">
                              <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
                                        rows="3" class="form-user-ctrl productUserQuestion"
-                                       data-placeholder="" data-required="true"></textarea>
+                                       data-placeholder="" data-required="true" aria-required="true"></textarea>
                         </div>
                     </div>
                 </div>
