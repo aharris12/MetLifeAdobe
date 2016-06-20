@@ -186,6 +186,7 @@ $('.login-type__detail').click(function(){
 });*/
 
 function loginFunction(){
+    document.cookie = "PLTRYNO=1; domain=.metlife.com; path=/";
     var valid = true;
     var username = $('.login-type-username').find('input');
     var password = $('.login-type-password').find('input');
@@ -237,6 +238,7 @@ function loginFunction(){
       //  $("#formLogin").submit();
 }
 
+
 //Reset login fields to default after submitting
 function resetLoginFields() {
     $('.login-popout').find("input").each(function(){
@@ -287,3 +289,4 @@ $('input[name=password]').change(function(){
     if($(this).val() == "")
         showPasswordPlaceholder();
 })
+

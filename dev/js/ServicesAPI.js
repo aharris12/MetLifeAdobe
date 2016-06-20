@@ -43,6 +43,9 @@ var newsConcatenator;
 
 //Contact Variables
 var radioDials = false;
+
+
+
 $(document).ready(function() {
 
 	ServicesAPI.loadEventListeners();

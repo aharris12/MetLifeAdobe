@@ -1715,10 +1715,10 @@ function setHealthGuidelinesTableHeader() {
             $(this).find('.view-nav ul li').each(function (index) {
                 var tabText = $(this).text();
                 if (index == 0) {
-                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th></th><th>" + tabText + "</th>");
+                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th scope='row'></th><th scope='row'>" + tabText + "</th>");
 
                 } else {
-                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th>" + tabText + "</th>");
+                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th scope='row'>" + tabText + "</th>");
                 }
             })
         });
@@ -1929,6 +1929,7 @@ $('.login-type__detail').click(function(){
 });*/
 
 function loginFunction(){
+    document.cookie = "PLTRYNO=1; domain=.metlife.com; path=/";
     var valid = true;
     var username = $('.login-type-username').find('input');
     var password = $('.login-type-password').find('input');
@@ -1980,6 +1981,7 @@ function loginFunction(){
       //  $("#formLogin").submit();
 }
 
+
 //Reset login fields to default after submitting
 function resetLoginFields() {
     $('.login-popout').find("input").each(function(){
@@ -2030,6 +2032,7 @@ $('input[name=password]').change(function(){
     if($(this).val() == "")
         showPasswordPlaceholder();
 })
+
 
 /**
  * Created by jfeng2 on 12/9/2015.
@@ -7048,6 +7051,9 @@ var newsConcatenator;
 
 //Contact Variables
 var radioDials = false;
+
+
+
 $(document).ready(function() {
 
 	ServicesAPI.loadEventListeners();

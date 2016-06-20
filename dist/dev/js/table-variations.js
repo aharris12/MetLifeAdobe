@@ -381,10 +381,10 @@ function setHealthGuidelinesTableHeader() {
             $(this).find('.view-nav ul li').each(function (index) {
                 var tabText = $(this).text();
                 if (index == 0) {
-                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th></th><th>" + tabText + "</th>");
+                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th scope='row'></th><th scope='row'>" + tabText + "</th>");
 
                 } else {
-                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th>" + tabText + "</th>");
+                    $(".overlay-table-section .rate_table--variation .content_table thead tr").eq(indexParent).append("<th scope='row'>" + tabText + "</th>");
                 }
             })
         });
