@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/20/2016 @16:16:21 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/20/2016 @16:21:45 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -994,7 +994,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row form-row hidden-field">
+                                <div class="row form-row">
                                     <div class="col-xs-12">
                                         <div class="form-user-grp form-icon-wrapper">
                                             <svg class="icon">
@@ -1006,44 +1006,43 @@
                                                     data-request-type>
                                                 <option value="">In reference to ...</option>
                                                 <option value="New Product/Planning Services"  data-product-url="/wps/glsproxy/gls/processlead.do" >New Product/Planning Services</option>
-                                                <option value="Exisiting Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Exisiting Product/Policy</option>
+                                                <option value="Existing Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing Product/Policy</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
-
                                 <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
                                     <div class="col-xs-12">
                                         <div class="form-radio-grp">
                                             <label>
-                                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="radio"
-                                                       class="user-radio whiteRadioDial" value="MPC"><span>Auto &amp; Home</span>
+                                                <input name="prodInterest" id="prodInt_Acc_Auto_Home" type="radio"
+                                                       class="user-radio" value="MPC" data-required="true"><span>Auto &amp; Home</span>
                                             </label>
                                             <label>
-                                                <input name="prodInt" id="prodInt_Acc_Life" type="radio"
-                                                       class="user-radio whiteRadioDial" value="LIF"><span>Life Insurance</span>
+                                                <input name="prodInterest" id="prodInt_Acc_Life" type="radio"
+                                                       class="user-radio" value="LIF" data-required="true"><span>Life Insurance</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
+                                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
                                     <div class="col-xs-12">
                                         <div class="form-user-grp">
                                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true">
+                                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true" aria-required="true">
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
+                                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
                                     <div class="col-xs-12">
                                         <div class="form-user-grp">
                              <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
                                        rows="3" class="form-user-ctrl productUserQuestion"
-                                       data-placeholder="" data-required="true"></textarea>
+                                       data-placeholder="" data-required="true" aria-required="true"></textarea>
                                         </div>
                                     </div>
                                 </div>

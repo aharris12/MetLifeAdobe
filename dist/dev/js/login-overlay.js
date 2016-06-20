@@ -184,9 +184,9 @@ $('.login-type__detail').click(function(){
         return false;
     }
 });*/
-
+document.cookie = "PLTRYNO=1; domain=.metlife.com; path=/";
 function loginFunction(){
-    document.cookie = "PLTRYNO=1; domain=.metlife.com; path=/";
+
     var valid = true;
     var username = $('.login-type-username').find('input');
     var password = $('.login-type-password').find('input');
