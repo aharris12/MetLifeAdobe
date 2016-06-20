@@ -3364,7 +3364,8 @@ var ServicesAPI = {
 					}
 				});
 			}
-			if(requestType == 'Existing Product/Policy'){
+
+			if(requestType == 'Exisiting Product/Policy'){
 				if(typeof FormData !== 'undefined'){
 					var formData = new FormData($('form[name='+formName+']')[0]);
 					$.ajax({
