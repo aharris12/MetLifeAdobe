@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/homepageUS.html" afterPath="$PROJECT_DIR$/dev/homepageUS.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/ServicesAPI.js" afterPath="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
@@ -86,17 +87,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServicesAPI.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47627118">
-              <caret line="3513" column="19" selection-start-line="3513" selection-start-column="19" selection-end-line="3513" selection-end-column="19" />
+            <state vertical-scroll-proportion="-1718.7587">
+              <caret line="3328" column="45" selection-start-line="3328" selection-start-column="45" selection-end-line="3328" selection-end-column="45" />
               <folding>
                 <element signature="e#1094#10430#0" expanded="false" />
                 <element signature="e#12093#12617#0" expanded="false" />
                 <element signature="e#12686#13214#0" expanded="false" />
-                <element signature="e#13741#17221#0" expanded="false" />
                 <element signature="e#114884#114911#0" expanded="false" />
+                <element signature="e#128684#129604#0" expanded="false" />
+                <element signature="e#129689#129868#0" expanded="false" />
+                <element signature="e#129912#132389#0" expanded="false" />
+                <element signature="e#130399#131410#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -105,8 +109,23 @@
       <file leaf-file-name="homepageUS.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.72727275">
+              <caret line="508" column="12" selection-start-line="508" selection-start-column="12" selection-end-line="559" selection-end-column="22" />
+              <folding>
+                <element signature="n#div#7;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#8;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#9;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#10;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact-advisor.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/contact-advisor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.7039">
+              <caret line="325" column="158" selection-start-line="325" selection-start-column="154" selection-end-line="325" selection-end-column="158" />
               <folding />
             </state>
           </provider>
@@ -178,13 +197,13 @@
         <option value="$PROJECT_DIR$/dev/js/form-card.js" />
         <option value="$PROJECT_DIR$/dev/subcategory-page-1.html" />
         <option value="$PROJECT_DIR$/dev/css/component/main.css" />
-        <option value="$PROJECT_DIR$/dev/homepageUS.html" />
         <option value="$PROJECT_DIR$/dev/css/component/contact-form.css" />
         <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/homepage.html" />
         <option value="$PROJECT_DIR$/dev/js/table-variations.js" />
         <option value="$PROJECT_DIR$/dev/js/login-overlay.js" />
         <option value="$PROJECT_DIR$/dev/js/ServicesAPI.js" />
+        <option value="$PROJECT_DIR$/dev/homepageUS.html" />
       </list>
     </option>
   </component>
@@ -489,12 +508,6 @@
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
     </task>
-    <task id="LOCAL-00240" summary="Login over">
-      <created>1465406129741</created>
-      <option name="number" value="00240" />
-      <option name="project" value="LOCAL" />
-      <updated>1465406129741</updated>
-    </task>
     <task id="LOCAL-00241" summary="CLR">
       <created>1465409158323</created>
       <option name="number" value="00241" />
@@ -783,7 +796,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466449811986</updated>
     </task>
-    <option name="localTasksCounter" value="289" />
+    <task id="LOCAL-00289" summary="Side Bar">
+      <created>1466453005167</created>
+      <option name="number" value="00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1466453005168</updated>
+    </task>
+    <option name="localTasksCounter" value="290" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -858,7 +877,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Advisor" />
     <MESSAGE value="GRuntt" />
     <MESSAGE value="FAO container" />
     <MESSAGE value="Grunt" />
@@ -883,7 +901,8 @@
     <MESSAGE value="grunt&#10;" />
     <MESSAGE value="grunt&#10;add dtagent" />
     <MESSAGE value="login issue missing cookie" />
-    <option name="LAST_COMMIT_MESSAGE" value="login issue missing cookie" />
+    <MESSAGE value="Side Bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Side Bar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1277,14 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/contact-advisor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.010118">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/login-overlay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45293072">
@@ -1309,25 +1320,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/ServicesAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47627118">
-          <caret line="3513" column="19" selection-start-line="3513" selection-start-column="19" selection-end-line="3513" selection-end-column="19" />
+        <state vertical-scroll-proportion="-1718.7587">
+          <caret line="3328" column="45" selection-start-line="3328" selection-start-column="45" selection-end-line="3328" selection-end-column="45" />
           <folding>
             <element signature="e#1094#10430#0" expanded="false" />
             <element signature="e#12093#12617#0" expanded="false" />
             <element signature="e#12686#13214#0" expanded="false" />
-            <element signature="e#13741#17221#0" expanded="false" />
             <element signature="e#114884#114911#0" expanded="false" />
+            <element signature="e#128684#129604#0" expanded="false" />
+            <element signature="e#129689#129868#0" expanded="false" />
+            <element signature="e#129912#132389#0" expanded="false" />
+            <element signature="e#130399#131410#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/homepageUS.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72727275">
+          <caret line="508" column="12" selection-start-line="508" selection-start-column="12" selection-end-line="559" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#7;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/contact-advisor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.7039">
+          <caret line="325" column="158" selection-start-line="325" selection-start-column="154" selection-end-line="325" selection-end-column="158" />
+          <folding />
         </state>
       </provider>
     </entry>
