@@ -124,7 +124,6 @@
     color: blue;
     background: url("/static/images/c2c_face.png") no-repeat 93%;
     background-color: #ffffff;
-    background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: center;
     background-size: 13%;
@@ -143,7 +142,7 @@
         width: 96%;
         display: table;
         table-layout: fixed;
-        margin-top: 30px;
+
         margin-bottom: 40px;
     }
 

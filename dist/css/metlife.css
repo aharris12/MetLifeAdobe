@@ -7980,7 +7980,16 @@ body{
 }
 
 .carousel-caption--bottom h2 {
+    margin-bottom: 0px;
     margin-top: 15px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.carousel-caption--bottom h3 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 30px;
 }
 
 @media screen and (min-width: 480px) {
@@ -8016,6 +8025,16 @@ body{
     .carousel--microsite .carousel-indicators--visible {
         bottom: 10px;
     }
+    .carousel--microsite .carousel-indicators--visible li {
+        background: #B6D1EB;
+        border-color: #B6D1EB;
+    }
+    .carousel--microsite .carousel-indicators--visible li.active {
+        background: #fff;
+        border-color: #fff;
+    }
+
+
     .item--microsite {
         max-height:425px;
     }
@@ -8029,6 +8048,11 @@ body{
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
+    }
+
+    .carousel-caption--bottom h2 {
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 
@@ -8044,7 +8068,12 @@ body{
         padding: 30px 0 20px;
     }
     .carousel-caption--bottom h2 {
-        font-size:1.5em;
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .carousel-caption--bottom h3 {
+        font-size: 18px;
+        line-height: 26px;
     }
 }
 
@@ -14850,14 +14879,17 @@ body  .quote_edit_form .submit_quote_edit_form {
     -webkit-transition: height 500ms ease 0s;
     transition: height 500ms ease 0s;
 }
-
-.campaign-header-login{
-    position:absolute;
-    z-index: 2;
-    right:5px;
-    letter-spacing:1px;
-    margin-top: 5px;
-
+@media screen and (max-width: 768px) {
+    .campaign-header-login {
+        position: absolute;
+        z-index: 2;
+        /* right: 5px; */
+        letter-spacing: 1px;
+        margin-top: -10px;
+    }
+}
+.campaign-header-login a{
+    float: right;
 }
 
 .campaign-header-login span{
@@ -14878,7 +14910,17 @@ body  .quote_edit_form .submit_quote_edit_form {
 }
 
 @media screen and (min-width: 768px) {
+    .campaign-header {
+        height: 70px;
+    }
+    .campaign-header__section .campaign-header-right .campaign-header-ctc{
+        line-height: 70px;
+    }
 
+    .campaign-header .campaign-header__popup.open {
+        top: 70px;
+        width: 30%;
+    }
 
     .campaign-header .campaign-header__section:first-of-type p:not(:first-child) {
         display: inline-block;
@@ -14903,10 +14945,7 @@ body  .quote_edit_form .submit_quote_edit_form {
         height: 28px;
     }
 
-    .campaign-header-login{
-        right:auto;
-        left: 85%;
-    }
+
     .campaign-header-login span{
         color: #2c77c5;
     }
@@ -14914,10 +14953,13 @@ body  .quote_edit_form .submit_quote_edit_form {
         color: #2c77c5;
         fill: #2c77c5;
     }
+    .campaign-header-on-scroll .campaign-header__popup.open{
+        top: 50px;
+    }
 
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
     }
@@ -14937,13 +14979,12 @@ body  .quote_edit_form .submit_quote_edit_form {
         float:right;
     }
     .campaign-header-login{
-        right:auto;
 
+        padding-bottom: 0px;
+        padding-top: 6px;
     }
 
-    .campaign-header-on-scroll .campaign-header__popup.open{
-        top: 50px;
-    }
+
 }
 .campaign-card .campaign-card-image {
     height: 150px;
@@ -15071,7 +15112,6 @@ body  .quote_edit_form .submit_quote_edit_form {
     color: blue;
     background: url("/static/images/c2c_face.png") no-repeat 93%;
     background-color: #ffffff;
-    background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: center;
     background-size: 13%;
@@ -15090,7 +15130,7 @@ body  .quote_edit_form .submit_quote_edit_form {
         width: 96%;
         display: table;
         table-layout: fixed;
-        margin-top: 30px;
+
         margin-bottom: 40px;
     }
 
