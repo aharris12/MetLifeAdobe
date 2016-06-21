@@ -91,6 +91,8 @@
     }
     .carousel--microsite .carousel-control svg {
         top: 0;
+        width: 40px;
+        height: 30px;
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
