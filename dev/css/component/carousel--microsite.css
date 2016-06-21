@@ -91,14 +91,15 @@
         padding: 30px 0 20px;
         position: absolute;
     }
-
     .carousel--microsite .carousel-control svg {
         top: 0;
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
     }
-
+    .item-microsite img {
+        min-height: 400px;
+    }
     .carousel-caption--bottom h2 {
         font-size: 20px;
         line-height: 24px;
