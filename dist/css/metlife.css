@@ -7980,7 +7980,16 @@ body{
 }
 
 .carousel-caption--bottom h2 {
+    margin-bottom: 0px;
     margin-top: 15px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.carousel-caption--bottom h3 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 30px;
 }
 
 @media screen and (min-width: 480px) {
@@ -8016,6 +8025,16 @@ body{
     .carousel--microsite .carousel-indicators--visible {
         bottom: 10px;
     }
+    .carousel--microsite .carousel-indicators--visible li {
+        background: #B6D1EB;
+        border-color: #B6D1EB;
+    }
+    .carousel--microsite .carousel-indicators--visible li.active {
+        background: #fff;
+        border-color: #fff;
+    }
+
+
     .item--microsite {
         max-height:425px;
     }
@@ -8029,6 +8048,11 @@ body{
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
+    }
+
+    .carousel-caption--bottom h2 {
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 
@@ -8044,7 +8068,12 @@ body{
         padding: 30px 0 20px;
     }
     .carousel-caption--bottom h2 {
-        font-size:1.5em;
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .carousel-caption--bottom h3 {
+        font-size: 18px;
+        line-height: 26px;
     }
 }
 
