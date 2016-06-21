@@ -108,8 +108,7 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/jquery.ddslick.js',
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
-                    'dev/js/_plugins/jquery.bootpag.min.js',
-                    'dev/js/_plugins/dtagent622_bdxjnpr23_1019.js'
+                    'dev/js/_plugins/jquery.bootpag.min.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
