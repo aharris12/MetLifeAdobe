@@ -257,3 +257,7 @@
     }
 
 }
+
+.generic-text a{
+    text-decoration: underline;
+}

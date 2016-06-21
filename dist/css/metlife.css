@@ -15260,6 +15260,10 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 }
 
+.generic-text a{
+    text-decoration: underline;
+}
+
 /*
 OnlineOpinion v5.7
 Released: 3/6/2013. Compiled 03/06/2013 01:59:16 PM -0600
