@@ -176,7 +176,7 @@ function formatRateTable() {
                             bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + j + "'>" + bodyContent + "</td>");
                             break;
                         default:
-                            bodyLocation.find("tr").eq(i + 1).append("<td class=' health-class-" + j + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + j + "'>" + bodyContent + "</td>");
                     }
                 }
             }

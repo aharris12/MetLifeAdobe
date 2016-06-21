@@ -3074,6 +3074,8 @@ var ServicesAPI = {
 						$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
 						$this.val(placeholder);
 						formStatus = false;
+				}else{
+					$('.contactSideForm .info-mandatory').removeClass('error-mandatory');
 				}
 			}
 

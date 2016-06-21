@@ -1510,7 +1510,7 @@ function formatRateTable() {
                             bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + j + "'>" + bodyContent + "</td>");
                             break;
                         default:
-                            bodyLocation.find("tr").eq(i + 1).append("<td class=' health-class-" + j + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + j + "'>" + bodyContent + "</td>");
                     }
                 }
             }
@@ -10082,6 +10082,8 @@ var ServicesAPI = {
 						$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
 						$this.val(placeholder);
 						formStatus = false;
+				}else{
+					$('.contactSideForm .info-mandatory').removeClass('error-mandatory');
 				}
 			}
 
