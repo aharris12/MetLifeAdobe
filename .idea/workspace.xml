@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/microsite-home.html" afterPath="$PROJECT_DIR$/dev/microsite-home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -19,6 +18,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-advisor.html" afterPath="$PROJECT_DIR$/dist/contact-advisor.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__results.html" afterPath="$PROJECT_DIR$/dist/contact-us__results.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/campaign-header.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/campaign-header.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -84,85 +87,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="microsite-home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/microsite-home.html">
+      <file leaf-file-name="campaign-header.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/campaign-header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.1509433">
-              <caret line="267" column="10" selection-start-line="267" selection-start-column="10" selection-end-line="267" selection-end-column="10" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="campaign-page-a.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/campaign-page-a.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48188975">
-              <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="metlife.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.862069">
-              <caret line="1941" column="24" selection-start-line="1941" selection-start-column="9" selection-end-line="1941" selection-end-column="24" />
+            <state vertical-scroll-proportion="-7.3773584">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/category.html">
+      <file leaf-file-name="campaign-page-a.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/campaign-page-a.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.538462">
-              <caret line="863" column="0" selection-start-line="863" selection-start-column="0" selection-end-line="939" selection-end-column="6" />
+            <state vertical-scroll-proportion="-8.962264">
+              <caret line="121" column="10" selection-start-line="103" selection-start-column="4" selection-end-line="121" selection-end-column="10" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table-variations.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/js/table-variations.js">
+      <file leaf-file-name="product-module.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carousel--microsite.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--microsite.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.634146">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3923077">
+              <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -237,10 +188,10 @@
         <option value="$PROJECT_DIR$/gruntfile.js" />
         <option value="$PROJECT_DIR$/dev/js/global-header.js" />
         <option value="$PROJECT_DIR$/dev/css/component/campaign-card.css" />
-        <option value="$PROJECT_DIR$/dev/css/component/campaign-header.css" />
-        <option value="$PROJECT_DIR$/dev/campaign-page-a.html" />
         <option value="$PROJECT_DIR$/dev/css/component/carousel--microsite.css" />
         <option value="$PROJECT_DIR$/dev/microsite-home.html" />
+        <option value="$PROJECT_DIR$/dev/css/component/campaign-header.css" />
+        <option value="$PROJECT_DIR$/dev/campaign-page-a.html" />
       </list>
     </option>
   </component>
@@ -304,6 +255,24 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dev">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -398,21 +367,21 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="188" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="269" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="208" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="296" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="210" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="297" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="673" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="971" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="205" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="344" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="203" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="341" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="206" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="345" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="665" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="803" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -436,20 +405,20 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.campaign-page-a.html">
+  <component name="RunManager" selected="JavaScript Debug.campaign-page-c.html">
     <configuration default="false" name="campaign-page-a.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/campaign-page-a.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/category.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="campaign-page-a.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dist/campaign-page-a.html">
       <method />
     </configuration>
     <configuration default="false" name="homepageUS.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/homepageUS.html">
       <method />
     </configuration>
     <configuration default="false" name="microsite-home.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/microsite-home.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="campaign-page-b.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/campaign-page-b.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="campaign-page-c.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/campaign-page-c.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -502,18 +471,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-a.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-a.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.microsite-home.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.microsite-home.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-b.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-c.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-a.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.microsite-home.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-a.html (1)" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-c.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-b.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.campaign-page-a.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.microsite-home.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.homepageUS.html" />
       </list>
     </recent_temporary>
   </component>
@@ -527,18 +496,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00250" summary="9064">
-      <created>1465479957868</created>
-      <option name="number" value="00250" />
-      <option name="project" value="LOCAL" />
-      <updated>1465479957868</updated>
-    </task>
-    <task id="LOCAL-00251" summary="DE2851">
-      <created>1465484589062</created>
-      <option name="number" value="00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1465484589062</updated>
     </task>
     <task id="LOCAL-00252" summary="DE2851">
       <created>1465484682950</created>
@@ -822,7 +779,19 @@
       <option name="project" value="LOCAL" />
       <updated>1466535474649</updated>
     </task>
-    <option name="localTasksCounter" value="299" />
+    <task id="LOCAL-00299" summary="9111">
+      <created>1466537718426</created>
+      <option name="number" value="00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1466537718438</updated>
+    </task>
+    <task id="LOCAL-00300" summary="9112">
+      <created>1466538741805</created>
+      <option name="number" value="00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1466538741805</updated>
+    </task>
+    <option name="localTasksCounter" value="301" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -832,11 +801,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6611399" sideWeight="0.51134646" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2852697" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2852697" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -897,8 +866,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fxes" />
-    <MESSAGE value="9064" />
     <MESSAGE value="DE2851" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;" />
     <MESSAGE value="GRUNT" />
@@ -922,7 +889,9 @@
     <MESSAGE value="9106 campaign login and header issues" />
     <MESSAGE value="9106, 9131 grunt" />
     <MESSAGE value="9108 9107" />
-    <option name="LAST_COMMIT_MESSAGE" value="9108 9107" />
+    <MESSAGE value="9111" />
+    <MESSAGE value="9112" />
+    <option name="LAST_COMMIT_MESSAGE" value="9112" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1201,14 +1170,6 @@
             <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.085366">
-          <caret line="248" column="54" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2064,14 +2025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/campaign-header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.735849">
-          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/global-footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46293494">
@@ -2082,25 +2035,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/js/table-variations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.51134646">
           <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/carousel--microsite.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.634146">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.656304">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.538462">
+        <state vertical-scroll-proportion="0.43149605">
           <caret line="863" column="0" selection-start-line="863" selection-start-column="0" selection-end-line="939" selection-end-column="6" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -2118,7 +2071,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/metlife.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.862069">
+        <state vertical-scroll-proportion="0.9778481">
           <caret line="1941" column="24" selection-start-line="1941" selection-start-column="9" selection-end-line="1941" selection-end-column="24" />
           <folding />
         </state>
@@ -2141,14 +2094,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/campaign-header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3773584">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/campaign-page-a.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48188975">
-          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+        <state vertical-scroll-proportion="-8.962264">
+          <caret line="121" column="10" selection-start-line="103" selection-start-column="4" selection-end-line="121" selection-end-column="10" />
           <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3923077">
+          <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
