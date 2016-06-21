@@ -9,20 +9,6 @@
     margin-top:0;
 }
 
-.carousel--microsite{
-    max-height: none;
-    overflow: visible;
-}
-
-.carousel--microsite .carousel-control{
-    height: 100%;
-}
-
-.carousel--microsite .carousel-control svg{
-    position: relative;
-    top: 50%;
-}
-
 .carousel-caption {
     top: 0;
     bottom: 0;
@@ -43,12 +29,6 @@
     font-weight: 600;
 }
 
-.carousel-caption--bottom{
-    background-color: rgba(35,119,197,0.7);
-    top: auto;
-    position: relative;
-}
-
 .carousel--hero .icon {
     width: 30px;
     height: 40px;
@@ -61,14 +41,8 @@
         max-height:300px;
         /*        margin-top:-60px;*/
     }
-    .carousel--microsite{
-        max-height: none;
-    }
     .carousel-caption {
         padding:0 15%;
-    }
-    .carousel-caption--bottom{
-        padding: 20px 0 10px;
     }
     .carousel-control {
         padding-top:130px;
@@ -87,15 +61,8 @@
         display: block;
         bottom: 27.5%;
     }
-    .carousel--microsite{
-        max-height: none;
-    }
     .carousel-caption {
         padding:0 15%;
-    }
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
-        position: absolute;
     }
     .carousel-control {
         padding-top:150px;
@@ -109,12 +76,6 @@
         display:block;
         bottom: 30%;
     }
-    .carousel--microsite .carousel-indicators--visible{
-        bottom:45%;
-    }
-    .item--microsite{
-        max-height:425px;
-    }
 }
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
@@ -125,14 +86,8 @@
     .carousel {
         max-height:400px;
     }
-    .carousel--microsite{
-        max-height: none;
-    }
     .carousel-caption {
         padding:0 15%;
-    }
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
     }
     .carousel-control {
         padding-top:170px;
@@ -141,30 +96,14 @@
         font-size: 4vw;
         line-height: 4.6vw;
     }
-
-    .item--microsite{
-        max-height:450px;
-    }
-    .carousel--microsite .carousel-indicators--visible{
-        bottom:10px;
-    }
-    .carousel-caption--bottom h2 {
-        font-size:1.5em;
-    }
 }
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
     .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
         max-height:400px;
     }
-    .carousel--microsite{
-        max-height: none;
-    }
     .carousel-caption {
         padding:0 20%;
-    }
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
     }
     .carousel-control {
         padding-top:180px;
@@ -173,9 +112,6 @@
         font-size: 3.5vw;
         line-height: 4.5vw;
     }
-    .item--microsite{
-        max-height:500px;
-    }
 
 }
 /* Image size 2600*1000 */
@@ -183,17 +119,11 @@
     .carousel {
         height:400px;
     }
-    .carousel--microsite{
-        max-height: none;
-    }
     .carousel-caption--hero {
         font-size: 3.5vw;
         line-height: 4vw;
     }
     .carousel--hero .icon {
         font-size: 3vw;
-    }
-    .item--microsite{
-        max-height:560px;
     }
 }
