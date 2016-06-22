@@ -31,10 +31,19 @@
     text-align: left;
 
 }
-.campaign-header .campaign-header__popup .campaign-header-ctc {
-    padding: 25px 10%;
+.campaign-header .campaign-header__popup .campaign-header-ctc p a{
+    color: #fff;
+    text-decoration: underline;
 }
-.campaign-header .campaign-header__popup .campaign-header-ctc input {
+.campaign-header .campaign-header__popup .campaign-header-ctc {
+    padding: 10px;
+}
+
+.campaign-header__popup__contact {
+    margin-bottom: 10px;
+}
+.campaign-header__popup__contact input {
+    width: 100%;
     margin-bottom: 10px;
 }
 .campaign-header .campaign-header__popup.open {
@@ -117,7 +126,7 @@
     }
     .campaign-header .campaign-header__popup.open {
         width: 40%;
-        padding: 25px 2%;
+        padding: 15px;
     }
     .campaign-header__section .campaign-header-right a{
         width:70%;

@@ -5923,6 +5923,10 @@ a.product-module__action--tel:hover {
     margin-top: 40px;
 }
 
+.product-module--microsite-wrapper .product-module__large .product-module__top a:hover{
+    color: #2377C5;
+}
+
 @media screen and (min-width: 768px) {
     .product-module__large {
         width: 32%;
@@ -8042,14 +8046,15 @@ body{
         padding: 30px 0 20px;
         position: absolute;
     }
-
     .carousel--microsite .carousel-control svg {
         top: 0;
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
     }
-
+    .item-microsite img {
+        min-height: 400px;
+    }
     .carousel-caption--bottom h2 {
         font-size: 20px;
         line-height: 24px;
@@ -14851,13 +14856,19 @@ body  .quote_edit_form .submit_quote_edit_form {
     text-align: left;
 
 }
-
-.campaign-header .campaign-header__popup .campaign-header-ctc {
-    padding: 25px 10%;
+.campaign-header .campaign-header__popup .campaign-header-ctc p a{
+    color: #fff;
+    text-decoration: underline;
 }
-
-.campaign-header .campaign-header__popup .campaign-header-ctc input {
+.campaign-header .campaign-header__popup .campaign-header-ctc {
+    padding: 10px;
+}
+.campaign-header .campaign-header__popup .campaign-header-ctc div {
     margin-bottom: 10px;
+
+}
+.campaign-header .campaign-header__popup .campaign-header-ctc div input {
+   width: 54%
 }
 
 .campaign-header .campaign-header__popup.open {
@@ -14934,7 +14945,7 @@ body  .quote_edit_form .submit_quote_edit_form {
 
     .campaign-header .campaign-header__popup.open {
         width: 40%;
-        padding: 25px 2%;
+        padding: 15px;
     }
 
     .campaign-header__section .campaign-header-right a{
@@ -14984,6 +14995,9 @@ body  .quote_edit_form .submit_quote_edit_form {
         padding-top: 6px;
     }
 
+    .campaign-header .campaign-header__popup .campaign-header-ctc div input {
+        width: 54%
+    }
 
 }
 .campaign-card .campaign-card-image {
@@ -15244,6 +15258,10 @@ body  .quote_edit_form .submit_quote_edit_form {
         margin-top:40px;
     }
 
+}
+
+.generic-text a{
+    text-decoration: underline;
 }
 
 /*
