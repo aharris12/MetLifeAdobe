@@ -462,7 +462,8 @@ $('.login-trigger').click(function(e){
     }
 });
 
-$('.contact-trigger').click(function(){
+$('.contact-trigger').click(function(e){
+    e.preventDefault();
     currentView = getViewport();
     $("#contactSidebar").find(".form-user-grp").each(function () {
         $(this).find("input, select, textarea").removeClass('error');
@@ -473,7 +474,8 @@ $('.contact-trigger').click(function(){
 
 //Ryan moved the close code to a separate function because we're calling the close
 // when we open the mega menu as well. this avoids 2 fixes should we tweak the animation
-$('.contact-close').click(function(){
+$('.contact-close').click(function(e){
+    e.preventDefault();
     closeContactForm();
 
 });
