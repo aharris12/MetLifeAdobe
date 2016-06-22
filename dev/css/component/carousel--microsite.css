@@ -82,8 +82,6 @@
         background: #fff;
         border-color: #fff;
     }
-
-
     .item--microsite {
         max-height:425px;
     }
@@ -97,7 +95,7 @@
     .carousel--microsite .carousel-inner {
         height: 400px;
     }
-    .item-microsite img {
+    .item--microsite img {
         min-height: 400px;
     }
     .carousel-caption--bottom h2 {
