@@ -153,6 +153,9 @@
     .formFail .errorSpanOpen{
         top: 40px;
     }
+    #requestFormRightNav_Acc .form-state {
+        width: 55%;
+    }
 
 }
 .errorSpanOpen:after, .errorSpanOpen:before {
@@ -454,4 +457,10 @@ span.errorRadio {
 
 .campaign-contact-form .contactOtherDetails {
     position: static;
+}
+
+@media screen and (min-width: 1024px) {
+    #requestFormRightNav_Acc .form-state {
+        width: 61%;
+    }
 }
