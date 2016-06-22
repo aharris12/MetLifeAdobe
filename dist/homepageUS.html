@@ -13,7 +13,7 @@
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/22/2016 @14:42:05 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/22/2016 @16:11:55 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -23,11 +23,18 @@
 <!-- Global Header -->
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
-        <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
-            <div><span class="megamenu-trigger__icon"></span></div>
-            <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
-            <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
-        </div>
+	    <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
+		    <a href="#" class="megamenu-trigger__link">
+			    <svg class="icon icon-menu megamenu-trigger__icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-menu"></use>
+			    </svg>
+			    <svg class="icon icon-close megamenu-trigger__icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+			    </svg>
+			    <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+			    <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+		    </a>
+	    </div>
         <div class="col home-trigger" title="HOME" data-target="home">
             <a href="#" class="home-trigger__link">
                 <svg class="icon icon-homepage home-trigger__icon">
