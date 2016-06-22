@@ -12166,6 +12166,9 @@ manner*/
     .formFail .errorSpanOpen{
         top: 40px;
     }
+    #requestFormRightNav_Acc .form-state {
+        width: 55%;
+    }
 
 }
 .errorSpanOpen:after, .errorSpanOpen:before {
@@ -12469,6 +12472,11 @@ span.errorRadio {
     position: static;
 }
 
+@media screen and (min-width: 1024px) {
+    #requestFormRightNav_Acc .form-state {
+        width: 61%;
+    }
+}
 .privacy-policy-index {
     margin-top: 20px;
 }

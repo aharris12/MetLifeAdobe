@@ -11,5 +11,5 @@ var imagesPath = "";
 if ( localStorage.getItem("contextPath") ) {
     imagesPath = localStorage.getItem("contextPath") + "/static/images/";
 } else {
-    imagesPath = "http://localhost:63348/MetLifeAdobe/dev/images/";
+    imagesPath = "/static/images/";
 }
