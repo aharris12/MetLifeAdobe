@@ -35,7 +35,7 @@ $('.homepage-sub').on('mouseover', function(){
     $('.homepage-nav').removeClass('homepage-nav--active');
     $('.homepage-nav__items').removeClass('homepage-nav__items--active');
     $('.homepage-nav__item').removeClass('homepage-nav__item--active');
-    //$('.homepage-nav__icon').hide();
+    $('.homepage-nav__icon').hide();
     $('.homepage-sub').hide();
 });
 $(window).scroll(function () {

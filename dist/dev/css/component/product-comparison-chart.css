@@ -203,6 +203,8 @@
 /* line 198, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .carousel {
     width: 60%;
+    height: auto;
+    max-height: initial;
     float: right;
     overflow: visible;
 }

@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="robots" content="noindex, nofollow"/>
     <meta name="format-detection" content="telephone=no">
-    <title>MetLife - Subcategory Page (1)</title>
+    <title>MetLife - Homepage</title>
     <link href="images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -24,7 +24,6 @@
     <link href="css/theme/layout.css" rel="stylesheet">
     <link href="css/theme/main.css" rel="stylesheet">
     <link href="css/theme/button.css" rel="stylesheet">
-    <link href="css/theme/button.css" rel="styconlesheet">
     <link href="css/theme/pagination.css" rel="stylesheet">
     <link href="css/component/global-header.css" rel="stylesheet">
     <link href="css/component/login-popout.css" rel="stylesheet">
@@ -103,7 +102,6 @@
 </head>
 <body>
 
-
 <!-- Global Header -->
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
@@ -135,7 +133,7 @@
         </div>
     </div>
     <div class="col-xs-4 col-sm-2 global-header__middle">
-        <h1><a href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+        <h1><a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
                                                   class="global-header__logo img-responsive"></a>
         </h1>
     </div>
@@ -333,7 +331,7 @@
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
             <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-product-url="/wps/glsproxy/gls/processlead.do">
+                  method="post" class="userForm" data-fid="contactSidebar" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -347,10 +345,10 @@
                        value="*****PLEASE DO NOT REPLY TO THIS AUTO-ACKNOWLEDGEMENT***** Dear 'Name', Thank You for contacting MetLife Online Support. We have received your inquiry, which will be personally reviewed by one of our consultants. Our normal response time is within 1-2 business days. We believe in world class service and will do everything we can to make sure that your inquiry is answered promptly and accurately. Should you wish to speak with a Customer Service Consultant you may call 866-881-0784 between the hours of 8am and 5pm, Central Time, Monday through Friday. Please be advised that some computers may have a firwewall or spam blocker, which may not allow our email to be received to you. Please be sure to add our email address to your address book, so that it will not be blocked. If you experience additional difficulties in receiving your email, we might suggest using a different computer. Your message identification number is 'MessageID'. Thank you, MetLife Online Customer Support 'Gurantees for the if in life.'"
                        name="confirmationmailText">
                 <input type="hidden"
-                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInterest,policyNo,questionOrComment,pageFrom"
+                       value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInt,policyNo,questionOrComment,pageFrom"
                        id="sortOrder" name="sortOrder">
                 <input type="hidden" value="ML_ST_Home_sidebar" name="pageFrom">
-                <input type="hidden" value="state,email,prodInterest" name="lstPnPParameters">
+                <input type="hidden" value="state,email,prodInt" name="lstPnPParameters">
                 <input type="hidden" name="bWFCompleted" value="Y">
                 <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
                 <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
@@ -489,9 +487,6 @@
                             <label class="hidden" for="email_Acc">Email</label>
                             <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
                                    data-required="true" aria-required="true" data-valid-type="email">
-                            <span class="errorSpan"><img class="errorSpanImg"
-                                                         src="/static/images/form/icon_form_error.png"
-                                                         alt="! Error Image">Please enter a valid email address.</span>
                         </div>
                     </div>
                 </div>
@@ -504,9 +499,6 @@
                             <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
                                    placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
                                    data-valid-type="phone">
-                            <span class="errorSpan"><img class="errorSpanImg"
-                                                         src="/static/images/form/icon_form_error.png"
-                                                         alt="! Error Image">Please enter a valid phone number.</span>
                         </div>
                     </div>
                 </div>
@@ -525,44 +517,43 @@
                                     data-request-type>
                                 <option value="">In reference to ...</option>
                                 <option value="New Product/Planning Services"  data-product-url="/wps/glsproxy/gls/processlead.do" >New Product/Planning Services</option>
-                                <option value="Exisiting Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Exisiting Product/Policy</option>
+                                <option value="Existing Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing Product/Policy</option>
                             </select>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
                     <div class="col-xs-12">
                         <div class="form-radio-grp">
                             <label>
                                 <input name="prodInterest" id="prodInt_Acc_Auto_Home" type="radio"
-                                       class="user-radio" value="MPC"><span>Auto &amp; Home</span>
+                                       class="user-radio" value="MPC" data-required="true"><span>Auto &amp; Home</span>
                             </label>
                             <label>
                                 <input name="prodInterest" id="prodInt_Acc_Life" type="radio"
-                                       class="user-radio" value="LIF"><span>Life Insurance</span>
+                                       class="user-radio" value="LIF" data-required="true"><span>Life Insurance</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true">
+                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true" aria-required="true">
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="requestType" data-observes-value="Exisiting Product/Policy">
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                              <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
                                        rows="3" class="form-user-ctrl productUserQuestion"
-                                       data-placeholder="" data-required="true"></textarea>
+                                       data-placeholder="" data-required="true" aria-required="true"></textarea>
                         </div>
                     </div>
                 </div>
@@ -620,7 +611,7 @@
                 <span class="login-container--close__label">CLOSE</span>
             </div>
             <div class="col-xs-8">
-                <a href="#" title="MetLife Logo"><img src="images/logo_header.png" alt="Metlife-Logo"
+                <a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
                                                       class="global-header__logo img-responsive"></a>
             </div>
         </div>
@@ -854,12 +845,13 @@
         <div class="subnav-go-back__menu">
             <a href="#">
                 <span><img class="hidden-xs" src="images/subnav_back_arrow.png" alt="back arrow"></span>
-                <span>All Insurance Products</span>
+                <span class="subnav-go-back__desktop--title">All Insurance Products</span>
+                <span class="subnav-go-back__mobile--title">Life Insurance Products</span>
                 <span><img class="hidden-sm hidden-md hidden-lg" src="images/icon_selectionarrows_white.png"
                            alt="back arrow"></span>
             </a>
         </div>
-        <ul class="subnav-go-back__list" id='subnav-goback'>
+        <ul class="subnav-go-back__list">
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
@@ -870,38 +862,56 @@
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                        <p class="subnav-go-back__list__item__anchor__label">Guaranteed Acceptance Whole Life Insurance
+                        </p>
                     </div>
                 </a>
             </li>
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                        <p class="subnav-go-back__list__item__anchor__label">Universal Life Insurance</p>
                     </div>
                 </a>
             </li>
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                        <p class="subnav-go-back__list__item__anchor__label">Whole Life Insurance</p>
+                    </div>
+                </a>
+            </li>
+            <!--<li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
+                    <div>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance Quotes</p>
                     </div>
                 </a>
             </li>
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
                     </div>
                 </a>
             </li>
             <li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Term Life Insurance</p>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
                     </div>
                 </a>
             </li>
+
+            <li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
+                    <div>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
+                    </div>
+                </a>
+            </li>-->
+
+
         </ul>
     </nav>
 </div>
@@ -2339,6 +2349,7 @@
 <script src="js/subnavigation.js"></script>
 <script src="js/login-overlay.js"></script>
 <script src="js/form.js"></script>
+
 <script src="js/table-variations.js"></script>
 <script src="js/media-contact.js"></script>
 <script src="js/form-card.js"></script>
@@ -2368,7 +2379,21 @@
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
 <script src="js/share-chat.js"></script>
-<script src="js/contact-us.js"></script>
+<script src="js/product-card.js"></script>
 <!-- /build -->
+
+<script type="text/javascript" src="js/dtagent622_bdxjnpr23_1019.js" data-dtconfig="tp=500,50,0|cors=1|reportUrl=https://metlife.compuwareapmaas.com:8443/dynaTraceMonitor">&nbsp;</script>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.metlife.com",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.metlife.com/searchresults?query={search_term}",
+     "query-input": "required name=search_term"
+   }
+}
+</script>
 </body>
 </html>
