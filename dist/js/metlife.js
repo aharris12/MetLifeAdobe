@@ -11,7 +11,7 @@ var imagesPath = "";
 if ( localStorage.getItem("contextPath") ) {
     imagesPath = localStorage.getItem("contextPath") + "/static/images/";
 } else {
-    imagesPath = "/static/images/";
+    imagesPath = "http://localhost:63348/MetLifeAdobe/dev/images/";
 }
 
 //
@@ -230,8 +230,9 @@ $(document).on("click tap", function (e) {
     }
 });
 
-
 $('.megamenu-trigger').on('click', function(){
+    $(".icon-close.megamenu-trigger__icon").toggle();
+    $(".icon-menu.megamenu-trigger__icon").toggle();
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();

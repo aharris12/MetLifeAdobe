@@ -3092,7 +3092,7 @@ a:visited {
 .megamenu-trigger__label {
     display:none;
 }
-.megamenu-trigger__icon {
+/*.megamenu-trigger__icon {
     position: absolute;
     top: 25px;
     left: 20px;
@@ -3139,28 +3139,28 @@ a:visited {
     -ms-transform: rotate(225deg);
     -o-transform: rotate(225deg);
     transform: rotate(225deg);
-}
+}*/
 @media screen and (min-width: 768px) {
-    .megamenu-trigger {
+    /*.megamenu-trigger {
         width: auto;
         padding: 25px 0;
         margin-right:30px;
         height: 60px;
-    }
-    .megamenu-trigger__icon {
+    }*/
+    /*.megamenu-trigger__icon {
         left: 40px;
         top:auto;
-    }
-    .megamenu-trigger__label {
+    }*/
+  /*  .megamenu-trigger__label {
         margin-left: 26px;
         margin-top: -10px;
-    }
+    }*/
 }
-@media screen and (min-width: 1024px) {
+/*@media screen and (min-width: 1024px) {
     .megamenu-trigger__label {
         display:block;
     }
-}
+}*/
 
 
 /* Go Home Trigger */
@@ -3169,18 +3169,22 @@ a:visited {
     color:#fff;
     cursor: pointer;
 }
-.home-trigger:hover span{
+.megamenu-trigger {
+    color:#fff;
+    cursor: pointer;
+}
+.home-trigger:hover span, .megamenu-trigger:hover span{
     color: rgba(255, 255, 255, 0.6);
     transition: all 0.5s;
 }
 
-.home-trigger__label {
+.home-trigger__label, .megamenu-trigger__label {
     display:none;
     text-decoration: none;
     color:#fff;
 }
 
-.home-trigger__icon:before {
+.home-trigger__icon:before ,.megamenu-trigger__icon:before{
     padding-right: 3px;
     position: relative;
     font-size: 1.78em;
@@ -3206,13 +3210,12 @@ a:visited {
     z-index: 1;
 }
 @media screen and (min-width:768px){
-    .home-trigger{
+    .home-trigger,.megamenu-trigger{
         position:relative;
         display: block;
         height:60px;
         width: auto;
         margin-right: 30px;
-        margin-left: 19px;
         padding: 15px 0;
     }
     .home-trigger__icon{
@@ -3229,7 +3232,7 @@ a:visited {
     }
 
 
-    .home-trigger {
+    .home-trigger,.megamenu-trigger  {
         display: block;
         width: auto;
         margin-left: 0;
@@ -3241,14 +3244,14 @@ a:visited {
 
     }
 
-    .home-trigger__label {
+    .home-trigger__label,.megamenu-trigger__label {
         vertical-align: top;
         margin-left: 4px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .home-trigger__label {
+    .home-trigger__label, .megamenu-trigger__label {
         display:inline-block;
     }
 }
@@ -3271,8 +3274,13 @@ a:visited {
 }
 
 @media screen and (max-width: 768px) {
-    .search-trigger__icon {
+    .search-trigger__icon, .megamenu-trigger__icon {
         left:10px;
+    }
+    .megamenu-trigger__icon {
+        position: absolute;
+        top: 15px;
+        z-index: 920;
     }
 }
 
@@ -3422,6 +3430,10 @@ a:visited {
     text-decoration: none;
     color:#fff;
 }
+.global-header .icon{
+    height:19px;
+    width:19px;
+}
 .login-trigger__label .icon-secure-locked {
     position: relative;
     width: 14px;
@@ -3480,12 +3492,12 @@ a:visited {
 
 .contact-trigger:hover,
 .login-trigger:hover,
-.megamenu-trigger:hover,
 .home-trigger__label:hover,
 .search-trigger:hover,
 .login-trigger__label:hover,
 .contact-trigger__label:hover,
-.user-trigger__label:hover{
+.user-trigger__label:hover,
+.megamenu-trigger__label:hover{
     color: rgba(255, 255, 255, 0.6);
     transition: all 0.5s;
     cursor: pointer;
@@ -3865,6 +3877,10 @@ a:visited {
         margin: 9px 8% 0 0;
     }
 }
+.icon-close.megamenu-trigger__icon{
+    display: none;
+}
+
 
 .login-container {
     padding: 0;

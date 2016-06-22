@@ -117,8 +117,9 @@ $(document).on("click tap", function (e) {
     }
 });
 
-
 $('.megamenu-trigger').on('click', function(){
+    $(".icon-close.megamenu-trigger__icon").toggle();
+    $(".icon-menu.megamenu-trigger__icon").toggle();
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
