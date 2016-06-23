@@ -1,5 +1,5 @@
 .vision_dental_overlay {
-	position: absolute;
+	position: fixed;
 	z-index: 9999999999999;
 	background-color: rgba(0, 0, 0, 0.8);
 	width: 100%;
