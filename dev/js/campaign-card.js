@@ -1,6 +1,6 @@
-$(document).ready(function(){
-    setElementsWidthToLargest($(".matching-element-width"));
-});
+//$(document).ready(function(){
+//    setElementsWidthToLargest($(".matching-element-width"));
+//});
 
 
 
