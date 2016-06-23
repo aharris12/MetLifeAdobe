@@ -5388,7 +5388,10 @@ ol.promocard_content__list li:after {
     padding-top: 20px;
     font-size: 11px;
     line-height: 15px;
-    color: #999;
+}
+.disclaimer p{
+    font-size: 11px;
+    line-height: 16px;
 }
 
 .disclaimer--microsite {
@@ -9846,8 +9849,8 @@ ul.bullet-list {
 
 
 .footer-main__items {
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-bottom: 35px;
+    margin-top: 35px;
 }
 
 .footer-main__label {
@@ -10052,7 +10055,7 @@ ul.bullet-list {
     position: relative;
     top: -2px;
     top: 0;
-    background-image: url("/static/images/country-flags-sprite.png");
+    background-image: url("http://localhost:63348/MetLifeAdobe/dev/images/country-flags-sprite.png");
     background-position: 0 0;
 }
 
@@ -10312,11 +10315,9 @@ ul.bullet-list {
 .country__name {
     display: block;
     text-align: left;
-    margin-top: -8px;
     margin-top: 0;
     padding: 2px;
     font-size: 12px;
-    font-weight: 600;
 }
 
 .country__name--selected {
@@ -10355,8 +10356,9 @@ ul.bullet-list {
 
 .language__link {
     display: none;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 .language__link:nth-child(3) {
@@ -10365,7 +10367,7 @@ ul.bullet-list {
 
 .social__link {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 .social__link svg {
@@ -10398,7 +10400,7 @@ ul.bullet-list {
     width: 100%;
     text-align: center;
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 auto 20px;
     font-size: 14px;
     line-height: 15px;
 }
@@ -10421,7 +10423,7 @@ ul.bullet-list {
 
 .footer-legal__link a{
     margin: 0 5px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 15px;
 }
 
@@ -10449,7 +10451,7 @@ ul.bullet-list {
 }
 
 .footer-legal__copyright {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.55em;
     text-align: left;
 }
@@ -10457,7 +10459,7 @@ ul.bullet-list {
 @media screen and (min-width: 768px) {
     .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
         font-size: 1em;
-        line-height: 1.55em;
+        line-height: 24px;
     }
 
     .global-footer{
@@ -10503,18 +10505,21 @@ ul.bullet-list {
         display: block;
     }
     .footer-legal__copy{
-        margin-top: 20px;
+       /* margin-top: 20px;*/
     }
 
     .footer-main__label {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        margin-bottom: 10px;
+        text-align: left;
     }
 
     .footer-sub__label,
     .footer-sub__label:visited {
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 11px;
+        line-height: 15px;
     }
 
     .social-alignment {
@@ -10579,16 +10584,14 @@ ul.bullet-list {
         margin-bottom: 0;
         padding-top: 2px;
         font-size: 12px;
-        font-weight: 600;
     }
 
     .country__name--selected {
         display: block;
         left: 45px;
-        top: 0;
         position: absolute;
-        font-size: 0.9em;
-        font-weight: 600;
+        font-size: 12px;
+        top: 4px;
         color: #2c77c5;
     }
 
@@ -10597,7 +10600,7 @@ ul.bullet-list {
         background-color: transparent;
         /*width: 100%;*/
         max-width: 215px;
-        height: 38px;
+        height: 40px;
         padding: 7px 10px 8px;
     }
 
@@ -10744,7 +10747,7 @@ ul.bullet-list {
 }
 
 .global-footer hr {
-    margin: 25px -25px;
+    margin: 25px -25px 0px;
     border: 0;
     border-top: 1px solid #ccc;
 }
@@ -10773,6 +10776,7 @@ ul.bullet-list {
         margin-top:0;
     }
     .footer-legal__copy{
+        margin-left: 15px;
         margin-top: 0;
     }
     .country__label{

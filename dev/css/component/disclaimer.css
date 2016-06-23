@@ -3,7 +3,10 @@
     padding-top: 20px;
     font-size: 11px;
     line-height: 15px;
-    color: #999;
+}
+.disclaimer p{
+    font-size: 11px;
+    line-height: 16px;
 }
 
 .disclaimer--microsite {
