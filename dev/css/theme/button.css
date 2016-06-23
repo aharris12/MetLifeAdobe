@@ -76,11 +76,11 @@
 .btn-brand-2nd:active,
 .btn-brand-2nd:focus,
 .btn-brand-2nd:hover {
-    background-color: #8caa0a;
-    background: -webkit-linear-gradient(#8caa0a, #8caa0a);
-    background: -o-linear-gradient(#8caa0a, #8caa0a);
-    background: -moz-linear-gradient(#8caa0a, #8caa0a);
-    background: linear-gradient(#8caa0a, #8caa0a);
+    background-color: #a0c323;
+    background: -webkit-linear-gradient(#a0c323, #a0c323);
+    background: -o-linear-gradient(#a0c323, #a0c323);
+    background: -moz-linear-gradient(#a0c323, #a0c323);
+    background: linear-gradient(#a0c323, #a0c323);
     color: #ffffff;
 }
 
