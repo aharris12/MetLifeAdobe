@@ -4441,7 +4441,6 @@ a:visited {
 
 .breadcrumb__crumb:not(:last-child)::after {
     content: "\203A";
-    margin: 0 5px;
 }
 
 .breadcrumb--back{
@@ -4650,7 +4649,7 @@ a:visited {
     }
 
     .homepage-sub {
-        margin-top: 40px;
+        margin-top: 60px;
     }
 
     .homepage-sub__link div {
@@ -5865,10 +5864,11 @@ ol.promocard_content__list li:after {
 }
 
 .product-module__action {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
     display: inline-block;
     padding-top: 5px;
-    font-size: 0.75em;
-    line-height: 15px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -6093,6 +6093,11 @@ a.product-module__action--tel:hover {
         font-size: 12px;
         line-height: 16px;
     }
+    .product-module__action{
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 0.5px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -6186,6 +6191,11 @@ a.product-module__action--tel:hover {
 
     a.product-module__action--medium {
         max-width: 100%;
+    }
+    .product-module__action{
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: 1px;
     }
 }
 
@@ -8329,6 +8339,9 @@ body{
         padding: 40px 3%;
         width: 68%;
         text-align: left;
+    }
+    .single-promo .product-row__tile--img-tile__text {
+        padding: 20px 3%;
     }
 
     .product-row__tile--img-tile__text--left {

@@ -28,7 +28,6 @@
 
 .breadcrumb__crumb:not(:last-child)::after {
     content: "\203A";
-    margin: 0 5px;
 }
 
 .breadcrumb--back{

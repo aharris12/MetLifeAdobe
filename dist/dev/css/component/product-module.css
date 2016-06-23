@@ -31,10 +31,11 @@
 }
 
 .product-module__action {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
     display: inline-block;
     padding-top: 5px;
-    font-size: 0.75em;
-    line-height: 15px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -259,6 +260,11 @@ a.product-module__action--tel:hover {
         font-size: 12px;
         line-height: 16px;
     }
+    .product-module__action{
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: 0.5px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -352,6 +358,11 @@ a.product-module__action--tel:hover {
 
     a.product-module__action--medium {
         max-width: 100%;
+    }
+    .product-module__action{
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: 1px;
     }
 }
 

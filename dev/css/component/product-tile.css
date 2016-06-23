@@ -146,6 +146,9 @@
         width: 68%;
         text-align: left;
     }
+    .single-promo .product-row__tile--img-tile__text {
+        padding: 20px 3%;
+    }
 
     .product-row__tile--img-tile__text--left {
         width: 70%;
