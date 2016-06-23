@@ -32,7 +32,7 @@
 .btn-brand-3rd:hover,
 .btn-brand-3rd-inv:hover,
 .btn-brand-4th:hover,
-.btn-brand-4th-inv:hover{
+.btn-brand-4th-inv:hover {
     text-decoration: none;
 }
 
@@ -159,7 +159,6 @@
     font-weight: 300;
 }
 
-
 .btn-group .btn:active,
 .btn-group .btn.active {
     background-color: #3d9cdb;
@@ -207,9 +206,14 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.btn-group .btn{
+    font-size: 12px;
+}
+
 .btn-group .btn:only-of-type {
     border-radius: 5px;
-    width: 100%
+    width: 100%;
 }
 
 .btn-group .icon svg {
@@ -230,7 +234,7 @@
 .btn-group__icon {
     position: absolute;
     width: 100%;
-    top: 28px;
+    top: 27px;
     display: none;
 }
 
@@ -241,14 +245,14 @@
     vertical-align: middle;
 }
 
-.btn-group-fax .btn{
+.btn-group-fax .btn {
     background-color: white;
     border: 1px solid #cccccc;
     padding: 6px 12px;
     line-height: 0;
 }
 
-.btn-group-fax .btn.active{
+.btn-group-fax .btn.active {
     background-color: #666666;
 
 }
@@ -260,7 +264,7 @@
     border: 1px solid #cccccc;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .btn-brand-1st,
     .btn-brand-1st-inv,
     .btn-brand-2nd,
@@ -270,5 +274,14 @@
     .btn-brand-4th,
     .btn-brand-4th-inv {
         font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .btn-group .btn{
+        font-size: 13px;
+    }
+    .btn-group__icon{
+        top: 28px;
     }
 }
