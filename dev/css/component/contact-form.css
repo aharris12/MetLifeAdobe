@@ -136,6 +136,9 @@
     padding: 5px 10px;
 }
 
+.campaign-contact-form form button {
+    width: 100%;
+}
 
 
 .formFail .errorSpan{
@@ -156,7 +159,11 @@
     #requestFormRightNav_Acc .form-state {
         width: 55%;
     }
-
+    .campaign-contact-form form button {
+        min-width: 40px;
+        max-width: 320px;
+        width: auto;
+    }
 }
 .errorSpanOpen:after, .errorSpanOpen:before {
     left: 100%;
