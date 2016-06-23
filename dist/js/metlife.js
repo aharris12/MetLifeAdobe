@@ -1,7 +1,7 @@
 //Global variables
 var breakpointMobile = 480;
-var breakpointTablet = 751;
-var breakpointDesktop = 1007;
+var breakpointTablet = 768;
+var breakpointDesktop = 1024;
 
 var breakpointMobileOverlay = 480;
 var breakpointTabletOverlay = 768;
@@ -21,16 +21,7 @@ if ( localStorage.getItem("contextPath") ) {
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-    if($('body').hasClass("overlay-scroll__parent")){
-        switch (true) {
-            case vWidth >= breakpointDesktopOverlay:
-                screenMode = "desktop";
-                break;
-            case vWidth >= breakpointTabletOverlay:
-                screenMode = "tablet";
-                break;
-        }
-    }else{
+
         switch (true) {
             case vWidth >= breakpointDesktop:
                 screenMode = "desktop";
@@ -39,7 +30,7 @@ function getViewport() {
                 screenMode = "tablet";
                 break;
         }
-    }
+
 
     return screenMode;
 }
@@ -205,21 +196,29 @@ function openSearchBox () {
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__icon').removeClass('megamenu-trigger__icon--open');
         }
-        $('.search-trigger__search-box').animate({width: '100%'}, 400);
+        $('.search-trigger__search-box').animate({width: '100%'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        $('.search-trigger__icon').animate({left: '145'}, 150);
         currentView = getViewport();
     } else {
-        $('.search-trigger__search-box').animate({width: '170px'}, 400);
+        $('.search-trigger__search-box').animate({width: '170px'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        $('.search-trigger__icon').animate({left: '145'}, 150);
         currentView = getViewport();
     }
 }
 
 function closeSearchBox () {
-    $('.search-trigger__container').hide();
+
+    $('.search-trigger__search-box').animate({width: '0'}, 600);
     $('.search-trigger').removeClass('search-trigger--open');
+
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
-    $('.search-trigger__search-box').css('width',"0");
+
+    $('.search-trigger__icon').animate({left: '0'}, 150);
+    setTimeout(function(){
+        $('.search-trigger__container').hide();
+    }, 400);
 };
 
 $(document).on("click tap", function (e) {
@@ -247,8 +246,14 @@ $('.megamenu-trigger').on('click', function(){
         }
         if ($('.megamenu').hasClass('overlay-scroll__child')) {
             $('.megamenu').removeClass('overlay-scroll__child')
+
+                $(".global-header__middle h1").removeClass("menu--left")
+
         } else {
             $('.megamenu').addClass('overlay-scroll__child')
+
+                $(".global-header__middle h1").addClass("menu--left")
+
         }
         if( $('.login-types').hasClass('overlay-scroll__child')){
             $('.login-types').removeClass('overlay-scroll__child');
@@ -454,10 +459,12 @@ $('.login-trigger').click(function(e){
         $('body').addClass('overlay-scroll__parent');
         $('.login-container').addClass('overlay-scroll__child');
         $('.login-types').addClass('overlay-scroll__child');
+        $(".global-header__middle h1").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
+
             $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
         }
     }
@@ -7856,8 +7863,16 @@ $('.js-searchSubmit').on('click', function () {
 $('.js-searchIcon').click(function () {
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+			if($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " "){
+				ServicesAPI.legacySearch("search");
+			}else{
+				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+			}
+
+		}else{
+
 		}
+
 	}else{
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {

@@ -1,7 +1,7 @@
 //Global variables
 var breakpointMobile = 480;
-var breakpointTablet = 751;
-var breakpointDesktop = 1007;
+var breakpointTablet = 768;
+var breakpointDesktop = 1024;
 
 var breakpointMobileOverlay = 480;
 var breakpointTabletOverlay = 768;

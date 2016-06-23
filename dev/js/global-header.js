@@ -92,21 +92,29 @@ function openSearchBox () {
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__icon').removeClass('megamenu-trigger__icon--open');
         }
-        $('.search-trigger__search-box').animate({width: '100%'}, 400);
+        $('.search-trigger__search-box').animate({width: '100%'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        $('.search-trigger__icon').animate({left: '145'}, 150);
         currentView = getViewport();
     } else {
-        $('.search-trigger__search-box').animate({width: '170px'}, 400);
+        $('.search-trigger__search-box').animate({width: '170px'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        $('.search-trigger__icon').animate({left: '145'}, 150);
         currentView = getViewport();
     }
 }
 
 function closeSearchBox () {
-    $('.search-trigger__container').hide();
+
+    $('.search-trigger__search-box').animate({width: '0'}, 600);
     $('.search-trigger').removeClass('search-trigger--open');
+
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
-    $('.search-trigger__search-box').css('width',"0");
+
+    $('.search-trigger__icon').animate({left: '0'}, 150);
+    setTimeout(function(){
+        $('.search-trigger__container').hide();
+    }, 400);
 };
 
 $(document).on("click tap", function (e) {
@@ -134,8 +142,14 @@ $('.megamenu-trigger').on('click', function(){
         }
         if ($('.megamenu').hasClass('overlay-scroll__child')) {
             $('.megamenu').removeClass('overlay-scroll__child')
+
+                $(".global-header__middle h1").removeClass("menu--left")
+
         } else {
             $('.megamenu').addClass('overlay-scroll__child')
+
+                $(".global-header__middle h1").addClass("menu--left")
+
         }
         if( $('.login-types').hasClass('overlay-scroll__child')){
             $('.login-types').removeClass('overlay-scroll__child');
@@ -341,10 +355,12 @@ $('.login-trigger').click(function(e){
         $('body').addClass('overlay-scroll__parent');
         $('.login-container').addClass('overlay-scroll__child');
         $('.login-types').addClass('overlay-scroll__child');
+        $(".global-header__middle h1").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
+
             $('.megamenu-trigger__icon').toggleClass('megamenu-trigger__icon--open');
         }
     }

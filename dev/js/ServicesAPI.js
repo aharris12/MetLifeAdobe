@@ -834,8 +834,16 @@ $('.js-searchSubmit').on('click', function () {
 $('.js-searchIcon').click(function () {
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+			if($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " "){
+				ServicesAPI.legacySearch("search");
+			}else{
+				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+			}
+
+		}else{
+
 		}
+
 	}else{
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {

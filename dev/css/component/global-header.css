@@ -222,6 +222,9 @@
     .home-trigger__icon{
         z-index: 920;
     }
+    .megamenu-trigger{
+        margin-right: 30px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -354,7 +357,7 @@
         transition: all 500ms ease 0s;
     }
     .search-trigger__icon--open {
-        left: 145px;
+
     }
     .search-trigger__icon--open .icon-search {
         fill: #0e5dae;
@@ -390,6 +393,11 @@
     padding-top: 15px;
     color:#fff;
     cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .login-trigger {
+        width: 70px;
+    }
 }
 .login-trigger:hover span{
     color: rgba(255, 255, 255, 0.6);
@@ -880,4 +888,8 @@
 }
 .icon-close.megamenu-trigger__icon{
     display: none;
+}
+
+.menu--left{
+    margin-left: -8px;
 }
