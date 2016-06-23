@@ -26,12 +26,10 @@
     margin-bottom:0;
 }
 @media screen and (min-width: 768px) {
-
     .campaign-footer{
         width: 96%;
 
     }
-
     .campaign-footer .campaign-footer__linkswrapper{
         padding-top: 15px;
         border-top: 1px solid #ccc;
@@ -48,6 +46,12 @@
     .campaign-footer .campaign-footer__legal{
         margin-top: 5px;
 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .campaign-footer .campaign-footer-link{
+        margin: 0px 25px;
     }
 }
 
@@ -68,5 +72,11 @@
     .campaign-footer{
         width: 85%;
         max-width: 1300px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .campaign-footer .campaign-footer-link{
+        margin: 0px 50px;
     }
 }

@@ -5391,6 +5391,10 @@ ol.promocard_content__list li:after {
         line-height: 18px;
     }
 
+    .disclaimer--product-module .disclaimer{
+        width: 65%;
+    }
+
     .disclaimer--microsite {
         padding-top: 50px;
     }
@@ -8081,6 +8085,8 @@ body{
     }
     .carousel--microsite .carousel-control svg {
         top: 0;
+        width: 40px;
+        height: 30px;
     }
     .carousel--microsite .carousel-inner {
         height: 400px;
@@ -12160,6 +12166,9 @@ manner*/
     padding: 5px 10px;
 }
 
+.campaign-contact-form form button {
+    width: 100%;
+}
 
 
 .formFail .errorSpan{
@@ -12180,7 +12189,11 @@ manner*/
     #requestFormRightNav_Acc .form-state {
         width: 55%;
     }
-
+    .campaign-contact-form form button {
+        min-width: 40px;
+        max-width: 320px;
+        width: auto;
+    }
 }
 .errorSpanOpen:after, .errorSpanOpen:before {
     left: 100%;
@@ -14813,12 +14826,10 @@ body  .quote_edit_form .submit_quote_edit_form {
     margin-bottom:0;
 }
 @media screen and (min-width: 768px) {
-
     .campaign-footer{
         width: 96%;
 
     }
-
     .campaign-footer .campaign-footer__linkswrapper{
         padding-top: 15px;
         border-top: 1px solid #ccc;
@@ -14835,6 +14846,12 @@ body  .quote_edit_form .submit_quote_edit_form {
     .campaign-footer .campaign-footer__legal{
         margin-top: 5px;
 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .campaign-footer .campaign-footer-link{
+        margin: 0px 25px;
     }
 }
 
@@ -14855,6 +14872,12 @@ body  .quote_edit_form .submit_quote_edit_form {
     .campaign-footer{
         width: 85%;
         max-width: 1300px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .campaign-footer .campaign-footer-link{
+        margin: 0px 50px;
     }
 }
 .campaign-header {

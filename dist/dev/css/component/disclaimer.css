@@ -51,6 +51,10 @@
         line-height: 18px;
     }
 
+    .disclaimer--product-module .disclaimer{
+        width: 65%;
+    }
+
     .disclaimer--microsite {
         padding-top: 50px;
     }
