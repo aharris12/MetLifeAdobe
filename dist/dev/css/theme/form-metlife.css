@@ -2,7 +2,7 @@ input, select, textarea {
     padding: 7px 12px;
     width: 100%;
     text-align: left;
-    color: #666;
+    color: #333;
     background-color: #FFF;
     border: 1px solid #e3e3e3;
     font-size: 0.9em;
@@ -17,6 +17,12 @@ input, select, textarea {
     -ms-appearance: none;
     outline: none;
     height:40px;
+}
+::-webkit-input-placeholder{
+    color: #999;
+}
+.error::-webkit-input-placeholder{
+    color: #EB4646;
 }
 select{
     text-align: left;
@@ -42,8 +48,9 @@ select {
     background-color: transparent;
     -moz-appearance: none;
     -webkit-appearance: none;
-    
-    
+}
+select::-webkit-input-placeholder{
+    color: #666;
 }
 select::-ms-expand{
   display:none;
@@ -86,8 +93,8 @@ input[type="radio"] {
     top: 7px;
     right: 2px;
     fill: #666;
-    width: 24px;
-    height: 24px;
+    width: 21px;
+    height: 21px;
     z-index:601;
     pointer-events: none; !important;
 }

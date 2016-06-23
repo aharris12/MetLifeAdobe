@@ -471,3 +471,10 @@ span.errorRadio {
         width: 61%;
     }
 }
+
+.form-user-grp .form-user-ctrl:focus{
+    background-color: #fff;
+    border-color: #2377c5;
+    -webkit-appearance: none;
+    outline: 0;
+}

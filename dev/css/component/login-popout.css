@@ -58,6 +58,8 @@
         top: 4px;
         left: 30px;
         cursor: pointer;
+        width:19px;
+        height:19px;
     }
 
 }

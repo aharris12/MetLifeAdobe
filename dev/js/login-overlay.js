@@ -284,9 +284,11 @@ function showPasswordPlaceholder () {
     });
 }
 
+/*
 showPasswordPlaceholder();
 $('input[name=password]').change(function(){
     if($(this).val() == "")
         showPasswordPlaceholder();
 })
+*/
 

@@ -436,113 +436,6 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 	$("[data-request-type]").removeClass('error');
 	$("[data-request-type]").parent().find('svg').css('fill', '#666');
 });
-//Current This should be removed once form builder is in palce
-/*$('.productPolicy').on('change', function () {
- $(this).find('option').eq(1).val('New Product/Planning Services');
- $(this).find('option').eq(2).val('Existing Product/Policy');
- var val = $(this).val();
- var $this = $(this);
- var $con = $this.closest('.productPolicyTypes');
- if (val == "New Product/Planning Services") {
- $con.find('.productUserType').hide();
- $con.find('.newProductUser').show();
- var count = 0;
- $con.find('.newProductUser input[type=checkbox]').each(function () {
- if ($(this).is(':checked')) {
- count++;
- }
- });
- //if (count > 0 && count <= 5) {
- //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
- if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
- $this.attr('data-valid-status', 'success');
- $this.removeClass('error');
- $con.find('.productCount').removeClass('errorText');
- } else {
- $this.attr('data-valid-status', 'failed');
- //$this.addClass('error');
- }
- if ($this.hasClass('error')) {
- $con.find('.productCount').addClass('errorText');
- } else {
- $con.find('.productCount').removeClass('errorText');
- }
- } else if (val == "Existing Product/Policy") {
- $con.find('.productUserType').hide();
- $con.find('.existingProductUser').show();
- var val = $con.find('.productUserQuestion').val();
- var placeholder = $con.find('.productUserQuestion').attr('placeholder');
- if (val == "" || val == placeholder) {
- $this.attr('data-valid-status', 'failed');
- //$this.addClass('error');
- } else {
- $this.attr('data-valid-status', 'success');
- $this.removeClass('error');
- }
- if ($this.hasClass('error')) {
- $con.find('.productUserQuestion').addClass('error');
- }
- } else {
- $con.find('.productUserType').hide();
- }
- });
-
- $('.contatMeSidebarBtn, .contatMeContactCardBtn').on('click', function (e) {
-
- //alert("contact from submitted");
- e.preventDefault();
- var $this = $(this);
- var isValid = ServicesAPI.onFSubmit($(this));
-
- //25-01-2016 : Ryan - None of this is working, commenting it, needs refactoring.
-
- if (isValid) {
-
- var fid = $this.attr('data-fsubmit');
- var $formid = $('[data-fid=' + fid + ']');
- ServicesAPI.postLeadformOld($formid);
- $('.productUserType').hide();
-
- if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
- $('.aidFormCon').hide();
- $('.aiwHeading').hide();
- $('.advisorClose').hide();
- $('.adImageThankYou').css("display", "table-cell");
- } else if (fid == "quoteleadform") {
- $(this).closest('.quote_right_mlt').hide();
- $(this).closest('.quote_right_sit').hide();
- $('.quote_results_thank_you').show();
- } else if (fid == "contactCard") {
- var temp = "[data-fid='" + fid + "']";
- //$("[data-fid='contactCard']").hide();
- $('.contactCard').hide();
- $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
- setTimeout(function () {
- $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
- $('.contactCard').show();
- $('#requestFormContactCard_Acc').trigger("reset");
- $('.form-minimize').trigger('click');
- });
- }, 5000);
- } else if (fid == "contactSidebarQuote") {
- $(".results-form__text").addClass("hidden");
- $(".results-form__inputs").addClass("hidden");
- $(".apply-disclaimer").addClass("hidden");
- $(".contact-thanks").removeClass("hidden");
-
- } else {
- $('.' + fid).fadeOut('slow', function () {
- setTimeout(function () {
- $('.contactSliderOuterCon').fadeOut(2000);
- $('.contactsClose').trigger('click');
- }, 5000)
- });
- }
- } else {
- //alert("invalid");
- }
- });*/
-//Current This should be removed once form builder is in palce
 
 //New This should be uncommented once form builder is in palce
 $('[data-fsubmit]').on('click', function (e) {
@@ -607,7 +500,8 @@ $('[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
 });
 
-$('[data-required=true]').on('blur', function () {
+
+$('[data-required=true]').on('blur keyup', function () {
 	var $this = $(this);
 	var placeholder = $this.attr('placeholder');
 	if ($this.val() == placeholder) {

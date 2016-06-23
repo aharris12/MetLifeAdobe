@@ -1762,7 +1762,7 @@ input, select, textarea {
     padding: 7px 12px;
     width: 100%;
     text-align: left;
-    color: #666;
+    color: #333;
     background-color: #FFF;
     border: 1px solid #e3e3e3;
     font-size: 0.9em;
@@ -1777,6 +1777,12 @@ input, select, textarea {
     -ms-appearance: none;
     outline: none;
     height:40px;
+}
+::-webkit-input-placeholder{
+    color: #999;
+}
+.error::-webkit-input-placeholder{
+    color: #EB4646;
 }
 select{
     text-align: left;
@@ -1802,8 +1808,9 @@ select {
     background-color: transparent;
     -moz-appearance: none;
     -webkit-appearance: none;
-    
-    
+}
+select::-webkit-input-placeholder{
+    color: #666;
 }
 select::-ms-expand{
   display:none;
@@ -1846,8 +1853,8 @@ input[type="radio"] {
     top: 7px;
     right: 2px;
     fill: #666;
-    width: 24px;
-    height: 24px;
+    width: 21px;
+    height: 21px;
     z-index:601;
     pointer-events: none; !important;
 }
@@ -3655,8 +3662,6 @@ a:visited {
 .megamenu--open{
     transition: all 0.90s;
     display:block;
-    position: absolute;
-    top: 50px;
     overflow-y: hidden;
 }
 .megamenu__main-item {
@@ -3668,7 +3673,6 @@ a:visited {
 
 .megamenu__main-item-label,
 .megamenu__main-item-label:visited {
-
     display:block;
     padding: 14px 10px;
     font-size: 14px;
@@ -3695,7 +3699,23 @@ a:visited {
     color:#fff;
     text-decoration: none;
 }
+
 @media screen and (max-width: 767px){
+    .megamenu{
+        border-top: 0px;
+    }
+    .megamenu__sub-items {
+
+        background-color: #0a5dae;
+    }
+
+    .megamenu__main-item-label {
+        font-weight: 600;
+        padding-top: 20px;
+        padding-left: 20px;
+        width: 100%;
+        height:60px;
+    }
     .megamenu__sub-items{
        padding-bottom:0px;
 
@@ -3707,11 +3727,7 @@ a:visited {
          padding-left: 0;
 
      }
-    .megamenu__sub-item:first-of-type {
-    /*    height:51px;
-        margin-top: -10px;*/
 
-    }
     .megamenu__sub-item-label {
         margin: 0;
         margin-left: 20px;
@@ -3732,10 +3748,6 @@ a:visited {
         text-decoration: none;
         background-color: #1d6fc2;
     }
-
-
-
-
 }
 
 .megamenu__main-item .icon-chevron-right,
@@ -3744,8 +3756,8 @@ a:visited {
     right: 20px;
     top: 20px;
     z-index: 1500;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     fill: rgba(255,255,255,0.5);
 }
 @media screen and (min-width: 768px) {
@@ -3923,6 +3935,7 @@ a:visited {
     margin-left: -8px;
 }
 
+
 .login-container {
     padding: 0;
     top: 0;
@@ -3982,6 +3995,8 @@ a:visited {
         top: 4px;
         left: 30px;
         cursor: pointer;
+        width:19px;
+        height:19px;
     }
 
 }
@@ -12530,6 +12545,13 @@ span.errorRadio {
     #requestFormRightNav_Acc .form-state {
         width: 61%;
     }
+}
+
+.form-user-grp .form-user-ctrl:focus{
+    background-color: #fff;
+    border-color: #2377c5;
+    -webkit-appearance: none;
+    outline: 0;
 }
 .privacy-policy-index {
     margin-top: 20px;
