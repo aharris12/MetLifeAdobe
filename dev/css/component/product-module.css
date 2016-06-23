@@ -71,9 +71,6 @@ a.product-module__action--tel:hover {
      padding-right: 10px;
      margin: auto;
  }
-.product-module__medium .product-module__list {
-    width: 100%;
-}
 .product-module__list ul{
     list-style: disc;
     text-align: left;
