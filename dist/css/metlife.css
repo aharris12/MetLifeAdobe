@@ -3031,10 +3031,7 @@ a:visited {
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
-.global-header__left--minimized {
-    padding:0;
-    height:50px;
-}
+
 .global-header__left a:hover{
     text-decoration: none;
 }
@@ -3063,6 +3060,10 @@ a:visited {
     .global-header__logo--minimized {
         padding: 15px 0;
         width: 87px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .global-header__left {
         padding:10px 0 10px 30px;
@@ -3070,15 +3071,31 @@ a:visited {
     }
     .global-header__left--minimized {
         padding:0 0 0 30px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .global-header__left--minimized .megamenu-trigger{
         height:50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .global-header__left--minimized .search-trigger{
         height:50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .global-header__left--minimized .home-trigger{
         height:50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 }
 
@@ -3209,6 +3226,7 @@ a:visited {
     position: relative;
     z-index: 1;
 }
+
 @media screen and (min-width:768px){
     .home-trigger,.megamenu-trigger{
         position:relative;
@@ -3223,6 +3241,11 @@ a:visited {
     }
     .megamenu-trigger{
         margin-right: 30px;
+    }
+}
+@media screen and (width:768px){
+    .megamenu-trigger{
+        margin-right: 60px;
     }
 }
 
@@ -3623,10 +3646,10 @@ a:visited {
 
 .megamenu--minimized {
     top: 50px;
-    webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .megamenu--open{
@@ -3655,6 +3678,9 @@ a:visited {
 .megamenu__main-item-label:hover {
     color: rgba(255,255,255,1);
     transition: all 0.5s;
+}
+.megamenu__main-item-label.hidden-xs:hover{
+    text-decoration: underline;
 }
 .megamenu__sub-items {
     display:none;
@@ -3732,6 +3758,10 @@ a:visited {
     }
     .megamenu--minimized {
         top: 50px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .megamenu__main-items {
         font-size: 0;
