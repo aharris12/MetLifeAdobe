@@ -2301,17 +2301,19 @@ a[href*='tel'] {
 body {
     font-family: 'Open Sans';
     font-weight: 400;
-    color:#333;
-    position:relative;
+    color: #333;
+    position: relative;
     overflow-x: hidden;
 
 }
+
 table {
-    width:100%;
+    width: 100%;
 }
+
 @media screen and (min-width: 1280px) {
     body {
-        padding-top:70px;
+        padding-top: 70px;
     }
 }
 
@@ -2319,40 +2321,47 @@ table {
 .container {
     width: 100%;
 }
+
 /*OOCSS approach to adding margin-bottom*/
-.container-margin-bottom{
-    margin-bottom:50px;
-}
-/*backwards compatibility to override global container rule */
-.container--no-margin-bottom,
-.no-margin-bottom{
-    margin-bottom:0px;
+.container-margin-bottom {
+    margin-bottom: 50px;
 }
 
+/*backwards compatibility to override global container rule */
+.container--no-margin-bottom,
+.no-margin-bottom {
+    margin-bottom: 0px;
+}
 
 .wrapper {
     width: 100%;
     padding: 15px 15px 5px 15px;
     margin: 0 auto;
 }
+
 .wrapper.section-title {
     padding: 20px 15px 10px 15px;
     text-align: center;
 }
+
 .wrapper.page-title {
     padding: 30px 15px 20px 15px;
     text-align: center;
 }
+
 .wrapper.hero {
     padding: 50px 15px 40px 15px;
     text-align: center;
 }
-.wrapper.wrapper__contact-us__bottom-box{
-    padding-top:50px;
+
+.wrapper.wrapper__contact-us__bottom-box {
+    padding-top: 50px;
 }
-.wrapper.wrapper__contact-us__bottom-box--smaller{
-    padding-top:30px;
+
+.wrapper.wrapper__contact-us__bottom-box--smaller {
+    padding-top: 30px;
 }
+
 h1,
 h2,
 h3,
@@ -2370,47 +2379,49 @@ h1 {
     line-height: 1.2em;
     font-weight: 600;
 }
+
 h2 {
     font-size: 1.1em;
     line-height: 1.2em;
     font-weight: 600;
 }
+
 h3, h4, h5, h6 {
     font-size: 0.9em;
     line-height: 1.3em;
     font-weight: 600;
 }
-.header--font-weight-400{
+
+.header--font-weight-400 {
     font-weight: 400;
 }
+
 p {
     font-size: 0.85em;
     line-height: 1.3em;
 }
+
 b {
-    font-weight:400;
+    font-weight: 400;
 }
+
 .hero h1 {
     font-size: 1.35em;
     line-height: 1.25em;
     font-weight: 600;
 }
-.page-title h1 {
 
-}
 .page-title p {
-    font-size: 0.75em;
-    line-height: 1.35em;
+    font-size: 13px;
+    line-height: 16px;
 }
-.page-title__heading{
-    font-size: 1.6em;
-    line-height: 1.2em;
-    font-weight: 400;
+
+.page-title__heading {
     width: 85%;
-    margin-bottom:10px;
-}
-.page-title__heading--large{
-    font-size:2.8em;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .section-title .section-title__title {
@@ -2423,7 +2434,7 @@ b {
     line-height: 1.35em;
 }
 
-.document-size{
+.document-size {
     color: #666;
     font-size: 10px;
     line-height: 14px;
@@ -2434,57 +2445,68 @@ b {
         width: 95%;
         padding: 0 0 10px 0;
     }
+
     .wrapper.section-title {
         padding: 50px 0 30px 0;
     }
+
     .wrapper.page-title {
         padding: 50px 0 20px 0;
     }
+
     .wrapper.hero {
         padding: 100px 0 90px 0;
+    }
+
+    .page-title p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .page-title__heading {
+        font-size: 36px;
+        line-height: 40px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .document-size{
+    .document-size {
         font-size: 11px;
         line-height: 15px;
     }
-    .hero h1 {
-        font-size: 1.75em;
-        line-height: 1.35em;
-    }
+
     .wrapper.page-title {
         padding: 65px 0 45px 0;
     }
-    .wrapper{
-        width:85%;
-        max-width:1300px;
+
+    .wrapper {
+        width: 85%;
+        max-width: 1300px;
+    }
+
+    .page-title p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .page-title__heading {
+        font-size: 44px;
+        line-height: 44px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .hero h1 {
-        font-size: 2.75em;
-        width: 65%;
-    }
-    .page-title h1 {
-        font-size: 2.75em;
-    }
-    .page-title p {
-        font-size: 1em;
-    }
     .download-link {
-        text-transform:uppercase;
-        color:#2c77c5;
-        font-size:0.75em;
-        font-weight:600;
+        text-transform: uppercase;
+        color: #2c77c5;
+        font-size: 0.75em;
+        font-weight: 600;
     }
+
     .download-link:hover {
         text-decoration: underline;
     }
 }
-
 
 ul,
 ol {
@@ -2522,39 +2544,47 @@ a:visited {
     color: #0e5dae;
     fill: #0e5dae;
 }
+
 .brand-4th {
     color: #7a9816;
     fill: #7a9816;
 }
+
 .brand-5th {
     color: #edf6ce;
     fill: #edf6ce;
 }
 
-.brand-6th{
+.brand-6th {
     color: #add0f0;
     fill: #add0f0;
 }
+
 .brand-gray-1st {
     color: #666;
     fill: #666
 }
+
 .brand-gray-2nd {
     color: #aaa;
     fill: #aaa
 }
+
 .brand-gray-3rd {
     color: #efefef;
     fill: #efefef
 }
-.brand-gray-4th{
+
+.brand-gray-4th {
     color: #333;
     fill: #333;
 }
-.brand-gray-5th{
+
+.brand-gray-5th {
     color: #999;
-    fill:#999;
+    fill: #999;
 }
+
 .error {
     border-color: #eb4646;
     color: #EB4646;
@@ -2588,13 +2618,16 @@ a:visited {
 .bg-brand-2nd-inv {
     background-color: #e7f1c5;
 }
+
 .bg-brand-3rd {
     background-color: #0e5dae;
 }
+
 .bg-brand-4th {
     background-color: #7a9816;
     fill: #7a9816;
 }
+
 .bg-error {
     background-color: #b00;
 }
@@ -2610,51 +2643,58 @@ a:visited {
 .bg-gray-1st {
     background-color: #efefef;
 }
+
 .bg-gray-2nd {
     background-color: #afafaf;
 }
+
 .bg-gray-3rd {
     background-color: #9f9f9f;
 }
-.bg-gray-49{
+
+.bg-gray-49 {
     background-color: #494949;
 }
-.bg-gray-5th{
+
+.bg-gray-5th {
     background-color: #e3e3e3;
 }
 
-.icon.blue{
+.icon.blue {
     fill: #2377C5;
 }
 
-.document-icon{
+.document-icon {
     height: 20px;
     width: auto;
 }
-.dropdown-icon{
+
+.dropdown-icon {
     position: absolute;
-    margin-left:-25px;
-    margin-top:8px;
+    margin-left: -25px;
+    margin-top: 8px;
 }
 
-.clearfix--margin-top:before{
-    margin-top:10px;
+.clearfix--margin-top:before {
+    margin-top: 10px;
 }
-.side-padding-60{
+
+.side-padding-60 {
     padding-left: 60px;
-    padding-right:60px;
+    padding-right: 60px;
 }
 
 @media screen and (min-width: 768px) {
-    .border-left-tablet-up{
+    .border-left-tablet-up {
         border-left: 1px solid #ccc;
     }
-    .text-right-tablet-up{
+
+    .text-right-tablet-up {
         text-align: right;
     }
 }
 
-.disabled-anchor{
+.disabled-anchor {
     color: #999999 !important;
     text-decoration: none !important;
     cursor: text !important;
