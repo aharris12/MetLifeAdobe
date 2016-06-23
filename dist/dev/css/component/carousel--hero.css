@@ -1,12 +1,12 @@
 /* Image size 500x250 */
 .carousel-indicators {
-    display:none;
+    display: none;
 }
 
 .carousel {
-    max-height:250px;
+    max-height: 250px;
     overflow: hidden;
-    margin-top:0;
+    margin-top: 0;
 }
 
 .carousel-caption {
@@ -16,16 +16,16 @@
     left: 0;
     width: 100%;
     display: table;
-    padding:0 5%;
+    padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
     display: table-cell;
     vertical-align: middle;
-    margin:5px auto;
-    font-size: 6vw;
-    line-height: 7vw;
+    margin: 5px auto;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 600;
 }
 
@@ -34,95 +34,95 @@
     height: 40px;
 }
 
-
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
-        max-height:300px;
+        max-height: 300px;
         /*        margin-top:-60px;*/
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:130px;
-        z-index:10;
-    }
-    .carousel-caption--hero {
-        font-size: 5vw;
+        padding-top: 130px;
+        z-index: 10;
     }
 }
+
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
-        max-height:315px;
+        max-height: 315px;
     }
-    .carousel-indicators{
+
+    .carousel-indicators {
         display: block;
         bottom: 27.5%;
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:150px;
+        padding-top: 150px;
     }
+
     .carousel-caption--hero {
-        font-size: 4.5vw;
-        line-height: 5vw;
-        padding-bottom: 150px;
+        font-size: 3.6vw;
+        line-height: 4vw;
+        padding-bottom: 95px;
     }
-    .carousel-indicators--visible{
-        display:block;
+
+    .carousel-indicators--visible {
+        display: block;
         bottom: 30%;
     }
 }
+
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-    .carousel-inner > .item > a > img{
-        min-height:400px;
+    .carousel-inner > .item > a > img {
+        min-height: 400px;
     }
 
     .carousel {
-        max-height:400px;
+        max-height: 400px;
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:170px;
-    }
-    .carousel-caption--hero {
-        font-size: 4vw;
-        line-height: 4.6vw;
+        padding-top: 170px;
     }
 }
+
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
     .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
-        max-height:400px;
+        max-height: 400px;
     }
+
     .carousel-caption {
-        padding:0 20%;
+        padding: 0 20%;
     }
+
     .carousel-control {
-        padding-top:180px;
-    }
-    .carousel-caption--hero {
-        font-size: 3.5vw;
-        line-height: 4.5vw;
+        padding-top: 180px;
     }
 
 }
+
 /* Image size 2600*1000 */
 @media screen and (min-width: 1900px) {
     .carousel {
-        height:400px;
+        height: 400px;
     }
-    .carousel-caption--hero {
-        font-size: 3.5vw;
-        line-height: 4vw;
-    }
+
     .carousel--hero .icon {
         font-size: 3vw;
     }

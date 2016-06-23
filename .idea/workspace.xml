@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/dev/css/theme/button.css" description="@media screen and (min-width: 768px){&#10;" line="262" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="119cac5f-6abf-4dd1-b9fd-463fb86375c7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/css/component/main.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/breadcrumb.css" afterPath="$PROJECT_DIR$/dev/css/component/breadcrumb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/homepage-nav.css" afterPath="$PROJECT_DIR$/dev/css/component/homepage-nav.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/product-module.css" afterPath="$PROJECT_DIR$/dev/css/component/product-module.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/component/product-tile.css" afterPath="$PROJECT_DIR$/dev/css/component/product-tile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dev/js/global-header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/404.html" afterPath="$PROJECT_DIR$/dist/404.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-category.html" afterPath="$PROJECT_DIR$/dist/blog-category.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/blog-home.html" afterPath="$PROJECT_DIR$/dist/blog-home.html" />
@@ -26,11 +17,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/contact-us__single.html" afterPath="$PROJECT_DIR$/dist/contact-us__single.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.css" afterPath="$PROJECT_DIR$/dist/css/metlife.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/metlife.min.css" afterPath="$PROJECT_DIR$/dist/css/metlife.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/breadcrumb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/homepage-nav.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/homepage-nav.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/carousel--hero.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/carousel--hero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/cta-quote-tool.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/get-quote-find-office.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/get-quote-find-office.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/hp-contextual-links.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/hp-contextual-links.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/product-module.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/product-tile.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/product-tile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/global-header.js" afterPath="$PROJECT_DIR$/dist/dev/js/global-header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/promo-card.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/promo-card.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/subnavigation.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/subnavigation.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/component/visiondental-overlay.css" afterPath="$PROJECT_DIR$/dist/dev/css/component/visiondental-overlay.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/theme/button.css" afterPath="$PROJECT_DIR$/dist/dev/css/theme/button.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/css/theme/form-metlife.css" afterPath="$PROJECT_DIR$/dist/dev/css/theme/form-metlife.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/dev/js/carousel--hero.js" afterPath="$PROJECT_DIR$/dist/dev/js/carousel--hero.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/email-unsubscribe.html" afterPath="$PROJECT_DIR$/dist/email-unsubscribe.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fao.html" afterPath="$PROJECT_DIR$/dist/fao.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/form-library.html" afterPath="$PROJECT_DIR$/dist/form-library.html" />
@@ -144,11 +141,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33296582">
+            <state vertical-scroll-proportion="-10.413794">
               <caret line="20" column="39" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="icon-metlife.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/icon-metlife.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.37362638">
+              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -157,8 +164,8 @@
       <file leaf-file-name="subcategory-page-2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-20.923077">
+              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -191,8 +198,8 @@
       <file leaf-file-name="product-module.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9268293">
-              <caret line="364" column="25" selection-start-line="364" selection-start-column="25" selection-end-line="364" selection-end-column="25" />
+            <state vertical-scroll-proportion="-6.890244">
+              <caret line="353" column="21" selection-start-line="353" selection-start-column="21" selection-end-line="353" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -359,46 +366,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MetLifeAdobe">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="dev">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="css">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="component">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -527,10 +494,7 @@
       <recent name="C:\workspace\MetLifeAdobe\dev\css\component" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.subcategory-page-1.html">
-    <configuration default="false" name="generic-product-details-with-cta.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/generic-product-details-with-cta.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.icon-metlife.html">
     <configuration default="false" name="product-details-page1-expand.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/product-details-page1-expand.html">
       <method />
     </configuration>
@@ -541,6 +505,9 @@
       <method />
     </configuration>
     <configuration default="false" name="subcategory-page-2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/subcategory-page-2.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="icon-metlife.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63348/MetLifeAdobe/dev/icon-metlife.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -592,19 +559,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1-expand.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1-expand.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.icon-metlife.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.icon-metlife.html" />
         <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-2.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1-expand.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.generic-product-details-with-cta.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.subcategory-page-1.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.product-details-page1-expand.html" />
       </list>
     </recent_temporary>
   </component>
@@ -618,12 +585,6 @@
       <created>1459972278724</created>
       <option name="number" value="Default" />
       <updated>1459972278724</updated>
-    </task>
-    <task id="LOCAL-00264" summary="Form BUilder">
-      <created>1465566667281</created>
-      <option name="number" value="00264" />
-      <option name="project" value="LOCAL" />
-      <updated>1465566667281</updated>
     </task>
     <task id="LOCAL-00265" summary="Forms - subcat1">
       <created>1465566928709</created>
@@ -913,7 +874,13 @@
       <option name="project" value="LOCAL" />
       <updated>1466706800325</updated>
     </task>
-    <option name="localTasksCounter" value="313" />
+    <task id="LOCAL-00313" summary="grunt - remove unused main.css">
+      <created>1466710878509</created>
+      <option name="number" value="00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1466710878509</updated>
+    </task>
+    <option name="localTasksCounter" value="314" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -927,7 +894,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21658032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.49585062" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883817" sideWeight="0.48933902" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -988,7 +955,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="radios" />
     <MESSAGE value="Phone" />
     <MESSAGE value="Stuff" />
     <MESSAGE value="fixed validation error" />
@@ -1013,7 +979,8 @@
     <MESSAGE value="merge and grunt" />
     <MESSAGE value="Form fixes" />
     <MESSAGE value="Footer Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer Fixes" />
+    <MESSAGE value="grunt - remove unused main.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="grunt - remove unused main.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1462,36 +1429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9268293">
-          <caret line="364" column="25" selection-start-line="364" selection-start-column="25" selection-end-line="364" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#nav#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#ul#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/component/product-tile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0">
@@ -1535,8 +1472,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33296582">
+        <state vertical-scroll-proportion="-10.413794">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/component/product-module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.890244">
+          <caret line="353" column="21" selection-start-line="353" selection-start-column="21" selection-end-line="353" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/subcategory-page-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077">
+          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#nav#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#13;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#16;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/icon-metlife.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.37362638">
+          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
           <folding />
         </state>
       </provider>

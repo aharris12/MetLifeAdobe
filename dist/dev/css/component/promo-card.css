@@ -59,6 +59,7 @@ ol.promocard_content__list li:after {
         float: none;
         height: 1px;
         min-height:260px;
+        margin: 40px auto 30px;
     }
 
     .promocard__image{
@@ -81,6 +82,7 @@ ol.promocard_content__list li:after {
         float: none;
         height: 1px;
         min-height: 300px;
+        margin: 50px auto;
     }
 
     .promocard__image{

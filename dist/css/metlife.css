@@ -1765,7 +1765,7 @@ input, select, textarea {
     color: #333;
     background-color: #FFF;
     border: 1px solid #e3e3e3;
-    font-size: 0.9em;
+    font-size: 13px;
     font-weight:400;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -2705,7 +2705,7 @@ a:visited {
 .btn-brand-3rd:hover,
 .btn-brand-3rd-inv:hover,
 .btn-brand-4th:hover,
-.btn-brand-4th-inv:hover{
+.btn-brand-4th-inv:hover {
     text-decoration: none;
 }
 
@@ -2749,11 +2749,11 @@ a:visited {
 .btn-brand-2nd:active,
 .btn-brand-2nd:focus,
 .btn-brand-2nd:hover {
-    background-color: #8caa0a;
-    background: -webkit-linear-gradient(#8caa0a, #8caa0a);
-    background: -o-linear-gradient(#8caa0a, #8caa0a);
-    background: -moz-linear-gradient(#8caa0a, #8caa0a);
-    background: linear-gradient(#8caa0a, #8caa0a);
+    background-color: #a0c323;
+    background: -webkit-linear-gradient(#a0c323, #a0c323);
+    background: -o-linear-gradient(#a0c323, #a0c323);
+    background: -moz-linear-gradient(#a0c323, #a0c323);
+    background: linear-gradient(#a0c323, #a0c323);
     color: #ffffff;
 }
 
@@ -2832,7 +2832,6 @@ a:visited {
     font-weight: 300;
 }
 
-
 .btn-group .btn:active,
 .btn-group .btn.active {
     background-color: #3d9cdb;
@@ -2880,9 +2879,14 @@ a:visited {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+.btn-group .btn{
+    font-size: 12px;
+}
+
 .btn-group .btn:only-of-type {
     border-radius: 5px;
-    width: 100%
+    width: 100%;
 }
 
 .btn-group .icon svg {
@@ -2903,7 +2907,7 @@ a:visited {
 .btn-group__icon {
     position: absolute;
     width: 100%;
-    top: 28px;
+    top: 27px;
     display: none;
 }
 
@@ -2914,14 +2918,14 @@ a:visited {
     vertical-align: middle;
 }
 
-.btn-group-fax .btn{
+.btn-group-fax .btn {
     background-color: white;
     border: 1px solid #cccccc;
     padding: 6px 12px;
     line-height: 0;
 }
 
-.btn-group-fax .btn.active{
+.btn-group-fax .btn.active {
     background-color: #666666;
 
 }
@@ -2933,7 +2937,7 @@ a:visited {
     border: 1px solid #cccccc;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .btn-brand-1st,
     .btn-brand-1st-inv,
     .btn-brand-2nd,
@@ -2943,6 +2947,15 @@ a:visited {
     .btn-brand-4th,
     .btn-brand-4th-inv {
         font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .btn-group .btn{
+        font-size: 13px;
+    }
+    .btn-group__icon{
+        top: 28px;
     }
 }
 .pagination {
@@ -4777,7 +4790,7 @@ a:visited {
     display:table-cell;
     vertical-align: middle;
     text-align: left;
-    padding: 15px;
+    padding: 30px 20px;
 }
 
 .find-office__dental-container,
@@ -4837,8 +4850,8 @@ a:visited {
         width: 48%;
         margin-right: 1%;
     }
-    .get-quote, .find-office {
-        padding: 30px 20px;
+    .get-quote__container, .find-office__container{
+        margin-bottom: 0;
     }
     .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
         width: 56%;
@@ -4975,13 +4988,13 @@ a:visited {
 
 /* Image size 500x250 */
 .carousel-indicators {
-    display:none;
+    display: none;
 }
 
 .carousel {
-    max-height:250px;
+    max-height: 250px;
     overflow: hidden;
-    margin-top:0;
+    margin-top: 0;
 }
 
 .carousel-caption {
@@ -4991,16 +5004,16 @@ a:visited {
     left: 0;
     width: 100%;
     display: table;
-    padding:0 5%;
+    padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
     display: table-cell;
     vertical-align: middle;
-    margin:5px auto;
-    font-size: 6vw;
-    line-height: 7vw;
+    margin: 5px auto;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 600;
 }
 
@@ -5009,95 +5022,95 @@ a:visited {
     height: 40px;
 }
 
-
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
-        max-height:300px;
+        max-height: 300px;
         /*        margin-top:-60px;*/
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:130px;
-        z-index:10;
-    }
-    .carousel-caption--hero {
-        font-size: 5vw;
+        padding-top: 130px;
+        z-index: 10;
     }
 }
+
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
-        max-height:315px;
+        max-height: 315px;
     }
-    .carousel-indicators{
+
+    .carousel-indicators {
         display: block;
         bottom: 27.5%;
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:150px;
+        padding-top: 150px;
     }
+
     .carousel-caption--hero {
-        font-size: 4.5vw;
-        line-height: 5vw;
-        padding-bottom: 150px;
+        font-size: 3.6vw;
+        line-height: 4vw;
+        padding-bottom: 95px;
     }
-    .carousel-indicators--visible{
-        display:block;
+
+    .carousel-indicators--visible {
+        display: block;
         bottom: 30%;
     }
 }
+
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-    .carousel-inner > .item > a > img{
-        min-height:400px;
+    .carousel-inner > .item > a > img {
+        min-height: 400px;
     }
 
     .carousel {
-        max-height:400px;
+        max-height: 400px;
     }
+
     .carousel-caption {
-        padding:0 15%;
+        padding: 0 15%;
     }
+
     .carousel-control {
-        padding-top:170px;
-    }
-    .carousel-caption--hero {
-        font-size: 4vw;
-        line-height: 4.6vw;
+        padding-top: 170px;
     }
 }
+
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
     .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
-        max-height:400px;
+        max-height: 400px;
     }
+
     .carousel-caption {
-        padding:0 20%;
+        padding: 0 20%;
     }
+
     .carousel-control {
-        padding-top:180px;
-    }
-    .carousel-caption--hero {
-        font-size: 3.5vw;
-        line-height: 4.5vw;
+        padding-top: 180px;
     }
 
 }
+
 /* Image size 2600*1000 */
 @media screen and (min-width: 1900px) {
     .carousel {
-        height:400px;
+        height: 400px;
     }
-    .carousel-caption--hero {
-        font-size: 3.5vw;
-        line-height: 4vw;
-    }
+
     .carousel--hero .icon {
         font-size: 3vw;
     }
@@ -5342,6 +5355,7 @@ ol.promocard_content__list li:after {
         float: none;
         height: 1px;
         min-height:260px;
+        margin: 40px auto 30px;
     }
 
     .promocard__image{
@@ -5364,6 +5378,7 @@ ol.promocard_content__list li:after {
         float: none;
         height: 1px;
         min-height: 300px;
+        margin: 50px auto;
     }
 
     .promocard__image{
@@ -5821,7 +5836,7 @@ ol.promocard_content__list li:after {
     .subnav__list__item__anchor__label{
 
         font-size: 12px;
-        line-height:20px;
+        line-height:15px;
         letter-spacing: 1px;
     }
 
@@ -5864,11 +5879,10 @@ ol.promocard_content__list li:after {
 }
 
 .product-module__action {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 1px;
     display: inline-block;
     padding-top: 5px;
+    font-size: 0.75em;
+    line-height: 15px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -6093,11 +6107,6 @@ a.product-module__action--tel:hover {
         font-size: 12px;
         line-height: 16px;
     }
-    .product-module__action{
-        font-size: 10px;
-        line-height: 14px;
-        letter-spacing: 0.5px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -6191,11 +6200,6 @@ a.product-module__action--tel:hover {
 
     a.product-module__action--medium {
         max-width: 100%;
-    }
-    .product-module__action{
-        font-size: 11px;
-        line-height: 15px;
-        letter-spacing: 1px;
     }
 }
 
@@ -12906,7 +12910,7 @@ span.errorRadio {
     
     .more-content {
         background-color: #ffffff;
-        padding: 40px 0;
+        padding: 30px 0;
     }
     .more-content__title {
         color: #333;
@@ -13028,11 +13032,7 @@ span.errorRadio {
  .cta_header_quote {
     background-color: #0e5dae;
     width: 100%;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding: 30px 20px;
 }
 
 /* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
@@ -13461,7 +13461,6 @@ span.errorRadio {
 
      .cta_header_quote {
         width: 48%;
-        padding: 30px 35px;
         margin-bottom: 0;
     }
 
@@ -16779,126 +16778,130 @@ text-align: center;
 
 
 .vision_dental_overlay {
-	position: absolute;
-	z-index: 9999999999999;
-	background-color: rgba(0, 0, 0, 0.8);
-	width: 100%;
-	height: 100%;
-	top: 0px;
+    position: absolute;
+    z-index: 9999999999999;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0px;
 }
 
 .vision_dental_overlay_container {
-	margin-top: 50px;
-	width: 320px;
+    margin-top: 50px;
+    width: 95%;
 }
 
 .vision_dental_overlay_close {
-	width: 16px;
-	height: 16px;
-	display: block;
-	float: right;
-	top: 15px;
-	right: 15px;
-	position: relative;
-	z-index: 9;
-	clear: both;
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+    top: 15px;
+    right: 15px;
+    position: relative;
+    z-index: 9;
+    clear: both;
 }
 
 .vision_dental_overlay_close img {
-	width: 100%;
+    width: 100%;
 }
 
 .vision_dental_overlay_header {
-	height: 275px;
-	background-color: #f2f2f2;
-	text-align: center;
-	padding: 10px 5px;
+    height: auto;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px 5px;
 }
 
 .vision_dental_overlay_header h2 {
-	font-size: 28px;
-	line-height: 30px;
-	font-weight: 400;
-	margin-top: auto;
-	margin-bottom: 0;
-	padding-top: 50px;
-	padding-bottom: 20px;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .vision_dental_overlay_header p {
-	margin: 10px 10px 20px 11px;
-	line-height: 21px;
-	font-size: 14px;
-	font-weight: 400;
-	padding: 0 30px;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 15px;
 }
 
 .vision_dental_overlay_body {
-	padding: 25px 10px;
-	background-color: #ffffff;
-	text-align: left;
+    padding: 25px 10px;
+    background-color: #ffffff;
+    text-align: left;
 }
 
 .overlay_network_description {
-	padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .overlay_network_description h3 {
-	line-height: 24px;
-	font-weight: 400;
-	font-size: 28px;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 0;
 }
 
 .overlay_network_description ul {
-	padding-top: 10px;
-	font-weight: 300;
-	padding-left: 30px;
-	font-size: 20px;
+    padding-top: 10px;
+    font-weight: 300;
+    padding-left: 30px;
+    font-size: 20px;
 }
 
 .overlay_network_description ul li {
-	list-style: disc;
-	font-size: 14px;
+    list-style: disc;
+    font-size: 14px;
 }
-
 
 @media screen and (min-width: 768px) {
 
-	.vision_dental_overlay_container {
-		width: 700px;
-	}
+    .vision_dental_overlay_container {
+        width: 700px;
+    }
 
-	.vision_dental_overlay_header {
-		height: 200px;
-	}
+    .vision_dental_overlay_header {
+        height: 200px;
+    }
 
-	.vision_dental_overlay_header h2 {
-		font-size: 44px;
-		line-height: 44px;
-	}
+    .vision_dental_overlay_header h2 {
+        font-size: 44px;
+        line-height: 44px;
+    }
 
-	.vision_dental_overlay_header p {
-		margin: 10px auto 60px;
-	}
+    .vision_dental_overlay_header p {
+        margin: 10px auto 60px;
+    }
 
-	.vision_dental_overlay_body {
-		padding: 25px 50px;
-	}
+    .vision_dental_overlay_body {
+        padding: 25px 50px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .vision_dental_overlay {
+        position: fixed;
+        overflow-y: scroll;
+    }
 
-	.vision_dental_overlay_container {
-		width: 900px;
-	}
+    .vision_dental_overlay_container {
+        width: 900px;
+        margin-bottom:50px;
+    }
 
-	.vision_dental_overlay_close {
-		top: 30px;
-	}
+    .vision_dental_overlay_close {
+        top: 30px;
+    }
 
-	.overlay_network_description {
-		padding-bottom: 25px;
-	}
+    .overlay_network_description {
+        padding-bottom: 25px;
+    }
 }
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {
