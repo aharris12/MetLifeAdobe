@@ -52,7 +52,6 @@
 }
 
 .product-row__tile__copy {
-    width: 90%;
     margin: 0;
     padding-bottom: 15px;
 }
@@ -115,7 +114,7 @@
     .product-row__tile__top {
         padding-top: 50px;
         min-height: 217px;
-        width: 80%;
+        width: 90%;
         margin: auto;
         margin-bottom: 20px;
     }
