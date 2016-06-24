@@ -2903,7 +2903,6 @@ a:visited {
 
 .btn-group .btn {
     float: left;
-    margin-left: -1px;
     position: relative;
 }
 
