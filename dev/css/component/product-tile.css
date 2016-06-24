@@ -14,7 +14,7 @@
     background-color: #0E5DAE;
     padding: 0;
     text-align: center;
-    margin: 10px 0 30px;
+    margin: 10px 0 10px;
 }
 
 .product-row__tile__img-tile__img {
@@ -63,16 +63,16 @@
 }
 
 .product-row__tile__promo {
-    margin-bottom: 20px;
-    font-size: 22px;
-    line-height: 24px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 28px;
     font-weight: 400;
 }
 
 .product-row__tile--img-tile__text h4 {
     color: #96d6ff;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 18px;
     margin-bottom: 5px;
 }
 
@@ -99,8 +99,13 @@
 }
 
 @media screen and (min-width: 768px) {
-    .product-row:last-child {
-        /*        margin-bottom: 30px;*/
+    .product-row__tile__promo{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .product-row__tile--img-tile__text h4 {
+        font-size: 12px;
+        line-height: 16px;
     }
 
     .product-row__tile {
@@ -207,6 +212,7 @@
         padding: 20px 4%;
     }
     .triple-promo p{
+
         margin-bottom: 0;
     }
     .skinny-promo-tile{
@@ -263,8 +269,15 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
-
+@media screen and (min-width: 1024px) {
+    .product-row__tile__promo{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .product-row__tile--img-tile__text h4 {
+        font-size: 13px;
+        line-height: 18px;
+    }
     .skinny-promo-tile .product-row__tile__promo {
         font-size: 26px;
     }
