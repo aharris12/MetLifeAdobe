@@ -10538,11 +10538,7 @@ $(window).scroll(function () {
 
 
 $(".campaign-contact-form .form-user-grp input, .campaign-contact-form .form-user-grp select, .campaign-contact-form .form-user-grp textarea").on("focus",function(){
-
-    console.log("working");
-    $(".campaign-contact-form .contactDisclaimer").removeClass('hidden');
-
-
+    $(".campaign-contact-form .contactDisclaimer").css("display", "block");
 });
 
 $(".campaign-card .campaign-tel").on("click",function(e){

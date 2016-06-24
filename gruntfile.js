@@ -365,20 +365,13 @@ module.exports = function (grunt) {
         'string-replace' : {
           dist: {
             files: {
-              'dist/css/metlife.css' : 'dist/css/metlife.css'
+              'dist/' : 'dist/*.html'
             },
             options: {
               replacements: [{
-                pattern: /..[/]images[/]/g,
+                pattern: /images/g,
                 replacement: '/static/images/'
-              },{
-                pattern: /[']images[/]/g,
-                replacement: '\'/static/images/'
-              },
-              {
-                pattern: /http[:][/][/]localhost[:]63348[/]MetLifeAdobe[/]dev[/]images[/]/g,
-                replacement: '/static/images/'
-              },
+              }
             ]
             }
           }
@@ -396,6 +389,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-css-import');
     grunt.loadNpmTasks('grunt-cssjoin');
     grunt.loadNpmTasks('grunt-string-replace');
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','compress']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','string-replace','compress']);
 
 }; //wrapper function

@@ -5959,6 +5959,9 @@ a.product-module__action--tel:hover {
      padding-right: 10px;
      margin: auto;
  }
+.product-module__medium .product-module__list {
+    width: 100%;
+}
 .product-module__list ul{
     list-style: disc;
     text-align: left;
@@ -15079,8 +15082,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     font-size:12px;
 }
 .campaign-header-right svg {
-    top: 4px;
-    left: 3px;
+    display: none
 }
 .campaign-header-ctc h5 {
     font-weight: 400;
@@ -15126,6 +15128,11 @@ body  .quote_edit_form .submit_quote_edit_form {
     }
     .campaign-header-login span{
         color: #2c77c5;
+    }
+    .campaign-header-right svg {
+        display: inline;
+        top: 4px;
+        left: 3px;
     }
     .campaign-header-login svg{
         color: #2c77c5;
@@ -15409,8 +15416,9 @@ body  .quote_edit_form .submit_quote_edit_form {
         display:inline-block;
         margin-right:40px;
     }
-
-
+    .campaign-contact-form .contactDisclaimer {
+        display: none;
+    }
 
 }
 
