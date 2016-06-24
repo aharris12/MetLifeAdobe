@@ -5959,36 +5959,29 @@ ol.promocard_content__list li:after {
 
 .product-module__action {
     display: inline-block;
-    padding-top: 5px;
-    font-size: 0.75em;
-    line-height: 15px;
+    color: #2c77c5;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-a.product-module__action {
-    border-bottom: 1px solid #add0f0;
-    color: #2c77c5;
-    max-width: 65%;
     cursor: pointer;
+    border-bottom: 1px solid #add0f0;
+    padding-top: 5px;
 }
 
-a.product-module__action:hover {
+.product-module__action:hover {
     border-bottom: 1px solid #2c77c5;
-    color: #2c77c5;
-    text-decoration: none;
 }
 
-a.product-module__action--tel {
+.product-module__action--tel {
     color: #333333;
-    font-weight: 600;
     border-bottom: none;
 }
 
-a.product-module__action--tel:hover {
+.product-module__action--tel:hover {
     border-bottom: none;
-    color: #333333;
 }
 
 .product-module__list {
@@ -6076,7 +6069,7 @@ a.product-module__action--tel:hover {
 
 .product-module__small--product__wrapper {
     vertical-align: bottom;
-    padding: 20px 0 15px;
+    padding: 20px 20px 15px;
     display: table-cell;
     height: 130px;
 }
@@ -6177,7 +6170,7 @@ a.product-module__action--tel:hover {
     .product-module__small--product__wrapper {
         display: block;
         height: auto;
-        padding: 20px 0 30px;
+        padding: 20px 20px 30px;
     }
 
     .product-module--microsite-wrapper {
@@ -6193,6 +6186,21 @@ a.product-module__action--tel:hover {
         padding-bottom: 10px;
         font-size: 12px;
         line-height: 16px;
+    }
+
+    .product-module__bottom {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .product-module__action {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .product-module__action--medium {
+        display: table-cell;
+        vertical-align: bottom;
     }
 }
 
@@ -6267,7 +6275,7 @@ a.product-module__action--tel:hover {
     .product-module__small--product__wrapper {
         display: block;
         height: auto;
-        padding: 20px 0 30px;
+        padding: 20px 20px 30px;
     }
 
     .product-module--microsite-wrapper {
@@ -6280,13 +6288,14 @@ a.product-module__action--tel:hover {
         margin: 0 auto;
     }
 
+    .product-module__action {
+        font-size: 11px;
+        line-height: 15px;
+    }
+
     .product-module__action--medium {
         display: table-cell;
         vertical-align: bottom;
-    }
-
-    a.product-module__action--medium {
-        max-width: 100%;
     }
 }
 
