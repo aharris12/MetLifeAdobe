@@ -8301,13 +8301,16 @@ body{
     text-align: center;
     margin: 10px 0 10px;
 }
-
+.product-row__tile__img-tile__link{
+    display: block;
+}
 .product-row__tile__img-tile__img {
     min-height: 150px;
     display: block;
     width: 100%;
     background-size: cover;
     background-position: center top;
+    cursor: pointer;
 }
 
 .single-promo {
