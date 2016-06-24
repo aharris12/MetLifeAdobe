@@ -1,41 +1,46 @@
-.promocard{
-    background-color: #0e5dae;
+.promocard {
+    background-color: #efefef;
     padding: 0;
 }
 
-.promocard__image{
+.promocard__image {
     width: 100%;
     background-size: cover;
     height: 200px;
 }
 
-.promocard__content{
-    padding: 20px 50px;
-    text-align:center;
+.promocard__content {
+    background-color: #0e5dae;
+    padding: 20px 20px;
+    text-align: center;
 }
 
-.promocard__content__header{
-    font-size: 1.75em;
+.promocard__content__header {
+    font-size: 24px;
     line-height: 28px;
+    margin-bottom: 10px;
+}
+
+.promocard__content__text {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 0 20px;
     margin-bottom: 20px;
 }
 
-.promocard__content__text{
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-size: 0.95em;
-}
 .promocard_content__list {
     text-align: left;
     width: 215px;
     margin: 0 auto 10px;
     list-style-type: decimal;
 }
+
 ol.promocard_content__list li {
     list-style-type: none;
     counter-increment: list;
     position: relative;
-    margin-left:30px;
+    margin-left: 30px;
 }
 
 ol.promocard_content__list li:after {
@@ -53,31 +58,45 @@ ol.promocard_content__list li:after {
     font-size: 12px;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px){
-    .promocard{
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .promocard {
         display: table;
         float: none;
         height: 1px;
-        min-height:260px;
-        margin: 40px auto 30px;
+        min-height: 260px;
+        margin: 40px auto;
     }
 
-    .promocard__image{
+    .promocard__image {
         display: table-cell;
-        width: 50%;
         position: relative;
+        height: auto;
+        width: 50%;
     }
 
-    .promocard__content{
-        display:table-cell;
+    .promocard__content {
+        display: table-cell;
         position: relative;
         vertical-align: middle;
+        padding: 20px 30px;
     }
 
+    .promocard__content__header {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+
+    .promocard__content__text {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0;
+        margin-bottom: 25px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
-    .promocard{
+    .promocard {
         display: table;
         float: none;
         height: 1px;
@@ -85,18 +104,30 @@ ol.promocard_content__list li:after {
         margin: 50px auto;
     }
 
-    .promocard__image{
+    .promocard__image {
         display: table-cell;
-        width: 50%;
         position: relative;
+        height: auto;
+        width: 50%;
     }
 
-    .promocard__content{
-        display:table-cell;
+    .promocard__content {
+        display: table-cell;
         position: relative;
         vertical-align: middle;
+        padding: 20px 5%;
     }
 
+    .promocard__content__header {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
 
+    .promocard__content__text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 30px;
+    }
 }
 
