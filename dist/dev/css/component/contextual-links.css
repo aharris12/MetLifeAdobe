@@ -71,28 +71,7 @@
     .contextual-link:hover{
         background-color: rgba(173, 208, 240, 0.2);
     }
-
-    .contextual-link:first-child:nth-last-child(1){
-        width:25%;
-    }
-
-    .contextual-link:first-child:nth-last-child(2),
-    .contextual-link:first-child:nth-last-child(2) ~ .contextual-link{
-        width:50%;
-    }
-
-    .contextual-link:first-child:nth-last-child(3),
-    .contextual-link:first-child:nth-last-child(3) ~ .contextual-link{
-        width:33.3333333333%;
-    }
-
-    .contextual-link:first-child:nth-last-child(4),
-    .contextual-link:first-child:nth-last-child(4) ~ .contextual-link{
-        width:25%;
-    }
-
-    .contextual-link:first-child:nth-last-child(5),
-    .contextual-link:first-child:nth-last-child(5) ~ .contextual-link{
+    .contextual-link{
         width:20%;
     }
 
