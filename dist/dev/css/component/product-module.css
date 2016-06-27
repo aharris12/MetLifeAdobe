@@ -59,14 +59,13 @@
     border-bottom: none;
 }
 
-.product-module__list {
-    padding: 0 20px 0 40px;
-    width: 80%;
-    padding-left: 30px;
-    padding-right: 10px;
-    margin: auto;
-}
-
+.product-module__list{
+     padding: 0 20px 0 40px;
+     width: 90%;
+     padding-left: 30px;
+     padding-right: 10px;
+     margin: auto;
+ }
 .product-module__medium .product-module__list {
     width: 100%;
 }
@@ -81,10 +80,22 @@
     margin-bottom: 15px;
 }
 
+.product-module__top h3{
+     font-weight: 400;
+ }
+
+.product-module__top h3 a:hover{
+     color: #2377c5;
+ }
+
 .product-module__list ul li {
     padding-bottom: 10px;
     font-size: 14px;
     line-height: 18px;
+}
+
+.product-module__medium__header:hover{
+    color: #2377C5;
 }
 
 .product-module__top p {
