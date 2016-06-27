@@ -3715,8 +3715,11 @@ a:visited {
 .megamenu--open{
     transition: all 0.90s;
     display:block;
+    position: absolute;
+    top: 50px;
     overflow-y: hidden;
 }
+
 .megamenu__main-item {
     background-color: #3d9cdb;
     border-bottom: 1px solid rgba(14, 93, 174, 0.2);

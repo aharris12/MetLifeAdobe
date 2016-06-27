@@ -13,7 +13,7 @@
     <link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/27/2016 @13:23:30 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/27/2016 @14:22:18 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -49,11 +49,19 @@
             </svg></span>
             <span class="search-trigger__label">Search</span>
 
-            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
-                <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search"
-                       data-placeholder="">
-                <input id="overlayerback" class="search-trigger__search-box js-oldSearch" autocomplete="off" type="text">
-            </form>
+	        <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
+		        <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+		        <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch search_openTwo" autocomplete="off" name="query" onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search" data-placeholder="">
+		        <input id="overlayerback" class="search-trigger__search-box js-oldSearch hdinputsearch_gsa_back hidden" autocomplete="off" type="text">
+		        <!--Begin of fix for QC DE8990 5/25/16-->
+		        <a href="#" class="search_location_image">
+			        <svg class="icon brand-1st icon-search js-searchIconMobile">
+				        <use xlink:href="/static/images//icons-metlife.svg#icon-search"></use>
+			        </svg>
+		        </a>
+		        <!--End of fix for DE8990 5/25/16-->
+	        </form>
 
         </div>
     </div>
