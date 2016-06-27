@@ -88,6 +88,7 @@
 }
 
 .homepage-sub__link {
+    vertical-align: top;
     display: inline-block;
     text-align: center;
     letter-spacing: 0.5px;
@@ -96,6 +97,7 @@
     height: 180px;
     padding-top: 45px;
 }
+
 
 .homepage-sub__link:first-child:nth-last-child(5),
 .homepage-sub__link:first-child:nth-last-child(5) ~ .homepage-sub__link{
@@ -138,6 +140,10 @@
     color: #666;
     margin-bottom: 5px;
     display: block;
+}
+
+.homepage-sub__link:hover, .homepage-sub-side__link:hover{
+    color: #2377C5;
 }
 
 .homepage-sub-side__icon {

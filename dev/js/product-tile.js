@@ -3,11 +3,13 @@
  */
 
 $(document).ready(function () {
+
     productTilesLayout();
     productTilePullRight();
 });
 
 $(window).load(function () {
+
     productTileHeight();
     productTilePullRight();
 });
@@ -17,6 +19,23 @@ $(window).resize(function (e) {
     productTilePullRight();
 });
 
+$(".product-row__tile__img-tile__img").click(function(){
+    var href;
+    if ($(this).parent().hasClass("triple-promo")){
+         href = $(this).parent().find(".product-row__tile--img-tile__text").find(".product-row__tile--img-tile__text--right").find("a").attr("href");
+    }
+    if ($(this).parent().hasClass("double-promo")){
+         href = $(this).parent().find(".product-row__tile--img-tile__text").find(".product-row__tile__bottom").find("a").attr("href");
+    }
+    if ($(this).parent().hasClass("skinny-promo-tile")){
+        href = $(this).parent().find(".product-row__tile--img-tile__text").find(".product-row__tile--img-tile__text--right").find("a").attr("href");
+    }
+    if ($(this).parent().hasClass("large-promo-tile")){
+        href = $(this).parent().find(".product-row__tile--img-tile__text").find("a").attr("href");
+    }
+    window.location.href = href;
+
+});
 function productTileHeight() {
 
     if (getViewport() == "tablet" || getViewport() == "desktop") {
