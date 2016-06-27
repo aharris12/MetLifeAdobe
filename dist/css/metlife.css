@@ -4890,6 +4890,7 @@ a:visited {
     .quote-office {
         margin: -85px auto 0;
         width: 96%;
+        margin-bottom: 30px;
     }
     .get-quote__container {
         width: 48%;
@@ -4916,6 +4917,7 @@ a:visited {
 }
 @media screen and (min-width: 1024px) {
     .quote-office {
+        margin-bottom: 40px;
         margin-top:-85px;
         width: 85%;
         max-width: 1300px;

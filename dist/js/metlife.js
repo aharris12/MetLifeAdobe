@@ -196,7 +196,8 @@ function openSearchBox () {
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
-        $('.search-trigger__search-box').animate({width: '100%'}, 600);
+        //$(".search-trigger__container").animate({top: "50"}, 600)
+        //$('.search-trigger__search-box').animate({width: '100%'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
         //$('.search-trigger__icon').animate({left: '145'}, 150);
         currentView = getViewport();
