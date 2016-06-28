@@ -80,5 +80,7 @@
         line-height: 20px;
     }
 
-
+    .content__action .content__action--copy{
+        margin-bottom:40px;
+    }
 }
