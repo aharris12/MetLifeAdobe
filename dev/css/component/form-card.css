@@ -28,6 +28,7 @@
 
 .contact-container--form-card .contactSidebarBtns button{
     width:100%;
+    margin-bottom: 0px;
 }
 
 @media screen and (min-width: 768px){

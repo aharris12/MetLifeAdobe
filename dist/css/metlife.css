@@ -6218,6 +6218,9 @@ ol.promocard_content__list li:after {
         display: table-cell;
         vertical-align: bottom;
     }
+
+
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -6322,6 +6325,12 @@ ol.promocard_content__list li:after {
 .product-row--margin {
     clear: both;
     margin: 30px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .product-module__medium:not(:last-child) {
+        border-bottom: 1px solid #e3e3e3;
+    }
 }
 .list-filter {
     width: 100%;
@@ -9596,6 +9605,7 @@ ul.bullet-list {
 
 .contact-container--form-card .contactSidebarBtns button{
     width:100%;
+    margin-bottom: 0px;
 }
 
 @media screen and (min-width: 768px){
@@ -11037,10 +11047,11 @@ ul.bullet-list {
 .subnav-go-back .subnav-go-back__list li a p{
     display: table-cell;
     vertical-align: middle;
-    line-height: 15px;
+    line-height: 20px;
     font-weight: 400;
     text-align: left;
     padding: 10px 20px;
+    font-size: 14px;
 }
 
 @media screen and (min-width: 768px){
@@ -11209,6 +11220,8 @@ ul.bullet-list {
 }
 .subnav-go-back__mobile--title {
     display: table-cell !important;
+    font-size: 14px;
+    line-height: 20px;
 }
 @media screen and (min-width: 768px){
     .subnav-go-back__desktop--title {
@@ -11216,6 +11229,17 @@ ul.bullet-list {
     }
     .subnav-go-back__mobile--title {
         display: none !important;
+    }
+    .subnav-go-back .subnav-go-back__list li a p{
+        font-size: 11px;
+        letter-spacing: 0px;
+    }
+}
+@media screen and (min-width: 1024px){
+
+    .subnav-go-back .subnav-go-back__list li a p{
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 }
 .product-card{
@@ -12302,7 +12326,7 @@ manner*/
     line-height: 20px;
 }
 .form-user-grp {
-    padding: 5px 0;
+    padding: 2px 0;
     position: relative;
 }
 .form-state {
@@ -12448,7 +12472,8 @@ manner*/
     display: none;
 }
 .contactSidebarBtns {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+
 }
 .text-right {
     text-align: right;
@@ -12532,15 +12557,15 @@ manner*/
     margin-left:5px;
 }
 .contact-container--form-card .icon {
-    /*
-		top: -10px;
-		right: -10px;
-		width: 16px;
-		height: 16px;
-	*/
     top:12px;
     cursor: pointer;
 }
+
+.contact-container--form-card > .contactCard > span > .icon{
+    top: -20px;
+    left: 23px;
+}
+
 
 .contactSideCall {
     color: #2377c5;

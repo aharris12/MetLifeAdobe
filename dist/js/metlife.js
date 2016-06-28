@@ -226,8 +226,9 @@ if (getViewport() != "mobile") {
 $(document).on("click tap", function (e) {
     var megaMenuTrigger = $(".megamenu-trigger");
     var container = $(".search-trigger");
+    var suggestions = $(".suggestionsbox")
     if(!$('.megamenu-trigger__link').hasClass('megamenu-trigger__icon--open')) {
-        if (!container.is(e.target) && container.has(e.target).length === 0 && !megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length == 0) {
+        if (!suggestions.is(e.target) && suggestions.has(e.target).length === 0 && !container.is(e.target) && container.has(e.target).length === 0 && !megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length == 0) {
             closeSearchBox();
         }
     }
@@ -586,7 +587,7 @@ $('body').on ('click touchstart', function(e){
  */
 
 function footerBorder(){
-    if ($(".disclaimer--main").length == 0){
+    if ($(".disclaimer").length == 0){
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("border-top", "none");
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("padding-top", "0");
 
