@@ -28,6 +28,7 @@
 
 .content__action .content__action--copy{
     margin-top: 20px;
+    margin-bottom:10px;
 }
 
 .content--microsite ul{
@@ -44,6 +45,9 @@
 @media screen and (max-width: 1024px) and (min-width: 768px){
     .content-header{
         padding: 30px 10% 0 10%;
+    }
+    .content__action .content__action--copy{
+        margin-bottom:30px;
     }
 
     .microsite-content-header{
