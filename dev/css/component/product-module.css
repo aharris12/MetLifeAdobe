@@ -112,6 +112,7 @@
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .product-module__medium img {
@@ -190,6 +191,10 @@
     color: #2377C5;
 }
 
+.product-module__small--min-height {
+    min-height: 170px;
+}
+
 @media screen and (min-width: 768px) {
     .product-module__large {
         width: 32%;
@@ -218,6 +223,7 @@
     .product-module__medium {
         width: 25%;
         float: left;
+        margin-bottom: 0;
     }
 
     .product-module__medium:not(:first-child) {
