@@ -747,6 +747,24 @@ $('.js-searchIcon').click(function () {
 
 });
 
+
+
+//Fix for header search DE9206, 6/29/16
+$(".ss-gac-a").click(function() {
+     if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+      if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
+          ServicesAPI.legacySearch($(".ss-gac-a").val());
+      }
+
+     } else {
+      //For Integration we only need this statment
+      if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+       ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+      }
+     }
+});
+
+
 $('.js-searchIconMobile').click(function () {
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
