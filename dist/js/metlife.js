@@ -1336,6 +1336,12 @@ function matchProductModuleHeights(){
 
 };
 
+if($(".product-module").length > 0) {
+    if($(".product-module").children(".product-module__small").length !== 0) {
+        $(".product-module").addClass("product-module__small--min-height");
+    }
+}
+
 
 /**
  * Created by jfeng2 on 12/17/2015.
