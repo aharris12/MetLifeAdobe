@@ -216,7 +216,7 @@ function closeSearchBox () {
 
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
 if (getViewport() != "mobile") {
-    $('.search-trigger__icon').animate({left: '0'}, 150);
+    $('.search-trigger__icon').animate({left: '0'}, 50);
 }
     setTimeout(function(){
         $('.search-trigger__container').hide();
