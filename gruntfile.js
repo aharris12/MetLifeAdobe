@@ -167,7 +167,8 @@ module.exports = function (grunt) {
                     'dev/js/overlay.js',
                     'dev/js/aemfixes.js',
                     'dev/js/share-chat.js',
-                    'dev/js/product-card.js'
+                    'dev/js/product-card.js',
+                    'dev/js/contextual--links.js'
                 ],
                 dest: 'dist/js/metlife.js'
             }

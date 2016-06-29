@@ -2335,7 +2335,7 @@ table {
 
 .wrapper {
     width: 100%;
-    padding: 15px 15px;
+    padding: 15px 10px;
     margin: 0 auto;
 }
 
@@ -8636,7 +8636,14 @@ body{
         padding: 30px 0 25px;
     }
 }
-
+@media screen and (max-width: 768px) {
+    .product-row:first-of-type > .product-row__tile:first-of-type {
+        margin-top:0;
+    }
+    .triple-promo{
+        margin-bottom:0;
+    }
+}
 .article {
     margin-top: 20px;
     margin-bottom : 10px;
@@ -8900,16 +8907,16 @@ body{
     padding-top: 7%;
     margin-bottom: 0;
     font-size: 16px;
-    font-weight: 600;
     text-align: left;
     line-height: 16px;
-    text-transform: uppercase;
     height: 100%;
 }
 .contextual-link__content__label svg {
     position: absolute;
     top: 35%;
     left: 90%;
+    height: 15px;
+    width: 15px;
 }
 
 @media screen and (min-width: 768px) {
@@ -9165,6 +9172,7 @@ body{
 
 .content__action .content__action--copy{
     margin-top: 20px;
+    margin-bottom:10px;
 }
 
 .content--microsite ul{
@@ -9181,6 +9189,9 @@ body{
 @media screen and (max-width: 1024px) and (min-width: 768px){
     .content-header{
         padding: 30px 10% 0 10%;
+    }
+    .content__action .content__action--copy{
+        margin-bottom:30px;
     }
 
     .microsite-content-header{
@@ -9217,7 +9228,9 @@ body{
         line-height: 20px;
     }
 
-
+    .content__action .content__action--copy{
+        margin-bottom:40px;
+    }
 }
 .section h1{
     font-size: 18px;

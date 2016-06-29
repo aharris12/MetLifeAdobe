@@ -101,6 +101,83 @@
 </head>
 <body>
 
+
+
+<!-- Global Header -->
+<div class="row global-header">
+    <div class="col-xs-4 col-sm-5 global-header__left">
+        <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
+            <a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-menu"></use>
+                </svg>
+                <svg class="icon icon-close megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg>
+                <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+                <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+            </a>
+        </div>
+        <div class="col home-trigger" title="HOME" data-target="home">
+            <a href="#" class="home-trigger__link">
+                <svg class="icon icon-homepage home-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-homepage"></use>
+                </svg>
+                <span class="home-trigger__label">Home</span>
+            </a>
+        </div>
+        <div class="col search-trigger" title="SEARCH" data-target="search">
+            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
+                <use xlink:href="images/icons-metlife.svg#icon-search"></use>
+            </svg></span>
+            <span class="search-trigger__label">Search</span>
+
+            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
+                <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+                <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch search_openTwo" autocomplete="off" name="query" onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search" data-placeholder="">
+                <input id="overlayerback" class="search-trigger__search-box js-oldSearch hdinputsearch_gsa_back hidden" autocomplete="off" type="text">
+                <!--Begin of fix for QC DE8990 5/25/16-->
+                <a href="#" class="search_location_image">
+                    <svg class="icon brand-1st icon-search js-searchIconMobile">
+                        <use xlink:href="images/icons-metlife.svg#icon-search"></use>
+                    </svg>
+                </a>
+                <!--End of fix for DE8990 5/25/16-->
+            </form>
+
+        </div>
+    </div>
+    <div class="col-xs-4 col-sm-2 global-header__middle">
+        <a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
+                                              class="global-header__logo img-responsive"></a>
+
+    </div>
+    <div class="col-xs-4 col-sm-5 global-header__right">
+        <!-- Contact Trigger -->
+        <div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="contact-trigger__label">Contact</a>
+        </div>
+        <!-- Login Trigger -->
+        <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
+            <a class="login-trigger__label" href="#">
+                Log in
+                <svg class="icon icon-secure-locked">
+                    <use xlink:href="images/icons-metlife.svg#icon-secure-locked"></use>
+                </svg>
+            </a>
+        </div>
+        <!-- User Logged In Trigger-->
+        <!--<div class="col user-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="user-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
+                <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
+            </svg></a>
+        </div>-->
+    </div>
+</div>
+
+
+
 <!--New Mega Menu -->
 <div class="row megamenu">
     <ul class="megamenu__main-items megamenu__top--promo">

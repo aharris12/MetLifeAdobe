@@ -79,7 +79,7 @@
     line-height: 20px;
 }
 .form-user-grp {
-    padding: 5px 0;
+    padding: 2px 0;
     position: relative;
 }
 .form-state {
@@ -225,7 +225,8 @@
     display: none;
 }
 .contactSidebarBtns {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
+
 }
 .text-right {
     text-align: right;
@@ -309,15 +310,15 @@
     margin-left:5px;
 }
 .contact-container--form-card .icon {
-    /*
-		top: -10px;
-		right: -10px;
-		width: 16px;
-		height: 16px;
-	*/
     top:12px;
     cursor: pointer;
 }
+
+.contact-container--form-card > .contactCard > span > .icon{
+    top: -20px;
+    left: 23px;
+}
+
 
 .contactSideCall {
     color: #2377c5;

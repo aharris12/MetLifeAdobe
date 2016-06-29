@@ -42,16 +42,16 @@
     padding-top: 7%;
     margin-bottom: 0;
     font-size: 16px;
-    font-weight: 600;
     text-align: left;
     line-height: 16px;
-    text-transform: uppercase;
     height: 100%;
 }
 .contextual-link__content__label svg {
     position: absolute;
     top: 35%;
     left: 90%;
+    height: 15px;
+    width: 15px;
 }
 
 @media screen and (min-width: 768px) {

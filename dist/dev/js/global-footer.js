@@ -62,7 +62,7 @@ $('body').on ('click touchstart', function(e){
  */
 
 function footerBorder(){
-    if ($(".disclaimer--main").length == 0){
+    if ($(".disclaimer").length == 0){
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("border-top", "none");
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("padding-top", "0");
 
