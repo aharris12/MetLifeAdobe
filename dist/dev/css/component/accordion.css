@@ -2,7 +2,8 @@
 .accordion .accordion__name{
     padding:0 20px 20px;
     font-weight: 600;
-    font-size: 1.35em;
+    font-size: 16px;
+    line-height: 20px;
 }
 .accordion .border-top:last-of-type{
     border-bottom: 1px solid #ccc;
@@ -50,7 +51,7 @@
     height: 18px;
     position: relative;
     top: 3px;
-    left: 40px;
+    left: 20px;
 }
 
 .accordion__title__icon--hide{
@@ -64,6 +65,7 @@
     padding-left: 20px;
     font-size: 13px;
     line-height: 20px;
+    padding-right: 30px;
 }
 
 .accordion__content p {
@@ -89,12 +91,23 @@
 }
 
 @media screen and (min-width: 768px){
+    .accordion .accordion__name{
+        font-size: 18px;
+        line-height: 22px;
+    }
     .accordion--50{
         float: left;
     }
+    .accordion__content{
+        padding-right: 40px;
+    }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
+    .accordion .accordion__name{
+        font-size: 20px;
+        line-height: 24px;
+    }
     .microsite-accordion{
         padding-bottom: 50px;
     }

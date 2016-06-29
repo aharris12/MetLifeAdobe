@@ -1,6 +1,6 @@
 //Global variables
 var breakpointMobile = 480;
-var breakpointTablet = 768;
+var breakpointTablet = 751;
 var breakpointDesktop = 1007;
 
 var breakpointMobileOverlay = 480;
@@ -21,7 +21,7 @@ if ( localStorage.getItem("contextPath") ) {
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-
+console.log(vWidth)
         switch (true) {
             case vWidth >= breakpointDesktop:
                 screenMode = "desktop";
@@ -2464,7 +2464,7 @@ $(".product-row__tile__img-tile__img").click(function(){
 
 });
 function productTileHeight() {
-
+console.log(getViewport())
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if ($(".product-row").length != 0) {
             $(".product-row").each(function () {

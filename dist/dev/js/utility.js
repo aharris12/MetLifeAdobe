@@ -5,7 +5,7 @@
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-
+console.log(vWidth)
         switch (true) {
             case vWidth >= breakpointDesktop:
                 screenMode = "desktop";

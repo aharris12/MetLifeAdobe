@@ -56,11 +56,11 @@
     font-size:1.2em;
 }
 .form__title {
-    font-size:1.2em;
-    font-weight:500;
-    line-height:2em;
-    display:block;
-    margin-bottom:6px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 6px;
 }
 .form__subtitle {
     font-weight: 400;
@@ -165,6 +165,8 @@
         width: auto;
     }
 }
+
+
 .errorSpanOpen:after, .errorSpanOpen:before {
     left: 100%;
     top: 50%;
@@ -470,6 +472,9 @@ span.errorRadio {
 @media screen and (min-width: 1024px) {
     #requestFormRightNav_Acc .form-state {
         width: 61%;
+    }
+    .form__title {
+        font-size: 20px;
     }
 }
 
