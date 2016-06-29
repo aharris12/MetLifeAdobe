@@ -92,6 +92,7 @@ module.exports = function (grunt) {
                     'dev/css/component/sitemap.css',
                     'dev/css/component/share-chat.css',
                     'dev/css/component/visiondental-overlay.css',
+                    'dev/css/component/inview.css',
                     'dev/css/theme/ie9select.css'
 
                 ],
@@ -109,7 +110,8 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/jquery.ddslick.js',
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
-                    'dev/js/_plugins/jquery.bootpag.min.js'
+                    'dev/js/_plugins/jquery.bootpag.min.js',
+                    'dev/js/_plugins/jquery.inview.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
@@ -168,7 +170,8 @@ module.exports = function (grunt) {
                     'dev/js/aemfixes.js',
                     'dev/js/share-chat.js',
                     'dev/js/product-card.js',
-                    'dev/js/contextual--links.js'
+                    'dev/js/contextual--links.js',
+                    'dev/js/inview.js'
                 ],
                 dest: 'dist/js/metlife.js'
             }
@@ -282,6 +285,7 @@ module.exports = function (grunt) {
                         'dev/css/component/sitemap.css',
                         'dev/css/component/share-chat.css',
                         'dev/css/component/visiondental-overlay.css',
+                        'dev/css/component/inview.css',
                         'dev/css/theme/ie9select.css'
 
 

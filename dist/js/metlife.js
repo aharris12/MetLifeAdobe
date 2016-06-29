@@ -11398,3 +11398,18 @@ console.log(container.length > 0)
 		container.next(".container").find(".wrapper").css("padding-top", "0px");
 	}
 }
+$(window).scroll(function () {
+	$('.in_view').bind('inview', function (event, visible) {
+		if (visible == true) {
+			$(this).addClass('on');
+		}
+	});
+});
+
+$(document).ready(function () {
+	$('.in_view').bind('inview', function (event, visible) {
+		if (visible == true) {
+			$(this).addClass('on');
+		}
+	});
+});

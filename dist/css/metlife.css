@@ -3359,7 +3359,7 @@ a:visited {
     z-index: 920;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .search-trigger__icon, .megamenu-trigger__icon {
         left:10px;
     }
@@ -5281,7 +5281,7 @@ a:visited {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .carousel--tabs .carousel-control.left {
         left: 2%;
     }
@@ -5334,7 +5334,7 @@ a:visited {
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .carousel--tabs .two-column-container .v-divider-arrow {
         padding: 0 15px;
     }
@@ -8646,7 +8646,7 @@ body{
         padding: 30px 0 25px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .product-row:first-of-type > .product-row__tile:first-of-type {
         margin-top:0;
     }
@@ -8848,6 +8848,7 @@ body{
 @media screen and (min-width: 768px) {
     .office-search{
         margin-bottom: 10px;
+        margin-top: 10px;
     }
     .office-search__label, .office-search__icon,.office-search__input, .office-search__action{
         display: inline-block;
@@ -10857,7 +10858,7 @@ ul.bullet-list {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .dd-selected label {
         display: none;
     }
@@ -15205,7 +15206,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     -webkit-transition: height 500ms ease 0s;
     transition: height 500ms ease 0s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .campaign-header-login {
         position: absolute;
         z-index: 2;
@@ -17107,6 +17108,31 @@ text-align: center;
     .overlay_network_description {
         padding-bottom: 25px;
     }
+}
+.in_view {
+	position: relative;
+	bottom: -50px;
+}
+.in_view_already {
+	position: relative;
+	bottom: -50px;
+}
+.on {
+	bottom: 0px;
+	-webkit-transition: bottom 300ms linear;
+	-moz-transition: bottom 300ms linear;
+	-o-transition: bottom 300ms linear;
+	-ms-transition: bottom 300ms linear;
+	transition: bottom 300ms linear;
+}
+
+.on_delay {
+	bottom: 0px;
+	-webkit-transition-delay: 5000ms;
+	-moz-transition-delay: 5000ms;
+	-o-transition-delay: 5000ms;
+	-ms-transition-delay: 5000ms;
+	transition-delay: 5000ms;
 }
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {

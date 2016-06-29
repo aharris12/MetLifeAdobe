@@ -300,7 +300,7 @@
     z-index: 920;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .search-trigger__icon, .megamenu-trigger__icon {
         left:10px;
     }

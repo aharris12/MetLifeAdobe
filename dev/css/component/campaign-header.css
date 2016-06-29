@@ -63,7 +63,7 @@
     -webkit-transition: height 500ms ease 0s;
     transition: height 500ms ease 0s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .campaign-header-login {
         position: absolute;
         z-index: 2;
