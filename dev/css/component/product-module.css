@@ -112,6 +112,7 @@
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .product-module__medium img {
@@ -222,6 +223,7 @@
     .product-module__medium {
         width: 25%;
         float: left;
+        margin-bottom: 0;
     }
 
     .product-module__medium:not(:first-child) {
