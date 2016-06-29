@@ -11356,6 +11356,12 @@ ul.bullet-list {
     color: #337ab7;
     border-bottom: 1px solid #add0f0;
 }
+
+.product-card .action p a[href="tel"] {
+    color: black;
+    border-bottom: none;
+    cursor: default;
+}
 .product-card .action p a:hover{
     text-decoration: none;
     color: #2c77c5;
