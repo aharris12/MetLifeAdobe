@@ -6,10 +6,10 @@ function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
         switch (true) {
-            case vWidth >= breakpointDesktop:
+            case vWidth > breakpointDesktop:
                 screenMode = "desktop";
                 break;
-            case vWidth >= breakpointTablet:
+            case vWidth > breakpointTablet:
                 screenMode = "tablet";
                 break;
         }

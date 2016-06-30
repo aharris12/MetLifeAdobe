@@ -22,10 +22,10 @@ function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
         switch (true) {
-            case vWidth >= breakpointDesktop:
+            case vWidth > breakpointDesktop:
                 screenMode = "desktop";
                 break;
-            case vWidth >= breakpointTablet:
+            case vWidth > breakpointTablet:
                 screenMode = "tablet";
                 break;
         }
@@ -194,16 +194,14 @@ function openSearchBox () {
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
+        $('.search-trigger__icon').css({left: '10'});
         if( $('.search-trigger__container').css("display") == "none"){
             $('.search-trigger__container').toggle();
             $(".search-trigger__container").animate({top: "50"}, 50)
             $('.search-trigger__search-box').css({width: '100%'});
-           /* setTimeout(function(){
-
-            }, 10);*/
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
         }else{
-            $(".search-trigger__container").animate({top: "35"}, 75)
+            $(".search-trigger__container").animate({top: "0"}, 75)
             $('.search-trigger__search-box').css({width: '100%'});
             setTimeout(function(){
                 $('.search-trigger__container').toggle();
@@ -227,11 +225,21 @@ function adjustSearchBox(){
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__container').hide();
+    $('.search-trigger__icon').css({left: '10'});
+    console.log(getViewport())
     if (getViewport() == "mobile"){
-        $(".search-trigger__container").css({top: "35"})
+        console.log("im running, changing your styling")
+        $(".search-trigger__container").css({top: "0"})
         $('.search-trigger__search-box').css({width: '100%'});
-        $('.search-trigger__icon').css({left: '10'});
-    } else {
+        $('.search-trigger__icon').css({left: '10px'});
+    }
+    if (getViewport() == "tablet"){
+        console.log("i should not be runnin")
+        $('.search-trigger__icon').css({left: '0'});
+        $(".search-trigger__container").css({top: "0"})
+    }
+    if (getViewport() == "desktop"){
+        console.log("i should not be runnin")
         $('.search-trigger__icon').css({left: '0'});
         $(".search-trigger__container").css({top: "0"})
     }
@@ -243,6 +251,8 @@ function closeSearchBox () {
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
 if (getViewport() != "mobile") {
     $('.search-trigger__icon').animate({left: '0'}, 50);
+}else{
+    $('.search-trigger__icon').css({left: '10'});
 }
     setTimeout(function(){
         $('.search-trigger__container').hide();
@@ -455,6 +465,7 @@ $(window).resize(function(){
         //closeSearchBox();
         adjustSearchBox();
         closeContactForm();
+        currentView = getViewport();
     }
 
 });
