@@ -37,7 +37,8 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: 2000;
+	/*z-index changed for login */
+	z-index: 10000;
 	pointer-events: none;
 	width: auto;
 	overflow: visible;
