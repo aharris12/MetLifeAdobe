@@ -267,3 +267,14 @@
 	-ms-transform: scale(1.1, 1.1);
 	transform: scale(1.1, 1.1);
 }
+
+.tooltip {
+	position: absolute;
+	right: -32px!important;
+	top: 6px;
+	z-index: 1999;
+	fill: #429dd9;
+	width: 30px;
+	height: 30px;
+	padding-right: 9px;
+}

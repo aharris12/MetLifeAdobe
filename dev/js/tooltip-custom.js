@@ -16,6 +16,7 @@ $(document).ready(function () {
 function applyToolTipster() {
     console.log("tooltips applied");
     if ($(window).width() > 1024) {
+        console.log("entered tooltips 1024")
         $('.tooltip').not('.tooltipstered').tooltipster({
             position: 'right',
             trigger: 'hover',
