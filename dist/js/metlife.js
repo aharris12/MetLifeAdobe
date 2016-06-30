@@ -9107,7 +9107,7 @@ var ServicesAPI = {
 		$(".results_content").remove();
 
 		/************LIVE News Room SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -9150,12 +9150,12 @@ var ServicesAPI = {
 				console.log('error ',e);
 			},
 			timeout:30000
-		});*/
+		});
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
 
-		var newsRoomResults = $.getJSON("news.json", function(data) {
+		/*var newsRoomResults = $.getJSON("news.json", function(data) {
 		 if(firstTimeRunNewsRoom === true){
 		 firstTimeRunNewsRoom = false;
 		 }else{
@@ -9187,7 +9187,7 @@ var ServicesAPI = {
 		 }else{
 		 $(".divider--load-more__link").show();
 		 }
-		 });
+		 });*/
 		/************LOCAL News Room SERVICE***************/
 	},
 	blogsServiceCall: function(input, searchType) {

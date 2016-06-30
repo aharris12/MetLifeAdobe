@@ -13,7 +13,7 @@
     <link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/30/2016 @15:45:10 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 06/30/2016 @16:37:13 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -1083,13 +1083,31 @@
             <div class="select_wrapper cta_header_quote_type_of_insurance">
 	        <select required="required" class="insurance-type product__selector">
 		        <option value="" selected disabled>Please Select Insurance Type</option>
-		        <option value="Home" data-product-type="category.html">Home</option>
-		        <option value="Auto" data-product-type="subcategory-page-1.html">Auto</option>
-		        <option value="Life" data-product-type="subcategory-page-2.html">Life</option>
-		        <option value="Pet" data-product-type="form-library.html">Pet</option>
+		        <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
+		        <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
+		        <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
+
 	        </select>
         </div>
-	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance">
+	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="LifeInsurance">
+		        <select required="required" class="insurance-type product__selector" disabled>
+			        <option value="" selected disabled>Please Select Insurance Type</option>
+			        <option value="Home" data-product-url="category.html">Home</option>
+			        <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
+			        <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
+			        <option value="Pet" data-product-url="form-library.html">Pet</option>
+		        </select>
+	        </div>
+	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="PersonalAccidentInsurance">
+		        <select required="required" class="insurance-type product__selector" disabled>
+			        <option value="" selected disabled>Please Select Insurance Type</option>
+			        <option value="Home" data-product-url="category.html">Home</option>
+			        <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
+			        <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
+			        <option value="Pet" data-product-url="form-library.html">Pet</option>
+		        </select>
+	        </div>
+	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="PropertyInsurance"k>
 		        <select required="required" class="insurance-type product__selector" disabled>
 			        <option value="" selected disabled>Please Select Insurance Type</option>
 			        <option value="Home" data-product-url="category.html">Home</option>

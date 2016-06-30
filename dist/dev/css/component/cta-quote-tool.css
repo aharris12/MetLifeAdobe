@@ -4,9 +4,6 @@
     width: 100%;
     padding: 30px 20px;
 }
-.cta_header_quote > .btn_global{
-    float: right;
-}
 
     /* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote p {
@@ -41,6 +38,7 @@
 }
 .cta_header_quote .cta_header_quote_type_of_insurance--sub {
     width:80%;
+    display: none;
 }
 
 /* line 31, ../../../sass/_ctaHeaderToolMobile.scss */
