@@ -29,7 +29,7 @@ $( document ).ready(function() {
         threshold:20
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
-    var lazyPause = carouselInterval - 500;
+    var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause;

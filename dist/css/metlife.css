@@ -5062,7 +5062,6 @@ a:visited {
     max-height: 250px;
     overflow: hidden;
     margin-top: 0;
-    z-index: -1;
 }
 
 .carousel-caption {

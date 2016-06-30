@@ -200,6 +200,9 @@ function openSearchBox () {
             $(".search-trigger__container").animate({top: "50"}, 50)
             $('.search-trigger__search-box').css({width: '100%'});
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+            if($(".carousel").length > 0){
+                $(".carousel").css("z-index", "-1")
+            }
         }else{
             $(".search-trigger__container").animate({top: "0"}, 75)
             $('.search-trigger__search-box').css({width: '100%'});
@@ -207,6 +210,9 @@ function openSearchBox () {
                 $('.search-trigger__container').toggle();
             }, 250);
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+            if($(".carousel").length > 0){
+                $(".carousel").css("z-index", "initial")
+            }
         }
         currentView = getViewport();
     } else {
@@ -226,6 +232,9 @@ function adjustSearchBox(){
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__container').hide();
     $('.search-trigger__icon').css({left: '10'});
+    if($(".carousel").length > 0){
+        $(".carousel").css("z-index", "initial")
+    }
     if (getViewport() == "mobile"){
         $(".search-trigger__container").css({top: "0"})
         $('.search-trigger__search-box').css({width: '100%'});
@@ -736,7 +745,7 @@ $( document ).ready(function() {
         threshold:20
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
-    var lazyPause = carouselInterval - 500;
+    var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause;
