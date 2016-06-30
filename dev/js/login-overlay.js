@@ -11,7 +11,10 @@ window.addEventListener("orientationchange", function() {
     }
 
 }, false);
-
+$('.login-types').css('top', $(window).height() - 70 + 'px');
+$(window).resize(function(){
+    $('.login-types').css('top', $(window).height() - 70 + 'px');
+});
 
 $('.login-container--close').click(function () {
     $('.login-container').hide();
