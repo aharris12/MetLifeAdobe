@@ -200,9 +200,9 @@ function openSearchBox () {
             $(".search-trigger__container").animate({top: "50"}, 50)
             $('.search-trigger__search-box').css({width: '100%'});
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
-            if($(".carousel").length > 0){
+           /* if($(".carousel").length > 0){
                 $(".carousel").css("z-index", "-1")
-            }
+            }*/
         }else{
             $(".search-trigger__container").animate({top: "0"}, 75)
             $('.search-trigger__search-box').css({width: '100%'});
@@ -210,9 +210,9 @@ function openSearchBox () {
                 $('.search-trigger__container').toggle();
             }, 250);
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
-            if($(".carousel").length > 0){
+            /*if($(".carousel").length > 0){
                 $(".carousel").css("z-index", "initial")
-            }
+            }*/
         }
         currentView = getViewport();
     } else {
@@ -232,9 +232,9 @@ function adjustSearchBox(){
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__container').hide();
     $('.search-trigger__icon').css({left: '10'});
-    if($(".carousel").length > 0){
+   /* if($(".carousel").length > 0){
         $(".carousel").css("z-index", "initial")
-    }
+    }*/
     if (getViewport() == "mobile"){
         $(".search-trigger__container").css({top: "0"})
         $('.search-trigger__search-box').css({width: '100%'});
@@ -9107,7 +9107,7 @@ var ServicesAPI = {
 		$(".results_content").remove();
 
 		/************LIVE News Room SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -9150,12 +9150,12 @@ var ServicesAPI = {
 				console.log('error ',e);
 			},
 			timeout:30000
-		});
+		});*/
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
 
-		/*var newsRoomResults = $.getJSON("news.json", function(data) {
+		var newsRoomResults = $.getJSON("news.json", function(data) {
 		 if(firstTimeRunNewsRoom === true){
 		 firstTimeRunNewsRoom = false;
 		 }else{
@@ -9187,7 +9187,7 @@ var ServicesAPI = {
 		 }else{
 		 $(".divider--load-more__link").show();
 		 }
-		 });*/
+		 });
 		/************LOCAL News Room SERVICE***************/
 	},
 	blogsServiceCall: function(input, searchType) {
@@ -11553,7 +11553,7 @@ function applyToolTipster() {
     console.log("tooltips applied");
     if ($(window).width() > 1024) {
         console.log("entered tooltips 1024")
-        $('.tooltip').not('.tooltipstered').tooltipster({
+        $('.tooltip').tooltipster({
             position: 'right',
             trigger: 'hover',
             minWidth: 50,
