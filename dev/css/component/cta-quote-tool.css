@@ -4,8 +4,11 @@
     width: 100%;
     padding: 30px 20px;
 }
+.cta_header_quote > .btn_global{
+    float: right;
+}
 
-/* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
+    /* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote p {
     font-size: 20px;
     font-weight: 300;
@@ -25,6 +28,7 @@
     margin-bottom: 15px;
 }
 
+
 /* line 21, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote .select_wrapper {
     overflow-x: hidden;
@@ -34,6 +38,9 @@
     float: left;
     border-radius: 2px;
     font-weight: 400;
+}
+.cta_header_quote .cta_header_quote_type_of_insurance--sub {
+    width:80%;
 }
 
 /* line 31, ../../../sass/_ctaHeaderToolMobile.scss */

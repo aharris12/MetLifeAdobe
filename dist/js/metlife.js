@@ -571,14 +571,45 @@ $(document).ready(function(){
 });
 
 
+$.fn.isOnScreen = function(){
+    var win = $(window);
+    var viewport = {
+        top  : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+};
+
+var marketingCarouselVisible;
+
+$(window).scroll(function(){
+    if ($('#countryList').isOnScreen() == false) {
+        closeCountryList();
+    }
+});
+
+
+$(document).ready(function(){
+    footerBorder();
+});
+
+
 function closeCountryList() {
     $('.country__list').slideUp(200).scrollTop(0);
 }
 
 function processCountrySelection(evt) {
-    var countrySelectActivationClasses = ['countryNameSelected','countryFlagSelected','countrySelected','countrySVG', 'country__label'];
-    if (evt.target.id == "" || evt.target.id == "countryList" || evt.target.className == "country_continent" ) {
 
+    var countrySelectActivationClasses = ['countryNameSelected','countryFlagSelected','countrySelected','countrySVG'];
+    if (evt.target.id == "" || evt.target.id == "countryList" || evt.target.className == "country_continent") {
         //evt.stopPropagation();
         closeCountryList();
         return;
@@ -601,26 +632,58 @@ function processCountrySelection(evt) {
     }
 }
 
+/*
+ $('body').on('touchstart', function(e) {
+ processCountrySelection(e);
+ });
+ */
+
 var clickDisabled = false;
 
 
 $('body').on ('click touchstart', function(e){
+
     if (clickDisabled != true){
+
         var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
+
         switch(clickEvent) {
             case 'click':
                 processCountrySelection(e);
                 break;
             case 'touchstart':
-                processCountrySelection(e);
+
+                //var cs = document.getElementById(("countryList");
+
+                if($("#countryList").is(":visible") == true){
+                    //if(e.target.id !="countrySelected") closeCountryList();
+                }else{
+                    processCountrySelection(e);
+                }
+
                 break;
             default:
                 break;
         }
+
         clickDisabled = true;
         setTimeout(function(){clickDisabled = false;}, 1000);
     }
+
 });
+
+
+
+/*
+ When disclaimer is not present, remove top-border from footer
+ */
+
+function footerBorder(){
+    if ($(".disclaimer--main").length == 0){
+        $(".global-footer .wrapper").css("border-top", "none");
+        $(".global-footer .wrapper").css("padding-top", "0");
+    }
+}
 
 
 
@@ -11471,3 +11534,90 @@ $(document).ready(function () {
 		}
 	});
 });
+/**
+ * Created by icunningham on 6/30/2016.
+ */
+$(document).ready(function () {
+    if ($('.tooltip').length > 0 || $('.tooltip-pos-left').length > 0) {
+        applyTooltips();
+    }
+
+    $.each($('.tooltip'), function () {
+        if ($(this).prevAll('label').text().length > 0) {
+            $(this).css('top', '35px');
+        }
+    });
+});
+
+function applyToolTipster() {
+    console.log("tooltips applied");
+    if ($(window).width() > 1024) {
+        console.log("entered tooltips 1024")
+        $('.tooltip').not('.tooltipstered').tooltipster({
+            position: 'right',
+            trigger: 'hover',
+            minWidth: 50,
+            maxWidth: 300
+        });
+        $('.tooltip-pos-left').not('.tooltipstered').tooltipster({
+            position: 'right',
+            trigger: 'hover',
+            minWidth: 50,
+            maxWidth: 300
+        });
+    } else {
+        $('.tooltip').not('.tooltipstered').tooltipster({
+            position: 'right',
+            trigger: 'click',
+            minWidth: 50,
+            maxWidth: 300
+        });
+        $('.tooltip-pos-left').not('.tooltipstered').tooltipster({
+            position: 'right',
+            trigger: 'click',
+            minWidth: 50,
+            maxWidth: 300
+        });
+    }
+}
+
+$(window).resize(function () {
+    if ($('.tooltip').not('.tooltipstered').length > 0 || $('.tooltip-pos-left').not('.tooltipstered').length > 0) {
+        applyTooltips();
+    }
+    $('.tooltip').filter('.tooltipstered').each(function () {
+        $(this).tooltipster('hide');
+    });
+    $('.tooltip-pos-left').filter('.tooltipstered').each(function () {
+        $(this).tooltipster('hide');
+    })
+});
+
+function applyTooltips() {
+    applyToolTipster();
+    if ($(window).width() < 768) {
+        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'position', 'bottom-right');
+        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'offsetX', '7');
+        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'position', 'bottom-left');
+        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'offsetX', '-7');
+    } else {
+        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'position', 'right');
+        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'offsetX', '0');
+        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'position', 'left');
+        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'offsetX', '0');
+    }
+    $('.tooltip').each(function () {
+        var roomForToolTip = (($(window).width()) - $(this).offset().left) > 330;
+        if (!roomForToolTip) {
+            $(this).filter('.tooltipstered').tooltipster('option', 'position', 'bottom-right');
+            $(this).filter('.tooltipstered').tooltipster('option', 'offsetX', '7');
+        }
+        $(this).closest('.form-user-grp').css({'margin-right': '30px', 'position': 'relative'});
+        if (!($(this).closest('.form-user-grp').length > 0)) {
+            $(this).prevAll('select').closest('.col-xs-12').css({'width': 'calc(100% - 30px)', 'position': 'relative'})
+        }
+    });
+    $('.tooltip-pos-left').each(function () {
+        $(this).closest('.form-user-grp').css({'margin-left': '30px', 'position': 'relative'});
+    })
+}
