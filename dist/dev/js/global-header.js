@@ -123,20 +123,16 @@ function adjustSearchBox(){
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
     $('.search-trigger__container').hide();
     $('.search-trigger__icon').css({left: '10'});
-    console.log(getViewport())
     if (getViewport() == "mobile"){
-        console.log("im running, changing your styling")
         $(".search-trigger__container").css({top: "0"})
         $('.search-trigger__search-box').css({width: '100%'});
         $('.search-trigger__icon').css({left: '10px'});
     }
     if (getViewport() == "tablet"){
-        console.log("i should not be runnin")
         $('.search-trigger__icon').css({left: '0'});
         $(".search-trigger__container").css({top: "0"})
     }
     if (getViewport() == "desktop"){
-        console.log("i should not be runnin")
         $('.search-trigger__icon').css({left: '0'});
         $(".search-trigger__container").css({top: "0"})
     }
