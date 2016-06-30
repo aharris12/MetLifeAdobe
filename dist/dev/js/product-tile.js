@@ -37,7 +37,6 @@ $(".product-row__tile__img-tile__img").click(function(){
 
 });
 function productTileHeight() {
-console.log(getViewport())
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if ($(".product-row").length != 0) {
             $(".product-row").each(function () {

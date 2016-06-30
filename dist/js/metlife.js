@@ -21,7 +21,6 @@ if ( localStorage.getItem("contextPath") ) {
 function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
-console.log(vWidth)
         switch (true) {
             case vWidth >= breakpointDesktop:
                 screenMode = "desktop";
@@ -189,38 +188,65 @@ function resizeMegaMenu () {
 
 
 function openSearchBox () {
-    $('.search-trigger__container').toggle();
     $('.search-trigger').toggleClass('search-trigger--open');
     if (getViewport() == "mobile"){
         if( $('.megamenu').is(':visible') ){
             $('.megamenu').removeClass('megamenu--open');
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
-        //$(".search-trigger__container").animate({top: "50"}, 600)
-        //$('.search-trigger__search-box').animate({width: '100%'}, 600);
-        $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
-        //$('.search-trigger__icon').animate({left: '145'}, 150);
+        if( $('.search-trigger__container').css("display") == "none"){
+            $('.search-trigger__container').toggle();
+            $(".search-trigger__container").animate({top: "50"}, 50)
+            $('.search-trigger__search-box').css({width: '100%'});
+           /* setTimeout(function(){
+
+            }, 10);*/
+            $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        }else{
+            $(".search-trigger__container").animate({top: "35"}, 75)
+            $('.search-trigger__search-box').css({width: '100%'});
+            setTimeout(function(){
+                $('.search-trigger__container').toggle();
+            }, 250);
+            $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+        }
         currentView = getViewport();
     } else {
+        $('.search-trigger__container').toggle();
         $('.search-trigger__search-box').animate({width: '170px'}, 600);
         $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
         $('.search-trigger__icon').animate({left: '145'}, 150);
+        $(".search-trigger__container").css({top: "0"})
         currentView = getViewport();
     }
-}
 
+
+}
+function adjustSearchBox(){
+    $('.search-trigger__search-box').css({width: '0'});
+    $('.search-trigger').removeClass('search-trigger--open');
+    $('.search-trigger__icon').removeClass('search-trigger__icon--open');
+    $('.search-trigger__container').hide();
+    if (getViewport() == "mobile"){
+        $(".search-trigger__container").css({top: "35"})
+        $('.search-trigger__search-box').css({width: '100%'});
+        $('.search-trigger__icon').css({left: '10'});
+    } else {
+        $('.search-trigger__icon').css({left: '0'});
+        $(".search-trigger__container").css({top: "0"})
+    }
+}
 function closeSearchBox () {
 
     $('.search-trigger__search-box').animate({width: '0'}, 600);
     $('.search-trigger').removeClass('search-trigger--open');
-
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
 if (getViewport() != "mobile") {
     $('.search-trigger__icon').animate({left: '0'}, 50);
 }
     setTimeout(function(){
         $('.search-trigger__container').hide();
-    }, 400);
+    }, 100);
 };
 
 $(document).on("click tap", function (e) {
@@ -247,7 +273,6 @@ $('.megamenu-trigger').on('click', function(){
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
     closeContactForm();
-    console.log($('.megamenu-trigger__icon'))
     $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
 
     if(getViewport() != "mobile") {
@@ -427,7 +452,8 @@ $(window).resize(function(){
     headerPosition();
     resizeMegaMenu();
     if(thisView != currentView){
-        closeSearchBox();
+        //closeSearchBox();
+        adjustSearchBox();
         closeContactForm();
     }
 
@@ -2464,7 +2490,6 @@ $(".product-row__tile__img-tile__img").click(function(){
 
 });
 function productTileHeight() {
-console.log(getViewport())
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if ($(".product-row").length != 0) {
             $(".product-row").each(function () {
