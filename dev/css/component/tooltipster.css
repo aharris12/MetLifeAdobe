@@ -271,11 +271,10 @@
 
 .tooltip {
 	position: absolute;
-	right: -32px!important;
-	top: 6px;
+	right: -25px!important;
+	top: 9px;
 	z-index: 1999;
 	fill: #429dd9;
-	width: 30px;
-	height: 30px;
-	padding-right: 9px;
+	width: 19px;
+	height: 19px;
 }
