@@ -11361,10 +11361,14 @@ ul.bullet-list {
     border-bottom: 1px solid #add0f0;
 }
 
-.product-card .action p a[href="tel"] {
+.product-card .action p a[href*='tel'] {
     color: black;
     border-bottom: none;
     cursor: default;
+}
+.product-card .action p a[href*='tel']:hover {
+    text-decoration: none;
+    color: black;
 }
 .product-card .action p a:hover{
     text-decoration: none;
@@ -11577,6 +11581,9 @@ ul.bullet-list {
 
     .company-search-input-container {
         text-align: left;
+    }
+    .product-card .action p a[href*='tel'] {
+        pointer-events: none;
     }
 
 }
@@ -13192,10 +13199,13 @@ span.errorRadio {
     font-size: 14px;
     line-height: 15px;
 }
-
+.suggestionsbox table tbody tr:hover {
+    background-color: #f2f2f2;
+}
 .suggestionsbox table tbody tr:first-child td {
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 13px;
 }
 
 .suggestionsbox table tbody tr:last-child td {
@@ -13204,13 +13214,18 @@ span.errorRadio {
 }
 
 .suggestionsbox table tbody tr td {
-    padding: 5px 10px;
+    padding: 1px 10px;
 }
 
 .suggestionsbox table tbody tr:first-child td:first-child {
     padding: 0px;
 }
-
+.suggestionsbox table tbody tr:first-child {
+     display: none;
+ }
+.suggestionsbox table tbody tr:last-child {
+    display: none;
+}
 @media (min-width: 768px) {
     .suggestionsbox table {
         width: 170px;

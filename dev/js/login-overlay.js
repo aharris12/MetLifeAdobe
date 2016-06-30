@@ -1,6 +1,17 @@
 var loginTypesPosition = 0;
+window.addEventListener("orientationchange", function() {
+    // Announce the new orientation number
 
-$('.login-types').css('top', $(window).height() - 70 + 'px');
+    if (screen.height > screen.width){
+        $('.login-types').css('top', $(window).height() - 70 + 'px');
+    }
+
+    if (screen.height < screen.width){
+        $('.login-types').css('top', $(window).height() - 70 + 'px');
+    }
+
+}, false);
+
 
 $('.login-container--close').click(function () {
     $('.login-container').hide();
