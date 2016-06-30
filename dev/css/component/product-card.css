@@ -77,10 +77,14 @@
     border-bottom: 1px solid #add0f0;
 }
 
-.product-card .action p a[href="tel"] {
+.product-card .action p a[href*='tel'] {
     color: black;
     border-bottom: none;
     cursor: default;
+}
+.product-card .action p a[href*='tel']:hover {
+    text-decoration: none;
+    color: black;
 }
 .product-card .action p a:hover{
     text-decoration: none;
@@ -293,6 +297,9 @@
 
     .company-search-input-container {
         text-align: left;
+    }
+    .product-card .action p a[href*='tel'] {
+        pointer-events: none;
     }
 
 }
