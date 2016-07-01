@@ -660,7 +660,6 @@ $(".product__selector").on("change", function(){
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
 	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
 	$(".cta_header_quote_type_of_insurance--sub").hide();
-	$(".js-productSelector").addClass("pull-right");
 	$(".product__selector--sub").val("")
 	$("[data-product-sub='"+ selectedProduct +"']").show();
 	$(".js-productSelector").attr("href", "#");

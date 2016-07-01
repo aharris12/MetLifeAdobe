@@ -36,7 +36,7 @@
     border-radius: 2px;
     font-weight: 400;
 }
-.cta_header_quote .cta_header_quote_type_of_insurance--sub {
+.cta_header_quote .cta_header_quote_type_of_insurance--sub:not(:first-child) {
     width:80%;
     display: none;
 }
