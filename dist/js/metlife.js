@@ -7975,21 +7975,18 @@ $('.js-searchIcon').click(function () {
 
 });
 
+$(".ss-gac-a, .ss-gac-b").on("click", function() {
+	var searchTerm= $(this).find(".ss-gac-c").text();
+	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		var searchTerm= $(this).text();
+		ServicesAPI.legacySearch(searchTerm);
 
-
-//Fix for header search DE9206, 6/29/16
-$(".ss-gac-c").click(function() {
-     if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-      if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-          ServicesAPI.legacySearch($(this).text());
-      }
-
-     } else {
-      //For Integration we only need this statment
-      if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-       ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
-      }
-     }
+	} else {
+		//For Integration we only need this statment
+		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+			ServicesAPI.redirectToSearchResultsPage(searchTerm);
+		}
+	}
 });
 
 
