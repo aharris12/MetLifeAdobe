@@ -76,10 +76,10 @@ function applyOnlineNow(e) {
                 enctype:"multipart/form-data",
                 contents:{increment:callCount++,fileFields: "attachURL"},
                 success: function (e) {
-                      console.log(e);
+
                       window.location = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
                       var str = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
-                      console.log(e.redirecturl);
+
                       redirectToOEA(str)
                 },
                 error: function(){
@@ -99,10 +99,10 @@ function applyOnlineNow(e) {
                 enctype:"multipart/form-data",
                 contents:{increment:callCount++,fileFields: "attachURL"},
                 success: function (e) {
-                      console.log(e);
+
                       window.location = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
                       var str = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
-                      console.log(e.redirecturl);
+
                       redirectToOEA(str)
                 },
                 error: function(){

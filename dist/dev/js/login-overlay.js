@@ -117,7 +117,6 @@ $('.login-type-trigger__title').on('click touchstart', function (e) {
             toggleLoginTypes()
             break;
         case 'touchstart':
-            console.log(clickEvent)
             toggleLoginTypes()
             break;
         default:
@@ -164,10 +163,9 @@ $('.login-type__detail').click(function () {
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
 
             $(this).find('ul').slideDown();
-            console.log("switch to down");
         } else {
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            console.log("switch to right");
+
         }
     }
 });

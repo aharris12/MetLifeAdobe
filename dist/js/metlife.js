@@ -1103,17 +1103,14 @@ $(".btn-group .btn").click(function(){
 
 $(".find-office__zip-city-state").on("focus", function(){
     if (selectedBtnGroupOption == "vision"){
-        console.log("vision")
         $('.find-office__zip-city-state-container').addClass('full-width');
         $('.find-office__vision-container').css('display','block');
         $('.find-office__dental-container').css('display','none');
     }else if(selectedBtnGroupOption == "dental") {
-        console.log("dental")
         $('.find-office__zip-city-state-container').addClass('full-width');
         $('.find-office__vision-container').css('display','none');
         $('.find-office__dental-container').css('display','block');
     }else{
-        console.log("other")
         $('.find-office__vision-container').css('display','none');
         $('.find-office__dental-container').css('display','none');
     }
@@ -2009,7 +2006,6 @@ $('.login-type-trigger__title').on('click touchstart', function (e) {
             toggleLoginTypes()
             break;
         case 'touchstart':
-            console.log(clickEvent)
             toggleLoginTypes()
             break;
         default:
@@ -2056,10 +2052,9 @@ $('.login-type__detail').click(function () {
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
 
             $(this).find('ul').slideDown();
-            console.log("switch to down");
         } else {
             $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            console.log("switch to right");
+
         }
     }
 });
@@ -2470,7 +2465,6 @@ function micrositeComparisonChart() {
             $(".microsite-product-chart .carousel .carousel-inner .carousel-item").not('.visible-xs').each(function () {
                 //number of column wrapper in a single carousel-item
                 var columnWrapperNum = $(this).find('.column-wrapper').not('.visible-xs').length;
-                console.log("number of column wrapper in a carousel-item " + columnWrapperNum);
                 $(this).css('width', columnWrapperNum/columnWrapperNumTotal * 100 + '%');
 
                 $(this).find('.column-wrapper').css('width', 100 / columnWrapperNum + '%');
@@ -2873,10 +2867,10 @@ function applyOnlineNow(e) {
                 enctype:"multipart/form-data",
                 contents:{increment:callCount++,fileFields: "attachURL"},
                 success: function (e) {
-                      console.log(e);
+
                       window.location = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
                       var str = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
-                      console.log(e.redirecturl);
+
                       redirectToOEA(str)
                 },
                 error: function(){
@@ -2896,10 +2890,10 @@ function applyOnlineNow(e) {
                 enctype:"multipart/form-data",
                 contents:{increment:callCount++,fileFields: "attachURL"},
                 success: function (e) {
-                      console.log(e);
+
                       window.location = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
                       var str = JSON.parse(e.substring(e.indexOf("{"),e.indexOf("}")+1))["redirecturl"];
-                      console.log(e.redirecturl);
+
                       redirectToOEA(str)
                 },
                 error: function(){
@@ -7977,14 +7971,17 @@ $('.js-searchIcon').click(function () {
 
 $(".ss-gac-a, .ss-gac-b").on("click", function() {
 	var searchTerm= $(this).find(".ss-gac-c").text();
+	console.log(searchTerm)
+	$(".search-trigger__search-box").val(searchTerm)
+	console.log($(".search-trigger__search-box").val())
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		var searchTerm= $(this).text();
-		ServicesAPI.legacySearch(searchTerm);
+		$(".search-trigger__search-box").val(searchTerm)
+		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
 	} else {
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage(searchTerm);
+			ServicesAPI.redirectToSearchResultsPage($(".search-trigger__search-box").val());
 		}
 	}
 });
@@ -10827,7 +10824,6 @@ if ($(".glossary").length > 0) {
         if ($(this).hasClass("active")) {
             var height = $(".global-header").height() + $(".glossary-selector .selector").height();
             var location = $(".glossary-group span:contains(" + $(this).attr("data-link") + ")");
-            console.log(location.offset());
             $('html,body').animate({scrollTop: location.offset().top - height}, 'slow');
         }
     });
@@ -11547,7 +11543,6 @@ $(document).ready(function(){
 function removePaddingWrapper(){
 	var container = $(".container.contextual-links");
 
-console.log(container.length > 0)
 	if(container.length > 0){
 
 		container.next(".container").find(".wrapper").css("padding-top", "0px");

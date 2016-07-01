@@ -176,7 +176,6 @@ function micrositeComparisonChart() {
             $(".microsite-product-chart .carousel .carousel-inner .carousel-item").not('.visible-xs').each(function () {
                 //number of column wrapper in a single carousel-item
                 var columnWrapperNum = $(this).find('.column-wrapper').not('.visible-xs').length;
-                console.log("number of column wrapper in a carousel-item " + columnWrapperNum);
                 $(this).css('width', columnWrapperNum/columnWrapperNumTotal * 100 + '%');
 
                 $(this).find('.column-wrapper').css('width', 100 / columnWrapperNum + '%');

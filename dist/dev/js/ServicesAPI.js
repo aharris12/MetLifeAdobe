@@ -783,14 +783,17 @@ $('.js-searchIcon').click(function () {
 
 $(".ss-gac-a, .ss-gac-b").on("click", function() {
 	var searchTerm= $(this).find(".ss-gac-c").text();
+	console.log(searchTerm)
+	$(".search-trigger__search-box").val(searchTerm)
+	console.log($(".search-trigger__search-box").val())
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		var searchTerm= $(this).text();
-		ServicesAPI.legacySearch(searchTerm);
+		$(".search-trigger__search-box").val(searchTerm)
+		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
 	} else {
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage(searchTerm);
+			ServicesAPI.redirectToSearchResultsPage($(".search-trigger__search-box").val());
 		}
 	}
 });

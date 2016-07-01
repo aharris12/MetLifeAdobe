@@ -45,7 +45,6 @@ if ($(".glossary").length > 0) {
         if ($(this).hasClass("active")) {
             var height = $(".global-header").height() + $(".glossary-selector .selector").height();
             var location = $(".glossary-group span:contains(" + $(this).attr("data-link") + ")");
-            console.log(location.offset());
             $('html,body').animate({scrollTop: location.offset().top - height}, 'slow');
         }
     });
