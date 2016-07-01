@@ -785,10 +785,10 @@ $('.js-searchIcon').click(function () {
 
 
 //Fix for header search DE9206, 6/29/16
-$(".ss-gac-a").click(function() {
+$(".ss-gac-c").click(function() {
      if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
       if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-          ServicesAPI.legacySearch($(".ss-gac-a").val());
+          ServicesAPI.legacySearch($(this).text());
       }
 
      } else {
