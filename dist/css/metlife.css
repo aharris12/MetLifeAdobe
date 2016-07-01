@@ -6370,6 +6370,11 @@ ol.promocard_content__list li:after {
         border-bottom: 1px solid #e3e3e3;
     }
 }
+@media screen and (max-width: 767px) {
+    .product-module {
+        margin-bottom: 0px;
+    }
+}
 .list-filter {
     width: 100%;
     margin: 0 auto;
@@ -8522,7 +8527,7 @@ body{
         text-align: left;
     }
     .single-promo .product-row__tile--img-tile__text {
-        padding: 20px 3%;
+        padding: 16px 3%;
     }
 
     .product-row__tile--img-tile__text--left {

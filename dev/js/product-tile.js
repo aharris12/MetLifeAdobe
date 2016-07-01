@@ -87,7 +87,7 @@ function productTileHeight() {
         }
     } else {
         if ($(".product-row").length != 0) {
-            $(".product-row").parent().css("padding-top","10px");
+            $(".product-row").parent().css("padding","10px");
             $(".product-row").each(function () {
                 var elements = $(this).find(".product-row__tile__top");
                 var bottomElements = $(this).find(".product-row__tile__top");

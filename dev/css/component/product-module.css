@@ -410,3 +410,8 @@
         border-bottom: 1px solid #e3e3e3;
     }
 }
+@media screen and (max-width: 767px) {
+    .product-module {
+        margin-bottom: 0px;
+    }
+}
