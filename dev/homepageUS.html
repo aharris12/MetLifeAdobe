@@ -1159,49 +1159,59 @@
 <div class="quote-office">
     <div class="row no-padding-top">
 
-        <!-- Product Selector -->
-        <div class="get-quote__container home-quote__container cta_header_quote">
-            <p>I am interestead in:</p>
+	    <!-- Product Selector -->
+	    <div class="get-quote__container home-quote__container cta_header_quote">
+		    <p>I am interestead in:</p>
 
-
-            <div class="select_wrapper cta_header_quote_type_of_insurance">
-	        <select required="required" class="insurance-type product__selector">
-		        <option value="" selected disabled>Please Select Insurance Type</option>
-		        <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
-		        <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
-		        <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
-
-	        </select>
-        </div>
-	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="LifeInsurance">
-		        <select required="required" class="insurance-type product__selector" disabled>
-			        <option value="" selected disabled>Please Select Insurance Type</option>
-			        <option value="Home" data-product-url="category.html">Home</option>
-			        <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-			        <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-			        <option value="Pet" data-product-url="form-library.html">Pet</option>
-		        </select>
-	        </div>
-	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="PersonalAccidentInsurance">
-		        <select required="required" class="insurance-type product__selector" disabled>
-			        <option value="" selected disabled>Please Select Insurance Type</option>
-			        <option value="Home" data-product-url="category.html">Home</option>
-			        <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-			        <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-			        <option value="Pet" data-product-url="form-library.html">Pet</option>
-		        </select>
-	        </div>
-	        <div class="select_wrapper cta_header_quote_type_of_insurance--sub cta_header_quote_type_of_insurance" data-product-type="PropertyInsurance"k>
-		        <select required="required" class="insurance-type product__selector" disabled>
-			        <option value="" selected disabled>Please Select Insurance Type</option>
-			        <option value="Home" data-product-url="category.html">Home</option>
-			        <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-			        <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-			        <option value="Pet" data-product-url="form-library.html">Pet</option>
-		        </select>
-	        </div>
-            <a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
-        </div>
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper">
+			    <svg class="icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+			    </svg>
+			    <select required="required" class="insurance-type product__selector form-user-ctrl user-select">
+				    <option value="" selected disabled>Please Select Insurance Type</option>
+				    <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
+				    <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
+				    <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
+			    </select>
+		    </div>
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="LifeInsurance">
+			    <svg class="icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+			    </svg>
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+				    <option value="" selected disabled>I want protection for</option>
+				    <option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set time</option>
+				    <option value="Auto" data-product-url="LifeInsurancewithSaving.html">Life Insurance with Saving</option>
+				    <option value="Life" data-product-url="CreditLifeInsurance.html">Credit Life Insurance</option>
+				    <option value="Pet" data-product-url="HelpMeChoose">Help Me Choose</option>
+			    </select>
+		    </div>
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PersonalAccidentInsurance">
+			    <svg class="icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+			    </svg>
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+				    <option value="" selected disabled>I want protection for</option>
+				    <option value="Home" data-product-url="Individual.html">An Individual</option>
+				    <option value="Auto" data-product-url="head.html">A head of the family</option>
+				    <option value="Life" data-product-url="senior.html">A senior citizen</option>
+				    <option value="Pet" data-product-url="Injury.html">An Injury</option>
+			    </select>
+		    </div>
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PropertyInsurance">
+			    <svg class="icon">
+				    <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+			    </svg>
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+				    <option value="" selected disabled>Please Select Insurance Type</option>
+				    <option value="Home" data-product-url="category.html">Home</option>
+				    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
+				    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
+				    <option value="Pet" data-product-url="form-library.html">Pet</option>
+			    </select>
+		    </div>
+		    <a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
+	    </div>
 
         <!-- FAX -->
         <div class="find-office__container">
@@ -1240,6 +1250,9 @@
                     <div class="col-sm-9 find-office__dental-container">
                         <div class="form-item">
                             <div class="form-item__field form-icon-wrapper">
+	                            <svg class="icon">
+		                            <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+	                            </svg>
                                 <select class="find-office__dental">
                                     <option selected="selected" value="">Select your network</option>
                                     <option value="DPPO">PDP</option>
@@ -1255,12 +1268,15 @@
                     <div class="col-sm-9 find-office__vision-container">
                         <div class="form-item">
                             <div class="form-item__field form-icon-wrapper">
-                                <!--<select class="find-office__vision">
+	                            <svg class="icon">
+		                            <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+	                            </svg>
+                                <select class="find-office__vision">
                                     <option selected="selected" value="">Select your plan</option>
                                     <option value="ppo">MetLife Vision PPO</option>
                                     <option value="dvp">MetLife Discount Vision</option>
                                     <option value="SafeGuard">SafeGuard Vision</option>
-                                </select>-->
+                                </select>
                             </div>
                         </div>
                         <a href="#" class="white" data-target="vision_overlay">Don't Know your plan?</a>
@@ -1931,8 +1947,8 @@
 
 
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
-<!-- Required JS Libraries -->
-<!-- build:js js/vendors.min.js -->
+
+<!-- build:js js/metlife.min.js -->
 <script src="js/_plugins/svg4everybody.ie8.js"></script>
 <script src="js/_lib/jquery-1.11.3.js"></script>
 <script src="js/_lib/bootstrap.js"></script>
@@ -1945,12 +1961,6 @@
 <script src="js/_plugins/jquery.cookie.js"></script>
 <script src="js/_plugins/jquery.bootpag.min.js"></script>
 <script src="js/_plugins/jquery.inview.js"></script>
-<!-- /build -->
-<!-- build:js js/feedback.min.js -->
-<script src="js/_plugins/oo_engine.min.js"></script>
-<script src="js/_plugins/oo_conf.js"></script>
-<!-- /build -->
-<!-- build:js js/metlife.min.js -->
 <script src="js/variable.js"></script>
 <script src="js/utility.js"></script>
 <script src="js/global-header.js"></script>
@@ -1968,7 +1978,6 @@
 <script src="js/subnavigation.js"></script>
 <script src="js/login-overlay.js"></script>
 <script src="js/form.js"></script>
-
 <script src="js/table-variations.js"></script>
 <script src="js/media-contact.js"></script>
 <script src="js/form-card.js"></script>
@@ -2000,6 +2009,10 @@
 <script src="js/share-chat.js"></script>
 <script src="js/product-card.js"></script>
 <script src="js/inview.js"></script>
+<!-- /build -->
+<!-- build:js js/feedback.min.js -->
+<script src="js/_plugins/oo_engine.min.js"></script>
+<script src="js/_plugins/oo_conf.js"></script>
 <!-- /build -->
 
 <script type="text/javascript" src="js/dtagent622_bdxjnpr23_1019.js" data-dtconfig="tp=500,50,0|cors=1|reportUrl=https://metlife.compuwareapmaas.com:8443/dynaTraceMonitor">&nbsp;</script>

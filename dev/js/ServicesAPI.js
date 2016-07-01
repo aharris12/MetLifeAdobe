@@ -651,7 +651,42 @@ $('.productUserQuestion').on('blur', function () {
 });
 //Contact Forms
 
+/****Product Selector****************************************/
 
+$(".product__selector").on("change", function(){
+	var selectedProduct = $(this).find(':selected').attr("data-product-type");
+	$(this).removeClass("error");
+	$(".product__selector--sub").removeClass("error");
+	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
+	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+	$(".cta_header_quote_type_of_insurance--sub").hide();
+	$(".js-productSelector").addClass("pull-right");
+	$(".product__selector--sub").val("")
+	$("[data-product-sub='"+ selectedProduct +"']").show();
+	$(".js-productSelector").attr("href", "#");
+});
+
+$(".product__selector--sub").on("change", function(){
+	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+	$(this).removeClass("error");
+	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
+	$(".js-productSelector").attr("href", productSelectorPage);
+});
+
+$(".js-productSelector").click(function(e){
+	var url = $(this).attr("href");
+	if($(".product__selector").find(':selected').val() ==""){
+		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+		$(".product__selector").addClass("error")
+	}
+	if($(".product__selector--sub").find(':selected').val() ==""){
+		$(".product__selector--sub").addClass("error")
+		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+	}
+	if(url == "#"){
+		e.preventDefault();
+	}
+});
 /****Blog Search****************************************/
 
 
@@ -3108,7 +3143,13 @@ var ServicesAPI = {
 					urlNode = urlNode[0];
 				}
 		}
-		ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+		if (lead == "NewLead") {
+			ServicesAPI.AddInputParameter(formObjectName, "input", "formSubmissionSource", urlNode, document);
+		}
+		if (lead == "ServiceLead") {
+			ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+		}
+
 		var validationSuccess = true;
 		if (validationSuccess) {
 			/*var tempURL = "www.metlife.com";

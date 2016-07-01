@@ -99,7 +99,14 @@ module.exports = function (grunt) {
                 ],
                 dest: 'dist/css/metlife.css'
             },
-            vendors: {
+            feedback: {
+                src: [
+                    'dev/js/_plugins/oo_engine.min.js',
+                    'dev/js/_plugins/oo_conf.js'
+                ],
+                dest: 'dist/js/feedback.js'
+            },
+            components: {
                 src: [
                     'dev/js/_plugins/svg4everybody.ie8.js',
                     'dev/js/_lib/jquery-1.11.3.js',
@@ -113,19 +120,7 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/jquery.cookie.js',
                     'dev/js/_plugins/jquery.bootpag.min.js',
                     'dev/js/_plugins/jquery.inview.js',
-                    'dev/js/_plugins/jquery.tooltipster.min.js'
-                ],
-                dest: 'dist/js/vendors.js'
-            },
-            feedback: {
-                src: [
-                    'dev/js/_plugins/oo_engine.min.js',
-                    'dev/js/_plugins/oo_conf.js'
-                ],
-                dest: 'dist/js/feedback.js'
-            },
-            components: {
-                src: [
+                    'dev/js/_plugins/jquery.tooltipster.min.js',
                     'dev/js/variable.js',
                     'dev/js/utility.js',
                     'dev/js/global-header.js',
@@ -183,11 +178,6 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 banner: '<%= banner %>'
-            },
-            target1: {
-                files: {
-                    'dist/js/vendors.min.js': 'dist/js/vendors.js'
-                }
             },
             target2: {
                 files: {

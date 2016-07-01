@@ -1914,6 +1914,17 @@ input[type="radio"] {
     }
 }
 
+.login-type-options .form-icon-wrapper svg {
+    position: absolute;
+    top: 9px;
+    right: 2px;
+    fill: #666;
+    width: 21px;
+    height: 21px;
+    z-index: 601;
+    pointer-events: none;
+}
+
 strong {
     font-weight:600;
 }
@@ -2341,6 +2352,7 @@ table {
 
 .wrapper.section-title {
     padding: 20px 15px 10px 15px;
+    text-align: center;
     text-align: center;
 }
 
@@ -13208,7 +13220,7 @@ span.errorRadio {
 
 .suggestionsbox table tbody {
     visibility: visible;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 15px;
 }
 .suggestionsbox table tbody tr:hover {
@@ -13226,7 +13238,7 @@ span.errorRadio {
 }
 
 .suggestionsbox table tbody tr td {
-    padding: 1px 10px;
+    padding: 10px 10px;
 }
 
 .suggestionsbox table tbody tr:first-child td:first-child {
@@ -13250,7 +13262,7 @@ span.errorRadio {
 @media (min-width: 1025px) {
     .suggestionsbox table {
         width: 170px;
-        left: 224px;
+        left: 225px;
     }
 
 }
@@ -13309,13 +13321,7 @@ span.errorRadio {
     margin-bottom: 0px;
     padding: 8px 12px;
     padding-right: 17px;
-    border: 0px solid #000000;
-    color: #666666;
     background-color: white;
-
-    background-position: top 50% right 0px;
-    background-size: 18px 40px;
-    background-repeat: no-repeat;
     font-size: 13px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -17449,13 +17455,12 @@ text-align: center;
 
 .tooltip {
 	position: absolute;
-	right: -32px!important;
-	top: 6px;
+	right: -25px!important;
+	top: 9px;
 	z-index: 1999;
 	fill: #429dd9;
-	width: 30px;
-	height: 30px;
-	padding-right: 9px;
+	width: 19px;
+	height: 19px;
 }
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {

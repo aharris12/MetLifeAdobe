@@ -4,10 +4,7 @@ var zipcode = 0;
 var isNumber = false;
 
 
-$(".product__selector").on("change", function(){
-    var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-    $(".js-productSelector").attr("href", productSelectorPage);
-});
+
 
 $(".find-office__zip-city-state").on("keyup", function(){
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');

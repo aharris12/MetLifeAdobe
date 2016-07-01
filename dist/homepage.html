@@ -16,7 +16,7 @@
     <link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 06/30/2016 @16:37:13 by Alex Soufi for MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 07/01/2016 @09:08:56 by MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
     <!--Staging -->
@@ -527,7 +527,7 @@
                     <!--<svg class="icon info tooltip">-->
                         <!--<use xlink:href="/static/images//icons-metlife.svg#icon-info"></use>-->
                     <!--</svg>-->
-                    <img src="/static/images//tooltip.png" class="tooltip tip-icon" title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
+                    <img src="/static/images//ico_tooltip_blue.png" class="tooltip tip-icon" title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
                 </div>
                 <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
                     <div class="login-popout-msg">
@@ -1038,7 +1038,42 @@
                 <svg class="icon">
                     <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
                 </svg>
-                <select required="required" class="insurance-type product__selector">
+                <select required="required" class="insurance-type product__selector form-user-ctrl user-select">
+                    <option value="" selected disabled>Please Select Insurance Type</option>
+                    <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
+                    <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
+                    <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
+                </select>
+            </div>
+            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="LifeInsurance">
+                <svg class="icon">
+                    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
+                </svg>
+                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
+                    <option value="" selected disabled>Please Select Insurance Type</option>
+                    <option value="Home" data-product-url="category.html">Home</option>
+                    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
+                    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
+                    <option value="Pet" data-product-url="form-library.html">Pet</option>
+                </select>
+            </div>
+            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PersonalAccidentInsurance">
+                <svg class="icon">
+                    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
+                </svg>
+                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
+                    <option value="" selected disabled>Please Select Insurance Type</option>
+                    <option value="Home" data-product-url="category.html">Home</option>
+                    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
+                    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
+                    <option value="Pet" data-product-url="form-library.html">Pet</option>
+                </select>
+            </div>
+            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PropertyInsurance">
+                <svg class="icon">
+                    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
+                </svg>
+                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
                     <option value="" selected disabled>Please Select Insurance Type</option>
                     <option value="Home" data-product-url="category.html">Home</option>
                     <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
@@ -2912,10 +2947,8 @@
 
 
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
-<!-- Required JS Libraries -->
-<script src="js/vendors.min.js"></script>
-<script src="js/feedback.min.js"></script>
 <script src="js/metlife.min.js"></script>
+<script src="js/feedback.min.js"></script>
 
 <!--Staging -->
 <!--<script type="text/javascript">_satellite.pageBottom();</script>-->
