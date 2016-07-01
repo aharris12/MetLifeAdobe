@@ -89,7 +89,11 @@ $('body').on ('click touchstart', function(e){
                 //var cs = document.getElementById(("countryList");
 
                 if($("#countryList").is(":visible") == true){
-                    //if(e.target.id !="countrySelected") closeCountryList();
+                    if (e.target.id == "countryList") {
+
+                    } else {
+                        closeCountryList();
+                    }
                 }else{
                     processCountrySelection(e);
                 }
