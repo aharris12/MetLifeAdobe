@@ -30,7 +30,7 @@
     font-weight: 400;
 }
 .cta_header_quote .cta_header_quote_type_of_insurance--sub {
-    width:80%;
+    width:100%;
 }
 .select_wrapper select:disabled{
     background-color: #ccc!important;
@@ -67,6 +67,7 @@
 
  .cta_header_quote .btn_global {
     margin: 0px;
+     float: left;
 }
 
 /* line 61, ../../../sass/_ctaHeaderToolMobile.scss */
@@ -422,7 +423,13 @@
 }
 
 @media screen and (min-width: 768px) {
-
+    .cta_header_quote .cta_header_quote_type_of_insurance--sub {
+        width:80%;
+    }
+    .cta_header_quote .btn_global {
+        margin: 0px;
+        float: right;
+    }
      .cta_header_quote {
         width: 48%;
         margin-bottom: 0;

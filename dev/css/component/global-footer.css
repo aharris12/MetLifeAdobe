@@ -237,7 +237,7 @@
     position: relative;
     top: -2px;
     top: 0;
-    background-image: url("/static/images/country-flags-sprite.png");
+    background-image: url("http://localhost:63348/MetLifeAdobe/dev/images/country-flags-sprite.png");
     background-position: 0 0;
 }
 
@@ -456,7 +456,7 @@
     cursor: pointer;
 }
 .footer-country .form-icon-wrapper svg {
-    right: 25px;
+    right: 20px;
 }
 
 .footer-language {
@@ -490,7 +490,6 @@
     font-size: 16px;
     line-height: 2.3em;
     text-align: left;
-    padding-left: 10px;
     text-transform: capitalize;
 }
 
@@ -547,14 +546,14 @@
     display: inline-block;
 }
 
-.social__link {
+.social__link:not(:first-of-type) {
     display: inline-block;
     margin-left: 15px;
 }
 
 .social__link svg {
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
 }
 
 .social__label {
@@ -598,15 +597,15 @@
 
 .footer-legal__link {
     text-align: center;
-    font-size: 1em;
+    font-size: 13px;
+    line-height: 24px;
     padding-bottom: 20px;
     margin: 0;
 }
 
 .footer-legal__link a{
-    margin: 0 5px;
-    font-size: 14px;
-    line-height: 15px;
+    margin: 0 3px;
+
 }
 
 .footer-legal__link > .footer-legal__bullet:before {
@@ -630,6 +629,8 @@
 
 .footer-legal__bullet {
     display: inline-block;
+    font-size: 17px;
+    line-height: 15px;
 }
 
 .footer-legal__copyright {
@@ -639,6 +640,11 @@
 }
 
 @media screen and (min-width: 768px) {
+    .social__link svg {
+        height: 19px;
+        width: 19px;
+    }
+
     .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
         font-size: 1em;
         line-height: 24px;
@@ -710,6 +716,9 @@
         float: left;
         margin:9px 0 0 10px;
     }
+    .social__link:not(:first-of-type){
+            margin-left: 19px;
+        }
 
     .footer-country-language-social {
         padding-bottom: 25px;
@@ -729,7 +738,7 @@
     }
 
     .footer-country {
-        width: 315px;
+
     }
 
     .footer-language {
@@ -754,10 +763,9 @@
     }
 
     .country__label {
-        /*width: 70px;*/
-        padding-right: 10px;
-        padding-left: 10px;
         font-size: 12px;
+        padding-top: 5px;
+        margin-right: 10px;
     }
 
     .country__name {
@@ -772,7 +780,7 @@
         left: 45px;
         position: absolute;
         font-size: 12px;
-        top: 4px;
+        top: 2px;
         color: #2c77c5;
     }
 
@@ -836,9 +844,8 @@
     }
 
     .footer-legal__link {
+        font-size: 12px;
         text-align: left;
-        font-size: 1em;
-        line-height: 1.5em;
         padding-bottom: 0;
         border-bottom: 0px solid #ccc;
         margin: 0;
@@ -852,6 +859,9 @@
 }
 
 @media (max-width: 767px) {
+    .country__label {
+       padding-left: 10px;
+    }
     .dd-selected label {
         display: none;
     }
@@ -879,7 +889,7 @@
 
     .country__label {
         text-align: left;
-        margin-top: 6px;
+
     }
 }
 
@@ -890,6 +900,12 @@
 
     .dd-options {
         width: 95.5%;
+    }
+}
+@media screen and (max-width: 367px) {
+    .footer-legal__link a{
+        font-size: 14px;
+        line-height: 15px;
     }
 }
 
@@ -949,6 +965,21 @@
         font-size: 12px;
         line-height: 16px;
     }
+    .footer-legal__link {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .country__label {
+        margin-right: 0px;
+        line-height: 18px;
+        padding-top:5px;
+    }
+    .footer-country .form-icon-wrapper svg {
+        right: 10px;
+    }
+    .language__link:first-child {
+        padding-left: 10px;
+    }
     .dd-pointer.dd-pointer-down svg {
         top: 3px;
         right: 0;
@@ -987,9 +1018,12 @@
         font-size: 16px;
         margin-top: 0;
     }
+    .social__link:not(:first-of-type) {
+        margin-left: 17px;
+    }
     .social__link svg {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
     }
 }
 
