@@ -3696,14 +3696,10 @@ a:visited {
 
     .megamenu--promoboxes{
         display: inline-block;
-        width: 50%;
-        padding-left: 20px;
+        width: 48%;
     }
-    .megamenu--promoboxes:not(:first-of-type){
-        padding-left: 20px;
-    }
-    .megamenu--promoboxes:last-of-type{
-        padding-right: 20px;
+    .megamenu--promoboxes:first-of-type{
+        margin-right: 20px;
     }
     .megamenu--promobox{
         min-height: 110px;
@@ -3816,15 +3812,14 @@ a:visited {
     .megamenu__sub-item-label {
         margin: 0;
         margin-left: 20px;
-        display: block;
+        display:block;
         font-size: 12px;
         line-height: 14px;
-        color: #fff;
+        color:#fff;
         text-decoration: none;
         padding-bottom: 15px;
-        padding-top: 19px;
+        padding-top: 15px;
         font-weight: 400;
-        height: 50px;
     }
     .megamenu__sub-item-label:hover{
         color: #FFF;
@@ -3840,7 +3835,7 @@ a:visited {
 .megamenu__main-item .icon-chevron-down {
     position: absolute;
     right: 20px;
-    top: 25px;
+    top: 20px;
     z-index: 1500;
     width: 13px;
     height: 13px;
@@ -3964,6 +3959,12 @@ a:visited {
     padding-bottom: 100px;
 }
 @media screen and (min-width: 1024px) {
+    .megamenu--promoboxes:first-of-type{
+        padding-left: 20px;
+    }
+    .megamenu--promoboxes:last-of-type{
+        padding-right: 20px;
+    }
     .megamenu {
         padding: 50px 0 150px;
     }
@@ -5545,7 +5546,6 @@ ol.promocard_content__list li:after {
 }
 @media screen and (min-width: 768px) {
     .disclaimer {
-        padding-top: 50px;
         line-height: 16px;
         padding-top: 0px;
     }
@@ -5567,7 +5567,6 @@ ol.promocard_content__list li:after {
 
 @media screen and (min-width: 1024px) {
     .disclaimer {
-        padding-top: 50px;
         font-size: 12px;
         line-height: 18px;
     }

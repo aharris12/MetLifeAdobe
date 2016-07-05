@@ -16,7 +16,7 @@
     <link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 07/05/2016 @14:17:15 by MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 07/05/2016 @16:10:38 by MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
     <!--Staging -->
@@ -65,9 +65,16 @@
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
         <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
-            <div><span class="megamenu-trigger__icon"></span></div>
-            <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
-            <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+            <a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="/static/images//icons-metlife.svg#icon-menu"></use>
+                </svg>
+                <svg class="icon icon-close megamenu-trigger__icon">
+                    <use xlink:href="/static/images//icons-metlife.svg#icon-close"></use>
+                </svg>
+                <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+                <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+            </a>
         </div>
         <div class="col home-trigger" title="HOME" data-target="home">
             <a href="#" class="home-trigger__link">
@@ -100,9 +107,9 @@
         </div>
     </div>
     <div class="col-xs-4 col-sm-2 global-header__middle">
-        <h1><a href="#" title="MetLife Logo"><img src="/static/images//MetLife.png" alt="Metlife"
-                                                                      class="global-header__logo img-responsive"></a>
-        </h1>
+        <a href="#" title="MetLife Logo"><img src="/static/images//MetLife.png" alt="Metlife"
+                                              class="global-header__logo img-responsive"></a>
+
     </div>
     <div class="col-xs-4 col-sm-5 global-header__right">
         <!-- Contact Trigger -->
@@ -1040,45 +1047,44 @@
                 </svg>
                 <select required="required" class="insurance-type product__selector form-user-ctrl user-select">
                     <option value="" selected disabled>Please Select Insurance Type</option>
-                    <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
-                    <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
-                    <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
+                    <option value="Home" data-product-type="Life Insurance">Life Insurance</option>
+                    <option value="Auto" data-product-type="Personal Accident Insurance">Personal Accident Insurance</option>
+                    <option value="Life" data-product-type="Property Insurance">Property Insurance</option>
                 </select>
             </div>
-            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="LifeInsurance">
+            <div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="Life Insurance">
                 <svg class="icon">
                     <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
                 </svg>
-                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
-                    <option value="" selected disabled>Please Select Insurance Type</option>
-                    <option value="Home" data-product-url="category.html">Home</option>
-                    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-                    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-                    <option value="Pet" data-product-url="form-library.html">Pet</option>
+                <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
+                    <option value="" selected disabled>I want protection for</option>
+                    <option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set time</option>
+                    <option value="Auto" data-product-url="LifeInsurancewithSaving.html">Life Insurance with Saving</option>
+                    <option value="Life" data-product-url="CreditLifeInsurance.html">Credit Life Insurance</option>
+                    <option value="Pet" data-product-url="HelpMeChoose">Help Me Choose</option>
                 </select>
             </div>
-            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PersonalAccidentInsurance">
+            <div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Personal Accident Insurance">
                 <svg class="icon">
                     <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
                 </svg>
-                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
-                    <option value="" selected disabled>Please Select Insurance Type</option>
-                    <option value="Home" data-product-url="category.html">Home</option>
-                    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-                    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-                    <option value="Pet" data-product-url="form-library.html">Pet</option>
+                <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
+                    <option value="" selected disabled>I want protection for</option>
+                    <option value="Home" data-product-url="Individual.html">An Individual</option>
+                    <option value="Auto" data-product-url="head.html">A head of the family</option>
+                    <option value="Life" data-product-url="senior.html">A senior citizen</option>
+                    <option value="Pet" data-product-url="Injury.html">An Injury</option>
                 </select>
             </div>
-            <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PropertyInsurance">
+            <div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Property Insurance">
                 <svg class="icon">
                     <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
                 </svg>
-                <select required="required" class="insurance-type product__selector product__selector--sub form-user-ctrl user-select">
-                    <option value="" selected disabled>Please Select Insurance Type</option>
-                    <option value="Home" data-product-url="category.html">Home</option>
-                    <option value="Auto" data-product-url="subcategory-page-1.html">Auto</option>
-                    <option value="Life" data-product-url="subcategory-page-2.html">Life</option>
-                    <option value="Pet" data-product-url="form-library.html">Pet</option>
+                <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
+                    <option value="" selected disabled>I want protection my</option>
+                    <option value="Home" data-product-url="bag.html">Lost/Stolen Baggage</option>
+                    <option value="Auto" data-product-url="mobile.html">Mobile Protection</option>
+                    <option value="Life" data-product-url="pet.html">My pet</option>
                 </select>
             </div>
             <a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>

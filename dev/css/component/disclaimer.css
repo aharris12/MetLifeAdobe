@@ -33,7 +33,6 @@
 }
 @media screen and (min-width: 768px) {
     .disclaimer {
-        padding-top: 50px;
         line-height: 16px;
         padding-top: 0px;
     }
@@ -55,7 +54,6 @@
 
 @media screen and (min-width: 1024px) {
     .disclaimer {
-        padding-top: 50px;
         font-size: 12px;
         line-height: 18px;
     }
