@@ -3534,6 +3534,7 @@ a:visited {
     color:#fff;
     display: inline-block;
     padding-top: 2px;
+    height: 50px;
 }
 .login-trigger__label:hover,
 .contact-trigger__label:hover,
@@ -3698,6 +3699,9 @@ a:visited {
         width: 50%;
         padding-left: 20px;
     }
+    .megamenu--promoboxes:not(:first-of-type){
+        padding-left: 20px;
+    }
     .megamenu--promoboxes:last-of-type{
         padding-right: 20px;
     }
@@ -3749,7 +3753,6 @@ a:visited {
 .megamenu__main-item {
     background-color: #3d9cdb;
     border-bottom: 1px solid rgba(14, 93, 174, 0.2);
-    text-transform: uppercase;
     position:relative;
 }
 
@@ -3813,14 +3816,15 @@ a:visited {
     .megamenu__sub-item-label {
         margin: 0;
         margin-left: 20px;
-        display:block;
+        display: block;
         font-size: 12px;
         line-height: 14px;
-        color:#fff;
+        color: #fff;
         text-decoration: none;
         padding-bottom: 15px;
-        padding-top: 15px;
+        padding-top: 19px;
         font-weight: 400;
+        height: 50px;
     }
     .megamenu__sub-item-label:hover{
         color: #FFF;
@@ -3836,7 +3840,7 @@ a:visited {
 .megamenu__main-item .icon-chevron-down {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 25px;
     z-index: 1500;
     width: 13px;
     height: 13px;
@@ -4918,7 +4922,6 @@ a:visited {
     .quote-office {
         margin: -85px auto 0;
         width: 96%;
-        margin-bottom: 30px;
     }
     .get-quote__container {
         width: 48%;
@@ -13162,7 +13165,7 @@ span.errorRadio {
 }
 
 .more-content {
-    padding-bottom: 10px;
+    margin-bottom: 50px;
     background-color: #efefef;
 }
 .more-content__section {
@@ -13190,9 +13193,15 @@ span.errorRadio {
     font-size: 22px;
     line-height:26px;
     color: #333;
-    padding: 20px;
     display: inline-block;
     text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+    .more-content__section a:nth-child(2) {
+
+        padding: 20px;
+
+    }
 }
 .more-content__section a:hover {
     color: #2C77C5;
@@ -13224,7 +13233,7 @@ span.errorRadio {
         font-size: 20px;
         line-height:24px;
         font-weight: 400;
-        padding: 10px 0;
+        padding-top: 10px;
     }
     
     .more-content__section:last-child {
@@ -13750,7 +13759,11 @@ span.errorRadio {
     margin-right: 5px;
     vertical-align: bottom;
 }
-
+@media screen and (max-width: 767px) {
+    .cta_header_quote .cta_header_quote_type_of_insurance--sub {
+        margin-bottom: 15px;
+    }
+}
 @media screen and (min-width: 768px) {
     .cta_header_quote .cta_header_quote_type_of_insurance--sub {
         width:80%;

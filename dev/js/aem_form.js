@@ -1005,7 +1005,7 @@ SFDC.form.forEach(function (element) {
 
 /***** Validations **************************************************/
 // Contact Form Validatons
-if ($(".generic-form").length > 0) {
+/*if ($(".generic-form").length > 0) {
     // Validation for Select Fields
     $('select[data-required=true]').on({
         change: function (evt) {
@@ -1059,30 +1059,32 @@ if ($(".generic-form").length > 0) {
         parent.find(".user-checkbox").removeClass('error');
         parent.find(".errorSpan").hide();
     });
-}
+}*/
 /***** Validations **************************************************/
 
 
 /***** Contact Us and Privacy Forms *********************************/
 // Sets the resize for label height
+/*
 if ($(".contact-privacy").length > 0) {
     contactAboutFromLayout();
 }
+*/
 
 // Initialization for contact form text areas
-function contactAboutFromLayout() {
+/*function contactAboutFromLayout() {
     // text areas
     $(".generic-form .formTextarea").closest(".form-hidden, .form-focus").css("width", "100%");
 
     // terms and conditions
     $(".generic-form .termsCondition").closest(".form-hidden, .form-focus").css("width", "100%");
-}
+}*/
 /***** Contact Us and Privacy Forms *********************************/
 
 
 /***** Contact Rep with Image ***************************************/
 // Sets the resize for form with contact image
-$(window).load(function () {
+/*$(window).load(function () {
     if ($(".contact-rep-with-image").length > 0) {
         contactRepWithImageSize();
 
@@ -1090,10 +1092,10 @@ $(window).load(function () {
             contactRepWithImageSize();
         });
     }
-});
+});*/
 
 // Resize form image
-function contactRepWithImageSize() {
+/*function contactRepWithImageSize() {
     var parent = $(".contact-rep-with-image");
     var form = parent.find(".contact-lead-form");
     var image = parent.find(".image");
@@ -1108,12 +1110,12 @@ function contactRepWithImageSize() {
     if (image.width() > img.width()) {
         img.css({'height': 'auto', 'width': '100%'});
     }
-}
+}*/
 /***** Contact Rep with Image ***************************************/
 
 
 /***** Quote Form ***************************************************/
-$(document).ready(function () {
+/*$(document).ready(function () {
     $(function () {
         $(document).on('click', 'input[type=text]', function () {
             this.select();
@@ -1174,7 +1176,7 @@ $(document).ready(function () {
         //$(".cta_header_quote #insurance-type").prop("selectedIndex", 0);
     }
 
-});
+});*/
 
 
 
@@ -1182,7 +1184,7 @@ $(document).ready(function () {
 
 /***** Form Functions ***********************************************/
 // Resets contact forms
-function formReset(parent, fields) {
+/*function formReset(parent, fields) {
     parent.addClass('form-off');
     parent.children().removeAttr("style");
     parent.find("input, select, textarea").removeClass('error');
@@ -1200,7 +1202,7 @@ function formReset(parent, fields) {
             parent.find('#' + field.id).closest('.form-focus, .form-hidden').hide();
         }
     }
-}
+}*/
 
 // Displays thank you/error message for contact forms
 function formMessage(parent, status) {
@@ -1276,26 +1278,3 @@ function maskInput(event, input, textbox, location, delimiter) {
     $.fn.reverse = [].reverse;
 }(jQuery));
 
-$(window).on("load", function () {
-    matchCTAHeights();
-});
-
-function matchCTAHeights() {
-    if ($(".header_cta").length != 0) {
-        $(".header_cta").each(function () {
-            var elements = $(this).children();
-            // console.log(elements.length);
-            var height = 0;
-
-            elements.css('min-height', '0px');
-            elements.each(function () {
-
-                height = $(this).outerHeight() > height ? $(this).outerHeight() : height;
-
-            });
-            elements.css('min-height', height + 'px');
-
-
-        });
-    }
-}

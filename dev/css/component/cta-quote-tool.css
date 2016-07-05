@@ -421,7 +421,11 @@
     margin-right: 5px;
     vertical-align: bottom;
 }
-
+@media screen and (max-width: 767px) {
+    .cta_header_quote .cta_header_quote_type_of_insurance--sub {
+        margin-bottom: 15px;
+    }
+}
 @media screen and (min-width: 768px) {
     .cta_header_quote .cta_header_quote_type_of_insurance--sub {
         width:80%;

@@ -44,10 +44,10 @@ function resizeMegaMenu () {
                 $(".login-trigger").hide()
             }
         }else{
-            if($(".contact-trigger").css("display") != "none"){
+            if($(".contact-trigger").css("display") == "none"){
                 $(".contact-trigger").show()
             }
-            if($(".login-trigger").css("display")!= "none"){
+            if($(".login-trigger").css("display")== "none"){
                 $(".login-trigger").show()
             }
         }
@@ -164,9 +164,14 @@ if (getViewport() != "mobile") {
 $(document).on("click tap", function (e) {
     var megaMenuTrigger = $(".megamenu-trigger");
     var container = $(".search-trigger");
-    var suggestions = $(".suggestionsbox")
+    var suggestions = $(".suggestionsbox");
+    var suggestionsTable =  $(".ss-gac-table");
+    var suggestionsTableBody =  $(".ss-gac-m");
+    var suggestionsTableBodyRowA =  $(".ss-gac-a");
+    var suggestionsTableBodyRowB =  $(".ss-gac-b");
+    var suggestionsTableBodyRowC =  $(".ss-gac-c");
     if(!$('.megamenu-trigger__link').hasClass('megamenu-trigger__icon--open')) {
-        if (!suggestions.is(e.target) && suggestions.has(e.target).length === 0 && !container.is(e.target) && container.has(e.target).length === 0 && !megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length == 0) {
+        if (!suggestionsTable.is(e.target) && suggestionsTable.has(e.target).length === 0 && !suggestions.is(e.target) && suggestions.has(e.target).length === 0 && !container.is(e.target) && container.has(e.target).length === 0 && !megaMenuTrigger.is(e.target) && megaMenuTrigger.has(e.target).length == 0 && !suggestionsTableBody.is(e.target) && suggestionsTableBody.has(e.target).length == 0 && !suggestionsTableBodyRowA.is(e.target) && suggestionsTableBodyRowA.has(e.target).length == 0 && !suggestionsTableBodyRowB.is(e.target) && suggestionsTableBodyRowB.has(e.target).length == 0 && !suggestionsTableBodyRowC.is(e.target) && suggestionsTableBodyRowC.has(e.target).length == 0) {
             closeSearchBox();
         }
     }
