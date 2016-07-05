@@ -237,7 +237,7 @@
     position: relative;
     top: -2px;
     top: 0;
-    background-image: url("http://localhost:63348/MetLifeAdobe/dev/images/country-flags-sprite.png");
+    background-image: url("/static/images/country-flags-sprite.png");
     background-position: 0 0;
 }
 

@@ -22,10 +22,10 @@ function getViewport() {
     var vWidth = $(window).width();
     var screenMode = "mobile";
         switch (true) {
-            case vWidth > breakpointDesktop:
+            case vWidth >= breakpointDesktop:
                 screenMode = "desktop";
                 break;
-            case vWidth > breakpointTablet:
+            case vWidth >= breakpointTablet:
                 screenMode = "tablet";
                 break;
         }
@@ -1897,20 +1897,20 @@ $(".view-nav li").click(function () {
 
 
 var loginTypesPosition = 0;
-window.addEventListener("orientationchange", function() {
+window.addEventListener("orientationchange", function () {
     // Announce the new orientation number
 
-    if (screen.height > screen.width){
+    if (screen.height > screen.width) {
         $('.login-types').css('top', $(window).height() - 70 + 'px');
     }
 
-    if (screen.height < screen.width){
+    if (screen.height < screen.width) {
         $('.login-types').css('top', $(window).height() - 70 + 'px');
     }
 
 }, false);
 $('.login-types').css('top', $(window).height() - 70 + 'px');
-$(window).resize(function(){
+$(window).resize(function () {
     $('.login-types').css('top', $(window).height() - 70 + 'px');
 });
 
@@ -2052,17 +2052,30 @@ function toggleLoginTypes() {
 }
 
 $('.login-type__detail').click(function () {
+
+    var right = '<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>';
+    var down = '<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>';
+
     if ($(window).width() < breakpointTablet) {
         $('.login-type__detail').find('ul').slideUp();
         $('.login-type__detail').find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>');
 
         //Toggle clicked main menu item's chevron
         if (!$(this).find('ul').is(':visible')) {
-            $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
-
+            $(this).find('svg').fadeOut("normal", function () {
+                $(this).remove();
+            });
+            $(this).find('h3').fadeIn("1", function(){
+                $(this).after(down);
+            });
             $(this).find('ul').slideDown();
         } else {
-            $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
+            $(this).find('svg').fadeOut("normal", function(){
+                $(this).remove();
+            });
+            $(this).find('h3').fadeIn("1", function(){
+                $(this).after(right);
+            });
 
         }
     }
