@@ -656,7 +656,11 @@ $('body').on ('click touchstart', function(e){
                 //var cs = document.getElementById(("countryList");
 
                 if($("#countryList").is(":visible") == true){
-                    //if(e.target.id !="countrySelected") closeCountryList();
+                    if (e.target.id == "countryList") {
+
+                    } else {
+                        closeCountryList();
+                    }
                 }else{
                     processCountrySelection(e);
                 }
@@ -7847,9 +7851,11 @@ $(".product__selector").on("change", function(){
 	$(".product__selector--sub").removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
 	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").hide();
+	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+	$(".product__selector--sub").prop("disabled", true);
 	$(".product__selector--sub").val("")
-	$("[data-product-sub='"+ selectedProduct +"']").show();
+	$("[data-product-sub='"+ selectedProduct +"']").removeClass("hidden");
+	$("[data-product-sub='"+ selectedProduct +"']").find(".product__selector--sub").prop("disabled", false);
 	$(".js-productSelector").attr("href", "#");
 });
 
@@ -7973,7 +7979,6 @@ $(".ss-gac-a, .ss-gac-b").on("click", function() {
 	var searchTerm= $(this).find(".ss-gac-c").text();
 	console.log(searchTerm)
 	$(".search-trigger__search-box").val(searchTerm)
-	console.log($(".search-trigger__search-box").val())
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		$(".search-trigger__search-box").val(searchTerm)
 		ServicesAPI.legacySearch($(".search-trigger__search-box").val());

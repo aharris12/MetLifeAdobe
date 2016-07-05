@@ -10075,8 +10075,9 @@ ul.bullet-list {
 }
 
 .footer-main__label {
-    font-size: 14px;
-    font-weight: normal;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
 }
 
 .footer-main__item {
@@ -10092,6 +10093,11 @@ ul.bullet-list {
 .footer-sub__label:visited {
     font-weight: 600;
     font-size: 12px;
+    line-height: 16px;
+}
+
+.footer-sub__label:hover {
+   text-decoration: underline;
 }
 
 .social-alignment {
@@ -10731,7 +10737,6 @@ ul.bullet-list {
 
     .footer-main__label {
         font-size: 12px;
-        font-weight: 400;
         line-height: 16px;
         margin-bottom: 10px;
         text-align: left;
@@ -10980,6 +10985,15 @@ ul.bullet-list {
 }
 
 @media (min-width: 1024px) {
+    .footer-main__label {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .footer-sub__label,
+    .footer-sub__label:visited {
+        font-size: 12px;
+        line-height: 16px;
+    }
     .dd-pointer.dd-pointer-down svg {
         top: 3px;
         right: 0;
@@ -13289,13 +13303,6 @@ span.errorRadio {
     color: #ffffff;
 }
 
- .cta_header_quote input[type="text"]:disabled{
-    opacity:0.5;
-}
- .cta_header_quote select:disabled{
-    opacity:0.5;
-
-}
 
 /* line 17, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote .cta_header_quote_type_of_insurance {
@@ -13313,9 +13320,11 @@ span.errorRadio {
     border-radius: 2px;
     font-weight: 400;
 }
-.cta_header_quote .cta_header_quote_type_of_insurance--sub:not(:first-child) {
+.cta_header_quote .cta_header_quote_type_of_insurance--sub {
     width:80%;
-    display: none;
+}
+.select_wrapper select:disabled{
+    background-color: #ccc!important;
 }
 
 /* line 31, ../../../sass/_ctaHeaderToolMobile.scss */

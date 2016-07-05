@@ -30,8 +30,9 @@
 }
 
 .footer-main__label {
-    font-size: 14px;
-    font-weight: normal;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
 }
 
 .footer-main__item {
@@ -47,6 +48,11 @@
 .footer-sub__label:visited {
     font-weight: 600;
     font-size: 12px;
+    line-height: 16px;
+}
+
+.footer-sub__label:hover {
+   text-decoration: underline;
 }
 
 .social-alignment {
@@ -686,7 +692,6 @@
 
     .footer-main__label {
         font-size: 12px;
-        font-weight: 400;
         line-height: 16px;
         margin-bottom: 10px;
         text-align: left;
@@ -935,6 +940,15 @@
 }
 
 @media (min-width: 1024px) {
+    .footer-main__label {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .footer-sub__label,
+    .footer-sub__label:visited {
+        font-size: 12px;
+        line-height: 16px;
+    }
     .dd-pointer.dd-pointer-down svg {
         top: 3px;
         right: 0;

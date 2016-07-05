@@ -12,13 +12,6 @@
     color: #ffffff;
 }
 
- .cta_header_quote input[type="text"]:disabled{
-    opacity:0.5;
-}
- .cta_header_quote select:disabled{
-    opacity:0.5;
-
-}
 
 /* line 17, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote .cta_header_quote_type_of_insurance {
@@ -36,9 +29,11 @@
     border-radius: 2px;
     font-weight: 400;
 }
-.cta_header_quote .cta_header_quote_type_of_insurance--sub:not(:first-child) {
+.cta_header_quote .cta_header_quote_type_of_insurance--sub {
     width:80%;
-    display: none;
+}
+.select_wrapper select:disabled{
+    background-color: #ccc!important;
 }
 
 /* line 31, ../../../sass/_ctaHeaderToolMobile.scss */

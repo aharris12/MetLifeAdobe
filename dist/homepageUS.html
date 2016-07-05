@@ -13,7 +13,7 @@
     <link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-    <!-- Packaged on 07/01/2016 @15:33:58 by MetLife --><meta name="format-detection" content="telephone=no">
+    <!-- Packaged on 07/05/2016 @09:54:55 by MetLife --><meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -1085,16 +1085,16 @@
 			    </svg>
 			    <select required="required" class="insurance-type product__selector form-user-ctrl user-select">
 				    <option value="" selected disabled>Please Select Insurance Type</option>
-				    <option value="Home" data-product-type="LifeInsurance">Life Insurance</option>
-				    <option value="Auto" data-product-type="PersonalAccidentInsurance">Personal Accident Insurance</option>
-				    <option value="Life" data-product-type="PropertyInsurance">Property Insurance</option>
+				    <option value="Home" data-product-type="Life Insurance">Life Insurance</option>
+				    <option value="Auto" data-product-type="Personal Accident Insurance">Personal Accident Insurance</option>
+				    <option value="Life" data-product-type="Property Insurance">Property Insurance</option>
 			    </select>
 		    </div>
-		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="LifeInsurance">
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="Life Insurance">
 			    <svg class="icon">
 				    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 			    </svg>
-			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 				    <option value="" selected disabled>I want protection for</option>
 				    <option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set time</option>
 				    <option value="Auto" data-product-url="LifeInsurancewithSaving.html">Life Insurance with Saving</option>
@@ -1102,11 +1102,11 @@
 				    <option value="Pet" data-product-url="HelpMeChoose">Help Me Choose</option>
 			    </select>
 		    </div>
-		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PersonalAccidentInsurance">
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Personal Accident Insurance">
 			    <svg class="icon">
 				    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 			    </svg>
-			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 				    <option value="" selected disabled>I want protection for</option>
 				    <option value="Home" data-product-url="Individual.html">An Individual</option>
 				    <option value="Auto" data-product-url="head.html">A head of the family</option>
@@ -1114,11 +1114,11 @@
 				    <option value="Pet" data-product-url="Injury.html">An Injury</option>
 			    </select>
 		    </div>
-		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="PropertyInsurance">
+		    <div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Property Insurance">
 			    <svg class="icon">
 				    <use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 			    </svg>
-			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select">
+			    <select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 				    <option value="" selected disabled>I want protection my</option>
 				    <option value="Home" data-product-url="bag.html">Lost/Stolen Baggage</option>
 				    <option value="Auto" data-product-url="mobile.html">Mobile Protection</option>
@@ -1399,8 +1399,8 @@
 </div>
 
 <!-- Disclaimer -->
-<!--<div class="container bg-gray-1st">
-    <div class="row wrapper disclaimer disclaimer&#45;&#45;main">
+<div class="container bg-gray-1st">
+    <div class="row wrapper disclaimer disclaimer--main">
         <p>
             &#8224; our lowest rates
         </p>
@@ -1417,7 +1417,7 @@
             New York, NY 10166 and its affiliates.
         </p>
     </div>
-</div>-->
+</div>
 
 <!-- Global Footer -->
 <div class="container bg-gray-1st global-footer">
@@ -1853,22 +1853,14 @@
     </div>
 </div>
 
-<!--<div id="suggestionsbox" class="suggestionsbox ">
+<div id="suggestionsbox" class="suggestionsbox ">
     <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
         <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">
         </tbody>
     </table>
-</div>-->
-
-<div id="suggestionsbox" class="suggestionsbox ">
-<table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
-	<tbody class="ss-gac-m" id="search_suggest">
-	<tr class="ss-gac-a"><td class="ss-gac-c"></td><td class="ss-gac-d">Suggestions</td></tr>
-	<tr class="ss-gac-b"><td class="ss-gac-c" colspan="2">life in<b>surance</b></td></tr>
-	<tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life in<b>surance claim form</b></td></tr>
-	<tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life in<b>surance claim forms</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life in<b>surance claim</b></td></tr><tr class="ss-gac-e"><td colspan="2"><span>close</span></td></tr></tbody>
-</table>
 </div>
+
+
 
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 
