@@ -1416,7 +1416,7 @@ function matchProductModuleHeights(){
                     productModuleBottomHeight = $(this).outerHeight() > productModuleBottomHeight ? $(this).outerHeight() : productModuleBottomHeight;
 
                 });
-                productModuleBottom.css('min-height', productModuleBottomHeight + 20 + 'px');
+                productModuleBottom.css('min-height', productModuleBottomHeight  + 'px');
 
 
             }) ;
