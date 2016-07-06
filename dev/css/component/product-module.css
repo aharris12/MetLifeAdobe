@@ -59,42 +59,49 @@
     border-bottom: none;
 }
 
-.product-module__list{
-     padding: 0 20px 0 40px;
-     width: 90%;
-     padding-left: 30px;
-     padding-right: 10px;
-     margin: auto;
- }
-.product-module__medium .product-module__list {
-    width: 100%;
+.product-module__list {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 5px;
+    margin: 5px auto 15px;
 }
 
 .product-module__list ul {
     list-style: disc;
     text-align: left;
+}
 
+.product-module__list ul li {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 0 5px 0;
+}
+
+.product-module__list--medium {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 10px;
+    margin: 20px auto 15px;
+}
+
+.product-module__list--medium ul li {
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .product-module__top {
     margin-bottom: 15px;
 }
 
-.product-module__top h3{
-     font-weight: 400;
- }
-
-.product-module__top h3 a:hover{
-     color: #2377c5;
- }
-
-.product-module__list ul li {
-    padding-bottom: 10px;
-    font-size: 14px;
-    line-height: 18px;
+.product-module__top h3 {
+    font-weight: 400;
 }
 
-.product-module__medium__header:hover{
+.product-module__top h3 a:hover {
+    color: #2377c5;
+}
+
+.product-module__medium__header:hover {
     color: #2377C5;
 }
 
@@ -102,9 +109,7 @@
     width: 80%;
 }
 
-.product-module__list--medium ul {
-    margin-top: 20px;
-}
+
 
 .product-module__medium {
     text-align: center;
@@ -273,11 +278,23 @@
     .product-module--microsite-wrapper .product-module {
         padding-bottom: 0;
     }
+    .product-module__list {
+        min-height: 105px;
+    }
 
     .product-module__list ul li {
-        padding-bottom: 10px;
         font-size: 12px;
         line-height: 16px;
+        padding: 3px 0 5px 0;
+    }
+    .product-module__list--medium {
+        width: 95%;
+        margin: 20px auto 10px;
+    }
+
+    .product-module__list--medium ul li {
+        font-size: 12px;
+        line-height: 15px;
     }
 
     .product-module__bottom {
@@ -294,8 +311,6 @@
         display: table-cell;
         vertical-align: bottom;
     }
-
-
 
 }
 
@@ -339,10 +354,19 @@
         margin-bottom: 20px;
     }
 
+    .product-module__list {
+        width: 80%;
+        min-height: 90px;
+        padding-left: 30px;
+        padding-right: 10px;
+    }
     .product-module__list ul li {
-        padding-bottom: 10px;
         font-size: 13px;
         line-height: 16px;
+    }
+
+    .product-module__list--medium {
+        width: 100%;
     }
 
     .product-module--table {
@@ -410,6 +434,7 @@
         border-bottom: 1px solid #e3e3e3;
     }
 }
+
 @media screen and (max-width: 767px) {
     .product-module {
         margin-bottom: 0px;
