@@ -141,12 +141,22 @@ if ($(".rate_table").length > 0) {
 
     // Open & Close Monthly Rates Dropdown
     $(".monthly_rates .expand_button").click(function () {
-        $(this).siblings(".unexpanded").slideToggle(function () {
+        if($(".monthly_rates").has(".wrapper-general")) {
+            $(".expanded").siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
             resizeRateTable();
-        });
-        resizeRateTable();
-        $(this).find(".expand_button_open").toggleClass("hidden");
-        $(this).find(".expand_button_close").toggleClass("hidden");
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        } else {
+            $(this).siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        }
+
     });
 
     // Resize Rate table
