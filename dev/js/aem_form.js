@@ -9,6 +9,7 @@ if (typeof SFDC === "undefined") {
 var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
+    console.log("glu RUn")
     var parent = $("." + element.type);
     $(".contact-sidebar.type")
     $('[data-fid="contact-sidebar"]')
@@ -37,6 +38,7 @@ SFDC.form.forEach(function (element) {
 
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {
+                        console.log("glu run")
                             e.preventDefault();
                             o.submitForm();
                             return false;
@@ -56,6 +58,7 @@ SFDC.form.forEach(function (element) {
 
                     // Submit form
                     parent.find('.form-submit').bind('click', function (e) {
+                        console.log("glu RUn")
                         e.preventDefault();
                         if (!parent.find(".form-submit").hasClass("disabled")) {
                             parent.find('.form-submit').addClass("disabled").html(processingText);
@@ -126,8 +129,6 @@ SFDC.form.forEach(function (element) {
                     i++;
                 }
 
-                // Add product specific code
-                specialCode();
 
                 return this;
             },
@@ -435,6 +436,7 @@ SFDC.form.forEach(function (element) {
              *   - Error/failure : Display error messages, etc.
              */
             submitForm: function () {
+                console.log("glu run")
                 //console.log("submit form");
 
                 // Post the form, handling any error messages that come back, etc.
