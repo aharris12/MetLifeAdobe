@@ -786,10 +786,10 @@ $('.js-searchIcon').click(function () {
 
 $(".ss-gac-a, .ss-gac-b").on("click", function() {
 	var searchTerm= $(this).find(".ss-gac-c").text();
-	console.log(searchTerm)
-	$(".search-trigger__search-box").val(searchTerm)
+	console.log(searchTerm);
+	$(".search-trigger__search-box").val(searchTerm);
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm)
+		$(".search-trigger__search-box").val(searchTerm);
 		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
 	} else {
@@ -1893,10 +1893,10 @@ var ServicesAPI = {
 		});
 		/************LIVE SERVICE***************/
 	},
-	legacySearch: function(serchQuery){
+	legacySearch: function(searchQuery){
 		var str = "https://www.metlife.com/searchresults?query=";
 		var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
-		str += serchQuery+val2;
+		str += searchQuery+val2;
 		window.location.href = str;
 	},
 	redirectToSearchResultsPage: function(input){
@@ -1908,7 +1908,6 @@ var ServicesAPI = {
 		var cov = sessionStorage.getItem("searchTerm");
 		if(sessionStorage.getItem("searchTerm") !== null){
 			if($(".js-searchTextBox").css("display") !== " none"){
-
 				$(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
 				$(".js-searchSubmit").click();
 			}
