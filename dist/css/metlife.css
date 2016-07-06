@@ -2434,6 +2434,7 @@ b {
     font-size: 28px;
     line-height: 30px;
     font-weight: 400;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
@@ -2747,7 +2748,7 @@ a:visited {
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     margin: 0 auto 10px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     display: inline-block;
 }
 
@@ -2999,6 +3000,7 @@ a:visited {
     .btn-brand-4th,
     .btn-brand-4th-inv {
         font-size: 11px;
+        padding: 10px 20px;
     }
 }
 
@@ -4531,7 +4533,7 @@ a:visited {
 }
 
 .breadcrumb__crumb:not(:last-child)::after {
-    content: "\203A";
+    content: "\0020\203A\0020";
 }
 
 .breadcrumb--back{
@@ -12513,8 +12515,7 @@ manner*/
     margin-right: 6px;
     margin-top: -2px;
 }
-.errorSpanOpen {
-    display: block;
+.errorSpan {
     right: 100%;
     margin-right: 12px;
     top: -2px;
@@ -12532,7 +12533,7 @@ manner*/
     width: 120%;
 }
 @media screen and (max-width: 767px) {
-    .formFail .errorSpanOpen{
+    .formFail .errorSpan{
         top: 35%;
         left:1px;
         width:102%;
@@ -12540,7 +12541,7 @@ manner*/
 }
 
 @media screen and (min-width: 768px) {
-    .formFail .errorSpanOpen{
+    .formFail .errorSpan{
         top: 40px;
     }
     #requestFormRightNav_Acc .form-state {
@@ -12554,7 +12555,7 @@ manner*/
 }
 
 
-.errorSpanOpen:after, .errorSpanOpen:before {
+.errorSpan:after, .errorSpan:before {
     left: 100%;
     top: 50%;
     border: solid transparent;
@@ -12564,13 +12565,13 @@ manner*/
     position: absolute;
     pointer-events: none;
 }
-.errorSpanOpen:after {
+.errorSpan:after {
     border-color: rgba(187, 0, 0, 0);
     border-left-color: #db3535;
     border-width: 7px;
     margin-top: -8px;
 }
-.contact-container__contact-us-page .errorSpanOpen:after{
+.contact-container__contact-us-page .errorSpan:after{
     -webkit-transform: rotate(7deg);
     transform: rotate(270deg);
     top: 50px;
@@ -12604,6 +12605,7 @@ manner*/
 }
 .form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
+    font-size: 13px;
 }
 .form-check-grp label span, .form-radio-grp label span {
     color: #999;
@@ -12621,7 +12623,7 @@ manner*/
     text-align: right;
 }
 .contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
+    Padding: 0 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
     font-weight: 400;
@@ -12631,15 +12633,6 @@ manner*/
 }
 .contactDisclaimer + .contactDisclaimer {
     padding-top: 0px;
-}
-.contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
-    font-size: 11px;
-    line-height: 15px;
-    font-weight: 400;
-    color: #999999;
-    text-align: left;
-    margin-bottom: 0px;
 }
 .contactDisclaimer a {
     text-decoration: underline;
@@ -12837,9 +12830,6 @@ manner*/
     }
 }
 
-.productPolicyTypes {
-    margin-bottom:20px;
-}
 .productUserType {
     margin-top:10px;
 }

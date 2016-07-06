@@ -27,7 +27,7 @@
 }
 
 .breadcrumb__crumb:not(:last-child)::after {
-    content: "\203A";
+    content: "\0020\203A\0020";
 }
 
 .breadcrumb--back{

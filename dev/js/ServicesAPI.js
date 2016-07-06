@@ -804,18 +804,17 @@ $('.js-searchIcon').click(function () {
 
 //Site header search in mobile
 $('.js-searchIconMobile').click(function () {
-    if ($('.search-trigger__search-box').val()) {
-        if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-            if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
-                ServicesAPI.legacySearch($(".search-trigger__search-box").val());
-            }
-        } else {
-            //For Integration we only need this statment
-            if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-                ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
-            }
+    if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+        if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
+            ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+        }
+    } else {
+        //For Integration we only need this statment
+        if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+            ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
         }
     }
+
 });
 //Site header search on keypress
 $('.search-trigger__search-box').keypress(function (e) {

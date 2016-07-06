@@ -3,30 +3,10 @@ $(document).ready(function(){
     footerBorder();
 });
 
-
-$.fn.isOnScreen = function(){
-    var win = $(window);
-    var viewport = {
-        top  : win.scrollTop(),
-        left : win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
-
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-};
-
 var marketingCarouselVisible;
 
 $(window).scroll(function(){
-    if ($('#countryList').isOnScreen() == false) {
-        closeCountryList();
-    }
+    closeCountryList();
 });
 
 
@@ -36,7 +16,7 @@ $(document).ready(function(){
 
 
 function closeCountryList() {
-    $('.country__list').slideUp(200).scrollTop(0);
+    $('.country__list').slideUp(200);
 }
 
 function processCountrySelection(evt) {
@@ -60,7 +40,7 @@ function processCountrySelection(evt) {
         if($('.country__list').is(':visible')) {
             closeCountryList();
         } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {
-            $('.country__list').slideDown(400).scrollTop(0);
+            $('.country__list').slideDown(400);
         }
     }
 }
@@ -73,43 +53,53 @@ function processCountrySelection(evt) {
 
 var clickDisabled = false;
 
+$('.country__list').on('touchmove', function(e) {
+    e.stopPropagation();
+});
+$('.country__list').on('touchstart', function(e) {
+    e.stopPropagation();
+});
+$('.country__selected').on('touchstart click', function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault()
+    if (e.type == "touchstart") {
+        if ($("#countryList").is(":visible") == true) {
+            closeCountryList();
+        } else {
+            /*        if (clickDisabled != true) {
+             if($("#countryList").is(":visible") == true){
 
-$('body').on ('click touchstart', function(e){
-
-    if (clickDisabled != true){
-
-        var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
-
-        switch(clickEvent) {
-            case 'click':
-                processCountrySelection(e);
-                break;
-            case 'touchstart':
-
-                //var cs = document.getElementById(("countryList");
-
-                if($("#countryList").is(":visible") == true){
-                    if (e.target.id == "countryList") {
-
-                    } else {
-                        closeCountryList();
-                    }
-                }else{
-                    processCountrySelection(e);
-                }
-
-                break;
-            default:
-                break;
+             }else{
+             processCountrySelection(e);
+             }
+             clickDisabled = true;
+             setTimeout(function () {
+             clickDisabled = false;
+             }, 1000);
+             }*/
+            processCountrySelection(e);
         }
-
-        clickDisabled = true;
-        setTimeout(function(){clickDisabled = false;}, 1000);
+    } else {
+        if($("#countryList").is(":visible") == true) {
+            closeCountryList();
+        } else {
+            processCountrySelection(e);
+        }
     }
-
 });
 
-
+$('body').on('click touchstart', function(e){
+    e.stopPropagation();
+    if (e.target.className != "country__selected") {
+        if (e.type == "touchstart") {
+            if ($("#countryList").is(":visible") == true) {
+                closeCountryList();
+            }
+        } else {
+            processCountrySelection(e);
+        }
+    }
+});
 
 /*
  When disclaimer is not present, remove top-border from footer

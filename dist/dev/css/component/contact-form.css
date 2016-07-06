@@ -126,8 +126,7 @@
     margin-right: 6px;
     margin-top: -2px;
 }
-.errorSpanOpen {
-    display: block;
+.errorSpan {
     right: 100%;
     margin-right: 12px;
     top: -2px;
@@ -145,7 +144,7 @@
     width: 120%;
 }
 @media screen and (max-width: 767px) {
-    .formFail .errorSpanOpen{
+    .formFail .errorSpan{
         top: 35%;
         left:1px;
         width:102%;
@@ -153,7 +152,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .formFail .errorSpanOpen{
+    .formFail .errorSpan{
         top: 40px;
     }
     #requestFormRightNav_Acc .form-state {
@@ -167,7 +166,7 @@
 }
 
 
-.errorSpanOpen:after, .errorSpanOpen:before {
+.errorSpan:after, .errorSpan:before {
     left: 100%;
     top: 50%;
     border: solid transparent;
@@ -177,13 +176,13 @@
     position: absolute;
     pointer-events: none;
 }
-.errorSpanOpen:after {
+.errorSpan:after {
     border-color: rgba(187, 0, 0, 0);
     border-left-color: #db3535;
     border-width: 7px;
     margin-top: -8px;
 }
-.contact-container__contact-us-page .errorSpanOpen:after{
+.contact-container__contact-us-page .errorSpan:after{
     -webkit-transform: rotate(7deg);
     transform: rotate(270deg);
     top: 50px;
@@ -217,6 +216,7 @@
 }
 .form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
+    font-size: 13px;
 }
 .form-check-grp label span, .form-radio-grp label span {
     color: #999;
@@ -234,7 +234,7 @@
     text-align: right;
 }
 .contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
+    Padding: 0 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
     font-weight: 400;
@@ -244,15 +244,6 @@
 }
 .contactDisclaimer + .contactDisclaimer {
     padding-top: 0px;
-}
-.contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
-    font-size: 11px;
-    line-height: 15px;
-    font-weight: 400;
-    color: #999999;
-    text-align: left;
-    margin-bottom: 0px;
 }
 .contactDisclaimer a {
     text-decoration: underline;
@@ -359,20 +350,20 @@
      display: inline-block;
      width: 17px;
      height: 17px;
-     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
+     background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected_gray.png") left top no-repeat;
      background-size: 17px 17px;
  }
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
-    background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
 .form-radio-grp label input.user-radio.whiteRadioDial + span:before {
-    background: url("/static/images/form/form_radio_unselected.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-radio-grp label input.user-radio[type=radio].whiteRadioDial:checked + span:before{
-    background: url("/static/images/form/form_radio_selected.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_radio_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -384,11 +375,11 @@
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url("/static/images/form/form_slider_chkbx_unselected.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_slider_chkbx_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 .form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
-    background: url("/static/images/form/form_slider_chkbx_selected.png") left top no-repeat;
+    background: url("http://localhost:63348/MetLifeAdobe/dev/images/form/form_slider_chkbx_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -450,9 +441,6 @@
     }
 }
 
-.productPolicyTypes {
-    margin-bottom:20px;
-}
 .productUserType {
     margin-top:10px;
 }

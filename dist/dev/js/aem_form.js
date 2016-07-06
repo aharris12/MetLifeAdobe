@@ -98,9 +98,9 @@ SFDC.form.forEach(function (element) {
                     }
 
                     // set height of forms
-                    if ($(".contact-rep-with-image").length > 0) {
+                   /* if ($(".contact-rep-with-image").length > 0) {
                         contactRepWithImageSize();
-                    }
+                    }*/
 
                     // Add required class
                     if (field.validator != "") {
@@ -792,7 +792,6 @@ SFDC.form.forEach(function (element) {
              * @param {Array} opts Array of key/value Objects representing radio labels and values. Example format: [{"key":"value"}, {"key2":"value2"}, ... {"keyN":"valueN"}]
              */
             radio: function (id, opts) {
-
                 var h = '';
                 var mod, columns;
                 var i = 0, len = opts.length;
@@ -808,34 +807,33 @@ SFDC.form.forEach(function (element) {
                         parent.find('#' + id).closest(".form-hidden, .form-focus").css("width", "100%");
                     }
                 }
-
                 while (i < len) {
                     var opt = opts[i];
                     for (var key in opt) {
 
                         // button grouping start
-                        if (i % mod == 0) {
+                       /* if (i % mod == 0) {
                             h += "<div>";
-                        }
+                        }*/
 
                         // button
-                        
+                        h += '<label>';
                         h += '<div class="radio_button ' + columns + '" id="' + id + '">';
-                        
+
 
                         if (i == 0) {
-                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '" checked >';
+                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '" checked class="user-radio">';
                         } else {
-                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '">';
+                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '" class="user-radio">';
                         }
-                        h += '<label for="insert_id" id="">' + key + '</label>';
+                        h += '<span>' + key + '</span>';
                         h += '</div>';
-
+                        h += '</label>';
 
                         // button grouping end
-                        if ((i + 1) % mod == 0) {
+                        /*if ((i + 1) % mod == 0) {
                             h += "</div>";
-                        }
+                        }*/
                     }
                     i++;
                 }
@@ -844,9 +842,9 @@ SFDC.form.forEach(function (element) {
                 if (i % mod > 0) {
                     if (mod == 3) {
                         for (var k = 0; k < mod - (i % mod); k++) {
-                            
+
                             h += '<div class="radio_button ' + '"></div>';
-                            
+
                         }
                         h += "</div>";
                     } else {
@@ -854,7 +852,7 @@ SFDC.form.forEach(function (element) {
                     }
                 }
 
-                parent.find('#' + id).append(h);
+               //parent.find('#' + id).append(h);
             },
 
             /***
@@ -1212,9 +1210,9 @@ if ($(".contact-privacy").length > 0) {
 function formMessage(parent, status) {
     var message;
     if (status == "thanks") {
-        message = parent.find(".contact-thanks");
+        message = parent.find(".contactSideThankyou");
     } else {
-        message = parent.find(".contact-error");
+        message = parent.find(".contactSideSubmitError");
     }
     message.siblings(":visible").fadeOut('slow', function () {
         message.css("display", "table-cell");
