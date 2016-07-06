@@ -1,0 +1,22 @@
+.generic-content__img__container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.monthly_rates .video_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.monthly_rates .videoWrapper {
+    position: relative;
+    height: 400px;
+    padding-bottom: 0;
+}
+.monthly_rates .videoWrapper object {
+    position: static;
+}
+.wrapper-general {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
