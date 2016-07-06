@@ -13,7 +13,7 @@
 	<link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-	<!-- Packaged on 07/06/2016 @12:20:43 by MetLife --><meta name="format-detection" content="telephone=no">
+	<!-- Packaged on 07/06/2016 @13:06:48 by MetLife --><meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -550,8 +550,7 @@
 
 <!-- Login Overlay -->
 <div class="login-container">
-	<form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST"
-	      onSubmit="return loginFunction();">
+	<form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
 		<div class="row login-container-header">
 			<div class="col-xs-2 login-container--close">
 				<!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
@@ -561,15 +560,14 @@
 				<span class="login-container--close__label">CLOSE</span>
 			</div>
 			<div class="col-xs-8">
-				<a href="#" title="MetLife Logo"><img src="/static/images//MetLife.png" alt="Metlife"
+				<a href="#" title="MetLife Logo"><img src="/static/images//MetLife.png" alt="Metlife-Logo"
 				                                      class="global-header__logo img-responsive"></a>
 			</div>
 		</div>
 		<div class="row login-popout__title login-container-alert">
 			<div>
 				<h2>Maintenance Alert</h2>
-				<p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be
-					unavailable. We'are sorry for the inconvinience.</p>
+				<p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be unavailable. We'are sorry for the inconvinience.</p>
 			</div>
 		</div>
 		<h2 class="login-popout__title">Select account type to log in:</h2>
@@ -577,53 +575,57 @@
 		<div class="login-popout">
 			<div class="form-item login-type-options">
 				<div class="form-item__field form-icon-wrapper">
+					<svg class="icon">
+						<use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
+					</svg>
 					<select class="login-type">
 						<option value="for_individuals">For Individuals</option>
 						<option value="for_businesses">For Businesses</option>
 						<option value="for_brokers">For Brokers</option>
 					</select>
-					<svg class="icon info">
-						<use xlink:href="/static/images//icons-metlife.svg#icon-info"></use>
-					</svg>
+					<!--<svg class="icon info tooltip">-->
+					<!--<use xlink:href="/static/images//icons-metlife.svg#icon-info"></use>-->
+					<!--</svg>-->
+					<img src="/static/images//ico_tooltip_blue.png" class="tooltip tip-icon" title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
 				</div>
 				<div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
 					<div class="login-popout-msg">
 						<span class="login-popout-msg__title">For Individuals</span>
-	                        <span class="login-popout-msg__copy">
-	                            MetLife's Online Service - Life, Annuities, Disability,
-	                            Long-Term Care, Critical Illness, Auto, Home, Total Control
-	                            Account (eSERVICE)
-	                        </span>
-	                        <span class="login-popout-msg__copy">
-	                            Benefits Through Your Employer (MyBenefits)
-	                        </span>
+                        <span class="login-popout-msg__copy">
+                            MetLife's Online Service - Life, Annuities, Disability,
+                            Long-Term Care, Critical Illness, Auto, Home, Total Control
+                            Account (eSERVICE)
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            Benefits Through Your Employer (MyBenefits)
+                        </span>
 					</div>
 				</div>
 				<div class="login-popout-msg-container" data-popout-msg="for_businesses-popout">
 					<div class="login-popout-msg">
 						<span class="login-popout-msg__title">For Businesses</span>
-	                        <span class="login-popout-msg__copy">
-	                            MetLink - Access your company's benefits data
-	                        </span>
-	                        <span class="login-popout-msg__copy">
-	                            MyBenefits - Benefits Through Your Employer
-	                        </span>
-	                        <span class="login-popout-msg__copy">
-	                            SBR - Manage executive benefits
-	                        </span>
+                        <span class="login-popout-msg__copy">
+                            MetLink - Access your company's benefits data
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            MyBenefits - Benefits Through Your Employer
+                        </span>
+                        <span class="login-popout-msg__copy">
+                            SBR - Manage executive benefits
+                        </span>
 					</div>
 				</div>
 				<div class="login-popout-msg-container" data-popout-msg="for_brokers-popout">
 					<div class="login-popout-msg">
 						<span class="login-popout-msg__title">For Brokers</span>
-	                    <span class="login-popout-msg__copy">
-	                        MetLife's Online Service - Life, Annuities, Disability,
-	                        Long-Term Care, Critical Illness, Auto, Home, Total Control
-	                        Account (eSERVICE)
-	                    </span>
-	                    <span class="login-popout-msg__copy">
-	                        Benefits Through Your Employer (MyBenefits)
-	                    </span>
+                    <span class="login-popout-msg__copy">
+                        MetLife's Online Service - Life, Annuities, Disability,
+                        Long-Term Care, Critical Illness, Auto, Home, Total Control
+                        Account (eSERVICE)
+                    </span>
+                    <span class="login-popout-msg__copy">
+                        Benefits Through Your Employer (MyBenefits)
+                    </span>
 					</div>
 				</div>
 			</div>
@@ -686,12 +688,14 @@
 		</div>
 		<div class="login-types bg-white">
 			<div class="login-type-trigger">
-				<h2 class="login-type-trigger__title">
-					other account types
-					<svg class="icon icon-plus">
-						<use xlink:href="/static/images//icons-metlife.svg#icon-plus"></use>
-					</svg>
-				</h2>
+				<a href="#" class="login-type-trigger__title">
+					<h2>
+						other account types
+						<svg class="icon icon-plus">
+							<use xlink:href="/static/images//icons-metlife.svg#icon-plus"></use>
+						</svg>
+					</h2>
+				</a>
 			</div>
 			<div class="row login-type__details">
 				<div class="col-xs-12 col-sm-4">
@@ -736,8 +740,7 @@
 						</svg>
 						<ul>
 							<li class="login-type__link"><a href="">Group Benefits Administration</a></li>
-							<li class="login-type__link"><a href="">Employer - Sponsored Savings Plans
-								Administration</a>
+							<li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
 							</li>
 							<li class="login-type__link"><a href="">Annuities Administration</a></li>
 						</ul>
@@ -752,8 +755,7 @@
 							<li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
 							</li>
 							<li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
-							<li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a>
-							</li>
+							<li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -788,6 +790,8 @@
 					<a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
 				</p>
 			</div>
+
+
 		</div>
 	</form>
 </div>

@@ -93,6 +93,7 @@ module.exports = function (grunt) {
                     'dev/css/component/share-chat.css',
                     'dev/css/component/visiondental-overlay.css',
                     'dev/css/component/inview.css',
+                    'dev/css/component/tooltipster.css',
                     'dev/css/theme/ie9select.css'
 
                 ],
@@ -288,6 +289,7 @@ module.exports = function (grunt) {
                         'dev/css/component/share-chat.css',
                         'dev/css/component/visiondental-overlay.css',
                         'dev/css/component/inview.css',
+                        'dev/css/component/tooltipster.css',
                         'dev/css/theme/ie9select.css'
 
 
