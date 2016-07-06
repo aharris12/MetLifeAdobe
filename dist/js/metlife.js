@@ -6442,585 +6442,590 @@ $(".view-all-rates-overlay .view-nav li").on("click", function () {
     parent.find(".view-content").children().eq(index).addClass("active");
     resizeRateTable();
 });
-/**
- * @name MarkerWithLabel for V3
- * @version 1.1.9 [June 30, 2013]
- * @author Gary Little (inspired by code from Marc Ridey of Google).
- * @copyright Copyright 2012 Gary Little [gary at luxcentral.com]
- * @fileoverview MarkerWithLabel extends the Google Maps JavaScript API V3
- *  <code>google.maps.Marker</code> class.
- *  <p>
- *  MarkerWithLabel allows you to define markers with associated labels. As you would expect,
- *  if the marker is draggable, so too will be the label. In addition, a marker with a label
- *  responds to all mouse events in the same manner as a regular marker. It also fires mouse
- *  events and "property changed" events just as a regular marker would. Version 1.1 adds
- *  support for the raiseOnDrag feature introduced in API V3.3.
- *  <p>
- *  If you drag a marker by its label, you can cancel the drag and return the marker to its
- *  original position by pressing the <code>Esc</code> key. This doesn't work if you drag the marker
- *  itself because this feature is not (yet) supported in the <code>google.maps.Marker</code> class.
- */
+if($(".find-an-x-search__container").length > 0) {
+  /**
+   * @name MarkerWithLabel for V3
+   * @version 1.1.9 [June 30, 2013]
+   * @author Gary Little (inspired by code from Marc Ridey of Google).
+   * @copyright Copyright 2012 Gary Little [gary at luxcentral.com]
+   * @fileoverview MarkerWithLabel extends the Google Maps JavaScript API V3
+   *  <code>google.maps.Marker</code> class.
+   *  <p>
+   *  MarkerWithLabel allows you to define markers with associated labels. As you would expect,
+   *  if the marker is draggable, so too will be the label. In addition, a marker with a label
+   *  responds to all mouse events in the same manner as a regular marker. It also fires mouse
+   *  events and "property changed" events just as a regular marker would. Version 1.1 adds
+   *  support for the raiseOnDrag feature introduced in API V3.3.
+   *  <p>
+   *  If you drag a marker by its label, you can cancel the drag and return the marker to its
+   *  original position by pressing the <code>Esc</code> key. This doesn't work if you drag the marker
+   *  itself because this feature is not (yet) supported in the <code>google.maps.Marker</code> class.
+   */
 
-/*!
- * Copyright 2016 MetLife
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+  /*!
+   * Copyright 2016 MetLife
+   * Licensed under the Apache License, Version 2.0 (the "License");
+   * you may not use this file except in compliance with the License.
+   * You may obtain a copy of the License at
+   *
+   *       http://www.apache.org/licenses/LICENSE-2.0
+   *
+   * Unless required by applicable law or agreed to in writing, software
+   * distributed under the License is distributed on an "AS IS" BASIS,
+   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   * See the License for the specific language governing permissions and
+   * limitations under the License.
+   */
 
-/*jslint browser:true */
-/*global document,google */
+  /*jslint browser:true */
+  /*global document,google */
 
-/**
- * @param {Function} childCtor Child class.
- * @param {Function} parentCtor Parent class.
- */
-function inherits(childCtor, parentCtor) {
-  /** @constructor */
-  function tempCtor() {};
-  tempCtor.prototype = parentCtor.prototype;
-  childCtor.superClass_ = parentCtor.prototype;
-  childCtor.prototype = new tempCtor();
-  /** @override */
-  childCtor.prototype.constructor = childCtor;
-}
-
-/**
- * This constructor creates a label and associates it with a marker.
- * It is for the private use of the MarkerWithLabel class.
- * @constructor
- * @param {Marker} marker The marker with which the label is to be associated.
- * @param {string} crossURL The URL of the cross image =.
- * @param {string} handCursor The URL of the hand cursor.
- * @private
- */
-function MarkerLabel_(marker, crossURL, handCursorURL) {
-  this.marker_ = marker;
-  this.handCursorURL_ = marker.handCursorURL;
-
-  this.labelDiv_ = document.createElement("div");
-  this.labelDiv_.style.cssText = "position: absolute; overflow: hidden;";
-
-  // Set up the DIV for handling mouse events in the label. This DIV forms a transparent veil
-  // in the "overlayMouseTarget" pane, a veil that covers just the label. This is done so that
-  // events can be captured even if the label is in the shadow of a google.maps.InfoWindow.
-  // Code is included here to ensure the veil is always exactly the same size as the label.
-  this.eventDiv_ = document.createElement("div");
-  this.eventDiv_.style.cssText = this.labelDiv_.style.cssText;
-
-  // This is needed for proper behavior on MSIE:
-  this.eventDiv_.setAttribute("onselectstart", "return false;");
-  this.eventDiv_.setAttribute("ondragstart", "return false;");
-
-  // Get the DIV for the "X" to be displayed when the marker is raised.
-  this.crossDiv_ = MarkerLabel_.getSharedCross(crossURL);
-}
-inherits(MarkerLabel_, google.maps.OverlayView);
-
-/**
- * Returns the DIV for the cross used when dragging a marker when the
- * raiseOnDrag parameter set to true. One cross is shared with all markers.
- * @param {string} crossURL The URL of the cross image =.
- * @private
- */
-MarkerLabel_.getSharedCross = function (crossURL) {
-  var div;
-  if (typeof MarkerLabel_.getSharedCross.crossDiv === "undefined") {
-    div = document.createElement("img");
-    div.style.cssText = "position: absolute; z-index: 1000002; display: none;";
-    // Hopefully Google never changes the standard "X" attributes:
-    div.style.marginLeft = "-8px";
-    div.style.marginTop = "-9px";
-    div.src = crossURL;
-    MarkerLabel_.getSharedCross.crossDiv = div;
-  }
-  return MarkerLabel_.getSharedCross.crossDiv;
-};
-
-/**
- * Adds the DIV representing the label to the DOM. This method is called
- * automatically when the marker's <code>setMap</code> method is called.
- * @private
- */
-MarkerLabel_.prototype.onAdd = function () {
-  var me = this;
-  var cMouseIsDown = false;
-  var cDraggingLabel = false;
-  var cSavedZIndex;
-  var cLatOffset, cLngOffset;
-  var cIgnoreClick;
-  var cRaiseEnabled;
-  var cStartPosition;
-  var cStartCenter;
-  // Constants:
-  var cRaiseOffset = 20;
-  var cDraggingCursor = "url(" + this.handCursorURL_ + ")";
-
-  // Stops all processing of an event.
-  //
-  var cAbortEvent = function (e) {
-    if (e.preventDefault) {
-      e.preventDefault();
-    }
-    e.cancelBubble = true;
-    if (e.stopPropagation) {
-      e.stopPropagation();
-    }
-  };
-
-  var cStopBounce = function () {
-    me.marker_.setAnimation(null);
-  };
-
-  this.getPanes().overlayImage.appendChild(this.labelDiv_);
-  this.getPanes().overlayMouseTarget.appendChild(this.eventDiv_);
-  // One cross is shared with all markers, so only add it once:
-  if (typeof MarkerLabel_.getSharedCross.processed === "undefined") {
-    this.getPanes().overlayImage.appendChild(this.crossDiv_);
-    MarkerLabel_.getSharedCross.processed = true;
+  /**
+   * @param {Function} childCtor Child class.
+   * @param {Function} parentCtor Parent class.
+   */
+  function inherits(childCtor, parentCtor) {
+    /** @constructor */
+    function tempCtor() {
+    };
+    tempCtor.prototype = parentCtor.prototype;
+    childCtor.superClass_ = parentCtor.prototype;
+    childCtor.prototype = new tempCtor();
+    /** @override */
+    childCtor.prototype.constructor = childCtor;
   }
 
-  this.listeners_ = [
-    google.maps.event.addDomListener(this.eventDiv_, "mouseover", function (e) {
-      if (me.marker_.getDraggable() || me.marker_.getClickable()) {
-        this.style.cursor = "pointer";
-        google.maps.event.trigger(me.marker_, "mouseover", e);
+  /**
+   * This constructor creates a label and associates it with a marker.
+   * It is for the private use of the MarkerWithLabel class.
+   * @constructor
+   * @param {Marker} marker The marker with which the label is to be associated.
+   * @param {string} crossURL The URL of the cross image =.
+   * @param {string} handCursor The URL of the hand cursor.
+   * @private
+   */
+  function MarkerLabel_(marker, crossURL, handCursorURL) {
+    this.marker_ = marker;
+    this.handCursorURL_ = marker.handCursorURL;
+
+    this.labelDiv_ = document.createElement("div");
+    this.labelDiv_.style.cssText = "position: absolute; overflow: hidden;";
+
+    // Set up the DIV for handling mouse events in the label. This DIV forms a transparent veil
+    // in the "overlayMouseTarget" pane, a veil that covers just the label. This is done so that
+    // events can be captured even if the label is in the shadow of a google.maps.InfoWindow.
+    // Code is included here to ensure the veil is always exactly the same size as the label.
+    this.eventDiv_ = document.createElement("div");
+    this.eventDiv_.style.cssText = this.labelDiv_.style.cssText;
+
+    // This is needed for proper behavior on MSIE:
+    this.eventDiv_.setAttribute("onselectstart", "return false;");
+    this.eventDiv_.setAttribute("ondragstart", "return false;");
+
+    // Get the DIV for the "X" to be displayed when the marker is raised.
+    this.crossDiv_ = MarkerLabel_.getSharedCross(crossURL);
+  }
+
+  inherits(MarkerLabel_, google.maps.OverlayView);
+
+  /**
+   * Returns the DIV for the cross used when dragging a marker when the
+   * raiseOnDrag parameter set to true. One cross is shared with all markers.
+   * @param {string} crossURL The URL of the cross image =.
+   * @private
+   */
+  MarkerLabel_.getSharedCross = function (crossURL) {
+    var div;
+    if (typeof MarkerLabel_.getSharedCross.crossDiv === "undefined") {
+      div = document.createElement("img");
+      div.style.cssText = "position: absolute; z-index: 1000002; display: none;";
+      // Hopefully Google never changes the standard "X" attributes:
+      div.style.marginLeft = "-8px";
+      div.style.marginTop = "-9px";
+      div.src = crossURL;
+      MarkerLabel_.getSharedCross.crossDiv = div;
+    }
+    return MarkerLabel_.getSharedCross.crossDiv;
+  };
+
+  /**
+   * Adds the DIV representing the label to the DOM. This method is called
+   * automatically when the marker's <code>setMap</code> method is called.
+   * @private
+   */
+  MarkerLabel_.prototype.onAdd = function () {
+    var me = this;
+    var cMouseIsDown = false;
+    var cDraggingLabel = false;
+    var cSavedZIndex;
+    var cLatOffset, cLngOffset;
+    var cIgnoreClick;
+    var cRaiseEnabled;
+    var cStartPosition;
+    var cStartCenter;
+    // Constants:
+    var cRaiseOffset = 20;
+    var cDraggingCursor = "url(" + this.handCursorURL_ + ")";
+
+    // Stops all processing of an event.
+    //
+    var cAbortEvent = function (e) {
+      if (e.preventDefault) {
+        e.preventDefault();
       }
-    }),
-    google.maps.event.addDomListener(this.eventDiv_, "mouseout", function (e) {
-      if ((me.marker_.getDraggable() || me.marker_.getClickable()) && !cDraggingLabel) {
-        this.style.cursor = me.marker_.getCursor();
-        google.maps.event.trigger(me.marker_, "mouseout", e);
+      e.cancelBubble = true;
+      if (e.stopPropagation) {
+        e.stopPropagation();
       }
-    }),
-    google.maps.event.addDomListener(this.eventDiv_, "mousedown", function (e) {
-      cDraggingLabel = false;
-      if (me.marker_.getDraggable()) {
-        cMouseIsDown = true;
-        this.style.cursor = cDraggingCursor;
-      }
-      if (me.marker_.getDraggable() || me.marker_.getClickable()) {
-        google.maps.event.trigger(me.marker_, "mousedown", e);
-        cAbortEvent(e); // Prevent map pan when starting a drag on a label
-      }
-    }),
-    google.maps.event.addDomListener(document, "mouseup", function (mEvent) {
-      var position;
-      if (cMouseIsDown) {
-        cMouseIsDown = false;
-        me.eventDiv_.style.cursor = "pointer";
-        google.maps.event.trigger(me.marker_, "mouseup", mEvent);
-      }
-      if (cDraggingLabel) {
-        if (cRaiseEnabled) { // Lower the marker & label
-          position = me.getProjection().fromLatLngToDivPixel(me.marker_.getPosition());
-          position.y += cRaiseOffset;
-          me.marker_.setPosition(me.getProjection().fromDivPixelToLatLng(position));
-          // This is not the same bouncing style as when the marker portion is dragged,
-          // but it will have to do:
-          try { // Will fail if running Google Maps API earlier than V3.3
-            me.marker_.setAnimation(google.maps.Animation.BOUNCE);
-            setTimeout(cStopBounce, 1406);
-          } catch (e) {}
+    };
+
+    var cStopBounce = function () {
+      me.marker_.setAnimation(null);
+    };
+
+    this.getPanes().overlayImage.appendChild(this.labelDiv_);
+    this.getPanes().overlayMouseTarget.appendChild(this.eventDiv_);
+    // One cross is shared with all markers, so only add it once:
+    if (typeof MarkerLabel_.getSharedCross.processed === "undefined") {
+      this.getPanes().overlayImage.appendChild(this.crossDiv_);
+      MarkerLabel_.getSharedCross.processed = true;
+    }
+
+    this.listeners_ = [
+      google.maps.event.addDomListener(this.eventDiv_, "mouseover", function (e) {
+        if (me.marker_.getDraggable() || me.marker_.getClickable()) {
+          this.style.cursor = "pointer";
+          google.maps.event.trigger(me.marker_, "mouseover", e);
         }
-        me.crossDiv_.style.display = "none";
-        me.marker_.setZIndex(cSavedZIndex);
-        cIgnoreClick = true; // Set flag to ignore the click event reported after a label drag
+      }),
+      google.maps.event.addDomListener(this.eventDiv_, "mouseout", function (e) {
+        if ((me.marker_.getDraggable() || me.marker_.getClickable()) && !cDraggingLabel) {
+          this.style.cursor = me.marker_.getCursor();
+          google.maps.event.trigger(me.marker_, "mouseout", e);
+        }
+      }),
+      google.maps.event.addDomListener(this.eventDiv_, "mousedown", function (e) {
         cDraggingLabel = false;
-        mEvent.latLng = me.marker_.getPosition();
-        google.maps.event.trigger(me.marker_, "dragend", mEvent);
-      }
-    }),
-    google.maps.event.addListener(me.marker_.getMap(), "mousemove", function (mEvent) {
-      var position;
-      if (cMouseIsDown) {
+        if (me.marker_.getDraggable()) {
+          cMouseIsDown = true;
+          this.style.cursor = cDraggingCursor;
+        }
+        if (me.marker_.getDraggable() || me.marker_.getClickable()) {
+          google.maps.event.trigger(me.marker_, "mousedown", e);
+          cAbortEvent(e); // Prevent map pan when starting a drag on a label
+        }
+      }),
+      google.maps.event.addDomListener(document, "mouseup", function (mEvent) {
+        var position;
+        if (cMouseIsDown) {
+          cMouseIsDown = false;
+          me.eventDiv_.style.cursor = "pointer";
+          google.maps.event.trigger(me.marker_, "mouseup", mEvent);
+        }
         if (cDraggingLabel) {
-          // Change the reported location from the mouse position to the marker position:
-          mEvent.latLng = new google.maps.LatLng(mEvent.latLng.lat() - cLatOffset, mEvent.latLng.lng() - cLngOffset);
-          position = me.getProjection().fromLatLngToDivPixel(mEvent.latLng);
-          if (cRaiseEnabled) {
-            me.crossDiv_.style.left = position.x + "px";
-            me.crossDiv_.style.top = position.y + "px";
-            me.crossDiv_.style.display = "";
-            position.y -= cRaiseOffset;
+          if (cRaiseEnabled) { // Lower the marker & label
+            position = me.getProjection().fromLatLngToDivPixel(me.marker_.getPosition());
+            position.y += cRaiseOffset;
+            me.marker_.setPosition(me.getProjection().fromDivPixelToLatLng(position));
+            // This is not the same bouncing style as when the marker portion is dragged,
+            // but it will have to do:
+            try { // Will fail if running Google Maps API earlier than V3.3
+              me.marker_.setAnimation(google.maps.Animation.BOUNCE);
+              setTimeout(cStopBounce, 1406);
+            } catch (e) {
+            }
           }
-          me.marker_.setPosition(me.getProjection().fromDivPixelToLatLng(position));
-          if (cRaiseEnabled) { // Don't raise the veil; this hack needed to make MSIE act properly
-            me.eventDiv_.style.top = (position.y + cRaiseOffset) + "px";
-          }
-          google.maps.event.trigger(me.marker_, "drag", mEvent);
-        } else {
-          // Calculate offsets from the click point to the marker position:
-          cLatOffset = mEvent.latLng.lat() - me.marker_.getPosition().lat();
-          cLngOffset = mEvent.latLng.lng() - me.marker_.getPosition().lng();
-          cSavedZIndex = me.marker_.getZIndex();
-          cStartPosition = me.marker_.getPosition();
-          cStartCenter = me.marker_.getMap().getCenter();
-          cRaiseEnabled = me.marker_.get("raiseOnDrag");
-          cDraggingLabel = true;
-          me.marker_.setZIndex(1000000); // Moves the marker & label to the foreground during a drag
+          me.crossDiv_.style.display = "none";
+          me.marker_.setZIndex(cSavedZIndex);
+          cIgnoreClick = true; // Set flag to ignore the click event reported after a label drag
+          cDraggingLabel = false;
           mEvent.latLng = me.marker_.getPosition();
-          google.maps.event.trigger(me.marker_, "dragstart", mEvent);
+          google.maps.event.trigger(me.marker_, "dragend", mEvent);
         }
-      }
-    }),
-    google.maps.event.addDomListener(document, "keydown", function (e) {
-      if (cDraggingLabel) {
-        if (e.keyCode === 27) { // Esc key
-          cRaiseEnabled = false;
-          me.marker_.setPosition(cStartPosition);
-          me.marker_.getMap().setCenter(cStartCenter);
-          google.maps.event.trigger(document, "mouseup", e);
+      }),
+      google.maps.event.addListener(me.marker_.getMap(), "mousemove", function (mEvent) {
+        var position;
+        if (cMouseIsDown) {
+          if (cDraggingLabel) {
+            // Change the reported location from the mouse position to the marker position:
+            mEvent.latLng = new google.maps.LatLng(mEvent.latLng.lat() - cLatOffset, mEvent.latLng.lng() - cLngOffset);
+            position = me.getProjection().fromLatLngToDivPixel(mEvent.latLng);
+            if (cRaiseEnabled) {
+              me.crossDiv_.style.left = position.x + "px";
+              me.crossDiv_.style.top = position.y + "px";
+              me.crossDiv_.style.display = "";
+              position.y -= cRaiseOffset;
+            }
+            me.marker_.setPosition(me.getProjection().fromDivPixelToLatLng(position));
+            if (cRaiseEnabled) { // Don't raise the veil; this hack needed to make MSIE act properly
+              me.eventDiv_.style.top = (position.y + cRaiseOffset) + "px";
+            }
+            google.maps.event.trigger(me.marker_, "drag", mEvent);
+          } else {
+            // Calculate offsets from the click point to the marker position:
+            cLatOffset = mEvent.latLng.lat() - me.marker_.getPosition().lat();
+            cLngOffset = mEvent.latLng.lng() - me.marker_.getPosition().lng();
+            cSavedZIndex = me.marker_.getZIndex();
+            cStartPosition = me.marker_.getPosition();
+            cStartCenter = me.marker_.getMap().getCenter();
+            cRaiseEnabled = me.marker_.get("raiseOnDrag");
+            cDraggingLabel = true;
+            me.marker_.setZIndex(1000000); // Moves the marker & label to the foreground during a drag
+            mEvent.latLng = me.marker_.getPosition();
+            google.maps.event.trigger(me.marker_, "dragstart", mEvent);
+          }
         }
-      }
-    }),
-    google.maps.event.addDomListener(this.eventDiv_, "click", function (e) {
-      if (me.marker_.getDraggable() || me.marker_.getClickable()) {
-        if (cIgnoreClick) { // Ignore the click reported when a label drag ends
-          cIgnoreClick = false;
-        } else {
-          google.maps.event.trigger(me.marker_, "click", e);
-          cAbortEvent(e); // Prevent click from being passed on to map
+      }),
+      google.maps.event.addDomListener(document, "keydown", function (e) {
+        if (cDraggingLabel) {
+          if (e.keyCode === 27) { // Esc key
+            cRaiseEnabled = false;
+            me.marker_.setPosition(cStartPosition);
+            me.marker_.getMap().setCenter(cStartCenter);
+            google.maps.event.trigger(document, "mouseup", e);
+          }
         }
-      }
-    }),
-    google.maps.event.addDomListener(this.eventDiv_, "dblclick", function (e) {
-      if (me.marker_.getDraggable() || me.marker_.getClickable()) {
-        google.maps.event.trigger(me.marker_, "dblclick", e);
-        cAbortEvent(e); // Prevent map zoom when double-clicking on a label
-      }
-    }),
-    google.maps.event.addListener(this.marker_, "dragstart", function (mEvent) {
-      if (!cDraggingLabel) {
-        cRaiseEnabled = this.get("raiseOnDrag");
-      }
-    }),
-    google.maps.event.addListener(this.marker_, "drag", function (mEvent) {
-      if (!cDraggingLabel) {
-        if (cRaiseEnabled) {
-          me.setPosition(cRaiseOffset);
-          // During a drag, the marker's z-index is temporarily set to 1000000 to
-          // ensure it appears above all other markers. Also set the label's z-index
-          // to 1000000 (plus or minus 1 depending on whether the label is supposed
-          // to be above or below the marker).
-          me.labelDiv_.style.zIndex = 1000000 + (this.get("labelInBackground") ? -1 : +1);
+      }),
+      google.maps.event.addDomListener(this.eventDiv_, "click", function (e) {
+        if (me.marker_.getDraggable() || me.marker_.getClickable()) {
+          if (cIgnoreClick) { // Ignore the click reported when a label drag ends
+            cIgnoreClick = false;
+          } else {
+            google.maps.event.trigger(me.marker_, "click", e);
+            cAbortEvent(e); // Prevent click from being passed on to map
+          }
         }
-      }
-    }),
-    google.maps.event.addListener(this.marker_, "dragend", function (mEvent) {
-      if (!cDraggingLabel) {
-        if (cRaiseEnabled) {
-          me.setPosition(0); // Also restores z-index of label
+      }),
+      google.maps.event.addDomListener(this.eventDiv_, "dblclick", function (e) {
+        if (me.marker_.getDraggable() || me.marker_.getClickable()) {
+          google.maps.event.trigger(me.marker_, "dblclick", e);
+          cAbortEvent(e); // Prevent map zoom when double-clicking on a label
         }
-      }
-    }),
-    google.maps.event.addListener(this.marker_, "position_changed", function () {
-      me.setPosition();
-    }),
-    google.maps.event.addListener(this.marker_, "zindex_changed", function () {
-      me.setZIndex();
-    }),
-    google.maps.event.addListener(this.marker_, "visible_changed", function () {
-      me.setVisible();
-    }),
-    google.maps.event.addListener(this.marker_, "labelvisible_changed", function () {
-      me.setVisible();
-    }),
-    google.maps.event.addListener(this.marker_, "title_changed", function () {
-      me.setTitle();
-    }),
-    google.maps.event.addListener(this.marker_, "labelcontent_changed", function () {
-      me.setContent();
-    }),
-    google.maps.event.addListener(this.marker_, "labelanchor_changed", function () {
-      me.setAnchor();
-    }),
-    google.maps.event.addListener(this.marker_, "labelclass_changed", function () {
-      me.setStyles();
-    }),
-    google.maps.event.addListener(this.marker_, "labelstyle_changed", function () {
-      me.setStyles();
-    })
-  ];
-};
+      }),
+      google.maps.event.addListener(this.marker_, "dragstart", function (mEvent) {
+        if (!cDraggingLabel) {
+          cRaiseEnabled = this.get("raiseOnDrag");
+        }
+      }),
+      google.maps.event.addListener(this.marker_, "drag", function (mEvent) {
+        if (!cDraggingLabel) {
+          if (cRaiseEnabled) {
+            me.setPosition(cRaiseOffset);
+            // During a drag, the marker's z-index is temporarily set to 1000000 to
+            // ensure it appears above all other markers. Also set the label's z-index
+            // to 1000000 (plus or minus 1 depending on whether the label is supposed
+            // to be above or below the marker).
+            me.labelDiv_.style.zIndex = 1000000 + (this.get("labelInBackground") ? -1 : +1);
+          }
+        }
+      }),
+      google.maps.event.addListener(this.marker_, "dragend", function (mEvent) {
+        if (!cDraggingLabel) {
+          if (cRaiseEnabled) {
+            me.setPosition(0); // Also restores z-index of label
+          }
+        }
+      }),
+      google.maps.event.addListener(this.marker_, "position_changed", function () {
+        me.setPosition();
+      }),
+      google.maps.event.addListener(this.marker_, "zindex_changed", function () {
+        me.setZIndex();
+      }),
+      google.maps.event.addListener(this.marker_, "visible_changed", function () {
+        me.setVisible();
+      }),
+      google.maps.event.addListener(this.marker_, "labelvisible_changed", function () {
+        me.setVisible();
+      }),
+      google.maps.event.addListener(this.marker_, "title_changed", function () {
+        me.setTitle();
+      }),
+      google.maps.event.addListener(this.marker_, "labelcontent_changed", function () {
+        me.setContent();
+      }),
+      google.maps.event.addListener(this.marker_, "labelanchor_changed", function () {
+        me.setAnchor();
+      }),
+      google.maps.event.addListener(this.marker_, "labelclass_changed", function () {
+        me.setStyles();
+      }),
+      google.maps.event.addListener(this.marker_, "labelstyle_changed", function () {
+        me.setStyles();
+      })
+    ];
+  };
 
-/**
- * Removes the DIV for the label from the DOM. It also removes all event handlers.
- * This method is called automatically when the marker's <code>setMap(null)</code>
- * method is called.
- * @private
- */
-MarkerLabel_.prototype.onRemove = function () {
-  var i;
-  this.labelDiv_.parentNode.removeChild(this.labelDiv_);
-  this.eventDiv_.parentNode.removeChild(this.eventDiv_);
+  /**
+   * Removes the DIV for the label from the DOM. It also removes all event handlers.
+   * This method is called automatically when the marker's <code>setMap(null)</code>
+   * method is called.
+   * @private
+   */
+  MarkerLabel_.prototype.onRemove = function () {
+    var i;
+    this.labelDiv_.parentNode.removeChild(this.labelDiv_);
+    this.eventDiv_.parentNode.removeChild(this.eventDiv_);
 
-  // Remove event listeners:
-  for (i = 0; i < this.listeners_.length; i++) {
-    google.maps.event.removeListener(this.listeners_[i]);
-  }
-};
-
-/**
- * Draws the label on the map.
- * @private
- */
-MarkerLabel_.prototype.draw = function () {
-  this.setContent();
-  this.setTitle();
-  this.setStyles();
-};
-
-/**
- * Sets the content of the label.
- * The content can be plain text or an HTML DOM node.
- * @private
- */
-MarkerLabel_.prototype.setContent = function () {
-  var content = this.marker_.get("labelContent");
-  if (typeof content.nodeType === "undefined") {
-    this.labelDiv_.innerHTML = content;
-    this.eventDiv_.innerHTML = this.labelDiv_.innerHTML;
-  } else {
-    this.labelDiv_.innerHTML = ""; // Remove current content
-    this.labelDiv_.appendChild(content);
-    content = content.cloneNode(true);
-    this.eventDiv_.appendChild(content);
-  }
-};
-
-/**
- * Sets the content of the tool tip for the label. It is
- * always set to be the same as for the marker itself.
- * @private
- */
-MarkerLabel_.prototype.setTitle = function () {
-  this.eventDiv_.title = this.marker_.getTitle() || "";
-};
-
-/**
- * Sets the style of the label by setting the style sheet and applying
- * other specific styles requested.
- * @private
- */
-MarkerLabel_.prototype.setStyles = function () {
-  var i, labelStyle;
-
-  // Apply style values from the style sheet defined in the labelClass parameter:
-  this.labelDiv_.className = this.marker_.get("labelClass");
-  this.eventDiv_.className = this.labelDiv_.className;
-
-  // Clear existing inline style values:
-  this.labelDiv_.style.cssText = "";
-  this.eventDiv_.style.cssText = "";
-  // Apply style values defined in the labelStyle parameter:
-  labelStyle = this.marker_.get("labelStyle");
-  for (i in labelStyle) {
-    if (labelStyle.hasOwnProperty(i)) {
-      this.labelDiv_.style[i] = labelStyle[i];
-      this.eventDiv_.style[i] = labelStyle[i];
+    // Remove event listeners:
+    for (i = 0; i < this.listeners_.length; i++) {
+      google.maps.event.removeListener(this.listeners_[i]);
     }
+  };
+
+  /**
+   * Draws the label on the map.
+   * @private
+   */
+  MarkerLabel_.prototype.draw = function () {
+    this.setContent();
+    this.setTitle();
+    this.setStyles();
+  };
+
+  /**
+   * Sets the content of the label.
+   * The content can be plain text or an HTML DOM node.
+   * @private
+   */
+  MarkerLabel_.prototype.setContent = function () {
+    var content = this.marker_.get("labelContent");
+    if (typeof content.nodeType === "undefined") {
+      this.labelDiv_.innerHTML = content;
+      this.eventDiv_.innerHTML = this.labelDiv_.innerHTML;
+    } else {
+      this.labelDiv_.innerHTML = ""; // Remove current content
+      this.labelDiv_.appendChild(content);
+      content = content.cloneNode(true);
+      this.eventDiv_.appendChild(content);
+    }
+  };
+
+  /**
+   * Sets the content of the tool tip for the label. It is
+   * always set to be the same as for the marker itself.
+   * @private
+   */
+  MarkerLabel_.prototype.setTitle = function () {
+    this.eventDiv_.title = this.marker_.getTitle() || "";
+  };
+
+  /**
+   * Sets the style of the label by setting the style sheet and applying
+   * other specific styles requested.
+   * @private
+   */
+  MarkerLabel_.prototype.setStyles = function () {
+    var i, labelStyle;
+
+    // Apply style values from the style sheet defined in the labelClass parameter:
+    this.labelDiv_.className = this.marker_.get("labelClass");
+    this.eventDiv_.className = this.labelDiv_.className;
+
+    // Clear existing inline style values:
+    this.labelDiv_.style.cssText = "";
+    this.eventDiv_.style.cssText = "";
+    // Apply style values defined in the labelStyle parameter:
+    labelStyle = this.marker_.get("labelStyle");
+    for (i in labelStyle) {
+      if (labelStyle.hasOwnProperty(i)) {
+        this.labelDiv_.style[i] = labelStyle[i];
+        this.eventDiv_.style[i] = labelStyle[i];
+      }
+    }
+    this.setMandatoryStyles();
+  };
+
+  /**
+   * Sets the mandatory styles to the DIV representing the label as well as to the
+   * associated event DIV. This includes setting the DIV position, z-index, and visibility.
+   * @private
+   */
+  MarkerLabel_.prototype.setMandatoryStyles = function () {
+    this.labelDiv_.style.position = "absolute";
+    this.labelDiv_.style.overflow = "hidden";
+    // Make sure the opacity setting causes the desired effect on MSIE:
+    if (typeof this.labelDiv_.style.opacity !== "undefined" && this.labelDiv_.style.opacity !== "") {
+      this.labelDiv_.style.MsFilter = "\"progid:DXImageTransform.Microsoft.Alpha(opacity=" + (this.labelDiv_.style.opacity * 100) + ")\"";
+      this.labelDiv_.style.filter = "alpha(opacity=" + (this.labelDiv_.style.opacity * 100) + ")";
+    }
+
+    this.eventDiv_.style.position = this.labelDiv_.style.position;
+    this.eventDiv_.style.overflow = this.labelDiv_.style.overflow;
+    this.eventDiv_.style.opacity = 0.01; // Don't use 0; DIV won't be clickable on MSIE
+    this.eventDiv_.style.MsFilter = "\"progid:DXImageTransform.Microsoft.Alpha(opacity=1)\"";
+    this.eventDiv_.style.filter = "alpha(opacity=1)"; // For MSIE
+
+    this.setAnchor();
+    this.setPosition(); // This also updates z-index, if necessary.
+    this.setVisible();
+  };
+
+  /**
+   * Sets the anchor point of the label.
+   * @private
+   */
+  MarkerLabel_.prototype.setAnchor = function () {
+    var anchor = this.marker_.get("labelAnchor");
+    this.labelDiv_.style.marginLeft = -anchor.x + "px";
+    this.labelDiv_.style.marginTop = -anchor.y + "px";
+    this.eventDiv_.style.marginLeft = -anchor.x + "px";
+    this.eventDiv_.style.marginTop = -anchor.y + "px";
+  };
+
+  /**
+   * Sets the position of the label. The z-index is also updated, if necessary.
+   * @private
+   */
+  MarkerLabel_.prototype.setPosition = function (yOffset) {
+    var position = this.getProjection().fromLatLngToDivPixel(this.marker_.getPosition());
+    if (typeof yOffset === "undefined") {
+      yOffset = 0;
+    }
+    this.labelDiv_.style.left = Math.round(position.x) + "px";
+    this.labelDiv_.style.top = Math.round(position.y - yOffset) + "px";
+    this.eventDiv_.style.left = this.labelDiv_.style.left;
+    this.eventDiv_.style.top = this.labelDiv_.style.top;
+
+    this.setZIndex();
+  };
+
+  /**
+   * Sets the z-index of the label. If the marker's z-index property has not been defined, the z-index
+   * of the label is set to the vertical coordinate of the label. This is in keeping with the default
+   * stacking order for Google Maps: markers to the south are in front of markers to the north.
+   * @private
+   */
+  MarkerLabel_.prototype.setZIndex = function () {
+    var zAdjust = (this.marker_.get("labelInBackground") ? -1 : +1);
+    if (typeof this.marker_.getZIndex() === "undefined") {
+      this.labelDiv_.style.zIndex = parseInt(this.labelDiv_.style.top, 10) + zAdjust;
+      this.eventDiv_.style.zIndex = this.labelDiv_.style.zIndex;
+    } else {
+      this.labelDiv_.style.zIndex = this.marker_.getZIndex() + zAdjust;
+      this.eventDiv_.style.zIndex = this.labelDiv_.style.zIndex;
+    }
+  };
+
+  /**
+   * Sets the visibility of the label. The label is visible only if the marker itself is
+   * visible (i.e., its visible property is true) and the labelVisible property is true.
+   * @private
+   */
+  MarkerLabel_.prototype.setVisible = function () {
+    if (this.marker_.get("labelVisible")) {
+      this.labelDiv_.style.display = this.marker_.getVisible() ? "block" : "none";
+    } else {
+      this.labelDiv_.style.display = "none";
+    }
+    this.eventDiv_.style.display = this.labelDiv_.style.display;
+  };
+
+  /**
+   * @name MarkerWithLabelOptions
+   * @class This class represents the optional parameter passed to the {@link MarkerWithLabel} constructor.
+   *  The properties available are the same as for <code>google.maps.Marker</code> with the addition
+   *  of the properties listed below. To change any of these additional properties after the labeled
+   *  marker has been created, call <code>google.maps.Marker.set(propertyName, propertyValue)</code>.
+   *  <p>
+   *  When any of these properties changes, a property changed event is fired. The names of these
+   *  events are derived from the name of the property and are of the form <code>propertyname_changed</code>.
+   *  For example, if the content of the label changes, a <code>labelcontent_changed</code> event
+   *  is fired.
+   *  <p>
+   * @property {string|Node} [labelContent] The content of the label (plain text or an HTML DOM node).
+   * @property {Point} [labelAnchor] By default, a label is drawn with its anchor point at (0,0) so
+   *  that its top left corner is positioned at the anchor point of the associated marker. Use this
+   *  property to change the anchor point of the label. For example, to center a 50px-wide label
+   *  beneath a marker, specify a <code>labelAnchor</code> of <code>google.maps.Point(25, 0)</code>.
+   *  (Note: x-values increase to the right and y-values increase to the top.)
+   * @property {string} [labelClass] The name of the CSS class defining the styles for the label.
+   *  Note that style values for <code>position</code>, <code>overflow</code>, <code>top</code>,
+   *  <code>left</code>, <code>zIndex</code>, <code>display</code>, <code>marginLeft</code>, and
+   *  <code>marginTop</code> are ignored; these styles are for internal use only.
+   * @property {Object} [labelStyle] An object literal whose properties define specific CSS
+   *  style values to be applied to the label. Style values defined here override those that may
+   *  be defined in the <code>labelClass</code> style sheet. If this property is changed after the
+   *  label has been created, all previously set styles (except those defined in the style sheet)
+   *  are removed from the label before the new style values are applied.
+   *  Note that style values for <code>position</code>, <code>overflow</code>, <code>top</code>,
+   *  <code>left</code>, <code>zIndex</code>, <code>display</code>, <code>marginLeft</code>, and
+   *  <code>marginTop</code> are ignored; these styles are for internal use only.
+   * @property {boolean} [labelInBackground] A flag indicating whether a label that overlaps its
+   *  associated marker should appear in the background (i.e., in a plane below the marker).
+   *  The default is <code>false</code>, which causes the label to appear in the foreground.
+   * @property {boolean} [labelVisible] A flag indicating whether the label is to be visible.
+   *  The default is <code>true</code>. Note that even if <code>labelVisible</code> is
+   *  <code>true</code>, the label will <i>not</i> be visible unless the associated marker is also
+   *  visible (i.e., unless the marker's <code>visible</code> property is <code>true</code>).
+   * @property {boolean} [raiseOnDrag] A flag indicating whether the label and marker are to be
+   *  raised when the marker is dragged. The default is <code>true</code>. If a draggable marker is
+   *  being created and a version of Google Maps API earlier than V3.3 is being used, this property
+   *  must be set to <code>false</code>.
+   * @property {boolean} [optimized] A flag indicating whether rendering is to be optimized for the
+   *  marker. <b>Important: The optimized rendering technique is not supported by MarkerWithLabel,
+   *  so the value of this parameter is always forced to <code>false</code>.
+   * @property {string} [crossImage="http://maps.gstatic.com/intl/en_us/mapfiles/drag_cross_67_16.png"]
+   *  The URL of the cross image to be displayed while dragging a marker.
+   * @property {string} [handCursor="http://maps.gstatic.com/intl/en_us/mapfiles/closedhand_8_8.cur"]
+   *  The URL of the cursor to be displayed while dragging a marker.
+   */
+  /**
+   * Creates a MarkerWithLabel with the options specified in {@link MarkerWithLabelOptions}.
+   * @constructor
+   * @param {MarkerWithLabelOptions} [opt_options] The optional parameters.
+   */
+  function MarkerWithLabel(opt_options) {
+    opt_options = opt_options || {};
+    opt_options.labelContent = opt_options.labelContent || "";
+    opt_options.labelAnchor = opt_options.labelAnchor || new google.maps.Point(0, 0);
+    opt_options.labelClass = opt_options.labelClass || "markerLabels";
+    opt_options.labelStyle = opt_options.labelStyle || {};
+    opt_options.labelInBackground = opt_options.labelInBackground || false;
+    if (typeof opt_options.labelVisible === "undefined") {
+      opt_options.labelVisible = true;
+    }
+    if (typeof opt_options.raiseOnDrag === "undefined") {
+      opt_options.raiseOnDrag = true;
+    }
+    if (typeof opt_options.clickable === "undefined") {
+      opt_options.clickable = true;
+    }
+    if (typeof opt_options.draggable === "undefined") {
+      opt_options.draggable = false;
+    }
+    if (typeof opt_options.optimized === "undefined") {
+      opt_options.optimized = false;
+    }
+    opt_options.crossImage = opt_options.crossImage || "http" + (document.location.protocol === "https:" ? "s" : "") + "://maps.gstatic.com/intl/en_us/mapfiles/drag_cross_67_16.png";
+    opt_options.handCursor = opt_options.handCursor || "http" + (document.location.protocol === "https:" ? "s" : "") + "://maps.gstatic.com/intl/en_us/mapfiles/closedhand_8_8.cur";
+    opt_options.optimized = false; // Optimized rendering is not supported
+
+    this.label = new MarkerLabel_(this, opt_options.crossImage, opt_options.handCursor); // Bind the label to the marker
+
+    // Call the parent constructor. It calls Marker.setValues to initialize, so all
+    // the new parameters are conveniently saved and can be accessed with get/set.
+    // Marker.set triggers a property changed event (called "propertyname_changed")
+    // that the marker label listens for in order to react to state changes.
+    google.maps.Marker.apply(this, arguments);
   }
-  this.setMandatoryStyles();
-};
 
-/**
- * Sets the mandatory styles to the DIV representing the label as well as to the
- * associated event DIV. This includes setting the DIV position, z-index, and visibility.
- * @private
- */
-MarkerLabel_.prototype.setMandatoryStyles = function () {
-  this.labelDiv_.style.position = "absolute";
-  this.labelDiv_.style.overflow = "hidden";
-  // Make sure the opacity setting causes the desired effect on MSIE:
-  if (typeof this.labelDiv_.style.opacity !== "undefined" && this.labelDiv_.style.opacity !== "") {
-    this.labelDiv_.style.MsFilter = "\"progid:DXImageTransform.Microsoft.Alpha(opacity=" + (this.labelDiv_.style.opacity * 100) + ")\"";
-    this.labelDiv_.style.filter = "alpha(opacity=" + (this.labelDiv_.style.opacity * 100) + ")";
-  }
+  inherits(MarkerWithLabel, google.maps.Marker);
 
-  this.eventDiv_.style.position = this.labelDiv_.style.position;
-  this.eventDiv_.style.overflow = this.labelDiv_.style.overflow;
-  this.eventDiv_.style.opacity = 0.01; // Don't use 0; DIV won't be clickable on MSIE
-  this.eventDiv_.style.MsFilter = "\"progid:DXImageTransform.Microsoft.Alpha(opacity=1)\"";
-  this.eventDiv_.style.filter = "alpha(opacity=1)"; // For MSIE
+  /**
+   * Overrides the standard Marker setMap function.
+   * @param {Map} theMap The map to which the marker is to be added.
+   * @private
+   */
+  MarkerWithLabel.prototype.setMap = function (theMap) {
 
-  this.setAnchor();
-  this.setPosition(); // This also updates z-index, if necessary.
-  this.setVisible();
-};
+    // Call the inherited function...
+    google.maps.Marker.prototype.setMap.apply(this, arguments);
 
-/**
- * Sets the anchor point of the label.
- * @private
- */
-MarkerLabel_.prototype.setAnchor = function () {
-  var anchor = this.marker_.get("labelAnchor");
-  this.labelDiv_.style.marginLeft = -anchor.x + "px";
-  this.labelDiv_.style.marginTop = -anchor.y + "px";
-  this.eventDiv_.style.marginLeft = -anchor.x + "px";
-  this.eventDiv_.style.marginTop = -anchor.y + "px";
-};
-
-/**
- * Sets the position of the label. The z-index is also updated, if necessary.
- * @private
- */
-MarkerLabel_.prototype.setPosition = function (yOffset) {
-  var position = this.getProjection().fromLatLngToDivPixel(this.marker_.getPosition());
-  if (typeof yOffset === "undefined") {
-    yOffset = 0;
-  }
-  this.labelDiv_.style.left = Math.round(position.x) + "px";
-  this.labelDiv_.style.top = Math.round(position.y - yOffset) + "px";
-  this.eventDiv_.style.left = this.labelDiv_.style.left;
-  this.eventDiv_.style.top = this.labelDiv_.style.top;
-
-  this.setZIndex();
-};
-
-/**
- * Sets the z-index of the label. If the marker's z-index property has not been defined, the z-index
- * of the label is set to the vertical coordinate of the label. This is in keeping with the default
- * stacking order for Google Maps: markers to the south are in front of markers to the north.
- * @private
- */
-MarkerLabel_.prototype.setZIndex = function () {
-  var zAdjust = (this.marker_.get("labelInBackground") ? -1 : +1);
-  if (typeof this.marker_.getZIndex() === "undefined") {
-    this.labelDiv_.style.zIndex = parseInt(this.labelDiv_.style.top, 10) + zAdjust;
-    this.eventDiv_.style.zIndex = this.labelDiv_.style.zIndex;
-  } else {
-    this.labelDiv_.style.zIndex = this.marker_.getZIndex() + zAdjust;
-    this.eventDiv_.style.zIndex = this.labelDiv_.style.zIndex;
-  }
-};
-
-/**
- * Sets the visibility of the label. The label is visible only if the marker itself is
- * visible (i.e., its visible property is true) and the labelVisible property is true.
- * @private
- */
-MarkerLabel_.prototype.setVisible = function () {
-  if (this.marker_.get("labelVisible")) {
-    this.labelDiv_.style.display = this.marker_.getVisible() ? "block" : "none";
-  } else {
-    this.labelDiv_.style.display = "none";
-  }
-  this.eventDiv_.style.display = this.labelDiv_.style.display;
-};
-
-/**
- * @name MarkerWithLabelOptions
- * @class This class represents the optional parameter passed to the {@link MarkerWithLabel} constructor.
- *  The properties available are the same as for <code>google.maps.Marker</code> with the addition
- *  of the properties listed below. To change any of these additional properties after the labeled
- *  marker has been created, call <code>google.maps.Marker.set(propertyName, propertyValue)</code>.
- *  <p>
- *  When any of these properties changes, a property changed event is fired. The names of these
- *  events are derived from the name of the property and are of the form <code>propertyname_changed</code>.
- *  For example, if the content of the label changes, a <code>labelcontent_changed</code> event
- *  is fired.
- *  <p>
- * @property {string|Node} [labelContent] The content of the label (plain text or an HTML DOM node).
- * @property {Point} [labelAnchor] By default, a label is drawn with its anchor point at (0,0) so
- *  that its top left corner is positioned at the anchor point of the associated marker. Use this
- *  property to change the anchor point of the label. For example, to center a 50px-wide label
- *  beneath a marker, specify a <code>labelAnchor</code> of <code>google.maps.Point(25, 0)</code>.
- *  (Note: x-values increase to the right and y-values increase to the top.)
- * @property {string} [labelClass] The name of the CSS class defining the styles for the label.
- *  Note that style values for <code>position</code>, <code>overflow</code>, <code>top</code>,
- *  <code>left</code>, <code>zIndex</code>, <code>display</code>, <code>marginLeft</code>, and
- *  <code>marginTop</code> are ignored; these styles are for internal use only.
- * @property {Object} [labelStyle] An object literal whose properties define specific CSS
- *  style values to be applied to the label. Style values defined here override those that may
- *  be defined in the <code>labelClass</code> style sheet. If this property is changed after the
- *  label has been created, all previously set styles (except those defined in the style sheet)
- *  are removed from the label before the new style values are applied.
- *  Note that style values for <code>position</code>, <code>overflow</code>, <code>top</code>,
- *  <code>left</code>, <code>zIndex</code>, <code>display</code>, <code>marginLeft</code>, and
- *  <code>marginTop</code> are ignored; these styles are for internal use only.
- * @property {boolean} [labelInBackground] A flag indicating whether a label that overlaps its
- *  associated marker should appear in the background (i.e., in a plane below the marker).
- *  The default is <code>false</code>, which causes the label to appear in the foreground.
- * @property {boolean} [labelVisible] A flag indicating whether the label is to be visible.
- *  The default is <code>true</code>. Note that even if <code>labelVisible</code> is
- *  <code>true</code>, the label will <i>not</i> be visible unless the associated marker is also
- *  visible (i.e., unless the marker's <code>visible</code> property is <code>true</code>).
- * @property {boolean} [raiseOnDrag] A flag indicating whether the label and marker are to be
- *  raised when the marker is dragged. The default is <code>true</code>. If a draggable marker is
- *  being created and a version of Google Maps API earlier than V3.3 is being used, this property
- *  must be set to <code>false</code>.
- * @property {boolean} [optimized] A flag indicating whether rendering is to be optimized for the
- *  marker. <b>Important: The optimized rendering technique is not supported by MarkerWithLabel,
- *  so the value of this parameter is always forced to <code>false</code>.
- * @property {string} [crossImage="http://maps.gstatic.com/intl/en_us/mapfiles/drag_cross_67_16.png"]
- *  The URL of the cross image to be displayed while dragging a marker.
- * @property {string} [handCursor="http://maps.gstatic.com/intl/en_us/mapfiles/closedhand_8_8.cur"]
- *  The URL of the cursor to be displayed while dragging a marker.
- */
-/**
- * Creates a MarkerWithLabel with the options specified in {@link MarkerWithLabelOptions}.
- * @constructor
- * @param {MarkerWithLabelOptions} [opt_options] The optional parameters.
- */
-function MarkerWithLabel(opt_options) {
-  opt_options = opt_options || {};
-  opt_options.labelContent = opt_options.labelContent || "";
-  opt_options.labelAnchor = opt_options.labelAnchor || new google.maps.Point(0, 0);
-  opt_options.labelClass = opt_options.labelClass || "markerLabels";
-  opt_options.labelStyle = opt_options.labelStyle || {};
-  opt_options.labelInBackground = opt_options.labelInBackground || false;
-  if (typeof opt_options.labelVisible === "undefined") {
-    opt_options.labelVisible = true;
-  }
-  if (typeof opt_options.raiseOnDrag === "undefined") {
-    opt_options.raiseOnDrag = true;
-  }
-  if (typeof opt_options.clickable === "undefined") {
-    opt_options.clickable = true;
-  }
-  if (typeof opt_options.draggable === "undefined") {
-    opt_options.draggable = false;
-  }
-  if (typeof opt_options.optimized === "undefined") {
-    opt_options.optimized = false;
-  }
-  opt_options.crossImage = opt_options.crossImage || "http" + (document.location.protocol === "https:" ? "s" : "") + "://maps.gstatic.com/intl/en_us/mapfiles/drag_cross_67_16.png";
-  opt_options.handCursor = opt_options.handCursor || "http" + (document.location.protocol === "https:" ? "s" : "") + "://maps.gstatic.com/intl/en_us/mapfiles/closedhand_8_8.cur";
-  opt_options.optimized = false; // Optimized rendering is not supported
-
-  this.label = new MarkerLabel_(this, opt_options.crossImage, opt_options.handCursor); // Bind the label to the marker
-
-  // Call the parent constructor. It calls Marker.setValues to initialize, so all
-  // the new parameters are conveniently saved and can be accessed with get/set.
-  // Marker.set triggers a property changed event (called "propertyname_changed")
-  // that the marker label listens for in order to react to state changes.
-  google.maps.Marker.apply(this, arguments);
+    // ... then deal with the label:
+    this.label.setMap(theMap);
+  };
 }
-inherits(MarkerWithLabel, google.maps.Marker);
-
-/**
- * Overrides the standard Marker setMap function.
- * @param {Map} theMap The map to which the marker is to be added.
- * @private
- */
-MarkerWithLabel.prototype.setMap = function (theMap) {
-
-  // Call the inherited function...
-  google.maps.Marker.prototype.setMap.apply(this, arguments);
-
-  // ... then deal with the label:
-  this.label.setMap(theMap);
-};
-
 $(".js-feedback").click(function(e){
 	e.preventDefault();
 	$("#oo_tab").trigger("click");
@@ -7202,7 +7207,7 @@ function createReferral() {
 var bootPagNum = 0;
 var listCount = 10;
 var count = 0;
-var resultsListHTML ="";
+var resultsListHTML = "";
 var loadingMore = false;
 var page = 1;
 //Quote Tool variables
@@ -7214,7 +7219,7 @@ var quoteUrl;
 var quoteToolForm;
 var quoteRequest;
 // Find an X variables
-var geocoder = new google.maps.Geocoder();
+if($(".find-an-x-search__container").length > 0) {var geocoder = new google.maps.Geocoder();}
 var startPointGeoCode;
 var startPointGMarker;
 var radiusInMiles;
@@ -7226,8 +7231,8 @@ var presentHighligtedInfo;
 var selectedMarker;
 var markersArray = [];
 var dir_markerArray = [];
-var dir_to_flag=true;
-var directionsDisplay = new google.maps.DirectionsRenderer({ suppressMarkers: true });
+var dir_to_flag = true;
+if($(".find-an-x-search__container").length > 0) {var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});}
 
 //Forms Lib Variables
 var searchAgainFlag = false;
@@ -7245,8 +7250,7 @@ var newsConcatenator;
 var radioDials = false;
 
 
-
-$(document).ready(function() {
+$(document).ready(function () {
 
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
@@ -7548,50 +7552,50 @@ $(document).ready(function() {
 /*IS THIS USED??*/
 
 
-
-$(".form-radio-grp svg, .image_radio svg").on('click', function(){
+$(".form-radio-grp svg, .image_radio svg").on('click', function () {
 	var radioButton = $(this).siblings('input');
 	console.log("click")
-	if (!radioButton.prop('checked')){
+	if (!radioButton.prop('checked')) {
 		radioButton.prop('checked', true);
 		var radioName = radioButton.prop('name');
 		$('input[name=' + radioName + ']').siblings('svg').toggle();
-	};
+	}
+	;
 });
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
-$("[data-fid='contactCard'] input").click(function() {
-	if($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+$("[data-fid='contactCard'] input").click(function () {
+	if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
 		$('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
 	}
 });
 
-$('.contactCard .form-minimize').click(function() {
+$('.contactCard .form-minimize').click(function () {
 	$('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
 	$('[data-request-type] option[value=""]').attr('selected', true);
 	$("[data-request-type]").change();
 	$('[data-request-type] option[value=""]').attr('selected', true);
 });
 
-$("[data-request-type]").on("change", function(){
+$("[data-request-type]").on("change", function () {
 	var thisValue = $(this).val()
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
 	var $formid = $('[data-fid=' + thisForm + ']');
 	radioDials = false;
-	$formid.find("[data-observes-id]").find('input:radio').each(function(){
+	$formid.find("[data-observes-id]").find('input:radio').each(function () {
 		$(this).next('span').removeClass('errorRadio');
 	});
 	$formid.find('[data-observes-id]').each(function () {
 
-		if($(this).attr('data-observes-value') == thisValue ){
+		if ($(this).attr('data-observes-value') == thisValue) {
 			$(this).show();
 
-		}else{
+		} else {
 			$(this).hide();
 		}
 	});
-	if(thisValue != ""){
+	if (thisValue != "") {
 		$("[data-request-type]").removeClass('error');
 		$(this).attr('data-valid-status', 'success');
 		$(this).parent('.form-user-grp').find('svg').css('fill', '#666');
@@ -7599,11 +7603,11 @@ $("[data-request-type]").on("change", function(){
 })
 
 
-$("[data-observes-id]").find('textarea').on("change", function(){
+$("[data-observes-id]").find('textarea').on("change", function () {
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
 	var $formid = $('[data-fid=' + thisForm + ']');
 	var val = $formid.find("[data-observes-id]").find('textarea').val();
-	var placeholder  = $formid.find("[data-observes-id]").find('textarea').attr('placeholder');
+	var placeholder = $formid.find("[data-observes-id]").find('textarea').attr('placeholder');
 	if (val == "" || val == placeholder) {
 		$("[data-request-type]").attr('data-valid-status', 'failed');
 	} else {
@@ -7612,11 +7616,11 @@ $("[data-observes-id]").find('textarea').on("change", function(){
 	}
 })
 
-$("[data-observes-id]").find('input:text').on("change", function(){
+$("[data-observes-id]").find('input:text').on("change", function () {
 	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
 	var $formid = $('[data-fid=' + thisForm + ']');
 	var val = $formid.find("[data-observes-id]").find('input:text').val();
-	var placeholder  = $formid.find("[data-observes-id]").find('input:text').attr('placeholder');
+	var placeholder = $formid.find("[data-observes-id]").find('input:text').attr('placeholder');
 	if (val == "" || val == placeholder) {
 		$("[data-request-type]").attr('data-valid-status', 'failed');
 	} else {
@@ -7628,10 +7632,10 @@ $("[data-observes-id]").find('input:text').on("change", function(){
 
 $("[data-observes-id]").find('input:radio').on('click', function () {
 	/*$("[data-observes-id]").find("input:radio").each(function(){
-		$(this).removeAttr("checked");
-		$(this).next('span').removeClass('errorRadio');
-	});
-	$(this).attr('checked', true);*/
+	 $(this).removeAttr("checked");
+	 $(this).next('span').removeClass('errorRadio');
+	 });
+	 $(this).attr('checked', true);*/
 	radioDials = true;
 	$("[data-request-type]").attr('data-valid-status', 'success');
 	$("[data-request-type]").removeClass('error');
@@ -7728,8 +7732,8 @@ $('[data-required=true]').on('blur keyup', function () {
 	}
 });
 
-$(".form-user-ctrl").on('click', function(evt){
-	if($(this).hasClass("error")) {
+$(".form-user-ctrl").on('click', function (evt) {
+	if ($(this).hasClass("error")) {
 		$(this).val("");
 	}
 });
@@ -7754,7 +7758,7 @@ $('.user-checkbox').on('click', function () {
 	});
 	//if (count > 0 && count <= 5) {
 	//if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
-	if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length ) {
+	if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length) {
 		$con.find('.productPolicy').attr('data-valid-status', 'success');
 		$con.find('.productPolicy').removeClass('error');
 		$con.find('.productCount').removeClass('errorText');
@@ -7854,7 +7858,7 @@ $('.productUserQuestion').on('blur', function () {
 
 /****Product Selector****************************************/
 
-$(".product__selector").on("change", function(){
+$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
 	$(".product__selector--sub").removeClass("error");
@@ -7863,36 +7867,36 @@ $(".product__selector").on("change", function(){
 	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
 	$(".product__selector--sub").prop("disabled", true);
 	$(".product__selector--sub").val("")
-	$("[data-product-sub='"+ selectedProduct +"']").removeClass("hidden");
-	$("[data-product-sub='"+ selectedProduct +"']").find(".product__selector--sub").prop("disabled", false);
+	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
 	$(".js-productSelector").attr("href", "#");
 });
 
-$(".product__selector--sub").on("change", function(){
+$(".product__selector--sub").on("change", function () {
 	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
 	$(this).removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
 	$(".js-productSelector").attr("href", productSelectorPage);
 });
 
-$(".js-productSelector").click(function(e){
+$(".js-productSelector").click(function (e) {
 	var url = $(this).attr("href");
-	if($(".product__selector").find(':selected').val() ==""){
+	if ($(".product__selector").find(':selected').val() == "") {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if($(".product__selector--sub").find(':selected').val() ==""){
+	if ($(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
-	if(url == "#"){
+	if (url == "#") {
 		e.preventDefault();
 	}
 });
 /****Blog Search****************************************/
 
 
-$("#blog-category-dropdown").on("change", function(){
+$("#blog-category-dropdown").on("change", function () {
 	var url = $(".blog-list").attr("data-url");
 	var searchType = $(this).val();
 	ServicesAPI.blogsServiceCall(url, searchType)
@@ -7936,13 +7940,13 @@ if ($(".js-formLib").length > 0) {
 	$('.js-formLib').on("change", function () {
 		searchAgainFlag = true;
 		var url = $(".js-formLib").attr("data-forms-lib-url");
-		var query  = $(".js-formLib").attr("data-forms-query-parameter");
+		var query = $(".js-formLib").attr("data-forms-query-parameter");
 		var value = $('.js-formLib').val()
 		url += value + query;
 		ServicesAPI.formsLibraryServiceCall(url);
 	});
 
-	$(".form_library_container").on("click", ".form a", function() {
+	$(".form_library_container").on("click", ".form a", function () {
 		$(".form_library_container").find(".form a").removeClass("selected");
 		$(this).closest(".form").find("a").addClass("selected");
 	});
@@ -7955,7 +7959,7 @@ if ($(".js-formLib").length > 0) {
 // Search Results Page Search Start
 $('.js-searchSubmit').on('click', function () {
 	var searchRequest = $(".js-searchTextBox").val();
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url")+ "?query=" + searchRequest;
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
 	if (searchRequest) {
 		ServicesAPI.searchServiceCall(url);
 	}
@@ -7963,19 +7967,19 @@ $('.js-searchSubmit').on('click', function () {
 
 // Site Header Search
 $('.js-searchIcon').click(function () {
-	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-			if($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " "){
+			if ($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " ") {
 				ServicesAPI.legacySearch("search");
-			}else{
+			} else {
 				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 			}
 
-		}else{
+		} else {
 
 		}
 
-	}else{
+	} else {
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
 			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
@@ -7984,11 +7988,11 @@ $('.js-searchIcon').click(function () {
 
 });
 
-$(".ss-gac-a, .ss-gac-b").on("click", function() {
-	var searchTerm= $(this).find(".ss-gac-c").text();
+$(".ss-gac-a, .ss-gac-b").on("click", function () {
+	var searchTerm = $(this).find(".ss-gac-c").text();
 	console.log(searchTerm);
 	$(".search-trigger__search-box").val(searchTerm);
-	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		$(".search-trigger__search-box").val(searchTerm);
 		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
@@ -8002,11 +8006,11 @@ $(".ss-gac-a, .ss-gac-b").on("click", function() {
 
 
 $('.js-searchIconMobile').click(function () {
-	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
 			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 		}
-	}else{
+	} else {
 		//For Integration we only need this statment
 		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
 			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
@@ -8016,12 +8020,12 @@ $('.js-searchIconMobile').click(function () {
 });
 
 $('.search-trigger__search-box').keypress(function (e) {
-	if($(this).hasClass("js-oldSearch")){
+	if ($(this).hasClass("js-oldSearch")) {
 		if (e.which == 13) {
 			e.preventDefault();
 			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 		}
-	}else{
+	} else {
 		//For Integration we only need this statment
 		if (e.which == 13) {
 			e.preventDefault();
@@ -8045,11 +8049,11 @@ $(".js-searchSubmit").keypress(function (e) {
 		$('.js-searchSubmit').click();//Trigger search button click event
 	}
 });
-$('.js-SearchBox').click(function(e){
+$('.js-SearchBox').click(function (e) {
 	e.preventDefault();
 	var zipcode = $(".office-search__input").val();
 	var urlStr;
-	if ($(this).hasClass("office-search__action")){
+	if ($(this).hasClass("office-search__action")) {
 		sessionStorage.setItem("faoZipCode", $(".office-search__input").val());
 		urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
 		window.location.href = urlStr;
@@ -8064,7 +8068,7 @@ $('.search-results-container__correction-text > a').on('click', function (e) {
 	e.preventDefault();
 	var correctionClickedOn = $(this).children('span').text();
 	var searchRequest = correctionClickedOn;
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url")+ "?query=" + searchRequest;
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
 	if (searchRequest) {
 		ServicesAPI.searchServiceCall(url);
 	}
@@ -8079,8 +8083,8 @@ $(".page-count").on('change', function () {
 });
 
 //Find an X Click Functions
-$(".find-an-x-search__container .cta_search").on('focus',function (e) {
-	if(getViewport() == "mobile"){
+$(".find-an-x-search__container .cta_search").on('focus', function (e) {
+	if (getViewport() == "mobile") {
 		$('.find-an-x-search--expand').show();
 	}
 });
@@ -8092,27 +8096,27 @@ $(".find-an-x-search__container .cta_search").on('focus',function (e) {
  }
  });*/
 
-$(".find-an-x-search__container .directions_button").on('click',function (e) {
+$(".find-an-x-search__container .directions_button").on('click', function (e) {
 	//handle empty val
-	if( $(".cta_search").val().length === 0 ) {
+	if ($(".cta_search").val().length === 0) {
 		$(".cta_search").addClass('error');
-	}else{
+	} else {
 		ServicesAPI.showLocation();
 	}
 
 });
 
-$(".search_location_image").on('click touchstart',function () {
+$(".search_location_image").on('click touchstart', function () {
 	if ($(window).width() < 1025) {
 		ServicesAPI.showLocation();
 	}
 });
 
-$('.find-an-x-search__container .cta_search').on('keypress',function (event) {
+$('.find-an-x-search__container .cta_search').on('keypress', function (event) {
 	//handle empty val
-	if( $(".cta_search").val().length + 1 === 0 ) {
+	if ($(".cta_search").val().length + 1 === 0) {
 		$(".cta_search").addClass('error');
-	}else{
+	} else {
 		$(".cta_search").removeClass('error');
 		ServicesAPI.checkEnter(event);
 	}
@@ -8120,38 +8124,38 @@ $('.find-an-x-search__container .cta_search').on('keypress',function (event) {
 });
 
 /* Function that is called whenever the user changes the radius*/
-$(".find_an_office_radius").on('change',function () {
+$(".find_an_office_radius").on('change', function () {
 	ServicesAPI.resetMap();
 	ServicesAPI.showLocation();
 });
 
-$(document).on('click',".results_office_name",function(){
-	var i= $(this).closest('.results_office_result').index();
+$(document).on('click', ".results_office_name", function () {
+	var i = $(this).closest('.results_office_result').index();
 	var index = ((i + 1) + ((bootPagNum) * listCount))
 	google.maps.event.trigger(markersArray[index], 'click');
 });
 
-$('.get-directions-buttons .btn').on('click',function(){
+$('.get-directions-buttons .btn').on('click', function () {
 	$('.get-directions-buttons .btn').removeClass('active');
 	$(this).addClass('active');
-	if($('.driving-directions-panel').is(':visible')){
+	if ($('.driving-directions-panel').is(':visible')) {
 		ServicesAPI.getDirections();
 	}
 });
 
-$(".get-directions-form .get_directions_button").on('click',function(){
+$(".get-directions-form .get_directions_button").on('click', function () {
 	ServicesAPI.getDirections();
 });
 
 /* back link on directions page work*/
-$(".back-click").on('click',function(){
-	if($('.driving-directions-panel').is(':visible')){
+$(".back-click").on('click', function () {
+	if ($('.driving-directions-panel').is(':visible')) {
 		$('.driving-directions-panel').addClass('hidden');
 		$('.get-directions-form').removeClass('hidden');
 		directionsDisplay.setMap(null);
 		ServicesAPI.getDirectionsPanel($('.get-directions-form .to-address').val());
 	}
-	else{
+	else {
 		ServicesAPI.showLocation();
 		if (!$(".find-an-x-search__container").hasClass("hidden")) {
 
@@ -8163,7 +8167,7 @@ $(".back-click").on('click',function(){
 
 //might not be needed, need to test.
 /* update link for find an office breadcrumb*/
-$('.bc_link_fao').on('click',function(){
+$('.bc_link_fao').on('click', function () {
 	ServicesAPI.showLocation();
 });
 
@@ -8171,8 +8175,7 @@ $('.maps-button').click(function (clickedButton) {
 	var moreMapText = $(".get_direction_more_map").text();
 	var lessMapText = $(".get_direction_less_map").text();
 
-	if ($('.maps-button').text() == moreMapText)
-	{
+	if ($('.maps-button').text() == moreMapText) {
 		$('.google-maps-container').css('height', '400px');
 		$('.maps-button').text(lessMapText);
 		ServicesAPI.resetMap();
@@ -8185,13 +8188,13 @@ $('.maps-button').click(function (clickedButton) {
 	}
 });
 
-$(window).on('load',function(e) {
-	if($(".fax__container").length > 0){
+$(window).on('load', function (e) {
+	if ($(".fax__container").length > 0) {
 		faoURL = window.location.href;
 		blackMarker = $('.pngPath_icon_locpin_blk').text();
 		blueMarker = $('.pngPath_icon_locpin_blue').text();
 		ServicesAPI.initializeFindAnOffice();
-		if (document.referrer != ""){
+		if (document.referrer != "") {
 			ServicesAPI.showLocation();
 		}
 		if ($(".hidden-xs").is(":visible") == false) {
@@ -8202,7 +8205,7 @@ $(window).on('load',function(e) {
 			$(".fax__container").find('.contact-container--form-card').insertAfter($(".fax-results__container  > .maps-contact-form-container > button"));
 		}
 	}
-	if($(".find-office__zip-city-state").length > 0){
+	if ($(".find-office__zip-city-state").length > 0) {
 		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
 		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
@@ -8215,11 +8218,11 @@ $(window).on('load',function(e) {
 
 });
 //From FAO js, not sure what this does.
-$("body").on("ready", "[data-leg-index=\"1\"]", function(){
+$("body").on("ready", "[data-leg-index=\"1\"]", function () {
 	$("[data-leg-index=\"1\"]").addClass("lastMarker");
 });
 
-$(".results_pagination").click(function(){
+$(".results_pagination").click(function () {
 	$('html, body').animate({
 		scrollTop: $('.fax-results__container')
 	}, 'slow');
@@ -8238,8 +8241,8 @@ if ($(".js-editGlobal").length > 0) {
 // Get Quote Results
 // Open Edit Quote Form
 	$(".js-editGlobal").on("click", function () {
-		if(sessionStorage.getItem("product") !== null){
-			$(".insurance-type").val($("[data-product='"+ sessionStorage.getItem("product") + "']").val());
+		if (sessionStorage.getItem("product") !== null) {
+			$(".insurance-type").val($("[data-product='" + sessionStorage.getItem("product") + "']").val());
 		}
 		$(".insurance-type").change();
 		$(".contact-form-quote-results").addClass("contact-form-quote-results--hidden");
@@ -8258,45 +8261,45 @@ if ($(".js-editGlobal").length > 0) {
 	});
 }
 
-$(".js-submitQuote").click(function(e){
+$(".js-submitQuote").click(function (e) {
 	e.preventDefault();
-	if($(".js-submitQuote").parent().parent().parent().parent().hasClass('quote-tool-form')){
-		var baseUrl  = $(".quote-tool-form").attr("data-quote-url");
-		quoteUrl ="";
+	if ($(".js-submitQuote").parent().parent().parent().parent().hasClass('quote-tool-form')) {
+		var baseUrl = $(".quote-tool-form").attr("data-quote-url");
+		quoteUrl = "";
 		//quoteUrl = baseUrl + '{"domain":"' + quoteDomain + '","language":"'+ quotelanguage+'","product":"'+ quoteProduct +'","country":"default"';
 		quoteUrl = baseUrl;
-		quoteRequest = {domain:quoteDomain, language:quotelanguage,product: quoteProduct, country: 'default' };
+		quoteRequest = {domain: quoteDomain, language: quotelanguage, product: quoteProduct, country: 'default'};
 		ServicesAPI.loopThroughQuoteInputs();
 		//quoteUrl +=  '}';
-		if(ServicesAPI.validateFields()){
+		if (ServicesAPI.validateFields()) {
 			ServicesAPI.quoteServiceCall();
 		}
 	}
 });
 
 
-$(".insurance-type").on("change", function(){
+$(".insurance-type").on("change", function () {
 	var formToShow = $(".insurance-type").val();
 	$(".quote-tool-form").show();
 	$(".quote-tool-form form").hide();
-	$("[data-show-form='"+quoteToolForm+ "']").hide();
+	$("[data-show-form='" + quoteToolForm + "']").hide();
 	quoteSubmit = $(".insurance-type").val();
-	$("."+formToShow + " form").show();
+	$("." + formToShow + " form").show();
 	quoteSubmit = $(".insurance-type").val();
-	if($("[data-quoteDescription='"+ quoteSubmit +"']").length > 0){
+	if ($("[data-quoteDescription='" + quoteSubmit + "']").length > 0) {
 		$("[data-quoteDescription]").addClass("hidden");
-		$("[data-quoteDescription='"+ quoteSubmit +"']").removeClass("hidden");
+		$("[data-quoteDescription='" + quoteSubmit + "']").removeClass("hidden");
 	}
 	quoteToolForm = $(this).find(':selected').val();
-	quoteDomain = $("[data-quoteTool='"+ quoteToolForm +"']").attr("data-domain");
-	quotelanguage = $("[data-quoteTool='"+ quoteToolForm +"']").attr("data-lan");
+	quoteDomain = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-domain");
+	quotelanguage = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-lan");
 	quoteProduct = $(this).find(':selected').attr('data-product');
 	$(".js-hideButton").hide();
 });
 
-String.prototype.toTitleCase = function() {
+String.prototype.toTitleCase = function () {
 	var i, j, str, lowers, uppers;
-	str = this.replace(/([^\W_]+[^\s-]*) */g, function(txt) {
+	str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
 
@@ -8306,7 +8309,7 @@ String.prototype.toTitleCase = function() {
 		'By', 'For', 'From', 'In', 'Into', 'Near', 'Of', 'On', 'Onto', 'To', 'With'];
 	for (i = 0, j = lowers.length; i < j; i++)
 		str = str.replace(new RegExp('\\s' + lowers[i] + '\\s', 'g'),
-			function(txt) {
+			function (txt) {
 				return txt.toLowerCase();
 			});
 
@@ -8320,40 +8323,40 @@ String.prototype.toTitleCase = function() {
 }
 
 var isWhole_re = /^\s*\d+\s*$/;
-function isWhole (s) {
-	return String(s).search (isWhole_re) != -1
+function isWhole(s) {
+	return String(s).search(isWhole_re) != -1
 }
 
-var isNonblank_re    = /\S/;
-function isNonblank (s) {
-	return String (s).search (isNonblank_re) != -1
+var isNonblank_re = /\S/;
+function isNonblank(s) {
+	return String(s).search(isNonblank_re) != -1
 }
 
 var ServicesAPI = {
 
-	loadEventListeners: function(){
+	loadEventListeners: function () {
 		ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
 		ServicesAPI.gmapsAutoCompleteInit();
-		if($(".search-results-container").length > 0)
+		if ($(".search-results-container").length > 0)
 			ServicesAPI.searchResultsPageLoad();
-		if($(".js-resultsGlobal").length > 0 || $(".insurance-type").length > 0){
+		if ($(".js-resultsGlobal").length > 0 || $(".insurance-type").length > 0) {
 			ServicesAPI.loadQuoteResults();
 			ServicesAPI.clearOverlays();
 		}
-		if($(".news-room").length > 0){
+		if ($(".news-room").length > 0) {
 			listCount = 6;
 			ServicesAPI.pressBackQuery();
 			ServicesAPI.newsRoomServiceConstruction();
 		}
-		if($(".blog-list").length > 0){
+		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
-			ServicesAPI.blogsServiceCall(url , "mostRecent")
+			ServicesAPI.blogsServiceCall(url, "mostRecent")
 		}
 	},
-	replaceAll : function(txt, replace, with_this) {
-		return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'),with_this);
+	replaceAll: function (txt, replace, with_this) {
+		return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'), with_this);
 	},
-	populateYearDropDown: function(year,min,element) {
+	populateYearDropDown: function (year, min, element) {
 		var yearOptions = $(element);
 		var yr = new Date();
 
@@ -8368,7 +8371,7 @@ var ServicesAPI = {
 			}));
 		}
 	},
-	isLeapYear : function(a) {
+	isLeapYear: function (a) {
 		a = parseInt(a);
 		if (a % 4 == 0) {
 			if (a % 100 != 0) {
@@ -8420,25 +8423,27 @@ var ServicesAPI = {
 			}
 		}
 	},
-	validateFields: function() {
+	validateFields: function () {
 		var areErrorFieldsPresent = false;
 
-		$("[data-quoteTool='"+ quoteToolForm +"']").each(function(){
-			if(!$("[data-quoteTool='"+ quoteToolForm +"']").find(".form-focus").find(".errorSpan").is(":visible")){
-				areErrorFieldsPresent =  true;
+		$("[data-quoteTool='" + quoteToolForm + "']").each(function () {
+			if (!$("[data-quoteTool='" + quoteToolForm + "']").find(".form-focus").find(".errorSpan").is(":visible")) {
+				areErrorFieldsPresent = true;
 			}
 		});
 		return areErrorFieldsPresent;
 	},
-	numberWithCommas: function(x){
+	numberWithCommas: function (x) {
 		var parts = x.toString().split(".");
 		parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		return parts.join(".");
 	},
-	toTitleCase: function(str){
-		return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	toTitleCase: function (str) {
+		return str.replace(/\w\S*/g, function (txt) {
+			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+		});
 	},
-	encode : function(d) {
+	encode: function (d) {
 		if (d == '<')
 			return '&lt;';
 		if (d == '>')
@@ -8451,19 +8456,19 @@ var ServicesAPI = {
 		}
 		return d;
 	},
-	escapeChar : function(value) {
+	escapeChar: function (value) {
 		var bb = "";
 		for (i = 0; i < value.length; i++) {
 			bb += encode(value.charAt(i));
 		}
 		return bb;
 	},
-	strTrim : function(a){
-		a=a.replace(/^\s+/g,"");
-		a=a.replace(/\s+$/g,"");
+	strTrim: function (a) {
+		a = a.replace(/^\s+/g, "");
+		a = a.replace(/\s+$/g, "");
 		return a;
 	},
-	calculateAge: function() {
+	calculateAge: function () {
 		var l = 0;
 		if (($('#' + quoteToolForm + 'dobMonth').val() != "") && ($('#' + quoteToolForm + 'dobDay').val() != "") && ($('#' + quoteToolForm + 'dobYear').val() != "")) {
 			var b = parseInt($('#' + quoteToolForm + 'dobMonth').val());
@@ -8507,43 +8512,41 @@ var ServicesAPI = {
 			return l;
 		}
 	},
-	showSorryUnableToLocateMessage : function(){
+	showSorryUnableToLocateMessage: function () {
 		count = 0;
 		ServicesAPI.createPagination(count);
 		$('.results_error_info').removeClass('hidden').html($('.errorMsgtext_no_office_found').text());
 		$('.results_content').remove();
 		$('.results_pagination,.find_an_office_pagecount_wrap,.maps-button, .google-maps-container').addClass('hidden');
 	},
-	getQueryStringNew: function(){
+	getQueryStringNew: function () {
 		var vars = [], hash;
 		var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
-		for(var i = 0; i < hashes.length; i++)
-		{
+		for (var i = 0; i < hashes.length; i++) {
 			hash = hashes[i].split('=');
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
 		return vars;
 	},
-	getQueryStringNoHash: function(){
+	getQueryStringNoHash: function () {
 		var vars = [], hash;
 		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-		for(var i = 0; i < hashes.length; i++)
-		{
+		for (var i = 0; i < hashes.length; i++) {
 			hash = hashes[i].split('=');
 			vars.push(hash[0]);
 			vars[hash[0]] = hash[1];
 		}
 		return vars;
 	},
-	createPagination : function (result) {
+	createPagination: function (result) {
 		$('.results_content').children().removeClass('.hidden');
 		var notHiddenList = $(".results_content").children().not('.hidden');
 		var listLength = result;
 		var st_cnt = 0;
 		var end_cnt = 0;
 		var next_label = $(".next_label").text();
-		var prev_label  = $(".prev_label").text();
+		var prev_label = $(".prev_label").text();
 		// Setting listLength to 0 manually when only undefined are returned
 		if (typeof result != 'undefined') {
 			if (result.count == 0)
@@ -8610,418 +8613,418 @@ var ServicesAPI = {
 			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + result);
 		}
 	},
-	formatQuotePremium : function(premium){
+	formatQuotePremium: function (premium) {
 		//if(premium != Math.round(premium)){
-		var dec = parseFloat(Math.round(premium*100)/100).toFixed(2);
+		var dec = parseFloat(Math.round(premium * 100) / 100).toFixed(2);
 		return dec;
 	},
-	quoteServiceCall: function() {
+	quoteServiceCall: function () {
 
 		$.ajax({
 			url: quoteUrl + JSON.stringify(quoteRequest),
 			contentType: "application/json; charset=utf-8",
 			async: true,
-			dataType:'json',
-			data : JSON.stringify(quoteRequest),
+			dataType: 'json',
+			data: JSON.stringify(quoteRequest),
 			type: 'POST',
-			success: function(response) {
+			success: function (response) {
 				var numObjects = Object.keys(response.solution).length;
 				window.sessionStorage.clear();
 				ServicesAPI.setQuoteSessionStorage();
 
-				if(response.solution.premium !== undefined &&  response.solution.premium !== null){
+				if (response.solution.premium !== undefined && response.solution.premium !== null) {
 					var prem = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.premium));
 					sessionStorage.setItem("premium", prem);
 				}
 
-				if(response.solution.age !== undefined && response.solution.age !== null){
-					sessionStorage.setItem("age",response.solution.age);
+				if (response.solution.age !== undefined && response.solution.age !== null) {
+					sessionStorage.setItem("age", response.solution.age);
 				}
-				if(response.solution.gender !== undefined && response.solution.gender !== null){
-					sessionStorage.setItem("gender",response.solution.gender);
+				if (response.solution.gender !== undefined && response.solution.gender !== null) {
+					sessionStorage.setItem("gender", response.solution.gender);
 				}
-				if(response.solution.coverage !== undefined && response.solution.coverage !== null){
+				if (response.solution.coverage !== undefined && response.solution.coverage !== null) {
 					var cov = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.coverage));
-					sessionStorage.setItem("coverage",cov);
+					sessionStorage.setItem("coverage", cov);
 				}
-				if(response.solution.term !== undefined && response.solution.term !== null){
-					sessionStorage.setItem("term",response.solution.term);
+				if (response.solution.term !== undefined && response.solution.term !== null) {
+					sessionStorage.setItem("term", response.solution.term);
 				}
-				if(response.solution.coverageType !== undefined && response.solution.coverage_type !== null){
-					sessionStorage.setItem("coverageType",response.solution.coverageType);
+				if (response.solution.coverageType !== undefined && response.solution.coverage_type !== null) {
+					sessionStorage.setItem("coverageType", response.solution.coverageType);
 				}
-				if(response.solution.state !== undefined && response.solution.state !== null){
-					sessionStorage.setItem("state",response.solution.state);
+				if (response.solution.state !== undefined && response.solution.state !== null) {
+					sessionStorage.setItem("state", response.solution.state);
 				}
-				if(response.solution.income !== undefined && response.solution.income !== null){
-					sessionStorage.setItem("income",response.solution.income);
+				if (response.solution.income !== undefined && response.solution.income !== null) {
+					sessionStorage.setItem("income", response.solution.income);
 				}
-				if($('#' +quoteToolForm + 'dobMonth').length > 0 && $('#' +quoteToolForm + 'dobDay').length > 0  && $('#' +quoteToolForm + 'dobYear').length > 0 ){
-					sessionStorage.setItem('dobMonth', $('#' +quoteToolForm + 'dobMonth').val());
-					sessionStorage.setItem('dobDay', $('#' +quoteToolForm + 'dobDay').val());
-					sessionStorage.setItem('dobYear', $('#' +quoteToolForm + 'dobYear').val());
+				if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+					sessionStorage.setItem('dobMonth', $('#' + quoteToolForm + 'dobMonth').val());
+					sessionStorage.setItem('dobDay', $('#' + quoteToolForm + 'dobDay').val());
+					sessionStorage.setItem('dobYear', $('#' + quoteToolForm + 'dobYear').val());
 				}
-				for(var i = 1; i <=numObjects; i++){
+				for (var i = 1; i <= numObjects; i++) {
 					var optionalSelect = response.solution.hasOwnProperty('optionalSelect' + i);
-					if(optionalSelect){
+					if (optionalSelect) {
 						sessionStorage.setItem('optionalSelect' + i, response.solution['optionalSelect' + i]);
 					}
 					var optionalRadio = response.solution.hasOwnProperty('optionalRadio' + i);
-					if(optionalRadio){
+					if (optionalRadio) {
 						sessionStorage.setItem('optionalRadio' + i, response.solution['optionalRadio' + i]);
 					}
 				}
-				sessionStorage.setItem("product" , quoteProduct);
+				sessionStorage.setItem("product", quoteProduct);
 				ServicesAPI.redirectToQuoteResultsPage();
 			},
-			error: function(e) {
-				console.log('error ',e);
+			error: function (e) {
+				console.log('error ', e);
 			},
-			timeout:30000
+			timeout: 30000
 		});
 	},
-	loadQuoteResults: function(){
-		if($(".js-resultsGlobal").length > 0){
-			if(sessionStorage.getItem("premium") !== null){
+	loadQuoteResults: function () {
+		if ($(".js-resultsGlobal").length > 0) {
+			if (sessionStorage.getItem("premium") !== null) {
 				$(".results-card__quoteinfo__value").text(sessionStorage.getItem("premium"));
 			}
-			if(sessionStorage.getItem("coverage") !== null){
+			if (sessionStorage.getItem("coverage") !== null) {
 				$("[data-field='coverage'] .value").text(sessionStorage.getItem("coverage"));
 			}
 
-			if(sessionStorage.getItem("coverageType") !== null){
+			if (sessionStorage.getItem("coverageType") !== null) {
 				var cov = sessionStorage.getItem("coverageType").toTitleCase();
 				$("[data-field='coverage']").html('<span class="value"> ' + cov + ' </span>');
 			}
-			if(sessionStorage.getItem("coverageType") === null && sessionStorage.getItem("coverage") === null){
+			if (sessionStorage.getItem("coverageType") === null && sessionStorage.getItem("coverage") === null) {
 				$("[data-field='coverage']").remove();
 			}
 
-			if(sessionStorage.getItem("term") !== null){
+			if (sessionStorage.getItem("term") !== null) {
 				$("[data-field='term'] .value").text(sessionStorage.getItem("term"));
-			}else{
+			} else {
 				$("[data-field='term']").html('');
 			}
-		}else{
-			if($(".list").length > 0 ){
+		} else {
+			if ($(".list").length > 0) {
 
-			}else{
+			} else {
 				$(".insurance-type").val($(".insurance-type option:first").val());
 				sessionStorage.clear();
 			}
 		}
 	},
-	quoteFormReset : function() {
+	quoteFormReset: function () {
 		$(".cta_header_quote").find(".generic-form").each(function () {
 			$(this).find("input, select, textarea").removeClass('error');
 			$(this)[0].reset();
 		});
 	},
-	redirectToQuoteResultsPage: function() {
-		var url = $("[data-quoteTool='"+ quoteToolForm +"']").attr("data-path-to-results");
+	redirectToQuoteResultsPage: function () {
+		var url = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-path-to-results");
 		window.location.href = url;
 	},
-	setQuoteSessionStorage: function(){
-		var thisForm = $("[data-quoteTool='"+ quoteToolForm +"']");
+	setQuoteSessionStorage: function () {
+		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
 		var numInputs = thisForm.find(".form-focus").length;
 
-		if($('#' +quoteToolForm + 'userAge').length > 0){
-			sessionStorage.setItem("age", $('#' +quoteToolForm + 'userAge').val());
+		if ($('#' + quoteToolForm + 'userAge').length > 0) {
+			sessionStorage.setItem("age", $('#' + quoteToolForm + 'userAge').val());
 		}
 
-		if($('#' +quoteToolForm + 'coverageType').length > 0){
-			sessionStorage.setItem("coverageType", $('#' +quoteToolForm + 'coverageType').val());
+		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+			sessionStorage.setItem("coverageType", $('#' + quoteToolForm + 'coverageType').val());
 		}
 
-		if($('#' +quoteToolForm + 'coverageText').length > 0 ){
-			sessionStorage.setItem("coverage", $('#' +quoteToolForm + 'coverageText').val());
+		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+			sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageText').val());
 		}
 
 
-		if($('#' +quoteToolForm + 'state').length > 0){
-			sessionStorage.setItem("state", $('#' +quoteToolForm + 'state').val());
+		if ($('#' + quoteToolForm + 'state').length > 0) {
+			sessionStorage.setItem("state", $('#' + quoteToolForm + 'state').val());
 		}
 
-		if($('#' +quoteToolForm + 'gender').length > 0){
-			sessionStorage.setItem("gender", $('#' +quoteToolForm + 'gender').val());
+		if ($('#' + quoteToolForm + 'gender').length > 0) {
+			sessionStorage.setItem("gender", $('#' + quoteToolForm + 'gender').val());
 		}
 
-		if($('#' +quoteToolForm + 'coverageAmount').length > 0){
-			sessionStorage.setItem("coverage", $('#' +quoteToolForm + 'coverageAmount').val());
+		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+			sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageAmount').val());
 		}
 
-		if($('#' +quoteToolForm + 'termLengthSelect').length > 0){
-			sessionStorage.setItem("term", $('#' +quoteToolForm + 'termLengthSelect').val());
+		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+			sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthSelect').val());
 		}
 
-		if($('#' +quoteToolForm + 'termLengthText').length > 0 ){
-			sessionStorage.setItem("term", $('#' +quoteToolForm + 'termLengthText').val());
+		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+			sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthText').val());
 		}
 
-		if($('#' +quoteToolForm + 'incomeSelect').length > 0){
-			sessionStorage.setItem("income", $('#' +quoteToolForm + 'incomeSelect').val());
+		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+			sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeSelect').val());
 		}
 
-		if($('#' +quoteToolForm + 'incomeText').length > 0 ){
-			sessionStorage.setItem("income", $('#' +quoteToolForm + 'incomeText').val());
+		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+			sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeText').val());
 		}
 
-		if($('#' +quoteToolForm + 'dobMonth').length > 0 && $('#' +quoteToolForm + 'dobDay').length > 0  && $('#' +quoteToolForm + 'dobYear').length > 0 ){
-			sessionStorage.setItem("dobMonth", $('#' +quoteToolForm + 'dobMonth').val());
-			sessionStorage.setItem("dobDay", $('#' +quoteToolForm + 'dobDay').val());
-			sessionStorage.setItem("dobYear", $('#' +quoteToolForm + 'dobYear').val());
+		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+			sessionStorage.setItem("dobMonth", $('#' + quoteToolForm + 'dobMonth').val());
+			sessionStorage.setItem("dobDay", $('#' + quoteToolForm + 'dobDay').val());
+			sessionStorage.setItem("dobYear", $('#' + quoteToolForm + 'dobYear').val());
 		}
 
-		for(var i = 1; i <= numInputs; i++){
-			if($('#' +quoteToolForm + 'optionalSelect' + i).length > 0){
-				sessionStorage.setItem("optionalSelect" + i, $('#' +quoteToolForm + 'optionalSelect' + i).val());
+		for (var i = 1; i <= numInputs; i++) {
+			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+				sessionStorage.setItem("optionalSelect" + i, $('#' + quoteToolForm + 'optionalSelect' + i).val());
 			}
 
-			if($('[name="'+quoteToolForm+'radioGroup'+i+'"]').length > 0){
-				sessionStorage.setItem("optionalRadio" + i, $('[name="'+quoteToolForm+'radioGroup'+ i +'"]').val());
+			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+				sessionStorage.setItem("optionalRadio" + i, $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val());
 			}
 		}
 	},
-	preFillQuoteForm: function(){
-		var thisForm = $("[data-quoteTool='"+ quoteToolForm +"']");
+	preFillQuoteForm: function () {
+		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
 		var numInputs = thisForm.find(".form-focus").length;
 
-		if($('#' +quoteToolForm + 'userAge').length > 0){
-			$('#' +quoteToolForm + 'userAge').val(sessionStorage.getItem('age'));
+		if ($('#' + quoteToolForm + 'userAge').length > 0) {
+			$('#' + quoteToolForm + 'userAge').val(sessionStorage.getItem('age'));
 		}
 
-		if($('#' +quoteToolForm + 'coverageType').length > 0){
-			$('#' +quoteToolForm + 'coverageType').val(sessionStorage.getItem('coverageType'));
+		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+			$('#' + quoteToolForm + 'coverageType').val(sessionStorage.getItem('coverageType'));
 		}
 
-		if($('#' +quoteToolForm + 'coverageText').length > 0 ){
-			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g,''));
-			$('#' +quoteToolForm + 'coverageText').val(cov);
+		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
+			$('#' + quoteToolForm + 'coverageText').val(cov);
 		}
 
 
-		if($('#' +quoteToolForm + 'state').length > 0){
-			$('#' +quoteToolForm + 'state').val(sessionStorage.getItem('state'));
-			var state = $('#' +quoteToolForm + 'state').val();
+		if ($('#' + quoteToolForm + 'state').length > 0) {
+			$('#' + quoteToolForm + 'state').val(sessionStorage.getItem('state'));
+			var state = $('#' + quoteToolForm + 'state').val();
 		}
 
-		if($('#' +quoteToolForm + 'gender').length > 0){
-			$('#' +quoteToolForm + 'gender').val(sessionStorage.getItem('gender'));
+		if ($('#' + quoteToolForm + 'gender').length > 0) {
+			$('#' + quoteToolForm + 'gender').val(sessionStorage.getItem('gender'));
 		}
 
-		if($('#' +quoteToolForm + 'coverageAmount').length > 0){
-			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g,''));
-			$('#' +quoteToolForm + 'coverageAmount').val(cov);
+		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
+			$('#' + quoteToolForm + 'coverageAmount').val(cov);
 		}
 
-		if($('#' +quoteToolForm + 'termLengthSelect').length > 0){
-			$('#' +quoteToolForm + 'termLengthSelect').val(sessionStorage.getItem('term'));
+		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+			$('#' + quoteToolForm + 'termLengthSelect').val(sessionStorage.getItem('term'));
 		}
 
-		if($('#' +quoteToolForm + 'termLengthText').length > 0 ){
-			$('#' +quoteToolForm + 'termLengthText').val(sessionStorage.getItem('term'));
+		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+			$('#' + quoteToolForm + 'termLengthText').val(sessionStorage.getItem('term'));
 		}
 
-		if($('#' +quoteToolForm + 'incomeSelect').length > 0){
-			$('#' +quoteToolForm + 'incomeSelect').val(sessionStorage.getItem('income'))
+		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+			$('#' + quoteToolForm + 'incomeSelect').val(sessionStorage.getItem('income'))
 		}
 
-		if($('#' +quoteToolForm + 'incomeText').length > 0 ){
-			$('#' +quoteToolForm + 'incomeText').val(sessionStorage.getItem('income'))
+		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+			$('#' + quoteToolForm + 'incomeText').val(sessionStorage.getItem('income'))
 
 		}
 
-		if($('#' +quoteToolForm + 'dobMonth').length > 0 && $('#' +quoteToolForm + 'dobDay').length > 0  && $('#' +quoteToolForm + 'dobYear').length > 0 ){
-			$('#' +quoteToolForm + 'dobMonth').val(sessionStorage.getItem('dobMonth'));
-			$('#' +quoteToolForm + 'dobDay').val(sessionStorage.getItem('dobDay'));
-			$('#' +quoteToolForm + 'dobYear').val(sessionStorage.getItem('dobYear'));
+		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+			$('#' + quoteToolForm + 'dobMonth').val(sessionStorage.getItem('dobMonth'));
+			$('#' + quoteToolForm + 'dobDay').val(sessionStorage.getItem('dobDay'));
+			$('#' + quoteToolForm + 'dobYear').val(sessionStorage.getItem('dobYear'));
 		}
 
-		for(var i = 1; i <= numInputs; i++){
-			if($('#' +quoteToolForm + 'optionalSelect' + i).length > 0){
-				$('#' +quoteToolForm + 'optionalSelect' + i).val(sessionStorage.getItem('optionalSelect' + i));
+		for (var i = 1; i <= numInputs; i++) {
+			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+				$('#' + quoteToolForm + 'optionalSelect' + i).val(sessionStorage.getItem('optionalSelect' + i));
 			}
 
-			if($('[name="'+quoteToolForm+'radioGroup'+i+'"]').length > 0){
-				$('[name="'+quoteToolForm+'radioGroup'+ i +'"]').val(sessionStorage.getItem('optionalRadio' + i)).attr("checked", true);
+			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+				$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val(sessionStorage.getItem('optionalRadio' + i)).attr("checked", true);
 			}
 		}
 	},
-	loopThroughQuoteInputs: function(){
-		var thisForm = $("[data-quoteTool='"+ quoteToolForm +"']");
+	loopThroughQuoteInputs: function () {
+		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
 		var numInputs = thisForm.find(".form-focus").length;
 
-		if($('#' +quoteToolForm + 'userAge').length > 0){
-			var age = $('#' +quoteToolForm + 'userAge').val();
-			if($('#' +quoteToolForm + 'userAge')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'userAge').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'userAge').length > 0) {
+			var age = $('#' + quoteToolForm + 'userAge').val();
+			if ($('#' + quoteToolForm + 'userAge')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'userAge').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"age":"' + age +'"';
 				quoteRequest["age"] = age;
-				$('#' +quoteToolForm + 'userAge').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'userAge').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'coverageType').length > 0){
-			var coverageType = $('#' +quoteToolForm + 'coverageType').val();
-			if($('#' +quoteToolForm + 'coverageType')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'coverageType').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+			var coverageType = $('#' + quoteToolForm + 'coverageType').val();
+			if ($('#' + quoteToolForm + 'coverageType')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'coverageType').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"coverageType":"' + coverageType +'"';
 				quoteRequest["coverageType"] = coverageType;
-				$('#' +quoteToolForm + 'coverageType').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'coverageType').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'coverageText').length > 0 ){
-			var coverageText = $('#' +quoteToolForm + 'coverageText').val();
-			if(isWhole(coverageText)=== true){
+		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+			var coverageText = $('#' + quoteToolForm + 'coverageText').val();
+			if (isWhole(coverageText) === true) {
 				//quoteUrl += ',"coverage":"' + coverageText +'"';
 				quoteRequest["coverage"] = coverageText;
-				$('#' +quoteToolForm + 'coverageText').removeClass("error").next().hide();
-			}else{
-				$('#' +quoteToolForm + 'coverageText').addClass("error").next().show().css("display" , "block");
+				$('#' + quoteToolForm + 'coverageText').removeClass("error").next().hide();
+			} else {
+				$('#' + quoteToolForm + 'coverageText').addClass("error").next().show().css("display", "block");
 			}
 		}
 
-		if($('#' +quoteToolForm + 'state').length > 0){
-			var state = $('#' +quoteToolForm + 'state').val();
-			if($('#' +quoteToolForm + 'state')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'state').addClass("error").parent().find(".errorSpan").show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'state').length > 0) {
+			var state = $('#' + quoteToolForm + 'state').val();
+			if ($('#' + quoteToolForm + 'state')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'state').addClass("error").parent().find(".errorSpan").show().css("display", "block");
+			} else {
 				//quoteUrl += ',"state":"' + state +'"';
 				quoteRequest["state"] = state;
-				$('#' +quoteToolForm + 'state').removeClass("error").parent().find(".errorSpan").hide();
+				$('#' + quoteToolForm + 'state').removeClass("error").parent().find(".errorSpan").hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'gender').length > 0){
-			var gender = $('#' +quoteToolForm + 'gender').val();
-			if($('#' +quoteToolForm + 'gender')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'gender').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'gender').length > 0) {
+			var gender = $('#' + quoteToolForm + 'gender').val();
+			if ($('#' + quoteToolForm + 'gender')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'gender').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"gender":"' + gender +'"';
 				quoteRequest["gender"] = gender;
-				$('#' +quoteToolForm + 'gender').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'gender').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'coverageAmount').length > 0){
-			var coverageAmount = $('#' +quoteToolForm + 'coverageAmount').val();
-			if($('#' +quoteToolForm + 'coverageAmount')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'coverageAmount').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+			var coverageAmount = $('#' + quoteToolForm + 'coverageAmount').val();
+			if ($('#' + quoteToolForm + 'coverageAmount')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'coverageAmount').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"coverage":"' + coverageAmount +'"';
 				quoteRequest["coverage"] = coverageAmount;
-				$('#' +quoteToolForm + 'coverageAmount').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'coverageAmount').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'termLengthSelect').length > 0){
-			var termLengthSelect = $('#' +quoteToolForm + 'termLengthSelect').val();
-			if($('#' +quoteToolForm + 'termLengthSelect')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'termLengthSelect').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+			var termLengthSelect = $('#' + quoteToolForm + 'termLengthSelect').val();
+			if ($('#' + quoteToolForm + 'termLengthSelect')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'termLengthSelect').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"term":"' + termLengthSelect +'"';
 				quoteRequest["term"] = termLengthSelect;
-				$('#' +quoteToolForm + 'termLengthSelect').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'termLengthSelect').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'termLengthText').length > 0 ){
-			var termLengthText = $('#' +quoteToolForm + 'termLengthText').val();
-			if(isNonblank(termLengthText)=== true){
-				$('#' +quoteToolForm + 'termLengthText').removeClass("error").next().hide();
+		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+			var termLengthText = $('#' + quoteToolForm + 'termLengthText').val();
+			if (isNonblank(termLengthText) === true) {
+				$('#' + quoteToolForm + 'termLengthText').removeClass("error").next().hide();
 				//quoteUrl += ',"term":"' + termLengthText +'"';
 				quoteRequest["term"] = termLengthText;
-			}else{
-				$('#' +quoteToolForm + 'termLengthText').addClass("error").next().show().css("display" , "block");
+			} else {
+				$('#' + quoteToolForm + 'termLengthText').addClass("error").next().show().css("display", "block");
 
 			}
 		}
 
-		if($('#' +quoteToolForm + 'incomeSelect').length > 0){
-			var income = $('#' +quoteToolForm + 'incomeSelect').val();
-			if($('#' +quoteToolForm + 'incomeSelect')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'incomeSelect').addClass("error").next().show().css("display" , "block");
-			}else{
+		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+			var income = $('#' + quoteToolForm + 'incomeSelect').val();
+			if ($('#' + quoteToolForm + 'incomeSelect')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'incomeSelect').addClass("error").next().show().css("display", "block");
+			} else {
 				//quoteUrl += ',"income":"' + income +'"';
 				quoteRequest["income"] = income;
-				$('#' +quoteToolForm + 'incomeSelect').removeClass("error").next().hide();
+				$('#' + quoteToolForm + 'incomeSelect').removeClass("error").next().hide();
 			}
 		}
 
-		if($('#' +quoteToolForm + 'incomeText').length > 0 ){
-			var incomeText = $('#' +quoteToolForm + 'incomeText').val();
-			if(isNonblank(incomeText)=== true){
-				$('#' +quoteToolForm + 'incomeText').removeClass("error").next().hide();
+		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+			var incomeText = $('#' + quoteToolForm + 'incomeText').val();
+			if (isNonblank(incomeText) === true) {
+				$('#' + quoteToolForm + 'incomeText').removeClass("error").next().hide();
 				//quoteUrl += ',"income":"' + incomeText +'"';
 				quoteRequest["income"] = incomeText;
-			}else{
-				$('#' +quoteToolForm + 'incomeText').addClass("error").next().show().css("display" , "block");
+			} else {
+				$('#' + quoteToolForm + 'incomeText').addClass("error").next().show().css("display", "block");
 
 			}
 		}
 
-		if($('#' +quoteToolForm + 'dobMonth').length > 0 && $('#' +quoteToolForm + 'dobDay').length > 0  && $('#' +quoteToolForm + 'dobYear').length > 0 ){
+		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
 			var age;
-			if($('#' +quoteToolForm + 'dobMonth')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'dobMonth').addClass("error");
-			}else{
-				$('#' +quoteToolForm + 'dobMonth').removeClass("error");
+			if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'dobMonth').addClass("error");
+			} else {
+				$('#' + quoteToolForm + 'dobMonth').removeClass("error");
 			}
 
-			if($('#' +quoteToolForm + 'dobDay')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'dobDay').addClass("error");
+			if ($('#' + quoteToolForm + 'dobDay')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'dobDay').addClass("error");
 			}
-			else{
-				$('#' +quoteToolForm + 'dobDay').removeClass("error");
-			}
-
-			if($('#' +quoteToolForm + 'dobYear')[0].selectedIndex === 0){
-				$('#' +quoteToolForm + 'dobYear').addClass("error");
-			}
-			else{
-				$('#' +quoteToolForm + 'dobYear').removeClass("error");
+			else {
+				$('#' + quoteToolForm + 'dobDay').removeClass("error");
 			}
 
-			if($('#' +quoteToolForm + 'dobMonth')[0].selectedIndex !== 0 && $('#' +quoteToolForm + 'dobDay')[0].selectedIndex !== 0 && $('#' +quoteToolForm + 'dobYear')[0].selectedIndex !== 0){
+			if ($('#' + quoteToolForm + 'dobYear')[0].selectedIndex === 0) {
+				$('#' + quoteToolForm + 'dobYear').addClass("error");
+			}
+			else {
+				$('#' + quoteToolForm + 'dobYear').removeClass("error");
+			}
+
+			if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobDay')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobYear')[0].selectedIndex !== 0) {
 				age = ServicesAPI.calculateAge();
 				//quoteUrl += ',"age":"' + age +'"';
 				quoteRequest["age"] = age;
 			}
 		}
-		for(var i = 1; i <= numInputs; i++){
-			if($('#' +quoteToolForm + 'optionalSelect' + i).length > 0){
-				var optionalSelect = $('#' +quoteToolForm + 'optionalSelect' + i).val();
-				if($('#' +quoteToolForm + 'optionalSelect' + i)[0].selectedIndex === 0){
-					$('#' +quoteToolForm + 'optionalSelect' + i).addClass("error").next().show().css("display" , "block");
-				}else{
+		for (var i = 1; i <= numInputs; i++) {
+			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+				var optionalSelect = $('#' + quoteToolForm + 'optionalSelect' + i).val();
+				if ($('#' + quoteToolForm + 'optionalSelect' + i)[0].selectedIndex === 0) {
+					$('#' + quoteToolForm + 'optionalSelect' + i).addClass("error").next().show().css("display", "block");
+				} else {
 					//quoteUrl += ',"optionalSelect'+i+'":"' + optionalSelect +'"';
-					var optionalSelectText = 'optionalSelect'+i;
+					var optionalSelectText = 'optionalSelect' + i;
 					quoteRequest[optionalSelectText] = optionalSelect;
-					$('#' +quoteToolForm + 'optionalSelect' + i).removeClass("error").next().hide();
+					$('#' + quoteToolForm + 'optionalSelect' + i).removeClass("error").next().hide();
 				}
 			}
 
-			if($('[name="'+quoteToolForm+'radioGroup'+i+'"]').length > 0){
-				var optionalRadio = $('[name="'+quoteToolForm+'radioGroup'+i+'"]:checked').val();
-				if(optionalRadio === "" || optionalRadio === " " || optionalRadio === null || optionalRadio === undefined){
-					$('[name="'+quoteToolForm+'radioGroup'+i+'"]').parent().parent().find(".errorSpan").show().css("display" , "block");
-				}else{
-					$('[name="'+quoteToolForm+'radioGroup'+i+'"]').parent().parent().find(".errorSpan").hide();
+			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+				var optionalRadio = $('[name="' + quoteToolForm + 'radioGroup' + i + '"]:checked').val();
+				if (optionalRadio === "" || optionalRadio === " " || optionalRadio === null || optionalRadio === undefined) {
+					$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").show().css("display", "block");
+				} else {
+					$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").hide();
 					//quoteUrl += ',"optionalRadio'+i+'":"' + optionalRadio +'"';
-					var optionalSelectText = 'optionalRadio'+i;
+					var optionalSelectText = 'optionalRadio' + i;
 					quoteRequest[optionalSelectText] = optionalRadio;
 				}
 			}
 		}
 	},
-	searchServiceCall: function(input){
+	searchServiceCall: function (input) {
 		count = 0;
 		var url = input;
 		var querySearch = ServicesAPI.getQueryStringNew()["query"];
-		if(querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " "){
+		if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
 			url += "?query=" + querySearch;
 		}
 		$(".results_content").remove();
@@ -9060,9 +9063,9 @@ var ServicesAPI = {
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
-			dataType:'json',
+			dataType: 'json',
 			type: 'GET',
-			success: function(data) {
+			success: function (data) {
 				var siteSearchResults = json.response.docs;
 				if (siteSearchResults.length != 0) {
 					$('.form-item__display').removeClass('hidden');
@@ -9086,37 +9089,37 @@ var ServicesAPI = {
 				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 				ServicesAPI.createPagination(count);
 			},
-			error: function(e) {
+			error: function (e) {
 				ServicesAPI.showSorryUnableToLocateMessage();
 			},
-			timeout:30000
+			timeout: 30000
 		});
 		/************LIVE SERVICE***************/
 	},
-	legacySearch: function(searchQuery){
+	legacySearch: function (searchQuery) {
 		var str = "https://www.metlife.com/searchresults?query=";
 		var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
-		str += searchQuery+val2;
+		str += searchQuery + val2;
 		window.location.href = str;
 	},
-	redirectToSearchResultsPage: function(input){
-		var searchTerm = sessionStorage.setItem("searchTerm" ,$(input).val());
+	redirectToSearchResultsPage: function (input) {
+		var searchTerm = sessionStorage.setItem("searchTerm", $(input).val());
 		var url = $("#metSearchForm").attr("data-path-to-search-results");
 		window.location.href = url;
 	},
-	searchResultsPageLoad: function(){
+	searchResultsPageLoad: function () {
 		var cov = sessionStorage.getItem("searchTerm");
-		if(sessionStorage.getItem("searchTerm") !== null){
-			if($(".js-searchTextBox").css("display") !== " none"){
+		if (sessionStorage.getItem("searchTerm") !== null) {
+			if ($(".js-searchTextBox").css("display") !== " none") {
 				$(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
 				$(".js-searchSubmit").click();
 			}
 		}
 
 	},
-	newsRoomServiceConstruction : function(){
+	newsRoomServiceConstruction: function () {
 		var url = $(".lists").attr("data-news-url");
-		var query  = $(".lists").attr("data-news-query-parameter");
+		var query = $(".lists").attr("data-news-query-parameter");
 		newsMonth = $("#list_month").val();
 		newsYear = $("#list_year").val();
 		newsTopic = $('#list_topics').val();
@@ -9124,7 +9127,7 @@ var ServicesAPI = {
 		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
 		ServicesAPI.newsRoomServiceCall(url);
 	},
-	pressBackQuery : function() {
+	pressBackQuery: function () {
 		var month = sessionStorage.getItem("press_month");
 		var year = sessionStorage.getItem("press_year");
 		var search = sessionStorage.getItem("press_search");
@@ -9138,62 +9141,21 @@ var ServicesAPI = {
 		sessionStorage.removeItem("press_year");
 		sessionStorage.removeItem("press_search");
 	},
-	newsRoomServiceCall: function(input){
+	newsRoomServiceCall: function (input) {
 		resultsListHTML = "";
 		var url = input;
 		count = 0;
 		$(".results_content").remove();
-
+		var newsYears =[];
+		var newsMonths =[];
 		/************LIVE News Room SERVICE***************/
 		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType:'json',
-			type: 'GET',
-			success: function(data) {
-				if(firstTimeRunNewsRoom === true){
-					firstTimeRunNewsRoom = false;
-				}else{
-					listCount +=6;
-				}
-				newsRoomResults = data.news;
-				if (newsRoomResults.length != 0) {
-					if (!$(".list__item--no-results").hasClass("hidden")) {
-						$(".list__item--no-results").addClass("hidden");
-					}
-					resultsListHTML += "<div class='results_content'>";
-					for (var i = 0; i < newsRoomResults.length; i++) {
-						count++;
-						if(count <= listCount) {
-							resultsListHTML += "<div class=\"list__item\">";
-							resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-							resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-							resultsListHTML += "</div>";
-						}
-					}
-					resultsListHTML += "</div>";
-					ServicesAPI.createPagination(count);
-					$(resultsListHTML).insertAfter($(".lists"));
-				} else {
-					$(".list__item--no-results").removeClass('hidden');
-				}
-				if(listCount >= newsRoomResults.length){
-					$(".divider--load-more__link").hide();
-				}else{
-					$(".divider--load-more__link").show();
-				}
-			},
-			error: function(e) {
-				console.log('error ',e);
-			},
-			timeout:30000
-		});
-		/************LIVE News Room SERVICE***************/
-
-		/************LOCAL News Room SERVICE***************/
-
-		/*var newsRoomResults = $.getJSON("news.json", function(data) {
+		 url: url,
+		 contentType: "application/json; charset=utf-8",
+		 async: true,
+		 dataType:'json',
+		 type: 'GET',
+		 success: function(data) {
 		 if(firstTimeRunNewsRoom === true){
 		 firstTimeRunNewsRoom = false;
 		 }else{
@@ -9225,10 +9187,56 @@ var ServicesAPI = {
 		 }else{
 		 $(".divider--load-more__link").show();
 		 }
-		 });*/
+		 },
+		 error: function(e) {
+		 console.log('error ',e);
+		 },
+		 timeout:30000
+		 });
+		/************LIVE News Room SERVICE***************/
+
+		/************LOCAL News Room SERVICE***************/
+
+		/*var newsRoomResults = $.getJSON("news.json", function (data) {
+			if (firstTimeRunNewsRoom === true) {
+				firstTimeRunNewsRoom = false;
+			} else {
+				listCount += 6;
+			}
+			newsRoomResults = data.news;
+			if (newsRoomResults.length != 0) {
+				if (!$(".list__item--no-results").hasClass("hidden")) {
+					$(".list__item--no-results").addClass("hidden");
+				}
+				resultsListHTML += "<div class='results_content'>";
+				for (var i = 0; i < newsRoomResults.length; i++) {
+					newsYears.push(newsRoomResults[i].created.year);
+					newsMonths.push(newsRoomResults[i].created.month);
+					count++;
+					if (count <= listCount) {
+						resultsListHTML += "<div class=\"list__item\">";
+						resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+						resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+						resultsListHTML += "</div>";
+					}
+				}
+				resultsListHTML += "</div>";
+				ServicesAPI.createPagination(count);
+				$(resultsListHTML).insertAfter($(".lists"));
+			} else {
+				$(".list__item--no-results").removeClass('hidden');
+			}
+			if (listCount >= newsRoomResults.length) {
+				$(".divider--load-more__link").hide();
+			} else {
+				$(".divider--load-more__link").show();
+			}
+		});
+		console.log(newsYears)
+		console.log(newsMonths)*/
 		/************LOCAL News Room SERVICE***************/
 	},
-	blogsServiceCall: function(input, searchType) {
+	blogsServiceCall: function (input, searchType) {
 		resultsListHTML = "";
 		$(".results_content").remove();
 		count = 0;
@@ -9280,15 +9288,15 @@ var ServicesAPI = {
 						count++
 						resultsListHTML += "<div class=\"blog-list__article \">";
 						resultsListHTML += "<div class=\"blog-list__img \">";
-						resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
+						resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource + "\" alt=\"" + blogSearchResults[i].alttext + "\" class=\"enlarge\">";
 						resultsListHTML += "</div>";
 						resultsListHTML += "<div class=\"blog-list__text\">";
-						resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-						resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
-						resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
-						resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
-						if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
-							resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
+						resultsListHTML += "<h5>" + blogSearchResults[i].title + "</h5>";
+						resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date + "</span>";
+						resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags + "</span>";
+						resultsListHTML += "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
+						if (blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " ") {
+							resultsListHTML += "<a href=\"" + blogSearchResults[i].link + "\">" + blogSearchResults[i].linktext + "</a>"
 						}
 						resultsListHTML += "</span>";
 						resultsListHTML += "</div>";
@@ -9307,7 +9315,7 @@ var ServicesAPI = {
 		});
 		/************LIVE Blog SERVICE***************/
 	},
-	formsLibraryServiceCall: function(input){
+	formsLibraryServiceCall: function (input) {
 		resultsListHTML = "";
 		$(".results_content").remove();
 		count = 0;
@@ -9417,7 +9425,7 @@ var ServicesAPI = {
 							if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
 								resultsListHTML += " <div class=\"list__item--left\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-								resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
+								resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
 								resultsListHTML += "</div>";
 							}
 							if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
@@ -9450,8 +9458,8 @@ var ServicesAPI = {
 							}
 							if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
 								resultsListHTML += " <div class=\"list__item--left\">";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title +"</a>";
-								resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
+								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+								resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
 								resultsListHTML += "</div>";
 							}
 							if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
@@ -9487,15 +9495,15 @@ var ServicesAPI = {
 		});
 		/************LIVE Forms SERVICE***************/
 	},
-	clearOverlays: function() {
-		for (var i = 0; i < markersArray.length; i++ ) {
+	clearOverlays: function () {
+		for (var i = 0; i < markersArray.length; i++) {
 			markersArray[i].setMap(null);
 		}
-		for (var i = 0; i < dir_markerArray.length; i++ ) {
+		for (var i = 0; i < dir_markerArray.length; i++) {
 			dir_markerArray[i].setMap(null);
 		}
 	},
-	initializeFindAnOffice : function() {
+	initializeFindAnOffice: function () {
 		var myOptions = {
 			mapTypeControl: true,
 			mapTypeControlOptions: {
@@ -9514,15 +9522,15 @@ var ServicesAPI = {
 			streetViewControlOptions: {
 				position: google.maps.ControlPosition.LEFT_TOP
 			},
-			scaleControl:false,
-			scrollwheel:true,
-			zoom:10
+			scaleControl: false,
+			scrollwheel: true,
+			zoom: 10
 		};
 
 		map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
 		ServicesAPI.autocompleteOn();
 	},
-	autocompleteOn: function() {
+	autocompleteOn: function () {
 		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0]);
 		googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
@@ -9532,7 +9540,7 @@ var ServicesAPI = {
 			}
 		});
 	},
-	initializeGoogleMapObject : function() {
+	initializeGoogleMapObject: function () {
 		$('#googleMapsContainer').removeClass('hidden');
 		var myOptions = {
 			mapTypeControl: true,
@@ -9552,14 +9560,14 @@ var ServicesAPI = {
 			streetViewControlOptions: {
 				position: google.maps.ControlPosition.LEFT_TOP
 			},
-			scaleControl:false,
-			scrollwheel:true,
-			zoom:10
+			scaleControl: false,
+			scrollwheel: true,
+			zoom: 10
 		};
 
 		map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
 	},
-	initializeDrivingGoogleMapObject : function() {
+	initializeDrivingGoogleMapObject: function () {
 		$('#googleDrivingMapsContainer').removeClass('hidden');
 		var myOptions = {
 			mapTypeControl: true,
@@ -9579,9 +9587,9 @@ var ServicesAPI = {
 			streetViewControlOptions: {
 				position: google.maps.ControlPosition.LEFT_TOP
 			},
-			scaleControl:false,
-			scrollwheel:true,
-			zoom:10
+			scaleControl: false,
+			scrollwheel: true,
+			zoom: 10
 		};
 
 		map = new google.maps.Map(document.getElementById("googleDrivingMapsContainer"), myOptions);
@@ -9594,21 +9602,21 @@ var ServicesAPI = {
 			}
 		});
 	},
-	gmapsAutoCompleteInit : function() {
+	gmapsAutoCompleteInit: function () {
 		$('.find-office__zip-city-state, .cta_search').each(function () {
 			new google.maps.places.Autocomplete($(this)[0]);
 		});
 	},
-	showLocation : function() {
+	showLocation: function () {
 		$('.fax-results__container, .maps-button, .get-directions-form, .find-an-x-search__container, .cta_search__container').removeClass('hidden');
 		$('.driving-direction-container, #googleDrivingMapsContainer').addClass('hidden');
-		if(dir_to_flag ==true){
+		if (dir_to_flag == true) {
 			$('.get-directions-form .from-address').val('');
 		}
-		var endsWith = function(str, suffix) {
+		var endsWith = function (str, suffix) {
 			return str.indexOf(suffix, str.length - suffix.length) !== -1;
 		};
-		var startsWith = function(string, searchString, position){
+		var startsWith = function (string, searchString, position) {
 			position = position || 0;
 			return string.substr(position, searchString.length) === searchString;
 
@@ -9617,30 +9625,30 @@ var ServicesAPI = {
 		ServicesAPI.initializeGoogleMapObject();
 		var address;
 		var zip = sessionStorage.getItem("faoZipCode");
-		if (document.referrer == "" ||  endsWith(document.referrer, "/cf") || startsWith(document.referrer, document.origin+document.location.pathname)) {
+		if (document.referrer == "" || endsWith(document.referrer, "/cf") || startsWith(document.referrer, document.origin + document.location.pathname)) {
 			address = $('.find-an-x-search__container .cta_search').val();
-		}else{
+		} else {
 			$('.find-an-x-search__container .cta_search').val(zip);
 			$('.find-an-x-search__container .cta_search').text(zip);
 			address = $('.find-an-x-search__container .cta_search').val();
 		}
 		var validateAddress = address.trim();
-		var isNumber =  /^\d+$/.test(validateAddress);
-		if((!isNumber) || (isNumber && (address.length===5))){
+		var isNumber = /^\d+$/.test(validateAddress);
+		if ((!isNumber) || (isNumber && (address.length === 5))) {
 			$('.errorSpan.error_zip_code').addClass('hidden');
-			if(address!=null && address!='' && address!=undefined && address!=' '){
-				geocoder.geocode({"address":address},function(response, status) {
+			if (address != null && address != '' && address != undefined && address != ' ') {
+				geocoder.geocode({"address": address}, function (response, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						ServicesAPI.addAddressToMap(response, status);
-					}else{
+					} else {
 						ServicesAPI.resetMap();
 						ServicesAPI.showSorryUnableToLocateMessage();
 					}
 				});
-			}else{
+			} else {
 				ServicesAPI.resetMap();
 			}
-		}else{
+		} else {
 			$('.errorSpan.error_zip_code').removeClass('hidden');
 			if ($(".hidden-xs").is(":visible") == true) {
 
@@ -9652,12 +9660,12 @@ var ServicesAPI = {
 			}
 		}
 	},
-	addAddressToMap: function(response,status) {
+	addAddressToMap: function (response, status) {
 		ServicesAPI.clearOverlays();
-		if (!response || status!= google.maps.GeocoderStatus.OK) {
+		if (!response || status != google.maps.GeocoderStatus.OK) {
 			ServicesAPI.showSorryUnableToLocateMessage();
-		}else {
-			var point = new google.maps.LatLng(response[0].geometry.location.lat(),response[0].geometry.location.lng());
+		} else {
+			var point = new google.maps.LatLng(response[0].geometry.location.lat(), response[0].geometry.location.lng());
 			startPointGeoCode = point;
 			// Reset the Map
 			ServicesAPI.resetMap();
@@ -9673,7 +9681,7 @@ var ServicesAPI = {
 			ServicesAPI.getMetOffices();
 		}
 	},
-	resetMap : function() {
+	resetMap: function () {
 		// Clear any existing overlays
 		ServicesAPI.clearOverlays();
 		directionsDisplay.setMap(null);
@@ -9683,7 +9691,7 @@ var ServicesAPI = {
 		map.setCenter(startPointGeoCode, 9);
 
 	},
-	getMetOffices : function() {
+	getMetOffices: function () {
 
 		var latitude = startPointGeoCode.lat();
 		var longitude = startPointGeoCode.lng();
@@ -9691,17 +9699,17 @@ var ServicesAPI = {
 		var faoMarket = '';
 		var directionButton = $('.directions_button').attr("data-fao-market");
 		var officeSubmitButton = $(".find-office__submit").attr("data-fao-market");
-		if(directionButton !== undefined && directionButton !== "" && directionButton !== " " ){
+		if (directionButton !== undefined && directionButton !== "" && directionButton !== " ") {
 			faoMarket = directionButton;
 		}
-		if(officeSubmitButton !== undefined && officeSubmitButton !== "" && officeSubmitButton !== " "){
+		if (officeSubmitButton !== undefined && officeSubmitButton !== "" && officeSubmitButton !== " ") {
 			faoMarket = officeSubmitButton;
 		}
 		radiusInMiles = $('.find_an_office_radius').val();
-		if(faoMarket.toLowerCase() == "us"){
+		if (faoMarket.toLowerCase() == "us") {
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
-		}else{
+		} else {
 			specialty = $('.different_services_dropdown').val();
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
@@ -9709,10 +9717,10 @@ var ServicesAPI = {
 		$.ajax({
 			type: 'GET',
 			url: serviceUrl,
-			success: function(data) {
+			success: function (data) {
 				ServicesAPI.generateOfficeItems(data)
 			},
-			error: function() {
+			error: function () {
 				ServicesAPI.handleServiceError()
 			}
 		});
@@ -9726,12 +9734,12 @@ var ServicesAPI = {
 		/************LOCAL FAO SERVICE***************/
 
 	},
-	generateOfficeItems : function(responseObject) {
-		count=0;
-		var resultsListHTML="";
+	generateOfficeItems: function (responseObject) {
+		count = 0;
+		var resultsListHTML = "";
 		markersArray = [];
 		$('.results_error_info,.results_pagination').addClass('hidden');
-		if ( responseObject.facilities.length != 0 ) {
+		if (responseObject.facilities.length != 0) {
 			$('.find_an_office_pagecount_wrap,.google_maps_container,.hidden_maps_container_button').removeClass('hidden');
 			$('.display_container').removeClass('hidden');
 			$(".page-count").removeClass('hidden');
@@ -9801,7 +9809,8 @@ var ServicesAPI = {
 				if (fclt_lng != undefined) {
 					destParams = destParams + fclt_lng;
 				}
-				var temp = strDestination.slice(-2);;
+				var temp = strDestination.slice(-2);
+				;
 				if (temp == ", ") {
 					strDestination = strDestination.substring(0, strDestination.length - 2);
 				}
@@ -9810,17 +9819,17 @@ var ServicesAPI = {
 				resultsListHTML += "<p class=\"results_office_name\">" + fclt_officeName + "</p>";
 				resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
 				resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
-				if (fclt_education){
-					resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy +"</p>";
+				if (fclt_education) {
+					resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
 					resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
 					resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
-				}else{
-					resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy +"</p>";
+				} else {
+					resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
 					resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
 				}
-				if (fclt_languages){
+				if (fclt_languages) {
 					resultsListHTML += "<p class=\"results_office_city_state_zip dentist_left\">"
 					if (fclt_city != null) {
 						resultsListHTML += fclt_city.toLowerCase() + ", ";
@@ -9833,7 +9842,7 @@ var ServicesAPI = {
 					}
 					resultsListHTML += "</p>";
 					resultsListHTML += "<p class=\"results_office_languages dentist_right\">" + label_languages + ": " + fclt_languages.toLowerCase() + "</p>";
-				}else{
+				} else {
 					resultsListHTML += "<p class=\"results_office_city_state_zip\">"
 					if (fclt_city != null) {
 						resultsListHTML += fclt_city.toLowerCase() + ", ";
@@ -9851,7 +9860,7 @@ var ServicesAPI = {
 					if (fclt_phone)
 						resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
 					resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
-				}else{
+				} else {
 					if (fclt_phone)
 						resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
 				}
@@ -9906,12 +9915,12 @@ var ServicesAPI = {
 
 		return responseObject;
 	},
-	handleServiceError : function() {
+	handleServiceError: function () {
 		$('.results_error_info').removeClass('hidden').html($('.errorMsgText_server_busy').text());
 		$('.results_content').html("");
 		$('.results_pagination, .find_an_office_pagecount_wrap, .google-maps-container, .maps-button').addClass('hidden');
 	},
-	createStartPointMarker : function(latlng) {
+	createStartPointMarker: function (latlng) {
 		// Use the default marker
 		var marker = new google.maps.Marker({
 			position: latlng
@@ -9919,11 +9928,11 @@ var ServicesAPI = {
 		markersArray.push(marker);
 		return marker;
 	},
-	createOfficeMarker : function(point, html, officeNumber){
+	createOfficeMarker: function (point, html, officeNumber) {
 		var baseIcon = '';
 		var numberedIcon = '';
 		var marker = '';
-		var numberedIconURL='';
+		var numberedIconURL = '';
 		var marker;
 		marker = new MarkerWithLabel({
 			position: point,
@@ -9931,28 +9940,29 @@ var ServicesAPI = {
 			//icon: " ",
 			icon: {
 				url: blueMarker,
-				scaledSize: new google.maps.Size(33,42)// desired size
+				scaledSize: new google.maps.Size(33, 42)// desired size
 			},
 			labelAnchor: new google.maps.Point(3, 33),
 			labelClass: "my_label", // the CSS class for the label
 			labelStyle: {opacity: 0.8},
-			map: map});
-		if ((officeNumber/10)>=1){
+			map: map
+		});
+		if ((officeNumber / 10) >= 1) {
 			marker.labelAnchor = new google.maps.Point(8, 33)
 		}
 
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		google.maps.event.addListener(marker, 'click', (function (marker, i) {
 
-			return function() {
+			return function () {
 				if (selectedMarker) {
 					selectedMarker.setIcon({
 						url: blueMarker,
-						scaledSize: new google.maps.Size(33,42)
+						scaledSize: new google.maps.Size(33, 42)
 					});
 				}
 				marker.setIcon({
 					url: blackMarker,
-					scaledSize: new google.maps.Size(33,42)
+					scaledSize: new google.maps.Size(33, 42)
 				});
 				selectedMarker = marker;
 
@@ -9963,21 +9973,20 @@ var ServicesAPI = {
 				} else {
 
 				}
-				if(presentHighligtedInfo!=null)
-				{
+				if (presentHighligtedInfo != null) {
 					presentHighligtedInfo.open(null, marker);
 				}
-				presentHighligtedInfo=infowindow;
+				presentHighligtedInfo = infowindow;
 			}
 		})(marker, officeNumber));
 
 		markersArray.push(marker);
 		return marker;
 	},
-	checkEnter : function(e) {
-		var key=e.keyCode || e.which;
-		var browsername= ServicesAPI.getBrowserName();
-		if(key == 13){ //if character code is equal to ascii 13 (if enter key)
+	checkEnter: function (e) {
+		var key = e.keyCode || e.which;
+		var browsername = ServicesAPI.getBrowserName();
+		if (key == 13) { //if character code is equal to ascii 13 (if enter key)
 			//alert('ENTER pressed, show location, and return false');
 			ServicesAPI.showLocation();
 			//return false;
@@ -9989,36 +9998,36 @@ var ServicesAPI = {
 			 return false;
 			 }*/
 
-		}else{
+		} else {
 			returnValue = true;
 		}
 	},
-	getBrowserName : function(){
-		var browsername=navigator.appName;
-		if (browsername.indexOf("Netscape")!=-1) {
-			browsername="NS";
-		}else if (browsername.indexOf("Microsoft")!=-1) {
-			browsername="MSIE";
-		}else {
-			browsername="N/A";
+	getBrowserName: function () {
+		var browsername = navigator.appName;
+		if (browsername.indexOf("Netscape") != -1) {
+			browsername = "NS";
+		} else if (browsername.indexOf("Microsoft") != -1) {
+			browsername = "MSIE";
+		} else {
+			browsername = "N/A";
 		}
 		return browsername;
 	},
-	addBreadCrumb: function(){
+	addBreadCrumb: function () {
 		var currentPageCrumb = $(".breadcrumb").find("span:last-of-type");
 		currentPageCrumb.wrapInner("<a href=\"\"> </a>");
 		currentPageCrumb.addClass("breadcrumb__crumb");
 		currentPageCrumb.find("a").attr("href", faoURL);
 		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span>");
 	},
-	removeBreadCrumb: function(){
+	removeBreadCrumb: function () {
 		$(".breadcrumb").find("span:last-of-type").remove();
 		$(".breadcrumb").find("span:last-of-type a").contents().unwrap();
 		$(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
 	},
-	getDirectionsPanel : function(strpDestination) {
+	getDirectionsPanel: function (strpDestination) {
 		$('.page-title__heading').text($('.getDirectionsText').text());
-		if ($(".generatedBreadCrumb").length ==0) {
+		if ($(".generatedBreadCrumb").length == 0) {
 			ServicesAPI.addBreadCrumb();
 		}
 		ServicesAPI.clearOverlays();
@@ -10028,14 +10037,13 @@ var ServicesAPI = {
 		ServicesAPI.initializeDrivingGoogleMapObject();
 
 		$('.get-directions-form .from-address').val(fromAddr);
-		if (fromAddr == '')
-		{
+		if (fromAddr == '') {
 			$('.find-an-x-search__container .cta_search').focus();
 			return;
 		}
-		geocoder.geocode( { 'address': fromAddr}, function(results, status) {
+		geocoder.geocode({'address': fromAddr}, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				var res = ServicesAPI.makeMarker(results[0].geometry.location,'A');
+				var res = ServicesAPI.makeMarker(results[0].geometry.location, 'A');
 			}
 		});
 
@@ -10045,25 +10053,24 @@ var ServicesAPI = {
 		$('.get-directions-form .to-address').val(ServicesAPI.formatDestination(toAddr[0]));
 
 
-
 		ServicesAPI.resetMap();
 		var dest_marker = $('.get-directions-form .to-address').val();
-		geocoder.geocode( { 'address': dest_marker}, function(results, status) {
+		geocoder.geocode({'address': dest_marker}, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				var res = ServicesAPI.makeMarker(results[0].geometry.location,'B');
+				var res = ServicesAPI.makeMarker(results[0].geometry.location, 'B');
 
 			}
 		});
 		ServicesAPI.clearOverlays();
 	},
-	makeMarker : function(point,title){
+	makeMarker: function (point, title) {
 		marker = new MarkerWithLabel({
 			position: point,
 			labelContent: title,
 			//icon: " ",
 			icon: {
-				url:blueMarker,
-				scaledSize: new google.maps.Size(33,42)// desired size
+				url: blueMarker,
+				scaledSize: new google.maps.Size(33, 42)// desired size
 			},
 			labelAnchor: new google.maps.Point(5, 33),
 			labelClass: "my_label", // the CSS class for the label
@@ -10072,7 +10079,7 @@ var ServicesAPI = {
 		});
 		dir_markerArray.push(marker);
 	},
-	getDirections : function(){
+	getDirections: function () {
 		$('.page-title__heading').text($('.getDirectionsText').text());
 		var directionsService = new google.maps.DirectionsService();
 		directionsDisplay.setMap(map);
@@ -10092,16 +10099,16 @@ var ServicesAPI = {
 			travelMode: google.maps.DirectionsTravelMode[travel_mode],
 			unitSystem: unit
 		};
-		directionsService.route(request, function(response, status) {
+		directionsService.route(request, function (response, status) {
 			if (status == google.maps.DirectionsStatus.OK) {
 				ServicesAPI.clearOverlays();
 				$('.get-directions-form,.directions_error').addClass('hidden');
 				$('.driving-directions-panel').removeClass('hidden');
 				directionsDisplay.setDirections(response);
-				var leg = response.routes[ 0 ].legs[ 0 ];
-				ServicesAPI.makeMarker( leg.start_location,"A" );
-				ServicesAPI.makeMarker( leg.end_location, 'B' );
-			}else{
+				var leg = response.routes[0].legs[0];
+				ServicesAPI.makeMarker(leg.start_location, "A");
+				ServicesAPI.makeMarker(leg.end_location, 'B');
+			} else {
 				directionsDisplay.setMap(null);
 				$('.driving-directions-panel').addClass('hidden');
 				$('.directions_error').removeClass('hidden');
@@ -10109,77 +10116,79 @@ var ServicesAPI = {
 		});
 
 	},
-	formatDestination : function(destAddress){
+	formatDestination: function (destAddress) {
 		var regex = new RegExp("[0-9]TH|[0-9]RD|[0-9]ND", "i");
-		while(regex.test(destAddress)){
+		while (regex.test(destAddress)) {
 			var matchedString = regex.exec(destAddress).toString();
-			destAddress = destAddress.replace(matchedString, matchedString.substring(0,1));
+			destAddress = destAddress.replace(matchedString, matchedString.substring(0, 1));
 		}
 
 		regex.compile("\\bfl\\b", "i");
-		while(regex.test(destAddress)){
+		while (regex.test(destAddress)) {
 			var matchedString = regex.exec(destAddress).toString();
 			destAddress = destAddress.replace(matchedString, "FLOOR");
 		}
-		regex.compile("\\bst\\b","i");
-		if(regex.test(destAddress)){
+		regex.compile("\\bst\\b", "i");
+		if (regex.test(destAddress)) {
 			var matchedString = regex.exec(destAddress).toString();
 			destAddress = destAddress.replace(matchedString, "STREET");
 		}
 		return destAddress;
 	},
-	handleGetDirectionErrors : function(invDir, from, to_LatLng){
+	handleGetDirectionErrors: function (invDir, from, to_LatLng) {
 		// Try getting the directions using geocoding
-		if(invDir.getStatus().code == G_GEO_UNKNOWN_ADDRESS){
+		if (invDir.getStatus().code == G_GEO_UNKNOWN_ADDRESS) {
 			invDir.clear();
 			var resultsOverlay = document.getElementById("officeResultsContent");
 			resultsOverlay.innerHTML = '';
 
 			var dir_lat_lng = new GDirections(map, resultsOverlay);
 
-			dir_lat_lng.load(from +" to "+to_LatLng);
-			google.maps.Event.addListener(dir_lat_lng, "error", function () { resultsOverlay.innerHTML = $('.get_direction_error').text() });
+			dir_lat_lng.load(from + " to " + to_LatLng);
+			google.maps.Event.addListener(dir_lat_lng, "error", function () {
+				resultsOverlay.innerHTML = $('.get_direction_error').text()
+			});
 		}
 	},
-	getAddress : function() {
-		if(navigator.geolocation){
+	getAddress: function () {
+		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(handle_geolocation_query);
 		}
 	},
-	handle_geolocation_query : function(position){
+	handle_geolocation_query: function (position) {
 		var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		var geocoder = geocoder = new google.maps.Geocoder();
-		geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+		geocoder.geocode({'latLng': latlng}, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				if (results[1]) {
 					var arrAddress = results[1].address_components;
-					var itemLocality ="";
+					var itemLocality = "";
 					$.each(arrAddress, function (i, address_component) {
-						if (address_component.types[0] == "locality"){
+						if (address_component.types[0] == "locality") {
 							itemLocality = address_component.long_name;
 						}
-						if (address_component.types[0] == "administrative_area_level_1"){
-							itemLocality += ', '+address_component.long_name;
+						if (address_component.types[0] == "administrative_area_level_1") {
+							itemLocality += ', ' + address_component.long_name;
 						}
 						$('.find-an-x-search__container .cta_search').val(itemLocality);
 					});
 				}
 				if (results[0]) {
-					dir_to_flag=false;
+					dir_to_flag = false;
 					$('.get-directions-form .from-address').val(ServicesAPI.formatDestination(results[0].formatted_address));
 				}
 			}
 		});
 	},
-	buildServiceUrl: function(baseUrl, lat, lng, radius, specialty) {
-		var latSelector = '.latitude=' + lat.toString().replace('.',','), //sling selector workaround
-			lngSelector = '.longitude=' + lng.toString().replace('.',','),
+	buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
+		var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
 	},
-	buildServiceUrlUS: function(baseUrl, lat, lng, radius, specialty) {
+	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
 			radiusSelector = '&radius=' + radius,
@@ -10187,9 +10196,9 @@ var ServicesAPI = {
 
 		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 	},
-	updatePageFrom: function(name){
+	updatePageFrom: function (name) {
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		if(pageFrom != undefined){
+		if (pageFrom != undefined) {
 			name.val(pageFrom);
 		}
 	},
@@ -10200,12 +10209,12 @@ var ServicesAPI = {
 		var flag;
 
 
-		if($("[data-observes-id]").find("input:radio").parent().parent().parent().parent().css("display") != "none") {
-		/*	$("[data-observes-id]").find("input:radio").each(function () {
-				if ($(this).attr('checked') == "checked") {
-					radioDials = true;
-				}
-			});*/
+		if ($("[data-observes-id]").find("input:radio").parent().parent().parent().parent().css("display") != "none") {
+			/*	$("[data-observes-id]").find("input:radio").each(function () {
+			 if ($(this).attr('checked') == "checked") {
+			 radioDials = true;
+			 }
+			 });*/
 			if (radioDials != true) {
 				$("[data-observes-id]").find("input:radio").each(function () {
 					$(this).next('span').addClass('errorRadio');
@@ -10216,20 +10225,20 @@ var ServicesAPI = {
 		}
 		$formid.find('[data-required=true]').each(function () {
 			var $this = $(this);
-			if($this.parent().parent().parent().css("display") != "none"){
+			if ($this.parent().parent().parent().css("display") != "none") {
 				var placeholder = $this.attr('placeholder');
 				if ($this.val() == placeholder) {
 					$this.val("");
 				}
 				var val = $this.val();
 				if (val.length == 0) {
-						$this.addClass('error');
-						//$this.parent().find('.errorSpan').addClass('errorSpanOpen');
-						$('.contactSideForm .info-mandatory').addClass('error-mandatory');
-						$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-						$this.val(placeholder);
-						formStatus = false;
-				}else{
+					$this.addClass('error');
+					//$this.parent().find('.errorSpan').addClass('errorSpanOpen');
+					$('.contactSideForm .info-mandatory').addClass('error-mandatory');
+					$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
+					$this.val(placeholder);
+					formStatus = false;
+				} else {
 					$('.contactSideForm .info-mandatory').removeClass('error-mandatory');
 				}
 			}
@@ -10250,7 +10259,7 @@ var ServicesAPI = {
 		}
 		return formStatus;
 	},
-	formProcessorSubmit : function(formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
+	formProcessorSubmit: function (formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
 		var lead = "";
 		var scenarioName = "";
 		var mmrep = "";
@@ -10376,7 +10385,7 @@ var ServicesAPI = {
 
 		}
 	},
-	validateOnType : function (val, $this, re) {
+	validateOnType: function (val, $this, re) {
 		var placeholder = $this.attr('placeholder');
 		if (val.length > 0 && val != placeholder) {
 			if (val.match(re)) {
@@ -10399,14 +10408,14 @@ var ServicesAPI = {
 			}
 		}
 	},
-	AddInputParameter : function(a, b, c, d, e) {
+	AddInputParameter: function (a, b, c, d, e) {
 		var f = e.createElement(b);
 		f.setAttribute("type", "hidden");
 		f.setAttribute("name", c);
 		f.setAttribute("value", d);
 		a.appendChild(f);
 	},
-	getCookie : function(c_name) {
+	getCookie: function (c_name) {
 		if (document.cookie.length > 0) {
 			c_start = document.cookie.indexOf(c_name + "=");
 			if (c_start != -1) {
@@ -10418,7 +10427,7 @@ var ServicesAPI = {
 		}
 		return "";
 	},
-	getQueryString : function(a) {
+	getQueryString: function (a) {
 		a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 		var b = "[\\?&]" + a + "=([^&#]*)";
 		var c = new RegExp(b);
@@ -10426,7 +10435,7 @@ var ServicesAPI = {
 		if (null == d) return "";
 		else return d[1];
 	},
-	getPageFromURLNode : function(a, b) {
+	getPageFromURLNode: function (a, b) {
 		var c = document.URL;
 		var d = "";
 		var e = window.location.search.split("?");
@@ -10464,7 +10473,7 @@ var ServicesAPI = {
 		}
 		return c;
 	},
-	addSessionParameters : function(a) {
+	addSessionParameters: function (a) {
 		var b = sessionVars.getSessionParams();
 		for (var c in b)
 			if (b.hasOwnProperty(c))
@@ -10472,24 +10481,24 @@ var ServicesAPI = {
 					if (ServicesAPI.checkFormField(a, c)) ServicesAPI.AddInputParameter(a, "input", c, b[c], document);
 					else a.elements[c].value = b[c];
 	},
-	checkFormField : function (a, b) {
+	checkFormField: function (a, b) {
 		if (void 0 == a.elements[b]) return true;
 		else return false;
 	},
-	postLeadform : function ($formid){
+	postLeadform: function ($formid) {
 		var formName = $formid.attr('name');
-		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+		ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
 		var requestExist = $('[data-fid="' + formName + '"]').find("[data-request-type]").length;
 		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
 		var requestType;
 		var ajaxUrl;
-		if(requestExist > 0){
+		if (requestExist > 0) {
 			requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
 			ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
-			if(requestType == 'New Product/Planning Services'){
+			if (requestType == 'New Product/Planning Services') {
 				var jsonData = {};
-				var formData = $('form[name='+formName+']').serializeArray();
-				$.each(formData, function() {
+				var formData = $('form[name=' + formName + ']').serializeArray();
+				$.each(formData, function () {
 					if (jsonData[this.name]) {
 
 						if (!jsonData[this.name].push) {
@@ -10501,7 +10510,7 @@ var ServicesAPI = {
 
 						jsonData[this.name] = this.value || '';
 						if (!jsonData[this.name].push) {
-							if(this.name == "prodInt" || this.name == "prodInterest"){
+							if (this.name == "prodInt" || this.name == "prodInterest") {
 								jsonData[this.name] = [jsonData[this.name]];
 
 							}
@@ -10522,15 +10531,15 @@ var ServicesAPI = {
 					success: function (returndata) {
 						//console.log(returndata);
 					},
-					error: function(){
+					error: function () {
 						console.log("error in ajax form submission");
 					}
 				});
 			}
 
-			if(requestType == 'Existing Product/Policy'){
-				if(typeof FormData !== 'undefined'){
-					var formData = new FormData($('form[name='+formName+']')[0]);
+			if (requestType == 'Existing Product/Policy') {
+				if (typeof FormData !== 'undefined') {
+					var formData = new FormData($('form[name=' + formName + ']')[0]);
 					$.ajax({
 						url: ajaxUrl,
 						type: 'POST',
@@ -10541,12 +10550,12 @@ var ServicesAPI = {
 						success: function (returndata) {
 							//console.log(returndata);
 						},
-						error: function(){
+						error: function () {
 							console.log("error in ajax form submission");
 						}
 					});
 				} else {
-					var formData = postSerialize($('form[name='+formName+']'));
+					var formData = postSerialize($('form[name=' + formName + ']'));
 					$.ajax({
 						url: ajaxUrl,
 						type: 'POST',
@@ -10557,16 +10566,16 @@ var ServicesAPI = {
 						success: function (returndata) {
 							//console.log(returndata);
 						},
-						error: function(){
+						error: function () {
 							console.log("error in ajax form submission");
 						}
 					});
 				}
 			}
-		}else{
+		} else {
 			ajaxUrl = $('[data-fid="' + formName + '"]').attr("[data-product-url]");
-			if(typeof FormData !== 'undefined'){
-				var formData = new FormData($('form[name='+formName+']')[0]);
+			if (typeof FormData !== 'undefined') {
+				var formData = new FormData($('form[name=' + formName + ']')[0]);
 				$.ajax({
 					url: ajaxUrl,
 					type: 'POST',
@@ -10577,12 +10586,12 @@ var ServicesAPI = {
 					success: function (returndata) {
 						//console.log(returndata);
 					},
-					error: function(){
+					error: function () {
 						console.log("error in ajax form submission");
 					}
 				});
 			} else {
-				var formData = postSerialize($('form[name='+formName+']'));
+				var formData = postSerialize($('form[name=' + formName + ']'));
 				$.ajax({
 					url: ajaxUrl,
 					type: 'POST',
@@ -10593,31 +10602,30 @@ var ServicesAPI = {
 					success: function (returndata) {
 						//console.log(returndata);
 					},
-					error: function(){
+					error: function () {
 						console.log("error in ajax form submission");
 					}
 				});
 			}
 		}
-		if($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').length > 0) {
+		if ($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').length > 0) {
 			$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''));
 		}
 
 
-
 	},
-	postLeadformOld : function($formid){
+	postLeadformOld: function ($formid) {
 
 		var formName = $formid.attr('name');
-		ServicesAPI.formProcessorSubmit(formName,'a','chn-har-thankyou','chn-har-error','chn-har-exception');
+		ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
 		var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
 		var ajaxUrl;
 		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-		if(requestType == 'New Product/Planning Services'){
+		if (requestType == 'New Product/Planning Services') {
 			ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
 			var jsonData = {};
-			var formData = $('form[name='+formName+']').serializeArray();
-			$.each(formData, function() {
+			var formData = $('form[name=' + formName + ']').serializeArray();
+			$.each(formData, function () {
 				if (jsonData[this.name]) {
 
 					if (!jsonData[this.name].push) {
@@ -10629,7 +10637,7 @@ var ServicesAPI = {
 
 					jsonData[this.name] = this.value || '';
 					if (!jsonData[this.name].push) {
-						if(this.name == "prodInt" || this.name == "prodInterest"){
+						if (this.name == "prodInt" || this.name == "prodInterest") {
 							jsonData[this.name] = [jsonData[this.name]];
 
 						}
@@ -10650,16 +10658,16 @@ var ServicesAPI = {
 				success: function (returndata) {
 					//console.log(returndata);
 				},
-				error: function(){
+				error: function () {
 					console.log("error in ajax form submission");
 				}
 			});
 		}
 
-		if(requestType == 'Existing Product/Policy'){
+		if (requestType == 'Existing Product/Policy') {
 			ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
-			if(typeof FormData !== 'undefined'){
-				var formData = new FormData($('form[name='+formName+']')[0]);
+			if (typeof FormData !== 'undefined') {
+				var formData = new FormData($('form[name=' + formName + ']')[0]);
 
 				$.ajax({
 					url: ajaxUrl,
@@ -10671,12 +10679,12 @@ var ServicesAPI = {
 					success: function (returndata) {
 						//console.log(returndata);
 					},
-					error: function(){
+					error: function () {
 						console.log("error in ajax form submission");
 					}
 				});
 			} else {
-				var formData = postSerialize($('form[name='+formName+']'));
+				var formData = postSerialize($('form[name=' + formName + ']'));
 				$.ajax({
 					url: ajaxUrl,
 					type: 'POST',
@@ -10687,7 +10695,7 @@ var ServicesAPI = {
 					success: function (returndata) {
 						//console.log(returndata);
 					},
-					error: function(){
+					error: function () {
 						console.log("error in ajax form submission");
 					}
 				});
@@ -10695,12 +10703,10 @@ var ServicesAPI = {
 		}
 
 
-
-
 	},
-	formPass : function (fid) {
+	formPass: function (fid) {
 
-		switch (fid){
+		switch (fid) {
 			case "contactSidebar":
 				$('.contactSideForm').fadeOut(2000);
 				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
@@ -10721,9 +10727,9 @@ var ServicesAPI = {
 			ServicesAPI.resetForm(fid);
 		}, 5000);
 	},
-	resetForm : function (fid) {
+	resetForm: function (fid) {
 
-		switch (fid){
+		switch (fid) {
 			case "contactSidebar":
 				//in a timeout to avoid visual conflict with animation
 				setTimeout(function () {
