@@ -426,8 +426,6 @@
 /* Go Home Trigger */
 .login-trigger {
     width: 80px;
-
-    padding-top: 15px;
     color:#fff;
     cursor: pointer;
 }
@@ -460,11 +458,17 @@
 .contact-trigger__label,
 .user-trigger__label{
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     display: inline-block;
-    padding-top: 2px;
-    height: 50px;
 }
+
+@media screen and (max-width: 767px) {
+    .login-trigger__label{
+         padding-top: 15px;
+          height: 50px;
+    }
+}
+
 .login-trigger__label:hover,
 .contact-trigger__label:hover,
 .user-trigger__label:hover{
