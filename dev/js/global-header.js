@@ -181,11 +181,11 @@ $('body').on('click touchstart tap', function(e){
 });
 
 $('.megamenu-trigger').on('click', function(){
-    if($(".icon-close.megamenu-trigger__icon").css("display") == "none"){
-        $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
+    if($(".icon-close-grey.megamenu-trigger__icon").css("display") == "none"){
+        $(".icon-close-grey.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
     }else{
-        $(".icon-close.megamenu-trigger__icon").css("display", "none");
+        $(".icon-close-grey.megamenu-trigger__icon").css("display", "none");
         $(".icon-menu.megamenu-trigger__icon").css("display", "inline-block");
     }
 

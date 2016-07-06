@@ -862,7 +862,7 @@
 
     .megamenu__main-items {
         font-size: 0;
-        width: 95%;
+        width: 90%;
         max-width: 1300px;
         margin: 0 auto;
     }
@@ -1044,7 +1044,7 @@
     }
 }
 
-.icon-close.megamenu-trigger__icon {
+.icon-close-grey.megamenu-trigger__icon {
     display: none;
 }
 
