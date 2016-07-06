@@ -264,7 +264,7 @@ if (getViewport() != "mobile") {
     }, 100);
 };
 
-$(document).on("click tap", function (e) {
+$('body').on('click touchstart tap', function(e){
     var megaMenuTrigger = $(".megamenu-trigger");
     var container = $(".search-trigger");
     var suggestions = $(".suggestionsbox");
@@ -575,30 +575,10 @@ $(document).ready(function(){
     footerBorder();
 });
 
-
-$.fn.isOnScreen = function(){
-    var win = $(window);
-    var viewport = {
-        top  : win.scrollTop(),
-        left : win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
-
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-};
-
 var marketingCarouselVisible;
 
 $(window).scroll(function(){
-    if ($('#countryList').isOnScreen() == false) {
-        closeCountryList();
-    }
+    closeCountryList();
 });
 
 
@@ -608,7 +588,7 @@ $(document).ready(function(){
 
 
 function closeCountryList() {
-    $('.country__list').slideUp(200).scrollTop(0);
+    $('.country__list').slideUp(200);
 }
 
 function processCountrySelection(evt) {
@@ -632,7 +612,7 @@ function processCountrySelection(evt) {
         if($('.country__list').is(':visible')) {
             closeCountryList();
         } else if ($.inArray(evt.target.id, countrySelectActivationClasses) >-1 ) {
-            $('.country__list').slideDown(400).scrollTop(0);
+            $('.country__list').slideDown(400);
         }
     }
 }
@@ -645,43 +625,53 @@ function processCountrySelection(evt) {
 
 var clickDisabled = false;
 
+$('.country__list').on('touchmove', function(e) {
+    e.stopPropagation();
+});
+$('.country__list').on('touchstart', function(e) {
+    e.stopPropagation();
+});
+$('.country__selected').on('touchstart click', function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault()
+    if (e.type == "touchstart") {
+        if ($("#countryList").is(":visible") == true) {
+            closeCountryList();
+        } else {
+            /*        if (clickDisabled != true) {
+             if($("#countryList").is(":visible") == true){
 
-$('body').on ('click touchstart', function(e){
-
-    if (clickDisabled != true){
-
-        var clickEvent = ((document.ontouchstart!==null)?'click':'touchstart');
-
-        switch(clickEvent) {
-            case 'click':
-                processCountrySelection(e);
-                break;
-            case 'touchstart':
-
-                //var cs = document.getElementById(("countryList");
-
-                if($("#countryList").is(":visible") == true){
-                    if (e.target.id == "countryList") {
-
-                    } else {
-                        closeCountryList();
-                    }
-                }else{
-                    processCountrySelection(e);
-                }
-
-                break;
-            default:
-                break;
+             }else{
+             processCountrySelection(e);
+             }
+             clickDisabled = true;
+             setTimeout(function () {
+             clickDisabled = false;
+             }, 1000);
+             }*/
+            processCountrySelection(e);
         }
-
-        clickDisabled = true;
-        setTimeout(function(){clickDisabled = false;}, 1000);
+    } else {
+        if($("#countryList").is(":visible") == true) {
+            closeCountryList();
+        } else {
+            processCountrySelection(e);
+        }
     }
-
 });
 
-
+$('body').on('click touchstart', function(e){
+    e.stopPropagation();
+    if (e.target.className != "country__selected") {
+        if (e.type == "touchstart") {
+            if ($("#countryList").is(":visible") == true) {
+                closeCountryList();
+            }
+        } else {
+            processCountrySelection(e);
+        }
+    }
+});
 
 /*
  When disclaimer is not present, remove top-border from footer
@@ -7996,10 +7986,10 @@ $('.js-searchIcon').click(function () {
 
 $(".ss-gac-a, .ss-gac-b").on("click", function() {
 	var searchTerm= $(this).find(".ss-gac-c").text();
-	console.log(searchTerm)
-	$(".search-trigger__search-box").val(searchTerm)
+	console.log(searchTerm);
+	$(".search-trigger__search-box").val(searchTerm);
 	if($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm)
+		$(".search-trigger__search-box").val(searchTerm);
 		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
 	} else {
@@ -9103,10 +9093,10 @@ var ServicesAPI = {
 		});
 		/************LIVE SERVICE***************/
 	},
-	legacySearch: function(serchQuery){
+	legacySearch: function(searchQuery){
 		var str = "https://www.metlife.com/searchresults?query=";
 		var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
-		str += serchQuery+val2;
+		str += searchQuery+val2;
 		window.location.href = str;
 	},
 	redirectToSearchResultsPage: function(input){
@@ -9118,7 +9108,6 @@ var ServicesAPI = {
 		var cov = sessionStorage.getItem("searchTerm");
 		if(sessionStorage.getItem("searchTerm") !== null){
 			if($(".js-searchTextBox").css("display") !== " none"){
-
 				$(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
 				$(".js-searchSubmit").click();
 			}

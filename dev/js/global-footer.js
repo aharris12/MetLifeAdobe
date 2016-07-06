@@ -89,7 +89,7 @@ $('.country__selected').on('touchstart click', function(e) {
 });
 
 $('body').on('click touchstart', function(e){
-    e.stopImmediatePropagation();
+    e.stopPropagation();
     if (e.target.className != "country__selected") {
         if (e.type == "touchstart") {
             if ($("#countryList").is(":visible") == true) {

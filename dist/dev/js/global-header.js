@@ -161,7 +161,7 @@ if (getViewport() != "mobile") {
     }, 100);
 };
 
-$(document).on("click tap", function (e) {
+$('body').on('click touchstart tap', function(e){
     var megaMenuTrigger = $(".megamenu-trigger");
     var container = $(".search-trigger");
     var suggestions = $(".suggestionsbox");
