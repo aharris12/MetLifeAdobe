@@ -216,12 +216,15 @@ function openSearchBox () {
         }
         currentView = getViewport();
     } else {
-        $('.search-trigger__container').toggle();
-        $('.search-trigger__search-box').animate({width: '170px'}, 600);
-        $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
-        $('.search-trigger__icon').animate({left: '145'}, 150);
-        $(".search-trigger__container").css({top: "0"})
-        currentView = getViewport();
+        if( $('.search-trigger__container').css("display") == "none"){
+            $('.search-trigger__container').toggle();
+            $('.search-trigger__search-box').animate({width: '170px'}, 600);
+            $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+            $('.search-trigger__icon').animate({left: '145'}, 150);
+            $(".search-trigger__container").css({top: "0"})
+            currentView = getViewport();
+        }
+
     }
 
 
@@ -7252,684 +7255,391 @@ var radioDials = false;
 
 $(document).ready(function () {
 
-	ServicesAPI.loadEventListeners();
-	if ($("#searchInPage").length != 0) {
-		$("#searchInPage").val("");
-	}
+    ServicesAPI.loadEventListeners();
+    if ($("#searchInPage").length != 0) {
+        $("#searchInPage").val("");
+    }
 
 });
 //Contact Forms
-/*IS THIS USED??*/
-/*
- $('.globalContact').on('click', function (evt) {
- evt.preventDefault();
- $(".contactSidebar").find(".form-user-grp").each(function () {
- $(this).find("input, select, textarea").removeClass('error');
- $(this)[0].reset();
- });
- $('.contactSliderOuterCon').show();
- $('.contactSliderOuterCon').stop().animate({
- right: '0'
- }, 200);
- $('.feedbackLink').addClass('hidden');
- });
-
- $('.contactsClose').click(function (e) {
- e.preventDefault();
- metlifeRedesign.closeContacts();
- });
-
- function AddInputParameter(a, b, c, d, e) {
- var f = e.createElement(b);
- f.setAttribute("type", "hidden");
- f.setAttribute("name", c);
- f.setAttribute("value", d);
- a.appendChild(f);
- }
-
- function getCookie(c_name) {
- if (document.cookie.length > 0) {
- c_start = document.cookie.indexOf(c_name + "=");
- if (c_start != -1) {
- c_start = c_start + c_name.length + 1;
- c_end = document.cookie.indexOf(";", c_start);
- if (c_end == -1) c_end = document.cookie.length;
- return unescape(document.cookie.substring(c_start, c_end));
- }
- }
- return "";
- }
-
- function getQueryString(a) {
- a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
- var b = "[\\?&]" + a + "=([^&#]*)";
- var c = new RegExp(b);
- var d = c.exec(window.location.href);
- if (null == d) return "";
- else return d[1];
- }
-
- function getPageFromURLNode(a, b) {
- var c = document.URL;
- var d = "";
- var e = window.location.search.split("?");
- var f = "";
- var g = "";
- var h = false;
- if (null != document.getElementById("WT.mc_id")) {
- mcid = getCookie("SessionMCID");
- AddInputParameter(a, "input", "wb_code", mcid, document);
- AddInputParameter(a, "input", "WT.mc_id", mcid, document);
- }
- if (2 == e.length) {
- var i = e[1].split("&");
- for (var j = 0; j < i.length; j++) {
- var k = i[j].split("=");
- if ("wt.mc_id" == k[0].toLowerCase()) {
- AddInputParameter(a, "input", "wb_code", k[1], document);
- }
- if ("" != b)
- if ("pagefrom" == k[0].toLowerCase()) {
- d = k[1] + "-" + b;
- if (j == i.length - 1) g = g + k[0] + "=" + d;
- else g = g + k[0] + "=" + d + "&";
- h = true;
- } else if (j == i.length - 1) g += i[j];
- else g = g + i[j] + "&";
- }
- if (h) {
- var l = document.URL;
- var m = l.split("?");
- f = window.location.href.split("#")[1];
- if ("" != f) c = m[0] + "?" + g;
- else c = m[0] + "?" + g + "#" + f;
- }
- }
- return c;
- }
-
- function addSessionParameters(a) {
- var b = sessionVars.getSessionParams();
- for (var c in b)
- if (b.hasOwnProperty(c))
- if ("" !== b[c])
- if (checkFormField(a, c)) AddInputParameter(a, "input", c, b[c], document);
- else a.elements[c].value = b[c];
- }
-
- function checkFormField(a, b) {
- if (void 0 == a.elements[b]) return true;
- else return false;
- }
-
- var sessionVars = {
- init: function (a) {
- var b = "";
- if (a.override.length > 0 && a.no_override.length > 0) b = a.override + "," + a.no_override;
- else if (a.override.length > 0) b = a.override;
- else if (a.no_override.length > 0) b = a.no_override;
- if (b.length > 0) {
- var c = a.override.split(",");
- for (var d = 0; d < c.length; d++) c[d] = c[d].toLowerCase();
- var e = b.split(",");
- var f = sessionVars.getCookie("SESS_VARS");
- if (f.length > 0) {
- var g = sessionVars.getArrayFromString(f);
- for (var d in g)
- if (g.hasOwnProperty(d))
- if ("" == g[d] || sessionVars.isOverrideParam(c, d.toLowerCase()))
- if ("" !== sessionVars.getParameterFromURL(d)) g[d] = sessionVars.getParameterFromURL(d);
- var h = "";
- for (var d in g)
- if (g.hasOwnProperty(d)) h += d + "=" + g[d] + ":";
- if (h.length > 0) h = h.substring(0, h.length - 1);
- sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
- } else {
- var h = "";
- for (var d = 0; d < e.length; d++)
- if (d == e.length - 1) h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]);
- else h += e[d] + "=" + sessionVars.getParameterFromURL(e[d]) + ":";
- sessionVars.expairSecureCookie("SESS_VARS", h, "", "/", true);
- }
- }
- },
- isOverrideParam: function (a, b) {
- if (a.indexOf(b) >= 0) return true;
- else return false;
- },
- getSessionParams: function () {
- var a = sessionVars.getCookie("SESS_VARS");
- if (a.length > 0) return sessionVars.getArrayFromString(a);
- else return null;
- },
- getArrayFromString: function (a) {
- var b = [];
- var c = a.split(":");
- for (var d = 0; d < c.length; d++) {
- var e = c[d].split("=");
- b[e[0]] = e[1];
- }
- return b;
- },
- setCookie: function (a, b, c) {
- var d = new Date();
- d.setDate(d.getDate() + c);
- document.cookie = a + "=" + escape(b) + (null == c ? "" : ";expires=" + d.toGMTString()) + ";path=/";
- },
- expairSecureCookie: function (a, b, c, d, e) {
- var f = new Date();
- f.setTime(f.getTime());
- if (c) c = 365 * c * 1e3 * 60 * 60 * 24;
- var g = new Date(f.getTime() + c);
- document.cookie = a + "=" + escape(b) + (c ? ";expires=" + g.toGMTString() : "") + (d ? ";path=" + d : "") + (e ? ";secure" : "");
- },
- getCookie: function (a) {
- if (document.cookie.length > 0) {
- c_start = document.cookie.indexOf(a + "=");
- if (c_start != -1) {
- c_start = c_start + a.length + 1;
- c_end = document.cookie.indexOf(";", c_start);
- if (c_end == -1) c_end = document.cookie.length;
- return unescape(document.cookie.substring(c_start, c_end));
- }
- }
- return "";
- },
- getParameterFromURL: function (a) {
- var b = window.location.search.substring(1);
- var c = function (b) {
- var c = b.split("=");
- var d = decodeURIComponent(c[0]);
- var e = decodeURIComponent(c[1]);
- if (d.toLowerCase() == a.toLowerCase()) return e;
- return "";
- };
- var d = "";
- if (b.indexOf("&") > -1) {
- var e = b.split("&");
- for (var f = 0; f < e.length; f++) {
- d = c(e[f]);
- if ("" !== d) break;
- }
- } else d = c(b);
- return d;
- }
- };
-
- //Begin Country Selector
- $('.country_selector_container').click(function () {
- $('.country_list_container').slideToggle(500).scrollTop(0);
- return false;
- });
-
- $('.country_group').click(function () {
- var selectedCountry = $('.country_selector_container .selected');
- selectedCountry.find('.country_flag').attr('src', $(this).find('.country_flag').attr('src'));
- selectedCountry.find('.country_name').text($(this).find('div.country_name').text());
- if ($(this).attr('data-redirect') !== "" && $(this).attr('data-redirect')) {
- window.location.href = $(this).attr('data-redirect');
- } else {
- alert("Missing URL for " + $(this).find('div.country_name').text());
- }
- });
- //End Country Selector
-
-
- //GLT Results expanded form functionality
- $(".first_name, .last_name, .phone_number, .email_address").click(function () {
- if ($(".disclaimer_apply").hasClass('hidden')) {
- $(".disclaimer_apply").removeClass('hidden');
- } else {
- $(".disclaimer_apply").removeClass('hidden');
- }
- });
-
-
- $(".first_name, .last_name, .phone_number, .email_address").click(function () {
- $(".htr_address").removeClass('hidden');
- $(".htr_city").removeClass('hidden');
- $(".htr_select_state").removeClass('hidden');
- $(".htr_zip_code").removeClass('hidden');
- $(".disclaimer_apply").removeClass('hidden-lg');
- $(".disclaimer_apply").addClass('visible-lg');
- });
-
- function isValidEmailAddress(emailAddress) {
- var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
- return pattern.test(emailAddress);
- };
-
- //Start Validations For Unsubscribe Email
- function unsubscribeEmailDNSS() {
-
- var emailId = document.getElementById("email").value;
- var isValidEmailId = isValidEmailAddress(emailId)
-
- if (isValidEmailId == false) {
- document.getElementById('email').value = "";
- document.getElementById('errorText').style.visibility = "visible";
- document.getElementById('errorText').style.color = "red";
- document.getElementById('enterEmail').style.display = "block";
- document.getElementById('thanksMessage').style.display = "none";
- } else {
- document.getElementById('enterEmail').style.display = "none";
- document.getElementById('thanksMessage').style.display = "block";
- document.getElementById('errorText').style.visibility = "hidden";
- UnsubscribeProcessorSubmit(emailId);
- }
- }
- // End Validations For Unsubscribe Email
-
- function UnsubscribeProcessorSubmit(emailId)  {
-
- var i = "/wps/proxy/MCDNSSService/emailPost.do?email="+emailId;
- $.ajax({
- url: i,
- type: 'POST',
- async: false,
- contentType: false,
- processData: false,
- handleAs: "text",
- enctype:"multipart/form-data",
- success: function (data) {
- console.log(data);
- },
- error: function(){
- }
- });
- }
-
- $(".firstName, .lastName, .phoneNumber, .emailAddress").click(function () {
- $(".city, .state, .zip, .address, .disclaimer_text").addClass("display_on_click");
- $(".close_button").addClass("display_close_button_click");
- });
-
- $(".close_button").click(function () {
- $(".city, .state, .zip, .address, .disclaimer_text, .box_hidden_types").removeClass("display_on_click");
- $(".close_button").removeClass("display_close_button_click");
- });
- */
-/*IS THIS USED??*/
-
 
 $(".form-radio-grp svg, .image_radio svg").on('click', function () {
-	var radioButton = $(this).siblings('input');
-	console.log("click")
-	if (!radioButton.prop('checked')) {
-		radioButton.prop('checked', true);
-		var radioName = radioButton.prop('name');
-		$('input[name=' + radioName + ']').siblings('svg').toggle();
-	}
-	;
+    var radioButton = $(this).siblings('input');
+    if (!radioButton.prop('checked')) {
+        radioButton.prop('checked', true);
+        var radioName = radioButton.prop('name');
+        $('input[name=' + radioName + ']').siblings('svg').toggle();
+    }
+    ;
 });
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
 $("[data-fid='contactCard'] input").click(function () {
-	if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-		$('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
-	}
+    if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
+        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
+    }
 });
 
 $('.contactCard .form-minimize').click(function () {
-	$('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
-	$('[data-request-type] option[value=""]').attr('selected', true);
-	$("[data-request-type]").change();
-	$('[data-request-type] option[value=""]').attr('selected', true);
+    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
+    $('[data-request-type] option[value=""]').attr('selected', true);
+    $("[data-request-type]").change();
+    $('[data-request-type] option[value=""]').attr('selected', true);
 });
 
 $("[data-request-type]").on("change", function () {
-	var thisValue = $(this).val()
-	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
-	var $formid = $('[data-fid=' + thisForm + ']');
-	radioDials = false;
-	$formid.find("[data-observes-id]").find('input:radio').each(function () {
-		$(this).next('span').removeClass('errorRadio');
-	});
-	$formid.find('[data-observes-id]').each(function () {
+    var thisValue = $(this).val()
+    var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+    var $formid = $('[data-fid=' + thisForm + ']');
+    radioDials = false;
+    $formid.find("[data-observes-id]").find('input:radio').each(function () {
+        $(this).next('span').removeClass('errorRadio');
+    });
+    $formid.find('[data-observes-id]').each(function () {
 
-		if ($(this).attr('data-observes-value') == thisValue) {
-			$(this).show();
+        if ($(this).attr('data-observes-value') == thisValue) {
+            $(this).show();
 
-		} else {
-			$(this).hide();
-		}
-	});
-	if (thisValue != "") {
-		$("[data-request-type]").removeClass('error');
-		$(this).attr('data-valid-status', 'success');
-		$(this).parent('.form-user-grp').find('svg').css('fill', '#666');
-	}
+        } else {
+            $(this).hide();
+        }
+    });
+    if (thisValue != "") {
+        $("[data-request-type]").removeClass('error');
+        $(this).attr('data-valid-status', 'success');
+        $(this).parent('.form-user-grp').find('svg').css('fill', '#666');
+    }
 })
 
 
 $("[data-observes-id]").find('textarea').on("change", function () {
-	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
-	var $formid = $('[data-fid=' + thisForm + ']');
-	var val = $formid.find("[data-observes-id]").find('textarea').val();
-	var placeholder = $formid.find("[data-observes-id]").find('textarea').attr('placeholder');
-	if (val == "" || val == placeholder) {
-		$("[data-request-type]").attr('data-valid-status', 'failed');
-	} else {
-		$("[data-request-type]").attr('data-valid-status', 'success');
-		$("[data-request-type]").removeClass('error');
-	}
+    var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+    var $formid = $('[data-fid=' + thisForm + ']');
+    var val = $formid.find("[data-observes-id]").find('textarea').val();
+    var placeholder = $formid.find("[data-observes-id]").find('textarea').attr('placeholder');
+    if (val == "" || val == placeholder) {
+        $("[data-request-type]").attr('data-valid-status', 'failed');
+    } else {
+        $("[data-request-type]").attr('data-valid-status', 'success');
+        $("[data-request-type]").removeClass('error');
+    }
 })
 
 $("[data-observes-id]").find('input:text').on("change", function () {
-	var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
-	var $formid = $('[data-fid=' + thisForm + ']');
-	var val = $formid.find("[data-observes-id]").find('input:text').val();
-	var placeholder = $formid.find("[data-observes-id]").find('input:text').attr('placeholder');
-	if (val == "" || val == placeholder) {
-		$("[data-request-type]").attr('data-valid-status', 'failed');
-	} else {
-		$("[data-request-type]").attr('data-valid-status', 'success');
-		$("[data-request-type]").removeClass('error');
-	}
+    var thisForm = $(this).parent().parent().parent().parent().attr('data-fid');
+    var $formid = $('[data-fid=' + thisForm + ']');
+    var val = $formid.find("[data-observes-id]").find('input:text').val();
+    var placeholder = $formid.find("[data-observes-id]").find('input:text').attr('placeholder');
+    if (val == "" || val == placeholder) {
+        $("[data-request-type]").attr('data-valid-status', 'failed');
+    } else {
+        $("[data-request-type]").attr('data-valid-status', 'success');
+        $("[data-request-type]").removeClass('error');
+    }
 })
 
 
 $("[data-observes-id]").find('input:radio').on('click', function () {
-	/*$("[data-observes-id]").find("input:radio").each(function(){
-	 $(this).removeAttr("checked");
-	 $(this).next('span').removeClass('errorRadio');
-	 });
-	 $(this).attr('checked', true);*/
-	radioDials = true;
-	$("[data-request-type]").attr('data-valid-status', 'success');
-	$("[data-request-type]").removeClass('error');
-	$("[data-request-type]").parent().find('svg').css('fill', '#666');
+    /*$("[data-observes-id]").find("input:radio").each(function(){
+     $(this).removeAttr("checked");
+     $(this).next('span').removeClass('errorRadio');
+     });
+     $(this).attr('checked', true);*/
+    radioDials = true;
+    $("[data-request-type]").attr('data-valid-status', 'success');
+    $("[data-request-type]").removeClass('error');
+    $("[data-request-type]").parent().find('svg').css('fill', '#666');
 });
 
 //New This should be uncommented once form builder is in palce
 $('[data-submit-type="clr"]').on('click', function (e) {
-	e.preventDefault();
-	var $this = $(this);
-	var isValid = ServicesAPI.onFSubmit($(this));
-	if (isValid) {
-		var fid = $this.attr('data-fsubmit');
-		var $formid = $('[data-fid=' + fid + ']');
-		ServicesAPI.postLeadform($formid);
+    e.preventDefault();
+    var $this = $(this);
+    var isValid = ServicesAPI.onFSubmit($(this));
+    if (isValid) {
+        var fid = $this.attr('data-fsubmit');
+        var $formid = $('[data-fid=' + fid + ']');
+        ServicesAPI.postLeadform($formid);
 
-		$formid.find('[data-observes-id]').each(function () {
-			$(this).hide();
-		});
+        $formid.find('[data-observes-id]').each(function () {
+            $(this).hide();
+        });
 
-		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-			$('.aidFormCon').hide();
-			$('.aiwHeading').hide();
-			$('.advisorClose').hide();
-			$('.adImageThankYou').css("display", "table-cell");
-		} else if (fid == "quoteleadform") {
-			$(this).closest('.quote_right_mlt').hide();
-			$(this).closest('.quote_right_sit').hide();
-			$('.quote_results_thank_you').show();
-		} else if (fid == "contactCard") {
-			var temp = "[data-fid='" + fid + "']";
-			//$("[data-fid='contactCard']").hide();
-			$('.contactCard').hide();
-			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-			setTimeout(function () {
-				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-					$('.contactCard').show();
-					$('#requestFormContactCard_Acc').trigger("reset");
-					$('.form-minimize').trigger('click');
-				});
-			}, 5000);
-		} else if (fid == "contactSidebarQuote") {
-			$(".results-form__text").addClass("hidden");
-			$(".results-form__inputs").addClass("hidden");
-			$(".apply-disclaimer").addClass("hidden");
-			$(".contact-thanks").removeClass("hidden");
+        if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+            $('.aidFormCon').hide();
+            $('.aiwHeading').hide();
+            $('.advisorClose').hide();
+            $('.adImageThankYou').css("display", "table-cell");
+        } else if (fid == "quoteleadform") {
+            $(this).closest('.quote_right_mlt').hide();
+            $(this).closest('.quote_right_sit').hide();
+            $('.quote_results_thank_you').show();
+        } else if (fid == "contactCard") {
+            var temp = "[data-fid='" + fid + "']";
+            //$("[data-fid='contactCard']").hide();
+            $('.contactCard').hide();
+            $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+            setTimeout(function () {
+                $(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+                    $('.contactCard').show();
+                    $('#requestFormContactCard_Acc').trigger("reset");
+                    $('.form-minimize').trigger('click');
+                });
+            }, 5000);
+        } else if (fid == "contactSidebarQuote") {
+            $(".results-form__text").addClass("hidden");
+            $(".results-form__inputs").addClass("hidden");
+            $(".apply-disclaimer").addClass("hidden");
+            $(".contact-thanks").removeClass("hidden");
 
-		} else {
-			$('.' + fid).fadeOut('slow', function () {
-				setTimeout(function () {
-					$('.contactSliderOuterCon').fadeOut(2000);
-					$('.contactsClose').trigger('click');
-				}, 5000)
-			});
-		}
-	} else {
-		//alert("invalid");
-	}
+        } else {
+            $('.' + fid).fadeOut('slow', function () {
+                setTimeout(function () {
+                    $('.contactSliderOuterCon').fadeOut(2000);
+                    $('.contactsClose').trigger('click');
+                }, 5000)
+            });
+        }
+    } else {
+        //alert("invalid");
+    }
 });
 //New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
-	$(this).trigger('blur');
+    $(this).trigger('blur');
 });
 
 $('[data-required=true]').on('change', function () {
-	$(this).trigger('blur');
+    $(this).trigger('blur');
 });
 
 
 $('[data-required=true]').on('blur keyup', function () {
-	var $this = $(this);
-	var placeholder = $this.attr('placeholder');
-	if ($this.val() == placeholder) {
-		$this.val("");
-	}
-	var val = $this.val();
-	if (val.length == 0) {
-		$this.addClass('error');
-		//$this.val(placeholder);
-	} else {
-		var attrDVS = $this.attr('data-valid-status');
-		if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
-			//do nothing
-			if (attrDVS == 'failed') {
-				//$(this).addClass('error');
-				formStatus = false;
-			}
-		} else {
-			$this.removeClass('error');
-			$this.parent().find('.errorSpan').removeClass('errorSpanOpen');
-			$this.parent('.form-user-grp').find('svg').css('fill', '#666');
-		}
-	}
+    var $this = $(this);
+    var placeholder = $this.attr('placeholder');
+    if ($this.val() == placeholder) {
+        $this.val("");
+    }
+    var val = $this.val();
+    if (val.length == 0) {
+        $this.addClass('error');
+        //$this.val(placeholder);
+    } else {
+        var attrDVS = $this.attr('data-valid-status');
+        if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+            //do nothing
+            if (attrDVS == 'failed') {
+                //$(this).addClass('error');
+                formStatus = false;
+            }
+        } else {
+            $this.removeClass('error');
+            $this.parent().find('.errorSpan').removeClass('errorSpanOpen');
+            $this.parent('.form-user-grp').find('svg').css('fill', '#666');
+        }
+    }
 });
 
 $(".form-user-ctrl").on('click', function (evt) {
-	if ($(this).hasClass("error")) {
-		$(this).val("");
-	}
+    if ($(this).hasClass("error")) {
+        $(this).val("");
+    }
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
-	evt.preventDefault();
-	var $this = $(this);
-	var val = $this.val();
-	var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
-	/* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
-	ServicesAPI.validateOnType(val, $this, re);
+    evt.preventDefault();
+    var $this = $(this);
+    var val = $this.val();
+    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+    ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('.user-checkbox').on('click', function () {
-	var count = 0;
-	//var $con = $(this).closest('.productPolicyTypes');
-	var $con = $(this).parents().find('.productPolicyTypes');
-	$con.find('.newProductUser input[type=checkbox]').each(function () {
-		if ($(this).is(':checked')) {
-			count++;
-		}
-	});
-	//if (count > 0 && count <= 5) {
-	//if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
-	if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length) {
-		$con.find('.productPolicy').attr('data-valid-status', 'success');
-		$con.find('.productPolicy').removeClass('error');
-		$con.find('.productCount').removeClass('errorText');
-		$('.productPolicyTypes').find('svg').css('fill', '#666');
-	} else {
-		$con.find('.productPolicy').attr('data-valid-status', 'failed');
-		$con.find('.productPolicy').addClass('error');
-		$con.find('.productCount').addClass('errorText');
-		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
-	}
+    var count = 0;
+    //var $con = $(this).closest('.productPolicyTypes');
+    var $con = $(this).parents().find('.productPolicyTypes');
+    $con.find('.newProductUser input[type=checkbox]').each(function () {
+        if ($(this).is(':checked')) {
+            count++;
+        }
+    });
+    //if (count > 0 && count <= 5) {
+    //if (count > 0 && count <= document.getElementById("maxCheckedItemId").value) {
+    if (count > 0 && count <= $(this).parents().find('.newProductUser input[type=checkbox]').length) {
+        $con.find('.productPolicy').attr('data-valid-status', 'success');
+        $con.find('.productPolicy').removeClass('error');
+        $con.find('.productCount').removeClass('errorText');
+        $('.productPolicyTypes').find('svg').css('fill', '#666');
+    } else {
+        $con.find('.productPolicy').attr('data-valid-status', 'failed');
+        $con.find('.productPolicy').addClass('error');
+        $con.find('.productCount').addClass('errorText');
+        $('.productPolicyTypes').find('svg').css('fill', '#db3535');
+    }
 });
 
 $('[data-valid-type=email]').on('blur', function (evt) {
-	evt.preventDefault();
-	var $this = $(this);
-	var val = $this.val();
-	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-	ServicesAPI.validateOnType(val, $this, re);
+    evt.preventDefault();
+    var $this = $(this);
+    var val = $this.val();
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=zip]').on('blur', function (evt) {
-	evt.preventDefault();
-	var $this = $(this);
-	var val = $this.val();
-	var re = /^\d{5}$/i;
-	ServicesAPI.validateOnType(val, $this, re);
+    evt.preventDefault();
+    var $this = $(this);
+    var val = $this.val();
+    var re = /^\d{5}$/i;
+    ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=zip]').on('keyup', function (evt) {
-	var regexp = /[^0-9]/;
-	var str = $(this).val();
-	if (str.match(regexp)) {
-		str = str.replace(/\D/g, "");
-		$(this).val(str);
-	}
-	var len = str.length;
-	if (len > 5) {
-		str = str.substr(0, 5);
-		$(this).val(str);
-		return false;
-	}
+    var regexp = /[^0-9]/;
+    var str = $(this).val();
+    if (str.match(regexp)) {
+        str = str.replace(/\D/g, "");
+        $(this).val(str);
+    }
+    var len = str.length;
+    if (len > 5) {
+        str = str.substr(0, 5);
+        $(this).val(str);
+        return false;
+    }
 });
 
 $('[data-valid-type=phone]').on('blur', function (evt) {
-	evt.preventDefault();
-	var $this = $(this);
-	$this.trigger('keyup')
-	var val = $this.val();
-	var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
-	ServicesAPI.validateOnType(val, $this, re);
+    evt.preventDefault();
+    var $this = $(this);
+    $this.trigger('keyup')
+    var val = $this.val();
+    var re = /^([0-9]{3}[-][0-9]{3}[-][0-9]{4})$/;
+    ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=phone]').on('keyup', function (evt) {
-	var regexp = /[^0-9]/;
-	var input_value = $(this).val();
-	if (input_value.match(regexp)) {
-		input_value = input_value.replace(/\D/g, "");
-		$(this).val(input_value);
-	}
-	var num_len = $(this).val().length;
-	if (num_len >= 3 && num_len < 7) {
-		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, num_len);
-	} else if (num_len >= 7) {
-		input_value = input_value.substring(0, 10)
-		input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, 6) + "-" + input_value.substring(6, num_len);
-	}
-	if (evt.keyCode == 8) {
-		var str = input_value.charAt(input_value.length - 1);
-		if (str == "-") {
-			input_value = input_value.substring(0, input_value.length - 1)
-		}
-	}
-	$(this).val(input_value);
+    var regexp = /[^0-9]/;
+    var input_value = $(this).val();
+    if (input_value.match(regexp)) {
+        input_value = input_value.replace(/\D/g, "");
+        $(this).val(input_value);
+    }
+    var num_len = $(this).val().length;
+    if (num_len >= 3 && num_len < 7) {
+        input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, num_len);
+    } else if (num_len >= 7) {
+        input_value = input_value.substring(0, 10)
+        input_value = input_value.substring(0, 3) + "-" + input_value.substring(3, 6) + "-" + input_value.substring(6, num_len);
+    }
+    if (evt.keyCode == 8) {
+        var str = input_value.charAt(input_value.length - 1);
+        if (str == "-") {
+            input_value = input_value.substring(0, input_value.length - 1)
+        }
+    }
+    $(this).val(input_value);
 });
 
 $('.productUserQuestion').on('blur', function () {
-	var $this = $(this);
-	var $con = $this.closest('.productPolicyTypes');
-	var val = $this.val();
-	var placeholder = $this.attr('placeholder');
-	if ($this.val() == "") {
-		$this.val(placeholder);
-	}
-	if (val == "" || val == placeholder) {
-		$con.find('.productPolicy').attr('data-valid-status', 'failed');
-		$con.find('.productPolicy').addClass('error');
-		$this.addClass('error');
-		$('.productPolicyTypes').find('svg').css('fill', '#db3535');
-	} else {
-		$con.find('.productPolicy').attr('data-valid-status', 'success');
-		$con.find('.productPolicy').removeClass('error');
-		$this.removeClass('error');
-		$('.productPolicyTypes').find('svg').css('fill', '#666');
-	}
+    var $this = $(this);
+    var $con = $this.closest('.productPolicyTypes');
+    var val = $this.val();
+    var placeholder = $this.attr('placeholder');
+    if ($this.val() == "") {
+        $this.val(placeholder);
+    }
+    if (val == "" || val == placeholder) {
+        $con.find('.productPolicy').attr('data-valid-status', 'failed');
+        $con.find('.productPolicy').addClass('error');
+        $this.addClass('error');
+        $('.productPolicyTypes').find('svg').css('fill', '#db3535');
+    } else {
+        $con.find('.productPolicy').attr('data-valid-status', 'success');
+        $con.find('.productPolicy').removeClass('error');
+        $this.removeClass('error');
+        $('.productPolicyTypes').find('svg').css('fill', '#666');
+    }
 });
 //Contact Forms
 
 /****Product Selector****************************************/
 
 $(".product__selector").on("change", function () {
-	var selectedProduct = $(this).find(':selected').attr("data-product-type");
-	$(this).removeClass("error");
-	$(".product__selector--sub").removeClass("error");
-	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
-	$(".product__selector--sub").prop("disabled", true);
-	$(".product__selector--sub").val("")
-	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
-	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
-	$(".js-productSelector").attr("href", "#");
+    var selectedProduct = $(this).find(':selected').attr("data-product-type");
+    $(this).removeClass("error");
+    $(".product__selector--sub").removeClass("error");
+    $(this).parent('.select_wrapper').find('svg').css('fill', '#666');
+    $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+    $(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+    $(".product__selector--sub").prop("disabled", true);
+    $(".product__selector--sub").val("")
+    $("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+    $("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
+    $(".js-productSelector").attr("href", "#");
 });
 
 $(".product__selector--sub").on("change", function () {
-	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-	$(this).removeClass("error");
-	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".js-productSelector").attr("href", productSelectorPage);
+    var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+    $(this).removeClass("error");
+    $(this).parent('.select_wrapper').find('svg').css('fill', '#666');
+    $(".js-productSelector").attr("href", productSelectorPage);
 });
 
 $(".js-productSelector").click(function (e) {
-	var url = $(this).attr("href");
-	if ($(".product__selector").find(':selected').val() == "") {
-		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
-		$(".product__selector").addClass("error")
-	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
-		$(".product__selector--sub").addClass("error")
-		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
-	}
-	if (url == "#") {
-		e.preventDefault();
-	}
+    var url = $(this).attr("href");
+    if ($(".product__selector").find(':selected').val() == "") {
+        $(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+        $(".product__selector").addClass("error")
+    }
+    if ($(".product__selector--sub").find(':selected').val() == "") {
+        $(".product__selector--sub").addClass("error")
+        $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+    }
+    if (url == "#") {
+        e.preventDefault();
+    }
 });
 /****Blog Search****************************************/
 
 
 $("#blog-category-dropdown").on("change", function () {
-	var url = $(".blog-list").attr("data-url");
-	var searchType = $(this).val();
-	ServicesAPI.blogsServiceCall(url, searchType)
+    var url = $(".blog-list").attr("data-url");
+    var searchType = $(this).val();
+    ServicesAPI.blogsServiceCall(url, searchType)
 });
 
 /****News Room Search****************************************/
 $(".divider--load-more__link").click(function (e) {
-	e.preventDefault();
-	ServicesAPI.newsRoomServiceConstruction();
+    e.preventDefault();
+    ServicesAPI.newsRoomServiceConstruction();
 });
 
 $("#list_month, #list_year, #list_topics").change(function () {
-	ServicesAPI.newsRoomServiceConstruction();
+    ServicesAPI.newsRoomServiceConstruction();
 });
 
 // Store News Room search parameters
 $(".list").on("click", ".list__item a", function () {
-	sessionStorage.setItem("press_back", window.location.href);
-	sessionStorage.setItem("press_month", $('#list_month').val());
-	sessionStorage.setItem("press_year", $('#list_year').val());
-	sessionStorage.setItem("press_search", $('#list_topics').val());
+    sessionStorage.setItem("press_back", window.location.href);
+    sessionStorage.setItem("press_month", $('#list_month').val());
+    sessionStorage.setItem("press_year", $('#list_year').val());
+    sessionStorage.setItem("press_search", $('#list_topics').val());
 });
 
 // Navigation for Press Room back button
 $(".breadcrumb__crumb--back").on("click", function (evt) {
-	evt.preventDefault();
-	var url = sessionStorage.getItem("press_back");
-	if (url != null) {
-		window.location.href = url;
-	} else {
-		window.location.href = "/Press_Room";
-	}
-	sessionStorage.removeItem("press_back");
+    evt.preventDefault();
+    var url = sessionStorage.getItem("press_back");
+    if (url != null) {
+        window.location.href = url;
+    } else {
+        window.location.href = "/Press_Room";
+    }
+    sessionStorage.removeItem("press_back");
 });
 
 /**** Press Room Search****************************************/
@@ -7937,19 +7647,19 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 
 //Forms Library
 if ($(".js-formLib").length > 0) {
-	$('.js-formLib').on("change", function () {
-		searchAgainFlag = true;
-		var url = $(".js-formLib").attr("data-forms-lib-url");
-		var query = $(".js-formLib").attr("data-forms-query-parameter");
-		var value = $('.js-formLib').val()
-		url += value + query;
-		ServicesAPI.formsLibraryServiceCall(url);
-	});
+    $('.js-formLib').on("change", function () {
+        searchAgainFlag = true;
+        var url = $(".js-formLib").attr("data-forms-lib-url");
+        var query = $(".js-formLib").attr("data-forms-query-parameter");
+        var value = $('.js-formLib').val()
+        url += value + query;
+        ServicesAPI.formsLibraryServiceCall(url);
+    });
 
-	$(".form_library_container").on("click", ".form a", function () {
-		$(".form_library_container").find(".form a").removeClass("selected");
-		$(this).closest(".form").find("a").addClass("selected");
-	});
+    $(".form_library_container").on("click", ".form a", function () {
+        $(".form_library_container").find(".form a").removeClass("selected");
+        $(this).closest(".form").find("a").addClass("selected");
+    });
 }
 
 
@@ -7958,135 +7668,142 @@ if ($(".js-formLib").length > 0) {
 
 // Search Results Page Search Start
 $('.js-searchSubmit').on('click', function () {
-	var searchRequest = $(".js-searchTextBox").val();
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
-	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
-	}
-});
-
-// Site Header Search
-$('.js-searchIcon').click(function () {
-	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-			if ($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " ") {
-				ServicesAPI.legacySearch("search");
-			} else {
-				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
-			}
-
-		} else {
-
-		}
-
-	} else {
-		//For Integration we only need this statment
-		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
-		}
-	}
-
+    var searchRequest = $(".js-searchTextBox").val();
+    var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+    if (searchRequest) {
+        ServicesAPI.searchServiceCall(url);
+    }
 });
 
 $(".ss-gac-a, .ss-gac-b").on("click", function () {
-	var searchTerm = $(this).find(".ss-gac-c").text();
-	console.log(searchTerm);
-	$(".search-trigger__search-box").val(searchTerm);
-	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm);
-		ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+    var searchTerm = $(this).find(".ss-gac-c").text();
+    console.log(searchTerm)
+    $(".search-trigger__search-box").val(searchTerm)
+    if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+        $(".search-trigger__search-box").val(searchTerm)
+        ServicesAPI.legacySearch($(".search-trigger__search-box").val());
 
-	} else {
-		//For Integration we only need this statment
-		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage($(".search-trigger__search-box").val());
-		}
-	}
+    } else {
+        //For Integration we only need this statment
+        if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+            ServicesAPI.redirectToSearchResultsPage($(".search-trigger__search-box").val());
+        }
+    }
 });
 
 
+// Site Header Search click on icon
+$('.js-searchIcon').click(function () {
+    if ($('.search-trigger__search-box').val()) {
+        if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+            if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
+                if ($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " ") {
+                    ServicesAPI.legacySearch("search");
+                } else {
+                    ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+                }
+
+            } else {
+
+            }
+
+        } else {
+            //For Integration we only need this statment
+            if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+                ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+            }
+        }
+
+    }
+});
+
+
+//Site header search in mobile
 $('.js-searchIconMobile').click(function () {
-	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
-		}
-	} else {
-		//For Integration we only need this statment
-		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
-		}
-	}
-
+    if ($('.search-trigger__search-box').val()) {
+        if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+            if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
+                ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+            }
+        } else {
+            //For Integration we only need this statment
+            if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
+                ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+            }
+        }
+    }
 });
-
+//Site header search on keypress
 $('.search-trigger__search-box').keypress(function (e) {
-	if ($(this).hasClass("js-oldSearch")) {
-		if (e.which == 13) {
-			e.preventDefault();
-			ServicesAPI.legacySearch($(".search-trigger__search-box").val());
-		}
-	} else {
-		//For Integration we only need this statment
-		if (e.which == 13) {
-			e.preventDefault();
-			ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
-		}
-	}
+    if ($('.search-trigger__search-box').val()) {
 
+        if ($(this).hasClass("js-oldSearch")) {
+            if (e.which == 13) {
+                e.preventDefault();
+                ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+            }
+        } else {
+            //For Integration we only need this statment
+            if (e.which == 13) {
+                e.preventDefault();
+                ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+            }
+        }
+    }
 });
 
 
 // Search in Page
 $("#searchInPage, .js-searchSubmit").keypress(function (e) {
-	if (e.which == 13) {
-		$('.js-searchSubmit').click();//Trigger search button click event
-	}
+    if (e.which == 13) {
+        $('.js-searchSubmit').click();//Trigger search button click event
+    }
 });
 
 // Search in Search Results Page
 $(".js-searchSubmit").keypress(function (e) {
-	if (e.which == 13) {
-		$('.js-searchSubmit').click();//Trigger search button click event
-	}
+    if (e.which == 13) {
+        $('.js-searchSubmit').click();//Trigger search button click event
+    }
 });
 $('.js-SearchBox').click(function (e) {
-	e.preventDefault();
-	var zipcode = $(".office-search__input").val();
-	var urlStr;
-	if ($(this).hasClass("office-search__action")) {
-		sessionStorage.setItem("faoZipCode", $(".office-search__input").val());
-		urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
-		window.location.href = urlStr;
-	}
+    e.preventDefault();
+    var zipcode = $(".office-search__input").val();
+    var urlStr;
+    if ($(this).hasClass("office-search__action")) {
+        sessionStorage.setItem("faoZipCode", $(".office-search__input").val());
+        urlStr = $(this).attr('data-href') + "?zip=" + zipcode;
+        window.location.href = urlStr;
+    }
 });
 $('.search-results-container__correction-text > a').on('click', function (e) {
-	e.preventDefault();
-	var correctionClickedOn = $(this).text();
+    e.preventDefault();
+    var correctionClickedOn = $(this).text();
 });
 
 $('.search-results-container__correction-text > a').on('click', function (e) {
-	e.preventDefault();
-	var correctionClickedOn = $(this).children('span').text();
-	var searchRequest = correctionClickedOn;
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
-	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
-	}
+    e.preventDefault();
+    var correctionClickedOn = $(this).children('span').text();
+    var searchRequest = correctionClickedOn;
+    var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+    if (searchRequest) {
+        ServicesAPI.searchServiceCall(url);
+    }
 });
 
 //Pagination Update
 $(".page-count").on('change', function () {
-	listCount = $(this).val();
-	ServicesAPI.createPagination(count);
-	ServicesAPI.resetMap();
-	ServicesAPI.showLocation();
+    listCount = $(this).val();
+    ServicesAPI.createPagination(count);
+    ServicesAPI.resetMap();
+    ServicesAPI.showLocation();
 });
 
 //Find an X Click Functions
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
-	if (getViewport() == "mobile") {
-		$('.find-an-x-search--expand').show();
-	}
+    if (getViewport() == "mobile") {
+        $('.find-an-x-search--expand').show();
+    }
 });
 /*$("body").on("click tap", function (e) {
  var faoTrigger = $('.cta_search');
@@ -8097,2659 +7814,2655 @@ $(".find-an-x-search__container .cta_search").on('focus', function (e) {
  });*/
 
 $(".find-an-x-search__container .directions_button").on('click', function (e) {
-	//handle empty val
-	if ($(".cta_search").val().length === 0) {
-		$(".cta_search").addClass('error');
-	} else {
-		ServicesAPI.showLocation();
-	}
+    //handle empty val
+    if ($(".cta_search").val().length === 0) {
+        $(".cta_search").addClass('error');
+    } else {
+        ServicesAPI.showLocation();
+    }
 
 });
 
 $(".search_location_image").on('click touchstart', function () {
-	if ($(window).width() < 1025) {
-		ServicesAPI.showLocation();
-	}
+    if ($(window).width() < 1025) {
+        ServicesAPI.showLocation();
+    }
 });
 
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
-	//handle empty val
-	if ($(".cta_search").val().length + 1 === 0) {
-		$(".cta_search").addClass('error');
-	} else {
-		$(".cta_search").removeClass('error');
-		ServicesAPI.checkEnter(event);
-	}
+    //handle empty val
+    if ($(".cta_search").val().length + 1 === 0) {
+        $(".cta_search").addClass('error');
+    } else {
+        $(".cta_search").removeClass('error');
+        ServicesAPI.checkEnter(event);
+    }
 
 });
 
 /* Function that is called whenever the user changes the radius*/
 $(".find_an_office_radius").on('change', function () {
-	ServicesAPI.resetMap();
-	ServicesAPI.showLocation();
+    ServicesAPI.resetMap();
+    ServicesAPI.showLocation();
 });
 
 $(document).on('click', ".results_office_name", function () {
-	var i = $(this).closest('.results_office_result').index();
-	var index = ((i + 1) + ((bootPagNum) * listCount))
-	google.maps.event.trigger(markersArray[index], 'click');
+    var i = $(this).closest('.results_office_result').index();
+    var index = ((i + 1) + ((bootPagNum) * listCount))
+    google.maps.event.trigger(markersArray[index], 'click');
 });
 
 $('.get-directions-buttons .btn').on('click', function () {
-	$('.get-directions-buttons .btn').removeClass('active');
-	$(this).addClass('active');
-	if ($('.driving-directions-panel').is(':visible')) {
-		ServicesAPI.getDirections();
-	}
+    $('.get-directions-buttons .btn').removeClass('active');
+    $(this).addClass('active');
+    if ($('.driving-directions-panel').is(':visible')) {
+        ServicesAPI.getDirections();
+    }
 });
 
 $(".get-directions-form .get_directions_button").on('click', function () {
-	ServicesAPI.getDirections();
+    ServicesAPI.getDirections();
 });
 
 /* back link on directions page work*/
 $(".back-click").on('click', function () {
-	if ($('.driving-directions-panel').is(':visible')) {
-		$('.driving-directions-panel').addClass('hidden');
-		$('.get-directions-form').removeClass('hidden');
-		directionsDisplay.setMap(null);
-		ServicesAPI.getDirectionsPanel($('.get-directions-form .to-address').val());
-	}
-	else {
-		ServicesAPI.showLocation();
-		if (!$(".find-an-x-search__container").hasClass("hidden")) {
+    if ($('.driving-directions-panel').is(':visible')) {
+        $('.driving-directions-panel').addClass('hidden');
+        $('.get-directions-form').removeClass('hidden');
+        directionsDisplay.setMap(null);
+        ServicesAPI.getDirectionsPanel($('.get-directions-form .to-address').val());
+    }
+    else {
+        ServicesAPI.showLocation();
+        if (!$(".find-an-x-search__container").hasClass("hidden")) {
 
-			$('.page-title__heading').text($('.findOfficeText').text());
-			ServicesAPI.removeBreadCrumb();
-		}
-	}
+            $('.page-title__heading').text($('.findOfficeText').text());
+            ServicesAPI.removeBreadCrumb();
+        }
+    }
 });
 
 //might not be needed, need to test.
 /* update link for find an office breadcrumb*/
 $('.bc_link_fao').on('click', function () {
-	ServicesAPI.showLocation();
+    ServicesAPI.showLocation();
 });
 
 $('.maps-button').click(function (clickedButton) {
-	var moreMapText = $(".get_direction_more_map").text();
-	var lessMapText = $(".get_direction_less_map").text();
+    var moreMapText = $(".get_direction_more_map").text();
+    var lessMapText = $(".get_direction_less_map").text();
 
-	if ($('.maps-button').text() == moreMapText) {
-		$('.google-maps-container').css('height', '400px');
-		$('.maps-button').text(lessMapText);
-		ServicesAPI.resetMap();
-		ServicesAPI.resizeMap();
-	} else {
-		$('.google-maps-container').css('height', '200px');
-		$('.maps-button').text(moreMapText);
-		ServicesAPI.resetMap();
-		ServicesAPI.resizeMap();
-	}
+    if ($('.maps-button').text() == moreMapText) {
+        $('.google-maps-container').css('height', '400px');
+        $('.maps-button').text(lessMapText);
+        ServicesAPI.resetMap();
+        ServicesAPI.resizeMap();
+    } else {
+        $('.google-maps-container').css('height', '200px');
+        $('.maps-button').text(moreMapText);
+        ServicesAPI.resetMap();
+        ServicesAPI.resizeMap();
+    }
 });
 
 $(window).on('load', function (e) {
-	if ($(".fax__container").length > 0) {
-		faoURL = window.location.href;
-		blackMarker = $('.pngPath_icon_locpin_blk').text();
-		blueMarker = $('.pngPath_icon_locpin_blue').text();
-		ServicesAPI.initializeFindAnOffice();
-		if (document.referrer != "") {
-			ServicesAPI.showLocation();
-		}
-		if ($(".hidden-xs").is(":visible") == false) {
-			$(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
+    if ($(".fax__container").length > 0) {
+        faoURL = window.location.href;
+        blackMarker = $('.pngPath_icon_locpin_blk').text();
+        blueMarker = $('.pngPath_icon_locpin_blue').text();
+        ServicesAPI.initializeFindAnOffice();
+        if (document.referrer != "") {
+            ServicesAPI.showLocation();
+        }
+        if ($(".hidden-xs").is(":visible") == false) {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
 
-		}
-		else {
-			$(".fax__container").find('.contact-container--form-card').insertAfter($(".fax-results__container  > .maps-contact-form-container > button"));
-		}
-	}
-	if ($(".find-office__zip-city-state").length > 0) {
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
-		//googleautocomplete.bindTo('bounds', map);
-		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
-			var place = googleautocomplete.getPlace();
-			if (!place || !place.geometry) {
+        }
+        else {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".fax-results__container  > .maps-contact-form-container > button"));
+        }
+    }
+    if ($(".find-office__zip-city-state").length > 0) {
+        googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
+        //googleautocomplete.bindTo('bounds', map);
+        google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
+            var place = googleautocomplete.getPlace();
+            if (!place || !place.geometry) {
 
-			}
-		});
-	}
+            }
+        });
+    }
 
 });
 //From FAO js, not sure what this does.
 $("body").on("ready", "[data-leg-index=\"1\"]", function () {
-	$("[data-leg-index=\"1\"]").addClass("lastMarker");
+    $("[data-leg-index=\"1\"]").addClass("lastMarker");
 });
 
 $(".results_pagination").click(function () {
-	$('html, body').animate({
-		scrollTop: $('.fax-results__container')
-	}, 'slow');
+    $('html, body').animate({
+        scrollTop: $('.fax-results__container')
+    }, 'slow');
 });
 
 
 // Click Functions for Quote Tool
 if ($(".cta_header_quote").length > 0) {
-	$(".cta_header_quote").find(".select_wrapper").on("change", function () {
-		ServicesAPI.quoteFormReset();
-	});
+    $(".cta_header_quote").find(".select_wrapper").on("change", function () {
+        ServicesAPI.quoteFormReset();
+    });
 }
 
 // Initializes the quote results display and edit your quote
 if ($(".js-editGlobal").length > 0) {
 // Get Quote Results
 // Open Edit Quote Form
-	$(".js-editGlobal").on("click", function () {
-		if (sessionStorage.getItem("product") !== null) {
-			$(".insurance-type").val($("[data-product='" + sessionStorage.getItem("product") + "']").val());
-		}
-		$(".insurance-type").change();
-		$(".contact-form-quote-results").addClass("contact-form-quote-results--hidden");
-		$(".edit-form-quote-results").addClass("edit-form-quote-results--block");
-		$(".results-form").addClass("results-form--dark-blue");
-		$(".quote-box").addClass("quote-box--inactive");
-		ServicesAPI.preFillQuoteForm();
-	});
+    $(".js-editGlobal").on("click", function () {
+        if (sessionStorage.getItem("product") !== null) {
+            $(".insurance-type").val($("[data-product='" + sessionStorage.getItem("product") + "']").val());
+        }
+        $(".insurance-type").change();
+        $(".contact-form-quote-results").addClass("contact-form-quote-results--hidden");
+        $(".edit-form-quote-results").addClass("edit-form-quote-results--block");
+        $(".results-form").addClass("results-form--dark-blue");
+        $(".quote-box").addClass("quote-box--inactive");
+        ServicesAPI.preFillQuoteForm();
+    });
 
-	// Close Edit Quote Form
-	$(".edit-form-quote-results .form-close").on("click", function () {
-		$(".results-form").removeClass("results-form--dark-blue");
-		$(".contact-form-quote-results").removeClass("contact-form-quote-results--hidden");
-		$(".edit-form-quote-results").removeClass("edit-form-quote-results--block");
-		$(".quote-box").removeClass("quote-box--inactive");
-	});
+    // Close Edit Quote Form
+    $(".edit-form-quote-results .form-close").on("click", function () {
+        $(".results-form").removeClass("results-form--dark-blue");
+        $(".contact-form-quote-results").removeClass("contact-form-quote-results--hidden");
+        $(".edit-form-quote-results").removeClass("edit-form-quote-results--block");
+        $(".quote-box").removeClass("quote-box--inactive");
+    });
 }
 
 $(".js-submitQuote").click(function (e) {
-	e.preventDefault();
-	if ($(".js-submitQuote").parent().parent().parent().parent().hasClass('quote-tool-form')) {
-		var baseUrl = $(".quote-tool-form").attr("data-quote-url");
-		quoteUrl = "";
-		//quoteUrl = baseUrl + '{"domain":"' + quoteDomain + '","language":"'+ quotelanguage+'","product":"'+ quoteProduct +'","country":"default"';
-		quoteUrl = baseUrl;
-		quoteRequest = {domain: quoteDomain, language: quotelanguage, product: quoteProduct, country: 'default'};
-		ServicesAPI.loopThroughQuoteInputs();
-		//quoteUrl +=  '}';
-		if (ServicesAPI.validateFields()) {
-			ServicesAPI.quoteServiceCall();
-		}
-	}
+    e.preventDefault();
+    if ($(".js-submitQuote").parent().parent().parent().parent().hasClass('quote-tool-form')) {
+        var baseUrl = $(".quote-tool-form").attr("data-quote-url");
+        quoteUrl = "";
+        //quoteUrl = baseUrl + '{"domain":"' + quoteDomain + '","language":"'+ quotelanguage+'","product":"'+ quoteProduct +'","country":"default"';
+        quoteUrl = baseUrl;
+        quoteRequest = {domain: quoteDomain, language: quotelanguage, product: quoteProduct, country: 'default'};
+        ServicesAPI.loopThroughQuoteInputs();
+        //quoteUrl +=  '}';
+        if (ServicesAPI.validateFields()) {
+            ServicesAPI.quoteServiceCall();
+        }
+    }
 });
 
 
 $(".insurance-type").on("change", function () {
-	var formToShow = $(".insurance-type").val();
-	$(".quote-tool-form").show();
-	$(".quote-tool-form form").hide();
-	$("[data-show-form='" + quoteToolForm + "']").hide();
-	quoteSubmit = $(".insurance-type").val();
-	$("." + formToShow + " form").show();
-	quoteSubmit = $(".insurance-type").val();
-	if ($("[data-quoteDescription='" + quoteSubmit + "']").length > 0) {
-		$("[data-quoteDescription]").addClass("hidden");
-		$("[data-quoteDescription='" + quoteSubmit + "']").removeClass("hidden");
-	}
-	quoteToolForm = $(this).find(':selected').val();
-	quoteDomain = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-domain");
-	quotelanguage = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-lan");
-	quoteProduct = $(this).find(':selected').attr('data-product');
-	$(".js-hideButton").hide();
+    var formToShow = $(".insurance-type").val();
+    $(".quote-tool-form").show();
+    $(".quote-tool-form form").hide();
+    $("[data-show-form='" + quoteToolForm + "']").hide();
+    quoteSubmit = $(".insurance-type").val();
+    $("." + formToShow + " form").show();
+    quoteSubmit = $(".insurance-type").val();
+    if ($("[data-quoteDescription='" + quoteSubmit + "']").length > 0) {
+        $("[data-quoteDescription]").addClass("hidden");
+        $("[data-quoteDescription='" + quoteSubmit + "']").removeClass("hidden");
+    }
+    quoteToolForm = $(this).find(':selected').val();
+    quoteDomain = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-domain");
+    quotelanguage = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-lan");
+    quoteProduct = $(this).find(':selected').attr('data-product');
+    $(".js-hideButton").hide();
 });
 
 String.prototype.toTitleCase = function () {
-	var i, j, str, lowers, uppers;
-	str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
-		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-	});
+    var i, j, str, lowers, uppers;
+    str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
 
-	// Certain minor words should be left lowercase unless
-	// they are the first or last words in the string
-	lowers = ['A', 'An', 'The', 'And', 'But', 'Or', 'For', 'Nor', 'As', 'At',
-		'By', 'For', 'From', 'In', 'Into', 'Near', 'Of', 'On', 'Onto', 'To', 'With'];
-	for (i = 0, j = lowers.length; i < j; i++)
-		str = str.replace(new RegExp('\\s' + lowers[i] + '\\s', 'g'),
-			function (txt) {
-				return txt.toLowerCase();
-			});
+    // Certain minor words should be left lowercase unless
+    // they are the first or last words in the string
+    lowers = ['A', 'An', 'The', 'And', 'But', 'Or', 'For', 'Nor', 'As', 'At',
+        'By', 'For', 'From', 'In', 'Into', 'Near', 'Of', 'On', 'Onto', 'To', 'With'];
+    for (i = 0, j = lowers.length; i < j; i++)
+        str = str.replace(new RegExp('\\s' + lowers[i] + '\\s', 'g'),
+            function (txt) {
+                return txt.toLowerCase();
+            });
 
-	// Certain words such as initialisms or acronyms should be left uppercase
-	uppers = ['Id', 'Tv'];
-	for (i = 0, j = uppers.length; i < j; i++)
-		str = str.replace(new RegExp('\\b' + uppers[i] + '\\b', 'g'),
-			uppers[i].toUpperCase());
+    // Certain words such as initialisms or acronyms should be left uppercase
+    uppers = ['Id', 'Tv'];
+    for (i = 0, j = uppers.length; i < j; i++)
+        str = str.replace(new RegExp('\\b' + uppers[i] + '\\b', 'g'),
+            uppers[i].toUpperCase());
 
-	return str;
+    return str;
 }
 
 var isWhole_re = /^\s*\d+\s*$/;
 function isWhole(s) {
-	return String(s).search(isWhole_re) != -1
+    return String(s).search(isWhole_re) != -1
 }
 
 var isNonblank_re = /\S/;
 function isNonblank(s) {
-	return String(s).search(isNonblank_re) != -1
+    return String(s).search(isNonblank_re) != -1
 }
 
 var ServicesAPI = {
 
-	loadEventListeners: function () {
-		ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
-		ServicesAPI.gmapsAutoCompleteInit();
-		if ($(".search-results-container").length > 0)
-			ServicesAPI.searchResultsPageLoad();
-		if ($(".js-resultsGlobal").length > 0 || $(".insurance-type").length > 0) {
-			ServicesAPI.loadQuoteResults();
-			ServicesAPI.clearOverlays();
-		}
-		if ($(".news-room").length > 0) {
-			listCount = 6;
-			ServicesAPI.pressBackQuery();
-			ServicesAPI.newsRoomServiceConstruction();
-		}
-		if ($(".blog-list").length > 0) {
-			var url = $(".blog-list").attr("data-url");
-			ServicesAPI.blogsServiceCall(url, "mostRecent")
-		}
-	},
-	replaceAll: function (txt, replace, with_this) {
-		return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'), with_this);
-	},
-	populateYearDropDown: function (year, min, element) {
-		var yearOptions = $(element);
-		var yr = new Date();
-
-		yr = yr.getFullYear() - min;
-		$(element).children().remove();
-		$(element).append("<option value='' selected disabled>YYYY</option>");
-		for (i = yr; i >= year; i--) {
-			var optionValue = i;
-			yearOptions.append($('<option>', {
-				value: optionValue,
-				text: optionValue.toString()
-			}));
-		}
-	},
-	isLeapYear: function (a) {
-		a = parseInt(a);
-		if (a % 4 == 0) {
-			if (a % 100 != 0) {
-				return true
-			} else {
-				if (a % 400 == 0) {
-					return true
-				} else {
-					return false
-				}
-			}
-		}
-		return false;
-	},
-	populateDaysDropDown: function (id) {
-		var numDayDropDown = $(".dobDay").length;
-		var numMonthDropDown = $(".dobMonth").length;
-		var numYearDropDown = $(".dobYear").length;
-		if (($(".dobMonth").val() == "09") || ($(".dobMonth").val() == "04") ||
-			($(".dobMonth").val() == "06") || ($(".dobMonth").val() == "11")) {
-			$(".dobDay option:eq(31)").remove();
-
-		} else if ($(".dobMonth").val() == "02") {
-
-			if ((ServicesAPI.isLeapYear($(".dobYear").val()) == false) || $(".dobYear").val() == "") {
-				$(".dobDay option:eq(31)").remove();
-				$(".dobDay option:eq(30)").remove();
-				$(".dobDay option:eq(29)").remove();
-			} else {
-				if (($(".dobDay option[value='29']").length > (numDayDropDown - numDayDropDown)) == false) {
-					$(".dobDay").append('<option value="29">29</option>');
-				}
-				$(".dobDay option:eq(31)").remove();
-				$(".dobDay option:eq(30)").remove();
-			}
-
-		} else {
-			if ((($(".dobDay option[value='29']").length - numDayDropDown) > 0) == false) {
-
-				$(".dobDay").append('<option value="29">29</option>');
-			}
-			if ((($(".dobDay option[value='30']").length - numDayDropDown) > 0) == false) {
-
-				$(".dobDay").append('<option value="30">30</option>');
-			}
-			if ((($(".dobDay option[value='31']").length - numDayDropDown) > 0) == false) {
-
-				$(".dobDay").append('<option value="31">31</option>');
-			}
-		}
-	},
-	validateFields: function () {
-		var areErrorFieldsPresent = false;
-
-		$("[data-quoteTool='" + quoteToolForm + "']").each(function () {
-			if (!$("[data-quoteTool='" + quoteToolForm + "']").find(".form-focus").find(".errorSpan").is(":visible")) {
-				areErrorFieldsPresent = true;
-			}
-		});
-		return areErrorFieldsPresent;
-	},
-	numberWithCommas: function (x) {
-		var parts = x.toString().split(".");
-		parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		return parts.join(".");
-	},
-	toTitleCase: function (str) {
-		return str.replace(/\w\S*/g, function (txt) {
-			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-		});
-	},
-	encode: function (d) {
-		if (d == '<')
-			return '&lt;';
-		if (d == '>')
-			return '&gt;';
-		if (d == '&')
-			return '&amp;';
-
-		if (d.charCodeAt(0) > 127) {
-			return '&#' + d.charCodeAt(0) + ';';
-		}
-		return d;
-	},
-	escapeChar: function (value) {
-		var bb = "";
-		for (i = 0; i < value.length; i++) {
-			bb += encode(value.charAt(i));
-		}
-		return bb;
-	},
-	strTrim: function (a) {
-		a = a.replace(/^\s+/g, "");
-		a = a.replace(/\s+$/g, "");
-		return a;
-	},
-	calculateAge: function () {
-		var l = 0;
-		if (($('#' + quoteToolForm + 'dobMonth').val() != "") && ($('#' + quoteToolForm + 'dobDay').val() != "") && ($('#' + quoteToolForm + 'dobYear').val() != "")) {
-			var b = parseInt($('#' + quoteToolForm + 'dobMonth').val());
-			var k = parseInt($('#' + quoteToolForm + 'dobDay').val());
-			var m = parseInt($('#' + quoteToolForm + 'dobYear').val());
-			var g = new Date();
-			var e = g.getFullYear();
-			var h = g.getMonth() + 1;
-			var f = g.getDate();
-			var c = 0;
-			var a = 0;
-			if (e > m) {
-				l = e - m;
-				c = e - m;
-			}
-			if (h < b) {
-				l = l - 1;
-				c = c - 1;
-				a = 12 - (b - h);
-				if (k > f) {
-					a = a - 1;
-				}
-			} else {
-				if (h == b) {
-					if (f < k) {
-						l = l - 1;
-						c = c - 1;
-						a = 12 - (b - h);
-					}
-				} else {
-					if (h > b) {
-						if (f >= k) {
-							a = h - b;
-						} else {
-							a = (h - b) - 1;
-						}
-					}
-				}
-
-			}
-			return l;
-		}
-	},
-	showSorryUnableToLocateMessage: function () {
-		count = 0;
-		ServicesAPI.createPagination(count);
-		$('.results_error_info').removeClass('hidden').html($('.errorMsgtext_no_office_found').text());
-		$('.results_content').remove();
-		$('.results_pagination,.find_an_office_pagecount_wrap,.maps-button, .google-maps-container').addClass('hidden');
-	},
-	getQueryStringNew: function () {
-		var vars = [], hash;
-		var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
-		for (var i = 0; i < hashes.length; i++) {
-			hash = hashes[i].split('=');
-			vars.push(hash[0]);
-			vars[hash[0]] = hash[1];
-		}
-		return vars;
-	},
-	getQueryStringNoHash: function () {
-		var vars = [], hash;
-		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-		for (var i = 0; i < hashes.length; i++) {
-			hash = hashes[i].split('=');
-			vars.push(hash[0]);
-			vars[hash[0]] = hash[1];
-		}
-		return vars;
-	},
-	createPagination: function (result) {
-		$('.results_content').children().removeClass('.hidden');
-		var notHiddenList = $(".results_content").children().not('.hidden');
-		var listLength = result;
-		var st_cnt = 0;
-		var end_cnt = 0;
-		var next_label = $(".next_label").text();
-		var prev_label = $(".prev_label").text();
-		// Setting listLength to 0 manually when only undefined are returned
-		if (typeof result != 'undefined') {
-			if (result.count == 0)
-				listLength = 0;
-		}
-		if (result < listCount) {
-			$('.results_pagination').addClass('hidden');
-			$(".results_content").children().removeClass('hidden');
-			st_cnt = 1;
-			end_cnt = listCount;
-		}
-		else {
-			st_cnt = 1;
-			end_cnt = listCount;
-			$('.results_pagination').removeClass('hidden');
-			$(".results_content").children().addClass('hidden');
-			$(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
-			$('.results_pagination').bootpag({
-				total: Math.ceil(listLength / listCount),
-				page: 1,            // default page
-				maxVisible: listCount,
-				next: next_label,    // visible pagination
-				leaps: true,
-				prev: prev_label        // next/prev leaps through maxVisible
-			}).on("page", function (event, num) {
-				$(".results_content").children().addClass('hidden');
-				if (num == 1) {
-					$(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
-					st_cnt = 1;
-					end_cnt = listCount;
-				}
-				else {
-					var start = (listCount * (num - 1)) - 1;
-					var end = listCount;
-					$(".results_content").children(':gt(' + start + '):lt(' + end + ')').removeClass('hidden');
-					st_cnt = listCount * (num - 1) + 1;
-					end_cnt = listCount * num;
-				}
-				if (end_cnt > listLength) {
-					end_cnt = listLength;
-				}
-				$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + 'of' + '&nbsp;' + end_cnt);
-				// ... after content load -> change total to 10
-				$('.results_pagination').bootpag({
-					total: Math.ceil(count / listCount),
-					maxVisible: listCount
-				});
-			});
-		}
-
-		if (count == 0) {
-			st_cnt = listLength;
-			end_cnt = listLength;
-			$('.display-text > span:nth-of-type(2)').addClass('hidden');
-			$('.results_pagination').addClass('hidden');
-		}
-		else {
-			$('.display-text > span:nth-of-type(2)').removeClass('hidden');
-			$('.display-text > span:nth-of-type(2)').html('&nbsp;' + count);
-		}
-		if (end_cnt < result) {
-			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + end_cnt);
-		} else {
-			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + result);
-		}
-	},
-	formatQuotePremium: function (premium) {
-		//if(premium != Math.round(premium)){
-		var dec = parseFloat(Math.round(premium * 100) / 100).toFixed(2);
-		return dec;
-	},
-	quoteServiceCall: function () {
-
-		$.ajax({
-			url: quoteUrl + JSON.stringify(quoteRequest),
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			data: JSON.stringify(quoteRequest),
-			type: 'POST',
-			success: function (response) {
-				var numObjects = Object.keys(response.solution).length;
-				window.sessionStorage.clear();
-				ServicesAPI.setQuoteSessionStorage();
-
-				if (response.solution.premium !== undefined && response.solution.premium !== null) {
-					var prem = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.premium));
-					sessionStorage.setItem("premium", prem);
-				}
-
-				if (response.solution.age !== undefined && response.solution.age !== null) {
-					sessionStorage.setItem("age", response.solution.age);
-				}
-				if (response.solution.gender !== undefined && response.solution.gender !== null) {
-					sessionStorage.setItem("gender", response.solution.gender);
-				}
-				if (response.solution.coverage !== undefined && response.solution.coverage !== null) {
-					var cov = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.coverage));
-					sessionStorage.setItem("coverage", cov);
-				}
-				if (response.solution.term !== undefined && response.solution.term !== null) {
-					sessionStorage.setItem("term", response.solution.term);
-				}
-				if (response.solution.coverageType !== undefined && response.solution.coverage_type !== null) {
-					sessionStorage.setItem("coverageType", response.solution.coverageType);
-				}
-				if (response.solution.state !== undefined && response.solution.state !== null) {
-					sessionStorage.setItem("state", response.solution.state);
-				}
-				if (response.solution.income !== undefined && response.solution.income !== null) {
-					sessionStorage.setItem("income", response.solution.income);
-				}
-				if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
-					sessionStorage.setItem('dobMonth', $('#' + quoteToolForm + 'dobMonth').val());
-					sessionStorage.setItem('dobDay', $('#' + quoteToolForm + 'dobDay').val());
-					sessionStorage.setItem('dobYear', $('#' + quoteToolForm + 'dobYear').val());
-				}
-				for (var i = 1; i <= numObjects; i++) {
-					var optionalSelect = response.solution.hasOwnProperty('optionalSelect' + i);
-					if (optionalSelect) {
-						sessionStorage.setItem('optionalSelect' + i, response.solution['optionalSelect' + i]);
-					}
-					var optionalRadio = response.solution.hasOwnProperty('optionalRadio' + i);
-					if (optionalRadio) {
-						sessionStorage.setItem('optionalRadio' + i, response.solution['optionalRadio' + i]);
-					}
-				}
-				sessionStorage.setItem("product", quoteProduct);
-				ServicesAPI.redirectToQuoteResultsPage();
-			},
-			error: function (e) {
-				console.log('error ', e);
-			},
-			timeout: 30000
-		});
-	},
-	loadQuoteResults: function () {
-		if ($(".js-resultsGlobal").length > 0) {
-			if (sessionStorage.getItem("premium") !== null) {
-				$(".results-card__quoteinfo__value").text(sessionStorage.getItem("premium"));
-			}
-			if (sessionStorage.getItem("coverage") !== null) {
-				$("[data-field='coverage'] .value").text(sessionStorage.getItem("coverage"));
-			}
-
-			if (sessionStorage.getItem("coverageType") !== null) {
-				var cov = sessionStorage.getItem("coverageType").toTitleCase();
-				$("[data-field='coverage']").html('<span class="value"> ' + cov + ' </span>');
-			}
-			if (sessionStorage.getItem("coverageType") === null && sessionStorage.getItem("coverage") === null) {
-				$("[data-field='coverage']").remove();
-			}
-
-			if (sessionStorage.getItem("term") !== null) {
-				$("[data-field='term'] .value").text(sessionStorage.getItem("term"));
-			} else {
-				$("[data-field='term']").html('');
-			}
-		} else {
-			if ($(".list").length > 0) {
-
-			} else {
-				$(".insurance-type").val($(".insurance-type option:first").val());
-				sessionStorage.clear();
-			}
-		}
-	},
-	quoteFormReset: function () {
-		$(".cta_header_quote").find(".generic-form").each(function () {
-			$(this).find("input, select, textarea").removeClass('error');
-			$(this)[0].reset();
-		});
-	},
-	redirectToQuoteResultsPage: function () {
-		var url = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-path-to-results");
-		window.location.href = url;
-	},
-	setQuoteSessionStorage: function () {
-		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
-		var numInputs = thisForm.find(".form-focus").length;
-
-		if ($('#' + quoteToolForm + 'userAge').length > 0) {
-			sessionStorage.setItem("age", $('#' + quoteToolForm + 'userAge').val());
-		}
-
-		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
-			sessionStorage.setItem("coverageType", $('#' + quoteToolForm + 'coverageType').val());
-		}
-
-		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
-			sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageText').val());
-		}
-
-
-		if ($('#' + quoteToolForm + 'state').length > 0) {
-			sessionStorage.setItem("state", $('#' + quoteToolForm + 'state').val());
-		}
-
-		if ($('#' + quoteToolForm + 'gender').length > 0) {
-			sessionStorage.setItem("gender", $('#' + quoteToolForm + 'gender').val());
-		}
-
-		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
-			sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageAmount').val());
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
-			sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthSelect').val());
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
-			sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthText').val());
-		}
-
-		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
-			sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeSelect').val());
-		}
-
-		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
-			sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeText').val());
-		}
-
-		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
-			sessionStorage.setItem("dobMonth", $('#' + quoteToolForm + 'dobMonth').val());
-			sessionStorage.setItem("dobDay", $('#' + quoteToolForm + 'dobDay').val());
-			sessionStorage.setItem("dobYear", $('#' + quoteToolForm + 'dobYear').val());
-		}
-
-		for (var i = 1; i <= numInputs; i++) {
-			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
-				sessionStorage.setItem("optionalSelect" + i, $('#' + quoteToolForm + 'optionalSelect' + i).val());
-			}
-
-			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
-				sessionStorage.setItem("optionalRadio" + i, $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val());
-			}
-		}
-	},
-	preFillQuoteForm: function () {
-		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
-		var numInputs = thisForm.find(".form-focus").length;
-
-		if ($('#' + quoteToolForm + 'userAge').length > 0) {
-			$('#' + quoteToolForm + 'userAge').val(sessionStorage.getItem('age'));
-		}
-
-		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
-			$('#' + quoteToolForm + 'coverageType').val(sessionStorage.getItem('coverageType'));
-		}
-
-		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
-			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
-			$('#' + quoteToolForm + 'coverageText').val(cov);
-		}
-
-
-		if ($('#' + quoteToolForm + 'state').length > 0) {
-			$('#' + quoteToolForm + 'state').val(sessionStorage.getItem('state'));
-			var state = $('#' + quoteToolForm + 'state').val();
-		}
-
-		if ($('#' + quoteToolForm + 'gender').length > 0) {
-			$('#' + quoteToolForm + 'gender').val(sessionStorage.getItem('gender'));
-		}
-
-		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
-			var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
-			$('#' + quoteToolForm + 'coverageAmount').val(cov);
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
-			$('#' + quoteToolForm + 'termLengthSelect').val(sessionStorage.getItem('term'));
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
-			$('#' + quoteToolForm + 'termLengthText').val(sessionStorage.getItem('term'));
-		}
-
-		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
-			$('#' + quoteToolForm + 'incomeSelect').val(sessionStorage.getItem('income'))
-		}
-
-		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
-			$('#' + quoteToolForm + 'incomeText').val(sessionStorage.getItem('income'))
-
-		}
-
-		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
-			$('#' + quoteToolForm + 'dobMonth').val(sessionStorage.getItem('dobMonth'));
-			$('#' + quoteToolForm + 'dobDay').val(sessionStorage.getItem('dobDay'));
-			$('#' + quoteToolForm + 'dobYear').val(sessionStorage.getItem('dobYear'));
-		}
-
-		for (var i = 1; i <= numInputs; i++) {
-			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
-				$('#' + quoteToolForm + 'optionalSelect' + i).val(sessionStorage.getItem('optionalSelect' + i));
-			}
-
-			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
-				$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val(sessionStorage.getItem('optionalRadio' + i)).attr("checked", true);
-			}
-		}
-	},
-	loopThroughQuoteInputs: function () {
-		var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
-		var numInputs = thisForm.find(".form-focus").length;
-
-		if ($('#' + quoteToolForm + 'userAge').length > 0) {
-			var age = $('#' + quoteToolForm + 'userAge').val();
-			if ($('#' + quoteToolForm + 'userAge')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'userAge').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"age":"' + age +'"';
-				quoteRequest["age"] = age;
-				$('#' + quoteToolForm + 'userAge').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'coverageType').length > 0) {
-			var coverageType = $('#' + quoteToolForm + 'coverageType').val();
-			if ($('#' + quoteToolForm + 'coverageType')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'coverageType').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"coverageType":"' + coverageType +'"';
-				quoteRequest["coverageType"] = coverageType;
-				$('#' + quoteToolForm + 'coverageType').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'coverageText').length > 0) {
-			var coverageText = $('#' + quoteToolForm + 'coverageText').val();
-			if (isWhole(coverageText) === true) {
-				//quoteUrl += ',"coverage":"' + coverageText +'"';
-				quoteRequest["coverage"] = coverageText;
-				$('#' + quoteToolForm + 'coverageText').removeClass("error").next().hide();
-			} else {
-				$('#' + quoteToolForm + 'coverageText').addClass("error").next().show().css("display", "block");
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'state').length > 0) {
-			var state = $('#' + quoteToolForm + 'state').val();
-			if ($('#' + quoteToolForm + 'state')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'state').addClass("error").parent().find(".errorSpan").show().css("display", "block");
-			} else {
-				//quoteUrl += ',"state":"' + state +'"';
-				quoteRequest["state"] = state;
-				$('#' + quoteToolForm + 'state').removeClass("error").parent().find(".errorSpan").hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'gender').length > 0) {
-			var gender = $('#' + quoteToolForm + 'gender').val();
-			if ($('#' + quoteToolForm + 'gender')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'gender').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"gender":"' + gender +'"';
-				quoteRequest["gender"] = gender;
-				$('#' + quoteToolForm + 'gender').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
-			var coverageAmount = $('#' + quoteToolForm + 'coverageAmount').val();
-			if ($('#' + quoteToolForm + 'coverageAmount')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'coverageAmount').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"coverage":"' + coverageAmount +'"';
-				quoteRequest["coverage"] = coverageAmount;
-				$('#' + quoteToolForm + 'coverageAmount').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
-			var termLengthSelect = $('#' + quoteToolForm + 'termLengthSelect').val();
-			if ($('#' + quoteToolForm + 'termLengthSelect')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'termLengthSelect').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"term":"' + termLengthSelect +'"';
-				quoteRequest["term"] = termLengthSelect;
-				$('#' + quoteToolForm + 'termLengthSelect').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
-			var termLengthText = $('#' + quoteToolForm + 'termLengthText').val();
-			if (isNonblank(termLengthText) === true) {
-				$('#' + quoteToolForm + 'termLengthText').removeClass("error").next().hide();
-				//quoteUrl += ',"term":"' + termLengthText +'"';
-				quoteRequest["term"] = termLengthText;
-			} else {
-				$('#' + quoteToolForm + 'termLengthText').addClass("error").next().show().css("display", "block");
-
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
-			var income = $('#' + quoteToolForm + 'incomeSelect').val();
-			if ($('#' + quoteToolForm + 'incomeSelect')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'incomeSelect').addClass("error").next().show().css("display", "block");
-			} else {
-				//quoteUrl += ',"income":"' + income +'"';
-				quoteRequest["income"] = income;
-				$('#' + quoteToolForm + 'incomeSelect').removeClass("error").next().hide();
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'incomeText').length > 0) {
-			var incomeText = $('#' + quoteToolForm + 'incomeText').val();
-			if (isNonblank(incomeText) === true) {
-				$('#' + quoteToolForm + 'incomeText').removeClass("error").next().hide();
-				//quoteUrl += ',"income":"' + incomeText +'"';
-				quoteRequest["income"] = incomeText;
-			} else {
-				$('#' + quoteToolForm + 'incomeText').addClass("error").next().show().css("display", "block");
-
-			}
-		}
-
-		if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
-			var age;
-			if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'dobMonth').addClass("error");
-			} else {
-				$('#' + quoteToolForm + 'dobMonth').removeClass("error");
-			}
-
-			if ($('#' + quoteToolForm + 'dobDay')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'dobDay').addClass("error");
-			}
-			else {
-				$('#' + quoteToolForm + 'dobDay').removeClass("error");
-			}
-
-			if ($('#' + quoteToolForm + 'dobYear')[0].selectedIndex === 0) {
-				$('#' + quoteToolForm + 'dobYear').addClass("error");
-			}
-			else {
-				$('#' + quoteToolForm + 'dobYear').removeClass("error");
-			}
-
-			if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobDay')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobYear')[0].selectedIndex !== 0) {
-				age = ServicesAPI.calculateAge();
-				//quoteUrl += ',"age":"' + age +'"';
-				quoteRequest["age"] = age;
-			}
-		}
-		for (var i = 1; i <= numInputs; i++) {
-			if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
-				var optionalSelect = $('#' + quoteToolForm + 'optionalSelect' + i).val();
-				if ($('#' + quoteToolForm + 'optionalSelect' + i)[0].selectedIndex === 0) {
-					$('#' + quoteToolForm + 'optionalSelect' + i).addClass("error").next().show().css("display", "block");
-				} else {
-					//quoteUrl += ',"optionalSelect'+i+'":"' + optionalSelect +'"';
-					var optionalSelectText = 'optionalSelect' + i;
-					quoteRequest[optionalSelectText] = optionalSelect;
-					$('#' + quoteToolForm + 'optionalSelect' + i).removeClass("error").next().hide();
-				}
-			}
-
-			if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
-				var optionalRadio = $('[name="' + quoteToolForm + 'radioGroup' + i + '"]:checked').val();
-				if (optionalRadio === "" || optionalRadio === " " || optionalRadio === null || optionalRadio === undefined) {
-					$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").show().css("display", "block");
-				} else {
-					$('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").hide();
-					//quoteUrl += ',"optionalRadio'+i+'":"' + optionalRadio +'"';
-					var optionalSelectText = 'optionalRadio' + i;
-					quoteRequest[optionalSelectText] = optionalRadio;
-				}
-			}
-		}
-	},
-	searchServiceCall: function (input) {
-		count = 0;
-		var url = input;
-		var querySearch = ServicesAPI.getQueryStringNew()["query"];
-		if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
-			url += "?query=" + querySearch;
-		}
-		$(".results_content").remove();
-		resultsListHTML = "";
-		/************LOCAL Site Search SERVICE***************/
-
-		/*var siteSearchResults = $.getJSON("search.json", function(json) {
-		 siteSearchResults = json.response.docs;
-		 if (siteSearchResults.length != 0) {
-		 $('.form-item__display').removeClass('hidden');
-		 // $(".page-count").removeClass('hidden');
-		 $(".no-results").addClass('hidden');
-		 //results_content is the default component for listing out general results
-		 resultsListHTML += "<div class=\"results_content\">";
-		 for (var i = 0; i < siteSearchResults.length; i++) {
-		 count++;
-		 resultsListHTML += "<div class=\"list__item--no-border\">";
-		 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-		 resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
-		 resultsListHTML += "</div>";
-		 }
-		 resultsListHTML += "</div>";
-		 } else {
-		 $('.form-item__display').removeClass('hidden');
-		 $(".page-count").addClass('hidden');
-		 $(".no-results").removeClass('hidden');
-		 }
-		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-		 ServicesAPI.createPagination(count);
-		 });*/
-		/************LOCAL Site Search SERVICE***************/
-
-
-		/************LIVE Site Search SERVICE***************/
-		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-				var siteSearchResults = json.response.docs;
-				if (siteSearchResults.length != 0) {
-					$('.form-item__display').removeClass('hidden');
-					// $(".page-count").removeClass('hidden');
-					$(".no-results").addClass('hidden');
-					//results_content is the default component for listing out general results
-					resultsListHTML += "<div class=\"results_content\">";
-					for (var i = 0; i < siteSearchResults.length; i++) {
-						count++;
-						resultsListHTML += "<div class=\"list__item--no-border\">";
-						resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-						resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
-						resultsListHTML += "</div>";
-					}
-					resultsListHTML += "</div>";
-				} else {
-					$('.form-item__display').removeClass('hidden');
-					$(".page-count").addClass('hidden');
-					$(".no-results").removeClass('hidden');
-				}
-				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-				ServicesAPI.createPagination(count);
-			},
-			error: function (e) {
-				ServicesAPI.showSorryUnableToLocateMessage();
-			},
-			timeout: 30000
-		});
-		/************LIVE SERVICE***************/
-	},
-	legacySearch: function (searchQuery) {
-		var str = "https://www.metlife.com/searchresults?query=";
-		var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
-		str += searchQuery + val2;
-		window.location.href = str;
-	},
-	redirectToSearchResultsPage: function (input) {
-		var searchTerm = sessionStorage.setItem("searchTerm", $(input).val());
-		var url = $("#metSearchForm").attr("data-path-to-search-results");
-		window.location.href = url;
-	},
-	searchResultsPageLoad: function () {
-		var cov = sessionStorage.getItem("searchTerm");
-		if (sessionStorage.getItem("searchTerm") !== null) {
-			if ($(".js-searchTextBox").css("display") !== " none") {
-				$(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
-				$(".js-searchSubmit").click();
-			}
-		}
-
-	},
-	newsRoomServiceConstruction: function () {
-		var url = $(".lists").attr("data-news-url");
-		var query = $(".lists").attr("data-news-query-parameter");
-		newsMonth = $("#list_month").val();
-		newsYear = $("#list_year").val();
-		newsTopic = $('#list_topics').val();
-		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
-		ServicesAPI.newsRoomServiceCall(url);
-	},
-	pressBackQuery: function () {
-		var month = sessionStorage.getItem("press_month");
-		var year = sessionStorage.getItem("press_year");
-		var search = sessionStorage.getItem("press_search");
-		if (month != null && month != null && year != null) {
-			$('#list_month').val(month);
-			$('#list_year').val(year);
-			$('#list_topics').val(search);
-		}
-		sessionStorage.removeItem("press_back");
-		sessionStorage.removeItem("press_month");
-		sessionStorage.removeItem("press_year");
-		sessionStorage.removeItem("press_search");
-	},
-	newsRoomServiceCall: function (input) {
-		resultsListHTML = "";
-		var url = input;
-		count = 0;
-		$(".results_content").remove();
-		var newsYears =[];
-		var newsMonths =[];
-		/************LIVE News Room SERVICE***************/
-		$.ajax({
-		 url: url,
-		 contentType: "application/json; charset=utf-8",
-		 async: true,
-		 dataType:'json',
-		 type: 'GET',
-		 success: function(data) {
-		 if(firstTimeRunNewsRoom === true){
-		 firstTimeRunNewsRoom = false;
-		 }else{
-		 listCount +=6;
-		 }
-		 newsRoomResults = data.news;
-		 if (newsRoomResults.length != 0) {
-		 if (!$(".list__item--no-results").hasClass("hidden")) {
-		 $(".list__item--no-results").addClass("hidden");
-		 }
-		 resultsListHTML += "<div class='results_content'>";
-		 for (var i = 0; i < newsRoomResults.length; i++) {
-		 count++;
-		 if(count <= listCount) {
-		 resultsListHTML += "<div class=\"list__item\">";
-		 resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-		 resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-		 resultsListHTML += "</div>";
-		 }
-		 }
-		 resultsListHTML += "</div>";
-		 ServicesAPI.createPagination(count);
-		 $(resultsListHTML).insertAfter($(".lists"));
-		 } else {
-		 $(".list__item--no-results").removeClass('hidden');
-		 }
-		 if(listCount >= newsRoomResults.length){
-		 $(".divider--load-more__link").hide();
-		 }else{
-		 $(".divider--load-more__link").show();
-		 }
-		 },
-		 error: function(e) {
-		 console.log('error ',e);
-		 },
-		 timeout:30000
-		 });
-		/************LIVE News Room SERVICE***************/
-
-		/************LOCAL News Room SERVICE***************/
-
-		/*var newsRoomResults = $.getJSON("news.json", function (data) {
-			if (firstTimeRunNewsRoom === true) {
-				firstTimeRunNewsRoom = false;
-			} else {
-				listCount += 6;
-			}
-			newsRoomResults = data.news;
-			if (newsRoomResults.length != 0) {
-				if (!$(".list__item--no-results").hasClass("hidden")) {
-					$(".list__item--no-results").addClass("hidden");
-				}
-				resultsListHTML += "<div class='results_content'>";
-				for (var i = 0; i < newsRoomResults.length; i++) {
-					newsYears.push(newsRoomResults[i].created.year);
-					newsMonths.push(newsRoomResults[i].created.month);
-					count++;
-					if (count <= listCount) {
-						resultsListHTML += "<div class=\"list__item\">";
-						resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-						resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-						resultsListHTML += "</div>";
-					}
-				}
-				resultsListHTML += "</div>";
-				ServicesAPI.createPagination(count);
-				$(resultsListHTML).insertAfter($(".lists"));
-			} else {
-				$(".list__item--no-results").removeClass('hidden');
-			}
-			if (listCount >= newsRoomResults.length) {
-				$(".divider--load-more__link").hide();
-			} else {
-				$(".divider--load-more__link").show();
-			}
-		});
-		console.log(newsYears)
-		console.log(newsMonths)*/
-		/************LOCAL News Room SERVICE***************/
-	},
-	blogsServiceCall: function (input, searchType) {
-		resultsListHTML = "";
-		$(".results_content").remove();
-		count = 0;
-		var url = input + "?" + searchType;
-		/*********LOCAL Blog SERVICE***************/
-		/*var blogSearchResults = $.getJSON("blog.json", function(data) {
-		 blogSearchResults = data.response.blogs;
-		 resultsListHTML += "<div class=\"results_content\">";
-		 if (blogSearchResults.length != 0) {
-		 for (var i = 0; i < blogSearchResults.length; i++) {
-		 count++
-		 resultsListHTML += "<div class=\"blog-list__article \">";
-		 resultsListHTML += "<div class=\"blog-list__img \">";
-		 resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
-		 resultsListHTML += "</div>";
-		 resultsListHTML += "<div class=\"blog-list__text\">";
-		 resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-		 resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
-		 resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
-		 resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
-		 if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
-		 resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
-		 }
-		 resultsListHTML += "</span>";
-		 resultsListHTML += "</div>";
-		 resultsListHTML += "<div class=\"clearfix\"></div>";
-		 resultsListHTML += "</div>";
-		 }
-		 }
-		 resultsListHTML += "</div>";
-		 $(resultsListHTML).insertBefore($(".results_pagination"));
-		 ServicesAPI.createPagination(count);
-		 });*/
-
-		/************LOCAL Blog SERVICE***************/
-
-		/************LIVE Blog SERVICE***************/
-		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-				var blogSearchResults = data.response.blogs;
-				resultsListHTML += "<div class=\"results_content\">";
-				if (blogSearchResults.length != 0) {
-					for (var i = 0; i < blogSearchResults.length; i++) {
-						count++
-						resultsListHTML += "<div class=\"blog-list__article \">";
-						resultsListHTML += "<div class=\"blog-list__img \">";
-						resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource + "\" alt=\"" + blogSearchResults[i].alttext + "\" class=\"enlarge\">";
-						resultsListHTML += "</div>";
-						resultsListHTML += "<div class=\"blog-list__text\">";
-						resultsListHTML += "<h5>" + blogSearchResults[i].title + "</h5>";
-						resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date + "</span>";
-						resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags + "</span>";
-						resultsListHTML += "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
-						if (blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " ") {
-							resultsListHTML += "<a href=\"" + blogSearchResults[i].link + "\">" + blogSearchResults[i].linktext + "</a>"
-						}
-						resultsListHTML += "</span>";
-						resultsListHTML += "</div>";
-						resultsListHTML += "<div class=\"clearfix\"></div>";
-						resultsListHTML += "</div>";
-					}
-				}
-				resultsListHTML += "</div>";
-				$(resultsListHTML).insertBefore($(".results_pagination"));
-				ServicesAPI.createPagination(count);
-			},
-			error: function (e) {
-				console.log('error ', e);
-			},
-			timeout: 30000
-		});
-		/************LIVE Blog SERVICE***************/
-	},
-	formsLibraryServiceCall: function (input) {
-		resultsListHTML = "";
-		$(".results_content").remove();
-		count = 0;
-		var url = input;
-		/*********LOCAL Forms SERVICE***************/
-		/*var formsSearchResults = $.getJSON("forms.json", function(data) {
-		 formsSearchResults = data.response.docs;
-		 var metaDataResults = data.response.metaData[0];
-		 resultsListHTML += "<div class=\"results_content\">";
-		 if (formsSearchResults.length != 0) {
-		 for (var i = 0; i < formsSearchResults.length; i++) {
-		 count++
-		 if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
-		 resultsListHTML += "<div class=\"row list__item \">";
-		 if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-		 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-		 }
-		 if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-		 resultsListHTML += " <div class=\"list__item--left\">";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-		 resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
-		 resultsListHTML += "</div>";
-		 }
-		 if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
-		 resultsListHTML += "<div class=\"list__item--right\">";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
-		 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-		 resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-		 resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-		 resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-		 resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-		 }
-		 resultsListHTML += "</a>";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-		 resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
-		 resultsListHTML += "</div>";
-		 }
-		 resultsListHTML += "<span class=\"clearfix\"></span>";
-		 resultsListHTML += "</div>";
-
-
-		 }
-
-		 if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
-		 resultsListHTML += "<div class=\"row list__item \">";
-		 if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-		 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-		 }
-		 if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-		 resultsListHTML += " <div class=\"list__item--left\">";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title +"</a>";
-		 resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
-		 resultsListHTML += "</div>";
-		 }
-		 if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
-		 resultsListHTML += "<div class=\"list__item--right\">";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
-		 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-		 resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-		 resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-		 resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-		 } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-		 resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-		 }
-		 resultsListHTML += "</a>";
-		 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-		 resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
-		 resultsListHTML += "</div>";
-		 }
-		 resultsListHTML += "<span class=\"clearfix\"></span>";
-		 resultsListHTML += "</div>";
-		 }
-		 }
-		 }
-		 resultsListHTML += "</div>";
-		 $(resultsListHTML).insertAfter($(".lists"));
-		 ServicesAPI.createPagination(count);
-		 });*/
-
-		/************LOCAL Forms SERVICE***************/
-
-		/************LIVE Forms SERVICE***************/
-		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-				var formsSearchResults = data.response.docs;
-				var metaDataResults = data.response.metaData[0];
-
-				resultsListHTML += "<div class=\"results_content\">";
-				if (formsSearchResults.length != 0) {
-					for (var i = 0; i < formsSearchResults.length; i++) {
-						count++
-						if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
-							resultsListHTML += "<div class=\"row list__item \">";
-							if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-								resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-							}
-							if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-								resultsListHTML += " <div class=\"list__item--left\">";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-								resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
-								resultsListHTML += "</div>";
-							}
-							if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
-								resultsListHTML += "<div class=\"list__item--right\">";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
-								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-								}
-								resultsListHTML += "</a>";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-								resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
-								resultsListHTML += "</div>";
-							}
-							resultsListHTML += "<span class=\"clearfix\"></span>";
-							resultsListHTML += "</div>";
-
-
-						}
-
-						if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
-							resultsListHTML += "<div class=\"row list__item \">";
-							if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-								resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-							}
-							if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-								resultsListHTML += " <div class=\"list__item--left\">";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-								resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
-								resultsListHTML += "</div>";
-							}
-							if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
-								resultsListHTML += "<div class=\"list__item--right\">";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
-								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-								}
-								resultsListHTML += "</a>";
-								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-								resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
-								resultsListHTML += "</div>";
-							}
-							resultsListHTML += "<span class=\"clearfix\"></span>";
-							resultsListHTML += "</div>";
-						}
-					}
-				}
-				resultsListHTML += "</div>";
-				$(resultsListHTML).insertAfter($(".lists"));
-				ServicesAPI.createPagination(count);
-			},
-			error: function (e) {
-				console.log('error ', e);
-			},
-			timeout: 30000
-		});
-		/************LIVE Forms SERVICE***************/
-	},
-	clearOverlays: function () {
-		for (var i = 0; i < markersArray.length; i++) {
-			markersArray[i].setMap(null);
-		}
-		for (var i = 0; i < dir_markerArray.length; i++) {
-			dir_markerArray[i].setMap(null);
-		}
-	},
-	initializeFindAnOffice: function () {
-		var myOptions = {
-			mapTypeControl: true,
-			mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-				position: google.maps.ControlPosition.TOP_RIGHT,
-				mapTypeIds: [
-					google.maps.MapTypeId.ROADMAP,
-					google.maps.MapTypeId.SATELLITE
-				]
-			},
-			zoomControl: true,
-			zoomControlOptions: {
-				position: google.maps.ControlPosition.TOP_LEFT
-			},
-			streetViewControl: true,
-			streetViewControlOptions: {
-				position: google.maps.ControlPosition.LEFT_TOP
-			},
-			scaleControl: false,
-			scrollwheel: true,
-			zoom: 10
-		};
-
-		map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
-		ServicesAPI.autocompleteOn();
-	},
-	autocompleteOn: function () {
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0]);
-		googleautocomplete.bindTo('bounds', map);
-		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
-			var place = googleautocomplete.getPlace();
-			if (!place || !place.geometry) {
-
-			}
-		});
-	},
-	initializeGoogleMapObject: function () {
-		$('#googleMapsContainer').removeClass('hidden');
-		var myOptions = {
-			mapTypeControl: true,
-			mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-				position: google.maps.ControlPosition.TOP_RIGHT,
-				mapTypeIds: [
-					google.maps.MapTypeId.ROADMAP,
-					google.maps.MapTypeId.SATELLITE
-				]
-			},
-			zoomControl: true,
-			zoomControlOptions: {
-				position: google.maps.ControlPosition.TOP_LEFT
-			},
-			streetViewControl: true,
-			streetViewControlOptions: {
-				position: google.maps.ControlPosition.LEFT_TOP
-			},
-			scaleControl: false,
-			scrollwheel: true,
-			zoom: 10
-		};
-
-		map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
-	},
-	initializeDrivingGoogleMapObject: function () {
-		$('#googleDrivingMapsContainer').removeClass('hidden');
-		var myOptions = {
-			mapTypeControl: true,
-			mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-				position: google.maps.ControlPosition.TOP_RIGHT,
-				mapTypeIds: [
-					google.maps.MapTypeId.ROADMAP,
-					google.maps.MapTypeId.SATELLITE
-				]
-			},
-			zoomControl: true,
-			zoomControlOptions: {
-				position: google.maps.ControlPosition.TOP_LEFT
-			},
-			streetViewControl: true,
-			streetViewControlOptions: {
-				position: google.maps.ControlPosition.LEFT_TOP
-			},
-			scaleControl: false,
-			scrollwheel: true,
-			zoom: 10
-		};
-
-		map = new google.maps.Map(document.getElementById("googleDrivingMapsContainer"), myOptions);
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0]);
-		googleautocomplete.bindTo('bounds', map);
-		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
-			var place = googleautocomplete.getPlace();
-			if (!place || !place.geometry) {
-
-			}
-		});
-	},
-	gmapsAutoCompleteInit: function () {
-		$('.find-office__zip-city-state, .cta_search').each(function () {
-			new google.maps.places.Autocomplete($(this)[0]);
-		});
-	},
-	showLocation: function () {
-		$('.fax-results__container, .maps-button, .get-directions-form, .find-an-x-search__container, .cta_search__container').removeClass('hidden');
-		$('.driving-direction-container, #googleDrivingMapsContainer').addClass('hidden');
-		if (dir_to_flag == true) {
-			$('.get-directions-form .from-address').val('');
-		}
-		var endsWith = function (str, suffix) {
-			return str.indexOf(suffix, str.length - suffix.length) !== -1;
-		};
-		var startsWith = function (string, searchString, position) {
-			position = position || 0;
-			return string.substr(position, searchString.length) === searchString;
-
-		};
-		$('.errorSpan.error_zip_code').html($('.errorMsgtext_no_office_found').text());
-		ServicesAPI.initializeGoogleMapObject();
-		var address;
-		var zip = sessionStorage.getItem("faoZipCode");
-		if (document.referrer == "" || endsWith(document.referrer, "/cf") || startsWith(document.referrer, document.origin + document.location.pathname)) {
-			address = $('.find-an-x-search__container .cta_search').val();
-		} else {
-			$('.find-an-x-search__container .cta_search').val(zip);
-			$('.find-an-x-search__container .cta_search').text(zip);
-			address = $('.find-an-x-search__container .cta_search').val();
-		}
-		var validateAddress = address.trim();
-		var isNumber = /^\d+$/.test(validateAddress);
-		if ((!isNumber) || (isNumber && (address.length === 5))) {
-			$('.errorSpan.error_zip_code').addClass('hidden');
-			if (address != null && address != '' && address != undefined && address != ' ') {
-				geocoder.geocode({"address": address}, function (response, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						ServicesAPI.addAddressToMap(response, status);
-					} else {
-						ServicesAPI.resetMap();
-						ServicesAPI.showSorryUnableToLocateMessage();
-					}
-				});
-			} else {
-				ServicesAPI.resetMap();
-			}
-		} else {
-			$('.errorSpan.error_zip_code').removeClass('hidden');
-			if ($(".hidden-xs").is(":visible") == true) {
-
-				$(".mobile_expand_close").click();
-				$(".error_zip_code").insertAfter(".mobile_expand");
-			}
-			if (($(".hidden-xs").is(":visible") == false) && ($(".mobile_expand").is(":visible"))) {
-				$(".error_zip_code").insertAfter(".mobile_expand_open");
-			}
-		}
-	},
-	addAddressToMap: function (response, status) {
-		ServicesAPI.clearOverlays();
-		if (!response || status != google.maps.GeocoderStatus.OK) {
-			ServicesAPI.showSorryUnableToLocateMessage();
-		} else {
-			var point = new google.maps.LatLng(response[0].geometry.location.lat(), response[0].geometry.location.lng());
-			startPointGeoCode = point;
-			// Reset the Map
-			ServicesAPI.resetMap();
-
-			// Set the GMarker based on the geocode (GLatLng)
-
-			startPointGMarker = ServicesAPI.createStartPointMarker(startPointGeoCode);
-
-			// Display progress indicator before retreiving offices
-			//showProgressIndicator();
-
-			// Now get the Met offices for this address
-			ServicesAPI.getMetOffices();
-		}
-	},
-	resetMap: function () {
-		// Clear any existing overlays
-		ServicesAPI.clearOverlays();
-		directionsDisplay.setMap(null);
-		// Pan the map back to the original start location
-		// *** Must center map, before adding overlay
-
-		map.setCenter(startPointGeoCode, 9);
-
-	},
-	getMetOffices: function () {
-
-		var latitude = startPointGeoCode.lat();
-		var longitude = startPointGeoCode.lng();
-		var baseServiceUrl = $("[data-fao-url]").attr("data-fao-url");
-		var faoMarket = '';
-		var directionButton = $('.directions_button').attr("data-fao-market");
-		var officeSubmitButton = $(".find-office__submit").attr("data-fao-market");
-		if (directionButton !== undefined && directionButton !== "" && directionButton !== " ") {
-			faoMarket = directionButton;
-		}
-		if (officeSubmitButton !== undefined && officeSubmitButton !== "" && officeSubmitButton !== " ") {
-			faoMarket = officeSubmitButton;
-		}
-		radiusInMiles = $('.find_an_office_radius').val();
-		if (faoMarket.toLowerCase() == "us") {
-			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
-			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
-		} else {
-			specialty = $('.different_services_dropdown').val();
-			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
-		}
-		/************LIVE FAO SERVICE***************/
-		$.ajax({
-			type: 'GET',
-			url: serviceUrl,
-			success: function (data) {
-				ServicesAPI.generateOfficeItems(data)
-			},
-			error: function () {
-				ServicesAPI.handleServiceError()
-			}
-		});
-		/************LIVE FAO SERVICE***************/
-
-		/************LOCAL FAO SERVICE***************/
-		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
-		 ServicesAPI.generateOfficeItems(data);
-		 ServicesAPI.createPagination(count);
-		 });*/
-		/************LOCAL FAO SERVICE***************/
-
-	},
-	generateOfficeItems: function (responseObject) {
-		count = 0;
-		var resultsListHTML = "";
-		markersArray = [];
-		$('.results_error_info,.results_pagination').addClass('hidden');
-		if (responseObject.facilities.length != 0) {
-			$('.find_an_office_pagecount_wrap,.google_maps_container,.hidden_maps_container_button').removeClass('hidden');
-			$('.display_container').removeClass('hidden');
-			$(".page-count").removeClass('hidden');
-			$(".no-results").addClass('hidden');
-			// Now you can just use the object
-			var metOfficeArray = responseObject.facilities;
-			$(".results_content").remove();
-			// Create the HTML for the Office results in the left panel
-			resultsListHTML += "<div class=\"results_content\">";
-			// Generate the markers for the map and also generate the markup for the results list
-			for (var i = 0; i < metOfficeArray.length; i++) {
-				count++;
-				var fclt_officeName = metOfficeArray[i].fclt_name;
-				var fclt_addr = metOfficeArray[i].fclt_addr;
-				var fclt_city = metOfficeArray[i].fclt_city;
-				var fclt_state = metOfficeArray[i].fclt_state;
-				var fclt_zip = metOfficeArray[i].fclt_zip;
-				var fclt_phone = metOfficeArray[i].tel_no;
-				var fclt_fax = metOfficeArray[i].fax_no;
-				var fclt_lat = metOfficeArray[i].fclt_lattd;
-				var fclt_lng = metOfficeArray[i].fclt_longtd;
-				var fclt_ctgy = metOfficeArray[i].fclt_ctgy;
-				var fclt_distance = metOfficeArray[i].fclt_distance;
-				var fclt_url = metOfficeArray[i].fclt_url;
-				// Additional fields
-				var fclt_alt_phone = metOfficeArray[i].fclt_alt_phone;
-				var fclt_email = metOfficeArray[i].fclt_email;
-				var fclt_secondary_email = metOfficeArray[i].fclt_secondary_email;
-				var fclt_main_contact = metOfficeArray[i].fclt_main_contact;
-				var fclt_hours = metOfficeArray[i].fclt_hours;
-				var fclt_info = metOfficeArray[i].fclt_info;
-				var fclt_gender = metOfficeArray[i].fclt_gender;
-				var fclt_languages = metOfficeArray[i].fclt_languages;
-				var fclt_education = metOfficeArray[i].fclt_education;
-				var label_phone = $(".label_phone").text();
-				var label_alt_phone = $(".label_alt_phone").text();
-				var label_fax = $(".label_fax").text();
-				var label_email = $(".label_email").text();
-				var label_sec_email = $(".label_sec_email").text();
-				var label_contact = $(".label_contact").text();
-				var label_hours = $(".label_hours").text();
-				var label_info = $(".label_info").text();
-				var label_education = $(".label_education").text();
-				var label_languages = $(".label_languages").text();
-				var label_gender = $(".label_gender").text();
-				var label_radius_unit = $(".label_radius_unit").text();
-				if (label_radius_unit == "mi")
-					fclt_distance = parseInt(fclt_distance) / 1.609344;
-				var strDestination = "";
-				var destParams = "";
-				if (fclt_addr != undefined) {
-					strDestination = strDestination + fclt_addr + ", ";
-				}
-				if (fclt_city != undefined) {
-					strDestination = strDestination + fclt_city + ", ";
-				}
-				if (fclt_state != undefined) {
-					strDestination = strDestination + fclt_state + ", ";
-				}
-				if (fclt_zip != undefined) {
-					strDestination = strDestination + fclt_zip;
-				}
-				destParams = strDestination;
-				if (fclt_lat != undefined) {
-					destParams = destParams + ":" + fclt_lat + ","
-				}
-				if (fclt_lng != undefined) {
-					destParams = destParams + fclt_lng;
-				}
-				var temp = strDestination.slice(-2);
-				;
-				if (temp == ", ") {
-					strDestination = strDestination.substring(0, strDestination.length - 2);
-				}
-				var strDestination = fclt_addr + ", " + fclt_city + ", " + fclt_state + ", " + fclt_zip;
-				resultsListHTML += "<div class=\"results_office_result\"><p class=\"results_office_count\">" + (i + 1) + "</p>";
-				resultsListHTML += "<p class=\"results_office_name\">" + fclt_officeName + "</p>";
-				resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
-				resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
-				if (fclt_education) {
-					resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
-					resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
-					resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
-					resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
-				} else {
-					resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
-					resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
-					resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
-				}
-				if (fclt_languages) {
-					resultsListHTML += "<p class=\"results_office_city_state_zip dentist_left\">"
-					if (fclt_city != null) {
-						resultsListHTML += fclt_city.toLowerCase() + ", ";
-					}
-					if (fclt_state != null) {
-						resultsListHTML += fclt_state.toLowerCase() + " ";
-					}
-					if (fclt_zip != null) {
-						resultsListHTML += fclt_zip.toLowerCase() + " ";
-					}
-					resultsListHTML += "</p>";
-					resultsListHTML += "<p class=\"results_office_languages dentist_right\">" + label_languages + ": " + fclt_languages.toLowerCase() + "</p>";
-				} else {
-					resultsListHTML += "<p class=\"results_office_city_state_zip\">"
-					if (fclt_city != null) {
-						resultsListHTML += fclt_city.toLowerCase() + ", ";
-					}
-					if (fclt_state != null) {
-						resultsListHTML += fclt_state.toLowerCase() + " ";
-					}
-					if (fclt_zip != null) {
-						resultsListHTML += fclt_zip.toLowerCase() + " ";
-					}
-					resultsListHTML += "</p>";
-				}
-
-				if (fclt_gender) {
-					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
-					resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
-				} else {
-					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
-				}
-
-				if (fclt_alt_phone)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": " + fclt_alt_phone.replace(/\./g, '-') + "</p>";
-				if (fclt_fax)
-					resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
-				if (fclt_email)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_email + ": " + fclt_email + "</p>";
-				if (fclt_secondary_email)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_sec_email + ": " + fclt_secondary_email + "</p>";
-				if (fclt_main_contact)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_contact + ": " + fclt_main_contact + "</p>";
-				if (fclt_hours)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_hours + ": " + fclt_hours + "</p>";
-				if (fclt_info)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_info + ": " + fclt_info + "</p>";
-				resultsListHTML += "<div><button class=\"results_office_get_directions_button btn btn-brand-2nd\" onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</button></div>";
-				resultsListHTML += "</div>";
-				var markerInfoHTML = "<div class=\"googleMarkerInfo\">";
-				markerInfoHTML += "<p class=\"markerInfoOfficeName\">" + fclt_officeName + "</p>";
-				markerInfoHTML += "<p class=\"markerInfoAddress\">" + fclt_addr.toLowerCase() + "</p>";
-				markerInfoHTML += "<p class=\"markerInfoCityStateZip\">";
-				if (fclt_city != null) {
-					markerInfoHTML += fclt_city.toLowerCase() + ", ";
-				}
-				if (fclt_state != null) {
-					markerInfoHTML += fclt_state.toLowerCase() + ", ";
-				}
-				if (fclt_zip != null) {
-					markerInfoHTML += fclt_zip.toLowerCase() + ", ";
-				}
-				markerInfoHTML += "</p>";
-				if (fclt_phone)
-					markerInfoHTML += "<p class=\"markerInfoPhone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
-				if (fclt_fax)
-					markerInfoHTML += "<p class=\"markerInfoFax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
-				markerInfoHTML += "<p class=\"markerInfoDrivingDirections\"><a href='#' onclick=\"getDirectionsPanel(\'" + strDestination + "\');return false;\">" + "</a>" + "</p>";
-				markerInfoHTML += "</div>";
-				var fclt_point = new google.maps.LatLng(fclt_lat, fclt_lng);
-				var iconNumber = ((i + 1) + ((bootPagNum) * listCount)) + '';
-				var fclt_marker = ServicesAPI.createOfficeMarker(fclt_point, markerInfoHTML, iconNumber);
-			}
-			resultsListHTML += "</div>";
-			$(resultsListHTML).insertBefore($(".results_pagination"));
-			ServicesAPI.createPagination(count);
-		}
-		else {
-			ServicesAPI.showSorryUnableToLocateMessage();
-		}
-
-		return responseObject;
-	},
-	handleServiceError: function () {
-		$('.results_error_info').removeClass('hidden').html($('.errorMsgText_server_busy').text());
-		$('.results_content').html("");
-		$('.results_pagination, .find_an_office_pagecount_wrap, .google-maps-container, .maps-button').addClass('hidden');
-	},
-	createStartPointMarker: function (latlng) {
-		// Use the default marker
-		var marker = new google.maps.Marker({
-			position: latlng
-		});
-		markersArray.push(marker);
-		return marker;
-	},
-	createOfficeMarker: function (point, html, officeNumber) {
-		var baseIcon = '';
-		var numberedIcon = '';
-		var marker = '';
-		var numberedIconURL = '';
-		var marker;
-		marker = new MarkerWithLabel({
-			position: point,
-			labelContent: officeNumber,
-			//icon: " ",
-			icon: {
-				url: blueMarker,
-				scaledSize: new google.maps.Size(33, 42)// desired size
-			},
-			labelAnchor: new google.maps.Point(3, 33),
-			labelClass: "my_label", // the CSS class for the label
-			labelStyle: {opacity: 0.8},
-			map: map
-		});
-		if ((officeNumber / 10) >= 1) {
-			marker.labelAnchor = new google.maps.Point(8, 33)
-		}
-
-		google.maps.event.addListener(marker, 'click', (function (marker, i) {
-
-			return function () {
-				if (selectedMarker) {
-					selectedMarker.setIcon({
-						url: blueMarker,
-						scaledSize: new google.maps.Size(33, 42)
-					});
-				}
-				marker.setIcon({
-					url: blackMarker,
-					scaledSize: new google.maps.Size(33, 42)
-				});
-				selectedMarker = marker;
-
-				var infowindow = new google.maps.InfoWindow();
-				infowindow.setContent(html);
-				if ($(".hidden-xs").is(":visible")) {
-					infowindow.open(map, marker);
-				} else {
-
-				}
-				if (presentHighligtedInfo != null) {
-					presentHighligtedInfo.open(null, marker);
-				}
-				presentHighligtedInfo = infowindow;
-			}
-		})(marker, officeNumber));
-
-		markersArray.push(marker);
-		return marker;
-	},
-	checkEnter: function (e) {
-		var key = e.keyCode || e.which;
-		var browsername = ServicesAPI.getBrowserName();
-		if (key == 13) { //if character code is equal to ascii 13 (if enter key)
-			//alert('ENTER pressed, show location, and return false');
-			ServicesAPI.showLocation();
-			//return false;
-			/*if(browsername=="NS"){
-			 return false;
-			 }else if (browsername=="MSIE"){
-			 e.returnValue = false;
-			 }else{
-			 return false;
-			 }*/
-
-		} else {
-			returnValue = true;
-		}
-	},
-	getBrowserName: function () {
-		var browsername = navigator.appName;
-		if (browsername.indexOf("Netscape") != -1) {
-			browsername = "NS";
-		} else if (browsername.indexOf("Microsoft") != -1) {
-			browsername = "MSIE";
-		} else {
-			browsername = "N/A";
-		}
-		return browsername;
-	},
-	addBreadCrumb: function () {
-		var currentPageCrumb = $(".breadcrumb").find("span:last-of-type");
-		currentPageCrumb.wrapInner("<a href=\"\"> </a>");
-		currentPageCrumb.addClass("breadcrumb__crumb");
-		currentPageCrumb.find("a").attr("href", faoURL);
-		currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span>");
-	},
-	removeBreadCrumb: function () {
-		$(".breadcrumb").find("span:last-of-type").remove();
-		$(".breadcrumb").find("span:last-of-type a").contents().unwrap();
-		$(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
-	},
-	getDirectionsPanel: function (strpDestination) {
-		$('.page-title__heading').text($('.getDirectionsText').text());
-		if ($(".generatedBreadCrumb").length == 0) {
-			ServicesAPI.addBreadCrumb();
-		}
-		ServicesAPI.clearOverlays();
-		$('.fax-results__container, .driving-directions-panel, .find-an-x-search__container,.cta_search__container, .directions_error').addClass('hidden');
-		$('.driving-direction-container, .maps-button, #googleDrivingMapsContainer').removeClass('hidden');
-		var fromAddr = $('.find-an-x-search__container .cta_search').val();
-		ServicesAPI.initializeDrivingGoogleMapObject();
-
-		$('.get-directions-form .from-address').val(fromAddr);
-		if (fromAddr == '') {
-			$('.find-an-x-search__container .cta_search').focus();
-			return;
-		}
-		geocoder.geocode({'address': fromAddr}, function (results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				var res = ServicesAPI.makeMarker(results[0].geometry.location, 'A');
-			}
-		});
-
-
-		//clearOverlays();
-		var toAddr = strpDestination.split(":");
-		$('.get-directions-form .to-address').val(ServicesAPI.formatDestination(toAddr[0]));
-
-
-		ServicesAPI.resetMap();
-		var dest_marker = $('.get-directions-form .to-address').val();
-		geocoder.geocode({'address': dest_marker}, function (results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				var res = ServicesAPI.makeMarker(results[0].geometry.location, 'B');
-
-			}
-		});
-		ServicesAPI.clearOverlays();
-	},
-	makeMarker: function (point, title) {
-		marker = new MarkerWithLabel({
-			position: point,
-			labelContent: title,
-			//icon: " ",
-			icon: {
-				url: blueMarker,
-				scaledSize: new google.maps.Size(33, 42)// desired size
-			},
-			labelAnchor: new google.maps.Point(5, 33),
-			labelClass: "my_label", // the CSS class for the label
-			labelStyle: {opacity: 0.8},
-			map: map
-		});
-		dir_markerArray.push(marker);
-	},
-	getDirections: function () {
-		$('.page-title__heading').text($('.getDirectionsText').text());
-		var directionsService = new google.maps.DirectionsService();
-		directionsDisplay.setMap(map);
-		directionsDisplay.setPanel(document.getElementById('drivingDirectionsPanel'));
-		var travel_mode = $('.get-directions-buttons .btn.active').attr('data-travel');
-		var unit;
-		var fromAddr = $('.get-directions-form .from-address').val();
-		if ($('.Radius_unit').text() == "km") {
-			unit = google.maps.UnitSystem.METRIC;
-		}
-		else {
-			unit = google.maps.UnitSystem.IMPERIAL;
-		}
-		var request = {
-			origin: fromAddr,
-			destination: $('.get-directions-form .to-address').val(),
-			travelMode: google.maps.DirectionsTravelMode[travel_mode],
-			unitSystem: unit
-		};
-		directionsService.route(request, function (response, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				ServicesAPI.clearOverlays();
-				$('.get-directions-form,.directions_error').addClass('hidden');
-				$('.driving-directions-panel').removeClass('hidden');
-				directionsDisplay.setDirections(response);
-				var leg = response.routes[0].legs[0];
-				ServicesAPI.makeMarker(leg.start_location, "A");
-				ServicesAPI.makeMarker(leg.end_location, 'B');
-			} else {
-				directionsDisplay.setMap(null);
-				$('.driving-directions-panel').addClass('hidden');
-				$('.directions_error').removeClass('hidden');
-			}
-		});
-
-	},
-	formatDestination: function (destAddress) {
-		var regex = new RegExp("[0-9]TH|[0-9]RD|[0-9]ND", "i");
-		while (regex.test(destAddress)) {
-			var matchedString = regex.exec(destAddress).toString();
-			destAddress = destAddress.replace(matchedString, matchedString.substring(0, 1));
-		}
-
-		regex.compile("\\bfl\\b", "i");
-		while (regex.test(destAddress)) {
-			var matchedString = regex.exec(destAddress).toString();
-			destAddress = destAddress.replace(matchedString, "FLOOR");
-		}
-		regex.compile("\\bst\\b", "i");
-		if (regex.test(destAddress)) {
-			var matchedString = regex.exec(destAddress).toString();
-			destAddress = destAddress.replace(matchedString, "STREET");
-		}
-		return destAddress;
-	},
-	handleGetDirectionErrors: function (invDir, from, to_LatLng) {
-		// Try getting the directions using geocoding
-		if (invDir.getStatus().code == G_GEO_UNKNOWN_ADDRESS) {
-			invDir.clear();
-			var resultsOverlay = document.getElementById("officeResultsContent");
-			resultsOverlay.innerHTML = '';
-
-			var dir_lat_lng = new GDirections(map, resultsOverlay);
-
-			dir_lat_lng.load(from + " to " + to_LatLng);
-			google.maps.Event.addListener(dir_lat_lng, "error", function () {
-				resultsOverlay.innerHTML = $('.get_direction_error').text()
-			});
-		}
-	},
-	getAddress: function () {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(handle_geolocation_query);
-		}
-	},
-	handle_geolocation_query: function (position) {
-		var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-		var geocoder = geocoder = new google.maps.Geocoder();
-		geocoder.geocode({'latLng': latlng}, function (results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				if (results[1]) {
-					var arrAddress = results[1].address_components;
-					var itemLocality = "";
-					$.each(arrAddress, function (i, address_component) {
-						if (address_component.types[0] == "locality") {
-							itemLocality = address_component.long_name;
-						}
-						if (address_component.types[0] == "administrative_area_level_1") {
-							itemLocality += ', ' + address_component.long_name;
-						}
-						$('.find-an-x-search__container .cta_search').val(itemLocality);
-					});
-				}
-				if (results[0]) {
-					dir_to_flag = false;
-					$('.get-directions-form .from-address').val(ServicesAPI.formatDestination(results[0].formatted_address));
-				}
-			}
-		});
-	},
-	buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
-		var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
-			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
-			radiusSelector = '.radius=' + radius,
-			specialtySelector = '.specialty=' + specialty;
-
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
-	},
-	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
-		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
-			lngSelector = '&longitude=' + lng.toString(),
-			radiusSelector = '&radius=' + radius,
-			specialtySelector = '&specialty=' + specialty;
-
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
-	},
-	updatePageFrom: function (name) {
-		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
-		if (pageFrom != undefined) {
-			name.val(pageFrom);
-		}
-	},
-	onFSubmit: function ($this) {
-		var fid = $this.attr('data-fsubmit')
-		var $formid = $('[data-fid=' + fid + ']');
-		var formStatus = true;
-		var flag;
-
-
-		if ($("[data-observes-id]").find("input:radio").parent().parent().parent().parent().css("display") != "none") {
-			/*	$("[data-observes-id]").find("input:radio").each(function () {
-			 if ($(this).attr('checked') == "checked") {
-			 radioDials = true;
-			 }
-			 });*/
-			if (radioDials != true) {
-				$("[data-observes-id]").find("input:radio").each(function () {
-					$(this).next('span').addClass('errorRadio');
-				});
-				$('.contactSideForm .info-mandatory').addClass('error-mandatory');
-				formStatus = false;
-			}
-		}
-		$formid.find('[data-required=true]').each(function () {
-			var $this = $(this);
-			if ($this.parent().parent().parent().css("display") != "none") {
-				var placeholder = $this.attr('placeholder');
-				if ($this.val() == placeholder) {
-					$this.val("");
-				}
-				var val = $this.val();
-				if (val.length == 0) {
-					$this.addClass('error');
-					//$this.parent().find('.errorSpan').addClass('errorSpanOpen');
-					$('.contactSideForm .info-mandatory').addClass('error-mandatory');
-					$this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-					$this.val(placeholder);
-					formStatus = false;
-				} else {
-					$('.contactSideForm .info-mandatory').removeClass('error-mandatory');
-				}
-			}
-
-		});
-
-		$formid.find('[data-valid-status]').each(function () {
-			var attrDVS = $(this).attr('data-valid-status');
-			if (attrDVS == 'failed') {
-				$(this).addClass('error');
-				formStatus = false;
-			}
-		});
-		if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
-			ServicesAPI.formPass(fid);
-		} else {
-			$formid.find('.info-mandatory').addClass('error-mandatory');
-		}
-		return formStatus;
-	},
-	formProcessorSubmit: function (formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
-		var lead = "";
-		var scenarioName = "";
-		var mmrep = "";
-		var formObjectName = document.getElementById(formName);
-		var reserveid = ServicesAPI.getCookie("ReserveID");
-		if (null != reserveid) ServicesAPI.AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
-		else;
-
-		//AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
-		if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
-		if (null != mmrep && "" != mmrep) {
-			var lsubContentGroupDirectory = "";
-			var lcontentGroupDirectory = "";
-			var laudience = "";
-			if ("" != subContentGroupDirectory) {
-				lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
-				lcontentGroupDirectory = contentGroupDirectory;
-				laudience = audience;
-			} else if ("" != contentGroupDirectory) {
-				lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
-				lsubContentGroupDirectory = subContentGroupDirectory;
-				laudience = audience;
-			} else if ("" != audience) {
-				laudience = audience + "-" + mmrep;
-				lcontentGroupDirectory = contentGroupDirectory;
-				lsubContentGroupDirectory = subContentGroupDirectory;
-			}
-			if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
-			if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
-			if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", laudience, document);
-		} else {
-			var CGFrQS = "";
-			var SCGFrQS = "";
-			var AUFrQS = "";
-			CGFrQS = ServicesAPI.getQueryString("CG");
-			SCGFrQS = ServicesAPI.getQueryString("SCG");
-			AUFrQS = ServicesAPI.getQueryString("AU");
-			if ("" != CGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
-			else if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
-			if ("" != SCGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
-			else if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
-			if ("" != AUFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
-			else if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
-			else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", audience, document);
-		}
-		if ("requestFormRightNav_Acc" == formName) {
-			var prodType = document.getElementById("requestType").value;
-			if ("" != prodType)
-				if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-				else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-		} else if ("requestFormRightNav" == formName) {
-			var prodType = "";
-			if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
-			else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-			if ("" != prodType)
-				if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-				else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-		} else {
-			var prodType = "";
-			if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
-			if ("" != prodType)
-				if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
-				else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
-		}
-		if ("NewLead" != lead && "ServiceLead" != lead) {
-			lead = "NonLeadForm";
-			if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
-		}
-		// console.debug("Lead type: " + lead);
-		var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
-		if (null != results) {
-			var fullID = unescape(results[2]);
-			var partID = fullID.split(":");
-			var visitorID = partID[0].split("=");
-		}
-		if ("undefined" == typeof visitorID) ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
-		else ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
-		var urlNode = document.URL;
-		urlNode = ServicesAPI.getPageFromURLNode(formObjectName, mmrep);
-		if ("requestFormRightNav" == formName) {
-			//console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
-			if (document.requestFormRightNav.coverage)
-				if (document.requestFormRightNav.coverage.value < 1e5) {
-					urlNode = urlNode.split("?");
-					urlNode = urlNode[0];
-				}
-		}
-		if (lead == "NewLead") {
-			ServicesAPI.AddInputParameter(formObjectName, "input", "formSubmissionSource", urlNode, document);
-		}
-		if (lead == "ServiceLead") {
-			ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
-		}
-
-		var validationSuccess = true;
-		if (validationSuccess) {
-			/*var tempURL = "www.metlife.com";
-			 if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
-			 if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
-			 var preFill = formObjectName.lstPnPPreFillParameters;
-			 console.debug("Prefill Parameters is: " + preFill);
-			 if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
-			 var prefillParam = preFill.value;
-			 var prefillList = prefillParam.split(",");
-			 var PnPPreFillValues = "";
-			 for (i = 0; i < prefillList.length; i++) {
-			 //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
-			 //console.debug("prefillListParam is: " + prefillListParam);
-			 //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
-			 }
-			 document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
-			 }
-			 varwebformID = formObjectName.webformId;
-			 if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
-			 ServicesAPI.addSessionParameters(formObjectName);
-			 console.debug("Doing Webform submit to: " + submitUrl);
-			 */
-
-		}
-	},
-	validateOnType: function (val, $this, re) {
-		var placeholder = $this.attr('placeholder');
-		if (val.length > 0 && val != placeholder) {
-			if (val.match(re)) {
-				$this.removeClass('error');
-				$this.removeClass('formatError');
-				$this.removeAttr('data-valid-status');
-			} else {
-				$this.addClass('error');
-				$this.addClass('formatError');
-				$this.attr('data-valid-status', 'failed');
-			}
-		} else {
-			$this.removeClass('formatError');
-			var attrDVS = $this.attr('data-required');
-			if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
-
-			} else {
-				$this.removeClass('error');
-				$this.removeAttr('data-valid-status');
-			}
-		}
-	},
-	AddInputParameter: function (a, b, c, d, e) {
-		var f = e.createElement(b);
-		f.setAttribute("type", "hidden");
-		f.setAttribute("name", c);
-		f.setAttribute("value", d);
-		a.appendChild(f);
-	},
-	getCookie: function (c_name) {
-		if (document.cookie.length > 0) {
-			c_start = document.cookie.indexOf(c_name + "=");
-			if (c_start != -1) {
-				c_start = c_start + c_name.length + 1;
-				c_end = document.cookie.indexOf(";", c_start);
-				if (c_end == -1) c_end = document.cookie.length;
-				return unescape(document.cookie.substring(c_start, c_end));
-			}
-		}
-		return "";
-	},
-	getQueryString: function (a) {
-		a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-		var b = "[\\?&]" + a + "=([^&#]*)";
-		var c = new RegExp(b);
-		var d = c.exec(window.location.href);
-		if (null == d) return "";
-		else return d[1];
-	},
-	getPageFromURLNode: function (a, b) {
-		var c = document.URL;
-		var d = "";
-		var e = window.location.search.split("?");
-		var f = "";
-		var g = "";
-		var h = false;
-		if (null != document.getElementById("WT.mc_id")) {
-			mcid = ServicesAPI.getCookie("SessionMCID");
-			ServicesAPI.AddInputParameter(a, "input", "wb_code", mcid, document);
-			ServicesAPI.AddInputParameter(a, "input", "WT.mc_id", mcid, document);
-		}
-		if (2 == e.length) {
-			var i = e[1].split("&");
-			for (var j = 0; j < i.length; j++) {
-				var k = i[j].split("=");
-				if ("wt.mc_id" == k[0].toLowerCase()) {
-					ServicesAPI.AddInputParameter(a, "input", "wb_code", k[1], document);
-				}
-				if ("" != b)
-					if ("pagefrom" == k[0].toLowerCase()) {
-						d = k[1] + "-" + b;
-						if (j == i.length - 1) g = g + k[0] + "=" + d;
-						else g = g + k[0] + "=" + d + "&";
-						h = true;
-					} else if (j == i.length - 1) g += i[j];
-					else g = g + i[j] + "&";
-			}
-			if (h) {
-				var l = document.URL;
-				var m = l.split("?");
-				f = window.location.href.split("#")[1];
-				if ("" != f) c = m[0] + "?" + g;
-				else c = m[0] + "?" + g + "#" + f;
-			}
-		}
-		return c;
-	},
-	addSessionParameters: function (a) {
-		var b = sessionVars.getSessionParams();
-		for (var c in b)
-			if (b.hasOwnProperty(c))
-				if ("" !== b[c])
-					if (ServicesAPI.checkFormField(a, c)) ServicesAPI.AddInputParameter(a, "input", c, b[c], document);
-					else a.elements[c].value = b[c];
-	},
-	checkFormField: function (a, b) {
-		if (void 0 == a.elements[b]) return true;
-		else return false;
-	},
-	postLeadform: function ($formid) {
-		var formName = $formid.attr('name');
-		ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
-		var requestExist = $('[data-fid="' + formName + '"]').find("[data-request-type]").length;
-		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-		var requestType;
-		var ajaxUrl;
-		if (requestExist > 0) {
-			requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
-			ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
-			if (requestType == 'New Product/Planning Services') {
-				var jsonData = {};
-				var formData = $('form[name=' + formName + ']').serializeArray();
-				$.each(formData, function () {
-					if (jsonData[this.name]) {
-
-						if (!jsonData[this.name].push) {
-							jsonData[this.name] = [jsonData[this.name]];
-
-						}
-						jsonData[this.name].push(this.value || '');
-					} else {
-
-						jsonData[this.name] = this.value || '';
-						if (!jsonData[this.name].push) {
-							if (this.name == "prodInt" || this.name == "prodInterest") {
-								jsonData[this.name] = [jsonData[this.name]];
-
-							}
-						}
-					}
-
-				});
-
-				console.log(JSON.stringify(jsonData));
-				$.ajax({
-					url: ajaxUrl,
-					type: 'POST',
-					dataType: 'json',
-					data: JSON.stringify(jsonData),
-					async: true,
-					contentType: 'application/json',
-					processData: false,
-					success: function (returndata) {
-						//console.log(returndata);
-					},
-					error: function () {
-						console.log("error in ajax form submission");
-					}
-				});
-			}
-
-			if (requestType == 'Existing Product/Policy') {
-				if (typeof FormData !== 'undefined') {
-					var formData = new FormData($('form[name=' + formName + ']')[0]);
-					$.ajax({
-						url: ajaxUrl,
-						type: 'POST',
-						data: formData,
-						async: false,
-						contentType: false,
-						processData: false,
-						success: function (returndata) {
-							//console.log(returndata);
-						},
-						error: function () {
-							console.log("error in ajax form submission");
-						}
-					});
-				} else {
-					var formData = postSerialize($('form[name=' + formName + ']'));
-					$.ajax({
-						url: ajaxUrl,
-						type: 'POST',
-						data: formData,
-						async: false,
-						contentType: 'application/x-www-form-urlencoded',
-						processData: false,
-						success: function (returndata) {
-							//console.log(returndata);
-						},
-						error: function () {
-							console.log("error in ajax form submission");
-						}
-					});
-				}
-			}
-		} else {
-			ajaxUrl = $('[data-fid="' + formName + '"]').attr("[data-product-url]");
-			if (typeof FormData !== 'undefined') {
-				var formData = new FormData($('form[name=' + formName + ']')[0]);
-				$.ajax({
-					url: ajaxUrl,
-					type: 'POST',
-					data: formData,
-					async: false,
-					contentType: false,
-					processData: false,
-					success: function (returndata) {
-						//console.log(returndata);
-					},
-					error: function () {
-						console.log("error in ajax form submission");
-					}
-				});
-			} else {
-				var formData = postSerialize($('form[name=' + formName + ']'));
-				$.ajax({
-					url: ajaxUrl,
-					type: 'POST',
-					data: formData,
-					async: false,
-					contentType: 'application/x-www-form-urlencoded',
-					processData: false,
-					success: function (returndata) {
-						//console.log(returndata);
-					},
-					error: function () {
-						console.log("error in ajax form submission");
-					}
-				});
-			}
-		}
-		if ($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').length > 0) {
-			$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''));
-		}
-
-
-	},
-	postLeadformOld: function ($formid) {
-
-		var formName = $formid.attr('name');
-		ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
-		var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
-		var ajaxUrl;
-		$('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
-		if (requestType == 'New Product/Planning Services') {
-			ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
-			var jsonData = {};
-			var formData = $('form[name=' + formName + ']').serializeArray();
-			$.each(formData, function () {
-				if (jsonData[this.name]) {
-
-					if (!jsonData[this.name].push) {
-						jsonData[this.name] = [jsonData[this.name]];
-
-					}
-					jsonData[this.name].push(this.value || '');
-				} else {
-
-					jsonData[this.name] = this.value || '';
-					if (!jsonData[this.name].push) {
-						if (this.name == "prodInt" || this.name == "prodInterest") {
-							jsonData[this.name] = [jsonData[this.name]];
-
-						}
-					}
-				}
-
-			});
-
-			console.log(JSON.stringify(jsonData));
-			$.ajax({
-				url: ajaxUrl,
-				type: 'POST',
-				dataType: 'json',
-				data: JSON.stringify(jsonData),
-				async: true,
-				contentType: 'application/json',
-				processData: false,
-				success: function (returndata) {
-					//console.log(returndata);
-				},
-				error: function () {
-					console.log("error in ajax form submission");
-				}
-			});
-		}
-
-		if (requestType == 'Existing Product/Policy') {
-			ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
-			if (typeof FormData !== 'undefined') {
-				var formData = new FormData($('form[name=' + formName + ']')[0]);
-
-				$.ajax({
-					url: ajaxUrl,
-					type: 'POST',
-					data: formData,
-					async: false,
-					contentType: false,
-					processData: false,
-					success: function (returndata) {
-						//console.log(returndata);
-					},
-					error: function () {
-						console.log("error in ajax form submission");
-					}
-				});
-			} else {
-				var formData = postSerialize($('form[name=' + formName + ']'));
-				$.ajax({
-					url: ajaxUrl,
-					type: 'POST',
-					data: formData,
-					async: false,
-					contentType: 'application/x-www-form-urlencoded',
-					processData: false,
-					success: function (returndata) {
-						//console.log(returndata);
-					},
-					error: function () {
-						console.log("error in ajax form submission");
-					}
-				});
-			}
-		}
-
-
-	},
-	formPass: function (fid) {
-
-		switch (fid) {
-			case "contactSidebar":
-				$('.contactSideForm').fadeOut(2000);
-				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
-				break;
-
-			case "contactSingle":
-				$('.contact-us__contact-form').fadeOut(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
-				break;
-
-		}
-
-		$('.info-mandatory').removeClass("error-mandatory");
-		$('.form-user-ctrl').removeClass("error");
-		$('.form-user-grp').find('svg').css('fill', '#666');
-
-		setTimeout(function () {
-			ServicesAPI.resetForm(fid);
-		}, 5000);
-	},
-	resetForm: function (fid) {
-
-		switch (fid) {
-			case "contactSidebar":
-				//in a timeout to avoid visual conflict with animation
-				setTimeout(function () {
-					$('#requestFormRightNav_Acc').trigger("reset");
-					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-					$('.contactSideForm').toggle();
-					$('.contact-container--global').css("right", "-640px");
-				}, 1000);
-				break;
-
-			case "contactSingle":
-				$('#requestFormRContactUs_Acc').trigger("reset");
-				$('.contact-us__contact-form').fadeIn(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
-				break;
-
-		}
-
-
-	}
+    loadEventListeners: function () {
+        ServicesAPI.updatePageFrom($('[name="pageFrom"]'));
+        ServicesAPI.gmapsAutoCompleteInit();
+        if ($(".search-results-container").length > 0)
+            ServicesAPI.searchResultsPageLoad();
+        if ($(".js-resultsGlobal").length > 0 || $(".insurance-type").length > 0) {
+            ServicesAPI.loadQuoteResults();
+            ServicesAPI.clearOverlays();
+        }
+        if ($(".news-room").length > 0) {
+            listCount = 6;
+            ServicesAPI.pressBackQuery();
+            ServicesAPI.newsRoomServiceConstruction();
+        }
+        if ($(".blog-list").length > 0) {
+            var url = $(".blog-list").attr("data-url");
+            ServicesAPI.blogsServiceCall(url, "mostRecent")
+        }
+    },
+    replaceAll: function (txt, replace, with_this) {
+        return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'), with_this);
+    },
+    populateYearDropDown: function (year, min, element) {
+        var yearOptions = $(element);
+        var yr = new Date();
+
+        yr = yr.getFullYear() - min;
+        $(element).children().remove();
+        $(element).append("<option value='' selected disabled>YYYY</option>");
+        for (i = yr; i >= year; i--) {
+            var optionValue = i;
+            yearOptions.append($('<option>', {
+                value: optionValue,
+                text: optionValue.toString()
+            }));
+        }
+    },
+    isLeapYear: function (a) {
+        a = parseInt(a);
+        if (a % 4 == 0) {
+            if (a % 100 != 0) {
+                return true
+            } else {
+                if (a % 400 == 0) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        return false;
+    },
+    populateDaysDropDown: function (id) {
+        var numDayDropDown = $(".dobDay").length;
+        var numMonthDropDown = $(".dobMonth").length;
+        var numYearDropDown = $(".dobYear").length;
+        if (($(".dobMonth").val() == "09") || ($(".dobMonth").val() == "04") ||
+            ($(".dobMonth").val() == "06") || ($(".dobMonth").val() == "11")) {
+            $(".dobDay option:eq(31)").remove();
+
+        } else if ($(".dobMonth").val() == "02") {
+
+            if ((ServicesAPI.isLeapYear($(".dobYear").val()) == false) || $(".dobYear").val() == "") {
+                $(".dobDay option:eq(31)").remove();
+                $(".dobDay option:eq(30)").remove();
+                $(".dobDay option:eq(29)").remove();
+            } else {
+                if (($(".dobDay option[value='29']").length > (numDayDropDown - numDayDropDown)) == false) {
+                    $(".dobDay").append('<option value="29">29</option>');
+                }
+                $(".dobDay option:eq(31)").remove();
+                $(".dobDay option:eq(30)").remove();
+            }
+
+        } else {
+            if ((($(".dobDay option[value='29']").length - numDayDropDown) > 0) == false) {
+
+                $(".dobDay").append('<option value="29">29</option>');
+            }
+            if ((($(".dobDay option[value='30']").length - numDayDropDown) > 0) == false) {
+
+                $(".dobDay").append('<option value="30">30</option>');
+            }
+            if ((($(".dobDay option[value='31']").length - numDayDropDown) > 0) == false) {
+
+                $(".dobDay").append('<option value="31">31</option>');
+            }
+        }
+    },
+    validateFields: function () {
+        var areErrorFieldsPresent = false;
+
+        $("[data-quoteTool='" + quoteToolForm + "']").each(function () {
+            if (!$("[data-quoteTool='" + quoteToolForm + "']").find(".form-focus").find(".errorSpan").is(":visible")) {
+                areErrorFieldsPresent = true;
+            }
+        });
+        return areErrorFieldsPresent;
+    },
+    numberWithCommas: function (x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    },
+    toTitleCase: function (str) {
+        return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    },
+    encode: function (d) {
+        if (d == '<')
+            return '&lt;';
+        if (d == '>')
+            return '&gt;';
+        if (d == '&')
+            return '&amp;';
+
+        if (d.charCodeAt(0) > 127) {
+            return '&#' + d.charCodeAt(0) + ';';
+        }
+        return d;
+    },
+    escapeChar: function (value) {
+        var bb = "";
+        for (i = 0; i < value.length; i++) {
+            bb += encode(value.charAt(i));
+        }
+        return bb;
+    },
+    strTrim: function (a) {
+        a = a.replace(/^\s+/g, "");
+        a = a.replace(/\s+$/g, "");
+        return a;
+    },
+    calculateAge: function () {
+        var l = 0;
+        if (($('#' + quoteToolForm + 'dobMonth').val() != "") && ($('#' + quoteToolForm + 'dobDay').val() != "") && ($('#' + quoteToolForm + 'dobYear').val() != "")) {
+            var b = parseInt($('#' + quoteToolForm + 'dobMonth').val());
+            var k = parseInt($('#' + quoteToolForm + 'dobDay').val());
+            var m = parseInt($('#' + quoteToolForm + 'dobYear').val());
+            var g = new Date();
+            var e = g.getFullYear();
+            var h = g.getMonth() + 1;
+            var f = g.getDate();
+            var c = 0;
+            var a = 0;
+            if (e > m) {
+                l = e - m;
+                c = e - m;
+            }
+            if (h < b) {
+                l = l - 1;
+                c = c - 1;
+                a = 12 - (b - h);
+                if (k > f) {
+                    a = a - 1;
+                }
+            } else {
+                if (h == b) {
+                    if (f < k) {
+                        l = l - 1;
+                        c = c - 1;
+                        a = 12 - (b - h);
+                    }
+                } else {
+                    if (h > b) {
+                        if (f >= k) {
+                            a = h - b;
+                        } else {
+                            a = (h - b) - 1;
+                        }
+                    }
+                }
+
+            }
+            return l;
+        }
+    },
+    showSorryUnableToLocateMessage: function () {
+        count = 0;
+        ServicesAPI.createPagination(count);
+        $('.results_error_info').removeClass('hidden').html($('.errorMsgtext_no_office_found').text());
+        $('.results_content').remove();
+        $('.results_pagination,.find_an_office_pagecount_wrap,.maps-button, .google-maps-container').addClass('hidden');
+    },
+    getQueryStringNew: function () {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('#') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    },
+    getQueryStringNoHash: function () {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    },
+    createPagination: function (result) {
+        $('.results_content').children().removeClass('.hidden');
+        var notHiddenList = $(".results_content").children().not('.hidden');
+        var listLength = result;
+        var st_cnt = 0;
+        var end_cnt = 0;
+        var next_label = $(".next_label").text();
+        var prev_label = $(".prev_label").text();
+        // Setting listLength to 0 manually when only undefined are returned
+        if (typeof result != 'undefined') {
+            if (result.count == 0)
+                listLength = 0;
+        }
+        if (result < listCount) {
+            $('.results_pagination').addClass('hidden');
+            $(".results_content").children().removeClass('hidden');
+            st_cnt = 1;
+            end_cnt = listCount;
+        }
+        else {
+            st_cnt = 1;
+            end_cnt = listCount;
+            $('.results_pagination').removeClass('hidden');
+            $(".results_content").children().addClass('hidden');
+            $(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
+            $('.results_pagination').bootpag({
+                total: Math.ceil(listLength / listCount),
+                page: 1,            // default page
+                maxVisible: listCount,
+                next: next_label,    // visible pagination
+                leaps: true,
+                prev: prev_label        // next/prev leaps through maxVisible
+            }).on("page", function (event, num) {
+                $(".results_content").children().addClass('hidden');
+                if (num == 1) {
+                    $(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
+                    st_cnt = 1;
+                    end_cnt = listCount;
+                }
+                else {
+                    var start = (listCount * (num - 1)) - 1;
+                    var end = listCount;
+                    $(".results_content").children(':gt(' + start + '):lt(' + end + ')').removeClass('hidden');
+                    st_cnt = listCount * (num - 1) + 1;
+                    end_cnt = listCount * num;
+                }
+                if (end_cnt > listLength) {
+                    end_cnt = listLength;
+                }
+                $('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + 'of' + '&nbsp;' + end_cnt);
+                // ... after content load -> change total to 10
+                $('.results_pagination').bootpag({
+                    total: Math.ceil(count / listCount),
+                    maxVisible: listCount
+                });
+            });
+        }
+
+        if (count == 0) {
+            st_cnt = listLength;
+            end_cnt = listLength;
+            $('.display-text > span:nth-of-type(2)').addClass('hidden');
+            $('.results_pagination').addClass('hidden');
+        }
+        else {
+            $('.display-text > span:nth-of-type(2)').removeClass('hidden');
+            $('.display-text > span:nth-of-type(2)').html('&nbsp;' + count);
+        }
+        if (end_cnt < result) {
+            $('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + end_cnt);
+        } else {
+            $('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + result);
+        }
+    },
+    formatQuotePremium: function (premium) {
+        //if(premium != Math.round(premium)){
+        var dec = parseFloat(Math.round(premium * 100) / 100).toFixed(2);
+        return dec;
+    },
+    quoteServiceCall: function () {
+
+        $.ajax({
+            url: quoteUrl + JSON.stringify(quoteRequest),
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: 'json',
+            data: JSON.stringify(quoteRequest),
+            type: 'POST',
+            success: function (response) {
+                var numObjects = Object.keys(response.solution).length;
+                window.sessionStorage.clear();
+                ServicesAPI.setQuoteSessionStorage();
+
+                if (response.solution.premium !== undefined && response.solution.premium !== null) {
+                    var prem = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.premium));
+                    sessionStorage.setItem("premium", prem);
+                }
+
+                if (response.solution.age !== undefined && response.solution.age !== null) {
+                    sessionStorage.setItem("age", response.solution.age);
+                }
+                if (response.solution.gender !== undefined && response.solution.gender !== null) {
+                    sessionStorage.setItem("gender", response.solution.gender);
+                }
+                if (response.solution.coverage !== undefined && response.solution.coverage !== null) {
+                    var cov = ServicesAPI.numberWithCommas(ServicesAPI.formatQuotePremium(response.solution.coverage));
+                    sessionStorage.setItem("coverage", cov);
+                }
+                if (response.solution.term !== undefined && response.solution.term !== null) {
+                    sessionStorage.setItem("term", response.solution.term);
+                }
+                if (response.solution.coverageType !== undefined && response.solution.coverage_type !== null) {
+                    sessionStorage.setItem("coverageType", response.solution.coverageType);
+                }
+                if (response.solution.state !== undefined && response.solution.state !== null) {
+                    sessionStorage.setItem("state", response.solution.state);
+                }
+                if (response.solution.income !== undefined && response.solution.income !== null) {
+                    sessionStorage.setItem("income", response.solution.income);
+                }
+                if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+                    sessionStorage.setItem('dobMonth', $('#' + quoteToolForm + 'dobMonth').val());
+                    sessionStorage.setItem('dobDay', $('#' + quoteToolForm + 'dobDay').val());
+                    sessionStorage.setItem('dobYear', $('#' + quoteToolForm + 'dobYear').val());
+                }
+                for (var i = 1; i <= numObjects; i++) {
+                    var optionalSelect = response.solution.hasOwnProperty('optionalSelect' + i);
+                    if (optionalSelect) {
+                        sessionStorage.setItem('optionalSelect' + i, response.solution['optionalSelect' + i]);
+                    }
+                    var optionalRadio = response.solution.hasOwnProperty('optionalRadio' + i);
+                    if (optionalRadio) {
+                        sessionStorage.setItem('optionalRadio' + i, response.solution['optionalRadio' + i]);
+                    }
+                }
+                sessionStorage.setItem("product", quoteProduct);
+                ServicesAPI.redirectToQuoteResultsPage();
+            },
+            error: function (e) {
+                console.log('error ', e);
+            },
+            timeout: 30000
+        });
+    },
+    loadQuoteResults: function () {
+        if ($(".js-resultsGlobal").length > 0) {
+            if (sessionStorage.getItem("premium") !== null) {
+                $(".results-card__quoteinfo__value").text(sessionStorage.getItem("premium"));
+            }
+            if (sessionStorage.getItem("coverage") !== null) {
+                $("[data-field='coverage'] .value").text(sessionStorage.getItem("coverage"));
+            }
+
+            if (sessionStorage.getItem("coverageType") !== null) {
+                var cov = sessionStorage.getItem("coverageType").toTitleCase();
+                $("[data-field='coverage']").html('<span class="value"> ' + cov + ' </span>');
+            }
+            if (sessionStorage.getItem("coverageType") === null && sessionStorage.getItem("coverage") === null) {
+                $("[data-field='coverage']").remove();
+            }
+
+            if (sessionStorage.getItem("term") !== null) {
+                $("[data-field='term'] .value").text(sessionStorage.getItem("term"));
+            } else {
+                $("[data-field='term']").html('');
+            }
+        } else {
+            if ($(".list").length > 0) {
+
+            } else {
+                $(".insurance-type").val($(".insurance-type option:first").val());
+                sessionStorage.clear();
+            }
+        }
+    },
+    quoteFormReset: function () {
+        $(".cta_header_quote").find(".generic-form").each(function () {
+            $(this).find("input, select, textarea").removeClass('error');
+            $(this)[0].reset();
+        });
+    },
+    redirectToQuoteResultsPage: function () {
+        var url = $("[data-quoteTool='" + quoteToolForm + "']").attr("data-path-to-results");
+        window.location.href = url;
+    },
+    setQuoteSessionStorage: function () {
+        var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
+        var numInputs = thisForm.find(".form-focus").length;
+
+        if ($('#' + quoteToolForm + 'userAge').length > 0) {
+            sessionStorage.setItem("age", $('#' + quoteToolForm + 'userAge').val());
+        }
+
+        if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+            sessionStorage.setItem("coverageType", $('#' + quoteToolForm + 'coverageType').val());
+        }
+
+        if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+            sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageText').val());
+        }
+
+
+        if ($('#' + quoteToolForm + 'state').length > 0) {
+            sessionStorage.setItem("state", $('#' + quoteToolForm + 'state').val());
+        }
+
+        if ($('#' + quoteToolForm + 'gender').length > 0) {
+            sessionStorage.setItem("gender", $('#' + quoteToolForm + 'gender').val());
+        }
+
+        if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+            sessionStorage.setItem("coverage", $('#' + quoteToolForm + 'coverageAmount').val());
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+            sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthSelect').val());
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+            sessionStorage.setItem("term", $('#' + quoteToolForm + 'termLengthText').val());
+        }
+
+        if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+            sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeSelect').val());
+        }
+
+        if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+            sessionStorage.setItem("income", $('#' + quoteToolForm + 'incomeText').val());
+        }
+
+        if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+            sessionStorage.setItem("dobMonth", $('#' + quoteToolForm + 'dobMonth').val());
+            sessionStorage.setItem("dobDay", $('#' + quoteToolForm + 'dobDay').val());
+            sessionStorage.setItem("dobYear", $('#' + quoteToolForm + 'dobYear').val());
+        }
+
+        for (var i = 1; i <= numInputs; i++) {
+            if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+                sessionStorage.setItem("optionalSelect" + i, $('#' + quoteToolForm + 'optionalSelect' + i).val());
+            }
+
+            if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+                sessionStorage.setItem("optionalRadio" + i, $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val());
+            }
+        }
+    },
+    preFillQuoteForm: function () {
+        var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
+        var numInputs = thisForm.find(".form-focus").length;
+
+        if ($('#' + quoteToolForm + 'userAge').length > 0) {
+            $('#' + quoteToolForm + 'userAge').val(sessionStorage.getItem('age'));
+        }
+
+        if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+            $('#' + quoteToolForm + 'coverageType').val(sessionStorage.getItem('coverageType'));
+        }
+
+        if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+            var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
+            $('#' + quoteToolForm + 'coverageText').val(cov);
+        }
+
+
+        if ($('#' + quoteToolForm + 'state').length > 0) {
+            $('#' + quoteToolForm + 'state').val(sessionStorage.getItem('state'));
+            var state = $('#' + quoteToolForm + 'state').val();
+        }
+
+        if ($('#' + quoteToolForm + 'gender').length > 0) {
+            $('#' + quoteToolForm + 'gender').val(sessionStorage.getItem('gender'));
+        }
+
+        if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+            var cov = parseInt(sessionStorage.getItem('coverage').replace(/\,/g, ''));
+            $('#' + quoteToolForm + 'coverageAmount').val(cov);
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+            $('#' + quoteToolForm + 'termLengthSelect').val(sessionStorage.getItem('term'));
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+            $('#' + quoteToolForm + 'termLengthText').val(sessionStorage.getItem('term'));
+        }
+
+        if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+            $('#' + quoteToolForm + 'incomeSelect').val(sessionStorage.getItem('income'))
+        }
+
+        if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+            $('#' + quoteToolForm + 'incomeText').val(sessionStorage.getItem('income'))
+
+        }
+
+        if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+            $('#' + quoteToolForm + 'dobMonth').val(sessionStorage.getItem('dobMonth'));
+            $('#' + quoteToolForm + 'dobDay').val(sessionStorage.getItem('dobDay'));
+            $('#' + quoteToolForm + 'dobYear').val(sessionStorage.getItem('dobYear'));
+        }
+
+        for (var i = 1; i <= numInputs; i++) {
+            if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+                $('#' + quoteToolForm + 'optionalSelect' + i).val(sessionStorage.getItem('optionalSelect' + i));
+            }
+
+            if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+                $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').val(sessionStorage.getItem('optionalRadio' + i)).attr("checked", true);
+            }
+        }
+    },
+    loopThroughQuoteInputs: function () {
+        var thisForm = $("[data-quoteTool='" + quoteToolForm + "']");
+        var numInputs = thisForm.find(".form-focus").length;
+
+        if ($('#' + quoteToolForm + 'userAge').length > 0) {
+            var age = $('#' + quoteToolForm + 'userAge').val();
+            if ($('#' + quoteToolForm + 'userAge')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'userAge').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"age":"' + age +'"';
+                quoteRequest["age"] = age;
+                $('#' + quoteToolForm + 'userAge').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'coverageType').length > 0) {
+            var coverageType = $('#' + quoteToolForm + 'coverageType').val();
+            if ($('#' + quoteToolForm + 'coverageType')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'coverageType').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"coverageType":"' + coverageType +'"';
+                quoteRequest["coverageType"] = coverageType;
+                $('#' + quoteToolForm + 'coverageType').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'coverageText').length > 0) {
+            var coverageText = $('#' + quoteToolForm + 'coverageText').val();
+            if (isWhole(coverageText) === true) {
+                //quoteUrl += ',"coverage":"' + coverageText +'"';
+                quoteRequest["coverage"] = coverageText;
+                $('#' + quoteToolForm + 'coverageText').removeClass("error").next().hide();
+            } else {
+                $('#' + quoteToolForm + 'coverageText').addClass("error").next().show().css("display", "block");
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'state').length > 0) {
+            var state = $('#' + quoteToolForm + 'state').val();
+            if ($('#' + quoteToolForm + 'state')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'state').addClass("error").parent().find(".errorSpan").show().css("display", "block");
+            } else {
+                //quoteUrl += ',"state":"' + state +'"';
+                quoteRequest["state"] = state;
+                $('#' + quoteToolForm + 'state').removeClass("error").parent().find(".errorSpan").hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'gender').length > 0) {
+            var gender = $('#' + quoteToolForm + 'gender').val();
+            if ($('#' + quoteToolForm + 'gender')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'gender').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"gender":"' + gender +'"';
+                quoteRequest["gender"] = gender;
+                $('#' + quoteToolForm + 'gender').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'coverageAmount').length > 0) {
+            var coverageAmount = $('#' + quoteToolForm + 'coverageAmount').val();
+            if ($('#' + quoteToolForm + 'coverageAmount')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'coverageAmount').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"coverage":"' + coverageAmount +'"';
+                quoteRequest["coverage"] = coverageAmount;
+                $('#' + quoteToolForm + 'coverageAmount').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthSelect').length > 0) {
+            var termLengthSelect = $('#' + quoteToolForm + 'termLengthSelect').val();
+            if ($('#' + quoteToolForm + 'termLengthSelect')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'termLengthSelect').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"term":"' + termLengthSelect +'"';
+                quoteRequest["term"] = termLengthSelect;
+                $('#' + quoteToolForm + 'termLengthSelect').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'termLengthText').length > 0) {
+            var termLengthText = $('#' + quoteToolForm + 'termLengthText').val();
+            if (isNonblank(termLengthText) === true) {
+                $('#' + quoteToolForm + 'termLengthText').removeClass("error").next().hide();
+                //quoteUrl += ',"term":"' + termLengthText +'"';
+                quoteRequest["term"] = termLengthText;
+            } else {
+                $('#' + quoteToolForm + 'termLengthText').addClass("error").next().show().css("display", "block");
+
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'incomeSelect').length > 0) {
+            var income = $('#' + quoteToolForm + 'incomeSelect').val();
+            if ($('#' + quoteToolForm + 'incomeSelect')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'incomeSelect').addClass("error").next().show().css("display", "block");
+            } else {
+                //quoteUrl += ',"income":"' + income +'"';
+                quoteRequest["income"] = income;
+                $('#' + quoteToolForm + 'incomeSelect').removeClass("error").next().hide();
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'incomeText').length > 0) {
+            var incomeText = $('#' + quoteToolForm + 'incomeText').val();
+            if (isNonblank(incomeText) === true) {
+                $('#' + quoteToolForm + 'incomeText').removeClass("error").next().hide();
+                //quoteUrl += ',"income":"' + incomeText +'"';
+                quoteRequest["income"] = incomeText;
+            } else {
+                $('#' + quoteToolForm + 'incomeText').addClass("error").next().show().css("display", "block");
+
+            }
+        }
+
+        if ($('#' + quoteToolForm + 'dobMonth').length > 0 && $('#' + quoteToolForm + 'dobDay').length > 0 && $('#' + quoteToolForm + 'dobYear').length > 0) {
+            var age;
+            if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'dobMonth').addClass("error");
+            } else {
+                $('#' + quoteToolForm + 'dobMonth').removeClass("error");
+            }
+
+            if ($('#' + quoteToolForm + 'dobDay')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'dobDay').addClass("error");
+            }
+            else {
+                $('#' + quoteToolForm + 'dobDay').removeClass("error");
+            }
+
+            if ($('#' + quoteToolForm + 'dobYear')[0].selectedIndex === 0) {
+                $('#' + quoteToolForm + 'dobYear').addClass("error");
+            }
+            else {
+                $('#' + quoteToolForm + 'dobYear').removeClass("error");
+            }
+
+            if ($('#' + quoteToolForm + 'dobMonth')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobDay')[0].selectedIndex !== 0 && $('#' + quoteToolForm + 'dobYear')[0].selectedIndex !== 0) {
+                age = ServicesAPI.calculateAge();
+                //quoteUrl += ',"age":"' + age +'"';
+                quoteRequest["age"] = age;
+            }
+        }
+        for (var i = 1; i <= numInputs; i++) {
+            if ($('#' + quoteToolForm + 'optionalSelect' + i).length > 0) {
+                var optionalSelect = $('#' + quoteToolForm + 'optionalSelect' + i).val();
+                if ($('#' + quoteToolForm + 'optionalSelect' + i)[0].selectedIndex === 0) {
+                    $('#' + quoteToolForm + 'optionalSelect' + i).addClass("error").next().show().css("display", "block");
+                } else {
+                    //quoteUrl += ',"optionalSelect'+i+'":"' + optionalSelect +'"';
+                    var optionalSelectText = 'optionalSelect' + i;
+                    quoteRequest[optionalSelectText] = optionalSelect;
+                    $('#' + quoteToolForm + 'optionalSelect' + i).removeClass("error").next().hide();
+                }
+            }
+
+            if ($('[name="' + quoteToolForm + 'radioGroup' + i + '"]').length > 0) {
+                var optionalRadio = $('[name="' + quoteToolForm + 'radioGroup' + i + '"]:checked').val();
+                if (optionalRadio === "" || optionalRadio === " " || optionalRadio === null || optionalRadio === undefined) {
+                    $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").show().css("display", "block");
+                } else {
+                    $('[name="' + quoteToolForm + 'radioGroup' + i + '"]').parent().parent().find(".errorSpan").hide();
+                    //quoteUrl += ',"optionalRadio'+i+'":"' + optionalRadio +'"';
+                    var optionalSelectText = 'optionalRadio' + i;
+                    quoteRequest[optionalSelectText] = optionalRadio;
+                }
+            }
+        }
+    },
+    searchServiceCall: function (input) {
+        count = 0;
+        var url = input;
+        var querySearch = ServicesAPI.getQueryStringNew()["query"];
+        if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
+            url += "?query=" + querySearch;
+        }
+        $(".results_content").remove();
+        resultsListHTML = "";
+        /************LOCAL Site Search SERVICE***************/
+
+        /*var siteSearchResults = $.getJSON("search.json", function(json) {
+         siteSearchResults = json.response.docs;
+         if (siteSearchResults.length != 0) {
+         $('.form-item__display').removeClass('hidden');
+         // $(".page-count").removeClass('hidden');
+         $(".no-results").addClass('hidden');
+         //results_content is the default component for listing out general results
+         resultsListHTML += "<div class=\"results_content\">";
+         for (var i = 0; i < siteSearchResults.length; i++) {
+         count++;
+         resultsListHTML += "<div class=\"list__item--no-border\">";
+         resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
+         resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
+         resultsListHTML += "</div>";
+         }
+         resultsListHTML += "</div>";
+         } else {
+         $('.form-item__display').removeClass('hidden');
+         $(".page-count").addClass('hidden');
+         $(".no-results").removeClass('hidden');
+         }
+         $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+         ServicesAPI.createPagination(count);
+         });*/
+        /************LOCAL Site Search SERVICE***************/
+
+
+        /************LIVE Site Search SERVICE***************/
+        $.ajax({
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                var siteSearchResults = json.response.docs;
+                if (siteSearchResults.length != 0) {
+                    $('.form-item__display').removeClass('hidden');
+                    // $(".page-count").removeClass('hidden');
+                    $(".no-results").addClass('hidden');
+                    //results_content is the default component for listing out general results
+                    resultsListHTML += "<div class=\"results_content\">";
+                    for (var i = 0; i < siteSearchResults.length; i++) {
+                        count++;
+                        resultsListHTML += "<div class=\"list__item--no-border\">";
+                        resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
+                        resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
+                        resultsListHTML += "</div>";
+                    }
+                    resultsListHTML += "</div>";
+                } else {
+                    $('.form-item__display').removeClass('hidden');
+                    $(".page-count").addClass('hidden');
+                    $(".no-results").removeClass('hidden');
+                }
+                $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+                ServicesAPI.createPagination(count);
+            },
+            error: function (e) {
+                ServicesAPI.showSorryUnableToLocateMessage();
+            },
+            timeout: 30000
+        });
+        /************LIVE SERVICE***************/
+    },
+    legacySearch: function (serchQuery) {
+        var str = "https://www.metlife.com/searchresults?query=";
+        var val2 = "&spell_check=true&and_on=Y&sel_path=metlife%2Findividual%2Findex.html&remoteUser=";
+        str += serchQuery + val2;
+        window.location.href = str;
+    },
+    redirectToSearchResultsPage: function (input) {
+        var searchTerm = sessionStorage.setItem("searchTerm", $(input).val());
+        var url = $("#metSearchForm").attr("data-path-to-search-results");
+        window.location.href = url;
+    },
+    searchResultsPageLoad: function () {
+        var cov = sessionStorage.getItem("searchTerm");
+        if (sessionStorage.getItem("searchTerm") !== null) {
+            if ($(".js-searchTextBox").css("display") !== " none") {
+
+                $(".js-searchTextBox").val(sessionStorage.getItem("searchTerm"));
+                $(".js-searchSubmit").click();
+            }
+        }
+
+    },
+    newsRoomServiceConstruction: function () {
+        var url = $(".lists").attr("data-news-url");
+        var query = $(".lists").attr("data-news-query-parameter");
+        newsMonth = $("#list_month").val();
+        newsYear = $("#list_year").val();
+        newsTopic = $('#list_topics').val();
+        newsConcatenator = $(".lists").attr("data-news-concatenator");
+        url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+        ServicesAPI.newsRoomServiceCall(url);
+    },
+    pressBackQuery: function () {
+        var month = sessionStorage.getItem("press_month");
+        var year = sessionStorage.getItem("press_year");
+        var search = sessionStorage.getItem("press_search");
+        if (month != null && month != null && year != null) {
+            $('#list_month').val(month);
+            $('#list_year').val(year);
+            $('#list_topics').val(search);
+        }
+        sessionStorage.removeItem("press_back");
+        sessionStorage.removeItem("press_month");
+        sessionStorage.removeItem("press_year");
+        sessionStorage.removeItem("press_search");
+    },
+    newsRoomServiceCall: function (input) {
+        resultsListHTML = "";
+        var url = input;
+        count = 0;
+        $(".results_content").remove();
+
+        /************LIVE News Room SERVICE***************/
+        $.ajax({
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                if (firstTimeRunNewsRoom === true) {
+                    firstTimeRunNewsRoom = false;
+                } else {
+                    listCount += 6;
+                }
+                newsRoomResults = data.news;
+                if (newsRoomResults.length != 0) {
+                    if (!$(".list__item--no-results").hasClass("hidden")) {
+                        $(".list__item--no-results").addClass("hidden");
+                    }
+                    resultsListHTML += "<div class='results_content'>";
+                    for (var i = 0; i < newsRoomResults.length; i++) {
+                        count++;
+                        if (count <= listCount) {
+                            resultsListHTML += "<div class=\"list__item\">";
+                            resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+                            resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+                            resultsListHTML += "</div>";
+                        }
+                    }
+                    resultsListHTML += "</div>";
+                    ServicesAPI.createPagination(count);
+                    $(resultsListHTML).insertAfter($(".lists"));
+                } else {
+                    $(".list__item--no-results").removeClass('hidden');
+                }
+                if (listCount >= newsRoomResults.length) {
+                    $(".divider--load-more__link").hide();
+                } else {
+                    $(".divider--load-more__link").show();
+                }
+            },
+            error: function (e) {
+                console.log('error ', e);
+            },
+            timeout: 30000
+        });
+        /************LIVE News Room SERVICE***************/
+
+        /************LOCAL News Room SERVICE***************/
+
+        /*var newsRoomResults = $.getJSON("news.json", function(data) {
+         if(firstTimeRunNewsRoom === true){
+         firstTimeRunNewsRoom = false;
+         }else{
+         listCount +=6;
+         }
+         newsRoomResults = data.news;
+         if (newsRoomResults.length != 0) {
+         if (!$(".list__item--no-results").hasClass("hidden")) {
+         $(".list__item--no-results").addClass("hidden");
+         }
+         resultsListHTML += "<div class='results_content'>";
+         for (var i = 0; i < newsRoomResults.length; i++) {
+         count++;
+         if(count <= listCount) {
+         resultsListHTML += "<div class=\"list__item\">";
+         resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+         resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+         resultsListHTML += "</div>";
+         }
+         }
+         resultsListHTML += "</div>";
+         ServicesAPI.createPagination(count);
+         $(resultsListHTML).insertAfter($(".lists"));
+         } else {
+         $(".list__item--no-results").removeClass('hidden');
+         }
+         if(listCount >= newsRoomResults.length){
+         $(".divider--load-more__link").hide();
+         }else{
+         $(".divider--load-more__link").show();
+         }
+         });*/
+        /************LOCAL News Room SERVICE***************/
+    },
+    blogsServiceCall: function (input, searchType) {
+        resultsListHTML = "";
+        $(".results_content").remove();
+        count = 0;
+        var url = input + "?" + searchType;
+        /*********LOCAL Blog SERVICE***************/
+        /*var blogSearchResults = $.getJSON("blog.json", function(data) {
+         blogSearchResults = data.response.blogs;
+         resultsListHTML += "<div class=\"results_content\">";
+         if (blogSearchResults.length != 0) {
+         for (var i = 0; i < blogSearchResults.length; i++) {
+         count++
+         resultsListHTML += "<div class=\"blog-list__article \">";
+         resultsListHTML += "<div class=\"blog-list__img \">";
+         resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
+         resultsListHTML += "</div>";
+         resultsListHTML += "<div class=\"blog-list__text\">";
+         resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
+         resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
+         resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
+         resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
+         if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
+         resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
+         }
+         resultsListHTML += "</span>";
+         resultsListHTML += "</div>";
+         resultsListHTML += "<div class=\"clearfix\"></div>";
+         resultsListHTML += "</div>";
+         }
+         }
+         resultsListHTML += "</div>";
+         $(resultsListHTML).insertBefore($(".results_pagination"));
+         ServicesAPI.createPagination(count);
+         });*/
+
+        /************LOCAL Blog SERVICE***************/
+
+        /************LIVE Blog SERVICE***************/
+        $.ajax({
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                var blogSearchResults = data.response.blogs;
+                resultsListHTML += "<div class=\"results_content\">";
+                if (blogSearchResults.length != 0) {
+                    for (var i = 0; i < blogSearchResults.length; i++) {
+                        count++
+                        resultsListHTML += "<div class=\"blog-list__article \">";
+                        resultsListHTML += "<div class=\"blog-list__img \">";
+                        resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource + "\" alt=\"" + blogSearchResults[i].alttext + "\" class=\"enlarge\">";
+                        resultsListHTML += "</div>";
+                        resultsListHTML += "<div class=\"blog-list__text\">";
+                        resultsListHTML += "<h5>" + blogSearchResults[i].title + "</h5>";
+                        resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date + "</span>";
+                        resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags + "</span>";
+                        resultsListHTML += "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
+                        if (blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " ") {
+                            resultsListHTML += "<a href=\"" + blogSearchResults[i].link + "\">" + blogSearchResults[i].linktext + "</a>"
+                        }
+                        resultsListHTML += "</span>";
+                        resultsListHTML += "</div>";
+                        resultsListHTML += "<div class=\"clearfix\"></div>";
+                        resultsListHTML += "</div>";
+                    }
+                }
+                resultsListHTML += "</div>";
+                $(resultsListHTML).insertBefore($(".results_pagination"));
+                ServicesAPI.createPagination(count);
+            },
+            error: function (e) {
+                console.log('error ', e);
+            },
+            timeout: 30000
+        });
+        /************LIVE Blog SERVICE***************/
+    },
+    formsLibraryServiceCall: function (input) {
+        resultsListHTML = "";
+        $(".results_content").remove();
+        count = 0;
+        var url = input;
+        /*********LOCAL Forms SERVICE***************/
+        /*var formsSearchResults = $.getJSON("forms.json", function(data) {
+         formsSearchResults = data.response.docs;
+         var metaDataResults = data.response.metaData[0];
+         resultsListHTML += "<div class=\"results_content\">";
+         if (formsSearchResults.length != 0) {
+         for (var i = 0; i < formsSearchResults.length; i++) {
+         count++
+         if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
+         resultsListHTML += "<div class=\"row list__item \">";
+         if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+         resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+         }
+         if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+         resultsListHTML += " <div class=\"list__item--left\">";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+         resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
+         resultsListHTML += "</div>";
+         }
+         if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
+         resultsListHTML += "<div class=\"list__item--right\">";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
+         if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+         resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+         resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+         resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+         resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+         }
+         resultsListHTML += "</a>";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+         resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
+         resultsListHTML += "</div>";
+         }
+         resultsListHTML += "<span class=\"clearfix\"></span>";
+         resultsListHTML += "</div>";
+
+
+         }
+
+         if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
+         resultsListHTML += "<div class=\"row list__item \">";
+         if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+         resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+         }
+         if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+         resultsListHTML += " <div class=\"list__item--left\">";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title +"</a>";
+         resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
+         resultsListHTML += "</div>";
+         }
+         if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
+         resultsListHTML += "<div class=\"list__item--right\">";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
+         if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+         resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+         resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+         resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+         } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+         resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+         }
+         resultsListHTML += "</a>";
+         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+         resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+         resultsListHTML += "</div>";
+         }
+         resultsListHTML += "<span class=\"clearfix\"></span>";
+         resultsListHTML += "</div>";
+         }
+         }
+         }
+         resultsListHTML += "</div>";
+         $(resultsListHTML).insertAfter($(".lists"));
+         ServicesAPI.createPagination(count);
+         });*/
+
+        /************LOCAL Forms SERVICE***************/
+
+        /************LIVE Forms SERVICE***************/
+        $.ajax({
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            async: true,
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                var formsSearchResults = data.response.docs;
+                var metaDataResults = data.response.metaData[0];
+
+                resultsListHTML += "<div class=\"results_content\">";
+                if (formsSearchResults.length != 0) {
+                    for (var i = 0; i < formsSearchResults.length; i++) {
+                        count++
+                        if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
+                            resultsListHTML += "<div class=\"row list__item \">";
+                            if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+                                resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+                            }
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                resultsListHTML += " <div class=\"list__item--left\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                resultsListHTML += "</div>";
+                            }
+                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
+                                resultsListHTML += "<div class=\"list__item--right\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
+                                if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+                                    resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+                                    resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+                                    resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+                                    resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+                                }
+                                resultsListHTML += "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+                                resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
+                                resultsListHTML += "</div>";
+                            }
+                            resultsListHTML += "<span class=\"clearfix\"></span>";
+                            resultsListHTML += "</div>";
+
+
+                        }
+
+                        if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
+                            resultsListHTML += "<div class=\"row list__item \">";
+                            if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+                                resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+                            }
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                resultsListHTML += " <div class=\"list__item--left\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                resultsListHTML += "</div>";
+                            }
+                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
+                                resultsListHTML += "<div class=\"list__item--right\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
+                                if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+                                    resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+                                    resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+                                    resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+                                } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+                                    resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+                                }
+                                resultsListHTML += "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+                                resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+                                resultsListHTML += "</div>";
+                            }
+                            resultsListHTML += "<span class=\"clearfix\"></span>";
+                            resultsListHTML += "</div>";
+                        }
+                    }
+                }
+                resultsListHTML += "</div>";
+                $(resultsListHTML).insertAfter($(".lists"));
+                ServicesAPI.createPagination(count);
+            },
+            error: function (e) {
+                console.log('error ', e);
+            },
+            timeout: 30000
+        });
+        /************LIVE Forms SERVICE***************/
+    },
+    clearOverlays: function () {
+        for (var i = 0; i < markersArray.length; i++) {
+            markersArray[i].setMap(null);
+        }
+        for (var i = 0; i < dir_markerArray.length; i++) {
+            dir_markerArray[i].setMap(null);
+        }
+    },
+    initializeFindAnOffice: function () {
+        var myOptions = {
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [
+                    google.maps.MapTypeId.ROADMAP,
+                    google.maps.MapTypeId.SATELLITE
+                ]
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.TOP_LEFT
+            },
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+            },
+            scaleControl: false,
+            scrollwheel: true,
+            zoom: 10
+        };
+
+        map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
+        ServicesAPI.autocompleteOn();
+    },
+    autocompleteOn: function () {
+        googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0]);
+        googleautocomplete.bindTo('bounds', map);
+        google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
+            var place = googleautocomplete.getPlace();
+            if (!place || !place.geometry) {
+
+            }
+        });
+    },
+    initializeGoogleMapObject: function () {
+        $('#googleMapsContainer').removeClass('hidden');
+        var myOptions = {
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [
+                    google.maps.MapTypeId.ROADMAP,
+                    google.maps.MapTypeId.SATELLITE
+                ]
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.TOP_LEFT
+            },
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+            },
+            scaleControl: false,
+            scrollwheel: true,
+            zoom: 10
+        };
+
+        map = new google.maps.Map(document.getElementById("googleMapsContainer"), myOptions);
+    },
+    initializeDrivingGoogleMapObject: function () {
+        $('#googleDrivingMapsContainer').removeClass('hidden');
+        var myOptions = {
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_RIGHT,
+                mapTypeIds: [
+                    google.maps.MapTypeId.ROADMAP,
+                    google.maps.MapTypeId.SATELLITE
+                ]
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.TOP_LEFT
+            },
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+            },
+            scaleControl: false,
+            scrollwheel: true,
+            zoom: 10
+        };
+
+        map = new google.maps.Map(document.getElementById("googleDrivingMapsContainer"), myOptions);
+        googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0]);
+        googleautocomplete.bindTo('bounds', map);
+        google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
+            var place = googleautocomplete.getPlace();
+            if (!place || !place.geometry) {
+
+            }
+        });
+    },
+    gmapsAutoCompleteInit: function () {
+        $('.find-office__zip-city-state, .cta_search').each(function () {
+            new google.maps.places.Autocomplete($(this)[0]);
+        });
+    },
+    showLocation: function () {
+        $('.fax-results__container, .maps-button, .get-directions-form, .find-an-x-search__container, .cta_search__container').removeClass('hidden');
+        $('.driving-direction-container, #googleDrivingMapsContainer').addClass('hidden');
+        if (dir_to_flag == true) {
+            $('.get-directions-form .from-address').val('');
+        }
+        var endsWith = function (str, suffix) {
+            return str.indexOf(suffix, str.length - suffix.length) !== -1;
+        };
+        var startsWith = function (string, searchString, position) {
+            position = position || 0;
+            return string.substr(position, searchString.length) === searchString;
+
+        };
+        $('.errorSpan.error_zip_code').html($('.errorMsgtext_no_office_found').text());
+        ServicesAPI.initializeGoogleMapObject();
+        var address;
+        var zip = sessionStorage.getItem("faoZipCode");
+        if (document.referrer == "" || endsWith(document.referrer, "/cf") || startsWith(document.referrer, document.origin + document.location.pathname)) {
+            address = $('.find-an-x-search__container .cta_search').val();
+        } else {
+            $('.find-an-x-search__container .cta_search').val(zip);
+            $('.find-an-x-search__container .cta_search').text(zip);
+            address = $('.find-an-x-search__container .cta_search').val();
+        }
+        var validateAddress = address.trim();
+        var isNumber = /^\d+$/.test(validateAddress);
+        if ((!isNumber) || (isNumber && (address.length === 5))) {
+            $('.errorSpan.error_zip_code').addClass('hidden');
+            if (address != null && address != '' && address != undefined && address != ' ') {
+                geocoder.geocode({"address": address}, function (response, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        ServicesAPI.addAddressToMap(response, status);
+                    } else {
+                        ServicesAPI.resetMap();
+                        ServicesAPI.showSorryUnableToLocateMessage();
+                    }
+                });
+            } else {
+                ServicesAPI.resetMap();
+            }
+        } else {
+            $('.errorSpan.error_zip_code').removeClass('hidden');
+            if ($(".hidden-xs").is(":visible") == true) {
+
+                $(".mobile_expand_close").click();
+                $(".error_zip_code").insertAfter(".mobile_expand");
+            }
+            if (($(".hidden-xs").is(":visible") == false) && ($(".mobile_expand").is(":visible"))) {
+                $(".error_zip_code").insertAfter(".mobile_expand_open");
+            }
+        }
+    },
+    addAddressToMap: function (response, status) {
+        ServicesAPI.clearOverlays();
+        if (!response || status != google.maps.GeocoderStatus.OK) {
+            ServicesAPI.showSorryUnableToLocateMessage();
+        } else {
+            var point = new google.maps.LatLng(response[0].geometry.location.lat(), response[0].geometry.location.lng());
+            startPointGeoCode = point;
+            // Reset the Map
+            ServicesAPI.resetMap();
+
+            // Set the GMarker based on the geocode (GLatLng)
+
+            startPointGMarker = ServicesAPI.createStartPointMarker(startPointGeoCode);
+
+            // Display progress indicator before retreiving offices
+            //showProgressIndicator();
+
+            // Now get the Met offices for this address
+            ServicesAPI.getMetOffices();
+        }
+    },
+    resetMap: function () {
+        // Clear any existing overlays
+        ServicesAPI.clearOverlays();
+        directionsDisplay.setMap(null);
+        // Pan the map back to the original start location
+        // *** Must center map, before adding overlay
+
+        map.setCenter(startPointGeoCode, 9);
+
+    },
+    getMetOffices: function () {
+
+        var latitude = startPointGeoCode.lat();
+        var longitude = startPointGeoCode.lng();
+        var baseServiceUrl = $("[data-fao-url]").attr("data-fao-url");
+        var faoMarket = '';
+        var directionButton = $('.directions_button').attr("data-fao-market");
+        var officeSubmitButton = $(".find-office__submit").attr("data-fao-market");
+        if (directionButton !== undefined && directionButton !== "" && directionButton !== " ") {
+            faoMarket = directionButton;
+        }
+        if (officeSubmitButton !== undefined && officeSubmitButton !== "" && officeSubmitButton !== " ") {
+            faoMarket = officeSubmitButton;
+        }
+        radiusInMiles = $('.find_an_office_radius').val();
+        if (faoMarket.toLowerCase() == "us") {
+            specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
+            var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
+        } else {
+            specialty = $('.different_services_dropdown').val();
+            var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
+        }
+        /************LIVE FAO SERVICE***************/
+        $.ajax({
+            type: 'GET',
+            url: serviceUrl,
+            success: function (data) {
+                ServicesAPI.generateOfficeItems(data)
+            },
+            error: function () {
+                ServicesAPI.handleServiceError()
+            }
+        });
+        /************LIVE FAO SERVICE***************/
+
+        /************LOCAL FAO SERVICE***************/
+        /*	var faoSearchResults = $.getJSON("fao.json", function(data) {
+         ServicesAPI.generateOfficeItems(data);
+         ServicesAPI.createPagination(count);
+         });*/
+        /************LOCAL FAO SERVICE***************/
+
+    },
+    generateOfficeItems: function (responseObject) {
+        count = 0;
+        var resultsListHTML = "";
+        markersArray = [];
+        $('.results_error_info,.results_pagination').addClass('hidden');
+        if (responseObject.facilities.length != 0) {
+            $('.find_an_office_pagecount_wrap,.google_maps_container,.hidden_maps_container_button').removeClass('hidden');
+            $('.display_container').removeClass('hidden');
+            $(".page-count").removeClass('hidden');
+            $(".no-results").addClass('hidden');
+            // Now you can just use the object
+            var metOfficeArray = responseObject.facilities;
+            $(".results_content").remove();
+            // Create the HTML for the Office results in the left panel
+            resultsListHTML += "<div class=\"results_content\">";
+            // Generate the markers for the map and also generate the markup for the results list
+            for (var i = 0; i < metOfficeArray.length; i++) {
+                count++;
+                var fclt_officeName = metOfficeArray[i].fclt_name;
+                var fclt_addr = metOfficeArray[i].fclt_addr;
+                var fclt_city = metOfficeArray[i].fclt_city;
+                var fclt_state = metOfficeArray[i].fclt_state;
+                var fclt_zip = metOfficeArray[i].fclt_zip;
+                var fclt_phone = metOfficeArray[i].tel_no;
+                var fclt_fax = metOfficeArray[i].fax_no;
+                var fclt_lat = metOfficeArray[i].fclt_lattd;
+                var fclt_lng = metOfficeArray[i].fclt_longtd;
+                var fclt_ctgy = metOfficeArray[i].fclt_ctgy;
+                var fclt_distance = metOfficeArray[i].fclt_distance;
+                var fclt_url = metOfficeArray[i].fclt_url;
+                // Additional fields
+                var fclt_alt_phone = metOfficeArray[i].fclt_alt_phone;
+                var fclt_email = metOfficeArray[i].fclt_email;
+                var fclt_secondary_email = metOfficeArray[i].fclt_secondary_email;
+                var fclt_main_contact = metOfficeArray[i].fclt_main_contact;
+                var fclt_hours = metOfficeArray[i].fclt_hours;
+                var fclt_info = metOfficeArray[i].fclt_info;
+                var fclt_gender = metOfficeArray[i].fclt_gender;
+                var fclt_languages = metOfficeArray[i].fclt_languages;
+                var fclt_education = metOfficeArray[i].fclt_education;
+                var label_phone = $(".label_phone").text();
+                var label_alt_phone = $(".label_alt_phone").text();
+                var label_fax = $(".label_fax").text();
+                var label_email = $(".label_email").text();
+                var label_sec_email = $(".label_sec_email").text();
+                var label_contact = $(".label_contact").text();
+                var label_hours = $(".label_hours").text();
+                var label_info = $(".label_info").text();
+                var label_education = $(".label_education").text();
+                var label_languages = $(".label_languages").text();
+                var label_gender = $(".label_gender").text();
+                var label_radius_unit = $(".label_radius_unit").text();
+                if (label_radius_unit == "mi")
+                    fclt_distance = parseInt(fclt_distance) / 1.609344;
+                var strDestination = "";
+                var destParams = "";
+                if (fclt_addr != undefined) {
+                    strDestination = strDestination + fclt_addr + ", ";
+                }
+                if (fclt_city != undefined) {
+                    strDestination = strDestination + fclt_city + ", ";
+                }
+                if (fclt_state != undefined) {
+                    strDestination = strDestination + fclt_state + ", ";
+                }
+                if (fclt_zip != undefined) {
+                    strDestination = strDestination + fclt_zip;
+                }
+                destParams = strDestination;
+                if (fclt_lat != undefined) {
+                    destParams = destParams + ":" + fclt_lat + ","
+                }
+                if (fclt_lng != undefined) {
+                    destParams = destParams + fclt_lng;
+                }
+                var temp = strDestination.slice(-2);
+                ;
+                if (temp == ", ") {
+                    strDestination = strDestination.substring(0, strDestination.length - 2);
+                }
+                var strDestination = fclt_addr + ", " + fclt_city + ", " + fclt_state + ", " + fclt_zip;
+                resultsListHTML += "<div class=\"results_office_result\"><p class=\"results_office_count\">" + (i + 1) + "</p>";
+                resultsListHTML += "<p class=\"results_office_name\">" + fclt_officeName + "</p>";
+                resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
+                resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
+                if (fclt_education) {
+                    resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
+                    resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
+                    resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
+                    resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
+                } else {
+                    resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
+                    resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
+                    resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
+                }
+                if (fclt_languages) {
+                    resultsListHTML += "<p class=\"results_office_city_state_zip dentist_left\">"
+                    if (fclt_city != null) {
+                        resultsListHTML += fclt_city.toLowerCase() + ", ";
+                    }
+                    if (fclt_state != null) {
+                        resultsListHTML += fclt_state.toLowerCase() + " ";
+                    }
+                    if (fclt_zip != null) {
+                        resultsListHTML += fclt_zip.toLowerCase() + " ";
+                    }
+                    resultsListHTML += "</p>";
+                    resultsListHTML += "<p class=\"results_office_languages dentist_right\">" + label_languages + ": " + fclt_languages.toLowerCase() + "</p>";
+                } else {
+                    resultsListHTML += "<p class=\"results_office_city_state_zip\">"
+                    if (fclt_city != null) {
+                        resultsListHTML += fclt_city.toLowerCase() + ", ";
+                    }
+                    if (fclt_state != null) {
+                        resultsListHTML += fclt_state.toLowerCase() + " ";
+                    }
+                    if (fclt_zip != null) {
+                        resultsListHTML += fclt_zip.toLowerCase() + " ";
+                    }
+                    resultsListHTML += "</p>";
+                }
+
+                if (fclt_gender) {
+                    if (fclt_phone)
+                        resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+                    resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
+                } else {
+                    if (fclt_phone)
+                        resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+                }
+
+                if (fclt_alt_phone)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": " + fclt_alt_phone.replace(/\./g, '-') + "</p>";
+                if (fclt_fax)
+                    resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
+                if (fclt_email)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_email + ": " + fclt_email + "</p>";
+                if (fclt_secondary_email)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_sec_email + ": " + fclt_secondary_email + "</p>";
+                if (fclt_main_contact)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_contact + ": " + fclt_main_contact + "</p>";
+                if (fclt_hours)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_hours + ": " + fclt_hours + "</p>";
+                if (fclt_info)
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_info + ": " + fclt_info + "</p>";
+                resultsListHTML += "<div><button class=\"results_office_get_directions_button btn btn-brand-2nd\" onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</button></div>";
+                resultsListHTML += "</div>";
+                var markerInfoHTML = "<div class=\"googleMarkerInfo\">";
+                markerInfoHTML += "<p class=\"markerInfoOfficeName\">" + fclt_officeName + "</p>";
+                markerInfoHTML += "<p class=\"markerInfoAddress\">" + fclt_addr.toLowerCase() + "</p>";
+                markerInfoHTML += "<p class=\"markerInfoCityStateZip\">";
+                if (fclt_city != null) {
+                    markerInfoHTML += fclt_city.toLowerCase() + ", ";
+                }
+                if (fclt_state != null) {
+                    markerInfoHTML += fclt_state.toLowerCase() + ", ";
+                }
+                if (fclt_zip != null) {
+                    markerInfoHTML += fclt_zip.toLowerCase() + ", ";
+                }
+                markerInfoHTML += "</p>";
+                if (fclt_phone)
+                    markerInfoHTML += "<p class=\"markerInfoPhone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+                if (fclt_fax)
+                    markerInfoHTML += "<p class=\"markerInfoFax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
+                markerInfoHTML += "<p class=\"markerInfoDrivingDirections\"><a href='#' onclick=\"getDirectionsPanel(\'" + strDestination + "\');return false;\">" + "</a>" + "</p>";
+                markerInfoHTML += "</div>";
+                var fclt_point = new google.maps.LatLng(fclt_lat, fclt_lng);
+                var iconNumber = ((i + 1) + ((bootPagNum) * listCount)) + '';
+                var fclt_marker = ServicesAPI.createOfficeMarker(fclt_point, markerInfoHTML, iconNumber);
+            }
+            resultsListHTML += "</div>";
+            $(resultsListHTML).insertBefore($(".results_pagination"));
+            ServicesAPI.createPagination(count);
+        }
+        else {
+            ServicesAPI.showSorryUnableToLocateMessage();
+        }
+
+        return responseObject;
+    },
+    handleServiceError: function () {
+        $('.results_error_info').removeClass('hidden').html($('.errorMsgText_server_busy').text());
+        $('.results_content').html("");
+        $('.results_pagination, .find_an_office_pagecount_wrap, .google-maps-container, .maps-button').addClass('hidden');
+    },
+    createStartPointMarker: function (latlng) {
+        // Use the default marker
+        var marker = new google.maps.Marker({
+            position: latlng
+        });
+        markersArray.push(marker);
+        return marker;
+    },
+    createOfficeMarker: function (point, html, officeNumber) {
+        var baseIcon = '';
+        var numberedIcon = '';
+        var marker = '';
+        var numberedIconURL = '';
+        var marker;
+        marker = new MarkerWithLabel({
+            position: point,
+            labelContent: officeNumber,
+            //icon: " ",
+            icon: {
+                url: blueMarker,
+                scaledSize: new google.maps.Size(33, 42)// desired size
+            },
+            labelAnchor: new google.maps.Point(3, 33),
+            labelClass: "my_label", // the CSS class for the label
+            labelStyle: {opacity: 0.8},
+            map: map
+        });
+        if ((officeNumber / 10) >= 1) {
+            marker.labelAnchor = new google.maps.Point(8, 33)
+        }
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+
+            return function () {
+                if (selectedMarker) {
+                    selectedMarker.setIcon({
+                        url: blueMarker,
+                        scaledSize: new google.maps.Size(33, 42)
+                    });
+                }
+                marker.setIcon({
+                    url: blackMarker,
+                    scaledSize: new google.maps.Size(33, 42)
+                });
+                selectedMarker = marker;
+
+                var infowindow = new google.maps.InfoWindow();
+                infowindow.setContent(html);
+                if ($(".hidden-xs").is(":visible")) {
+                    infowindow.open(map, marker);
+                } else {
+
+                }
+                if (presentHighligtedInfo != null) {
+                    presentHighligtedInfo.open(null, marker);
+                }
+                presentHighligtedInfo = infowindow;
+            }
+        })(marker, officeNumber));
+
+        markersArray.push(marker);
+        return marker;
+    },
+    checkEnter: function (e) {
+        var key = e.keyCode || e.which;
+        var browsername = ServicesAPI.getBrowserName();
+        if (key == 13) { //if character code is equal to ascii 13 (if enter key)
+            //alert('ENTER pressed, show location, and return false');
+            ServicesAPI.showLocation();
+            //return false;
+            /*if(browsername=="NS"){
+             return false;
+             }else if (browsername=="MSIE"){
+             e.returnValue = false;
+             }else{
+             return false;
+             }*/
+
+        } else {
+            returnValue = true;
+        }
+    },
+    getBrowserName: function () {
+        var browsername = navigator.appName;
+        if (browsername.indexOf("Netscape") != -1) {
+            browsername = "NS";
+        } else if (browsername.indexOf("Microsoft") != -1) {
+            browsername = "MSIE";
+        } else {
+            browsername = "N/A";
+        }
+        return browsername;
+    },
+    addBreadCrumb: function () {
+        var currentPageCrumb = $(".breadcrumb").find("span:last-of-type");
+        currentPageCrumb.wrapInner("<a href=\"\"> </a>");
+        currentPageCrumb.addClass("breadcrumb__crumb");
+        currentPageCrumb.find("a").attr("href", faoURL);
+        currentPageCrumb.after("<span class=\"generatedBreadCrumb\">" + $('.getDirectionsText').text() + "</span>");
+    },
+    removeBreadCrumb: function () {
+        $(".breadcrumb").find("span:last-of-type").remove();
+        $(".breadcrumb").find("span:last-of-type a").contents().unwrap();
+        $(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
+    },
+    getDirectionsPanel: function (strpDestination) {
+        $('.page-title__heading').text($('.getDirectionsText').text());
+        if ($(".generatedBreadCrumb").length == 0) {
+            ServicesAPI.addBreadCrumb();
+        }
+        ServicesAPI.clearOverlays();
+        $('.fax-results__container, .driving-directions-panel, .find-an-x-search__container,.cta_search__container, .directions_error').addClass('hidden');
+        $('.driving-direction-container, .maps-button, #googleDrivingMapsContainer').removeClass('hidden');
+        var fromAddr = $('.find-an-x-search__container .cta_search').val();
+        ServicesAPI.initializeDrivingGoogleMapObject();
+
+        $('.get-directions-form .from-address').val(fromAddr);
+        if (fromAddr == '') {
+            $('.find-an-x-search__container .cta_search').focus();
+            return;
+        }
+        geocoder.geocode({'address': fromAddr}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var res = ServicesAPI.makeMarker(results[0].geometry.location, 'A');
+            }
+        });
+
+
+        //clearOverlays();
+        var toAddr = strpDestination.split(":");
+        $('.get-directions-form .to-address').val(ServicesAPI.formatDestination(toAddr[0]));
+
+
+        ServicesAPI.resetMap();
+        var dest_marker = $('.get-directions-form .to-address').val();
+        geocoder.geocode({'address': dest_marker}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var res = ServicesAPI.makeMarker(results[0].geometry.location, 'B');
+
+            }
+        });
+        ServicesAPI.clearOverlays();
+    },
+    makeMarker: function (point, title) {
+        marker = new MarkerWithLabel({
+            position: point,
+            labelContent: title,
+            //icon: " ",
+            icon: {
+                url: blueMarker,
+                scaledSize: new google.maps.Size(33, 42)// desired size
+            },
+            labelAnchor: new google.maps.Point(5, 33),
+            labelClass: "my_label", // the CSS class for the label
+            labelStyle: {opacity: 0.8},
+            map: map
+        });
+        dir_markerArray.push(marker);
+    },
+    getDirections: function () {
+        $('.page-title__heading').text($('.getDirectionsText').text());
+        var directionsService = new google.maps.DirectionsService();
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('drivingDirectionsPanel'));
+        var travel_mode = $('.get-directions-buttons .btn.active').attr('data-travel');
+        var unit;
+        var fromAddr = $('.get-directions-form .from-address').val();
+        if ($('.Radius_unit').text() == "km") {
+            unit = google.maps.UnitSystem.METRIC;
+        }
+        else {
+            unit = google.maps.UnitSystem.IMPERIAL;
+        }
+        var request = {
+            origin: fromAddr,
+            destination: $('.get-directions-form .to-address').val(),
+            travelMode: google.maps.DirectionsTravelMode[travel_mode],
+            unitSystem: unit
+        };
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                ServicesAPI.clearOverlays();
+                $('.get-directions-form,.directions_error').addClass('hidden');
+                $('.driving-directions-panel').removeClass('hidden');
+                directionsDisplay.setDirections(response);
+                var leg = response.routes[0].legs[0];
+                ServicesAPI.makeMarker(leg.start_location, "A");
+                ServicesAPI.makeMarker(leg.end_location, 'B');
+            } else {
+                directionsDisplay.setMap(null);
+                $('.driving-directions-panel').addClass('hidden');
+                $('.directions_error').removeClass('hidden');
+            }
+        });
+
+    },
+    formatDestination: function (destAddress) {
+        var regex = new RegExp("[0-9]TH|[0-9]RD|[0-9]ND", "i");
+        while (regex.test(destAddress)) {
+            var matchedString = regex.exec(destAddress).toString();
+            destAddress = destAddress.replace(matchedString, matchedString.substring(0, 1));
+        }
+
+        regex.compile("\\bfl\\b", "i");
+        while (regex.test(destAddress)) {
+            var matchedString = regex.exec(destAddress).toString();
+            destAddress = destAddress.replace(matchedString, "FLOOR");
+        }
+        regex.compile("\\bst\\b", "i");
+        if (regex.test(destAddress)) {
+            var matchedString = regex.exec(destAddress).toString();
+            destAddress = destAddress.replace(matchedString, "STREET");
+        }
+        return destAddress;
+    },
+    handleGetDirectionErrors: function (invDir, from, to_LatLng) {
+        // Try getting the directions using geocoding
+        if (invDir.getStatus().code == G_GEO_UNKNOWN_ADDRESS) {
+            invDir.clear();
+            var resultsOverlay = document.getElementById("officeResultsContent");
+            resultsOverlay.innerHTML = '';
+
+            var dir_lat_lng = new GDirections(map, resultsOverlay);
+
+            dir_lat_lng.load(from + " to " + to_LatLng);
+            google.maps.Event.addListener(dir_lat_lng, "error", function () {
+                resultsOverlay.innerHTML = $('.get_direction_error').text()
+            });
+        }
+    },
+    getAddress: function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+        }
+    },
+    handle_geolocation_query: function (position) {
+        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        var geocoder = geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'latLng': latlng}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    var arrAddress = results[1].address_components;
+                    var itemLocality = "";
+                    $.each(arrAddress, function (i, address_component) {
+                        if (address_component.types[0] == "locality") {
+                            itemLocality = address_component.long_name;
+                        }
+                        if (address_component.types[0] == "administrative_area_level_1") {
+                            itemLocality += ', ' + address_component.long_name;
+                        }
+                        $('.find-an-x-search__container .cta_search').val(itemLocality);
+                    });
+                }
+                if (results[0]) {
+                    dir_to_flag = false;
+                    $('.get-directions-form .from-address').val(ServicesAPI.formatDestination(results[0].formatted_address));
+                }
+            }
+        });
+    },
+    buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
+        var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+            lngSelector = '.longitude=' + lng.toString().replace('.', ','),
+            radiusSelector = '.radius=' + radius,
+            specialtySelector = '.specialty=' + specialty;
+
+        return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+    },
+    buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
+        var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
+            lngSelector = '&longitude=' + lng.toString(),
+            radiusSelector = '&radius=' + radius,
+            specialtySelector = '&specialty=' + specialty;
+
+        return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+    },
+    updatePageFrom: function (name) {
+        var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
+        if (pageFrom != undefined) {
+            name.val(pageFrom);
+        }
+    },
+    onFSubmit: function ($this) {
+        var fid = $this.attr('data-fsubmit')
+        var $formid = $('[data-fid=' + fid + ']');
+        var formStatus = true;
+        var flag;
+
+
+        if ($("[data-observes-id]").find("input:radio").parent().parent().parent().parent().css("display") != "none") {
+            /*	$("[data-observes-id]").find("input:radio").each(function () {
+             if ($(this).attr('checked') == "checked") {
+             radioDials = true;
+             }
+             });*/
+            if (radioDials != true) {
+                $("[data-observes-id]").find("input:radio").each(function () {
+                    $(this).next('span').addClass('errorRadio');
+                });
+                $('.contactSideForm .info-mandatory').addClass('error-mandatory');
+                formStatus = false;
+            }
+        }
+        $formid.find('[data-required=true]').each(function () {
+            var $this = $(this);
+            if ($this.parent().parent().parent().css("display") != "none") {
+                var placeholder = $this.attr('placeholder');
+                if ($this.val() == placeholder) {
+                    $this.val("");
+                }
+                var val = $this.val();
+                if (val.length == 0) {
+                    $this.addClass('error');
+                    //$this.parent().find('.errorSpan').addClass('errorSpanOpen');
+                    $('.contactSideForm .info-mandatory').addClass('error-mandatory');
+                    $this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
+                    $this.val(placeholder);
+                    formStatus = false;
+                } else {
+                    $('.contactSideForm .info-mandatory').removeClass('error-mandatory');
+                }
+            }
+
+        });
+
+        $formid.find('[data-valid-status]').each(function () {
+            var attrDVS = $(this).attr('data-valid-status');
+            if (attrDVS == 'failed') {
+                $(this).addClass('error');
+                formStatus = false;
+            }
+        });
+        if (formStatus && fid != "contactCard" && fid != "contactSidebarQuote") {
+            ServicesAPI.formPass(fid);
+        } else {
+            $formid.find('.info-mandatory').addClass('error-mandatory');
+        }
+        return formStatus;
+    },
+    formProcessorSubmit: function (formName, formDiv, thankyouDiv, errorDiv, exceptionDiv) {
+        var lead = "";
+        var scenarioName = "";
+        var mmrep = "";
+        var formObjectName = document.getElementById(formName);
+        var reserveid = ServicesAPI.getCookie("ReserveID");
+        if (null != reserveid) ServicesAPI.AddInputParameter(formObjectName, "input", "reserveid", reserveid, document);
+        else;
+
+        //AddInputParameter(formObjectName, "input", "webFormPage_ThankYouPage", TKM, document);
+        if (null != document.getElementById("beginapp-rep")) mmrep = document.getElementById("beginapp-rep").value;
+        if (null != mmrep && "" != mmrep) {
+            var lsubContentGroupDirectory = "";
+            var lcontentGroupDirectory = "";
+            var laudience = "";
+            if ("" != subContentGroupDirectory) {
+                lsubContentGroupDirectory = subContentGroupDirectory + "-" + mmrep;
+                lcontentGroupDirectory = contentGroupDirectory;
+                laudience = audience;
+            } else if ("" != contentGroupDirectory) {
+                lcontentGroupDirectory = contentGroupDirectory + "-" + mmrep;
+                lsubContentGroupDirectory = subContentGroupDirectory;
+                laudience = audience;
+            } else if ("" != audience) {
+                laudience = audience + "-" + mmrep;
+                lcontentGroupDirectory = contentGroupDirectory;
+                lsubContentGroupDirectory = subContentGroupDirectory;
+            }
+            if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", lcontentGroupDirectory, document);
+            if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", lsubContentGroupDirectory, document);
+            if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", laudience, document);
+        } else {
+            var CGFrQS = "";
+            var SCGFrQS = "";
+            var AUFrQS = "";
+            CGFrQS = ServicesAPI.getQueryString("CG");
+            SCGFrQS = ServicesAPI.getQueryString("SCG");
+            AUFrQS = ServicesAPI.getQueryString("AU");
+            if ("" != CGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", CGFrQS, document);
+            else if ("undefined" == typeof contentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "contentGroup", contentGroupDirectory, document);
+            if ("" != SCGFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", SCGFrQS, document);
+            else if ("undefined" == typeof subContentGroupDirectory) ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "subcontentGroup", subContentGroupDirectory, document);
+            if ("" != AUFrQS) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", AUFrQS, document);
+            else if ("undefined" == typeof audience) ServicesAPI.AddInputParameter(formObjectName, "input", "audience", "", document);
+            else ServicesAPI.AddInputParameter(formObjectName, "input", "audience", audience, document);
+        }
+        if ("requestFormRightNav_Acc" == formName) {
+            var prodType = document.getElementById("requestType").value;
+            if ("" != prodType)
+                if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+                else if (prodType.length > 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+        } else if ("requestFormRightNav" == formName) {
+            var prodType = "";
+            if (document.getElementById("requestTypeQuote")) prodType = document.getElementById("requestTypeQuote").value;
+            else if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+            if ("" != prodType)
+                if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+                else if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+        } else {
+            var prodType = "";
+            if (document.getElementById("requestType")) prodType = document.getElementById("requestType").value;
+            if ("" != prodType)
+                if (prodType.length >= 11 && "New Product" == prodType.substr(0, 11)) lead = "NewLead";
+                else if ("Existing Product/Policy" == prodType) lead = "ServiceLead";
+        }
+        if ("NewLead" != lead && "ServiceLead" != lead) {
+            lead = "NonLeadForm";
+            if (document.getElementById("scenarioName") && "" != document.getElementById("scenarioName").value) scenarioName = document.getElementById("scenarioName").value;
+        }
+        // console.debug("Lead type: " + lead);
+        var results = document.cookie.match("(^|;) ?WT_FPC=([^;]*)(;|$)");
+        if (null != results) {
+            var fullID = unescape(results[2]);
+            var partID = fullID.split(":");
+            var visitorID = partID[0].split("=");
+        }
+        if ("undefined" == typeof visitorID) ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", "", document);
+        else ServicesAPI.AddInputParameter(formObjectName, "input", "visitorIDReq", visitorID[1], document);
+        var urlNode = document.URL;
+        urlNode = ServicesAPI.getPageFromURLNode(formObjectName, mmrep);
+        if ("requestFormRightNav" == formName) {
+            //console.debug("document.requestFormRightNav.coverage" + document.requestFormRightNav.coverage);
+            if (document.requestFormRightNav.coverage)
+                if (document.requestFormRightNav.coverage.value < 1e5) {
+                    urlNode = urlNode.split("?");
+                    urlNode = urlNode[0];
+                }
+        }
+        if (lead == "NewLead") {
+            ServicesAPI.AddInputParameter(formObjectName, "input", "formSubmissionSource", urlNode, document);
+        }
+        if (lead == "ServiceLead") {
+            ServicesAPI.AddInputParameter(formObjectName, "input", "webFormPage_urlPagevalue", urlNode, document);
+        }
+
+        var validationSuccess = true;
+        if (validationSuccess) {
+            /*var tempURL = "www.metlife.com";
+             if ("view" == location.host.match("view")) tempURL = "view.metlife.com"; else tempURL = "www.metlife.com";
+             if ("int" == location.host.split(".", 1)) tempURL = "int." + tempURL; else if ("qa" == location.host.split(".", 1)) tempURL = "qa." + tempURL; else if ("dev" == location.host.split(".", 1)) tempURL = "dev." + tempURL;
+             var preFill = formObjectName.lstPnPPreFillParameters;
+             console.debug("Prefill Parameters is: " + preFill);
+             if (null == preFill || "undefined" == typeof preFill) console.debug("No Prefill Parameters is: "); else {
+             var prefillParam = preFill.value;
+             var prefillList = prefillParam.split(",");
+             var PnPPreFillValues = "";
+             for (i = 0; i < prefillList.length; i++) {
+             //var prefillListParam = eval("formObjectName." + prefillList[i] + ".value");
+             //console.debug("prefillListParam is: " + prefillListParam);
+             //PnPPreFillValues = PnPPreFillValues + prefillList[i] + ":" + prefillListParam + "|";
+             }
+             document.cookie = "PnPPreFill=" + PnPPreFillValues + "; path=/";
+             }
+             varwebformID = formObjectName.webformId;
+             if (null == varwebformID || "undefined" == typeof varwebformID) var submitUrl = "https://" + tempURL + "/wps/proxy/MCGenericWebForms/WebFormServletAction"; else var submitUrl = "https://" + tempURL + "/wps/proxy/MCWebForms5KSales/WebFormServletAction";
+             ServicesAPI.addSessionParameters(formObjectName);
+             console.debug("Doing Webform submit to: " + submitUrl);
+             */
+
+        }
+    },
+    validateOnType: function (val, $this, re) {
+        var placeholder = $this.attr('placeholder');
+        if (val.length > 0 && val != placeholder) {
+            if (val.match(re)) {
+                $this.removeClass('error');
+                $this.removeClass('formatError');
+                $this.removeAttr('data-valid-status');
+            } else {
+                $this.addClass('error');
+                $this.addClass('formatError');
+                $this.attr('data-valid-status', 'failed');
+            }
+        } else {
+            $this.removeClass('formatError');
+            var attrDVS = $this.attr('data-required');
+            if (typeof attrDVS !== typeof undefined && attrDVS !== false) {
+
+            } else {
+                $this.removeClass('error');
+                $this.removeAttr('data-valid-status');
+            }
+        }
+    },
+    AddInputParameter: function (a, b, c, d, e) {
+        var f = e.createElement(b);
+        f.setAttribute("type", "hidden");
+        f.setAttribute("name", c);
+        f.setAttribute("value", d);
+        a.appendChild(f);
+    },
+    getCookie: function (c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=");
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1;
+                c_end = document.cookie.indexOf(";", c_start);
+                if (c_end == -1) c_end = document.cookie.length;
+                return unescape(document.cookie.substring(c_start, c_end));
+            }
+        }
+        return "";
+    },
+    getQueryString: function (a) {
+        a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var b = "[\\?&]" + a + "=([^&#]*)";
+        var c = new RegExp(b);
+        var d = c.exec(window.location.href);
+        if (null == d) return "";
+        else return d[1];
+    },
+    getPageFromURLNode: function (a, b) {
+        var c = document.URL;
+        var d = "";
+        var e = window.location.search.split("?");
+        var f = "";
+        var g = "";
+        var h = false;
+        if (null != document.getElementById("WT.mc_id")) {
+            mcid = ServicesAPI.getCookie("SessionMCID");
+            ServicesAPI.AddInputParameter(a, "input", "wb_code", mcid, document);
+            ServicesAPI.AddInputParameter(a, "input", "WT.mc_id", mcid, document);
+        }
+        if (2 == e.length) {
+            var i = e[1].split("&");
+            for (var j = 0; j < i.length; j++) {
+                var k = i[j].split("=");
+                if ("wt.mc_id" == k[0].toLowerCase()) {
+                    ServicesAPI.AddInputParameter(a, "input", "wb_code", k[1], document);
+                }
+                if ("" != b)
+                    if ("pagefrom" == k[0].toLowerCase()) {
+                        d = k[1] + "-" + b;
+                        if (j == i.length - 1) g = g + k[0] + "=" + d;
+                        else g = g + k[0] + "=" + d + "&";
+                        h = true;
+                    } else if (j == i.length - 1) g += i[j];
+                    else g = g + i[j] + "&";
+            }
+            if (h) {
+                var l = document.URL;
+                var m = l.split("?");
+                f = window.location.href.split("#")[1];
+                if ("" != f) c = m[0] + "?" + g;
+                else c = m[0] + "?" + g + "#" + f;
+            }
+        }
+        return c;
+    },
+    addSessionParameters: function (a) {
+        var b = sessionVars.getSessionParams();
+        for (var c in b)
+            if (b.hasOwnProperty(c))
+                if ("" !== b[c])
+                    if (ServicesAPI.checkFormField(a, c)) ServicesAPI.AddInputParameter(a, "input", c, b[c], document);
+                    else a.elements[c].value = b[c];
+    },
+    checkFormField: function (a, b) {
+        if (void 0 == a.elements[b]) return true;
+        else return false;
+    },
+    postLeadform: function ($formid) {
+        var formName = $formid.attr('name');
+        ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
+        var requestExist = $('[data-fid="' + formName + '"]').find("[data-request-type]").length;
+        $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+        var requestType;
+        var ajaxUrl;
+        if (requestExist > 0) {
+            requestType = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').val();
+            ajaxUrl = $('[data-fid="' + formName + '"]').find("[data-request-type]").find(':selected').attr('data-product-url');
+            if (requestType == 'New Product/Planning Services') {
+                var jsonData = {};
+                var formData = $('form[name=' + formName + ']').serializeArray();
+                $.each(formData, function () {
+                    if (jsonData[this.name]) {
+
+                        if (!jsonData[this.name].push) {
+                            jsonData[this.name] = [jsonData[this.name]];
+
+                        }
+                        jsonData[this.name].push(this.value || '');
+                    } else {
+
+                        jsonData[this.name] = this.value || '';
+                        if (!jsonData[this.name].push) {
+                            if (this.name == "prodInt" || this.name == "prodInterest") {
+                                jsonData[this.name] = [jsonData[this.name]];
+
+                            }
+                        }
+                    }
+
+                });
+
+                console.log(JSON.stringify(jsonData));
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(jsonData),
+                    async: true,
+                    contentType: 'application/json',
+                    processData: false,
+                    success: function (returndata) {
+                        //console.log(returndata);
+                    },
+                    error: function () {
+                        console.log("error in ajax form submission");
+                    }
+                });
+            }
+
+            if (requestType == 'Existing Product/Policy') {
+                if (typeof FormData !== 'undefined') {
+                    var formData = new FormData($('form[name=' + formName + ']')[0]);
+                    $.ajax({
+                        url: ajaxUrl,
+                        type: 'POST',
+                        data: formData,
+                        async: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (returndata) {
+                            //console.log(returndata);
+                        },
+                        error: function () {
+                            console.log("error in ajax form submission");
+                        }
+                    });
+                } else {
+                    var formData = postSerialize($('form[name=' + formName + ']'));
+                    $.ajax({
+                        url: ajaxUrl,
+                        type: 'POST',
+                        data: formData,
+                        async: false,
+                        contentType: 'application/x-www-form-urlencoded',
+                        processData: false,
+                        success: function (returndata) {
+                            //console.log(returndata);
+                        },
+                        error: function () {
+                            console.log("error in ajax form submission");
+                        }
+                    });
+                }
+            }
+        } else {
+            ajaxUrl = $('[data-fid="' + formName + '"]').attr("[data-product-url]");
+            if (typeof FormData !== 'undefined') {
+                var formData = new FormData($('form[name=' + formName + ']')[0]);
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (returndata) {
+                        //console.log(returndata);
+                    },
+                    error: function () {
+                        console.log("error in ajax form submission");
+                    }
+                });
+            } else {
+                var formData = postSerialize($('form[name=' + formName + ']'));
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    contentType: 'application/x-www-form-urlencoded',
+                    processData: false,
+                    success: function (returndata) {
+                        //console.log(returndata);
+                    },
+                    error: function () {
+                        console.log("error in ajax form submission");
+                    }
+                });
+            }
+        }
+        if ($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').length > 0) {
+            $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''));
+        }
+
+
+    },
+    postLeadformOld: function ($formid) {
+
+        var formName = $formid.attr('name');
+        ServicesAPI.formProcessorSubmit(formName, 'a', 'chn-har-thankyou', 'chn-har-error', 'chn-har-exception');
+        var requestType = $('[data-fid="' + formName + '"]').find(".productPolicy").find(':selected').val()
+        var ajaxUrl;
+        $('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val($('[data-fid="' + formName + '"]').find('[data-valid-type=phone]').val().replace(/[^\w\s]/gi, ''))
+        if (requestType == 'New Product/Planning Services') {
+            ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-new-product");
+            var jsonData = {};
+            var formData = $('form[name=' + formName + ']').serializeArray();
+            $.each(formData, function () {
+                if (jsonData[this.name]) {
+
+                    if (!jsonData[this.name].push) {
+                        jsonData[this.name] = [jsonData[this.name]];
+
+                    }
+                    jsonData[this.name].push(this.value || '');
+                } else {
+
+                    jsonData[this.name] = this.value || '';
+                    if (!jsonData[this.name].push) {
+                        if (this.name == "prodInt" || this.name == "prodInterest") {
+                            jsonData[this.name] = [jsonData[this.name]];
+
+                        }
+                    }
+                }
+
+            });
+
+            console.log(JSON.stringify(jsonData));
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(jsonData),
+                async: true,
+                contentType: 'application/json',
+                processData: false,
+                success: function (returndata) {
+                    //console.log(returndata);
+                },
+                error: function () {
+                    console.log("error in ajax form submission");
+                }
+            });
+        }
+
+        if (requestType == 'Existing Product/Policy') {
+            ajaxUrl = $('[data-fid="' + formName + '"]').attr("data-existing-product");
+            if (typeof FormData !== 'undefined') {
+                var formData = new FormData($('form[name=' + formName + ']')[0]);
+
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (returndata) {
+                        //console.log(returndata);
+                    },
+                    error: function () {
+                        console.log("error in ajax form submission");
+                    }
+                });
+            } else {
+                var formData = postSerialize($('form[name=' + formName + ']'));
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    contentType: 'application/x-www-form-urlencoded',
+                    processData: false,
+                    success: function (returndata) {
+                        //console.log(returndata);
+                    },
+                    error: function () {
+                        console.log("error in ajax form submission");
+                    }
+                });
+            }
+        }
+
+
+    },
+    formPass: function (fid) {
+
+        switch (fid) {
+            case "contactSidebar":
+                $('.contactSideForm').fadeOut(2000);
+                $('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+                break;
+
+            case "contactSingle":
+                $('.contact-us__contact-form').fadeOut(1000);
+                $('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+                break;
+
+        }
+
+        $('.info-mandatory').removeClass("error-mandatory");
+        $('.form-user-ctrl').removeClass("error");
+        $('.form-user-grp').find('svg').css('fill', '#666');
+
+        setTimeout(function () {
+            ServicesAPI.resetForm(fid);
+        }, 5000);
+    },
+    resetForm: function (fid) {
+
+        switch (fid) {
+            case "contactSidebar":
+                //in a timeout to avoid visual conflict with animation
+                setTimeout(function () {
+                    $('#requestFormRightNav_Acc').trigger("reset");
+                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+                    $('.contactSideForm').toggle();
+                    $('.contact-container--global').css("right", "-640px");
+                }, 1000);
+                break;
+
+            case "contactSingle":
+                $('#requestFormRContactUs_Acc').trigger("reset");
+                $('.contact-us__contact-form').fadeIn(1000);
+                $('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+                break;
+
+        }
+
+
+    }
 };
 
 $(".campaign-header-right").click(function () {
@@ -11502,6 +11215,1289 @@ function removePaddingWrapper(){
 		container.next(".container").find(".wrapper").css("padding-top", "0px");
 	}
 }
+// Log Code
+var logTest = '';
+
+if (typeof SFDC === "undefined") {
+    var SFDC = {};
+    SFDC.form = [];
+}
+
+var JsonOccupations = {};
+
+SFDC.form.forEach(function (element) {
+    console.log("glu RUn")
+    var parent = $("." + element.type);
+    $(".contact-sidebar.type")
+    $('[data-fid="contact-sidebar"]')
+    var submitText = parent.find('.form-submit').text();
+    var processingText = parent.find('.form-submit').attr("data-proctext");
+
+    (function ($) {
+        var isValid = true;
+        var POST_URL = '';
+        var ERROR_URL = '';
+        var PARENT_URL = '';
+        var subjects = {};
+        //var requestType = $("#request_type").val();
+        var post_url = $('#post_url').val();
+        var actualmarketvalue = $('#actual_market').val();
+        var switchMarketvalue = $('#switch_market').val();
+
+        return {
+            init: function () {
+                //console.log("init");
+
+                var o = this;
+                $(document).ready(function () {
+                    var domain = document.domain;
+                    parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
+
+                    // Bind initial form events...
+                    parent.find('.generic-form').bind('submit', function (e) {
+                        console.log("glu run")
+                            e.preventDefault();
+                            o.submitForm();
+                            return false;
+                        })
+                        .find('.disclaimer')
+                        .show()
+                        .each(function () {
+                            // Essentially, we need to wrap all previous elements in a div.clearfix
+                            // to make sure disclaimers display correctly.
+                            $(this).prevAll()
+                                .reverse()  // prevAll will return elements in order from disclaimer or reverse DOM order
+                                .wrapAll('<div class="clearfix"></div>');
+                        });
+
+                    // Initialize form and Bind Subjects
+                    o._initForm()._bindSubjects();
+
+                    // Submit form
+                    parent.find('.form-submit').bind('click', function (e) {
+                        console.log("glu RUn")
+                        e.preventDefault();
+                        if (!parent.find(".form-submit").hasClass("disabled")) {
+                            parent.find('.form-submit').addClass("disabled").html(processingText);
+                            parent.find(".generic-form").submit();
+                        }
+                    });
+                    POST_URL = $('#post_url').val();
+                });
+            },
+            _initForm: function () {
+                //console.log("initForm");
+
+                // Iterate through all of the form fields identified in our fields Object...
+                var fields = element.fields;
+                var i = 0, len = element.fields.length;
+
+                while (i < len) {
+                    var field = fields[i];
+                    var $field = parent.find('#' + field.id);
+
+                    // Log Code
+                    logTest += '' + field.type + ' - ' + field.id + '\n';
+
+
+                    // Loosely, we'll grab the appropriate function and pass ID and inputs to it
+                    if (field.type == "radio" || field.type == "checkBox") {
+                        this[field.type](field.id, field.options);
+                    }
+
+                    if (field.type == "select") {
+                        this[field.type](field.id, field.options, field.fieldDefaultValue);
+                    }
+
+                    // Hide hidden fields
+                    if (field.hidden) {
+                        this.hideElement($field);
+                    }
+
+                    // set height of forms
+                   /* if ($(".contact-rep-with-image").length > 0) {
+                        contactRepWithImageSize();
+                    }*/
+
+                    // Add required class
+                    if (field.validator != "") {
+                        if ($field.hasClass("input-group")) {
+                            parent.find('#' + field.id + " :input").addClass("required");
+                        }
+                        else {
+                            $field.addClass("required")
+                        }
+                    }
+
+                    // Add observers
+                    if (field.observes) {
+                        var fieldId = field.id;
+                        if (field.type == "dob") {
+                            fieldId = field.id + 'd';
+                        }
+                        if (field.type == "phNo") {
+                            fieldId = field.id + "ac";
+                        }
+                        if (field.type == "date") {
+                            fieldId = field.id + 'd';
+                        }
+                        this._bindEvents(fieldId, field.observes);
+                    }
+                    i++;
+                }
+
+
+                return this;
+            },
+
+            /***
+             * Binds observers' events to actions of subject.
+             * @param {String} id Observer's ID
+             * @param {Array} subject Array of subject's we're observing.
+             */
+            _bindEvents: function (id, subject) {
+                //console.log("bind events");
+
+                var $el = parent.find('#' + id);
+                var i = 0, len = subject.length;
+                while (i < len) {
+                    var sub = subject[i];
+                    this._addEvent($el, sub);
+                    i++;
+                }
+            },
+
+            /***
+             * Adds appropriate classes and behavior to el so that it observes element with ID of subField.
+             * Mainly used to avoid a closure created while iterating through subjects in _bindEvents( ).
+             * @param {jQueryObject} $el el to become observer
+             * @param {Object} subject Subject name and values el will observe
+             */
+            _addEvent: function ($el, sub) {
+                //console.log("add event");
+
+                var o = this;
+                $el.addClass('observe-' + sub.field)
+                    .setTrigger({name: sub.field, values: sub.values.join(',')})
+                    .bind('observe.' + sub.field, function (e) {
+                        $this = $(this);
+                        var reqValue = e.val;
+                        if (reqValue != null)
+                            reqValue = e.val.replace(/\'/g, "&apos;");
+                        o._setRequiredVals($this, {key: e.field, value: reqValue})
+                            .validateElement($this);
+                    });
+
+                // Enqueue subject's ID; we'll need to make sure it's loaded in the DOM
+                if (!(sub.field in subjects)) {
+                    subjects[sub.field] = true;
+                }
+            },
+
+            /***
+             * Sets $el's trigger val for this particular key, indicating whether this particular display criteria has been met or not.
+             * @param {jQueryObject} $el Element whose triggers we're updating.
+             * @param {Object} val Key/value pair that we are setting.
+             */
+            _setRequiredVals: function ($el, val) {
+                //console.log("set required vals");
+
+                if ($el.data('trigger')[val.key].values.indexOf(val.value) > -1) {
+                    $el.data('trigger')[val.key].valid = true;
+                } else {
+                    $el.data('trigger')[val.key].valid = false;
+                }
+                return this;
+            },
+
+            /***
+             * Iterates through $el's "trigger" values, determining if all display criteria are met and $el should be shown/hidden.
+             * @param {jQueryObject} $el Element we're evaluating.
+             */
+            validateElement: function ($el) {
+                //console.log("validate element");
+
+                var isValid = true;
+                var trigger = $el.data('trigger');
+
+                for (var req in trigger) {
+                    isValid = isValid & trigger[req].valid;
+                }
+
+                if (isValid) {
+                    this.showElement($el);
+                } else {
+                    this.hideElement($el);
+                }
+            },
+
+            /***
+             * Shows $el, also enabling it for validation on the back end.
+             * @param {jQueryObject} $el Field we want to show/enable.
+             */
+            showElement: function ($el) {
+                //console.log("show element");
+
+                $fld = parent.find('#' + $el.attr('id'));
+                $fld.closest('.form-focus, .form-hidden').show();
+                //$fld.parents('.form-user-grp').show();
+
+            },
+
+            /***
+             * Hides $el, also disabling it from validation on the back end.
+             * @param {jQueryObject} $el Field we want to hide/disable.
+             */
+            hideElement: function ($el) {
+                //console.log("hide element");
+
+                $fld = parent.find('#' + $el.attr('id'));
+                $fld.closest('.form-focus, .form-hidden').hide();
+                //$fld.parents('.form-user-grp').hide();
+            },
+
+            /***
+             * Bind triggers to change Events of our subjects array. Note that we must
+             * defer this until after all subjects are written into the page, i.e. after processing form's init( ).
+             */
+            _bindSubjects: function () {
+                //console.log("bind subjects");
+
+                for (var s in subjects) {
+                    var $subject = parent.find('#' + s);
+                    if (!$subject.hasClass('observed')) {
+                        this._addSubjectEvent($subject, s);
+                    }
+                }
+                return this;
+            },
+
+            /***
+             * Bind event to our subject's change event.
+             * @param {jQueryObject} $subject Object we'll observe.
+             * @param {String} id ID of subject; passed along in appropriate events.
+             */
+            _addSubjectEvent: function ($subject, id) {
+                //console.log("add subject events");
+
+                // Radio buttons and checkBoxes will actually be children of $subject
+                if ($subject.attr("type") == "checkBox") {
+                    $subject.change(function () {
+                        var groupID = $subject.attr('id');
+                        var numberChecked = 0;
+
+                        parent.find('#' + groupID + ":checked").each(function () {
+                            numberChecked += 1;
+                            parent.find('.observe-' + id).trigger({
+                                type: 'observe.' + id,
+                                field: id,
+                                val: $(this).val()
+                            });
+                        });
+
+                        if (numberChecked == 0) {
+                            parent.find('.observe-' + id).trigger({
+                                type: 'observe.' + id,
+                                field: id,
+                                val: "none"
+                            });
+                        }
+                    });
+                }
+                else if ($subject.hasClass('button_group')) {
+                    $subject.change(function () {
+                        var groupID = $subject.attr('id');
+
+                        parent.find('#' + groupID + ":checked").each(function () {
+                            parent.find('.observe-' + id).trigger({
+                                type: 'observe.' + id,
+                                field: id,
+                                val: $(this).val()
+                            });
+                        });
+                    });
+                }
+                else if ($subject.get(0).tagName.toLowerCase() == 'div') {
+                    $subject = $subject.find('input');
+                    $subject.bind('change', function () {
+                        $el = $(this);
+                        parent.find('.observe-' + id).trigger({
+                            type: 'observe.' + id,
+                            field: id,
+                            val: $el.val()
+                        });
+                    });
+
+                    // Pre-select radio buttons as per the UAE form.
+                    var $first = $subject.filter(':first');
+                    if ($first.is('input')) {
+                        $first.click().trigger('change');
+                    }
+                }
+                else if ($subject.get(0).tagName.toLowerCase() == 'select') {
+                    $subject.change(function () {
+                        parent.find('.observe-' + id).trigger({
+                            type: 'observe.' + id,
+                            field: id,
+                            val: $subject.val()
+                        });
+                    });
+                    var $subject = $subject.filter(':first');
+                    $subject.trigger('change');
+                }
+            },
+
+        
+            /********  Validate Date ******/
+            validateDate: function (dateString, type) {
+                //console.log("validate date");
+                // Parse the date parts to integers
+                var parts, day, month, year;
+
+                if (type == "dob" && formSubmissiontype == "form_direct_sfdc_type") {
+                    // First check for the pattern
+                    if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+                        return false;
+
+                    parts = dateString.split("/");
+                    day = parseInt(parts[0], 10);
+                    month = parseInt(parts[1], 10);
+                    year = parseInt(parts[2], 10);
+                }
+                else {
+                    // First check for the pattern
+                    if (!/^\d{4}\-\d{1,2}\-\d{1,2}$/.test(dateString))
+                        return false;
+
+                    parts = dateString.split("-");
+                    year = parseInt(parts[0], 10);
+                    month = parseInt(parts[1], 10);
+                    day = parseInt(parts[2], 10);
+                }
+
+
+                // Check year
+                if (year < 1900 || year > 2999)
+                    return false;
+
+                // Check month
+                if (month == 0 || month > 12)
+                    return false;
+
+                // Check day
+                var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+                // Adjust for leap years
+                if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+                    monthLength[1] = 29;
+
+                if (day <= 0 || day > monthLength[month - 1])
+                    return false;
+
+                // Check for current date
+                var inputDate = new Date(month + "/" + day + "/" + year);
+                var todayDate = new Date();
+
+                if (inputDate.setHours(0, 0, 0, 0) > todayDate.setHours(0, 0, 0, 0)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+
+            /******** Hide Error *********/
+            hideError: function (id) {
+                //console.log("hide error: " + id);
+
+                var element = parent.find('#' + id);
+               
+                element.siblings(".errorSpan").css("display", "none");
+                // Go through groups and add only to inside
+                // Ignore button groups, check box groups, and terms and conditions... which do not have inputs
+                if (element.hasClass("input-group")) {
+                    parent.find('#' + id + " :input").removeClass('error');
+                }
+                else {
+                    if (!(element.hasClass("button_group")) && !(element.hasClass("checkboxGroup")) && !(element.hasClass("termsCondition"))) {
+                        element.removeClass('error');
+                    }
+                }
+                isValid = true;
+            },
+
+            /************ Show Error *********/
+            showError: function (id, type) {
+                //console.log("show error: " + id);
+
+                var element = parent.find('#' + id);
+               
+                element.siblings(".errorSpan").css("display", "block");
+               
+
+                // Go through groups and add only to inside
+                // Ignore button groups, check box groups, and terms and conditions... which do not have inputs
+                if (element.hasClass("input-group")) {
+                    parent.find('#' + id + " :input").addClass('error');
+                }
+                else {
+                    if (!(element.hasClass("button_group")) && !(element.hasClass("checkboxGroup")) && !(element.hasClass("termsCondition"))) {
+                        element.addClass('error');
+                    }
+                }
+                isValid = false;
+            },
+
+            /***
+             * Post the form to the server.
+             *   - Success: Redirect to the thank-you page.
+             *   - Error/failure : Display error messages, etc.
+             */
+            submitForm: function () {
+                console.log("glu run")
+                //console.log("submit form");
+
+                // Post the form, handling any error messages that come back, etc.
+
+                var switchformID = $('#switch_form_fieldID').val();
+
+                if ($('#fld_' + switchformID).is(":visible")) {
+                    var selectedValue = $('#' + switchformID).val();  // dropdown selected value
+                    var switchValues = $('#switch_form_fieldValues').val();
+                    var result = switchValues.match(selectedValue);
+                    if (result) {
+                        if (formSubmissiontype == "form_direct_sfdc_type") {
+                            if ($('#oid').attr("name") == "oid") {
+                                $('#oid').attr("name", "orgid")
+                            }
+                            else {
+                                $('#oid').attr("name", "oid")
+                            }
+                            $('#post_url').attr("value", $('#switch_post_url').val());
+                            $('#' + actualmarketvalue).attr("name", switchMarketvalue);
+                            $('#' + actualmarketvalue).attr("id", switchMarketvalue);
+                        }
+                        else {
+                            $('#request_type').attr("value", $('#switch_form_type').val());
+                        }
+                    }
+                    else {
+                        if (formSubmissiontype == "form_direct_sfdc_type") {
+                            if ($('#oid').attr("name") == "oid") {
+                                $('#oid').attr("name", "orgid")
+                            }
+                            else {
+                                $('#oid').attr("name", "oid")
+                            }
+                            $('#post_url').attr("value", post_url);
+                            $('#' + switchMarketvalue).attr("name", actualmarketvalue);
+                            $('#' + switchMarketvalue).attr("id", actualmarketvalue);
+                        } else
+                            $('#request_type').attr("value", requestType);
+                    }
+
+                }
+
+                var fields = element.fields;
+                var i = 0, len = element.fields.length;
+
+                while (i < len) {
+                    var field = fields[i];
+                    if (parent.find('#' + field.id).val() != null)
+                        parent.find('#' + field.id).val(parent.find('#' + field.id).val().replace(/\'/g, "'"));
+                    i++;
+                }
+
+                i = 0;
+                var bool = true;
+                while (i < len) {
+                    var f = fields[i];
+                    if (parent.find('#' + f.id).is(":visible")) {
+                        var Phregex = new RegExp(/^\d{3}\-\d+$/);
+                        //var Phregex = new RegExp(/^\d{3}\-\d{3}\-\d{4}$/);
+                        if (f.type == "phNo") {
+                            var number = "";
+                            var areaCode = parent.find('#' + f.id + 'ac').val();
+                            var numericVal = parent.find('#' + f.id + 'num').val();
+
+                            number = areaCode + '-' + numericVal;
+                            parent.find('#' + f.id).val(number);
+                            parent.find('#' + f.id + "Input").val(number);
+                        }
+                        if (f.type == "dob" || f.type == "date") {
+                            var dateInput = "";
+                            var date = parent.find('#' + f.id + 'd').val();
+                            var month = parent.find('#' + f.id + 'm').val();
+                            var year = parent.find('#' + f.id + 'y').val();
+
+                            date = ('0' + date).slice(-2);
+                            month = ('0' + month).slice(-2);
+
+                            if (f.type == "dob" && formSubmissiontype == "form_direct_sfdc_type") {
+                                dateInput = date + '/' + month + '/' + year;
+                            } else {
+                                dateInput = year + '-' + month + '-' + date;
+                            }
+                            parent.find('#' + f.id).val(dateInput);
+                            parent.find('#' + f.id + "Input").val(dateInput);
+                        }
+                        var fieldValue = parent.find('#' + f.id).val();
+                        switch (f.validator) {
+                            case false:
+                                this.hideError(f.id);
+                                break;
+                            case "required":
+                                if (f.type == "text" || f.type == "textArea") {
+                                    if (fieldValue != "") {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                else if (f.type == "select") {
+                                    if (parent.find('#' + f.id).get(0).selectedIndex == 0 && parent.find('#' + f.id).val() == null) {
+                                        this.showError(f.id, f.type);
+                                    } else {
+                                        this.hideError(f.id);
+                                    }
+                                }
+                                else if (f.type == "radio") {
+                                    if (parent.find('#' + f.id).find('input[type=radio]:checked').length > 0) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                else if (f.type == "checkBox") {
+                                    if (parent.find('#' + f.id).find('input[type=checkBox]:checked').length > 0) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                else if (f.type == "dob" || f.type == "date") {
+                                    if (!this.validateDate(fieldValue, f.type)) {
+                                        if (f.type == "dob" && formSubmissiontype != "form_direct_sfdc_type") {
+                                            parent.find('#' + f.id + 'd').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'm').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'y').find('input[type="text"]').attr("val", "");
+                                        }
+                                        this.showError(f.id, f.type);
+                                    } else {
+                                        this.hideError(f.id);
+                                    }
+                                }
+                                else if (f.type == "phNo") {
+                                    if (Phregex.test(fieldValue)) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        if (formSubmissiontype != "form_direct_sfdc_type") {
+                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", "");
+                                        }
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                break;
+                            case "numeric":
+                                if (fieldValue != "") {
+                                    if (f.type == "phNo") {
+                                        if (Phregex.test(fieldValue)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", "");
+                                            this.showError(f.id, f.type);
+                                        }
+                                    }
+                                    else if (f.type == "dob" || f.type == "date") {
+                                        if (!this.validateDate(fieldValue, f.type)) {
+                                            if (f.type == "dob" && formSubmissiontype != "form_direct_sfdc_type") {
+                                                parent.find('#' + f.id + 'd').find('input[type="text"]').attr("val", "");
+                                                parent.find('#' + f.id + 'm').find('input[type="text"]').attr("val", "");
+                                                parent.find('#' + f.id + 'y').find('input[type="text"]').attr("val", "");
+                                            }
+                                            this.showError(f.id, f.type);
+                                        } else {
+                                            this.hideError(f.id);
+                                        }
+                                    }
+                                    else {
+                                        if (fieldValue.match(/^\d+$/)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            this.showError(f.id, f.type);
+                                        }
+                                    }
+                                }
+                                break;
+                            case "numeric_Req":
+                                if (f.type == "phNo") {
+                                    if (Phregex.test(fieldValue)) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        if (formSubmissiontype != "form_direct_sfdc_type") {
+                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", " ");
+                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", " ");
+                                        }
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                else if (f.type == "dob" || f.type == "date") {
+                                    if (!this.validateDate(fieldValue, f.type)) {
+                                        if (f.type == "dob" && formSubmissiontype != "form_direct_sfdc_type") {
+                                            parent.find('#' + f.id + 'd').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'm').find('input[type="text"]').attr("val", "");
+                                            parent.find('#' + f.id + 'y').find('input[type="text"]').attr("val", "");
+                                        }
+                                        this.showError(f.id, f.type);
+                                    } else {
+                                        this.hideError(f.id);
+                                    }
+                                }
+                                else {
+                                    if (fieldValue.match(/^\d+$/)) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                break;
+                            case "email":
+                                if (fieldValue != "") {
+                                    var regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                                    if (regex.test(fieldValue)) {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                break;
+                            case "email_Req":
+                                var regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+                                if (regex.test(fieldValue)) {
+                                    this.hideError(f.id);
+                                } else {
+                                    this.showError(f.id, f.type);
+                                }
+                                break;
+                            case "regex":
+                                if (fieldValue != "") {
+                                    var regexPattern = new RegExp(parent.find('#' + f.id).attr('pattern'));
+                                    if (regexPattern.test(fieldValue) || fieldValue == "") {
+                                        this.hideError(f.id);
+                                    } else {
+                                        this.showError(f.id, f.type);
+                                    }
+                                }
+                                break;
+                            case "regex_Req":
+                                var regexPattern = new RegExp(parent.find('#' + f.id).attr('pattern'));
+                                if (regexPattern.test(fieldValue)) {
+                                    this.hideError(f.id);
+                                } else {
+                                    this.showError(f.id, f.type);
+                                }
+                                break;
+                            case "TermsandconditionsFieldRequired":
+                                if (parent.find('#' + f.id).find('input[type=checkBox]:checked').length > 0) {
+                                    this.hideError(f.id);
+                                } else {
+                                    this.showError(f.id, f.type);
+                                }
+                        }
+                    }
+                    i++;
+                    if (!isValid) {
+                        bool = false;
+                    }
+                }
+
+              
+                if (bool) {
+                    var formElement = parent.find(".generic-form");
+                    var jsonData = {};
+                    var formData;
+
+                    
+                    console.log("contact form ajax");
+
+                    var url;
+                    var data;
+                    if (formSubmissiontype == "form_direct_sfdc_type") {
+                        console.log("direct sfdc");
+                        url = '/global-assets/proxy/DirectSFDCProxy.aspx';
+                        data = formElement.serialize();
+                    }
+                    else {
+                        console.log("sfdc");
+                        formData = formElement.serializeArray();
+                        if (jsonData["MetlifeJson"]) {
+                            if (!jsonData["MetlifeJson"].push) {
+                                jsonData["MetlifeJson"] = [jsonData["MetlifeJson"]];
+                            }
+                            jsonData["MetlifeJson"].push("Crownpeak Form");
+                        } else {
+                            jsonData["MetlifeJson"] = "Crownpeak Form";
+                        }
+                        $.each(formData, function () {
+                            console.log(this.name);
+                            if (jsonData[this.name]) {
+                                if (!jsonData[this.name].push) {
+                                    jsonData[this.name] = [jsonData[this.name]];
+                                }
+                                else {
+                                    jsonData[this.name].push(this.value || '');
+                                }
+                            }
+                            else {
+                                jsonData[this.name] = this.value || '';
+                            }
+
+                            if (this.name == "termsandconditions") {
+                                var selected = [];
+                                selected.push(this.value);
+                                selected.push('');
+                                jsonData[this.name] = selected;
+                            }
+                        });
+                        url = '/global-assets/proxy/GloballeadUtilityProxy.aspx';
+                        data = JSON.stringify(jsonData);
+                    }
+
+                    console.log(data);
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        data: data,
+                        async: true,
+                        type: 'POST',
+                        success: function (data, status, xhr) {
+                            console.log("ajax: success");
+                            console.log(data);
+                            switch (data.result.toLowerCase()) {
+                                case "success":
+                                    console.log("response: success");
+                                    formMessage(parent, "thanks");
+                                    break;
+                                case "fail":
+                                    console.log("response: fail");
+                                    formMessage(parent, "error");
+                                    break;
+                                case "error":
+                                    console.log("response: error");
+                                    formMessage(parent, "error");
+                                    break;
+                                default:
+                                    console.log("response: default");
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.log("ajax: error");
+                            console.log(status, error);
+                            formMessage(parent, "error");
+                        }
+                    });
+               
+            } else {
+                    parent.find('.form-submit').removeClass("disabled").html(submitText);
+                }
+            },
+
+            /***
+             * Generates a radio group at [id], using key/value pairs in opts to generate radio buttons.
+             * @param {String} id Name of radio group we want to create. Also used to determine fieldset into which we'll insert radios.
+             * @param {Array} opts Array of key/value Objects representing radio labels and values. Example format: [{"key":"value"}, {"key2":"value2"}, ... {"keyN":"valueN"}]
+             */
+            radio: function (id, opts) {
+                var h = '';
+                var mod, columns;
+                var i = 0, len = opts.length;
+
+                // determine button grouping
+                if (len <= 2) {
+                    mod = 2;
+                    columns = "two-columns";
+                } else {
+                    mod = 3;
+                    columns = "three-columns";
+                    if (!parent.parent().hasClass("quote-tool-form")) {
+                        parent.find('#' + id).closest(".form-hidden, .form-focus").css("width", "100%");
+                    }
+                }
+                while (i < len) {
+                    var opt = opts[i];
+                    for (var key in opt) {
+
+                        // button grouping start
+                       /* if (i % mod == 0) {
+                            h += "<div>";
+                        }*/
+
+                        // button
+                        h += '<label>';
+                        h += '<div class="radio_button ' + columns + '" id="' + id + '">';
+
+
+                        if (i == 0) {
+                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '" checked class="user-radio">';
+                        } else {
+                            h += '<input type="radio" id="' + id + '" name ="' + id + '" value="' + opt[key] + '" class="user-radio">';
+                        }
+                        h += '<span>' + key + '</span>';
+                        h += '</div>';
+                        h += '</label>';
+
+                        // button grouping end
+                        /*if ((i + 1) % mod == 0) {
+                            h += "</div>";
+                        }*/
+                    }
+                    i++;
+                }
+
+                // fills in missing spacing
+                if (i % mod > 0) {
+                    if (mod == 3) {
+                        for (var k = 0; k < mod - (i % mod); k++) {
+
+                            h += '<div class="radio_button ' + '"></div>';
+
+                        }
+                        h += "</div>";
+                    } else {
+                        h += "</div>";
+                    }
+                }
+
+               //parent.find('#' + id).append(h);
+            },
+
+            /***
+             * Generates a set of checkBoxes group at [id], using key/value pairs in opts to generate checkBoxes.
+             * @param {String} id ID used to determine fieldset into which we'll insert checkBoxes.
+             * @param {Array} opts Array of key/value Objects representing checkBox labels/names and values. Example format: [{"key":"value"}, {"key2":"value2"}, ... {"keyN":"valueN"}]
+             */
+            checkBox: function (id, opts) {
+                var h = '';
+                var mod, columns;
+                var i = 0, len = opts.length;
+
+                // determine button grouping
+                if (len <= 2) {
+                    mod = 2;
+                    columns = "two-columns";
+                } else {
+                    mod = 3;
+                    columns = "three-columns";
+                    parent.find('#' + id).closest(".form-hidden, .form-focus").css("width", "100%");
+                }
+
+                while (i < len) {
+                    var opt = opts[i];
+                    for (var key in opt) {
+
+                        var check_id = id + "" + i;
+
+                        // button grouping start
+                        if (i % mod == 0) {
+                            h += "<div>";
+                        }
+
+                        // button
+                        h += '<div class="checkBox ' + columns + '">';
+                        h += '<label>';
+                        h += '<input class="user-checkbox" type="checkBox" id="' + check_id + '" name ="' + id + '" value="' + opt[key] + '">';
+                        h += '<span>' + key + '</span>';
+                        h += '</label>';
+                        h += '</div>';
+
+                        // button grouping end
+                        if ((i + 1) % mod == 0) {
+                            h += "</div>";
+                        }
+                    }
+                    i++;
+                }
+
+                // fills in missing spacing
+                if (i % mod > 0) {
+                    if (mod == 3) {
+                        for (var k = 0; k < mod - (i % mod); k++) {
+                            h += '<div class="checkBox ' + columns + '"></div>';
+                        }
+                        h += "</div>";
+                    } else {
+                        h += "</div>";
+                    }
+                }
+
+                parent.find('#' + id).prepend(h);
+
+                modCheckboxObserves(id);
+            },
+
+            /***
+             * Generates options used for populating the select box given at ID.
+             * @param {String} id ID of select whose options we will populate with generated HTML.
+             * @param {Array} opts Array of Objects representing option key/value pairs. Can optionally contain named optgroups if "name" is not empty string. Example: [{name:'Group 1', options : {"key":"value"},{"key2":"value2"}]},{name : 'Group 2', options : [{"key":"value"}, {"key2":"value2"}]}]);
+             */
+            select: function (id, opts, defaultVal) {
+                var h = '';
+                var i = 0, len = opts.length;
+                while (i < len) {
+                    var opt = opts[i];
+
+                    if (!parent.parent().hasClass("quote-tool-form")) {
+                        var isLabel = opt.hasOwnProperty("label") && opt.label !== '';
+                        var isGroup = opt.hasOwnProperty("name") && opt.name !== '';
+
+                        if (isLabel) {
+                            h += '<option selected="selected" disabled="disabled" value="">' + opt.label + '</option>';
+                        }
+
+                        if (isGroup && len > 1) {
+                            h += '<optgroup label="' + opt.name + '">';
+                        }
+                        var childOpts = opt.options;
+                        var j = 0, cLength = childOpts.length;
+                        while (j < cLength) {
+                            var cOpt = childOpts[j];
+                            for (var key in cOpt) {
+                                h += '<option value="' + cOpt[key] + '">' + key + '</option>'
+                            }
+                            j++;
+                        }
+                        if (isGroup && len > 1) {
+                            h += '</optgroup>';
+                        }
+                    }
+                    i++;
+                }
+                parent.find('select#' + id).append(h);
+                if (parent.parent().hasClass("quote-tool-form")) {
+                    parent.find('select#' + id).attr("data-default-val", defaultVal);
+                }
+            }
+        }
+    }(jQuery)).init();
+
+    /* Mod check box observes? ***************/
+    function modCheckboxObserves(id) {
+        var fields = element.fields;
+        var i = 0, len = element.fields.length;
+
+        // Check every field to see if there is an observe in them
+        for (var v = 0; v < len; v++) {
+            // If field has an observe
+            if (fields[v].observes.length > 0) {
+                // Look at each observe
+                for (var w = 0; w < fields[v].observes.length; w++) {
+                    // If the observe comes from a checkbox group
+                    var idOfObject = fields[v].observes[w].field;
+                    if (idOfObject == id) {
+                        // Get array of values of the checkbox group
+                        var checkboxGroupValues = [];
+
+                        parent.find("#" + idOfObject + " > div > label > input").each(function () {
+                            checkboxGroupValues.push(this.value);
+                        });
+                        fields[v].observes[w].field = fields[v].observes[w].field + "" + jQuery.inArray(fields[v].observes[w].values[0], checkboxGroupValues);
+                    }
+                }
+            }
+        }
+    }
+
+    
+    // Expands Form
+    parent.find(".form-user-ctrl, .form-control, .formTextarea").on("focus", function () {
+        parent.removeClass('form-off')
+    });
+
+    // Closes Form
+    parent.find(".contact-close").on('click', function (evt) {
+        evt.preventDefault();
+        formReset(parent, element.fields);
+        parent.find('.form-submit').removeClass("disabled").html(submitText);
+    });
+});
+
+/***** Validations **************************************************/
+// Contact Form Validatons
+/*if ($(".generic-form").length > 0) {
+    // Validation for Select Fields
+    $('select[data-required=true]').on({
+        change: function (evt) {
+            $(this).trigger('blur');
+        },
+        blur: function (evt) {
+            var $this = $(this);
+            var val = $this.val();
+
+            if (val != null) {
+                if (val.length == 0) {
+                    if ($this.hasClass("required")) {
+                        $this.addClass('error');
+                        $this.siblings(".errorSpan").show();
+                    }
+                } else {
+                    $this.removeClass('error');
+                    $this.siblings(".errorSpan").hide();
+                    if ($this.parent().parent().hasClass("date-input")) {
+                        $this.parent().parent().find("select").removeClass('error');
+                        $this.parent().parent().siblings(".errorSpan").hide();
+                    }
+                }
+            }
+        }
+    });
+
+    // Validation for Text Fields
+    $('input[type=text][data-required=true], textarea[data-required=true]').on({
+        focus: function (evt) {
+            $(this).trigger('keyup');
+        },
+        keyup: function (evt) {
+            $(this).removeClass('error');
+            $(this).siblings().removeClass('error');
+            $(this).siblings(".errorSpan").hide();
+            $(this).parent().siblings(".errorSpan").hide();
+        }
+    });
+
+    // Validation for Radio Fields
+    $(".generic-form").on("change", "input[type=radio]", function (evt) {
+        var parent = $(this).closest(".form-user-grp");
+        parent.find(".radio_button").removeClass('error');
+        parent.find(".errorSpan").hide();
+    });
+
+    // Validation for Checkbox Fields
+    $(".generic-form").on("click", "input[type=checkBox]", function (evt) {
+        var parent = $(this).closest(".form-user-grp");
+        parent.find(".user-checkbox").removeClass('error');
+        parent.find(".errorSpan").hide();
+    });
+}*/
+/***** Validations **************************************************/
+
+
+/***** Contact Us and Privacy Forms *********************************/
+// Sets the resize for label height
+/*
+if ($(".contact-privacy").length > 0) {
+    contactAboutFromLayout();
+}
+*/
+
+// Initialization for contact form text areas
+/*function contactAboutFromLayout() {
+    // text areas
+    $(".generic-form .formTextarea").closest(".form-hidden, .form-focus").css("width", "100%");
+
+    // terms and conditions
+    $(".generic-form .termsCondition").closest(".form-hidden, .form-focus").css("width", "100%");
+}*/
+/***** Contact Us and Privacy Forms *********************************/
+
+
+/***** Contact Rep with Image ***************************************/
+// Sets the resize for form with contact image
+/*$(window).load(function () {
+    if ($(".contact-rep-with-image").length > 0) {
+        contactRepWithImageSize();
+
+        $(window).on("resize", function () {
+            contactRepWithImageSize();
+        });
+    }
+});*/
+
+// Resize form image
+/*function contactRepWithImageSize() {
+    var parent = $(".contact-rep-with-image");
+    var form = parent.find(".contact-lead-form");
+    var image = parent.find(".image");
+    var img = image.find("img");
+
+    if (image.is(":visible") && form.hasClass("form-off")) {
+        image.height(form.outerHeight());
+    }
+
+    img.css({'height': '100%', 'width': 'auto'});
+
+    if (image.width() > img.width()) {
+        img.css({'height': 'auto', 'width': '100%'});
+    }
+}*/
+/***** Contact Rep with Image ***************************************/
+
+
+/***** Quote Form ***************************************************/
+/*$(document).ready(function () {
+    $(function () {
+        $(document).on('click', 'input[type=text]', function () {
+            this.select();
+        });
+    });
+
+    // CTA Header Quote Tool
+    if ($(".cta_header_quote").length > 0) {
+        $('.insurance-cta-type-switch').prop('selectedIndex', 0);
+        $('.insurance-product-switch').attr("disabled", true);
+        $(".cta_header_quote").find(".select_wrapper").on("change", function () {
+            quoteFormReset();
+            $(".cta_header_quote").find(".generic-form select").each(function () {
+                var defval = $(this).attr("data-default-val");
+                $(this).find("option").each(function () {
+                    if (this.value == defval) {
+                        $(this).parent("select").val(defval);
+                        return false;
+                    } else {
+                        $(this).parent("select").prop("selectedIndex", 0);
+                    }
+                });
+            });
+        });
+        $(".insurance-cta-type-switch").on("change", function () {
+            $('.insurance-product-switch').attr("disabled", false);
+
+            var productSwitch = $('.insurance-cta-type-switch').val();
+            $('.select-insurance-product').addClass('hidden');
+            $('.' + productSwitch).closest('.select-insurance-product').removeClass('hidden');
+            $('.select-insurance-product').next('button').removeClass('hidden');
+            $('.select-insurance-product').css('padding-right', '20px');
+            $('.select-insurance-product').removeClass('col-xs-12');
+            $('.select-insurance-product').addClass('col-xs-10');
+            $('.quote-tool-form form').addClass('hidden');
+            $('.insurance-product-switch').prop('selectedIndex', 0);
+
+            $('.' + productSwitch).change(function () {
+                if ($(this).find("option:selected").attr("data-form-route") != null && $(this).find("option:selected").attr("data-form-route") != "") {
+                    window.location.href = $(this).find("option:selected").attr("data-form-route");
+                }
+                var formToShow = $(this).val();
+                $(this).closest('.select-insurance-product').removeClass('col-xs-10');
+                $(this).closest('.select-insurance-product').addClass('col-xs-12');
+                $('.select-insurance-product').next('button').addClass('hidden');
+                $(this).closest('.select-insurance-product').css('padding-right', '0');
+                $(".quote-tool-form form").hide();
+
+                //All forms for this page will have a hidden class on them by default...therefore we have remove the hidden
+                //class on the form that corresponds to the product selected on the dropdown menu
+                if ($("#" + formToShow).hasClass("hidden")) {
+                    $("#" + formToShow).removeClass("hidden");
+                }
+                $("#" + formToShow).show();
+                $(".generic-form").trigger("reset");
+            });
+        });
+        //$(".cta_header_quote #insurance-type").prop("selectedIndex", 0);
+    }
+
+});*/
+
+
+
+
+
+/***** Form Functions ***********************************************/
+// Resets contact forms
+/*function formReset(parent, fields) {
+    parent.addClass('form-off');
+    parent.children().removeAttr("style");
+    parent.find("input, select, textarea").removeClass('error');
+    parent.find(".errorSpan").hide();
+    parent.find('.generic-form')[0].reset();
+
+    if (parent.hasClass("contact-image")) {
+        contactRepWithImageSize();
+    }
+
+    // Hide hidden fields
+    for (var i = 0; i < fields.length; i++) {
+        var field = fields[i];
+        if (field.hidden) {
+            parent.find('#' + field.id).closest('.form-focus, .form-hidden').hide();
+        }
+    }
+}*/
+
+// Displays thank you/error message for contact forms
+function formMessage(parent, status) {
+    var message;
+    if (status == "thanks") {
+        message = parent.find(".contactSideThankyou");
+    } else {
+        message = parent.find(".contactSideSubmitError");
+    }
+    message.siblings(":visible").fadeOut('slow', function () {
+        message.css("display", "table-cell");
+        setTimeout(function () {
+            if (parent.parent().hasClass("contactSliderOuterCon")) {
+                $('.contactSliderOuterCon').fadeOut(800, function () {
+                    parent.find(".contact-close").trigger("click");
+                });
+            } else if (parent.parent().hasClass("about-contact-us-form")) {
+                message.fadeOut(800, function () {
+                    parent.find(".contact-close").trigger("click");
+                });
+            }
+        }, 5000)
+    });
+}
+/***** Form Functions ***********************************************/
+
+
+/* jQuery plugin for adding multi-dimensional show/hide triggers to elements' $().data stores ***************/
+(function ($) {
+    $.fn.setTrigger = function (trigger) {
+        return this.each(function () {
+            $this = $(this);
+
+            if ($this.data('trigger') === null || typeof $this.data('trigger') === 'undefined') {
+                $this.data('trigger', {});
+            }
+
+            $this.data('trigger')[trigger.name] = {
+                valid: false,
+                values: trigger.values
+            }
+        });
+    }
+}(jQuery));
+
+/* Mask Input Handling *************/
+function maskInput(event, input, textbox, location, delimiter) {
+    //Get the delimiter positons
+    var locs = location.split(',');
+
+    //Iterate until all the delimiters are placed in the textbox
+    for (var delimCount = 0; delimCount <= locs.length; delimCount++) {
+        for (var inputCharCount = 0; inputCharCount <= input.length; inputCharCount++) {
+
+            //Check for the actual position of the delimiter
+            if (inputCharCount == locs[delimCount]) {
+
+                //Confirm thaft the delimiter is not already present in that position
+                if (input.substring(inputCharCount, inputCharCount + 1) != delimiter) {
+                    if (event.keyCode != 8 && event.keyCode != 46) {
+                        input = input.substring(0, inputCharCount) + delimiter + input.substring(inputCharCount, input.length);
+                    }
+                }
+            }
+        }
+    }
+    textbox.value = input;
+}
+
+/* A few convenience plugins for jQuery *************/
+(function ($) {
+    // Reverse a jQuery array of elements
+    $.fn.reverse = [].reverse;
+}(jQuery));
+
+
 $(window).scroll(function () {
 	$('.in_view').bind('inview', function (event, visible) {
 		if (visible == true) {

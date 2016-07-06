@@ -113,12 +113,15 @@ function openSearchBox () {
         }
         currentView = getViewport();
     } else {
-        $('.search-trigger__container').toggle();
-        $('.search-trigger__search-box').animate({width: '170px'}, 600);
-        $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
-        $('.search-trigger__icon').animate({left: '145'}, 150);
-        $(".search-trigger__container").css({top: "0"})
-        currentView = getViewport();
+        if( $('.search-trigger__container').css("display") == "none"){
+            $('.search-trigger__container').toggle();
+            $('.search-trigger__search-box').animate({width: '170px'}, 600);
+            $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
+            $('.search-trigger__icon').animate({left: '145'}, 150);
+            $(".search-trigger__container").css({top: "0"})
+            currentView = getViewport();
+        }
+
     }
 
 
