@@ -7561,6 +7561,7 @@ $(document).ready(function() {
 
 $(".form-radio-grp svg, .image_radio svg").on('click', function(){
 	var radioButton = $(this).siblings('input');
+	console.log("click")
 	if (!radioButton.prop('checked')){
 		radioButton.prop('checked', true);
 		var radioName = radioButton.prop('name');
