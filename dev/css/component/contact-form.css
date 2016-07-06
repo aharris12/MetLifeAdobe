@@ -234,7 +234,7 @@
     text-align: right;
 }
 .contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
+    Padding: 0 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
     font-weight: 400;
@@ -244,15 +244,6 @@
 }
 .contactDisclaimer + .contactDisclaimer {
     padding-top: 0px;
-}
-.contactDisclaimer {
-    Padding: 10px 0px 10px 0px;
-    font-size: 11px;
-    line-height: 15px;
-    font-weight: 400;
-    color: #999999;
-    text-align: left;
-    margin-bottom: 0px;
 }
 .contactDisclaimer a {
     text-decoration: underline;
@@ -450,9 +441,6 @@
     }
 }
 
-.productPolicyTypes {
-    margin-bottom:20px;
-}
 .productUserType {
     margin-top:10px;
 }
