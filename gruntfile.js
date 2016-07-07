@@ -173,7 +173,6 @@ module.exports = function (grunt) {
                     'dev/js/share-chat.js',
                     'dev/js/product-card.js',
                     'dev/js/contextual--links.js',
-                    'dev/js/aem_form.js',
                     'dev/js/inview.js'
 
                 ],
@@ -291,6 +290,7 @@ module.exports = function (grunt) {
                         'dev/css/component/visiondental-overlay.css',
                         'dev/css/component/inview.css',
                         'dev/css/component/tooltipster.css',
+                        'dev/css/component/generic-content.css',
                         'dev/css/component/generic-content.css',
                         'dev/css/theme/ie9select.css'
 

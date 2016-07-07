@@ -310,6 +310,8 @@
 .contact-container--form-card > .contactCard > span > .icon{
     top: -20px;
     left: 23px;
+    width: 13px;
+    height: 13px;
 }
 
 
