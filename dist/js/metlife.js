@@ -4139,7 +4139,13 @@ function ss_handleMouseC() {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
             $('#searchInPage,#Search').val($(x)[0].innerText);
-            $('.search-trigger__search-box').click();
+
+            if(getViewport() != "mobile") {
+                $('.js-searchIcon').click();
+            }else{
+                $('.js-searchIconMobile').click();
+            }
+
             // Back up the original query if not already, and adjust the reference
             // index.
             /* if (!ss_qbackup) {
@@ -7382,7 +7388,7 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 });
 
 //New This should be uncommented once form builder is in palce
-$('[data-submit-type="clr"]').on('click', function (e) {
+$('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
