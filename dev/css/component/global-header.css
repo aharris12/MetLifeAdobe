@@ -4,7 +4,7 @@
     top: 0;
     background-color: #2c77c5;
     color: #fff;
-    font-size: 0.7em;
+    font-size: 11px;
     letter-spacing: 1px;
     font-weight: 600;
     width: 100%;
@@ -530,6 +530,11 @@
     width: 19px;
 }
 
+.global-header .icon.icon-close-grey{
+    height:16px;
+    width: 16px;
+}
+
 .login-trigger__label .icon-secure-locked {
     position: relative;
     width: 14px;
@@ -751,6 +756,7 @@
     font-size: 14px;
     color: #fff;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .megamenu__main-item-label:hover {
@@ -838,8 +844,6 @@
     right: 20px;
     top: 20px;
     z-index: 1500;
-    width: 13px;
-    height: 13px;
     fill: rgba(255, 255, 255, 0.5);
 }
 
@@ -862,7 +866,7 @@
 
     .megamenu__main-items {
         font-size: 0;
-        width: 95%;
+        width: 90%;
         max-width: 1300px;
         margin: 0 auto;
     }
@@ -1044,7 +1048,7 @@
     }
 }
 
-.icon-close.megamenu-trigger__icon {
+.icon-close-grey.megamenu-trigger__icon {
     display: none;
 }
 
