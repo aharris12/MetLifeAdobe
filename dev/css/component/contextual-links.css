@@ -34,11 +34,9 @@
 .contextual-link__content__label{
     position: relative;
     height:100%;
-    margin-top: 10px;
 }
 
 .contextual-link__content__label p{
-    padding-top: 7%;
     margin-bottom: 0;
     font-size: 16px;
     text-align: left;
@@ -112,6 +110,14 @@
 }
 
 @media screen and (max-width: 767px) {
+    .contextual-link__content__label{
+        display: table;
+        width: 100%;
+    }
+    .contextual-link__content__label p,  .contextual-link__content__label svg{
+        display: table-cell;
+        vertical-align: middle;
+    }
     .contextual-link {
         width: 100%;
     }

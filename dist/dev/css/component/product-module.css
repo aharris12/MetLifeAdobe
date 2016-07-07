@@ -247,9 +247,7 @@
         display: table;
     }
 
-    .product-module__small-wrapper {
-        padding: 5px 0;
-    }
+
 
     .product-module__small {
         display: table-cell;

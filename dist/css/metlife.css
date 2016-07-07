@@ -1859,6 +1859,10 @@ input[type="radio"] {
     pointer-events: none; !important;
 }
 
+.form-icon-wrapper svg .form-icon--error{
+    fill:#EB4646;
+}
+
 .form-error {
     border: 1px solid #eb4646 !important;
     background-color: #f5d0d0 !important;
@@ -3605,7 +3609,7 @@ a:visited {
     width: 19px;
 }
 
-.global-header .icon.icon-close-grey{
+.global-header .icon.icon-close{
     height:16px;
     width: 16px;
 }
@@ -4123,7 +4127,7 @@ a:visited {
     }
 }
 
-.icon-close-grey.megamenu-trigger__icon {
+.icon-close.megamenu-trigger__icon {
     display: none;
 }
 
@@ -6323,9 +6327,7 @@ ol.promocard_content__list li:after {
         display: table;
     }
 
-    .product-module__small-wrapper {
-        padding: 5px 0;
-    }
+
 
     .product-module__small {
         display: table-cell;
@@ -8724,7 +8726,7 @@ body{
     }
 
     .product-row__tile--img-tile__text--left {
-        width: 70%;
+        width: 60%;
         display: table-cell;
     }
 
@@ -9181,11 +9183,9 @@ body{
 .contextual-link__content__label{
     position: relative;
     height:100%;
-    margin-top: 10px;
 }
 
 .contextual-link__content__label p{
-    padding-top: 7%;
     margin-bottom: 0;
     font-size: 16px;
     text-align: left;
@@ -9259,6 +9259,14 @@ body{
 }
 
 @media screen and (max-width: 767px) {
+    .contextual-link__content__label{
+        display: table;
+        width: 100%;
+    }
+    .contextual-link__content__label p,  .contextual-link__content__label svg{
+        display: table-cell;
+        vertical-align: middle;
+    }
     .contextual-link {
         width: 100%;
     }

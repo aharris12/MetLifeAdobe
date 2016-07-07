@@ -530,7 +530,7 @@
     width: 19px;
 }
 
-.global-header .icon.icon-close-grey{
+.global-header .icon.icon-close{
     height:16px;
     width: 16px;
 }
@@ -1048,7 +1048,7 @@
     }
 }
 
-.icon-close-grey.megamenu-trigger__icon {
+.icon-close.megamenu-trigger__icon {
     display: none;
 }
 

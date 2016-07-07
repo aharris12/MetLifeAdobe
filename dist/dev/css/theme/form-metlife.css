@@ -99,6 +99,10 @@ input[type="radio"] {
     pointer-events: none; !important;
 }
 
+.form-icon-wrapper svg .form-icon--error{
+    fill:#EB4646;
+}
+
 .form-error {
     border: 1px solid #eb4646 !important;
     background-color: #f5d0d0 !important;
