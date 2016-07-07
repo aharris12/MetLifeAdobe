@@ -60,10 +60,12 @@
     .form-card__img__text h3{
         font-size: 24px;
         line-height:28px;
+        font-weight: 600;
     }
     .form-card__img__text p{
         font-size: 14px;
         line-height:20px;
+        font-weight: 400;
     }
     .contact-container--form-card{
         display: table-cell;
@@ -88,9 +90,11 @@
     .form-card__img__text h3{
         font-size: 32px;
         line-height:36px;
+
     }
     .form-card__img__text p{
         font-size: 18px;
         line-height:24px;
+
     }
 }

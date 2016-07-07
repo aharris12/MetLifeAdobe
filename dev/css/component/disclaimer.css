@@ -5,10 +5,7 @@
     margin-bottom: 0;
     line-height: 15px;
 }
-.disclaimer p{
-    font-size: 11px;
-    line-height: 16px;
-}
+
 
 .disclaimer--microsite {
     padding-top: 20px;
@@ -34,10 +31,17 @@
 }
 @media screen and (min-width: 768px) {
     .disclaimer {
-        line-height: 16px;
         padding-top: 0px;
+        padding-bottom: 20px;
     }
-
+    .disclaimer:first-of-type {
+        margin-top: 50px;
+        padding-top: 0;
+    }
+    .disclaimer:last-of-type {
+        margin-bottom: 30px;
+        padding-bottom: 0;
+    }
     .disclaimer--microsite {
         padding-top: 40px;
     }
@@ -56,7 +60,6 @@
 @media screen and (min-width: 1024px) {
     .disclaimer {
         font-size: 12px;
-        line-height: 18px;
     }
 
     .disclaimer--product-module .disclaimer{

@@ -5631,10 +5631,7 @@ ol.promocard_content__list li:after {
     margin-bottom: 0;
     line-height: 15px;
 }
-.disclaimer p{
-    font-size: 11px;
-    line-height: 16px;
-}
+
 
 .disclaimer--microsite {
     padding-top: 20px;
@@ -5660,10 +5657,17 @@ ol.promocard_content__list li:after {
 }
 @media screen and (min-width: 768px) {
     .disclaimer {
-        line-height: 16px;
         padding-top: 0px;
+        padding-bottom: 20px;
     }
-
+    .disclaimer:first-of-type {
+        margin-top: 50px;
+        padding-top: 0;
+    }
+    .disclaimer:last-of-type {
+        margin-bottom: 30px;
+        padding-bottom: 0;
+    }
     .disclaimer--microsite {
         padding-top: 40px;
     }
@@ -5682,7 +5686,6 @@ ol.promocard_content__list li:after {
 @media screen and (min-width: 1024px) {
     .disclaimer {
         font-size: 12px;
-        line-height: 18px;
     }
 
     .disclaimer--product-module .disclaimer{
@@ -9939,10 +9942,12 @@ ul.bullet-list {
     .form-card__img__text h3{
         font-size: 24px;
         line-height:28px;
+        font-weight: 600;
     }
     .form-card__img__text p{
         font-size: 14px;
         line-height:20px;
+        font-weight: 400;
     }
     .contact-container--form-card{
         display: table-cell;
@@ -9967,10 +9972,12 @@ ul.bullet-list {
     .form-card__img__text h3{
         font-size: 32px;
         line-height:36px;
+
     }
     .form-card__img__text p{
         font-size: 18px;
         line-height:24px;
+
     }
 }
 .video-text__video {
@@ -13041,6 +13048,9 @@ manner*/
 }
 .form-user-grp select{
     background-color: #fff;
+}
+.form-user-grp select option{
+    background-color: #fff !important;
 }
 @media screen and (min-width: 768px) {
     .form-row [class*="col-sm-6"]:nth-of-type(odd) {
