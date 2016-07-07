@@ -160,25 +160,17 @@ $('.login-type__detail').click(function () {
 
     if ($(window).width() < breakpointTablet) {
         $('.login-type__detail').find('ul').slideUp();
-        $('.login-type__detail').find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>');
+        $('.login-type__detail').find('svg').remove();
+        $('h3').after(right);
 
         //Toggle clicked main menu item's chevron
         if (!$(this).find('ul').is(':visible')) {
-            $(this).find('svg').fadeOut("normal", function () {
-                $(this).remove();
-            });
-            $(this).find('h3').fadeIn("1", function(){
-                $(this).after(down);
-            });
+            $(this).find('svg').remove();
+            $(this).find('h3').after(down);
             $(this).find('ul').slideDown();
         } else {
-            $(this).find('svg').fadeOut("normal", function(){
-                $(this).remove();
-            });
-            $(this).find('h3').fadeIn("1", function(){
-                $(this).after(right);
-            });
-
+            $(this).find('svg').remove();
+            $(this).find('h3').after(right);
         }
     }
 });

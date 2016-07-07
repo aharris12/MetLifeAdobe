@@ -284,11 +284,11 @@ $('body').on('click touchstart tap', function(e){
 });
 
 $('.megamenu-trigger').on('click', function(){
-    if($(".icon-close.megamenu-trigger__icon").css("display") == "none"){
-        $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
+    if($(".icon-close-grey.megamenu-trigger__icon").css("display") == "none"){
+        $(".icon-close-grey.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
     }else{
-        $(".icon-close.megamenu-trigger__icon").css("display", "none");
+        $(".icon-close-grey.megamenu-trigger__icon").css("display", "none");
         $(".icon-menu.megamenu-trigger__icon").css("display", "inline-block");
     }
 
@@ -487,24 +487,24 @@ $(window).resize(function(){
 var optionsOpen = false;
 $('.megamenu__main-item').click(function() {
 
+    var right = '<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>';
+    var down = '<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>';
+
     if (getViewport() == "mobile" ) {
+        console.log('reset all arrows');
+        $('.megamenu__sub-items').slideUp();
+        $('.megamenu__main-item').find('svg').remove();
+        $('.megamenu__main-item-label').after(right);
+
         if ($(this).find('.megamenu__sub-items').is(':visible')) {
             $(this).find('.megamenu__sub-items').slideUp();
+            $(this).find('svg').remove();
+            $(this).find('.megamenu__main-item-label').after(right);
         } else {
             $('.megamenu__sub-items').slideUp();
             $(this).find('.megamenu__sub-items').slideToggle();
-        }
-        //Toggle main menu item's chevron
-
-        if($(this).find('svg').attr("class").split(' ')[1] == "icon-chevron-right"){
-            $('.megamenu__main-item').each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
-            $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
-        }else{
-            $('.megamenu__main-item').each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
+            $(this).find('svg').remove();
+            $(this).find('.megamenu__main-item-label').after(down);
         }
     }
 
@@ -2061,25 +2061,17 @@ $('.login-type__detail').click(function () {
 
     if ($(window).width() < breakpointTablet) {
         $('.login-type__detail').find('ul').slideUp();
-        $('.login-type__detail').find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>');
+        $('.login-type__detail').find('svg').remove();
+        $('h3').after(right);
 
         //Toggle clicked main menu item's chevron
         if (!$(this).find('ul').is(':visible')) {
-            $(this).find('svg').fadeOut("normal", function () {
-                $(this).remove();
-            });
-            $(this).find('h3').fadeIn("1", function(){
-                $(this).after(down);
-            });
+            $(this).find('svg').remove();
+            $(this).find('h3').after(down);
             $(this).find('ul').slideDown();
         } else {
-            $(this).find('svg').fadeOut("normal", function(){
-                $(this).remove();
-            });
-            $(this).find('h3').fadeIn("1", function(){
-                $(this).after(right);
-            });
-
+            $(this).find('svg').remove();
+            $(this).find('h3').after(right);
         }
     }
 });
@@ -2568,18 +2560,19 @@ function micrositeComparisonChart() {
  */
 
 $(document).ready(function () {
-
+    productTilePadding();
     productTilesLayout();
     productTilePullRight();
 });
 
 $(window).load(function () {
-
+    productTilePadding();
     productTileHeight();
     productTilePullRight();
 });
 
 $(window).resize(function (e) {
+    productTilePadding();
     productTileHeight();
     productTilePullRight();
 });
@@ -2601,11 +2594,20 @@ $(".product-row__tile__img-tile__img").click(function(){
     window.location.href = href;
 
 });
+function productTilePadding(){
+    if (getViewport() == "desktop" || getViewport() == "tablet"){
+        $(".product-row").parent().css("padding","0 0 10px 0px");
+    }else{
+        $(".product-row").parent().css("padding","0 10px 10px 10px");
+    }
+
+}
 function productTileHeight() {
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if ($(".product-row").length != 0) {
+
             $(".product-row").each(function () {
-                $(this).find($(".single-promo")).css("height", "320");
+                //$(this).find($(".single-promo")).css("height", "320");
                 var elements = $(this).find(".product-row__tile__top");
                 var bottomElements = $(this).find(".product-row__tile__bottom");
 
@@ -2637,7 +2639,11 @@ function productTileHeight() {
                     if (subHeight < $(this).find(".product-row__tile--img-tile").outerHeight()) {
                         $(this).find(".product-row__tile").outerHeight($(this).find(".product-row__tile--img-tile").outerHeight());
                     } else {
+                      /*  $(this).find(".product-row__tile--img-tile > .product-row__tile--img-tile__text").height(subHeight);*/
                         $(this).find(".product-row__tile--img-tile").height(subHeight);
+
+
+
                     }
                 }
 
@@ -2652,7 +2658,7 @@ function productTileHeight() {
         }
     } else {
         if ($(".product-row").length != 0) {
-            $(".product-row").parent().css("padding","10px");
+            //$(".product-row").parent().css("padding","0 10px 0 10px");
             $(".product-row").each(function () {
                 var elements = $(this).find(".product-row__tile__top");
                 var bottomElements = $(this).find(".product-row__tile__top");

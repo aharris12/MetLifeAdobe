@@ -3,18 +3,19 @@
  */
 
 $(document).ready(function () {
-
+    productTilePadding();
     productTilesLayout();
     productTilePullRight();
 });
 
 $(window).load(function () {
-
+    productTilePadding();
     productTileHeight();
     productTilePullRight();
 });
 
 $(window).resize(function (e) {
+    productTilePadding();
     productTileHeight();
     productTilePullRight();
 });
@@ -36,11 +37,20 @@ $(".product-row__tile__img-tile__img").click(function(){
     window.location.href = href;
 
 });
+function productTilePadding(){
+    if (getViewport() == "desktop" || getViewport() == "tablet"){
+        $(".product-row").parent().css("padding","0 0 10px 0px");
+    }else{
+        $(".product-row").parent().css("padding","0 10px 10px 10px");
+    }
+
+}
 function productTileHeight() {
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if ($(".product-row").length != 0) {
+
             $(".product-row").each(function () {
-                $(this).find($(".single-promo")).css("height", "320");
+                //$(this).find($(".single-promo")).css("height", "320");
                 var elements = $(this).find(".product-row__tile__top");
                 var bottomElements = $(this).find(".product-row__tile__bottom");
 
@@ -72,7 +82,11 @@ function productTileHeight() {
                     if (subHeight < $(this).find(".product-row__tile--img-tile").outerHeight()) {
                         $(this).find(".product-row__tile").outerHeight($(this).find(".product-row__tile--img-tile").outerHeight());
                     } else {
+                      /*  $(this).find(".product-row__tile--img-tile > .product-row__tile--img-tile__text").height(subHeight);*/
                         $(this).find(".product-row__tile--img-tile").height(subHeight);
+
+
+
                     }
                 }
 
@@ -87,7 +101,7 @@ function productTileHeight() {
         }
     } else {
         if ($(".product-row").length != 0) {
-            $(".product-row").parent().css("padding","10px");
+            //$(".product-row").parent().css("padding","0 10px 0 10px");
             $(".product-row").each(function () {
                 var elements = $(this).find(".product-row__tile__top");
                 var bottomElements = $(this).find(".product-row__tile__top");

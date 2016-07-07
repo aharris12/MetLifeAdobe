@@ -4,12 +4,17 @@
 .product-row__tile__bottom {
     margin-top:10px;
 }
+
 .product-row__tile {
-    margin: 10px 0;
+    margin-bottom: 10px;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
+.product-row__tile:last-of-type {
+    margin-bottom: 0px;
 
+}
 .product-row__tile--img-tile {
     background-color: #0E5DAE;
     padding: 0;
@@ -65,6 +70,7 @@
     background-color: #0E5DAE;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 .product-row__tile__promo {
@@ -88,7 +94,6 @@
 
 .single-promo {
     position: relative;
-    background-color: black;
     background-color: #0E5DAE;
 }
 
@@ -107,7 +112,40 @@
     line-height: 18px;
 }
 
+.product-tile__action--link, .product-tile__action, .product-tile__action--tel {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-top: 5px;
+    color: #333;
+}
+.product-tile__action--tel{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2c77c5;
+}
+.product-tile__action--link{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2c77c5;
+}
+
+.product-tile__action--link:hover {
+    text-decoration: underline;
+}
+
+.product-tile__action--tel {
+    color: #2c77c5;
+    text-decoration: underline;
+}
+
+
 @media screen and (min-width: 768px) {
+
     .product-row__tile__copy{
         font-size: 12px;
         line-height: 16px;
@@ -124,13 +162,14 @@
     .product-row__tile {
         width: 32%;
         float: left;
-        padding: 0px 10px 25px 10px;
+        padding: 10px;
+        margin-top: 0px;
         margin-bottom: 10px;
         min-height: 320px;
     }
 
     .product-row__tile__top {
-        padding-top: 50px;
+        padding-top: 35px;
         min-height: 217px;
         width: 90%;
         margin: auto;
@@ -187,17 +226,22 @@
         margin: 10px 0;
         float: left;
         clear: none;
+        margin-top: 0px;
+        margin-bottom: 10px;
     }
 
     .single-promo .product-row__tile--img-tile__text {
         text-align: center;
         padding-top: 0;
+        height: 100%;
     }
 
     .double-promo {
         width: 66%;
         float: left;
         clear: none;
+        margin-top: 0px;
+        margin-bottom: 10px;
     }
 
     .double-promo .product-row__tile__img-tile__img {
@@ -219,6 +263,8 @@
         display:table;
         background-color: inherit;
         box-shadow: none;
+        margin-top: 0px;
+        margin-bottom: 10px;
     }
 
     .triple-promo .product-row__tile--img-tile__text{
@@ -281,9 +327,38 @@
         font-size: 14px;
         line-height: 20px;
     }
+
+    .product-tile__action--link, .product-tile__action,  .product-tile__action--tel {
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: .5px;
+    }
+    .product-tile__action--tel{
+        color: #333!important;
+        text-decoration: none;
+    }
+    .product-tile__action--tel:hover {
+        text-decoration: none;
+    }
+    .product-row__tile__bottom {
+        padding-bottom: 15px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .product-row__tile{
+        height:320px;
+    }
+    .product-row__tile--img-tile__text > .product-row__tile__bottom{
+        position: relative;
+        top: 20px;
+    }
+
+    .product-row__tile__bottom {
+        bottom: 8px;
+        width: 95%;
+        position: absolute;
+    }
     .product-row__tile__top p{
         font-size: 13px;
         line-height: 18px;
@@ -314,10 +389,18 @@
     }
 
     .triple-promo{
-        padding: 30px 0 25px;
+
+    }
+    .product-tile__action--link, .product-tile__action, .product-tile__action--tel {
+        font-size: 16px;
+        line-height: 15px;
+        letter-spacing: 1px;
     }
 }
 @media screen and (max-width: 767px) {
+    .single-promo{
+        margin-bottom: 20px;
+    }
     .product-row:first-of-type > .product-row__tile:first-of-type {
         margin-top:0;
     }
@@ -325,3 +408,4 @@
         margin-bottom:0;
     }
 }
+
