@@ -126,6 +126,7 @@ $('.login-type-trigger__title').on('click touchstart', function (e) {
 });
 
 function toggleLoginTypes() {
+    console.log(imagesPath);
     var minus = '<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>';
     var plus = '<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>';
     //Toggle main menu item's chevron
