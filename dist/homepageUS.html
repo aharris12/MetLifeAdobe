@@ -13,7 +13,7 @@
 	<link href="/static/images//favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-	<!-- Packaged on 07/07/2016 @15:38:46 by MetLife --><meta name="format-detection" content="telephone=no">
+	<!-- Packaged on 07/07/2016 @16:26:08 by MetLife --><meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
@@ -1100,7 +1100,7 @@
 	<div class="row no-padding-top">
 
 		<!-- Product Selector -->
-		<div class="get-quote__container home-quote__container cta_header_quote">
+		<!--<div class="get-quote__container home-quote__container cta_header_quote">
 			<p>I am interestead in:</p>
 
 			<div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper">
@@ -1115,12 +1115,12 @@
 					<option value="Life" data-product-type="Property Insurance">Property Insurance</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub"
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub"
 			     data-product-sub="Life Insurance">
 				<svg class="icon">
 					<use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select"
+				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
 				        disabled>
 					<option value="" selected disabled>I want protection for</option>
 					<option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set
@@ -1132,12 +1132,12 @@
 					<option value="Pet" data-product-url="HelpMeChoose">Help Me Choose</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden"
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub hidden"
 			     data-product-sub="Personal Accident Insurance">
 				<svg class="icon">
 					<use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select"
+				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
 				        disabled>
 					<option value="" selected disabled>I want protection for</option>
 					<option value="Home" data-product-url="Individual.html">An Individual</option>
@@ -1146,12 +1146,12 @@
 					<option value="Pet" data-product-url="Injury.html">An Injury</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden"
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub hidden"
 			     data-product-sub="Property Insurance">
 				<svg class="icon">
 					<use xlink:href="/static/images//icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select"
+				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
 				        disabled>
 					<option value="" selected disabled>I want protection my</option>
 					<option value="Home" data-product-url="bag.html">Lost/Stolen Baggage</option>
@@ -1160,6 +1160,17 @@
 				</select>
 			</div>
 			<a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
+		</div>-->
+
+		<div xk-section="v1" class="parbase find-product base get-quote__container home-quote__container cta_header_quote xk-component xk-section-base">
+			<p>I am interested in:</p>
+			<div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper">
+				<svg class="icon">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images//icons-metlife.svg#icon-select-arrows"></use>
+				</svg>
+				<select required="" class="insurance-type product__selector"> <option value="" selected="" disabled="">Please Select Insurance Type:</option> <option value="Auto" data-product-url="/content/metlife/us/homepage/insurance/auto-insurance.html">Auto</option> <option value="Dental" data-product-url="/content/metlife/us/homepage/insurance/dental-insurance.html">Dental</option> <option value="Home" data-product-url="/content/metlife/us/homepage/insurance/home-insurance.html">Home</option> <option value="Life" data-product-url="/individual/insurance/life-insurance/">Life</option> <option value="Vision" data-product-url="/content/metlife/us/homepage/insurance/vision-insurance.html">Vision</option> </select>
+			</div>
+			<a href="#" id="homepage_find-product_content-buttonLabel" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
 		</div>
 
 		<!-- FAX -->
