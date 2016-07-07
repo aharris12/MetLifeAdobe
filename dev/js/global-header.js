@@ -384,24 +384,24 @@ $(window).resize(function(){
 var optionsOpen = false;
 $('.megamenu__main-item').click(function() {
 
+    var right = '<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>';
+    var down = '<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>';
+
     if (getViewport() == "mobile" ) {
+        console.log('reset all arrows');
+        $('.megamenu__sub-items').slideUp();
+        $('.megamenu__main-item').find('svg').remove();
+        $('.megamenu__main-item-label').after(right);
+
         if ($(this).find('.megamenu__sub-items').is(':visible')) {
             $(this).find('.megamenu__sub-items').slideUp();
+            $(this).find('svg').remove();
+            $(this).find('.megamenu__main-item-label').after(right);
         } else {
             $('.megamenu__sub-items').slideUp();
             $(this).find('.megamenu__sub-items').slideToggle();
-        }
-        //Toggle main menu item's chevron
-
-        if($(this).find('svg').attr("class").split(' ')[1] == "icon-chevron-right"){
-            $('.megamenu__main-item').each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
-            $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>')
-        }else{
-            $('.megamenu__main-item').each(function(){
-                $(this).find('use').unwrap().wrap('<svg class="icon icon-chevron-right"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-right"></use></svg>')
-            });
+            $(this).find('svg').remove();
+            $(this).find('.megamenu__main-item-label').after(down);
         }
     }
 
