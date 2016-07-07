@@ -94,6 +94,7 @@ module.exports = function (grunt) {
                     'dev/css/component/visiondental-overlay.css',
                     'dev/css/component/inview.css',
                     'dev/css/component/tooltipster.css',
+                    'dev/css/component/generic-content.css',
                     'dev/css/theme/ie9select.css'
 
                 ],
@@ -290,6 +291,7 @@ module.exports = function (grunt) {
                         'dev/css/component/visiondental-overlay.css',
                         'dev/css/component/inview.css',
                         'dev/css/component/tooltipster.css',
+                        'dev/css/component/generic-content.css',
                         'dev/css/theme/ie9select.css'
 
 

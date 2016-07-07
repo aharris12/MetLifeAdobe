@@ -1191,9 +1191,8 @@ function ss_handleMouseC() {
     for (var ri = 0; ri < rows.length - 1; ri++) {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
-            console.log($(x)[0].innerText);
             $('#searchInPage,#Search').val($(x)[0].innerText);
-            $('.search_submit').click();
+            $('.search-trigger__search-box').click();
             // Back up the original query if not already, and adjust the reference
             // index.
             /* if (!ss_qbackup) {

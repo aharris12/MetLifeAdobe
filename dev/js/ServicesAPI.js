@@ -431,7 +431,6 @@ $("#list_topics").change(function () {
 	totalMonths = [];
 	listCount = 0;
 	ServicesAPI.newsRoomServiceConstruction();
-	console.log("runnin")
 	setTimeout(function () {
 		ServicesAPI.newsRoomTopicsChange();
 	}, 500);
@@ -491,41 +490,21 @@ $('.js-searchSubmit').on('click', function () {
 	}
 });
 
-$(".ss-gac-a, .ss-gac-b").on("click", function () {
-	var searchTerm = $(this).find(".ss-gac-c").text();
-	$(".search-trigger__search-box").val(searchTerm)
-	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm)
-		ServicesAPI.legacySearch(searchTerm);
-
-	} else {
-		//For Integration we only need this statment
-		if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-			ServicesAPI.redirectToSearchResultsPage($(".search-trigger__search-box").val());
-		}
-	}
-});
-
-
 // Site Header Search click on icon
 $('.js-searchIcon').click(function () {
 	if ($('.search-trigger__search-box').val()) {
+		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 			if ($(".search-trigger__icon--open").length > 0 && getViewport() != "mobile") {
-				if ($(".search-trigger__search-box").val() == "" || $(".search-trigger__search-box").val() == " ") {
-					ServicesAPI.legacySearch("search");
-				} else {
-					ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+				if (!$(".search-trigger__search-box").val() == "" && !$(".search-trigger__search-box").val() == " ") {
+					ServicesAPI.legacySearch(searchTerm);
 				}
-
-			} else {
-
 			}
 
 		} else {
 			//For Integration we only need this statment
 			if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-				ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+				ServicesAPI.redirectToSearchResultsPage(searchTerm);
 			}
 		}
 
@@ -536,32 +515,36 @@ $('.js-searchIcon').click(function () {
 //Site header search in mobile
 $('.js-searchIconMobile').click(function () {
 	if ($('.search-trigger__search-box').val()) {
+		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 			if (getViewport() == "mobile" && $(".search-trigger__icon--open").length > 0) {
-				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+				ServicesAPI.legacySearch(searchTerm);
 			}
 		} else {
 			//For Integration we only need this statment
 			if ($(window).width() >= 767 && $(".search-trigger__icon--open").length > 0) {
-				ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+				ServicesAPI.redirectToSearchResultsPage(searchTerm);
 			}
 		}
 	}
 });
 //Site header search on keypress
 $('.search-trigger__search-box').keypress(function (e) {
+
 	if ($('.search-trigger__search-box').val()) {
 
 		if ($(this).hasClass("js-oldSearch")) {
 			if (e.which == 13) {
+				var searchTerm = $(this).val();
 				e.preventDefault();
-				ServicesAPI.legacySearch($(".search-trigger__search-box").val());
+				ServicesAPI.legacySearch(searchTerm);
 			}
 		} else {
 			//For Integration we only need this statment
 			if (e.which == 13) {
+				var searchTerm = $(this).val();
 				e.preventDefault();
-				ServicesAPI.redirectToSearchResultsPage('.search-trigger__search-box');
+				ServicesAPI.redirectToSearchResultsPage(searchTerm);
 			}
 		}
 	}
@@ -1643,7 +1626,7 @@ var ServicesAPI = {
 		window.location.href = str;
 	},
 	redirectToSearchResultsPage: function (input) {
-		var searchTerm = sessionStorage.setItem("searchTerm", $(input).val());
+		var searchTerm = sessionStorage.setItem("searchTerm", input);
 		var url = $("#metSearchForm").attr("data-path-to-search-results");
 		window.location.href = url;
 	},
