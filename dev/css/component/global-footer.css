@@ -499,6 +499,7 @@
     margin-top: 0;
     padding: 2px;
     font-size: 12px;
+    font-weight: 600;
 }
 
 .country__name--selected {
@@ -548,7 +549,7 @@
 
 .social__link:not(:first-of-type) {
     display: inline-block;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .social__link svg {
@@ -582,7 +583,7 @@
     text-align: center;
     display: block;
     margin: 0 auto 20px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 15px;
 }
 
@@ -597,8 +598,8 @@
 
 .footer-legal__link {
     text-align: center;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 15px;
     padding-bottom: 20px;
     margin: 0;
 }
@@ -631,11 +632,12 @@
     display: inline-block;
     font-size: 17px;
     line-height: 15px;
+    margin: 0 5px;
 }
 
 .footer-legal__copyright {
-    font-size: 13px;
-    line-height: 1.55em;
+    font-size: 12px;
+    line-height: 20px;
     text-align: left;
 }
 
@@ -693,7 +695,8 @@
         display: block;
     }
     .footer-legal__copy{
-       /* margin-top: 20px;*/
+        margin-top: 20px;
+        clear: both;
     }
 
     .footer-main__label {
@@ -717,7 +720,7 @@
         margin:9px 0 0 10px;
     }
     .social__link:not(:first-of-type){
-            margin-left: 19px;
+            margin-left: 20px;
         }
 
     .footer-country-language-social {
@@ -737,9 +740,6 @@
         border: 0;
     }
 
-    .footer-country {
-
-    }
 
     .footer-language {
         text-align: left;
@@ -774,6 +774,7 @@
         margin-bottom: 0;
         padding-top: 2px;
         font-size: 12px;
+        font-weight: 400;
     }
 
     .country__name--selected {
@@ -781,6 +782,7 @@
         left: 45px;
         position: absolute;
         font-size: 12px;
+        font-weight: 600;
         top: 2px;
         color: #2c77c5;
     }
@@ -799,7 +801,7 @@
 
     .country__list {
         left: 80px;
-        top: 49px;
+        top: 54px;
         width: 150px;
         overflow-x: hidden;
     }
@@ -828,6 +830,10 @@
 
     .footer-legal__logo i {
         font-size: 36px;
+    }
+
+    .footer-legal__bullet{
+        margin: 0 10px;
     }
 
     .footer-legal__call {
@@ -978,7 +984,7 @@
     .country__label {
         margin-right: 0px;
         line-height: 18px;
-        padding-top:5px;
+        padding-top:10px;
     }
     .footer-country .form-icon-wrapper svg {
         right: 10px;
