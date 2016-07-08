@@ -4139,7 +4139,13 @@ function ss_handleMouseC() {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
             $('#searchInPage,#Search').val($(x)[0].innerText);
-            $('.search-trigger__search-box').click();
+
+            if(getViewport() != "mobile") {
+                $('.js-searchIcon').click();
+            }else{
+                $('.js-searchIconMobile').click();
+            }
+
             // Back up the original query if not already, and adjust the reference
             // index.
             /* if (!ss_qbackup) {
@@ -7596,8 +7602,12 @@ $('.productUserQuestion').on('blur', function () {
 //Contact Forms
 
 /****Product Selector****************************************/
+$(".product__selector").on("change", function(){
+	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+	$(".js-productSelector").attr("href", productSelectorPage);
+});
 
-$(".product__selector").on("change", function () {
+/*$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
 	$(".product__selector--sub").removeClass("error");
@@ -7631,7 +7641,7 @@ $(".js-productSelector").click(function (e) {
 	if (url == "#") {
 		e.preventDefault();
 	}
-});
+});*/
 /****Blog Search****************************************/
 
 

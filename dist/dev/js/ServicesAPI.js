@@ -365,8 +365,12 @@ $('.productUserQuestion').on('blur', function () {
 //Contact Forms
 
 /****Product Selector****************************************/
+$(".product__selector").on("change", function(){
+	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+	$(".js-productSelector").attr("href", productSelectorPage);
+});
 
-$(".product__selector").on("change", function () {
+/*$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
 	$(".product__selector--sub").removeClass("error");
@@ -400,7 +404,7 @@ $(".js-productSelector").click(function (e) {
 	if (url == "#") {
 		e.preventDefault();
 	}
-});
+});*/
 /****Blog Search****************************************/
 
 

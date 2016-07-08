@@ -10823,7 +10823,7 @@ ul.bullet-list {
     overflow-x: auto;
     overflow-y: auto;
     height: 175px;
-    min-width: 215px;
+    min-width: 150px;
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 2px;
@@ -11061,6 +11061,7 @@ ul.bullet-list {
     }
 
     .country__label {
+        width: 70px;
         font-size: 12px;
         padding-top: 5px;
         margin-right: 10px;
@@ -11096,7 +11097,7 @@ ul.bullet-list {
     }
 
     .country__list {
-        left: 79px;
+        left: 80px;
         top: 49px;
         width: 200px;
         overflow-x: hidden;
@@ -11185,9 +11186,15 @@ ul.bullet-list {
         float: right;
     }
 
+    .country__list {
+        width: 150px;
+    }
     .country__label {
-        text-align: left;
+        width: 70px;
+    }
 
+    .country__selected {
+        width: 150px
     }
 }
 
@@ -11323,7 +11330,17 @@ ul.bullet-list {
         height: 18px;
         width: 18px;
     }
-}
+    .country__selected {
+        min-width: 215px;
+    }
+    .country__selector {
+        min-width: 215px;
+    }
+    .country__list {
+        min-width: 215px;
+        left: 70px;
+    }
+    }
 
 .global-footer .wrapper.padding-80-0.quote {
     border: 0;
