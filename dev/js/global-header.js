@@ -89,6 +89,8 @@ function openSearchBox () {
     if (getViewport() == "mobile"){
         if( $('.megamenu').is(':visible') ){
             $('.megamenu').removeClass('megamenu--open');
+            $('.icon-menu').toggle();
+            $('.icon-close').toggle();
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
         $('.search-trigger__icon').css({left: '10'});
