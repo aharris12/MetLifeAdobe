@@ -31,12 +31,12 @@
     top: 20px;
     right: 10px;
 }
-.contextual-link__content__label{
+.contextual-link__content__label {
     position: relative;
     height:100%;
 }
 
-.contextual-link__content__label p{
+.contextual-link__content__label p {
     margin-bottom: 0;
     font-size: 16px;
     text-align: left;
@@ -47,8 +47,8 @@
     position: absolute;
     top: 35%;
     left: 90%;
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
 }
 
 @media screen and (min-width: 768px) {

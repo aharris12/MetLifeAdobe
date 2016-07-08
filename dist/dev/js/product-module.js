@@ -10,9 +10,8 @@ $(window).resize(function (e) {
 });
 
 
+function matchProductModuleHeights() {
 
-function matchProductModuleHeights(){
-    
 //    $('.row.wrapper.product-module').each(function () {
 //        var moduleHeight = $(this).find('.product-module__medium').map(function () {
 //                return $(this).height();
@@ -20,11 +19,11 @@ function matchProductModuleHeights(){
 //            maxModuleHeight = Math.max.apply(null, moduleHeight);
 //        $(this).find('.product-module__medium').height(maxModuleHeight);
 //    });
-    
-    if ($(".hidden-xs").is(":visible")){
-        if ($(".product-module").length != 0){
-            $(".product-module").each(function(index){
-                var productModuleTop= $(this).find(".product-module__top");
+
+    if ($(".hidden-xs").is(":visible")) {
+        if ($(".product-module").length != 0) {
+            $(".product-module").each(function (index) {
+                var productModuleTop = $(this).find(".product-module__top");
                 var productModuleBottom = $(this).find(".product-module__bottom");
                 var productModuleTopHeight = 0;
                 var productModuleBottomHeight = 0;
@@ -45,16 +44,16 @@ function matchProductModuleHeights(){
                     productModuleBottomHeight = $(this).outerHeight() > productModuleBottomHeight ? $(this).outerHeight() : productModuleBottomHeight;
 
                 });
-                productModuleBottom.css('min-height', productModuleBottomHeight  + 'px');
+                productModuleBottom.css('min-height', productModuleBottomHeight + 'px');
 
 
-            }) ;
+            });
         }
-    }else{
+    } else {
 
-        if ($(".product-module").length != 0){
-            $(".product-module").each(function(){
-                var productModuleTop= $(this).find(".product-module__top");
+        if ($(".product-module").length != 0) {
+            $(".product-module").each(function () {
+                var productModuleTop = $(this).find(".product-module__top");
                 var productModuleBottom = $(this).find(".product-module__bottom");
 
                 productModuleTop.css('min-height', 'auto');
@@ -66,9 +65,15 @@ function matchProductModuleHeights(){
 
 };
 
-if($(".product-module").length > 0) {
-    if($(".product-module").children(".product-module__small").length !== 0) {
+if ($(".product-module").length > 0) {
+    if ($(".product-module").children(".product-module__small").length !== 0) {
         $(".product-module").addClass("product-module__small--min-height");
     }
+
+    if ($(".product-module__medium").closest(".container").next().filter($(".promocard").closest(".container")).length !== 0 ||
+        $(".product-module__medium").parentsUntil(".content-parsys").last().next().filter($(".promocard").parentsUntil(".content-parsys").last()).length !== 0) {
+        $(".product-module__medium").closest(".product-module").addClass("product-module--last");
+    }
 }
+
 

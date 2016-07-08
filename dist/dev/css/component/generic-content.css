@@ -1,0 +1,47 @@
+.generic-content__img__container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.generic-content__img__container img {
+    margin-bottom: 20px;
+}
+.monthly_rates .video_container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.monthly_rates .videoWrapper {
+    position: relative;
+    height: auto;
+    padding-bottom: 0;
+}
+.monthly_rates .videoWrapper object {
+    position: static;
+}
+.wrapper-general {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wrapper-general .table-title {
+    margin-bottom: 20px;
+}
+.wrapper-general .overlay-table-layout {
+    margin-bottom: 20px;
+}
+.general-caption {
+    margin-bottom: 40px !important;
+}
+@media (min-width: 768px) {
+    .generic-content__img__container {
+        width: 75%;
+    }
+    .monthly_rates .video_container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+    .monthly_rates .videoWrapper {
+        height: 400px;
+    }
+}
