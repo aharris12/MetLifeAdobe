@@ -821,6 +821,7 @@
 .megamenu__sub-item-label {
     display: block;
     margin: 10px 7% 10px 20px;
+    font-size: 12px;
     color: #fff;
     text-decoration: none;
     line-height: 20px;
