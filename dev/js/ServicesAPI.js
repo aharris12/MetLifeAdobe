@@ -342,7 +342,7 @@ $('[data-valid-type=phone]').on('keyup', function (evt) {
 	$(this).val(input_value);
 });
 
-$('.productUserQuestion').on('blur', function () {
+$('.productPolicy').on('blur', function () {
 	var $this = $(this);
 	var $con = $this.closest('.productPolicyTypes');
 	var val = $this.val();
@@ -363,6 +363,20 @@ $('.productUserQuestion').on('blur', function () {
 	}
 });
 //Contact Forms
+
+$('.form-user-grp > select').on('blur', function () {
+	var $this = $(this);
+	var val = $this.val();
+	var placeholder = $this.attr('placeholder');
+	if ($this.val() == "") {
+		$this.val(placeholder);
+	}
+	if (val == "" || val == placeholder) {
+		$this.closest('.form-user-grp').find('svg').css('fill', '#db3535');
+	} else {
+		$this.closest('.form-user-grp').find('svg').css('fill', '#666');
+	}
+});
 
 /****Product Selector****************************************/
 
