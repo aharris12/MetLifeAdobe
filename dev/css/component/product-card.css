@@ -80,7 +80,9 @@
 .product-card .action p a[href*='tel'] {
     color: black;
     border-bottom: none;
-    cursor: default;
+    cursor: pointer;
+    color: #337ab7;
+    border-bottom: 1px solid #add0f0;
 }
 .product-card .action p a[href*='tel']:hover {
     text-decoration: none;
@@ -300,7 +302,15 @@
     }
     .product-card .action p a[href*='tel'] {
         pointer-events: none;
+        color: black;
+        border-bottom: none;
+        cursor: default;
     }
+    .product-card .action p a[href*='tel']:hover {
+        text-decoration: none;
+        color: #2c77c5;
+    }
+
 
 }
 
