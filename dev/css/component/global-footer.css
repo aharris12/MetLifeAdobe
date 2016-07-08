@@ -639,7 +639,7 @@
     text-align: left;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .social__link svg {
         height: 19px;
         width: 19px;
@@ -788,8 +788,7 @@
     .country__selected {
         border: 1px solid #cccccc;
         background-color: transparent;
-        /*width: 100%;*/
-        max-width: 215px;
+        max-width: 150px;
         height: 40px;
         padding: 7px 10px 8px;
     }
@@ -801,7 +800,7 @@
     .country__list {
         left: 80px;
         top: 49px;
-        width: 200px;
+        width: 150px;
         overflow-x: hidden;
     }
 
