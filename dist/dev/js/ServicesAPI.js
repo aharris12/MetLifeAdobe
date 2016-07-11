@@ -509,7 +509,7 @@ $('.js-searchSubmit').on('click', function () {
 });
 
 // Site Header Search click on icon
-$('.js-searchIcon').click(function () {
+$('.js-searchIcon').on('click', function () {
 	if ($('.search-trigger__search-box').val()) {
 		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
@@ -531,7 +531,7 @@ $('.js-searchIcon').click(function () {
 
 
 //Site header search in mobile
-$('.js-searchIconMobile').click(function () {
+$('.js-searchIconMobile').on('click', function () {
 	if ($('.search-trigger__search-box').val()) {
 		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {

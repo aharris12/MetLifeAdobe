@@ -2389,35 +2389,9 @@ p {
     margin: 0 auto 20px;
 }
 
-/* Global Skin */
-/*
-h1 {
-    font-size: 1.5em;
-    line-height: 1.2em;
-    font-weight: 600;
-}
-
-h2 {
-    font-size: 1.1em;
-    line-height: 1.2em;
-    font-weight: 600;
-}
-
-h3, h4, h5, h6 {
-    font-size: 0.9em;
-    line-height: 1.3em;
-    font-weight: 600;
-}
-*/
-
 .header--font-weight-400 {
     font-weight: 400;
 }
-
-/*p {
-    font-size: 0.85em;
-    line-height: 1.3em;
-}*/
 
 b {
     font-weight: 400;
@@ -2430,6 +2404,7 @@ b {
 }
 
 .page-title p {
+    width: 85%;
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 0;
@@ -2458,74 +2433,6 @@ b {
     color: #666;
     font-size: 10px;
     line-height: 14px;
-}
-
-@media screen and (min-width: 767px) {
-    .wrapper {
-        width: 95%;
-        padding: 0 0 10px 0;
-    }
-
-    .wrapper.section-title {
-        padding: 50px 0 30px 0;
-    }
-
-    .wrapper.page-title {
-        padding: 50px 0 40px;
-    }
-
-    .wrapper.hero {
-        padding: 100px 0 90px 0;
-    }
-
-    .page-title p {
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    .page-title__heading {
-        font-size: 36px;
-        line-height: 40px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .document-size {
-        font-size: 11px;
-        line-height: 15px;
-    }
-
-    .wrapper.page-title {
-        padding: 65px 0 60px;
-    }
-
-    .wrapper {
-        width: 85%;
-        max-width: 1300px;
-    }
-
-    .page-title p {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .page-title__heading {
-        font-size: 44px;
-        line-height: 44px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .download-link {
-        text-transform: uppercase;
-        color: #2c77c5;
-        font-size: 0.75em;
-        font-weight: 600;
-    }
-
-    .download-link:hover {
-        text-decoration: underline;
-    }
 }
 
 ul,
@@ -2704,7 +2611,40 @@ a:visited {
     padding-right: 60px;
 }
 
+.disabled-anchor {
+    color: #999999 !important;
+    text-decoration: none !important;
+    cursor: text !important;
+}
+
 @media screen and (min-width: 768px) {
+    .wrapper {
+        width: 95%;
+        padding: 0 0 10px 0;
+    }
+
+    .wrapper.section-title {
+        padding: 50px 0 30px 0;
+    }
+
+    .wrapper.page-title {
+        padding: 50px 0 40px;
+    }
+
+    .wrapper.hero {
+        padding: 100px 0 90px 0;
+    }
+
+    .page-title p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .page-title__heading {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
     .border-left-tablet-up {
         border-left: 1px solid #ccc;
     }
@@ -2714,23 +2654,42 @@ a:visited {
     }
 }
 
-.disabled-anchor {
-    color: #999999 !important;
-    text-decoration: none !important;
-    cursor: text !important;
+@media screen and (min-width: 1024px) {
+    .document-size {
+        font-size: 11px;
+        line-height: 15px;
+    }
+
+    .wrapper.page-title {
+        padding: 65px 0 60px;
+    }
+
+    .wrapper {
+        width: 85%;
+        max-width: 1300px;
+    }
+
+    .page-title p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .page-title__heading {
+        font-size: 44px;
+        line-height: 44px;
+    }
+
+    .download-link {
+        text-transform: uppercase;
+        color: #2c77c5;
+        font-size: 0.75em;
+        font-weight: 600;
+    }
+
+    .download-link:hover {
+        text-decoration: underline;
+    }
 }
-
-/*
-@media screen and (min-width: 480px) {}
-
-
-
-@media screen and (min-width: 1024px) {}
-
-@media screen and (min-width: 1280px) {}
-*/
-
-
 /* Metlife Buttons + Button Group */
 .btn-brand-1st,
 .btn-brand-1st-inv,
@@ -2741,7 +2700,7 @@ a:visited {
 .btn-brand-4th,
 .btn-brand-4th-inv {
     font-size: 12px;
-    line-height: 20px;
+    line-height: 15px;
     font-weight: 600;
     letter-spacing: .5px;
     text-transform: uppercase;
@@ -2754,7 +2713,7 @@ a:visited {
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     margin: 0 auto 10px;
-    padding: 10px 30px;
+    padding: 12.5px 30px;
     display: inline-block;
 }
 
@@ -3006,7 +2965,7 @@ a:visited {
     .btn-brand-4th,
     .btn-brand-4th-inv {
         font-size: 11px;
-        padding: 10px 20px;
+        padding: 12.5px 20px;
     }
 }
 
@@ -10031,7 +9990,7 @@ ul.bullet-list {
     }
     .form-card__img__inner{
         background-size: cover;
-        background-position: center;
+        background-position: center top;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
@@ -10288,9 +10247,7 @@ ul.bullet-list {
     font-size: 16px;
     line-height: 20px;
 }
-.accordion .border-top:last-of-type{
-    border-bottom: 1px solid #ccc;
-}
+
 
 .accordion .accordion__toggle-all{
     text-align: right;

@@ -1191,32 +1191,18 @@ function ss_handleMouseC() {
     for (var ri = 0; ri < rows.length - 1; ri++) {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
+
             $('#searchInPage,#Search').val($(x)[0].innerText);
-            console.log($('#searchInPage,#Search').val())
+
+            var searchTerm = $(".search-trigger__search-box").val();
 
 
-
-                  if($('#Search').length > 0){
-                      var searchTerm = $("#Search").val();
-                  }else{
-                      var searchTerm = $("#searchInPage").val();
-                  }
-
-                    console.log(searchTerm)
-                    console.log($(".search-trigger__search-box").hasClass("js-oldSearch"))
-                    if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-                        console.log("true")
-                        ServicesAPI.legacySearch(searchTerm);
-                        }else {
-                            console.log("false")
-                            //For Integration we only need this statment
-                            ServicesAPI.redirectToSearchResultsPage(searchTerm);
-                        }
-
-                    }
-
-
-
+            if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+                   ServicesAPI.legacySearch(searchTerm);
+            } else {
+                //For Integration we only need this statment
+                    ServicesAPI.redirectToSearchResultsPage(searchTerm);
+            }
             // Back up the original query if not already, and adjust the reference
             // index.
             /* if (!ss_qbackup) {
@@ -1239,6 +1225,7 @@ function ss_handleMouseC() {
              ss_clear();
              break;*/
         }
+    }
 }
 
 /**
