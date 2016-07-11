@@ -46,7 +46,7 @@ function productTilePadding(){
 
 }
 function productTileHeight() {
-    if (getViewport() == "tablet" || getViewport() == "desktop") {
+    if ($(".hidden-xs").is(":visible")) {
         if ($(".product-row").length != 0) {
 
             $(".product-row").each(function () {
