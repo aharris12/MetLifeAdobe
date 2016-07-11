@@ -151,7 +151,7 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 });
 
 //New This should be uncommented once form builder is in palce
-$('[data-fsubmit]').on('click', function (e) {
+$('[data-submit-type="clr"]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
