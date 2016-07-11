@@ -1192,12 +1192,30 @@ function ss_handleMouseC() {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
             $('#searchInPage,#Search').val($(x)[0].innerText);
+            console.log($('#searchInPage,#Search').val())
 
-            if(getViewport() != "mobile") {
-                $('.js-searchIcon').click();
-            }else{
-                $('.js-searchIconMobile').click();
-            }
+
+
+                  if($('#Search').length > 0){
+                      var searchTerm = $("#Search").val();
+                  }else{
+                      var searchTerm = $("#searchInPage").val();
+                  }
+
+                    console.log(searchTerm)
+                    console.log($(".search-trigger__search-box").hasClass("js-oldSearch"))
+                    if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+                        console.log("true")
+                        ServicesAPI.legacySearch(searchTerm);
+                        }else {
+                            console.log("false")
+                            //For Integration we only need this statment
+                            ServicesAPI.redirectToSearchResultsPage(searchTerm);
+                        }
+
+                    }
+
+
 
             // Back up the original query if not already, and adjust the reference
             // index.
@@ -1221,7 +1239,6 @@ function ss_handleMouseC() {
              ss_clear();
              break;*/
         }
-    }
 }
 
 /**
