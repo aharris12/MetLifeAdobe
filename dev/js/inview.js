@@ -13,3 +13,9 @@ $(document).ready(function () {
 		}
 	});
 });
+
+$('.in_view').bind('inview', function (event, visible) {
+	if (visible == true) {
+		$(this).addClass('on');
+	}
+});
