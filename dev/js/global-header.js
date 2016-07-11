@@ -89,6 +89,8 @@ function openSearchBox () {
     if (getViewport() == "mobile"){
         if( $('.megamenu').is(':visible') ){
             $('.megamenu').removeClass('megamenu--open');
+            $('.icon-menu').toggle();
+            $('.icon-close').toggle();
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
         $('.search-trigger__icon').css({left: '10'});
@@ -118,7 +120,7 @@ function openSearchBox () {
             $('.search-trigger__search-box').animate({width: '170px'}, 600);
             $('.search-trigger__icon').toggleClass('search-trigger__icon--open');
             $('.search-trigger__icon').animate({left: '145'}, 150);
-            $(".search-trigger__container").css({top: "0"})
+            $(".search-trigger__container").css({top: "10"});
             currentView = getViewport();
         }
 
@@ -138,19 +140,17 @@ function adjustSearchBox(){
     if (getViewport() == "mobile"){
         $(".search-trigger__container").css({top: "0"})
         $('.search-trigger__search-box').css({width: '100%'});
-        $('.search-trigger__icon').css({left: '10px'});
     }
     if (getViewport() == "tablet"){
         $('.search-trigger__icon').css({left: '0'});
-        $(".search-trigger__container").css({top: "0"})
+        $(".search-trigger__container").css({top: "10"})
     }
     if (getViewport() == "desktop"){
         $('.search-trigger__icon').css({left: '0'});
-        $(".search-trigger__container").css({top: "0"})
+        $(".search-trigger__container").css({top: "10"})
     }
 }
 function closeSearchBox () {
-
     $('.search-trigger__search-box').animate({width: '0'}, 600);
     $('.search-trigger').removeClass('search-trigger--open');
     $('.search-trigger__icon').removeClass('search-trigger__icon--open');
@@ -377,7 +377,7 @@ $(window).resize(function(){
         closeContactForm();
         currentView = getViewport();
     }
-
+    adjustSearchBox();
 });
 
 // Show sub menu (mobile only)
