@@ -115,6 +115,7 @@ b {
 }
 
 .page-title p {
+    width: 85%;
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 0;
