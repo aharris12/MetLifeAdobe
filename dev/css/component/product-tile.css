@@ -21,7 +21,7 @@
     background-color: #0E5DAE;
     padding: 0;
     text-align: center;
-    margin: 10px -10px;
+    margin: 0px -10px;
 }
 
 .product-row__tile__img-tile__link {
@@ -278,7 +278,7 @@
         display: table;
         background-color: inherit;
         box-shadow: none;
-        margin-top: 0px;
+        margin-top: 20px;
         margin-bottom: 10px;
     }
 
@@ -428,7 +428,7 @@
 
 @media screen and (max-width: 767px) {
     .single-promo {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     .product-row:first-of-type > .product-row__tile:first-of-type {

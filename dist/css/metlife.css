@@ -8611,7 +8611,7 @@ body{
     background-color: #0E5DAE;
     padding: 0;
     text-align: center;
-    margin: 10px -10px;
+    margin: 0px -10px;
 }
 
 .product-row__tile__img-tile__link {
@@ -8868,7 +8868,7 @@ body{
         display: table;
         background-color: inherit;
         box-shadow: none;
-        margin-top: 0px;
+        margin-top: 20px;
         margin-bottom: 10px;
     }
 
@@ -9018,7 +9018,7 @@ body{
 
 @media screen and (max-width: 767px) {
     .single-promo {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     .product-row:first-of-type > .product-row__tile:first-of-type {
@@ -13789,7 +13789,7 @@ span.errorRadio {
 @media (min-width: 1025px) {
     .suggestionsbox table {
         width: 170px;
-        left: 225px;
+        left: 222px;
     }
 
 }
