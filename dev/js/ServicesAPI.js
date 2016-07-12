@@ -509,7 +509,7 @@ $('.js-searchSubmit').on('click', function () {
 });
 
 // Site Header Search click on icon
-$('.js-searchIcon').on('click', function () {
+$('.js-searchIcon').click(function () {
 	if ($('.search-trigger__search-box').val()) {
 		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
@@ -531,7 +531,7 @@ $('.js-searchIcon').on('click', function () {
 
 
 //Site header search in mobile
-$('.js-searchIconMobile').on('click', function () {
+$('.js-searchIconMobile').click(function () {
 	if ($('.search-trigger__search-box').val()) {
 		var searchTerm = $(".search-trigger__search-box").val();
 		if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
@@ -565,6 +565,19 @@ $('.search-trigger__search-box').keypress(function (e) {
 				ServicesAPI.redirectToSearchResultsPage(searchTerm);
 			}
 		}
+	}
+});
+
+$("tr").on("click", ".ss-gac-a, .ss-gac-b", function () {
+	alert("yes")
+	var searchTerm = $(this).find(".ss-gac-c").text();
+	$(".search-trigger__search-box").val(searchTerm)
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		$(".search-trigger__search-box").val(searchTerm)
+		ServicesAPI.legacySearch(searchTerm);
+	} else {
+		//For Integration we only need this statment
+		ServicesAPI.redirectToSearchResultsPage(searchTerm);
 	}
 });
 

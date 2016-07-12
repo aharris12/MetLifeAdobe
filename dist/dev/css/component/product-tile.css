@@ -173,7 +173,7 @@
         min-height: 217px;
         width: 90%;
         margin: auto;
-        /*margin-bottom: 20px;*/
+        margin-bottom: 15px;
     }
     .product-row__tile__top p{
         font-size: 12px;

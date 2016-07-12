@@ -1184,6 +1184,12 @@ function ss_handleMouseM() {
  *
  * @this {Element}
  */
+
+
+suggestionsSearch = function(){
+
+}
+
 function ss_handleMouseC() {
     var fo = document.getElementById(ss_form_element);
     var tbl = document.getElementById(ss_popup_element);
@@ -1196,7 +1202,7 @@ function ss_handleMouseC() {
 
             var searchTerm = $(".search-trigger__search-box").val();
 
-
+console.log("running")
             if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
                    ServicesAPI.legacySearch(searchTerm);
             } else {
