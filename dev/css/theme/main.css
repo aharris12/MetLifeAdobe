@@ -63,17 +63,6 @@ table {
     padding-top: 30px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    width: 100%;
-    margin: 0 auto 20px;
-}
-
 .header--font-weight-400 {
     font-weight: 400;
 }
@@ -82,11 +71,11 @@ b {
     font-weight: 400;
 }
 
-.hero h1 {
-    font-size: 1.35em;
-    line-height: 1.25em;
-    font-weight: 600;
-}
+/*.hero h1 {*/
+    /*font-size: 1.35em;*/
+    /*line-height: 1.25em;*/
+    /*font-weight: 600;*/
+/*}*/
 
 .page-title p {
     width: 85%;
