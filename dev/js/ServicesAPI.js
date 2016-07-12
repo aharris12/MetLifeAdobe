@@ -568,12 +568,11 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
-$("tr").on("click", ".ss-gac-a, .ss-gac-b", function () {
-	alert("yes")
+$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
-	$(".search-trigger__search-box").val(searchTerm)
+	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm)
+		$(".search-trigger__search-box").val(searchTerm);
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
 		//For Integration we only need this statment
