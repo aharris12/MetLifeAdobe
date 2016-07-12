@@ -71,11 +71,11 @@ b {
     font-weight: 400;
 }
 
-.hero h1 {
-    font-size: 1.35em;
-    line-height: 1.25em;
-    font-weight: 600;
-}
+/*.hero h1 {*/
+    /*font-size: 1.35em;*/
+    /*line-height: 1.25em;*/
+    /*font-weight: 600;*/
+/*}*/
 
 .page-title p {
     width: 85%;
