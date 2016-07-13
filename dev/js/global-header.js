@@ -89,6 +89,7 @@ function openSearchBox() {
             $('.megamenu').removeClass('megamenu--open');
             $('.icon-menu').toggle();
             $('.icon-close').toggle();
+            $(".js-megaMenuToggle").toggleClass("hidden");
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
         //Open searchbox in mobile
