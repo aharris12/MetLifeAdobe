@@ -1701,9 +1701,8 @@ var ServicesAPI = {
 		var url = input;
 		count = 0;
 		$(".results_content").remove();
-console.log(url)
 		/************LIVE News Room SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1757,11 +1756,11 @@ console.log(url)
 				console.log('error ', e);
 			},
 			timeout: 30000
-		});*/
+		});
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-			if($("#list_topics").val() === "Studies"){
+			/*if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1847,7 +1846,7 @@ console.log(url)
 						$(".divider--load-more__link").show();
 					}
 				});
-			}
+			}*/
 
 		/************LOCAL News Room SERVICE***************/
 	},
@@ -1879,10 +1878,8 @@ console.log(url)
 		}else{
 
 			for (var i in totalMonths) {
-				console.log(totalMonths[i])
 				switch(totalMonths[i]){
 					case 1:
-						console.log("case 1")
 						thisMonth = $(".month_1").text();
 						break;
 					case 2:
