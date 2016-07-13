@@ -37,7 +37,7 @@
     }
 
     .disclaimer:first-of-type {
-        padding-top: 0;
+        padding-top: 35px;
     }
 
     .disclaimer:last-of-type {
@@ -75,5 +75,10 @@
 
     .product-comparison-chart-disclaimer {
         margin: 20px auto 40px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .disclaimer:first-of-type {
+        padding-top: 0px;
     }
 }

@@ -57,7 +57,7 @@
 }
 .form__title {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 20px;
     display: block;
     margin-bottom: 6px;
@@ -234,7 +234,7 @@
     text-align: right;
 }
 .contactDisclaimer {
-    Padding: 0 0px 10px 0px;
+    Padding: 20px 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
     font-weight: 400;
@@ -309,8 +309,8 @@
 .contact-container--form-card > .contactCard > span > .icon{
     top: -20px;
     left: 23px;
-    width: 13px;
-    height: 13px;
+    width: 18px;
+    height: 18px;
 }
 
 
@@ -466,6 +466,7 @@ span.errorRadio {
         width: 61%;
     }
     .form__title {
+        padding-top: 8px;
         font-size: 20px;
     }
 }

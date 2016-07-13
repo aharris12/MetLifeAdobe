@@ -95,6 +95,10 @@
     line-height: 20px;
 }
 
+.product-card .action p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
 .product-card .action p a {
     color: #337ab7;
     text-decoration: underline;

@@ -5834,7 +5834,7 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 });
 
 //New This should be uncommented once form builder is in palce
-$('[data-submit-type="clr"]').on('click', function (e) {
+$('[data-fsubmit]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -6251,12 +6251,12 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
-$("tr").on("click", ".ss-gac-a, .ss-gac-b", function () {
-	alert("yes")
+$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
-	$(".search-trigger__search-box").val(searchTerm)
+	console.log(searchTerm);
+	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm)
+		$(".search-trigger__search-box").val(searchTerm);
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
 		//For Integration we only need this statment
@@ -7362,7 +7362,7 @@ var ServicesAPI = {
 		newsYear = $("#list_year").val();
 		newsTopic = $('#list_topics').val();
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		url += newsYear  + newsMonth + newsConcatenator + newsTopic + query;
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -7384,7 +7384,6 @@ var ServicesAPI = {
 		var url = input;
 		count = 0;
 		$(".results_content").remove();
-
 		/************LIVE News Room SERVICE***************/
 		$.ajax({
 			url: url,
@@ -7413,8 +7412,8 @@ var ServicesAPI = {
 					}
 					resultsListHTML += "<div class='results_content'>";
 					for (var i = 0; i < newsRoomResults.length; i++) {
-						totalYears.push(newsRoomResults[i].created.year);
-						totalMonths.push(newsRoomResults[i].created.month);
+						totalYears.push(newsRoomResults[i].year);
+						totalMonths.push(newsRoomResults[i].month);
 						count++;
 						if (count <= listCount) {
 							resultsListHTML += "<div class=\"list__item\">";
@@ -7444,7 +7443,7 @@ var ServicesAPI = {
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-		/*	if($("#list_topics").val() === "Studies"){
+			/*if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -7465,8 +7464,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -7508,8 +7507,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -7535,8 +7534,8 @@ var ServicesAPI = {
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
-		totalYears.sort();
-		totalMonths.sort();
+		totalYears.sort(function(a, b){return a - b});
+		totalMonths.sort(function(a, b){return a - b});
 		totalYears = unique(totalYears);
 		totalMonths = unique(totalMonths);
 		var selectYear = $('#list_year');
@@ -7598,6 +7597,7 @@ var ServicesAPI = {
 						break;
 					default:
 						thisMonth = $(".month_12").text();
+						break;
 				}
 				selectMonth.append('<option value="'+thisMonth+' selected">'+thisMonth+'</option>');
 			}
@@ -11424,19 +11424,107 @@ $(function() {
 });
 
 
+if($('.product-card').length > 0) {
+    $('.product-card p').filter(function(index) {
+        return $(this).text().length === 0;
+    })
+    .css('margin-bottom', "0");
+}
+
+
 /***** Product Card Module End ************************************************************/
 
 $(document).ready(function(){
-	removePaddingWrapper();
+	removingPaddingContextualLinksContactForm();
+	removingPaddingContextualLinksProductTiles();
+	removingPaddingContextualLinksSmallCards();
+	removeSpacingTopDisclaimer();
 });
 
-function removePaddingWrapper(){
-	var container = $(".container.contextual-links");
+$(window).resize(function(){
+	removingPaddingContextualLinksContactForm();
+	removingPaddingContextualLinksProductTiles();
+	removingPaddingContextualLinksSmallCards();
+	removeSpacingTopDisclaimer();
+});
 
-	if(container.length > 0){
+function removingPaddingContextualLinksContactForm() {
 
-		container.next(".container").find(".wrapper").css("padding-top", "0px");
+		var container = $(".container.contextual-links");
+		if (container.length > 0) {
+			var thisContainer = container.next("div");
+			if (thisContainer.hasClass("contact-advisory")) {
+				if (getViewport() != "mobile") {
+					thisContainer.find(".container").css("cssText", "padding-top: 0px !important;");
+					thisContainer.find(".container").find(".wrapper").css("cssText", "padding-top: 0px !important;");
+
+				}else{
+					thisContainer.find(".container").css("cssText", "padding: 15px 0;");
+				}
+				var h = $('.contact-container--form-card').outerHeight();
+				$(".contact-container--form-card form").click(function() {
+					$('.contact-container--form-card .hidden-field').show();
+				});
+				$('.form-card__img__inner').css('height', h + 'px');
+		}
 	}
+}
+
+function removingPaddingContextualLinksProductTiles() {
+
+		var container = $(".container.contextual-links");
+		if (container.length > 0) {
+			var thisContainer = container.parent().prev().find(".product-card-parsys");
+			var prevContainer = container.prev("div");
+			if (thisContainer.length > 0 && prevContainer.length == 0) {
+				if (getViewport() != "mobile") {
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
+					thisContainer.last(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
+						$(this).css("cssText", "margin-bottom: 0px !important;");
+					});
+					thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: 0px !important;");
+				}else{
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 10px !important; padding: 0 10px;");
+					thisContainer.find(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
+						$(this).css("cssText", "margin-bottom: 10px");
+					});
+					thisContainer.find(".tile-container").first().find(".wrapper").find(".product-row__tile").last().css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: initial;");
+					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: initial;");
+					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: initial;");
+				}
+		}
+	}
+}
+
+function removingPaddingContextualLinksSmallCards() {
+
+		var container = $(".container.contextual-links");
+		if (container.length > 0) {
+			var thisContainer = container.prev("div");
+			if (thisContainer.hasClass("small-product-container")) {
+
+
+				console.log(getViewport() != "mobile")
+			if (getViewport() != "mobile") {
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;");
+			}else{
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 20px !important");
+			}
+		}
+	}
+}
+
+function removeSpacingTopDisclaimer(){
+
+	if (getViewport() != "mobile") {
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+	}else{
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -10px;");
+	}
+
 }
 $(window).scroll(function () {
 	$('.in_view').bind('inview', function (event, visible) {

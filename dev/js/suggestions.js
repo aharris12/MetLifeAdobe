@@ -910,7 +910,7 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur( function() {
+$(".search-trigger__search-box").blur(function () {
     ss_clear();
 });
 
@@ -1186,7 +1186,7 @@ function ss_handleMouseM() {
  */
 
 
-suggestionsSearch = function(){
+suggestionsSearch = function () {
 
 }
 
@@ -1202,12 +1202,12 @@ function ss_handleMouseC() {
 
             var searchTerm = $(".search-trigger__search-box").val();
 
-console.log("running")
+            console.log("running")
             if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-                   ServicesAPI.legacySearch(searchTerm);
+                ServicesAPI.legacySearch(searchTerm);
             } else {
                 //For Integration we only need this statment
-                    ServicesAPI.redirectToSearchResultsPage(searchTerm);
+                ServicesAPI.redirectToSearchResultsPage(searchTerm);
             }
             // Back up the original query if not already, and adjust the reference
             // index.

@@ -25,17 +25,6 @@
     display: inline-block;
 }
 
-.btn-brand-1st:last-child,
-.btn-brand-1st-inv:last-child,
-.btn-brand-2nd:last-child,
-.btn-brand-2nd-inv:last-child,
-.btn-brand-3rd:last-child,
-.btn-brand-3rd-inv:last-child,
-.btn-brand-4th:last-child,
-.btn-brand-4th-inv:last-child {
-    margin-bottom: 0;
-}
-
 .btn-brand-1st:hover,
 .btn-brand-1st-inv:hover,
 .btn-brand-2nd:hover,

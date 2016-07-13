@@ -1,6 +1,7 @@
 .divider-title__title{
     text-align: center;
     font-size: 20px;
+    font-weight: 400;
 }
 
 .contextual-links-row{
@@ -52,7 +53,10 @@
 }
 
 @media screen and (min-width: 768px) {
-
+    .divider-title__title {
+        font-size: 28px;
+        line-height:32px;
+    }
     .contextual-links-row{
         text-align: center;
         font-size: 0;
@@ -108,8 +112,18 @@
         margin: 0 auto;
     }
 }
-
+@media (min-width: 1025px) {
+    .divider-title__title {
+        font-size: 30px;
+        line-height:34px;
+    }
+}
 @media screen and (max-width: 767px) {
+
+    .contextual-link:first-of-type{
+
+        border-top: 1px solid #cccccc;
+    }
     .contextual-link__content__label{
         display: table;
         width: 100%;

@@ -38,4 +38,12 @@ $(function() {
 });
 
 
+if($('.product-card').length > 0) {
+    $('.product-card p').filter(function(index) {
+        return $(this).text().length === 0;
+    })
+    .css('margin-bottom', "0");
+}
+
+
 /***** Product Card Module End ************************************************************/
