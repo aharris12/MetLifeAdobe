@@ -3,7 +3,6 @@
 }
 .media-card {
     margin-bottom: 10px;
-    box-shadow: 1px 3px 5px 0 rgba(0,0,0,.1);
 }
 .media-card__tag{
     position: absolute;
@@ -41,7 +40,7 @@
         width: 32%;
         display: inline-block;
         float: left;
-       /* box-shadow: none;*/
+        box-shadow: none;
         vertical-align: top;
         margin-right: 1.6%;
     }
