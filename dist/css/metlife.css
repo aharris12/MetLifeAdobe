@@ -10341,7 +10341,9 @@ ul.bullet-list {
 .accordion__link{
     display: none;
 }
-
+.accordion .border-top:last-of-type{
+    border-bottom: 1px solid #ccc;
+}
 .accordion__title span:hover{
     color: #429dd9;
 }
@@ -11666,11 +11668,10 @@ ul.bullet-list {
         float: left;
     }
 
-   /* .subnav-go-back__list__item:first-child:nth-last-child(3),
+    .subnav-go-back__list__item:first-child:nth-last-child(3),
     .subnav-go-back__list__item:first-child:nth-last-child(3) ~ .subnav-go-back__list__item:first-of-type {
         margin-left: 12.5%;
     }
-*/
     .subnav-go-back__list__item:first-child:nth-last-child(4),
     .subnav-go-back__list__item:first-child:nth-last-child(4) ~ .subnav-go-back__list__item {
         width: 25%;
@@ -11743,10 +11744,10 @@ ul.bullet-list {
         float: left;
     }
 
-   /* .subnav-go-back__list__item:first-child:nth-last-child(3),
+    .subnav-go-back__list__item:first-child:nth-last-child(3),
     .subnav-go-back__list__item:first-child:nth-last-child(3) ~ .subnav-go-back__list__item:first-of-type {
         margin-left: 16.25%;
-    }*/
+    }
 
     .subnav-go-back__list__item:first-child:nth-last-child(4),
     .subnav-go-back__list__item:first-child:nth-last-child(4) ~ .subnav-go-back__list__item {
