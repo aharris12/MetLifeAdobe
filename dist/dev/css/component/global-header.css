@@ -100,7 +100,7 @@
         transition: all 0.5s;
     }
 
-    .global-header__left--minimized .megamenu-trigger .icon-menu.megamenu-trigger__icon{
+    .global-header__left--minimized .megamenu-trigger .icon-menu.megamenu-trigger__icon {
         top: 15px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
@@ -190,7 +190,6 @@
     transform: rotate(225deg);
 }*/
 
-
 /* Go Home Trigger */
 .home-trigger {
     display: none;
@@ -276,14 +275,14 @@
 
     .home-trigger__icon {
         z-index: 920;
-        top:10px;
+        top: 10px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
 
-    .global-header__left--minimized .home-trigger__icon{
+    .global-header__left--minimized .home-trigger__icon {
         top: 0;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
@@ -291,11 +290,11 @@
         transition: all 0.5s;
     }
 
-    .search-trigger__icon{
-        left:0;
+    .search-trigger__icon {
+        left: 0;
     }
 
-    .global-header .icon.icon-close{
+    .global-header .icon.icon-close {
         top: 27px;
     }
 }
@@ -332,7 +331,7 @@
 
     .megamenu-trigger__label {
         margin-left: 27px;
-        margin-top:9px;
+        margin-top: 9px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
@@ -340,7 +339,7 @@
     }
 
     .global-header__left--minimized .megamenu-trigger__label, .global-header__left--minimized .home-trigger__label, .global-header__left--minimized .search-trigger__label {
-        margin-top:0;
+        margin-top: 0;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
@@ -367,8 +366,12 @@
 
 .search-trigger__icon {
     position: absolute;
-    top: 15px;
     z-index: 920;
+    height: 100%;
+}
+
+.search-trigger__icon .icon-search{
+    top: 15px;
 }
 
 .search-trigger__icon:before {
@@ -400,7 +403,7 @@
 }
 
 .search-trigger__search-box--open {
-    display: block;
+    width: 100%;
 }
 
 .search-trigger__container {
@@ -409,10 +412,19 @@
     position: fixed;
     width: 100%;
     height: 59px;
-    top: 0px;
+    top: 0;
     left: 0;
     padding: 10px;
     z-index: -1;
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+}
+
+.search-trigger__container--open {
+    display: block;
+    top: 50px;
     -webkit-transition: all 500ms ease 0s;
     -moz-transition: all 500ms ease 0s;
     -o-transition: all 500ms ease 0s;
@@ -429,10 +441,24 @@
 @media screen and (min-width: 768px) {
     .search-trigger__container {
         z-index: 1;
+        top: 10px;
+    }
+
+    .search-trigger__container--open{
+        top: 10px;
+        width: 180px;
     }
 
     .search-trigger__icon {
         z-index: 2;
+    }
+
+    .search-trigger__icon--open{
+        left: 145px;
+    }
+
+    .search-trigger__icon .icon-search{
+        top: 0;
     }
 
     .search-trigger__container .search_location_image {
@@ -458,7 +484,7 @@
         transition: all 500ms ease 0s;
     }
 
-    .global-header__left--minimized .search-trigger__icon{
+    .global-header__left--minimized .search-trigger__icon {
         top: 15px;
         -webkit-transition: all 500ms ease 0s;
         -moz-transition: all 500ms ease 0s;
@@ -482,20 +508,19 @@
     .search-trigger__container {
         background-color: transparent;
         position: absolute;
-        width: auto;
         height: auto;
         top: 10px;
         left: 0;
         padding: 5px;
     }
 
-    .global-header__left--minimized .search-trigger__container{
+    .global-header__left--minimized .search-trigger__container {
         top: 0;
     }
 
-    .search-trigger__search-box {
+    .search-trigger__container .search-trigger__search-box {
         padding-right: 35px;
-        width: 0%;
+        width: 100%;
     }
 }
 
@@ -801,6 +826,7 @@
     color: #fff;
     text-decoration: none;
     letter-spacing: 1px;
+    line-height: 20px;
 }
 
 .megamenu__main-item-label:hover {
@@ -821,7 +847,7 @@
 .megamenu__sub-item-label {
     display: block;
     margin: 10px 7% 10px 20px;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     text-decoration: none;
     line-height: 20px;

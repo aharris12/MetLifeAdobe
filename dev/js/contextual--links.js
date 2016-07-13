@@ -12,6 +12,10 @@ $(window).resize(function(){
 	removeSpacingTopDisclaimer();
 });
 
+function spacingBottomLastProductTiles(){
+
+}
+
 function removingPaddingContextualLinksContactForm() {
 
 		var container = $(".container.contextual-links");
@@ -43,7 +47,8 @@ function removingPaddingContextualLinksProductTiles() {
 			if (thisContainer.length > 0 && prevContainer.length == 0) {
 				if (getViewport() != "mobile") {
 					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
-					thisContainer.last(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
+					console.log(thisContainer.find(".tile-container").last())
+					thisContainer.find(".tile-container").last().find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 0px !important;");
 					});
 					thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: 0px !important;");
@@ -73,9 +78,9 @@ function removingPaddingContextualLinksSmallCards() {
 
 				console.log(getViewport() != "mobile")
 			if (getViewport() != "mobile") {
-				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;");
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;  margin-top: 20px;");
 			}else{
-				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 20px !important");
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 20px !important  margin-top: initial;");
 			}
 		}
 	}
