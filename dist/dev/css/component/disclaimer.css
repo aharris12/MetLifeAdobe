@@ -6,7 +6,6 @@
     line-height: 15px;
 }
 
-
 .disclaimer--microsite {
     padding-top: 20px;
 }
@@ -21,27 +20,31 @@
     margin-bottom: 0;
 }
 
-.product-comparison-chart-disclaimer .disclaimer{
+.product-comparison-chart-disclaimer .disclaimer {
     padding-top: 0;
 }
+
 @media screen and (max-width: 767px) {
-    .disclaimer--main{
+    .disclaimer--main {
         display: none;
     }
 }
+
 @media screen and (min-width: 768px) {
     .disclaimer {
-        padding-top: 0px;
+        padding-top: 0;
         padding-bottom: 20px;
     }
+
     .disclaimer:first-of-type {
-        margin-top: 50px;
-        padding-top: 0;
+        padding-top: 35px;
     }
+
     .disclaimer:last-of-type {
         margin-bottom: 30px;
         padding-bottom: 0;
     }
+
     .disclaimer--microsite {
         padding-top: 40px;
     }
@@ -51,7 +54,7 @@
     }
 
     .product-comparison-chart-disclaimer .disclaimer {
-        padding-bottom: 0%;
+        padding-bottom: 0;
         margin-bottom: 0;
     }
 
@@ -62,7 +65,7 @@
         font-size: 12px;
     }
 
-    .disclaimer--product-module .disclaimer{
+    .disclaimer--product-module .disclaimer {
         width: 65%;
     }
 
@@ -72,5 +75,10 @@
 
     .product-comparison-chart-disclaimer {
         margin: 20px auto 40px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .disclaimer:first-of-type {
+        padding-top: 0px;
     }
 }

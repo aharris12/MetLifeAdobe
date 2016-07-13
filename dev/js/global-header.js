@@ -87,6 +87,8 @@ function openSearchBox() {
         //check and close megamenu if it is open
         if ($('.megamenu').is(':visible')) {
             $('.megamenu').removeClass('megamenu--open');
+            $('.icon-menu').toggle();
+            $('.icon-close').toggle();
             $('.megamenu-trigger__link').removeClass('megamenu-trigger__icon--open');
         }
         //Open searchbox in mobile

@@ -9,7 +9,6 @@ $(".accordion .expandAll").click(function () {
             $(this).slideToggle('slow').scrollTop(0);
             $(this).siblings(".accordion__title").find('.icon-minus').show();
             $(this).siblings(".accordion__title").find('.icon-plus').hide();
-
         }
     });
 });

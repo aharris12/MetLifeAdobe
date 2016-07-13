@@ -568,6 +568,19 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
+$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
+	var searchTerm = $(this).find(".ss-gac-c").text();
+	console.log(searchTerm);
+	$(".search-trigger__search-box").val(searchTerm);
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		$(".search-trigger__search-box").val(searchTerm);
+		ServicesAPI.legacySearch(searchTerm);
+	} else {
+		//For Integration we only need this statment
+		ServicesAPI.redirectToSearchResultsPage(searchTerm);
+	}
+});
+
 
 // Search in Page
 $("#searchInPage, .js-searchSubmit").keypress(function (e) {
@@ -1666,7 +1679,7 @@ var ServicesAPI = {
 		newsYear = $("#list_year").val();
 		newsTopic = $('#list_topics').val();
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		url += newsYear  + newsMonth + newsConcatenator + newsTopic + query;
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -1688,7 +1701,6 @@ var ServicesAPI = {
 		var url = input;
 		count = 0;
 		$(".results_content").remove();
-
 		/************LIVE News Room SERVICE***************/
 		$.ajax({
 			url: url,
@@ -1717,8 +1729,8 @@ var ServicesAPI = {
 					}
 					resultsListHTML += "<div class='results_content'>";
 					for (var i = 0; i < newsRoomResults.length; i++) {
-						totalYears.push(newsRoomResults[i].created.year);
-						totalMonths.push(newsRoomResults[i].created.month);
+						totalYears.push(newsRoomResults[i].year);
+						totalMonths.push(newsRoomResults[i].month);
 						count++;
 						if (count <= listCount) {
 							resultsListHTML += "<div class=\"list__item\">";
@@ -1748,7 +1760,7 @@ var ServicesAPI = {
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-		/*	if($("#list_topics").val() === "Studies"){
+			/*if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1769,8 +1781,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -1812,8 +1824,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -1839,8 +1851,8 @@ var ServicesAPI = {
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
-		totalYears.sort();
-		totalMonths.sort();
+		totalYears.sort(function(a, b){return a - b});
+		totalMonths.sort(function(a, b){return a - b});
 		totalYears = unique(totalYears);
 		totalMonths = unique(totalMonths);
 		var selectYear = $('#list_year');
@@ -1902,6 +1914,7 @@ var ServicesAPI = {
 						break;
 					default:
 						thisMonth = $(".month_12").text();
+						break;
 				}
 				selectMonth.append('<option value="'+thisMonth+' selected">'+thisMonth+'</option>');
 			}

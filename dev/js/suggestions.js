@@ -910,7 +910,7 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur( function() {
+$(".search-trigger__search-box").blur(function () {
     ss_clear();
 });
 
@@ -1184,6 +1184,12 @@ function ss_handleMouseM() {
  *
  * @this {Element}
  */
+
+
+suggestionsSearch = function () {
+
+}
+
 function ss_handleMouseC() {
     var fo = document.getElementById(ss_form_element);
     var tbl = document.getElementById(ss_popup_element);
@@ -1191,14 +1197,18 @@ function ss_handleMouseC() {
     for (var ri = 0; ri < rows.length - 1; ri++) {
         if (rows[ri] == this) {
             var x = rows[ri].getElementsByTagName('td');
+
             $('#searchInPage,#Search').val($(x)[0].innerText);
 
-            if(getViewport() != "mobile") {
-                $('.js-searchIcon').click();
-            }else{
-                $('.js-searchIconMobile').click();
-            }
+            var searchTerm = $(".search-trigger__search-box").val();
 
+            console.log("running")
+            if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+                ServicesAPI.legacySearch(searchTerm);
+            } else {
+                //For Integration we only need this statment
+                ServicesAPI.redirectToSearchResultsPage(searchTerm);
+            }
             // Back up the original query if not already, and adjust the reference
             // index.
             /* if (!ss_qbackup) {

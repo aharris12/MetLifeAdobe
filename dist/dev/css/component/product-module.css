@@ -5,7 +5,11 @@
     margin-bottom: 0;
 }
 
-.product-module.product-module--table {
+.product-module--table {
+    margin-bottom: 20px;
+}
+
+.product-module--last {
     margin-bottom: 20px;
 }
 
@@ -106,7 +110,7 @@
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 .product-module__medium img {
@@ -205,8 +209,13 @@
         margin-bottom: 30px;
     }
 
-    .product-module.product-module--table {
-        margin-bottom: 0;
+    .product-module--table {
+        display: table;
+        margin-bottom: 40px;
+    }
+
+    .product-module--last {
+        margin-bottom: 40px;
     }
 
     .product-module__large {
@@ -236,18 +245,12 @@
     .product-module__medium {
         width: 25%;
         float: left;
-        margin-bottom: 0;
+        margin: 0;
     }
 
     .product-module__medium:not(:first-child) {
         border-left: 1px solid #e3e3e3;
     }
-
-    .product-module--table {
-        display: table;
-    }
-
-
 
     .product-module__small {
         display: table-cell;
@@ -259,6 +262,7 @@
     .product-module__small--main {
         vertical-align: middle;
     }
+
     .product-module__small--main h2 {
         width: 85%;
         font-size: 22px;
@@ -289,6 +293,7 @@
     .product-module--microsite-wrapper .product-module {
         padding-bottom: 0;
     }
+
     .product-module__list {
         min-height: 105px;
     }
@@ -298,6 +303,7 @@
         line-height: 16px;
         padding: 3px 0 5px 0;
     }
+
     .product-module__list--medium {
         width: 95%;
         margin: 20px auto 10px;
@@ -376,6 +382,7 @@
         padding-left: 30px;
         padding-right: 10px;
     }
+
     .product-module__list ul li {
         font-size: 13px;
         line-height: 16px;
@@ -386,8 +393,11 @@
     }
 
     .product-module--table {
-        display: table;
-        padding-bottom: 0;
+        margin-bottom: 50px;
+    }
+
+    .product-module--last {
+        margin-bottom: 50px;
     }
 
     .product-module__small {

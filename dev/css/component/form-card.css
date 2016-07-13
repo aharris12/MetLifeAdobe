@@ -43,7 +43,7 @@
     }
     .form-card__img__inner{
         background-size: cover;
-        background-position: center;
+        background-position: center top;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;

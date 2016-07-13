@@ -234,7 +234,7 @@
     text-align: right;
 }
 .contactDisclaimer {
-    Padding: 0 0px 10px 0px;
+    Padding: 20px 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
     font-weight: 400;
@@ -279,8 +279,7 @@
     text-align: center;
     position: absolute;
     bottom: 27px;
-    right: 60px;
-
+    right: 70px;
 }
 
 .contact-container--form-card .contactOtherDetails{
@@ -310,8 +309,8 @@
 .contact-container--form-card > .contactCard > span > .icon{
     top: -20px;
     left: 23px;
-    width: 13px;
-    height: 13px;
+    width: 18px;
+    height: 18px;
 }
 
 
@@ -467,6 +466,7 @@ span.errorRadio {
         width: 61%;
     }
     .form__title {
+        padding-top: 8px;
         font-size: 20px;
     }
 }
