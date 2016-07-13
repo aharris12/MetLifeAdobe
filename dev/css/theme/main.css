@@ -71,21 +71,25 @@ b {
     font-weight: 400;
 }
 
-/*.hero h1 {*/
-    /*font-size: 1.35em;*/
-    /*line-height: 1.25em;*/
-    /*font-weight: 600;*/
-/*}*/
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    width: 100%;
+    margin: 0 auto 20px;
+}
 .page-title p {
-    width: 85%;
+
     font-size: 13px;
     line-height: 16px;
-    margin-bottom: 0;
+    margin: auto;
 }
 
 .page-title__heading {
-    width: 85%;
+
     font-size: 28px;
     line-height: 30px;
     font-weight: 400;

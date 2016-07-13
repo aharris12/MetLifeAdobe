@@ -2386,21 +2386,25 @@ b {
     font-weight: 400;
 }
 
-/*.hero h1 {*/
-    /*font-size: 1.35em;*/
-    /*line-height: 1.25em;*/
-    /*font-weight: 600;*/
-/*}*/
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    width: 100%;
+    margin: 0 auto 20px;
+}
 .page-title p {
-    width: 85%;
+
     font-size: 13px;
     line-height: 16px;
-    margin-bottom: 0;
+    margin: auto;
 }
 
 .page-title__heading {
-    width: 85%;
+
     font-size: 28px;
     line-height: 30px;
     font-weight: 400;
@@ -5759,6 +5763,11 @@ ol.promocard_content__list li:after {
         margin: 20px auto 40px;
     }
 }
+@media screen and (max-width: 767px) {
+    .disclaimer:first-of-type {
+        padding-top: 0px;
+    }
+}
 .media-contact--absolute{
     position: absolute;
     top: 50px;
@@ -8647,7 +8656,7 @@ body{
     margin-bottom: 15px;
     font-size: 22px;
     line-height: 26px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .product-row__tile__title :hover {
@@ -8670,9 +8679,9 @@ body{
 
 .product-row__tile__promo {
     margin-bottom: 10px;
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
 }
 
 .product-row__tile--img-tile__text h4 {
@@ -8680,12 +8689,9 @@ body{
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 5px;
+    font-weight: 600;
 }
 
-.product-row__tile__promo a:hover {
-    color: #96d6ff;
-    text-decoration: none;
-}
 
 .single-promo {
     position: relative;
@@ -8742,6 +8748,10 @@ body{
 }
 
 @media screen and (min-width: 768px) {
+    .product-row__tile__title {
+        font-size: 20px;
+        line-height:24px;
+    }
 
     .product-row__tile__copy {
         font-size: 12px;
@@ -8749,8 +8759,8 @@ body{
     }
 
     .product-row__tile__promo {
-        font-size: 26px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height:24px;
     }
 
     .product-row__tile--img-tile__text h4 {
@@ -8837,7 +8847,6 @@ body{
 
     .single-promo .product-row__tile--img-tile__text {
         text-align: center;
-        padding-top: 0;
         height: 100%;
     }
 
@@ -8958,17 +8967,21 @@ body{
 
     .product-row__tile__bottom {
         padding-bottom: 15px;
+        bottom: 8px;
+        width: 95%;
+        position: absolute;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .product-row__tile {
-        height: 320px;
+    .product-row__tile__title {
+        font-size: 22px;
+        line-height: 26px;
     }
 
     .product-row__tile--img-tile__text > .product-row__tile__bottom {
         position: relative;
-        top: 20px;
+        top: 30px;
     }
 
     .product-row__tile__bottom {
@@ -8988,8 +9001,8 @@ body{
     }
 
     .product-row__tile__promo {
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 22px;
+        line-height: 26px;
     }
 
     .product-row__tile--img-tile__text h4 {
@@ -9376,6 +9389,11 @@ body{
     }
 }
 @media screen and (max-width: 767px) {
+
+    .contextual-link:first-of-type{
+
+        border-top: 1px solid #cccccc;
+    }
     .contextual-link__content__label{
         display: table;
         width: 100%;
@@ -11648,11 +11666,11 @@ ul.bullet-list {
         float: left;
     }
 
-    .subnav-go-back__list__item:first-child:nth-last-child(3),
+   /* .subnav-go-back__list__item:first-child:nth-last-child(3),
     .subnav-go-back__list__item:first-child:nth-last-child(3) ~ .subnav-go-back__list__item:first-of-type {
         margin-left: 12.5%;
     }
-
+*/
     .subnav-go-back__list__item:first-child:nth-last-child(4),
     .subnav-go-back__list__item:first-child:nth-last-child(4) ~ .subnav-go-back__list__item {
         width: 25%;
@@ -11725,10 +11743,10 @@ ul.bullet-list {
         float: left;
     }
 
-    .subnav-go-back__list__item:first-child:nth-last-child(3),
+   /* .subnav-go-back__list__item:first-child:nth-last-child(3),
     .subnav-go-back__list__item:first-child:nth-last-child(3) ~ .subnav-go-back__list__item:first-of-type {
         margin-left: 16.25%;
-    }
+    }*/
 
     .subnav-go-back__list__item:first-child:nth-last-child(4),
     .subnav-go-back__list__item:first-child:nth-last-child(4) ~ .subnav-go-back__list__item {

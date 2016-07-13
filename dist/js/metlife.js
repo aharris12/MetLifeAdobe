@@ -7361,7 +7361,7 @@ var ServicesAPI = {
 		newsYear = $("#list_year").val();
 		newsTopic = $('#list_topics').val();
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		url += newsYear  + newsMonth + newsConcatenator + newsTopic + query;
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -7383,7 +7383,7 @@ var ServicesAPI = {
 		var url = input;
 		count = 0;
 		$(".results_content").remove();
-
+console.log(url)
 		/************LIVE News Room SERVICE***************/
 		/*$.ajax({
 			url: url,
@@ -7412,8 +7412,8 @@ var ServicesAPI = {
 					}
 					resultsListHTML += "<div class='results_content'>";
 					for (var i = 0; i < newsRoomResults.length; i++) {
-						totalYears.push(newsRoomResults[i].created.year);
-						totalMonths.push(newsRoomResults[i].created.month);
+						totalYears.push(newsRoomResults[i].year);
+						totalMonths.push(newsRoomResults[i].month);
 						count++;
 						if (count <= listCount) {
 							resultsListHTML += "<div class=\"list__item\">";
@@ -7464,8 +7464,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -7507,8 +7507,8 @@ var ServicesAPI = {
 						}
 						resultsListHTML += "<div class='results_content'>";
 						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].created.year);
-							totalMonths.push(newsRoomResults[i].created.month);
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
 							count++;
 							if (count <= listCount) {
 								resultsListHTML += "<div class=\"list__item\">";
@@ -7534,8 +7534,8 @@ var ServicesAPI = {
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
-		totalYears.sort();
-		totalMonths.sort();
+		totalYears.sort(function(a, b){return a - b});
+		totalMonths.sort(function(a, b){return a - b});
 		totalYears = unique(totalYears);
 		totalMonths = unique(totalMonths);
 		var selectYear = $('#list_year');
@@ -7561,8 +7561,10 @@ var ServicesAPI = {
 		}else{
 
 			for (var i in totalMonths) {
+				console.log(totalMonths[i])
 				switch(totalMonths[i]){
 					case 1:
+						console.log("case 1")
 						thisMonth = $(".month_1").text();
 						break;
 					case 2:
@@ -7597,6 +7599,7 @@ var ServicesAPI = {
 						break;
 					default:
 						thisMonth = $(".month_12").text();
+						break;
 				}
 				selectMonth.append('<option value="'+thisMonth+' selected">'+thisMonth+'</option>');
 			}
@@ -11436,62 +11439,94 @@ if($('.product-card').length > 0) {
 $(document).ready(function(){
 	removingPaddingContextualLinksContactForm();
 	removingPaddingContextualLinksProductTiles();
-	removingPaddingContextualLinksSmallCards()
+	removingPaddingContextualLinksSmallCards();
+	removeSpacingTopDisclaimer();
 });
 
 $(window).resize(function(){
 	removingPaddingContextualLinksContactForm();
 	removingPaddingContextualLinksProductTiles();
-	removingPaddingContextualLinksSmallCards()
+	removingPaddingContextualLinksSmallCards();
+	removeSpacingTopDisclaimer();
 });
 
 function removingPaddingContextualLinksContactForm() {
-	if (getViewport() != "mobile") {
+
 		var container = $(".container.contextual-links");
 		if (container.length > 0) {
 			var thisContainer = container.next("div");
 			if (thisContainer.hasClass("contact-advisory")) {
-				thisContainer.find(".container").css("cssText", "padding-top: 0px !important;");
-				thisContainer.find(".container").find(".wrapper").css("cssText", "padding-top: 0px !important;");
+				if (getViewport() != "mobile") {
+					thisContainer.find(".container").css("cssText", "padding-top: 0px !important;");
+					thisContainer.find(".container").find(".wrapper").css("cssText", "padding-top: 0px !important;");
+
+				}else{
+					thisContainer.find(".container").css("cssText", "padding: 15px 0;");
+				}
 				var h = $('.contact-container--form-card').outerHeight();
 				$(".contact-container--form-card form").click(function() {
 					$('.contact-container--form-card .hidden-field').show();
 				});
 				$('.form-card__img__inner').css('height', h + 'px');
-			}
 		}
 	}
 }
 
 function removingPaddingContextualLinksProductTiles() {
-	if (getViewport() != "mobile") {
+
 		var container = $(".container.contextual-links");
 		if (container.length > 0) {
 			var thisContainer = container.parent().prev().find(".product-card-parsys");
 			var prevContainer = container.prev("div");
 			if (thisContainer.length > 0 && prevContainer.length == 0) {
-				thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important;");
-				thisContainer.last(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
-					$(this).css("cssText", "margin-bottom: 0px !important;");
-				});
-				thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: 0px !important;");
-				thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: 0px !important;");
-				thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: 0px !important;");
-			}
+				if (getViewport() != "mobile") {
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
+					thisContainer.last(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
+						$(this).css("cssText", "margin-bottom: 0px !important;");
+					});
+					thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: 0px !important;");
+				}else{
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 10px !important; padding: 0 10px;");
+					thisContainer.find(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
+						$(this).css("cssText", "margin-bottom: 10px");
+					});
+					thisContainer.find(".tile-container").first().find(".wrapper").find(".product-row__tile").last().css("cssText", "margin-bottom: 0px !important;");
+					thisContainer.last("tile-container").find(".single-promo").css("cssText", "margin-bottom: initial;");
+					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: initial;");
+					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: initial;");
+				}
 		}
 	}
 }
 
 function removingPaddingContextualLinksSmallCards() {
-	if (getViewport() != "mobile") {
+
 		var container = $(".container.contextual-links");
 		if (container.length > 0) {
 			var thisContainer = container.prev("div");
 			if (thisContainer.hasClass("small-product-container")) {
+
+
+				console.log(getViewport() != "mobile")
+			if (getViewport() != "mobile") {
 				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;");
+			}else{
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 20px !important");
 			}
 		}
 	}
+}
+
+function removeSpacingTopDisclaimer(){
+
+	if (getViewport() != "mobile") {
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+	}else{
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -10px;");
+	}
+
 }
 $(window).scroll(function () {
 	$('.in_view').bind('inview', function (event, visible) {

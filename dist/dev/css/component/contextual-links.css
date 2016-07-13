@@ -119,6 +119,11 @@
     }
 }
 @media screen and (max-width: 767px) {
+
+    .contextual-link:first-of-type{
+
+        border-top: 1px solid #cccccc;
+    }
     .contextual-link__content__label{
         display: table;
         width: 100%;
