@@ -28,13 +28,18 @@
 }
 
 .login-container--close {
+    width: 43px;
+    margin-left: 0;
     height: 50px;
+    cursor: pointer;
 }
 
 .login-container--close .icon {
-    top: 15px;
-    left: 15px;
-    cursor: pointer;
+    position: absolute;
+    top: 17px;
+    height: 16px;
+    width: 16px;
+    left: 12px;
 }
 
 .login-container--close .login-container--close__label {
@@ -45,7 +50,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
 
     .login-container--close {
         height: 70px;
@@ -58,15 +62,10 @@
     }
 }
 
-
-
 @media screen and  (min-width: 1024px) {
     .login-container--close .icon {
         top: 4px;
         left: 30px;
-        cursor: pointer;
-        width: 19px;
-        height: 19px;
     }
 
 }
