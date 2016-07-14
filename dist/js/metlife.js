@@ -1023,11 +1023,6 @@ $(".js-faqSelect").on("change", function(){
     $(("[data-faq='"+faqItem+ "']")).removeClass("hidden");
 });
 
-if ($(".contextual-links-container").length > 0) {
-    if ($(".contextual-links-container").next().filter($(".faq")).length !== 0) {
-        $('.faq').css("margin-top", "30px");
-    }
-}
 
 
 
@@ -11447,6 +11442,7 @@ $(document).ready(function(){
 	removingPaddingContextualLinksProductTiles();
 	removingPaddingContextualLinksSmallCards();
 	removeSpacingTopDisclaimer();
+	removeSpacingFAQ();
 });
 
 $(window).resize(function(){
@@ -11454,6 +11450,7 @@ $(window).resize(function(){
 	removingPaddingContextualLinksProductTiles();
 	removingPaddingContextualLinksSmallCards();
 	removeSpacingTopDisclaimer();
+	removeSpacingFAQ();
 });
 
 function spacingBottomLastProductTiles(){
@@ -11499,7 +11496,7 @@ function removingPaddingContextualLinksProductTiles() {
 					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: 0px !important;");
 					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: 0px !important;");
 				}else{
-					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 10px !important; padding: 0 10px;");
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 15px !important;    padding: 0px 10px 10px;");
 					thisContainer.find(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 10px");
 					});
@@ -11533,12 +11530,30 @@ function removingPaddingContextualLinksSmallCards() {
 function removeSpacingTopDisclaimer(){
 
 	if (getViewport() != "mobile") {
-		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -37px;");
 	}else{
-		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -10px;");
+		$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
 	}
 
 }
+
+function removeSpacingFAQ(){
+	var container = $(".container.contextual-links");
+	if (container.length > 0) {
+		var thisContainer = container.next("div");
+		if (thisContainer.hasClass("faq")) {
+			if (getViewport() == "desktop") {
+				thisContainer.find(".container").first().css("cssText", "padding-top: 37px; padding-bottom: 40px;");
+			}else if (getViewport() == "tablet"){
+				thisContainer.find(".container").first().css("cssText", "padding-top: 37px; padding-bottom: 30px;");
+			}else{
+				thisContainer.find(".container").first().css("cssText", "padding-top: 0px; padding-bottom: 0px;");
+			}
+		}
+	}
+
+}
+
 $(window).scroll(function () {
 	$('.in_view').bind('inview', function (event, visible) {
 		if (visible == true) {

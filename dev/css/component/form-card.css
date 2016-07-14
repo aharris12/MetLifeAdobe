@@ -35,6 +35,7 @@
     .form-card{
         display: table;
         min-height: 380px;
+        margin-top: 36px;
     }
     .form-card__img{
         display:table-cell;
