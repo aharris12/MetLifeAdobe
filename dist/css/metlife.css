@@ -12100,7 +12100,6 @@ ul.bullet-list {
 }
 .shadow {
     background: #fff;
-
     top: 72px !important;
     position: absolute;
     display: table-row-group !important;
@@ -12224,6 +12223,13 @@ ul.bullet-list {
         color: #2c77c5;
     }
 
+    .product-card--last-margin-bottom {
+        margin-bottom: 20px;
+    }
+
+    .product-card__promo--margin-bottom {
+        margin-bottom: 30px;
+    }
     .shadow{
         left: 0 !important;
     }
@@ -12278,6 +12284,13 @@ ul.bullet-list {
 
     .company-search-input-container input {
         margin-left: 5px;
+    }
+    .product-card--last-margin-bottom {
+        margin-bottom: 40px;
+    }
+
+    .product-card__promo--margin-bottom {
+        margin-bottom: 50px;
     }
 }
 .wrapper__quote-card {

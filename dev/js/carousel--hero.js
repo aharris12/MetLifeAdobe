@@ -1,4 +1,9 @@
 // Lazy-load Hero Carousel
+
+$(".carousel-control").click(function(e){
+    e.preventDefault();
+})
+
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 

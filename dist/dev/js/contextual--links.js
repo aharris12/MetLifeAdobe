@@ -56,7 +56,7 @@ function removingPaddingContextualLinksProductTiles() {
 			if (thisContainer.length > 0 && prevContainer.length == 0) {
 				if (getViewport() != "mobile") {
 					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
-					console.log(thisContainer.find(".tile-container").last())
+
 					thisContainer.find(".tile-container").last().find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 0px !important;");
 					});

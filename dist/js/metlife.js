@@ -264,7 +264,6 @@ function adjustSearchBox() {
                 }, 50, function () {
                     $('.search-trigger').removeClass('search-trigger--open');
                     $('.search-trigger__icon').css('left', '');
-                    console.log('hi');
                 });
 
                 $('.search-trigger__container').css('display', 'none');
@@ -290,7 +289,6 @@ function adjustSearchBox() {
                 $('.search-trigger__container').addClass('search-trigger__container--open');
                 $('.search-trigger__container').css('top', '');
                 $('.search-trigger__container').css('display', '');
-                console.log('icon animate');
             });
             $(".search-trigger__icon").animate({
                 left: "145"
@@ -518,11 +516,9 @@ function adjustMegaMenu() {
 
 $(window).resize(function () {
     var thisView = getViewport();
-    console.log("thisView is : " + thisView);
     headerPosition();
     resizeMegaMenu();
     if (thisView != currentView) {
-        console.log("currentView is: " + currentView);
         adjustSearchBox();
         closeContactForm();
         currentView = getViewport();
@@ -538,7 +534,6 @@ $('.megamenu__main-item').click(function () {
     var down = '<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>';
 
     if (getViewport() == "mobile") {
-        console.log('reset all arrows');
         $('.megamenu__sub-items').slideUp();
         $('.megamenu__main-item').find('svg').remove();
         $('.megamenu__main-item-label').after(right);
@@ -829,6 +824,11 @@ $(window).scroll(function () {
     closeHomepageNav();
 });
 // Lazy-load Hero Carousel
+
+$(".carousel-control").click(function(e){
+    e.preventDefault();
+})
+
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 
@@ -2075,7 +2075,6 @@ $('.login-type-trigger__title').on('click touchstart', function (e) {
 });
 
 function toggleLoginTypes() {
-    console.log(imagesPath);
     var minus = '<svg class="icon icon-minus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-minus"></use></svg>';
     var plus = '<svg class="icon icon-plus"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-plus"></use></svg>';
     //Toggle main menu item's chevron
@@ -5871,7 +5870,7 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 });
 
 //New This should be uncommented once form builder is in palce
-$('[data-fsubmit]').on('click', function (e) {
+$('[data-submit-type="clr"]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -5923,6 +5922,59 @@ $('[data-fsubmit]').on('click', function (e) {
 		//alert("invalid");
 	}
 });
+
+/*$('[data-fsubmit]').on('click', function (e) {
+	e.preventDefault();
+	var $this = $(this);
+	var isValid = ServicesAPI.onFSubmit($(this));
+	if (isValid) {
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		ServicesAPI.postLeadform($formid);
+
+		$formid.find('[data-observes-id]').each(function () {
+			$(this).hide();
+		});
+
+		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+			$('.aidFormCon').hide();
+			$('.aiwHeading').hide();
+			$('.advisorClose').hide();
+			$('.adImageThankYou').css("display", "table-cell");
+		} else if (fid == "quoteleadform") {
+			$(this).closest('.quote_right_mlt').hide();
+			$(this).closest('.quote_right_sit').hide();
+			$('.quote_results_thank_you').show();
+		} else if (fid == "contactCard") {
+			var temp = "[data-fid='" + fid + "']";
+			//$("[data-fid='contactCard']").hide();
+			$('.contactCard').hide();
+			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+			setTimeout(function () {
+				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+					$('.contactCard').show();
+					$('#requestFormContactCard_Acc').trigger("reset");
+					$('.form-minimize').trigger('click');
+				});
+			}, 5000);
+		} else if (fid == "contactSidebarQuote") {
+			$(".results-form__text").addClass("hidden");
+			$(".results-form__inputs").addClass("hidden");
+			$(".apply-disclaimer").addClass("hidden");
+			$(".contact-thanks").removeClass("hidden");
+
+		} else {
+			$('.' + fid).fadeOut('slow', function () {
+				setTimeout(function () {
+					$('.contactSliderOuterCon').fadeOut(2000);
+					$('.contactsClose').trigger('click');
+				}, 5000)
+			});
+		}
+	} else {
+		//alert("invalid");
+	}
+});*/
 //New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
@@ -6290,7 +6342,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
-	console.log(searchTerm);
 	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		$(".search-trigger__search-box").val(searchTerm);
@@ -7396,14 +7447,10 @@ var ServicesAPI = {
 		var url = $(".lists").attr("data-news-url");
 		var query = $(".lists").attr("data-news-query-parameter");
 		newsMonth = $("#list_month").val();
-		console.log(newsMonth)
 		newsYear = $("#list_year").val();
-		console.log(newsYear)
 		newsTopic = $('#list_topics').val();
-		console.log(newsTopic)
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
 		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
-		console.log(url)
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -7423,7 +7470,6 @@ var ServicesAPI = {
 	newsRoomServiceCall: function (input) {
 		resultsListHTML = "";
 		var url = input;
-		console.log(url)
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
@@ -10366,7 +10412,7 @@ function ss_handleMouseC() {
 
             var searchTerm = $(".search-trigger__search-box").val();
 
-            console.log("running")
+
             if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
                 ServicesAPI.legacySearch(searchTerm);
             } else {
@@ -16591,6 +16637,19 @@ if($('.product-card').length > 0) {
 }
 
 
+//Ensuring that margin is always 50px in desktop for either last product card
+//or promo.
+function addProperMarginToBottom() {
+    if($(".product-card").length > 0) {
+        if($(".promocard").length > 0) {
+        $(".promocard").last().addClass("product-card__promo--margin-bottom");
+        } else {
+            $(".container .row .product-card").last().addClass("product-card--last-margin-bottom");
+        }
+    }
+}
+
+addProperMarginToBottom();
 /***** Product Card Module End ************************************************************/
 
 $(document).ready(function(){
@@ -16651,7 +16710,7 @@ function removingPaddingContextualLinksProductTiles() {
 			if (thisContainer.length > 0 && prevContainer.length == 0) {
 				if (getViewport() != "mobile") {
 					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
-					console.log(thisContainer.find(".tile-container").last())
+
 					thisContainer.find(".tile-container").last().find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 0px !important;");
 					});

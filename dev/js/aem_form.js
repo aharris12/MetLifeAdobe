@@ -9,7 +9,6 @@ if (typeof SFDC === "undefined") {
 var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
-    console.log("glu RUn")
     var parent = $("." + element.type);
     $(".contact-sidebar.type")
     $('[data-fid="contact-sidebar"]')
@@ -38,7 +37,6 @@ SFDC.form.forEach(function (element) {
 
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {
-                        console.log("glu run")
                             e.preventDefault();
                             o.submitForm();
                             return false;
@@ -58,7 +56,6 @@ SFDC.form.forEach(function (element) {
 
                     // Submit form
                     parent.find('.form-submit').bind('click', function (e) {
-                        console.log("glu RUn")
                         e.preventDefault();
                         if (!parent.find(".form-submit").hasClass("disabled")) {
                             parent.find('.form-submit').addClass("disabled").html(processingText);
@@ -436,7 +433,6 @@ SFDC.form.forEach(function (element) {
              *   - Error/failure : Display error messages, etc.
              */
             submitForm: function () {
-                console.log("glu run")
                 //console.log("submit form");
 
                 // Post the form, handling any error messages that come back, etc.
@@ -701,18 +697,15 @@ SFDC.form.forEach(function (element) {
                     var jsonData = {};
                     var formData;
 
-                    
-                    console.log("contact form ajax");
-
                     var url;
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
-                        console.log("direct sfdc");
+
                         url = '/global-assets/proxy/DirectSFDCProxy.aspx';
                         data = formElement.serialize();
                     }
                     else {
-                        console.log("sfdc");
+
                         formData = formElement.serializeArray();
                         if (jsonData["MetlifeJson"]) {
                             if (!jsonData["MetlifeJson"].push) {
@@ -723,7 +716,6 @@ SFDC.form.forEach(function (element) {
                             jsonData["MetlifeJson"] = "Crownpeak Form";
                         }
                         $.each(formData, function () {
-                            console.log(this.name);
                             if (jsonData[this.name]) {
                                 if (!jsonData[this.name].push) {
                                     jsonData[this.name] = [jsonData[this.name]];
@@ -747,7 +739,6 @@ SFDC.form.forEach(function (element) {
                         data = JSON.stringify(jsonData);
                     }
 
-                    console.log(data);
                     $.ajax({
                         url: url,
                         dataType: 'json',
@@ -755,28 +746,26 @@ SFDC.form.forEach(function (element) {
                         async: true,
                         type: 'POST',
                         success: function (data, status, xhr) {
-                            console.log("ajax: success");
-                            console.log(data);
+
                             switch (data.result.toLowerCase()) {
                                 case "success":
-                                    console.log("response: success");
+
                                     formMessage(parent, "thanks");
                                     break;
                                 case "fail":
-                                    console.log("response: fail");
+
                                     formMessage(parent, "error");
                                     break;
                                 case "error":
-                                    console.log("response: error");
+
                                     formMessage(parent, "error");
                                     break;
                                 default:
-                                    console.log("response: default");
+
                             }
                         },
                         error: function (xhr, status, error) {
-                            console.log("ajax: error");
-                            console.log(status, error);
+
                             formMessage(parent, "error");
                         }
                     });

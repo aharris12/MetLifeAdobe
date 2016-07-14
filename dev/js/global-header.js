@@ -154,7 +154,6 @@ function adjustSearchBox() {
                 }, 50, function () {
                     $('.search-trigger').removeClass('search-trigger--open');
                     $('.search-trigger__icon').css('left', '');
-                    console.log('hi');
                 });
 
                 $('.search-trigger__container').css('display', 'none');
@@ -180,7 +179,6 @@ function adjustSearchBox() {
                 $('.search-trigger__container').addClass('search-trigger__container--open');
                 $('.search-trigger__container').css('top', '');
                 $('.search-trigger__container').css('display', '');
-                console.log('icon animate');
             });
             $(".search-trigger__icon").animate({
                 left: "145"
@@ -408,11 +406,9 @@ function adjustMegaMenu() {
 
 $(window).resize(function () {
     var thisView = getViewport();
-    console.log("thisView is : " + thisView);
     headerPosition();
     resizeMegaMenu();
     if (thisView != currentView) {
-        console.log("currentView is: " + currentView);
         adjustSearchBox();
         closeContactForm();
         currentView = getViewport();
@@ -428,7 +424,6 @@ $('.megamenu__main-item').click(function () {
     var down = '<svg class="icon icon-chevron-down"><use xlink:href="' + imagesPath + 'icons-metlife.svg#icon-chevron-down"></use></svg>';
 
     if (getViewport() == "mobile") {
-        console.log('reset all arrows');
         $('.megamenu__sub-items').slideUp();
         $('.megamenu__main-item').find('svg').remove();
         $('.megamenu__main-item-label').after(right);

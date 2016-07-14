@@ -151,7 +151,7 @@ $("[data-observes-id]").find('input:radio').on('click', function () {
 });
 
 //New This should be uncommented once form builder is in palce
-$('[data-fsubmit]').on('click', function (e) {
+$('[data-submit-type="clr"]').on('click', function (e) {
 	e.preventDefault();
 	var $this = $(this);
 	var isValid = ServicesAPI.onFSubmit($(this));
@@ -203,6 +203,59 @@ $('[data-fsubmit]').on('click', function (e) {
 		//alert("invalid");
 	}
 });
+
+/*$('[data-fsubmit]').on('click', function (e) {
+	e.preventDefault();
+	var $this = $(this);
+	var isValid = ServicesAPI.onFSubmit($(this));
+	if (isValid) {
+		var fid = $this.attr('data-fsubmit');
+		var $formid = $('[data-fid=' + fid + ']');
+		ServicesAPI.postLeadform($formid);
+
+		$formid.find('[data-observes-id]').each(function () {
+			$(this).hide();
+		});
+
+		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
+			$('.aidFormCon').hide();
+			$('.aiwHeading').hide();
+			$('.advisorClose').hide();
+			$('.adImageThankYou').css("display", "table-cell");
+		} else if (fid == "quoteleadform") {
+			$(this).closest('.quote_right_mlt').hide();
+			$(this).closest('.quote_right_sit').hide();
+			$('.quote_results_thank_you').show();
+		} else if (fid == "contactCard") {
+			var temp = "[data-fid='" + fid + "']";
+			//$("[data-fid='contactCard']").hide();
+			$('.contactCard').hide();
+			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
+			setTimeout(function () {
+				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
+					$('.contactCard').show();
+					$('#requestFormContactCard_Acc').trigger("reset");
+					$('.form-minimize').trigger('click');
+				});
+			}, 5000);
+		} else if (fid == "contactSidebarQuote") {
+			$(".results-form__text").addClass("hidden");
+			$(".results-form__inputs").addClass("hidden");
+			$(".apply-disclaimer").addClass("hidden");
+			$(".contact-thanks").removeClass("hidden");
+
+		} else {
+			$('.' + fid).fadeOut('slow', function () {
+				setTimeout(function () {
+					$('.contactSliderOuterCon').fadeOut(2000);
+					$('.contactsClose').trigger('click');
+				}, 5000)
+			});
+		}
+	} else {
+		//alert("invalid");
+	}
+});*/
 //New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
@@ -570,7 +623,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
-	console.log(searchTerm);
 	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		$(".search-trigger__search-box").val(searchTerm);
@@ -1676,14 +1728,10 @@ var ServicesAPI = {
 		var url = $(".lists").attr("data-news-url");
 		var query = $(".lists").attr("data-news-query-parameter");
 		newsMonth = $("#list_month").val();
-		console.log(newsMonth)
 		newsYear = $("#list_year").val();
-		console.log(newsYear)
 		newsTopic = $('#list_topics').val();
-		console.log(newsTopic)
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
 		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
-		console.log(url)
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -1703,7 +1751,6 @@ var ServicesAPI = {
 	newsRoomServiceCall: function (input) {
 		resultsListHTML = "";
 		var url = input;
-		console.log(url)
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
