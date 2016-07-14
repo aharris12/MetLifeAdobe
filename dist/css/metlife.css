@@ -13132,7 +13132,7 @@ manner*/
 .text-right {
     text-align: right;
 }
-.contactDisclaimer {
+.contactDisclaimer, .contactDisclaimer span {
     Padding: 20px 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
@@ -13144,7 +13144,7 @@ manner*/
 .contactDisclaimer + .contactDisclaimer {
     padding-top: 0px;
 }
-.contactDisclaimer a {
+.contactDisclaimer a , .contactDisclaimer span a {
     text-decoration: underline;
 }
 .contactSideThankyou, .contactSideSubmitError {
