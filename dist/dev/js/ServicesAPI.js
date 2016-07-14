@@ -1676,10 +1676,14 @@ var ServicesAPI = {
 		var url = $(".lists").attr("data-news-url");
 		var query = $(".lists").attr("data-news-query-parameter");
 		newsMonth = $("#list_month").val();
+		console.log(newsMonth)
 		newsYear = $("#list_year").val();
+		console.log(newsYear)
 		newsTopic = $('#list_topics').val();
+		console.log(newsTopic)
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear  + newsMonth + newsConcatenator + newsTopic + query;
+		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		console.log(url)
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -1699,6 +1703,7 @@ var ServicesAPI = {
 	newsRoomServiceCall: function (input) {
 		resultsListHTML = "";
 		var url = input;
+		console.log(url)
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
@@ -1760,7 +1765,7 @@ var ServicesAPI = {
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-			/*if($("#list_topics").val() === "Studies"){
+		/*	if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1860,7 +1865,7 @@ var ServicesAPI = {
 		var firstTime = true;
 		for (var i in totalYears) {
 			if(firstTime === true){
-				selectYear.append('<option value="'+totalYears[i] +' selected">'+totalYears[i]+'</option>');
+				selectYear.append('<option value="'+totalYears[i] +'" selected>'+totalYears[i]+'</option>');
 			}else {
 				selectYear.append('<option value="' + totalYears[i] + '">' + totalYears[i] + '</option>');
 			}
@@ -1868,12 +1873,12 @@ var ServicesAPI = {
 		firstTime = false;
 		var selectMonth = $('#list_month');
 		selectMonth.empty();
-		selectMonth.append('<option value="" selected>All</option>');
+		selectMonth.append('<option value="All" selected>All</option>');
 		var thisMonth;
 		if($("#list_topics").prop('selectedIndex') === 0){
 			for(var i = 1; i <=12; i++){
 				thisMonth = $(".month_"+ i).text();
-				selectMonth.append('<option value="'+ thisMonth + ' selected">'+thisMonth+'</option>');
+				selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
 			}
 		}else{
 
@@ -1916,7 +1921,7 @@ var ServicesAPI = {
 						thisMonth = $(".month_12").text();
 						break;
 				}
-				selectMonth.append('<option value="'+thisMonth+' selected">'+thisMonth+'</option>');
+				selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
 			}
 		}
 
