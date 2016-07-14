@@ -4,6 +4,18 @@ $(".carousel-control").click(function(e){
     e.preventDefault();
 })
 
+$('.carousel-control.left').click(function() {
+    $(this).closest(".carousel").carousel('prev');
+});
+
+$('.carousel-control.right').click(function() {
+    $(this).closest(".carousel").carousel('next');
+});
+
+$('.carousel-indicators li').click(function() {
+    $(this).closest(".carousel").carousel(parseInt($(this).attr("data-slide-to")));
+});
+
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 
@@ -37,7 +49,7 @@ $( document ).ready(function() {
     var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
-    $.lazyLoadXT.autoLoadTime = lazyPause;
+    $.lazyLoadXT.autoLoadTime = lazyPause - 500;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());

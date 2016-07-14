@@ -109,3 +109,5 @@ $(".vision_dental_overlay_close").click(function(e){
     $(".dental_overlay").addClass("hidden");
     $(".vision_overlay").addClass("hidden");
 });
+
+

@@ -785,8 +785,26 @@ $('.maps-button').click(function (clickedButton) {
 		ServicesAPI.resizeMap();
 	}
 });
+/*function gmapsAutoCompleteInit() {
+	if (typeof countryCode !== 'undefined') {
+		var options = {
+			componentRestrictions: {country: countryCode}
+		};
+		$('.gmaps-auto-complete').each(function () {
+			new google.maps.places.Autocomplete($(this)[0], options);
+		});
+	} else {
+		$('.gmaps-auto-complete').each(function () {
+			new google.maps.places.Autocomplete($(this)[0]);
+		});
+	}
+}*/
 
 $(window).on('load', function (e) {
+	var countryCode ="usa";
+	var options = {
+		componentRestrictions: {country: countryCode}
+	};
 	if ($(".fax__container").length > 0) {
 		faoURL = window.location.href;
 		blackMarker = $('.pngPath_icon_locpin_blk').text();
@@ -804,7 +822,8 @@ $(window).on('load', function (e) {
 		}
 	}
 	if ($(".find-office__zip-city-state").length > 0) {
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
+
+		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0], options);
 		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();

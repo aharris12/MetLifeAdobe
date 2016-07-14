@@ -829,6 +829,18 @@ $(".carousel-control").click(function(e){
     e.preventDefault();
 })
 
+$('.carousel-control.left').click(function() {
+    $(this).closest(".carousel").carousel('prev');
+});
+
+$('.carousel-control.right').click(function() {
+    $(this).closest(".carousel").carousel('next');
+});
+
+$('.carousel-indicators li').click(function() {
+    $(this).closest(".carousel").carousel(parseInt($(this).attr("data-slide-to")));
+});
+
 var carouselInterval = $(".carousel").attr("data-interval");
 $( document ).ready(function() {
 
@@ -862,7 +874,7 @@ $( document ).ready(function() {
     var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
-    $.lazyLoadXT.autoLoadTime = lazyPause;
+    $.lazyLoadXT.autoLoadTime = lazyPause - 500;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
@@ -1202,6 +1214,9 @@ $(".vision_dental_overlay_close").click(function(e){
     $(".dental_overlay").addClass("hidden");
     $(".vision_overlay").addClass("hidden");
 });
+
+
+
 /*!
  * @copyright Copyright (c) 2015 IcoMoon.io
  * @license   Licensed under MIT license
@@ -6504,8 +6519,26 @@ $('.maps-button').click(function (clickedButton) {
 		ServicesAPI.resizeMap();
 	}
 });
+/*function gmapsAutoCompleteInit() {
+	if (typeof countryCode !== 'undefined') {
+		var options = {
+			componentRestrictions: {country: countryCode}
+		};
+		$('.gmaps-auto-complete').each(function () {
+			new google.maps.places.Autocomplete($(this)[0], options);
+		});
+	} else {
+		$('.gmaps-auto-complete').each(function () {
+			new google.maps.places.Autocomplete($(this)[0]);
+		});
+	}
+}*/
 
 $(window).on('load', function (e) {
+	var countryCode ="usa";
+	var options = {
+		componentRestrictions: {country: countryCode}
+	};
 	if ($(".fax__container").length > 0) {
 		faoURL = window.location.href;
 		blackMarker = $('.pngPath_icon_locpin_blk').text();
@@ -6523,7 +6556,8 @@ $(window).on('load', function (e) {
 		}
 	}
 	if ($(".find-office__zip-city-state").length > 0) {
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
+
+		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0], options);
 		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
