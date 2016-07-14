@@ -3563,14 +3563,14 @@ a:visited {
 
 /* Go Home Trigger */
 .login-trigger {
-    width: 80px;
     color: #fff;
     cursor: pointer;
+    position: relative;
+    right: 12px;
 }
 
 @media screen and (max-width: 767px) {
     .login-trigger {
-        width: 70px;
         font-size: 10px;
     }
 }
@@ -3942,9 +3942,11 @@ a:visited {
 .megamenu__main-item .icon-chevron-down {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 22px;
     z-index: 1500;
     fill: rgba(255, 255, 255, 0.5);
+    height: 16px;
+    width: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -10474,8 +10476,6 @@ ul.bullet-list {
     padding-top: 10px;
 }
 
-
-
 .footer-main__items {
     margin-bottom: 35px;
     margin-top: 35px;
@@ -10504,7 +10504,7 @@ ul.bullet-list {
 }
 
 .footer-sub__label:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
 .social-alignment {
@@ -10901,12 +10901,14 @@ ul.bullet-list {
     position: relative;
 }
 
-.footer-country, .select-country{
+.footer-country, .select-country {
     min-height: 36px;
 }
-.footer-country:hover, .select-country:hover{
+
+.footer-country:hover, .select-country:hover {
     cursor: pointer;
 }
+
 .footer-country .form-icon-wrapper svg {
     right: 20px;
 }
@@ -11056,7 +11058,7 @@ ul.bullet-list {
     margin: 0;
 }
 
-.footer-legal__link a{
+.footer-legal__link a {
     margin: 0 3px;
 
 }
@@ -11067,16 +11069,18 @@ ul.bullet-list {
     display: inline-block;
 }
 
-.global-footer--microsite .footer-legal__bullet:before{
+.global-footer--microsite .footer-legal__bullet:before {
     content: "\2022";
     padding: 0;
     display: inline-block;
 }
-.global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
+
+.global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a {
     font-size: 14px;
     line-height: 15px;
 }
-.global-footer--microsite .footer-legal__link a:hover, .footer-legal__call--microsite a:hover{
+
+.global-footer--microsite .footer-legal__link a:hover, .footer-legal__call--microsite a:hover {
     text-decoration: none;
 }
 
@@ -11099,14 +11103,15 @@ ul.bullet-list {
         width: 19px;
     }
 
-    .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a{
+    .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a {
         font-size: 1em;
         line-height: 24px;
     }
 
-    .global-footer{
+    .global-footer {
         padding-bottom: 110px;
     }
+
     .global-footer .wrapper {
         padding-top: 40px;
     }
@@ -11122,7 +11127,8 @@ ul.bullet-list {
     .footer-legal__link {
         margin: 0 10px 0 -15px;
     }
-    .footer-legal__link a{
+
+    .footer-legal__link a {
         margin: 0;
     }
 
@@ -11138,17 +11144,18 @@ ul.bullet-list {
         border-top: 1px solid #ddd;
     }
 
-    .footer-logo{
+    .footer-logo {
         display: none;
     }
+
     .footer-legal__logo {
         width: 130px;
         padding: 4px 0 5px 0;
         display: block;
     }
-    .footer-legal__copy{
-        margin-top: 20px;
-        clear: both;
+
+    .footer-legal__copy {
+        margin-left: 50px;
     }
 
     .footer-main__label {
@@ -11167,13 +11174,15 @@ ul.bullet-list {
     .social-alignment {
         float: right;
     }
+
     .social__link {
         float: left;
-        margin:9px 0 0 10px;
+        margin: 9px 0 0 10px;
     }
-    .social__link:not(:first-of-type){
-            margin-left: 20px;
-        }
+
+    .social__link:not(:first-of-type) {
+        margin-left: 20px;
+    }
 
     .footer-country-language-social {
         padding-bottom: 25px;
@@ -11191,7 +11200,6 @@ ul.bullet-list {
     .footer-language {
         border: 0;
     }
-
 
     .footer-language {
         text-align: left;
@@ -11274,6 +11282,10 @@ ul.bullet-list {
         line-height: 2.3em;
     }
 
+    .footer-legal > div {
+        width: auto;
+    }
+
     .footer-legal__logo {
         width: 130px;
         padding: 4px 0 5px 0;
@@ -11284,7 +11296,7 @@ ul.bullet-list {
         font-size: 36px;
     }
 
-    .footer-legal__bullet{
+    .footer-legal__bullet {
         margin: 0 10px;
     }
 
@@ -11294,7 +11306,7 @@ ul.bullet-list {
         padding: 0;
         text-align: left;
         margin: 0;
-        margin-top:15px;
+        margin-top: 15px;
     }
 
     .footer-legal__call--microsite {
@@ -11318,8 +11330,9 @@ ul.bullet-list {
 
 @media (max-width: 767px) {
     .country__label {
-       padding-left: 10px;
+        padding-left: 10px;
     }
+
     .dd-selected label {
         display: none;
     }
@@ -11348,6 +11361,7 @@ ul.bullet-list {
     .country__list {
         width: 150px;
     }
+
     .country__label {
         width: 70px;
     }
@@ -11366,13 +11380,13 @@ ul.bullet-list {
         width: 95.5%;
     }
 }
+
 @media screen and (max-width: 367px) {
-    .footer-legal__link a{
+    .footer-legal__link a {
         font-size: 14px;
         line-height: 15px;
     }
 }
-
 
 @media screen and (max-width: 350px) {
     .country__selected {
@@ -11424,82 +11438,102 @@ ul.bullet-list {
         font-size: 16px;
         line-height: 20px;
     }
+
     .footer-sub__label,
     .footer-sub__label:visited {
         font-size: 12px;
         line-height: 16px;
     }
+
     .footer-legal__link {
         font-size: 12px;
         line-height: 20px;
     }
+
     .country__label {
         margin-right: 0px;
         line-height: 18px;
-        padding-top:10px;
+        padding-top: 10px;
     }
+
     .footer-country .form-icon-wrapper svg {
         right: 10px;
     }
+
     .language__link:first-child {
         padding-left: 10px;
     }
+
     .dd-pointer.dd-pointer-down svg {
         top: 3px;
         right: 0;
     }
+
     .footer-disclaimer {
         display: inline;
         text-align: left;
         width: auto;
     }
+
     .global-footer {
         padding-bottom: 150px;
     }
-    .country__label{
+
+    .country__label {
         font-size: 16px;
-        margin-top:0;
-    }
-    .footer-legal__copy{
-        margin-left: 15px;
         margin-top: 0;
     }
-    .country__label{
-        padding-left:0;
+
+    .footer-legal__copy {
+        margin-left: 100px;
+        margin-top: 0;
     }
+
+    .country__label {
+        padding-left: 0;
+    }
+
     .footer-language {
         text-align: left;
         max-width: none;
     }
+
     .language__link {
         font-size: 12px;
-        line-height:16px;
+        line-height: 16px;
     }
+
     .social__link {
         margin: 8px 0 0 15px;
     }
-    .social__label{
+
+    .social__label {
         font-size: 16px;
         margin-top: 0;
     }
+
     .social__link:not(:first-of-type) {
         margin-left: 17px;
     }
+
     .social__link svg {
         height: 18px;
         width: 18px;
     }
+
     .country__selected {
         min-width: 215px;
     }
+
     .country__selector {
         min-width: 215px;
     }
+
     .country__list {
         min-width: 215px;
         left: 70px;
     }
-    }
+}
 
 .global-footer .wrapper.padding-80-0.quote {
     border: 0;
@@ -13851,7 +13885,7 @@ span.errorRadio {
 @media (min-width: 1025px) {
     .suggestionsbox table {
         width: 170px;
-        left: 222px;
+        left: 221px;
     }
 
 }
