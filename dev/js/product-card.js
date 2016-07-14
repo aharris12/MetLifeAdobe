@@ -51,7 +51,7 @@ if($('.product-card').length > 0) {
 function addProperMarginToBottom() {
     if($(".product-card").length > 0) {
         if($(".promocard").length > 0) {
-            return;
+        $(".promocard").last().addClass("product-card__promo--margin-bottom");
         } else {
             $(".container .row .product-card").last().addClass("product-card--last-margin-bottom");
         }

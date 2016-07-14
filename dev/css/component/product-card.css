@@ -379,6 +379,9 @@
         margin-bottom: 20px;
     }
 
+    .product-card__promo--margin-bottom {
+        margin-bottom: 50px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
