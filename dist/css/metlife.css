@@ -11980,7 +11980,7 @@ ul.bullet-list {
 .company-search-label {
     width: 100%;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .company-search-input-container button {
@@ -11992,7 +11992,7 @@ ul.bullet-list {
 }
 
 .content-body input {
-    width: 65%;
+    width: 200px;
     height: 40px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -12058,12 +12058,16 @@ ul.bullet-list {
 
 .company-search-container {
     position: relative;
+    text-align: center;
 }
 
+.company-search-container button{
+    padding-top: 14px !important;
+}
 .shadow {
     background: #fff;
-    left: 0 !important;
-    top: 69px !important;
+
+    top: 72px !important;
     position: absolute;
     display: table-row-group !important;
 }
@@ -12084,6 +12088,10 @@ ul.bullet-list {
 .shadow .output div {
     padding: 1px 3px;
     font-size: 13px;
+}
+
+.shadow .output{
+    text-align: left;
 }
 
 @media screen and (min-width: 768px) {
@@ -12133,6 +12141,10 @@ ul.bullet-list {
         line-height: 40px !important;
     }
 
+    .company-search-container{
+        text-align: left;
+    }
+
     .expand-content {
         display: none;
         font-weight: 300;
@@ -12159,7 +12171,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        top: 79px !important;
+        top: 92px !important;
     }
 
     .company-search-input-container {
@@ -12178,6 +12190,9 @@ ul.bullet-list {
         color: #2c77c5;
     }
 
+    .shadow{
+        left: 0 !important;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -12219,7 +12234,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        left: 158px !important;
+        left: 162px !important;
         top: 62px !important;
     }
 
