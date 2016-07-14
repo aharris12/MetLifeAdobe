@@ -167,6 +167,7 @@ module.exports = function (grunt) {
                     'dev/js/campaign-card.js',
                     'dev/js/glossary.js',
                     'dev/js/toqjshashtable.js',
+                    'dev/js/toqdata.js',
                     'dev/js/blogpost.js',
                     'dev/js/overlay.js',
                     'dev/js/aemfixes.js',
