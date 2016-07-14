@@ -95,8 +95,7 @@ function openSearchBox() {
         //Open searchbox in mobile
         if ($('.search-trigger__container').css("display") == "none") {
             $('.search-trigger__icon').addClass('search-trigger__icon--open');
-
-            $('.search-trigger__container').css('display','block');
+            $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
                 top: "50"
             }, 50, function () {
@@ -108,8 +107,7 @@ function openSearchBox() {
         } else {
             //close searchbox in mobile
             $('.search-trigger__icon').removeClass('search-trigger__icon--open');
-
-            $('.search-trigger__container').css('display','none');
+            $('.search-trigger__container').css('display', 'none');
             $(".search-trigger__container").animate({
                 top: "0"
             }, 50, function () {
@@ -133,7 +131,7 @@ function openSearchBox() {
             });
 
 
-            $('.search-trigger__container').css('display','block');
+            $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
                 top: "50"
             }, 50, function () {
@@ -148,15 +146,54 @@ function openSearchBox() {
     }
 }
 function adjustSearchBox() {
-
     if ($('.search-trigger__container--open').is(':visible')) {
         if (getViewport() == "mobile") {
-            $(".search-trigger__container").addClass('search-trigger__container--open');
-        }
-        if (getViewport() == "tablet" || "desktop") {
-            $('.search-trigger__icon').css({left: '145'});
+            if ($('.megamenu').is(':visible')) {
+                $(".search-trigger__icon").animate({
+                    left: "12"
+                }, 50, function () {
+                    $('.search-trigger').removeClass('search-trigger--open');
+                    $('.search-trigger__icon').css('left', '');
+                    console.log('hi');
+                });
+
+                $('.search-trigger__container').css('display', 'none');
+                $(".search-trigger__container").animate({
+                    top: "0"
+                }, 50, function () {
+                    $('.search-trigger__container').removeClass('search-trigger__container--open');
+                    $('.search-trigger__container').css('top', '');
+                });
+                setTimeout(function () {
+                    $(".search-trigger__container").removeClass('search-trigger__container--open');
+                }, 250);
+                currentView = getViewport();
+            }
         }
     }
+    if (getViewport() != "mobile") {
+        if ($('.megamenu').is(':visible')){
+            $('.search-trigger__container').css('display', 'block');
+            $(".search-trigger__container").animate({
+                top: "50"
+            }, 50, function () {
+                $('.search-trigger__container').addClass('search-trigger__container--open');
+                $('.search-trigger__container').css('top', '');
+                $('.search-trigger__container').css('display', '');
+                console.log('icon animate');
+            });
+            $(".search-trigger__icon").animate({
+                left: "145"
+            }, 150, function () {
+                $('.search-trigger__icon').addClass('search-trigger__icon--open');
+                $('.search-trigger__icon').css('left', '');
+            });
+            currentView = getViewport();
+        }
+
+    }
+
+
 }
 function closeSearchBox() {
     $('.search-trigger').removeClass('search-trigger--open');
@@ -371,14 +408,16 @@ function adjustMegaMenu() {
 
 $(window).resize(function () {
     var thisView = getViewport();
+    console.log("thisView is : " + thisView);
     headerPosition();
     resizeMegaMenu();
     if (thisView != currentView) {
-        //closeSearchBox();
+        console.log("currentView is: " + currentView);
+        adjustSearchBox();
         closeContactForm();
         currentView = getViewport();
     }
-    adjustSearchBox();
+
 });
 
 // Show sub menu (mobile only)

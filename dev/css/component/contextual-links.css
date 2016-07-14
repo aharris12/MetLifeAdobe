@@ -7,9 +7,6 @@
 .contextual-links-row{
     padding: 0;
 }
-.contextual-links-row>div{
-    display: inline-block;
-}
 
 .contextual-links-row a:hover{
     text-decoration: none;
@@ -22,7 +19,7 @@
 }
 
 .contextual-link__content{
-    line-height: 60px;
+
     padding-left: 25px;
     height:100%;
 }
@@ -41,18 +38,22 @@
     margin-bottom: 0;
     font-size: 16px;
     text-align: left;
-    line-height: 16px;
+    line-height: 60px;
     height: 100%;
 }
 .contextual-link__content__label svg {
     position: absolute;
     top: 35%;
-    left: 90%;
-    height: 12px;
-    width: 12px;
+    left: 95%;
+    height: 14px;
+    width: 14px;
 }
 
 @media screen and (min-width: 768px) {
+    .contextual-links-row>div{
+        display: inline-block;
+    }
+
     .divider-title__title {
         font-size: 28px;
         line-height:32px;
@@ -91,6 +92,7 @@
         text-align:center;
         height:32px;
         font-size: 11px;
+        line-height: 16px;
     }
     .contextual-link__content svg{
         display: none;

@@ -4922,11 +4922,18 @@ var key;
 $(document).ready(function(){
    init();
 });
+
+$(window).resize(function () {
+    if(!$(".hidden-xs").is(":visible")){
+        setVisible();
+    }
+
+});
 function setVisible(visi){
     var x = document.getElementById("shadow");
     var t = document.getElementsByClassName("comapny-name-search")[0];
     x.style.top =  (findPosY(t)+3)+"px";
-    x.style.left = (findPosX(t)+2)+"px";
+    x.style.left = (findPosX(t)-30)+"px";
     x.style.visibility = visi;
 }
 
