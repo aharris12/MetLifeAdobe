@@ -801,7 +801,7 @@ $('.maps-button').click(function (clickedButton) {
 }*/
 
 $(window).on('load', function (e) {
-	var countryCode ="usa";
+	var countryCode ="us";
 	var options = {
 		componentRestrictions: {country: countryCode}
 	};
@@ -822,7 +822,10 @@ $(window).on('load', function (e) {
 		}
 	}
 	if ($(".find-office__zip-city-state").length > 0) {
-
+		var countryCode ="us";
+		var options = {
+			componentRestrictions: {country: countryCode}
+		};
 		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0], options);
 		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
@@ -2287,7 +2290,11 @@ var ServicesAPI = {
 		ServicesAPI.autocompleteOn();
 	},
 	autocompleteOn: function () {
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0]);
+		var countryCode ="us";
+		var options = {
+			componentRestrictions: {country: countryCode}
+		};
+		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0],options);
 		googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
@@ -2347,9 +2354,12 @@ var ServicesAPI = {
 			scrollwheel: true,
 			zoom: 10
 		};
-
+		var countryCode ="us";
+		var options = {
+			componentRestrictions: {country: countryCode}
+		};
 		map = new google.maps.Map(document.getElementById("googleDrivingMapsContainer"), myOptions);
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0]);
+		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0],options);
 		googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
