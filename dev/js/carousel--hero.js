@@ -48,33 +48,33 @@ $( document ).ready(function() {
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
 
 
-  /*  var lazyPause = carouselInterval;
+    var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause - 500;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };*/
+    };
 
 
     $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
 
     //Reloadoad images on resize
-    //var resizeTimeout;
-      /*  resizeTimeout = setTimeout(function () {
-            $(window).lazyLoadXT({
-                checkDuplicates: false
-            });
-            clearTimeout(resizeTimeout);
-        });*/
+    var resizeTimeout;
+      resizeTimeout = setTimeout(function () {
+        $(window).lazyLoadXT({
+            checkDuplicates: false
+        });
+        clearTimeout(resizeTimeout);
+      });
     $( window ).resize(function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-      /*  resizeTimeout = setTimeout(function () {
+        resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
                 checkDuplicates: false
             });
             clearTimeout(resizeTimeout);
-        });*/
+        });
     });
 });
