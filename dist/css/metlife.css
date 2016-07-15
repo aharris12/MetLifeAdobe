@@ -9347,6 +9347,8 @@ body{
     .divider-title__title {
         font-size: 28px;
         line-height:32px;
+        margin: 0 auto;
+        padding-bottom: 20px;
     }
     .contextual-links-row{
         text-align: center;
@@ -9395,16 +9397,15 @@ body{
         display: block;
     }
     .divider-title {
-        padding: 20px 0 10px 0;
+        padding: 40px 0 20px 0;
         text-align: center;
     }
-    .divider-title__title {
-        font-size: 2em;
-        line-height: 2.25em;
-        margin: 0 auto;
-    }
+    
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
+    .divider-title {
+        padding: 50px 0 20px 0;
+    }
     .divider-title__title {
         font-size: 30px;
         line-height:34px;
@@ -9413,7 +9414,6 @@ body{
 @media screen and (max-width: 767px) {
 
     .contextual-link:first-of-type{
-
         border-top: 1px solid #cccccc;
     }
     .contextual-link__content__label{
@@ -10335,8 +10335,8 @@ ul.bullet-list {
 .accordion .accordion__name{
     padding:0 20px 20px;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 
@@ -10424,10 +10424,6 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 768px){
-    .accordion .accordion__name{
-        font-size: 18px;
-        line-height: 22px;
-    }
     .accordion--50{
         float: left;
     }
@@ -10437,10 +10433,6 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 1024px) {
-    .accordion .accordion__name{
-        font-size: 20px;
-        line-height: 24px;
-    }
     .microsite-accordion{
         padding-bottom: 50px;
     }

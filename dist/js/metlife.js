@@ -110,7 +110,7 @@ if (isDesktop) {
 
 //Global Header
 var currentView = getViewport();
-
+//Test comment
 function optionalHeaderCTA() {
     var fao = $('.find-office__container');
     var office = $('.get-quote__container');
@@ -8116,9 +8116,18 @@ var ServicesAPI = {
 		});
 	},
 	gmapsAutoCompleteInit: function () {
-		$('.find-office__zip-city-state, .cta_search').each(function () {
-			new google.maps.places.Autocomplete($(this)[0]);
-		});
+		/*if (typeof countryCode !== 'undefined') {
+			var options = {
+				componentRestrictions: {country: countryCode}
+			};
+			$('.find-office__zip-city-state, .cta_search').each(function () {
+				new google.maps.places.Autocomplete($(this)[0],options);
+			});
+		}else{
+			$('.find-office__zip-city-state, .cta_search').each(function () {
+				new google.maps.places.Autocomplete($(this)[0]);
+			});
+		}*/
 	},
 	showLocation: function () {
 		$('.fax-results__container, .maps-button, .get-directions-form, .find-an-x-search__container, .cta_search__container').removeClass('hidden');
