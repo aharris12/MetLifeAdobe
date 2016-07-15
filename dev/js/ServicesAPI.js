@@ -621,7 +621,7 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
-$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, ss-gac-c, ss-gac-d", function () {
+$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, .ss-gac-c, .ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
 	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
