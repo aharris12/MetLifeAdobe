@@ -57,7 +57,7 @@ function removingPaddingContextualLinksProductTiles() {
 			var prevContainer = container.prev("div");
 			if (thisContainer.length > 0 && prevContainer.length == 0) {
 				if (getViewport() != "mobile") {
-					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important; padding-top: 10px!important");
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: -10px !important;");
 
 					thisContainer.find(".tile-container").last().find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 0px !important;");
@@ -66,7 +66,7 @@ function removingPaddingContextualLinksProductTiles() {
 					thisContainer.last("tile-container").find(".double-promo").css("cssText", "margin-bottom: 0px !important;");
 					thisContainer.last("tile-container").find(".triple-promo").css("cssText", "margin-bottom: 0px !important;");
 				}else{
-					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 15px !important;    padding: 0px 10px 10px;");
+					thisContainer.find(".tile-container").last().find(".wrapper").css("cssText", "margin-bottom: 10px !important;    padding: 0px 10px 10px;");
 					thisContainer.find(".tile-container").find(".wrapper").find(".product-row__tile").each(function () {
 						$(this).css("cssText", "margin-bottom: 10px");
 					});
@@ -86,7 +86,7 @@ function removingPaddingContextualLinksSmallCards() {
 			var thisContainer = container.prev("div");
 			if (thisContainer.hasClass("small-product-container")) {
 			if (getViewport() != "mobile") {
-				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;  margin-top: 10px;");
+				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 0px !important;  margin-top: 20px;");
 			}else{
 				thisContainer.find(".wrapper ").css("cssText", "margin-bottom: 20px !important  margin-top: initial;");
 			}

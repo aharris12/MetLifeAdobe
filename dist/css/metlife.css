@@ -4793,7 +4793,6 @@ a:visited {
     background-color: transparent;
 }
 
-
 .homepage-nav a:hover, .homepage-nav a:focus {
     text-decoration: none;
 }
@@ -4839,8 +4838,6 @@ a:visited {
     padding: 0 50px;
 }
 
-
-
 .homepage-nav__icon {
     color: #fff;
     position: absolute;
@@ -4885,18 +4882,17 @@ a:visited {
     padding-top: 45px;
 }
 
-
 .homepage-sub__link:first-child:nth-last-child(5),
-.homepage-sub__link:first-child:nth-last-child(5) ~ .homepage-sub__link{
-    width:20%;
+.homepage-sub__link:first-child:nth-last-child(5) ~ .homepage-sub__link {
+    width: 20%;
 }
 
 .homepage-sub__link:first-child:nth-last-child(6),
-.homepage-sub__link:first-child:nth-last-child(6) ~ .homepage-sub__link{
-    width:16%;
+.homepage-sub__link:first-child:nth-last-child(6) ~ .homepage-sub__link {
+    width: 16%;
 }
 
-.homepage-sub__link img{
+.homepage-sub__link img {
     width: 40px;
     height: 40px;
     margin: 0 auto;
@@ -4912,7 +4908,6 @@ a:visited {
 
 .homepage-sub-side {
     display: table;
-    height: 200px;
 }
 
 .homepage-sub-side__grid {
@@ -4921,17 +4916,19 @@ a:visited {
 }
 
 .homepage-sub-side__link {
+    display: block;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 14px;
-    margin-top: 10px;
-    padding-bottom: 10px;
     color: #666;
-    display: block;
 }
 
-.homepage-sub__link:hover, .homepage-sub-side__link:hover{
+.homepage-sub-side__link:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.homepage-sub__link:hover, .homepage-sub-side__link:hover {
     color: #2377C5;
 }
 
@@ -4965,6 +4962,10 @@ a:visited {
         font-size: 14px;
     }
 
+    .homepage-sub-side {
+        height: 180px;
+    }
+
     .homepage-sub-side__icon {
         width: 25px;
         margin-right: 8px;
@@ -4976,7 +4977,6 @@ a:visited {
         margin: auto;
         /* padding: 0px 15px;*/
     }
-
 
     .homepage--sub__link {
         display: inline-block;
@@ -4993,16 +4993,16 @@ a:visited {
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .homepage-sub {
         margin-top: 60px;
     }
 
-    .homepage-sub__container{
+    .homepage-sub__container {
         height: 200px;
     }
 
-    .homepage-sub__link{
+    .homepage-sub__link {
         padding-top: 45px;
     }
 
@@ -5015,7 +5015,7 @@ a:visited {
         padding: 0 50px;
     }
 
-    .homepage-sub__link img{
+    .homepage-sub__link img {
         width: 60px;
         height: 60px;
         margin: auto;
@@ -5030,15 +5030,9 @@ a:visited {
     .homepage--sub__icon--last {
         padding: 5px 20px;
     }
-}
 
-@media screen and (min-width: 1280px) {
-    .homepage-nav {
-        margin-top: 0;
-    }
-
-    .homepage--sub__icon--last {
-        padding: 5px 40px;
+    .homepage-sub-side {
+        height: 200px;
     }
 }
 
@@ -8930,7 +8924,6 @@ body{
         display: table;
         background-color: inherit;
         box-shadow: none;
-        margin-top: 30px;
         margin-bottom: 10px;
     }
 
@@ -9079,6 +9072,9 @@ body{
         font-size: 16px;
         line-height: 15px;
         letter-spacing: 1px;
+    }
+    .triple-promo {
+        margin-top: 20px;
     }
 }
 
