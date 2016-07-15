@@ -92,6 +92,10 @@
         max-height: 400px;
     }
 
+    .carousel--hero .icon{
+        width: 35px;
+    }
+
     .carousel-caption {
         padding: 0 15%;
     }
