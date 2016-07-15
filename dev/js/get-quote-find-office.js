@@ -4,71 +4,73 @@ var zipcode = 0;
 var isNumber = false;
 
 
-
-
-$(".find-office__zip-city-state").on("keyup", function(){
+$(".find-office__zip-city-state").on("keyup", function () {
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
+    $('.find-office__dental, .find-office__vision').siblings("svg").css("fill", "");
     $('.error-span').hide();
 });
 
 function validateFindOffice() {
     //reset
     $('.find-office__zip-city-state, .find-office__dental, .find-office__vision').removeClass('form-error');
+    $('.find-office__dental, .find-office__vision').siblings("svg").css("fill", "");
     $('.error-span').hide();
-    valid=true;
+    valid = true;
 
     zipcode = $('.find-office__zip-city-state').val();
-    isNumber =  /^\d+$/.test(zipcode);
-    if( zipcode.length == 0 || (isNumber && zipcode.length != 5)) {
-        $('.find-office__zip-city-state').addClass('form-error')
+    isNumber = /^\d+$/.test(zipcode);
+    if (zipcode.length == 0 || (isNumber && zipcode.length != 5)) {
+        $('.find-office__zip-city-state').addClass('form-error');
         $('.error-span').show();
         valid = false;
     }
     if (selectedBtnGroupOption == "dental" && $('.find-office__dental').val() == "") {
         $('.find-office__dental').addClass('form-error');
+        $('.find-office__dental').siblings("svg").css("fill", "#EB4646");
         valid = false;
     }
     if (selectedBtnGroupOption == "vision" && $('.find-office__vision').val() == "") {
         $('.find-office__vision').addClass('form-error');
+        $('.find-office__vision').siblings("svg").css("fill", "#EB4646");
         valid = false;
     }
     return valid;
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     selectedBtnGroupOption = $(".find-office .btn-group .btn.active").attr('data-btn-group-option');
 });
 
-$(".btn-group .btn").click(function(){
+$(".btn-group .btn").click(function () {
     //reset
     $('.find-office__zip-city-state-container').removeClass('full-width');
-    $('.find-office__dental-container, .find-office__vision-container').css('display','none');
+    $('.find-office__dental-container, .find-office__vision-container').css('display', 'none');
     selectedBtnGroupOption = $(this).attr('data-btn-group-option');
     if (!$(this).hasClass('active')) {
         $('.find-office__zip-city-state-container').removeClass('full-width');
-        $('.find-office__dental-container, .find-office__vision-container').css('display','none');
+        $('.find-office__dental-container, .find-office__vision-container').css('display', 'none');
     } else {
         //set
         $('.btn-group-selected').val(selectedBtnGroupOption);
     }
 });
 
-$(".find-office__zip-city-state").on("focus", function(){
-    if (selectedBtnGroupOption == "vision"){
+$(".find-office__zip-city-state").on("focus", function () {
+    if (selectedBtnGroupOption == "vision") {
         $('.find-office__zip-city-state-container').addClass('full-width');
-        $('.find-office__vision-container').css('display','block');
-        $('.find-office__dental-container').css('display','none');
-    }else if(selectedBtnGroupOption == "dental") {
+        $('.find-office__vision-container').css('display', 'block');
+        $('.find-office__dental-container').css('display', 'none');
+    } else if (selectedBtnGroupOption == "dental") {
         $('.find-office__zip-city-state-container').addClass('full-width');
-        $('.find-office__vision-container').css('display','none');
-        $('.find-office__dental-container').css('display','block');
-    }else{
-        $('.find-office__vision-container').css('display','none');
-        $('.find-office__dental-container').css('display','none');
+        $('.find-office__vision-container').css('display', 'none');
+        $('.find-office__dental-container').css('display', 'block');
+    } else {
+        $('.find-office__vision-container').css('display', 'none');
+        $('.find-office__dental-container').css('display', 'none');
     }
 });
 
-$('.find-office__submit').click(function(event){
+$('.find-office__submit').click(function (event) {
     event.preventDefault();
     selectedBtnGroupOption = $('.btn-group .btn.active').attr('data-btn-group-option');
     var urlStr = "";
@@ -90,21 +92,21 @@ $('.find-office__submit').click(function(event){
                 urlStr = "https://www.metlife.com/individual/insurance/dental-insurance/vision-providers/vision-facility-reference-guides.html";
             }
         }
-      window.location.href = urlStr;
+        window.location.href = urlStr;
     }
 });
 
-$('[data-target="vision_overlay"]').click(function(e){
+$('[data-target="vision_overlay"]').click(function (e) {
     e.preventDefault();
     $(".vision_overlay").removeClass("hidden")
 });
 
-$('[data-target="dental_overlay"]').click(function(e){
+$('[data-target="dental_overlay"]').click(function (e) {
     e.preventDefault();
     $(".dental_overlay").removeClass("hidden")
 });
 
-$(".vision_dental_overlay_close").click(function(e){
+$(".vision_dental_overlay_close").click(function (e) {
     e.preventDefault();
     $(".dental_overlay").addClass("hidden");
     $(".vision_overlay").addClass("hidden");
