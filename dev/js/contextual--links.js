@@ -178,7 +178,6 @@ function mainDisclaimerMissing(){
 
 function mainPromoAndSmallMediumCards(){
 	var container = $(".promocard");
-	console.log(container.length > 0 && $(".product-module").length > 0 )
 	if (container.length > 0 && $(".product-module").length > 0 ){
 		container.css("margin-top" , "0px")
 	}

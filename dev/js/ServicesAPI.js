@@ -2376,7 +2376,7 @@ var ServicesAPI = {
 		});
 	},
 	gmapsAutoCompleteInit: function () {
-		/*if (typeof countryCode !== 'undefined') {
+		if (typeof countryCode !== 'undefined') {
 			var options = {
 				componentRestrictions: {country: countryCode}
 			};
@@ -2387,7 +2387,7 @@ var ServicesAPI = {
 			$('.find-office__zip-city-state, .cta_search').each(function () {
 				new google.maps.places.Autocomplete($(this)[0]);
 			});
-		}*/
+		}
 	},
 	showLocation: function () {
 		$('.fax-results__container, .maps-button, .get-directions-form, .find-an-x-search__container, .cta_search__container').removeClass('hidden');
