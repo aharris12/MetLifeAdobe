@@ -532,14 +532,14 @@
 
 /* Go Home Trigger */
 .login-trigger {
-    width: 80px;
     color: #fff;
     cursor: pointer;
+    position: relative;
+    right: 12px;
 }
 
 @media screen and (max-width: 767px) {
     .login-trigger {
-        width: 70px;
         font-size: 10px;
     }
 }
@@ -911,9 +911,11 @@
 .megamenu__main-item .icon-chevron-down {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 22px;
     z-index: 1500;
     fill: rgba(255, 255, 255, 0.5);
+    height: 16px;
+    width: 16px;
 }
 
 @media screen and (min-width: 768px) {

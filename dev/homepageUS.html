@@ -99,7 +99,6 @@
 	<link href="css/theme/ie9select.css" rel="stylesheet">
 	<link href="css/component/tooltipster.css" rel="stylesheet">
 	<!-- /build -->
-
 </head>
 <body>
 
@@ -1184,8 +1183,10 @@
 	<div class="row no-padding-top">
 
 		<!-- Product Selector -->
-		<!--<div class="get-quote__container home-quote__container cta_header_quote">
-			<p>I am interestead in:</p>
+		<div class="get-quote__container home-quote__container cta_header_quote">
+
+
+			<p>I am interested in:</p>
 
 			<div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper">
 				<svg class="icon">
@@ -1194,35 +1195,27 @@
 				<select required="required" class="insurance-type product__selector form-user-ctrl user-select">
 					<option value="" selected disabled>Please Select Insurance Type</option>
 					<option value="Home" data-product-type="Life Insurance">Life Insurance</option>
-					<option value="Auto" data-product-type="Personal Accident Insurance">Personal Accident Insurance
-					</option>
+					<option value="Auto" data-product-type="Personal Accident Insurance">Personal Accident Insurance</option>
 					<option value="Life" data-product-type="Property Insurance">Property Insurance</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub"
-			     data-product-sub="Life Insurance">
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub" data-product-sub="Life Insurance">
 				<svg class="icon">
 					<use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
-				        disabled>
+				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 					<option value="" selected disabled>I want protection for</option>
-					<option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set
-						time
-					</option>
-					<option value="Auto" data-product-url="LifeInsurancewithSaving.html">Life Insurance with Saving
-					</option>
+					<option value="Home" data-product-url="LifeInsuranceforasettime.html">Life Insurance for a set time</option>
+					<option value="Auto" data-product-url="LifeInsurancewithSaving.html">Life Insurance with Saving</option>
 					<option value="Life" data-product-url="CreditLifeInsurance.html">Credit Life Insurance</option>
 					<option value="Pet" data-product-url="HelpMeChoose">Help Me Choose</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub hidden"
-			     data-product-sub="Personal Accident Insurance">
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Personal Accident Insurance">
 				<svg class="icon">
 					<use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
-				        disabled>
+				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 					<option value="" selected disabled>I want protection for</option>
 					<option value="Home" data-product-url="Individual.html">An Individual</option>
 					<option value="Auto" data-product-url="head.html">A head of the family</option>
@@ -1230,13 +1223,11 @@
 					<option value="Pet" data-product-url="Injury.html">An Injury</option>
 				</select>
 			</div>
-			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance&#45;&#45;sub hidden"
-			     data-product-sub="Property Insurance">
+			<div class="select_wrapper form-icon-wrapper cta_header_quote_type_of_insurance--sub hidden" data-product-sub="Property Insurance">
 				<svg class="icon">
 					<use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
 				</svg>
-				<select required="required" class="insurance-type product__selector&#45;&#45;sub form-user-ctrl user-select"
-				        disabled>
+				<select required="required" class="insurance-type product__selector--sub form-user-ctrl user-select" disabled>
 					<option value="" selected disabled>I want protection my</option>
 					<option value="Home" data-product-url="bag.html">Lost/Stolen Baggage</option>
 					<option value="Auto" data-product-url="mobile.html">Mobile Protection</option>
@@ -1244,17 +1235,6 @@
 				</select>
 			</div>
 			<a href="#" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
-		</div>-->
-
-		<div xk-section="v1" class="parbase find-product base get-quote__container home-quote__container cta_header_quote xk-component xk-section-base">
-			<p>I am interested in:</p>
-			<div class="select_wrapper cta_header_quote_type_of_insurance form-icon-wrapper">
-				<svg class="icon">
-					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
-				</svg>
-				<select required="" class="insurance-type product__selector"> <option value="" selected="" disabled="">Please Select Insurance Type:</option> <option value="Auto" data-product-url="/content/metlife/us/homepage/insurance/auto-insurance.html">Auto</option> <option value="Dental" data-product-url="/content/metlife/us/homepage/insurance/dental-insurance.html">Dental</option> <option value="Home" data-product-url="/content/metlife/us/homepage/insurance/home-insurance.html">Home</option> <option value="Life" data-product-url="/individual/insurance/life-insurance/">Life</option> <option value="Vision" data-product-url="/content/metlife/us/homepage/insurance/vision-insurance.html">Vision</option> </select>
-			</div>
-			<a href="#" id="homepage_find-product_content-buttonLabel" class="btn btn-brand-2nd btn_global js-productSelector">Go</a>
 		</div>
 
 		<!-- FAX -->
@@ -1512,7 +1492,7 @@
 </div>
 
 <!-- Promo Card -->
-<div class="container bg-gray-1st">
+<!--<div class="container bg-gray-1st">
 	<div class="row wrapper promocard white">
 		<div class="promocard__image bg clickable"
 		     data-redirect="http://www.google.com"
@@ -1527,7 +1507,7 @@
 			<a href="#" class="btn btn-brand-2nd">LEARN MORE</a>
 		</div>
 	</div>
-</div>
+</div>-->
 
 <!-- Disclaimer -->
 <div class="container bg-gray-1st">
@@ -1633,7 +1613,7 @@
 			</li>
 		</ul>
 		<div class="row footer-country-language-social">
-			<div class="col-xs-6 col-sm-4 col-md-4 footer-country js-footerMatchHeights">
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 footer-country js-footerMatchHeights">
 				<div class="row form-icon-wrapper select-country">
 
 					<div class="col-xs-6 col-sm-2 col-md-3 country__label" id="country__label">country</div>
@@ -1994,8 +1974,14 @@
 </div>
 
 
+<!--<div id="suggestionsbox" class="suggestionsbox ">
+	<table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
+		<tbody class="ss-gac-m" id="search_suggest"
+		<tr class="ss-gac-a"><td class="ss-gac-c"></td><td class="ss-gac-d">Suggestions</td></tr><tr class="ss-gac-b"><td class="ss-gac-c" colspan="2">life ins<b>urance</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life ins<b>urance claim form</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life ins<b>urance calculator</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life ins<b>urance customer</b></td></tr><tr class="ss-gac-e"><td colspan="2"><span>close</span></td></tr></tbody>
+	</table>
+</div>-->
 
-<script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
 <!-- build:js js/vendors.min.js -->
 <script src="js/_plugins/svg4everybody.ie8.js"></script>
@@ -2059,7 +2045,6 @@
 <script src="js/aemfixes.js"></script>
 <script src="js/share-chat.js"></script>
 <script src="js/product-card.js"></script>
-<script src="js/aem_form.js"></script>
 <script src="js/inview.js"></script>
 <!-- /build -->
 <!-- build:js js/feedback.min.js -->
@@ -2067,7 +2052,7 @@
 <script src="js/_plugins/oo_conf.js"></script>
 <!-- /build -->
 
-<script type="text/javascript" src="js/dtagent622_bdxjnpr23_1019.js"
+<!--<script type="text/javascript" src="js/dtagent622_bdxjnpr23_1019.js"
         data-dtconfig="tp=500,50,0|cors=1|reportUrl=https://metlife.compuwareapmaas.com:8443/dynaTraceMonitor"></script>
 <script type="application/ld+json">
 	{
@@ -2082,6 +2067,6 @@
 	}
 
 
-</script>
+</script>-->
 </body>
 </html>

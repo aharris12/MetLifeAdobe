@@ -1202,7 +1202,7 @@ function ss_handleMouseC() {
 
             var searchTerm = $(".search-trigger__search-box").val();
 
-            console.log("running")
+
             if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
                 ServicesAPI.legacySearch(searchTerm);
             } else {

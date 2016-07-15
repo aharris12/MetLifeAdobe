@@ -14,7 +14,6 @@ $(document).ready(function () {
 });
 
 function applyToolTipster() {
-    console.log("tooltips applied");
     if ($(window).width() > 1024) {
         console.log("entered tooltips 1024")
         $('.tooltip').tooltipster({

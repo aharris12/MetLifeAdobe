@@ -46,4 +46,19 @@ if($('.product-card').length > 0) {
 }
 
 
+//Ensuring that margin is always 50px in desktop for either last product card
+//or promo.
+function addProperMarginToBottom() {
+    if($(".product-card").length > 0) {
+        if($(".promocard").length > 0) {
+        $(".promocard").last().addClass("product-card__promo--margin-bottom");
+        } else if ($(".skinny-promo-tile").length > 0) {
+            $(".skinny-promo-tile").last().addClass("product-card__skinny-promo--margin");
+        } else {
+            $(".container .row .product-card").last().addClass("product-card--last-margin-bottom");
+        }
+    }
+}
+
+addProperMarginToBottom();
 /***** Product Card Module End ************************************************************/
