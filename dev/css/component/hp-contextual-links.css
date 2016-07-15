@@ -1,5 +1,5 @@
 .more-content {
-    margin-bottom: 50px;
+    padding-bottom: 0px;
     background-color: #efefef;
 }
 .more-content__section {
@@ -94,7 +94,7 @@
 
 @media screen and (min-width: 1024px) {
     .more-content {
-        padding: 0;
+        padding-bottom: 50px;
     }
     .more-content__section a:nth-child(2) {
         font-size: 16px;

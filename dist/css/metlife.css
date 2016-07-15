@@ -5633,6 +5633,8 @@ ol.promocard_content__list li:after {
         height: 1px;
         min-height: 260px;
         margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom:40px;
     }
 
     .promocard__image {
@@ -5670,6 +5672,8 @@ ol.promocard_content__list li:after {
         height: 1px;
         min-height: 300px;
         margin: 0 auto;
+        margin-top:50px;
+        margin-bottom:50px;
     }
 
     .promocard__image {
@@ -5712,6 +5716,10 @@ ol.promocard_content__list li:after {
     padding-top: 0px;
 }
 
+
+.disclaimer.disclaimer--main:first-of-type{
+    padding-top: 20px;
+}
 .disclaimer--microsite {
     padding-top: 20px;
 }
@@ -5742,7 +5750,7 @@ ol.promocard_content__list li:after {
     }
 
     .disclaimer.disclaimer--main:first-of-type{
-        padding-top: 35px;
+        padding-top: 0px;
     }
 
     .disclaimer:last-of-type {
@@ -5786,7 +5794,7 @@ ol.promocard_content__list li:after {
         margin: 20px auto 40px;
     }
     .disclaimer.disclaimer--main:first-of-type{
-        padding-top: 50px;
+        padding-top: 0px;
     }
 }
 .media-contact--absolute{
@@ -13728,7 +13736,7 @@ span.errorRadio {
 }
 
 .more-content {
-    margin-bottom: 50px;
+    padding-bottom: 0px;
     background-color: #efefef;
 }
 .more-content__section {
@@ -13823,7 +13831,7 @@ span.errorRadio {
 
 @media screen and (min-width: 1024px) {
     .more-content {
-        padding: 0;
+        padding-bottom: 50px;
     }
     .more-content__section a:nth-child(2) {
         font-size: 16px;
