@@ -871,30 +871,36 @@ $( document ).ready(function() {
         threshold:20
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
-    var lazyPause = carouselInterval;
+
+
+  /*  var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause - 500;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };
+    };*/
+
+
+    $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
+
     //Reloadoad images on resize
-    var resizeTimeout;
-        resizeTimeout = setTimeout(function () {
+    //var resizeTimeout;
+      /*  resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
                 checkDuplicates: false
             });
             clearTimeout(resizeTimeout);
-        }, lazyPause);
+        });*/
     $( window ).resize(function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-        resizeTimeout = setTimeout(function () {
+      /*  resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
                 checkDuplicates: false
             });
             clearTimeout(resizeTimeout);
-        }, lazyPause);
+        });*/
     });
 });
 //
@@ -6533,12 +6539,10 @@ $('.maps-button').click(function (clickedButton) {
 		});
 	}
 }*/
+var countryCode ="us";
 
 $(window).on('load', function (e) {
-	var countryCode ="us";
-	var options = {
-		componentRestrictions: {country: countryCode}
-	};
+
 	if ($(".fax__container").length > 0) {
 		faoURL = window.location.href;
 		blackMarker = $('.pngPath_icon_locpin_blk').text();
@@ -6556,11 +6560,14 @@ $(window).on('load', function (e) {
 		}
 	}
 	if ($(".find-office__zip-city-state").length > 0) {
-		var countryCode ="us";
-		var options = {
-			componentRestrictions: {country: countryCode}
-		};
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0], options);
+		if (typeof countryCode !== 'undefined') {
+			var options = {
+				componentRestrictions: {country: countryCode}
+			};
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0], options);
+		}else{
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("find-office__zip-city-state")[0]);
+		}
 		//googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
@@ -8024,11 +8031,14 @@ var ServicesAPI = {
 		ServicesAPI.autocompleteOn();
 	},
 	autocompleteOn: function () {
-		var countryCode ="us";
-		var options = {
-			componentRestrictions: {country: countryCode}
-		};
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0],options);
+		if (typeof countryCode !== 'undefined') {
+			var options = {
+				componentRestrictions: {country: countryCode}
+			};
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0], options);
+		}else{
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("cta_search")[0]);
+		}
 		googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
@@ -8088,12 +8098,15 @@ var ServicesAPI = {
 			scrollwheel: true,
 			zoom: 10
 		};
-		var countryCode ="us";
-		var options = {
-			componentRestrictions: {country: countryCode}
-		};
 		map = new google.maps.Map(document.getElementById("googleDrivingMapsContainer"), myOptions);
-		googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0],options);
+		if (typeof countryCode !== 'undefined') {
+			var options = {
+				componentRestrictions: {country: countryCode}
+			};
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0], options);
+		}else{
+			googleautocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName('from-address')[0]);
+		}
 		googleautocomplete.bindTo('bounds', map);
 		google.maps.event.addListener(googleautocomplete, 'place_changed', function () {
 			var place = googleautocomplete.getPlace();
