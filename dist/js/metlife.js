@@ -2632,6 +2632,7 @@ $(document).ready(function () {
     productTilePadding();
     productTilesLayout();
     productTilePullRight();
+    positionTileButtonBototm()
 });
 
 $(window).load(function () {
@@ -2644,6 +2645,7 @@ $(window).resize(function (e) {
     productTilePadding();
     productTileHeight();
     productTilePullRight();
+    positionTileButtonBototm()
 });
 
 $(".product-row__tile__img-tile__img").click(function(){
@@ -2735,7 +2737,6 @@ function productTileHeight() {
                 subcatProductCards.css("height", "auto");
                 elements.css('min-height', "auto");
                 bottomElements.css('min-height', "auto");
-
                 if ($(this).find(".product-row__tile").length == 1) {
                     $(this).find(".product-row__tile--img-tile").css("height", "auto");
                     $(this).find(".product-row__tile--img-tile .product-row__tile__img-tile__img").css("height", "150");
@@ -2765,6 +2766,16 @@ function productTileHeight() {
         }
     }
 };
+
+function positionTileButtonBototm(){
+    $(".product-row").each(function () {
+        $(".product-tile").each(function(){
+            var minHeight = parseInt($(this).find(".product-row__tile__bottom").css("min-height"));
+            $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+        });
+    });
+}
+
 
 function productTilePullRight(){
 /*
@@ -16726,6 +16737,7 @@ $(document).ready(function(){
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
+	mainPromoAndSmallMediumCards()
 });
 
 $(window).resize(function(){
@@ -16736,6 +16748,7 @@ $(window).resize(function(){
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
+	mainPromoAndSmallMediumCards()
 });
 
 function spacingCtaAndDisclaimer(){
@@ -16876,6 +16889,31 @@ function skinnyAndLargeSpacing(){
 			}
 		}
 	}
+}
+
+
+function mainDisclaimerMissing(){
+	var container = $(".container.contextual-links");
+	if (container.length > 0) {
+		var thisContainer = container.next("div");
+		if (thisContainer.length == 0) {
+			if (getViewport() != "mobile") {
+				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -52px;");
+			}  else {
+				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+			}
+		}
+	}
+
+}
+
+function mainPromoAndSmallMediumCards(){
+	var container = $(".promocard");
+	console.log(container.length > 0 && $(".product-module").length > 0 )
+	if (container.length > 0 && $(".product-module").length > 0 ){
+		container.css("margin-top" , "0px")
+	}
+
 }
 $(window).scroll(function () {
 	$('.in_view').bind('inview', function (event, visible) {
