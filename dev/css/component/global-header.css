@@ -639,6 +639,10 @@
         line-height: 4.5em;
     }
 
+    .login-trigger{
+        right: 0;
+    }
+
     .contact-trigger,
     .user-trigger {
         background-color: transparent;
