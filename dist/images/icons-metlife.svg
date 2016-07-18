@@ -1,8 +1,14 @@
 <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
+<!--
 <symbol id="icon-arrow-down-triangle" viewBox="0 0 1024 1024">
 	<title>arrow-down-triangle</title>
 	<path class="path1" d="M24.449 260.988l977.555 0.077-493.207 499.844-484.348-499.921z"></path>
+</symbol>
+-->
+<symbol id="icon-arrow-down-triangle" viewBox="0 0 32 32">
+<title>arrow-down-triangle</title>
+<path class="path1" d="M0.045 7.274c0.005 0.020 0.008 0.042 0.014 0.063l15.942 17.391 16-17.454h-31.955z"></path>
 </symbol>
 <symbol id="icon-arrow-down" viewBox="0 0 1024 1024">
 	<title>arrow-down</title>
@@ -24,9 +30,15 @@
 	<title>arrow-right</title>
 	<path class="path1" d="M978.877 512.003l-365.197-366.84v262.622h-568.563v204.252h568.563v266.79l365.197-366.825z"></path>
 </symbol>
+<!--
 <symbol id="icon-arrow-up-triangle" viewBox="0 0 1024 1024">
 	<title>arrow-up-triangle</title>
 	<path class="path1" d="M24.449 760.909l977.555-0.077-493.207-499.844-484.348 499.921z"></path>
+</symbol>
+-->
+<symbol id="icon-arrow-up-triangle" viewBox="0 0 59 32">
+<title>arrow-up-triangle</title>
+<path class="path1" d="M58.667 32c-0.009-0.037-0.014-0.076-0.025-0.116l-29.227-31.883-29.333 31.998h58.585z"></path>
 </symbol>
 <symbol id="icon-arrow-up" viewBox="0 0 1024 1024">
 	<title>arrow-up</title>
@@ -282,13 +294,23 @@
 	<title>icon-chevron-up</title>
 	<path class="path1" d="M512 427.4v0 0l348.4 334.4c8.6 8.4 22.8 8.2 31.6-0.4l61.2-59.8c8.8-8.6 9-22.6 0.4-31l-425.4-408.4c-4.4-4.4-10.4-6.4-16.2-6-6-0.2-11.8 1.8-16.2 6l-425.4 408.4c-8.6 8.4-8.4 22.4 0.4 31l61.2 59.8c8.8 8.6 23 8.8 31.6 0.4l348.4-334.4z"></path>
 </symbol>
-<symbol id="icon-chevron-left" viewBox="0 0 1024 1024">
+<!--<symbol id="icon-chevron-left" viewBox="0 0 1024 1024">
 	<title>icon-chevron-left</title>
 	<path class="path1" d="M427.4 512v0 0l334.4-348.2c8.4-8.6 8.2-22.8-0.4-31.6l-59.8-61.2c-8.6-8.8-22.6-9-31-0.4l-408.4 425.2c-4.4 4.4-6.4 10.4-6 16.2-0.2 6 1.8 11.8 6 16.2l408.4 425.4c8.4 8.6 22.4 8.4 31-0.4l59.8-61.2c8.6-8.8 8.8-23 0.4-31.6l-334.4-348.4z"></path>
+</symbol>-->
+<symbol id="icon-chevron-left" viewBox="0 0 19 32">
+<title>chevron-left</title>
+<path class="path1" d="M15.709 32l-15.709-15.999 15.709-16.001 3.491 3.556-12.218 12.445 12.218 12.444z"></path>
 </symbol>
+<!--
 <symbol id="icon-chevron-right" viewBox="0 0 1024 1024">
 	<title>icon-chevron-right</title>
 	<path class="path1" d="M596.6 512v0 0l-334.4-348.2c-8.4-8.6-8.2-22.8 0.4-31.6l59.8-61.2c8.6-8.8 22.6-9 31-0.4l408.4 425.4c4.4 4.4 6.4 10.4 6 16.2 0.2 6-1.8 11.8-6 16.2l-408.4 425.2c-8.4 8.6-22.4 8.4-31-0.4l-59.8-61.2c-8.6-8.8-8.8-23-0.4-31.6l334.4-348.4z"></path>
+</symbol>
+-->
+<symbol id="icon-chevron-right" viewBox="0 0 19 32">
+<title>chevron-right</title>
+<path class="path1" d="M3.491 0l15.709 15.999-15.709 16.001-3.491-3.556 12.219-12.445-12.219-12.444z"></path>
 </symbol>
 <symbol id="icon-chevron-down" viewBox="0 0 1024 1024">
 	<title>icon-chevron-down</title>
