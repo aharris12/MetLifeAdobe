@@ -16,7 +16,7 @@
         line-height: 20px;
     }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     .blog-post-header__title {
         font-size: 28px;
         line-height: 32px;

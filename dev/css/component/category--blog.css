@@ -59,7 +59,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     /* line 1, ../../../sass/_blogCategoryTablet.scss */
     .blog-category-title-wrapper {
         margin-bottom: 30px;
@@ -91,7 +91,7 @@
 
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     /* line 1, ../../../sass/_blogCategoryDesktop.scss */
     .blog-category-title-wrapper {
         margin-bottom: 40px;
