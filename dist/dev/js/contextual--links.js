@@ -2,22 +2,24 @@ $(document).ready(function(){
 	removingPaddingContextualLinksContactForm();
 	removingPaddingContextualLinksProductTiles();
 	removingPaddingContextualLinksSmallCards();
-	removeSpacingTopDisclaimer();
+	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
-	mainPromoAndSmallMediumCards()
+	mainPromoAndSmallMediumCards();
+	contextualToolsDisclaimerPadding();
 });
 
 $(window).resize(function(){
 	removingPaddingContextualLinksContactForm();
 	removingPaddingContextualLinksProductTiles();
 	removingPaddingContextualLinksSmallCards();
-	removeSpacingTopDisclaimer();
+	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
-	mainPromoAndSmallMediumCards()
+	mainPromoAndSmallMediumCards();
+	contextualToolsDisclaimerPadding();
 });
 
 function spacingCtaAndDisclaimer(){
@@ -94,19 +96,35 @@ function removingPaddingContextualLinksSmallCards() {
 	}
 }
 
-function removeSpacingTopDisclaimer(){
+function disclaimerPadding(){
 	var container = $(".disclaimer");
-	if (container.length > 0 && $(".quote-office").length == 0) {
+	console.log(container.length > 0 && $(".quote-office").length < 1)
+	if (container.length > 0 && $(".quote-office").length < 1) {
 			if (getViewport() == "desktop") {
-				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+				container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");
 			}  else if (getViewport() == "tablet") {
-				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+				container.css("cssText", "padding-top: 40px; padding-bottom: 10px;");
 			}else{
 				container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
 			}
 	}
 
 }
+
+/*function contextualToolsDisclaimerPadding(){
+	var container = $(".disclaimer");
+	console.log(container.length > 0 && $(".quote-office").length < 1)
+	if (container.length > 0 && $(".quote-office").length < 1) {
+		if (getViewport() == "desktop") {
+			container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+		}  else if (getViewport() == "tablet") {
+			container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+		}else{
+			container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
+		}
+	}
+
+}*/
 
 function removeSpacingFAQ(){
 	var container = $(".container.contextual-links");
@@ -160,7 +178,7 @@ function skinnyAndLargeSpacing(){
 }
 
 
-function mainDisclaimerMissing(){
+/*function mainDisclaimerMissing(){
 	var container = $(".container.contextual-links");
 	if (container.length > 0) {
 		var thisContainer = container.next("div");
@@ -173,7 +191,7 @@ function mainDisclaimerMissing(){
 		}
 	}
 
-}
+}*/
 
 function mainPromoAndSmallMediumCards(){
 	var container = $(".promocard");
