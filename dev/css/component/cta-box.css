@@ -114,7 +114,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .cta-box-component {
         margin: 20px auto 30px;
     }

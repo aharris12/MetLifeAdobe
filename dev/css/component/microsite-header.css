@@ -100,7 +100,7 @@ body{
 }
 
 
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1024px){
     .microsite-header .microsite-header__logos{
         position: relative;
         max-width: 1300px;
