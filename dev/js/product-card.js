@@ -26,32 +26,33 @@ $(".product-card .read-more").click(function (e) {
     $('html, body').animate({scrollTop: $(".faq_background").offset().top - height}, 500);
 });
 
-$(function() {
+$(function () {
     if ($('.product-card .action .btn-brand-2nd').length != 0) {
         $('.product-card .action .btn-brand-2nd')
             .filter(function () {
                 return $(this).text().toLowerCase().length >= 12;
             }).each(function (i) {
-                $(this).css("width", "140px");
-            });
+            $(this).css("width", "140px");
+        });
     }
 });
 
 
-if($('.product-card').length > 0) {
-    $('.product-card p').filter(function(index) {
-        return $(this).text().length === 0;
-    })
-    .css('margin-bottom', "0");
+if ($('.product-card').length > 0) {
+    $('.product-card p').filter(function (index) {
+            return $(this).text().length === 0;
+        })
+        .css('margin-bottom', "0");
+    $(".product-card .content").find("ul + .hidden-xs:last-child, span + .hidden-xs:last-child, p + .hidden-xs:last-child").prev().addClass("product-card__content-body--margin");
 }
 
 
 //Ensuring that margin is always 50px in desktop for either last product card
 //or promo.
 function addProperMarginToBottom() {
-    if($(".product-card").length > 0) {
-        if($(".promocard").length > 0) {
-        $(".promocard").last().addClass("product-card__promo--margin-bottom");
+    if ($(".product-card").length > 0) {
+        if ($(".promocard").length > 0) {
+            $(".promocard").last().addClass("product-card__promo--margin-bottom");
         } else if ($(".skinny-promo-tile").length > 0) {
             $(".skinny-promo-tile").last().addClass("product-card__skinny-promo--margin");
         } else {

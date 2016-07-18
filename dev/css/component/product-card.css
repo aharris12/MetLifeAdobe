@@ -6,10 +6,6 @@
     box-shadow: 1px 3px 5px 0 #ccc;
 }
 
-.product-card ul {
-    font-size: 0.9em;
-}
-
 .product-card__img {
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,16 +14,87 @@
     min-height: 120px;
 }
 
-.product-card .title, .product-card .content, .product-card .action {
+.product-card .title {
+    display: block;
+    padding: 20px;
+}
+
+.product-card .content {
+    display: block;
+}
+
+.product-card .content-body {
+    padding: 20px;
+}
+
+.action {
     display: block;
     padding: 20px;
 }
 
 .product-card .title h3 {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
     margin-bottom: 0;
-    font-size: 1.5em;
-    line-height: 1.2em;
-    font-weight: 600;
+}
+
+.product-card .content-body .intro {
+    display: block;
+}
+
+.product-card .content span,
+.product-card .content p,
+.product-card .content ul {
+    margin-bottom: 20px;
+}
+
+.product-card .content span:last-child,
+.product-card .content p:last-child,
+.product-card .content ul:last-child {
+    margin-bottom: 0;
+}
+
+.product-card__content-body--margin {
+    margin-bottom: 0 !important;
+}
+
+.product-card .content ul {
+    padding-left: 15px;
+    text-indent: -16px;
+}
+
+.product-card .content li {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.product-card .content li:last-child {
+    margin-bottom: 0;
+}
+
+.product-card .content li:before {
+    content: "\0387";
+    font-size: 26px;
+    vertical-align: middle;
+    line-height: 20px;
+    padding-right: 10px;
+}
+
+.product-card .content .intro,
+.product-card .content .expand-content__intro {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+.product-card .content span,
+.product-card .content p {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
 }
 
 .product-card .action {
@@ -38,65 +105,14 @@
     text-align: center;
 }
 
-.content-body__secondary-copy:not(:last-child) {
-    padding-bottom: 10px;
-}
-
-.content-body__secondary-copy h2:not(:last-child),
-.content-body__secondary-copy p:not(:last-child) {
-    padding-bottom: 20px;
-}
-
-.content-body__secondary-copy a {
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.product-card .content .content-body .intro {
-    display: block;
-    margin-bottom: 20px;
-    font-weight: 300;
-}
-
-.product-card .content .content-body ul,
-.product-card .expand-content ul {
-    padding-left: 15px;
-    text-indent: -16px;
-}
-
-.product-card .content .content-body li:before,
-.expand-content li:before {
-    content: "\0387";
-    font-size: 26px;
-    vertical-align: middle;
-    line-height: 20px;
-    padding-right: 10px;
-}
-
-.product-card .content .content-body li,
-.expand-content li {
-    font-size: 13px;
-    line-height: 16px;
-    font-weight: 400;
+.product-card .action p,
+.product-card .action a {
     margin-bottom: 10px;
 }
 
-.product-card .content .content-body p:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.product-card .content .intro,
-.product-card .content .intro p,
-.product-card .content .content-body p,
-.expand-content__intro,
-.expand-content__intro p,
-.expand-open-close p {
-    font-size: 16px;
-    line-height: 20px;
-}
-
-.product-card .action p:not(:last-child) {
-    margin-bottom: 10px;
+.product-card .action p:last-child,
+.product-card .action a:last-child {
+    margin-bottom: 0;
 }
 
 .product-card .action p a {
@@ -167,14 +183,14 @@
 
 .expand-open-close {
     font-size: 11px;
-    font-weight: 600;
     line-height: 16px;
-    margin-top: 30px;
+    font-weight: 600;
 }
 
 .expand-content {
-    font-weight: 400;
     display: block;
+    font-weight: 400;
+    padding: 0 20px 20px;
 }
 
 .expand-content__intro {
@@ -188,21 +204,6 @@
     text-indent: -16px;
     padding-left: 18px;
     margin-bottom: 20px;
-}
-
-.expand-content__list li {
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 400;
-    margin-bottom: 2px;
-}
-
-.expand-content__list li:before {
-    content: "\0387";
-    font-size: 20px;
-    vertical-align: middle;
-    line-height: 20px;
-    padding-right: 10px;
 }
 
 .expand-content__contact {
@@ -222,9 +223,10 @@
     text-align: center;
 }
 
-.company-search-container button{
+.company-search-container button {
     padding-top: 14px !important;
 }
+
 .shadow {
     background: #fff;
     top: 72px !important;
@@ -250,13 +252,14 @@
     font-size: 13px;
 }
 
-.shadow .output{
+.shadow .output {
     text-align: left;
 }
 
 .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
     margin-top: 0;
 }
+
 .product-card__promo--margin-bottom {
     margin-top: 0px;
     margin-bottom: 15px;
@@ -276,25 +279,24 @@
 
     .product-card .title {
         width: 25%;
+        padding: 30px 10px;
     }
 
     .product-card .content {
         width: 55%;
+    }
+
+    .product-card .content-body {
         padding: 30px 10px 30px 30px;
     }
 
     .product-card .action {
         width: 20%;
-        padding-top: 20px;
+        padding: 30px 10px;
     }
 
-    .content-body__action {
-        text-align: left;
-    }
-
-    .product-card .content .content-body ul,
-    .product-card .expand-content ul {
-        margin-bottom: 20px;
+    .product-card__content-body--margin {
+        margin-bottom: 20px !important;
     }
 
     .pc-tel-number {
@@ -309,22 +311,20 @@
         line-height: 40px !important;
     }
 
-    .company-search-container{
+    .company-search-container {
         text-align: left;
     }
 
     .expand-content {
         display: none;
         font-weight: 300;
+        padding: 0 30px 20px;
     }
 
     .expand-open,
     .expand-close {
         display: table;
         width: 100%;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 2px;
         padding: 20px;
         text-align: center;
         text-transform: uppercase;
@@ -332,6 +332,13 @@
         border-top-style: solid;
         border-top-width: 1px;
         cursor: pointer;
+    }
+
+    .product-card .content .expand-open span,
+    .product-card .content .expand-close span {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
     }
 
     .expand-close {
@@ -343,6 +350,10 @@
     }
 
     .company-search-input-container {
+        text-align: left;
+    }
+
+    .content-body__action {
         text-align: left;
     }
 
@@ -358,6 +369,10 @@
         color: #2c77c5;
     }
 
+    .expand-open-close .visible-xs {
+        display: block !important;
+    }
+
     .product-card--last-margin-bottom {
         margin-bottom: 20px;
     }
@@ -365,9 +380,11 @@
     .product-card__promo--margin-bottom {
         margin-bottom: 30px;
     }
-    .shadow{
+
+    .shadow {
         left: 0 !important;
     }
+
     .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
         margin-top: 0;
         margin-bottom: 30px;
@@ -375,23 +392,32 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .product-card .content {
-        width: 50%;
+
+    .product-card .title {
+        padding: 40px 10px;
+    }
+
+    .product-card .content-body {
         padding: 40px 10px 40px 40px;
     }
 
+    .product-card .action {
+        padding: 40px 10px;
+    }
+
     .product-card .content .intro,
-    .product-card .content .intro p,
-    .product-card .content .content-body p,
-    .expand-content__intro,
-    .expand-content__intro p,
-    .expand-open-close p {
+    .product-card .content .expand-content__intro {
         font-size: 18px;
         line-height: 22px;
     }
 
-    .product-card .content .content-body li,
-    .expand-open-close li {
+    .product-card .content li {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .product-card .content span,
+    .product-card .content p {
         font-size: 14px;
         line-height: 18px;
     }
@@ -408,8 +434,8 @@
         width: 45%;
     }
 
-    .expand-open-close .visible-xs {
-        display: block !important;
+    .expand-content {
+        padding: 0 40px 20px;
     }
 
     .shadow {
@@ -424,6 +450,7 @@
     .company-search-input-container input {
         margin-left: 5px;
     }
+
     .product-card--last-margin-bottom {
         margin-bottom: 40px;
     }
@@ -431,6 +458,7 @@
     .product-card__promo--margin-bottom {
         margin-bottom: 50px;
     }
+
     .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
         margin-bottom: 40px;
     }
