@@ -290,6 +290,10 @@
         transition: all 0.5s;
     }
 
+    .menu--left{
+        left: -7.08px;
+    }
+
     .search-trigger__icon {
         left: 0;
     }
@@ -637,6 +641,10 @@
         -o-transition: padding 0.3s;
         transition: padding 0.3s;
         line-height: 4.5em;
+    }
+
+    .login-trigger{
+        right: 0;
     }
 
     .contact-trigger,

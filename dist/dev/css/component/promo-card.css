@@ -97,7 +97,7 @@ ol.promocard_content__list li:after {
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .promocard {
         display: table;
         float: none;

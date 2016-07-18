@@ -1083,6 +1083,9 @@ $(".js-faqSelect").on("change", function(){
 
 
 
+
+
+
 $(window).load(function () {
     formatCTABoxes();
 });
@@ -1150,7 +1153,32 @@ function validateFindOffice() {
 
 $(document).ready(function () {
     selectedBtnGroupOption = $(".find-office .btn-group .btn.active").attr('data-btn-group-option');
+    setAddressContainerWidth();
 });
+
+$(window).resize(function(){
+    if(!$(".hidden-xs").is(":visible")){
+
+        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").width('100%');
+    }else{
+
+        setAddressContainerWidth();
+    }
+});
+
+
+function setAddressContainerWidth(){
+    if($(".hidden-xs").is(":visible")){
+        var minusWidth = $(".find-office--submit .btn")[0].getBoundingClientRect().width;
+        var calcWidth = (minusWidth + 10).toFixed(2);
+
+        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").css("width","Calc(100% - "+calcWidth+"px"+")");
+
+
+    }
+
+};
+
 
 $(".btn-group .btn").click(function () {
     //reset
