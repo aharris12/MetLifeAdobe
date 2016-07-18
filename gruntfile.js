@@ -113,7 +113,8 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
                     'dev/js/_plugins/jquery.bootpag.min.js',
-                    'dev/js/_plugins/jquery.inview.js'
+                    'dev/js/_plugins/jquery.inview.js',
+                    'dev/js/_plugins/jquery.tooltipster.min.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
@@ -174,7 +175,8 @@ module.exports = function (grunt) {
                     'dev/js/share-chat.js',
                     'dev/js/product-card.js',
                     'dev/js/contextual--links.js',
-                    'dev/js/inview.js'
+                    'dev/js/inview.js',
+                    'dev/js/tooltip-custom.js'
 
                 ],
                 dest: 'dist/js/metlife.js'
