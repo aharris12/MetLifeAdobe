@@ -127,6 +127,7 @@ module.exports = function (grunt) {
             },
             components: {
                 src: [
+                    'dev/js/tooltip-custom.js',
                     'dev/js/variable.js',
                     'dev/js/utility.js',
                     'dev/js/global-header.js',
@@ -175,8 +176,8 @@ module.exports = function (grunt) {
                     'dev/js/share-chat.js',
                     'dev/js/product-card.js',
                     'dev/js/contextual--links.js',
-                    'dev/js/inview.js',
-                    'dev/js/tooltip-custom.js'
+                    'dev/js/inview.js'
+
 
                 ],
                 dest: 'dist/js/metlife.js'

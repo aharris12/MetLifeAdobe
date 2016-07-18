@@ -1878,7 +1878,7 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}else{
+			}else if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("news.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
