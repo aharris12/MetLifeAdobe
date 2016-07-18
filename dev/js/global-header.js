@@ -1,5 +1,6 @@
 //Global Header
 var currentView = getViewport();
+var currentSpot = 0;
 //Test comment
 function optionalHeaderCTA() {
     var fao = $('.find-office__container');
@@ -217,18 +218,26 @@ $('body').on('click touchstart tap', function (e) {
     }
 });
 
+
+
 $('.megamenu-trigger').on('click', function () {
+
+
     if ($(".icon-close.megamenu-trigger__icon").css("display") == "none") {
+        currentSpot = $('body').scrollTop();
+        console.log(currentSpot);
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
     } else {
         $(".icon-close.megamenu-trigger__icon").css("display", "none");
         $(".icon-menu.megamenu-trigger__icon").css("display", "inline-block");
+        $("html, body").animate({scrollTop: currentSpot}, 1);
     }
 
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
+
     closeContactForm();
     $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
 
@@ -337,7 +346,7 @@ $('.megamenu-trigger').on('click', function () {
             }
         }
     } else {
-        $("html, body").animate({scrollTop: 0}, "slow");
+        
         closeSearchBox();
 
     }
