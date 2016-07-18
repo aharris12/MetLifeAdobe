@@ -233,7 +233,7 @@
 .text-right {
     text-align: right;
 }
-.contactDisclaimer, .contactDisclaimer span {
+.contactCard > p {
     Padding: 20px 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
@@ -242,10 +242,11 @@
     text-align: left;
     margin-bottom: 0px;
 }
-.contactDisclaimer + .contactDisclaimer {
+.contactCard > p.contactDisclaimer {
     padding-top: 0px;
 }
-.contactDisclaimer a , .contactDisclaimer span a {
+
+.contactCard > p a {
     text-decoration: underline;
 }
 .contactSideThankyou, .contactSideSubmitError {
@@ -313,6 +314,7 @@
     width: 18px;
     height: 18px;
 }
+
 
 
 .contactSideCall {

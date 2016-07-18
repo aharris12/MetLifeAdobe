@@ -10507,7 +10507,7 @@ function ss_handleMouseC() {
             $('#searchInPage,#Search').val($(x)[0].innerText);
 
             var searchTerm = $(".search-trigger__search-box").val();
-
+            console.log(searchTerm)
 
             if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
                 ServicesAPI.legacySearch(searchTerm);

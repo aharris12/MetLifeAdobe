@@ -11674,7 +11674,6 @@ ul.bullet-list {
 .subnav-go-back .subnav-go-back__list li a p {
     display: table-cell;
     vertical-align: middle;
-    line-height: 15px;
     font-weight: 400;
     text-align: left;
     padding: 10px 20px;
@@ -13255,7 +13254,7 @@ manner*/
 .text-right {
     text-align: right;
 }
-.contactDisclaimer, .contactDisclaimer span {
+.contactCard > p {
     Padding: 20px 0px 10px 0px;
     font-size: 11px;
     line-height: 15px;
@@ -13264,10 +13263,11 @@ manner*/
     text-align: left;
     margin-bottom: 0px;
 }
-.contactDisclaimer + .contactDisclaimer {
+.contactCard > p.contactDisclaimer {
     padding-top: 0px;
 }
-.contactDisclaimer a , .contactDisclaimer span a {
+
+.contactCard > p a {
     text-decoration: underline;
 }
 .contactSideThankyou, .contactSideSubmitError {
@@ -13335,6 +13335,7 @@ manner*/
     width: 18px;
     height: 18px;
 }
+
 
 
 .contactSideCall {
