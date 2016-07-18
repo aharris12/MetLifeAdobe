@@ -51,7 +51,7 @@ $( document ).ready(function() {
     var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
-    $.lazyLoadXT.autoLoadTime = lazyPause - 500;
+    $.lazyLoadXT.autoLoadTime = lazyPause;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());

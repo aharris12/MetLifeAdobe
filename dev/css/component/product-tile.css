@@ -278,6 +278,7 @@
         display: table;
         background-color: inherit;
         box-shadow: none;
+        margin-top: 30px;
         margin-bottom: 10px;
     }
 
@@ -426,9 +427,6 @@
         font-size: 16px;
         line-height: 15px;
         letter-spacing: 1px;
-    }
-    .triple-promo {
-        margin-top: 20px;
     }
 }
 

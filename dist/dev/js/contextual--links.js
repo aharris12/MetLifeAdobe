@@ -95,16 +95,15 @@ function removingPaddingContextualLinksSmallCards() {
 }
 
 function removeSpacingTopDisclaimer(){
-	var container = $(".container.contextual-links");
-	if (container.length > 0) {
-		var thisContainer = container.next("div");
-		if (thisContainer.length == 0) {
-			if (getViewport() != "mobile") {
-				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -52px;");
-			}  else {
-				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+	var container = $(".disclaimer");
+	if (container.length > 0 && $(".quote-office").length == 0) {
+			if (getViewport() == "desktop") {
+				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+			}  else if (getViewport() == "tablet") {
+				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+			}else{
+				container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
 			}
-		}
 	}
 
 }

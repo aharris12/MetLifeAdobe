@@ -873,34 +873,34 @@ $( document ).ready(function() {
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
 
 
-  /*  var lazyPause = carouselInterval;
+    var lazyPause = carouselInterval;
     //Need to shrink carousel caption by 100px to center carousel hero message
     //var carouselCaptionPaddingBottom = 100;
-    $.lazyLoadXT.autoLoadTime = lazyPause - 500;
+    $.lazyLoadXT.autoLoadTime = lazyPause;
     //Adjust carousel-caption container's height
     $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };*/
+    };
 
 
     $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
 
     //Reloadoad images on resize
-    //var resizeTimeout;
-      /*  resizeTimeout = setTimeout(function () {
-            $(window).lazyLoadXT({
-                checkDuplicates: false
-            });
-            clearTimeout(resizeTimeout);
-        });*/
+    var resizeTimeout;
+      resizeTimeout = setTimeout(function () {
+        $(window).lazyLoadXT({
+            checkDuplicates: false
+        });
+        clearTimeout(resizeTimeout);
+      });
     $( window ).resize(function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-      /*  resizeTimeout = setTimeout(function () {
+        resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
                 checkDuplicates: false
             });
             clearTimeout(resizeTimeout);
-        });*/
+        });
     });
 });
 //
@@ -2634,20 +2634,21 @@ $(document).ready(function () {
     productTilePadding();
     productTilesLayout();
     productTilePullRight();
-    positionTileButtonBototm()
+
 });
 
 $(window).load(function () {
     productTilePadding();
     productTileHeight();
     productTilePullRight();
+    positionTileButtonBottom();
 });
 
 $(window).resize(function (e) {
     productTilePadding();
     productTileHeight();
     productTilePullRight();
-    positionTileButtonBototm()
+    positionTileButtonBottom()
 });
 
 $(".product-row__tile__img-tile__img").click(function(){
@@ -2769,13 +2770,29 @@ function productTileHeight() {
     }
 };
 
-function positionTileButtonBototm(){
-    $(".product-row").each(function () {
-        $(".product-tile").each(function(){
-            var minHeight = parseInt($(this).find(".product-row__tile__bottom").css("min-height"));
-            $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+function positionTileButtonBottom(){
+var minHeight;
+        $(".product-row").each(function () {
+            $(".product-tile").each(function () {
+                if (getViewport() != "mobile") {
+                     minHeight = parseInt($(this).find(".product-row__tile__bottom").css("min-height"));
+                    $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+                }else{
+
+                    $(this).find(".product-row__tile__top").css("margin-bottom", "15px");
+                }
+            });
+            if($(".single-promo").length >0){
+                if (getViewport() != "mobile") {
+                    $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+                }else{
+                    $(this).find(".product-row__tile__top").css("margin-bottom", "15px");
+                }
+            }
         });
-    });
+
+
+
 }
 
 
@@ -16727,6 +16744,8 @@ function addProperMarginToBottom() {
     if($(".product-card").length > 0) {
         if($(".promocard").length > 0) {
         $(".promocard").last().addClass("product-card__promo--margin-bottom");
+        } else if ($(".skinny-promo-tile").length > 0) {
+            $(".skinny-promo-tile").last().addClass("product-card__skinny-promo--margin");
         } else {
             $(".container .row .product-card").last().addClass("product-card--last-margin-bottom");
         }
@@ -16833,16 +16852,15 @@ function removingPaddingContextualLinksSmallCards() {
 }
 
 function removeSpacingTopDisclaimer(){
-	var container = $(".container.contextual-links");
-	if (container.length > 0) {
-		var thisContainer = container.next("div");
-		if (thisContainer.length == 0) {
-			if (getViewport() != "mobile") {
-				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: -52px;");
-			}  else {
-				$(".wrapper").find(".disclaimer").first().css("cssText", "margin-top: 0px;");
+	var container = $(".disclaimer");
+	if (container.length > 0 && $(".quote-office").length == 0) {
+			if (getViewport() == "desktop") {
+				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+			}  else if (getViewport() == "tablet") {
+				container.css("cssText", "padding-top: 30px; padding-bottom: 30px;");
+			}else{
+				container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
 			}
-		}
 	}
 
 }

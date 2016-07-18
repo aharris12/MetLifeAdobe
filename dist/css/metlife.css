@@ -3706,6 +3706,10 @@ a:visited {
     .contact-trigger,
     .user-trigger {
         line-height: 6em;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .login-trigger--minimized,
@@ -4830,7 +4834,7 @@ a:visited {
     display: inline-block;
     height: 60px;
     font-size: 16px;
-    line-height: 56px;
+    line-height: 60px;
     font-weight: 600;
     letter-spacing: 1px;
     color: #fff;
@@ -4944,7 +4948,7 @@ a:visited {
 }
 
 .homepage-sub__link div {
-    line-height: 20px;
+    line-height: 18px;
 }
 
 @media screen and (min-width: 768px) {
@@ -5370,6 +5374,10 @@ a:visited {
         max-height: 400px;
     }
 
+    .carousel--hero .icon{
+        width: 35px;
+    }
+
     .carousel-caption {
         padding: 0 15%;
     }
@@ -5724,20 +5732,20 @@ ol.promocard_content__list li:after {
 
 .disclaimer {
     color: #999;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     font-size: 11px;
     margin-bottom: 0;
     line-height: 15px;
 }
-
+/*
 .disclaimer:first-of-type {
     padding-top: 0px;
-}
+}*/
 
 
-.disclaimer.disclaimer--main:first-of-type{
+/*.disclaimer.disclaimer--main:first-of-type{
     padding-top: 20px;
-}
+}*/
 .disclaimer--microsite {
     padding-top: 20px;
 }
@@ -5757,25 +5765,27 @@ ol.promocard_content__list li:after {
 }
 
 @media screen and (min-width: 768px) {
-
     .disclaimer {
-        padding-top: 0;
         padding-bottom: 20px;
     }
+  /*  .disclaimer {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }*/
 
-    .disclaimer:first-of-type {
+  /*  .disclaimer:first-of-type {
         padding-top: 40px;
     }
-
-    .disclaimer.disclaimer--main:first-of-type{
+*/
+ /*   .disclaimer.disclaimer--main:first-of-type{
         padding-top: 0px;
-    }
+    }*/
 
-    .disclaimer:last-of-type {
+   /* .disclaimer:last-of-type {
         margin-bottom: 30px;
         padding-bottom: 0;
     }
-
+*/
     .disclaimer--microsite {
         padding-top: 40px;
     }
@@ -5788,18 +5798,21 @@ ol.promocard_content__list li:after {
         padding-bottom: 0;
         margin-bottom: 0;
     }
-    .disclaimer--main{
+   /* .disclaimer--main{
         padding-top: 40px;
-    }
+    }*/
 }
 
 @media screen and (min-width: 1024px) {
     .disclaimer {
+        padding-bottom: 20px;
+    }
+  /*  .disclaimer {
         font-size: 12px;
     }
     .disclaimer:first-of-type {
         padding-top: 50px;
-    }
+    }*/
     .disclaimer--product-module .disclaimer {
         width: 65%;
     }
@@ -5811,9 +5824,9 @@ ol.promocard_content__list li:after {
     .product-comparison-chart-disclaimer {
         margin: 20px auto 40px;
     }
-    .disclaimer.disclaimer--main:first-of-type{
+  /*  .disclaimer.disclaimer--main:first-of-type{
         padding-top: 0px;
-    }
+    }*/
 }
 .media-contact--absolute{
     position: absolute;
@@ -8924,6 +8937,7 @@ body{
         display: table;
         background-color: inherit;
         box-shadow: none;
+        margin-top: 30px;
         margin-bottom: 10px;
     }
 
@@ -9072,9 +9086,6 @@ body{
         font-size: 16px;
         line-height: 15px;
         letter-spacing: 1px;
-    }
-    .triple-promo {
-        margin-top: 20px;
     }
 }
 
@@ -10513,7 +10524,7 @@ ul.bullet-list {
 
 .footer-sub__item {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .footer-sub__label,
@@ -11144,6 +11155,14 @@ ul.bullet-list {
         padding-top: 20px;
     }
 
+    .footer-legal__logo-container{
+        width: auto;
+    }
+
+    .footer-legal__copy{
+        padding-left: 50px;
+    }
+
     .footer-legal__link {
         margin: 0 10px 0 -15px;
     }
@@ -11158,6 +11177,8 @@ ul.bullet-list {
 
     .footer-country {
         padding-bottom: 15px;
+        width: auto;
+        min-width: 230px;
     }
 
     .global-footer .wrapper {
@@ -11174,8 +11195,8 @@ ul.bullet-list {
         display: block;
     }
 
-    .footer-legal__copy {
-        margin-left: 50px;
+    .footer-legal__logo a{
+        letter-spacing: 0.3px;
     }
 
     .footer-main__label {
@@ -11288,7 +11309,7 @@ ul.bullet-list {
 
     .language__link {
         display: inline-block;
-        padding: 0 5px;
+        padding: 0 5px 0 10px;
         font-size: 11px;
         line-height: 15px;
         font-weight: 600;
@@ -11302,9 +11323,9 @@ ul.bullet-list {
         line-height: 2.3em;
     }
 
-    .footer-legal > div {
+    /*.footer-legal > div {
         width: auto;
-    }
+    }*/
 
     .footer-legal__logo {
         width: 130px;
@@ -11465,6 +11486,10 @@ ul.bullet-list {
         line-height: 16px;
     }
 
+    .footer-country{
+        min-width: 285px;
+    }
+
     .footer-legal__link {
         font-size: 12px;
         line-height: 20px;
@@ -11481,7 +11506,7 @@ ul.bullet-list {
     }
 
     .language__link:first-child {
-        padding-left: 10px;
+        padding-left: 20px;
     }
 
     .dd-pointer.dd-pointer-down svg {
@@ -11504,9 +11529,8 @@ ul.bullet-list {
         margin-top: 0;
     }
 
-    .footer-legal__copy {
-        margin-left: 100px;
-        margin-top: 0;
+    .footer-legal__copy{
+        padding-left: 100px;
     }
 
     .country__label {
@@ -12147,6 +12171,13 @@ ul.bullet-list {
     text-align: left;
 }
 
+.product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
+    margin-top: 0;
+}
+.product-card__promo--margin-bottom {
+    margin-bottom: 15px;
+}
+
 @media screen and (min-width: 768px) {
 
     .product-card {
@@ -12253,6 +12284,10 @@ ul.bullet-list {
     .shadow{
         left: 0 !important;
     }
+    .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -12311,6 +12346,9 @@ ul.bullet-list {
 
     .product-card__promo--margin-bottom {
         margin-bottom: 50px;
+    }
+    .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
+        margin-bottom: 40px;
     }
 }
 .wrapper__quote-card {
