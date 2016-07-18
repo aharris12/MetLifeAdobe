@@ -6,20 +6,21 @@ $(document).ready(function () {
     productTilePadding();
     productTilesLayout();
     productTilePullRight();
-    positionTileButtonBototm()
+
 });
 
 $(window).load(function () {
     productTilePadding();
     productTileHeight();
     productTilePullRight();
+    positionTileButtonBottom();
 });
 
 $(window).resize(function (e) {
     productTilePadding();
     productTileHeight();
     productTilePullRight();
-    positionTileButtonBototm()
+    positionTileButtonBottom()
 });
 
 $(".product-row__tile__img-tile__img").click(function(){
@@ -141,13 +142,29 @@ function productTileHeight() {
     }
 };
 
-function positionTileButtonBototm(){
-    $(".product-row").each(function () {
-        $(".product-tile").each(function(){
-            var minHeight = parseInt($(this).find(".product-row__tile__bottom").css("min-height"));
-            $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+function positionTileButtonBottom(){
+var minHeight;
+        $(".product-row").each(function () {
+            $(".product-tile").each(function () {
+                if (getViewport() != "mobile") {
+                     minHeight = parseInt($(this).find(".product-row__tile__bottom").css("min-height"));
+                    $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+                }else{
+
+                    $(this).find(".product-row__tile__top").css("margin-bottom", "15px");
+                }
+            });
+            if($(".single-promo").length >0){
+                if (getViewport() != "mobile") {
+                    $(this).find(".product-row__tile__top").css("margin-bottom", minHeight + 15 + "px");
+                }else{
+                    $(this).find(".product-row__tile__top").css("margin-bottom", "15px");
+                }
+            }
         });
-    });
+
+
+
 }
 
 

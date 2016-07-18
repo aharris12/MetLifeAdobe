@@ -1,3 +1,4 @@
+if($(".company-search-container").length > 0){
 var typesHash = new Hashtable();
 typesHash.put ("24 HOUR FITNESS","A8B");
 typesHash.put ("3M","0WJ");
@@ -5114,4 +5115,5 @@ var mouseClick=function(){
     setVisible("hidden");
     posi = -1;
     oldins = this.firstChild.nodeValue;
+}
 }

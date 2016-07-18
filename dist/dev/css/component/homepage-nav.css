@@ -6,7 +6,6 @@
     background-color: transparent;
 }
 
-
 .homepage-nav a:hover, .homepage-nav a:focus {
     text-decoration: none;
 }
@@ -44,15 +43,13 @@
     display: inline-block;
     height: 60px;
     font-size: 16px;
-    line-height: 56px;
+    line-height: 60px;
     font-weight: 600;
     letter-spacing: 1px;
     color: #fff;
     text-transform: uppercase;
     padding: 0 50px;
 }
-
-
 
 .homepage-nav__icon {
     color: #fff;
@@ -98,18 +95,17 @@
     padding-top: 45px;
 }
 
-
 .homepage-sub__link:first-child:nth-last-child(5),
-.homepage-sub__link:first-child:nth-last-child(5) ~ .homepage-sub__link{
-    width:20%;
+.homepage-sub__link:first-child:nth-last-child(5) ~ .homepage-sub__link {
+    width: 20%;
 }
 
 .homepage-sub__link:first-child:nth-last-child(6),
-.homepage-sub__link:first-child:nth-last-child(6) ~ .homepage-sub__link{
-    width:16%;
+.homepage-sub__link:first-child:nth-last-child(6) ~ .homepage-sub__link {
+    width: 16%;
 }
 
-.homepage-sub__link img{
+.homepage-sub__link img {
     width: 40px;
     height: 40px;
     margin: 0 auto;
@@ -125,7 +121,6 @@
 
 .homepage-sub-side {
     display: table;
-    height: 200px;
 }
 
 .homepage-sub-side__grid {
@@ -134,17 +129,19 @@
 }
 
 .homepage-sub-side__link {
+    display: block;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 14px;
-    margin-top: 10px;
-    padding-bottom: 10px;
     color: #666;
-    display: block;
 }
 
-.homepage-sub__link:hover, .homepage-sub-side__link:hover{
+.homepage-sub-side__link:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.homepage-sub__link:hover, .homepage-sub-side__link:hover {
     color: #2377C5;
 }
 
@@ -160,7 +157,7 @@
 }
 
 .homepage-sub__link div {
-    line-height: 20px;
+    line-height: 18px;
 }
 
 @media screen and (min-width: 768px) {
@@ -178,6 +175,10 @@
         font-size: 14px;
     }
 
+    .homepage-sub-side {
+        height: 180px;
+    }
+
     .homepage-sub-side__icon {
         width: 25px;
         margin-right: 8px;
@@ -189,7 +190,6 @@
         margin: auto;
         /* padding: 0px 15px;*/
     }
-
 
     .homepage--sub__link {
         display: inline-block;
@@ -206,16 +206,16 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .homepage-sub {
         margin-top: 60px;
     }
 
-    .homepage-sub__container{
+    .homepage-sub__container {
         height: 200px;
     }
 
-    .homepage-sub__link{
+    .homepage-sub__link {
         padding-top: 45px;
     }
 
@@ -228,7 +228,7 @@
         padding: 0 50px;
     }
 
-    .homepage-sub__link img{
+    .homepage-sub__link img {
         width: 60px;
         height: 60px;
         margin: auto;
@@ -243,14 +243,8 @@
     .homepage--sub__icon--last {
         padding: 5px 20px;
     }
-}
 
-@media screen and (min-width: 1280px) {
-    .homepage-nav {
-        margin-top: 0;
-    }
-
-    .homepage--sub__icon--last {
-        padding: 5px 40px;
+    .homepage-sub-side {
+        height: 200px;
     }
 }

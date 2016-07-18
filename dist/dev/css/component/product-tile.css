@@ -6,6 +6,9 @@
     /*margin-top:10px;*/
 }
 
+.product-row__tile__bottom a{
+    color: #fff;
+} 
 .product-row__tile {
     margin-bottom: 10px;
     padding: 20px;
@@ -381,8 +384,8 @@
     }
 
     .product-row__tile--img-tile__text > .product-row__tile__bottom {
-        position: relative;
-        top: 30px;
+       /* position: relative;
+        top: 30px;*/
     }
 
     .product-row__tile__bottom {
