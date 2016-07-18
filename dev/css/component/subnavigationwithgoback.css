@@ -60,7 +60,6 @@
 .subnav-go-back .subnav-go-back__list li a p {
     display: table-cell;
     vertical-align: middle;
-    line-height: 15px;
     font-weight: 400;
     text-align: left;
     padding: 10px 20px;
