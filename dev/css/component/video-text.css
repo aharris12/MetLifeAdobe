@@ -144,7 +144,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .video-text-wrapper {
         padding-bottom: 20px;
     }

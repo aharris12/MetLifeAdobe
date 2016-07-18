@@ -159,7 +159,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .rates-overlay .view-header{
         padding: 65px 20px 60px;
     }

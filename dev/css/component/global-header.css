@@ -290,6 +290,10 @@
         transition: all 0.5s;
     }
 
+    .menu--left{
+        left: -7.08px;
+    }
+
     .search-trigger__icon {
         left: 0;
     }

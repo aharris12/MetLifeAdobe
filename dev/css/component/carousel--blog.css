@@ -33,7 +33,7 @@
     margin: 0px;
 }
 
-@media (min-width: 1025px){
+@media (min-width: 1024px){
     .blog-carousel .carousel-caption{
         padding-left: 20px;
          text-align: left;

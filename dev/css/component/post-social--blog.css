@@ -11,7 +11,7 @@
     display: block;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     /* line 1, ../../../sass/_blogPostSocialSidebarDesktop.scss */
     .social_sidebar {
         display: inline;

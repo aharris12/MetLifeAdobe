@@ -71,7 +71,7 @@
         line-height: 20px;
     }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     .post-body__content__tags {
         font-size: 14px;
     }

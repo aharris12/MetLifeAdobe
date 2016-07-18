@@ -11,7 +11,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .optional-image__img, .optional-image__description{
         width: 60%;
         display: block;

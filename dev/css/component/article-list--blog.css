@@ -71,7 +71,7 @@
         font-size: 13px;
     }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     .blog-list {
         padding: 40px 1% 40px 0;
     }

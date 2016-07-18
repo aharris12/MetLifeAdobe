@@ -46,14 +46,14 @@
     float: left;
     margin-right: 10px;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     /* line 1, ../../../sass/_blogSidebarTablet.scss */
     .blog-sidebar {
         margin-top: 20px;
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     /* line 1, ../../../sass/_blogSidebarDesktop.scss */
     .blog-sidebar {
         margin-top: 40px;

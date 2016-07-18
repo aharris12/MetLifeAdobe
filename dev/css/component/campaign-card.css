@@ -231,7 +231,7 @@
 
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .campaign-card .campaign-card-image {
         height: 235px;
     }

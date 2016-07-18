@@ -55,7 +55,7 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .campaign-footer{
         margin-top:10px;
             margin-bottom: 80px;

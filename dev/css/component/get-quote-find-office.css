@@ -110,14 +110,14 @@
         margin-bottom: 0;
     }
     .find-office--submit{
-        margin-left: 3%;
+        margin-left: 10px;
         float: right;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
 
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .quote-office {
         margin-bottom: 40px;
         margin-top:-85px;

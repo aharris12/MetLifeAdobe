@@ -254,7 +254,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     }
 }
 
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1024px){
     /* line 299, ../../../sass/_mltResultsCardDesktop.scss */
     body  .quote_edit_form {
         padding: 15px 75px;
