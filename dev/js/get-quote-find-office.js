@@ -42,27 +42,29 @@ $(document).ready(function () {
     setAddressContainerWidth();
 });
 
-$(window).resize(function(){
-    if(!$(".hidden-xs").is(":visible")){
+$(window).resize(function () {
+
+    if (!$(".hidden-xs").is(":visible")) {
 
         $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").width('100%');
-    }else{
+    } else {
 
         setAddressContainerWidth();
     }
 });
 
 
-function setAddressContainerWidth(){
-    if($(".hidden-xs").is(":visible")){
-        var minusWidth = $(".find-office--submit .btn")[0].getBoundingClientRect().width;
-        var calcWidth = (minusWidth + 10).toFixed(2);
+function setAddressContainerWidth() {
+    if ($(".find-office__container").length != 0) {
+        if ($(".hidden-xs").is(":visible")) {
+            var minusWidth = $(".find-office--submit .btn")[0].getBoundingClientRect().width;
+            var calcWidth = (minusWidth + 10).toFixed(2);
 
-        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").css("width","Calc(100% - "+calcWidth+"px"+")");
+            $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").css("width", "Calc(100% - " + calcWidth + "px" + ")");
 
 
+        }
     }
-
 };
 
 
