@@ -7,7 +7,6 @@ $(document).ready(function(){
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
-	contextualToolsDisclaimerPadding();
 });
 
 $(window).resize(function(){
@@ -19,7 +18,6 @@ $(window).resize(function(){
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
-	contextualToolsDisclaimerPadding();
 });
 
 function spacingCtaAndDisclaimer(){
@@ -98,7 +96,6 @@ function removingPaddingContextualLinksSmallCards() {
 
 function disclaimerPadding(){
 	var container = $(".disclaimer");
-	console.log(container.length > 0 && $(".quote-office").length < 1)
 	if (container.length > 0 && $(".quote-office").length < 1) {
 			if (getViewport() == "desktop") {
 				container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");

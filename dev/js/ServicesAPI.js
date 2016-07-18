@@ -1777,7 +1777,7 @@ var ServicesAPI = {
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1831,11 +1831,11 @@ var ServicesAPI = {
 				console.log('error ', e);
 			},
 			timeout: 30000
-		});
+		});*/
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-		/*	if($("#list_topics").val() === "Studies"){
+			if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1921,7 +1921,7 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}*/
+			}
 
 		/************LOCAL News Room SERVICE***************/
 	},
