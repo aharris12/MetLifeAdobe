@@ -113,17 +113,19 @@ var currentView = getViewport();
 var currentSpot = 0;
 //Test comment
 function optionalHeaderCTA() {
-    var quoteOfficeLeft = $('.quote-office--left');
-    var quoteOfficeRight = $('.quote-office--right');
-
-
-    if (quoteOfficeLeft.length != 0 && quoteOfficeRight.length == 0) {
-        quoteOfficeLeft.addClass("no--right")
+    var fao = $('.find-office__container');
+    var quote = $('.get-quote__container');
+    var promo = $('.cta-promo__container');
+    if (quote.length != 0 && promo.length == 0 &&  fao.length== 0) {
+        console.log("enter")
+        $(".get-quote__container").addClass("noFao");
     }
-    if (quoteOfficeRight.length != 0 && quoteOfficeLeft.length == 0) {
-        quoteOfficeRight.addClass("no--left")
+    if (fao.length != 0 && quote.length == 0 && promo.length == 0) {
+        $(".find-office__container").addClass("noOffice");
     }
-
+    if (promo.length != 0 && quote.length == 0 &&  fao.length == 0) {
+        $(".find-office__container").addClass("noOffice");
+    }
 }
 $(window).load(function () {
     optionalHeaderCTA();
@@ -458,7 +460,7 @@ $('.megamenu-trigger').on('click', function () {
             }
         }
     } else {
-        
+
         closeSearchBox();
 
     }
