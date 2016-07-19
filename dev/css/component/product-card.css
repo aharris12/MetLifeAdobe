@@ -265,6 +265,12 @@
     margin-bottom: 15px;
 }
 
+.product-card .action .btn-brand-2nd + p a[href*='tel'] {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
 @media screen and (min-width: 768px) {
 
     .product-card {
@@ -362,11 +368,13 @@
         color: black;
         border-bottom: none;
         cursor: default;
+        text-decoration: none;
     }
 
     .product-card .action p a[href*='tel']:hover {
         text-decoration: none;
         color: #2c77c5;
+        text-decoration: none;
     }
 
     .expand-open-close .visible-xs {
