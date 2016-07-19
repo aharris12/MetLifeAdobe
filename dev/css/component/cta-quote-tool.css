@@ -1,9 +1,9 @@
 /* line 3, ../../../sass/_ctaHeaderToolMobile.scss */
- .cta_header_quote {
+/* .cta_header_quote {
     background-color: #0e5dae;
     width: 100%;
     padding: 30px 20px;
-}
+}*/
 
     /* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
  .cta_header_quote p {
@@ -434,10 +434,10 @@
         margin: 0px;
         float: right;
     }
-     .cta_header_quote {
+    /* .cta_header_quote {
         width: 48%;
         margin-bottom: 0;
-    }
+    }*/
 
     /* line 16, ../../../sass/_ctaHeaderToolTablet.scss */
      .cta_header_quote .dob_cta_quote {
@@ -473,12 +473,12 @@
 }
 
 @media screen and (min-width: 1024px) {
-     .cta_header_quote {
+    /* .cta_header_quote {
         margin-bottom: 0;
         width: 45%;
         padding: 30px 35px;
         margin-left: 3.5%;
-    }
+    }*/
 
    /* /!* line 20, ../../../sass/_ctaHeaderToolDekstop.scss *!/
      .cta_header_quote .select_wrapper {
@@ -653,6 +653,6 @@
     margin-bottom: 10px;
 }
 
-.noFao{
+/*.noFao{
     margin-left: 26%;
-}
+}*/
