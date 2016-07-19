@@ -6,16 +6,13 @@ function optionalHeaderCTA() {
     var fao = $('.find-office__container');
     var quote = $('.get-quote__container');
     var promo = $('.cta-promo__container');
-    console.log(quote.length != 0 && promo.length == 0 &&  fao.length== 0)
     if (quote.length != 0 && promo.length == 0 &&  fao.length== 0) {
         console.log("enter")
         $(".get-quote__container").addClass("noFao");
     }
-    console.log(fao.length != 0 && quote.length == 0 && promo.length == 0)
     if (fao.length != 0 && quote.length == 0 && promo.length == 0) {
         $(".find-office__container").addClass("noOffice");
     }
-    console.log(promo.length != 0 && quote.length == 0 &&  fao.length == 0)
     if (promo.length != 0 && quote.length == 0 &&  fao.length == 0) {
         $(".find-office__container").addClass("noOffice");
     }

@@ -9153,11 +9153,17 @@ body{
         line-height: 16px;
         letter-spacing: 1px;
     }
+    .product-tile__action--noLink{
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 1px;
+    }
      .product-tile__action--link {
         font-size: 16px;
         line-height: 16px;
         letter-spacing: 1px;
     }
+
 }
 
 @media screen and (max-width: 767px) {
