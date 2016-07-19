@@ -148,7 +148,6 @@ function productTileHeight() {
 
 function callTextFontChange(){
         $(".product-row").each(function () {
-            console.log("run")
             $(".product-row__tile").each(function () {
                if($(this).find(".product-tile__action").length > 1){
                    $(this).find(".product-tile__action").first().addClass("product-tile__action--noLink");
