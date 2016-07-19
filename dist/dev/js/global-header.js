@@ -225,7 +225,6 @@ $('.megamenu-trigger').on('click', function () {
 
     if ($(".icon-close.megamenu-trigger__icon").css("display") == "none") {
         currentSpot = $('body').scrollTop();
-        console.log(currentSpot);
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
     } else {
