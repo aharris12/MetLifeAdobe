@@ -6462,7 +6462,7 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
-$(".js-searchSuggestions").on("click", function () {
+$(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
