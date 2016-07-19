@@ -6,7 +6,7 @@
     /*margin-top:10px;*/
 }
 
-.product-row__tile__bottom a{
+.product-row__tile__bottom a:first-of-type{
     color: #fff;
 } 
 .product-row__tile {
@@ -120,7 +120,7 @@
 
 .product-tile__action--link, .product-tile__action, .product-tile__action--tel {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
     letter-spacing: 1px;
     font-weight: 400;
@@ -133,7 +133,7 @@
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
-    color: #2c77c5;
+    color: #2377c5;
 }
 
 .product-row__tile__bottom .product-tile__action--link {
@@ -359,10 +359,15 @@
         line-height: 20px;
     }
 
-    .product-tile__action--link, .product-tile__action, .product-tile__action--tel {
+    .product-tile__action--link,  .product-tile__action--tel {
         font-size: 14px;
         line-height: 14px;
         letter-spacing: .5px;
+    }
+    .product-tile__action{
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
     }
 
     .product-tile__action--tel {
@@ -381,7 +386,7 @@
         position: absolute;
     }
 
-    .product-row__tile__bottom .product-tile__action--link {
+    .product-tile__action--link {
         font-size: 11px;
         line-height: 16px;
         letter-spacing: 0.5px;
@@ -438,14 +443,19 @@
         width: 65%;
     }
 
-    .product-tile__action--link, .product-tile__action, .product-tile__action--tel {
+     .product-tile__action.product-tile__action--tel {
         font-size: 16px;
         line-height: 15px;
         letter-spacing: 1px;
     }
-    .product-row__tile__bottom .product-tile__action--link {
+    .product-tile__action{
         font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 1px;
+    }
+     .product-tile__action--link {
         font-size: 16px;
+        line-height: 16px;
         letter-spacing: 1px;
     }
 }
