@@ -1086,7 +1086,7 @@ function ss_showSuggestion(g, cnt, tbl, qry) {
         var firstrow = tbl.insertRow(-1);
         firstrow.className = SS_ROW_CLASS;
         var firstcol = document.createElement('td');
-        firstcol.className = 'ss-gac-c';
+        firstcol.className = 'ss-gac-c js-searchSuggestions';
         var clue = '';
         if (g.length == 1) {
             clue = ss_g_one_name_to_display;
@@ -1125,7 +1125,7 @@ function ss_showSuggestion(g, cnt, tbl, qry) {
                 alt.innerHTML = '<i>' + g[i].t + '</i>';
             }
 
-            alt.className = 'ss-gac-c';
+            alt.className = 'ss-gac-c js-searchSuggestions';
             row.appendChild(alt);
             alt.colSpan = 2;
 
@@ -1199,7 +1199,7 @@ function ss_handleMouseC() {
             var x = rows[ri].getElementsByTagName('td');
 
             $('#searchInPage,#Search').val($(x)[0].innerText);
-
+console.log($('#searchInPage,#Search').val())
             var searchTerm = $(".search-trigger__search-box").val();
             console.log(searchTerm)
 

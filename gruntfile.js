@@ -113,8 +113,7 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
                     'dev/js/_plugins/jquery.bootpag.min.js',
-                    'dev/js/_plugins/jquery.inview.js',
-                    'dev/js/_plugins/jquery.tooltipster.min.js'
+                    'dev/js/_plugins/jquery.inview.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
@@ -127,7 +126,6 @@ module.exports = function (grunt) {
             },
             components: {
                 src: [
-                    'dev/js/tooltip-custom.js',
                     'dev/js/variable.js',
                     'dev/js/utility.js',
                     'dev/js/global-header.js',

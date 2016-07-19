@@ -1,90 +1,3 @@
-/**
- * Created by icunningham on 6/30/2016.
- */
-$(document).ready(function () {
-    if ($('.tooltip').length > 0 || $('.tooltip-pos-left').length > 0) {
-        applyTooltips();
-    }
-
-    $.each($('.tooltip'), function () {
-        if ($(this).prevAll('label').text().length > 0) {
-            $(this).css('top', '35px');
-        }
-    });
-});
-
-function applyToolTipster() {
-    if ($(window).width() > 1024) {
-        console.log("entered tooltips 1024")
-        $('.tooltip').tooltipster({
-            position: 'right',
-            trigger: 'hover',
-            minWidth: 50,
-            maxWidth: 300
-        });
-        $('.tooltip-pos-left').not('.tooltipstered').tooltipster({
-            position: 'right',
-            trigger: 'hover',
-            minWidth: 50,
-            maxWidth: 300
-        });
-    } else {
-        $('.tooltip').not('.tooltipstered').tooltipster({
-            position: 'right',
-            trigger: 'click',
-            minWidth: 50,
-            maxWidth: 300
-        });
-        $('.tooltip-pos-left').not('.tooltipstered').tooltipster({
-            position: 'right',
-            trigger: 'click',
-            minWidth: 50,
-            maxWidth: 300
-        });
-    }
-}
-
-$(window).resize(function () {
-    if ($('.tooltip').not('.tooltipstered').length > 0 || $('.tooltip-pos-left').not('.tooltipstered').length > 0) {
-        applyTooltips();
-    }
-    $('.tooltip').filter('.tooltipstered').each(function () {
-        $(this).tooltipster('hide');
-    });
-    $('.tooltip-pos-left').filter('.tooltipstered').each(function () {
-        $(this).tooltipster('hide');
-    })
-});
-
-function applyTooltips() {
-    applyToolTipster();
-    if ($(window).width() < 768) {
-        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'position', 'bottom-right');
-        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'offsetX', '7');
-        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'position', 'bottom-left');
-        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'offsetX', '-7');
-    } else {
-        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'position', 'right');
-        $('.tooltip').filter('.tooltipstered').tooltipster('option', 'offsetX', '0');
-        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'position', 'left');
-        $('.tooltip-pos-left').filter('.tooltipstered').tooltipster('option', 'offsetX', '0');
-    }
-    $('.tooltip').each(function () {
-        var roomForToolTip = (($(window).width()) - $(this).offset().left) > 330;
-        if (!roomForToolTip) {
-            $(this).filter('.tooltipstered').tooltipster('option', 'position', 'bottom-right');
-            $(this).filter('.tooltipstered').tooltipster('option', 'offsetX', '7');
-        }
-        $(this).closest('.form-user-grp').css({'margin-right': '30px', 'position': 'relative'});
-        if (!($(this).closest('.form-user-grp').length > 0)) {
-            $(this).prevAll('select').closest('.col-xs-12').css({'width': 'calc(100% - 30px)', 'position': 'relative'})
-        }
-    });
-    $('.tooltip-pos-left').each(function () {
-        $(this).closest('.form-user-grp').css({'margin-left': '30px', 'position': 'relative'});
-    })
-}
-
 //Global variables
 var breakpointMobile = 480;
 var breakpointTablet = 751;
@@ -6550,7 +6463,16 @@ $('.search-trigger__search-box').keypress(function (e) {
 	}
 });
 
-$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, .ss-gac-c, .ss-gac-d", function () {
+$(".js-searchSuggestions").on("click", function () {
+	var searchTerm = $(".search-trigger__search-box").val();
+	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+		ServicesAPI.legacySearch(searchTerm);
+	} else {
+		//For Integration we only need this statment
+		ServicesAPI.redirectToSearchResultsPage(searchTerm);
+	}
+});
+/*$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, .ss-gac-c, .ss-gac-d", function () {
 	var searchTerm = $(this).find(".ss-gac-c").text();
 	$(".search-trigger__search-box").val(searchTerm);
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
@@ -6560,7 +6482,7 @@ $("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, .ss-gac-c, .ss-gac-d", fu
 		//For Integration we only need this statment
 		ServicesAPI.redirectToSearchResultsPage(searchTerm);
 	}
-});
+});*/
 
 
 // Search in Page
@@ -10551,7 +10473,7 @@ function ss_showSuggestion(g, cnt, tbl, qry) {
         var firstrow = tbl.insertRow(-1);
         firstrow.className = SS_ROW_CLASS;
         var firstcol = document.createElement('td');
-        firstcol.className = 'ss-gac-c';
+        firstcol.className = 'ss-gac-c js-searchSuggestions';
         var clue = '';
         if (g.length == 1) {
             clue = ss_g_one_name_to_display;
@@ -10590,7 +10512,7 @@ function ss_showSuggestion(g, cnt, tbl, qry) {
                 alt.innerHTML = '<i>' + g[i].t + '</i>';
             }
 
-            alt.className = 'ss-gac-c';
+            alt.className = 'ss-gac-c js-searchSuggestions';
             row.appendChild(alt);
             alt.colSpan = 2;
 
@@ -10664,7 +10586,7 @@ function ss_handleMouseC() {
             var x = rows[ri].getElementsByTagName('td');
 
             $('#searchInPage,#Search').val($(x)[0].innerText);
-
+console.log($('#searchInPage,#Search').val())
             var searchTerm = $(".search-trigger__search-box").val();
             console.log(searchTerm)
 
