@@ -1,0 +1,305 @@
+.get-quote__container, .find-office__container {
+    height: auto;
+    min-height: 220px;
+    background-color: #fff;
+    margin-bottom: 0;
+    -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/***** header stuff *****/
+
+.search-trigger.pull-right{
+    float: left !important;
+}
+
+.login-trigger--minimized + .search-trigger > .search-trigger__label {
+    margin-top: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.login-trigger--minimized + .search-trigger > .search-trigger__icon {
+    top: 15px;
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+}
+
+.login-trigger--minimized + .search-trigger > .search-trigger__icon {
+    top: 15px;
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+}
+.login-trigger--minimized + .search-trigger > .search-trigger__container {
+    top: 0;
+}
+
+
+/***** Endheader stuff *****/
+
+.hp_context_outer{
+    width: 100%;
+    background: #fff;
+}
+.noFao{
+    margin-left: 0 ;
+}
+
+.homepage-nav {
+    background-color: #3d9cdb;
+    background-image: none;
+}
+
+.color-content{
+    background-color: #efefef;
+}
+
+.carousel--hero {
+    border: 15px solid #3d9cdb;
+    border-top: none;
+}
+
+.carousel--hero .carousel-inner {
+    background-color: #3d9cdb;
+}
+
+.cta_header_quote {
+    padding: 20px 20px;
+}
+
+.cta_header_quote p, .quote-office__heading {
+    color: gray !important;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600 !important;
+}
+
+.quote-office {
+    margin-bottom: 0;
+    padding: 15px;
+    background: #efefef;
+}
+
+.find-office {
+    padding: 20px 20px;
+}
+
+.find-office .btn-group .btn {
+    background-color: #73C8C0;
+    border: 0px solid #21AEA3;
+    background-image: none;
+}
+
+.find-office .btn-group .btn.active {
+    background-color: #21AEA3;
+}
+
+.find-office .icon-arrow-up-triangle {
+    color: #21AEA3;
+    fill: #21AEA3;
+}
+
+.promocard {
+    border: 35px solid #FCA700;
+}
+
+.promocard__content {
+    background-color: #FCA700;
+    text-align: left;
+}
+
+.promocard__content__header {
+    font-weight: 600;
+}
+
+.promocard__content__text {
+    padding: 0;
+}
+
+.more-content__section a:nth-child(2) {
+    padding-bottom: 10px;
+}
+
+
+
+
+.more-content__link {
+    display: block;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.more-content__link a {
+    color: #a0c323;
+    font-weight: 600;
+    background-color: #F2FBE6;
+}
+
+.more-content__link a:hover {
+    color: #8caa0a;
+}
+
+.more-content__section img{
+    height: 350px;
+}
+
+.promocard__content .btn{
+    display:block;
+
+}
+
+@media screen and (min-width: 768px) {
+
+    /***** header stuff *****/
+    .search-trigger{
+        width: 130px;
+    }
+
+    .search-trigger.pull-right{
+        float: left !important;
+    }
+
+    /***** Endheader stuff *****/
+
+
+
+    .hp_context_container{
+        margin-top: -70px;
+        padding-top: 100px;
+        background: #efefef;
+    }
+    .promocard__content .btn{
+
+        display: inherit;
+    }
+
+    .more-content .carousel{
+        max-height: none;
+    }
+
+    .more-content__section img{
+        height: 185px;
+    }
+
+    .noFao{
+        margin-left: 26%;
+    }
+
+    .quote-office {
+        margin-top: -150px;
+        padding: 0;
+        background: none;
+    }
+
+    .carousel--hero {
+        margin-top: 60px;
+    }
+
+    .carousel--hero .carousel-control {
+        padding-top: 13%;
+    }
+    .carousel--hero .carousel-control.left {
+        left: -1%;
+    }
+    .carousel--hero .carousel-control.right {
+        right: -1%;
+    }
+
+    .carousel--hero .carousel-inner > .item > a > img {
+        min-height: 0;
+    }
+
+    .carousel--hero .carousel-inner .item .carousel-caption {
+        width: 40%;
+
+        padding: 0 10px 0 5%;
+    }
+
+
+
+    .carousel-caption--hero {
+        text-align: left;
+        font-size: 36px;
+        line-height: 32px;
+        padding-top: 20px;
+        vertical-align: top;
+        padding-bottom: 0;
+    }
+
+
+
+
+
+    .more-content__link {
+        padding: 0;
+    }
+
+    .promocard{
+        background-image: url('../../images/mod-baby-feeding-man.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        border: 15px solid #FCA700;
+    }
+
+    .promocard__content{
+        background-color: transparent;
+    }
+
+    .promocard__image{
+        background: none !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /***** header stuff *****/
+    .search-trigger.pull-right{
+        float: right !important;
+    }
+    .search-trigger__container--open{
+        width: 130px;
+    }
+
+    .search-trigger__icon--open{
+        left: 100px;
+    }
+
+    /***** Endheader stuff *****/
+
+    .carousel-caption--hero {
+        font-size: 32px;
+        line-height: 36px;
+        padding-top: 50px;
+    }
+
+    .carousel--hero .carousel-control {
+        padding-top: 11%;
+    }
+
+    .carousel--hero .carousel-inner .item .carousel-caption {
+
+
+        padding: 0 10px 0 10%;
+    }
+
+    .quote-office{
+        margin-top: -150px;
+    }
+    .carousel--hero .carousel-caption--hero{
+        font-size: 45px;
+        line-height: 55px;
+    }
+
+
+
+}
