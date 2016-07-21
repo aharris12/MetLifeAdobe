@@ -461,7 +461,7 @@ $(".js-productSelector").click(function (e) {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
+	if (!$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
