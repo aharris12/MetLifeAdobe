@@ -114,7 +114,12 @@ function initHpContextualLinksCarousel() {
         $('.more-content .carousel-item').eq(activeItem).addClass('selected');
         $('.more-content .carousel-item').eq(activeItem).show();
 
-        var splitter = 4;
+        if($(".full-promo").length !=0){
+            splitter = 3;
+        }else{
+            var splitter = 4;
+        }
+
 
         $('.more-content .item .more-content__section').removeClass('active').unwrap();
         for (var i = 0; i < length; i += splitter) {

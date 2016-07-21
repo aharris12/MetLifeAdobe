@@ -113,6 +113,20 @@
 /**** End full promo component ****/
 
 
+.more-content__title{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.more-content__section img{
+    height: 250px;
+}
+.more-content{
+    background-color: #f2f2f2;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -147,6 +161,30 @@
 
 
     /**** End full promo component ****/
+
+
+    .more-content .carousel{
+        max-height: none;
+    }
+
+    .more-content__section{
+        width: 32%;
+    }
+    .more-content__section img{
+        height: 185px;
+    }
+
+    .more-content .carousel-control{
+        padding-top: 150px;
+    }
+
+    .more-content__title{
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
 
 }
 
@@ -190,4 +228,16 @@
 
 
     /**** End full promo component ****/
+
+    .more-content__title{
+
+        font-size: 38px;
+        line-height: 42px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .more-content .carousel-control{
+        padding-top: 200px;
+    }
 }
