@@ -26,6 +26,10 @@
     float: left !important;
 }
 
+.login-trigger{
+    background-color: inherit;
+}
+
 .login-trigger--minimized + .search-trigger > .search-trigger__label {
     margin-top: 0;
     -webkit-transition: all 0.5s;
@@ -73,6 +77,11 @@
     background-color: #efefef;
 }
 
+
+.carousel-caption--hero span {
+    display: inline;
+    background-color: rgba(45, 143, 211, 0.7);
+}
 /*.carousel--hero {
     border: 15px solid #3d9cdb;
     border-top: none;
@@ -238,8 +247,8 @@
 
     .carousel-caption--hero {
         text-align: left;
-        font-size: 36px;
-        line-height: 32px;
+        font-size: 32px;
+        line-height: 43px;
         padding-top: 20px;
         vertical-align: top;
         padding-bottom: 0;
@@ -286,12 +295,6 @@
 
     /***** Endheader stuff *****/
 
-    .carousel-caption--hero {
-        font-size: 32px;
-        line-height: 36px;
-        padding-top: 50px;
-    }
-
     .carousel--hero .carousel-control {
         padding-top: 11%;
     }
@@ -306,8 +309,8 @@
         margin-top: -150px;
     }
     .carousel--hero .carousel-caption--hero{
-        font-size: 45px;
-        line-height: 55px;
+        font-size: 39px;
+        line-height: 53px;
     }
 
 

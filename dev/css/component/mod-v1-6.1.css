@@ -23,6 +23,10 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+.login-trigger{
+    background-color: inherit;
+}
+
 
 .login-trigger--minimized + .search-trigger > .search-trigger__icon {
     top: 15px;
