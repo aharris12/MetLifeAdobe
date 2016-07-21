@@ -432,12 +432,9 @@ $('.form-user-grp > select').on('blur', function () {
 });
 
 /****Product Selector****************************************/
-$(".product__selector").on("change", function(){
-	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-	$(".js-productSelector").attr("href", productSelectorPage);
-});
 
-/*$(".product__selector").on("change", function () {
+
+$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
 	$(".product__selector--sub").removeClass("error");
@@ -464,14 +461,14 @@ $(".js-productSelector").click(function (e) {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
+	if (!$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
 	if (url == "#") {
 		e.preventDefault();
 	}
-});*/
+});
 /****Blog Search****************************************/
 
 
