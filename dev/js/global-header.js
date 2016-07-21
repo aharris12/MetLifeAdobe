@@ -5,17 +5,20 @@ var currentSpot = 0;
 function optionalHeaderCTA() {
     var quoteOfficeLeft = $('.quote-office--left');
     var quoteOfficeRight = $('.quote-office--right');
-
+    if(quoteOfficeLeft.find("div").first().hasClass("find-office__container")){
+        quoteOfficeLeft.addClass("light--blue");
+        quoteOfficeRight.addClass("dark--blue");
+    }
 
     if (quoteOfficeLeft.length != 0 && quoteOfficeRight.length == 0) {
-        quoteOfficeLeft.addClass("no--right")
+        quoteOfficeLeft.addClass("single__fao--container")
     }
     if (quoteOfficeRight.length != 0 && quoteOfficeLeft.length == 0) {
-        quoteOfficeRight.addClass("no--left")
+        quoteOfficeRight.addClass("single__fao--container")
     }
 
 }
-$(window).load(function () {
+$(window).ready(function () {
     optionalHeaderCTA();
 });
 //DE8968

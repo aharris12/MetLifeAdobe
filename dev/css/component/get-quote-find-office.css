@@ -23,19 +23,6 @@
     background-color: #2c77c5;
     float: right;
 }
-/*.get-quote__container, .find-office__container, .cta-promo__container {
-    height:200px;
-    background-color:#0e5dae;
-    float:left;
-    color:#fff;
-    width:100%;
-    display:table;
-    margin-bottom:25px;
-    min-height: 210px;
-}*/
-/*.cta-promo__container{
-    padding: 30px;
-}*/
 .cta-promo__container p, .cta-promo__container h3 {
     width: 100%;
     vertical-align: middle;
@@ -65,17 +52,6 @@
     margin-left: 0;
     float: left;
 }
-/*.find-office__container, .cta-promo__container {
-    background-color:#2c77c5;
-    float:right;
-}*/
-/*.get-quote, .find-office {
-    display:table-cell;
-    vertical-align: middle;
-    text-align: left;
-    padding: 30px 20px;
-}*/
-
 .find-office__dental-container,
 .find-office__vision-container {
     display:none;
@@ -146,29 +122,7 @@
         margin-left:10px;
         float: right;
     }
-    /* .get-quote__container {
-		 width: 48%;
-		 margin-left: 1%;
-	 }
-	 .find-office__container {
-		 width: 48%;
-		 margin-right: 1%;
-	 }*/
-    /*.cta-promo__container{
-        width: 48%;
-        margin-right: 1%;
-    }*/
-    /* .get-quote__container, .find-office__container, .cta-promo__container{
-		 margin-bottom: 0;
-	 }*/
-    /*  .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-		  width: 56%;
-		  margin-bottom: 0;
-	  }
-	  .find-office--submit{
-		  margin-left: 10px;
-		  float: right;
-	  }*/
+
 }
 @media screen and (min-width: 1024px) {
     .quote-office {
@@ -191,26 +145,17 @@
     .cta-promo__container p{
         width: 80%;
     }
-    /*.get-quote, .find-office {
-        padding: 30px 35px;
-    }*/
-    /* .get-quote__container {
-		 width: 47%;
-		 margin-left: 2%;
-	 }
-	 .find-office__container, .cta-promo__container {
-		 width: 47%;
-		 margin-right: 2%;
-	 }*/
-    /* .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-		 width: 59%;
-	 }*/
-    .no--left{
-        margin-right: 26%;
-    }
-    .no--right{
 
-        margin-left: 26%;
-    }
 }
 
+.dark--blue {
+    background-color:#0e5dae;
+}
+.light--blue {
+    background-color: #2c77c5;
+}
+.single__fao--container{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
