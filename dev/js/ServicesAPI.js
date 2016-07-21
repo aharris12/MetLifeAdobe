@@ -1770,6 +1770,7 @@ var ServicesAPI = {
 		newsTopic = $('#list_topics').val();
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
 		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		console.log(url)
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -1893,8 +1894,8 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}else if($("#list_topics").val() === "Studies"){
-				var newsRoomResults = $.getJSON("news.json", function (data) {
+			}else if($("#list_topics").val() === "Corporate"){
+				var newsRoomResults = $.getJSON("Corporate.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
 					}
@@ -1936,8 +1937,265 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}
-*/
+			}else if($("#list_topics").val() === "Financial"){
+				var newsRoomResults = $.getJSON("Financial.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "Investments"){
+				var newsRoomResults = $.getJSON("Investments.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "Products_and_Services"){
+				var newsRoomResults = $.getJSON("Products_and_Services.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "MetLife_Foundation"){
+				var newsRoomResults = $.getJSON("MetLife_Foundation.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "CSR_Awards"){
+				var newsRoomResults = $.getJSON("CSR_Awards.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else{
+				var newsRoomResults = $.getJSON("allNews.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}*/
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
