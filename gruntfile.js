@@ -162,6 +162,7 @@ module.exports = function (grunt) {
                     'dev/js/feedback.js',
                     'dev/js/cookie.js',
                     'dev/js/ServicesAPI.js',
+                    'dev/aem_form.js',
                     'dev/js/suggestions.js',
                     'dev/js/campaign-header.js',
                     'dev/js/campaign-card.js',
@@ -174,8 +175,7 @@ module.exports = function (grunt) {
                     'dev/js/share-chat.js',
                     'dev/js/product-card.js',
                     'dev/js/contextual--links.js',
-                    'dev/js/inview.js',
-                    'dev/aem_form.js'
+                    'dev/js/inview.js'
 
 
                 ],

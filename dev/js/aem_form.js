@@ -10,8 +10,8 @@ var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
     var parent = $("." + element.type);
-    $(".contact-sidebar.type")
-    $('[data-fid="contact-sidebar"]')
+   /* $(".contact-sidebar.type");
+    $('[data-fid="contact-sidebar"]');*/
     var submitText = parent.find('.form-submit').text();
     var processingText = parent.find('.form-submit').attr("data-proctext");
 
