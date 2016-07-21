@@ -1889,7 +1889,7 @@ var ServicesAPI = {
 					}
 				});
 			}else if($("#list_topics").val() === "Studies"){
-				var newsRoomResults = $.getJSON("news.json", function (data) {
+				var newsRoomResults = $.getJSON("Financial.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
 					}
