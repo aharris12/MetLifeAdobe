@@ -38,6 +38,24 @@
 
 /***** Endheader stuff *****/
 
+.promocard__content{
+    background-color: #FCA700;
+}
+
+
+.btn-brand-hompage4_5{
+    background-color: transparent;
+    background: inherit;
+    color: #ffffff;
+    border: 1px solid #fff;
+}
+
+.btn-brand-hompage4_5:hover{
+    background-color: white;
+    background: white;
+    color: #FCA700;
+    border: 1px solid #FCA700;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -51,6 +69,7 @@
     }
 
     /***** Endheader stuff *****/
+
 
 
 
@@ -73,5 +92,8 @@
     /***** Endheader stuff *****/
 
 
+    .promocard{
+        min-height: 400px;
+    }
 
 }
