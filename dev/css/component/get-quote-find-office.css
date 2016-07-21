@@ -24,9 +24,13 @@
     float: right;
 }
 .cta-promo__container p, .cta-promo__container h3 {
-    width: 100%;
-    vertical-align: middle;
-    text-align: center;
+     width: 100%;
+     vertical-align: middle;
+     text-align: center;
+ }
+.cta-promo__container p{
+   font-size: 13px;
+    line-height: 18px;
 }
 .cta-promo__container h3 {
     font-size: 16px;
@@ -117,6 +121,8 @@
     }
     .cta-promo__container p{
         width: 100%;
+        font-size:14px;
+        line-height:20px;
     }
     .find-office--submit{
         margin-left:10px;
