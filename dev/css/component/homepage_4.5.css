@@ -61,14 +61,14 @@
     background-color: transparent;
     background: inherit;
     color: #ffffff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
 }
 
 .btn-brand-hompage4_5_1:hover{
     background-color: white;
     background: white;
     color: #333;
-    border: 1px solid #333;
+    border: 2px solid #333;
 }
 
 /**** new full promo component ****/
@@ -128,6 +128,74 @@
     background-color: #f2f2f2;
 }
 
+
+/***** new banner component *****/
+.homepage-banner{
+    position: relative;
+    display: table;
+    width: 100%;
+    min-height: 300px;
+    background: none !important;
+}
+
+.homepage-banner img{
+    height: 300px;
+}
+
+
+.homepage-banner-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.homepage-banner--content{
+
+    float: left;
+    display:block;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+
+}
+.homepage-banner-tool{
+    float: left;
+    display:block;
+    background: blue;
+}
+.hompage-banner-title{
+    color: white;
+    width: 100%;
+    margin: 0;
+    font-size: 48px;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 55px;
+}
+.homepage-banner-tool{
+    padding:20px 20px;
+    background-color: #f2f2f2;
+    width: 100%;
+
+}
+.homepage-banner-tool select{
+    background: white;
+    margin-bottom: 15px;
+}
+
+.homepage-banner-tool .btn{
+    background-color: white;
+    background: white;
+    color: #333;
+
+}
+
+.scroll-more-arrow{
+    display:none;
+
+}
+
+/***** End new banner component *****/
+
 @media screen and (min-width: 768px) {
 
     /***** header stuff *****/
@@ -186,6 +254,91 @@
         margin-top: 10px;
     }
 
+
+
+    /***** new banner component *****/
+    .homepage-banner{
+        position: relative;
+        display: table;
+        width: 100%;
+        min-height: 450px;
+        background-image: url('../../images/mod-pregnant-woman.png') !important;
+        background-size: cover !important;
+
+    }
+
+
+    .homepage-banner .mobile-img{
+        display:none;
+    }
+    .homepage-banner-wrapper{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .homepage-banner--content{
+        width: 60%;
+        float: left;
+        position: inherit;
+        display:inline-block;
+    }
+    .homepage-banner-tool{
+        width: 40%;
+        float: left;
+        display:inline-block;
+    }
+    .hompage-banner-title{
+        color: white;
+        width: 80%;
+        margin: 0;
+        font-size: 38px;
+        margin-bottom: 20px;
+        text-align: left;
+        line-height: 42px;
+    }
+    .homepage-banner-tool{
+        padding:20px 30px;
+        background: transparent;
+        -webkit-box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+
+
+    }
+    .homepage-banner-tool select{
+        background: white;
+        margin-bottom: 15px;
+    }
+
+    .scroll-more-arrow{
+        position:absolute;
+        margin: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width:auto;
+        bottom: 20px;
+        display:block;
+    }
+    .scroll-more-arrow img{
+        height: 75px;
+        width: 100px;
+    }
+
+    .homepage-banner-tool .btn{
+        background-color: transparent;
+        background: transparent;
+        color: #333;
+
+    }
+    .homepage-banner-tool .btn:hover{
+        background-color: white;
+        background: white;
+        color: #333;
+
+    }
+    /***** End new banner component *****/
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -240,4 +393,68 @@
     .more-content .carousel-control{
         padding-top: 200px;
     }
+
+    /***** new banner component *****/
+    .homepage-banner{
+        position: relative;
+        display: table;
+        width: 100%;
+        min-height: 550px;
+        background-size: cover;
+    }
+
+
+    .homepage-banner-wrapper{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .homepage-banner--content{
+        width: 70%;
+        float: left;
+        display:inline-block;
+    }
+    .homepage-banner-tool{
+        width: 30%;
+        float: left;
+        display:inline-block;
+    }
+    .hompage-banner-title{
+        color: white;
+        width: 70%;
+        margin: 0;
+        font-size: 48px;
+        margin-bottom: 30px;
+        text-align: left;
+        line-height: 55px;
+    }
+    .homepage-banner-tool{
+        padding:30px 40px;
+        background: transparent;
+        -webkit-box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+
+
+    }
+    .homepage-banner-tool select{
+        background: white;
+        margin-bottom: 15px;
+    }
+
+    .scroll-more-arrow{
+        position:absolute;
+        margin: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        width:auto;
+        bottom: 20px;
+    }
+    .scroll-more-arrow img{
+        height: 100px;
+        width: 125px;
+    }
+
+    /***** End new banner component *****/
 }
