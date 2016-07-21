@@ -437,15 +437,23 @@ $('.form-user-grp > select').on('blur', function () {
 $(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
-	$(".product__selector--sub").removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
-	$(".product__selector--sub").prop("disabled", true);
-	$(".product__selector--sub").val("")
-	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
-	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
-	$(".js-productSelector").attr("href", "#");
+
+	if($(".product__selector--sub").length > 0) {
+		$(".product__selector--sub").removeClass("error");
+		$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+		$(".product__selector--sub").prop("disabled", true);
+		$(".product__selector--sub").val("")
+		$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+		$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
+		$(".js-productSelector").attr("href", "#");
+	}else{
+		var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+		$(".js-productSelector").attr("href", productSelectorPage);
+	}
+
+
 });
 
 $(".product__selector--sub").on("change", function () {
@@ -457,11 +465,11 @@ $(".product__selector--sub").on("change", function () {
 
 $(".js-productSelector").click(function (e) {
 	var url = $(this).attr("href");
-	if ($(".product__selector").find(':selected').val() == "") {
+	if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if (!$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
+	if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
@@ -1784,7 +1792,7 @@ var ServicesAPI = {
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1838,11 +1846,11 @@ var ServicesAPI = {
 				console.log('error ', e);
 			},
 			timeout: 30000
-		});*/
+		});
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-			if($("#list_topics").val() === "Studies"){
+			/*if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1929,7 +1937,7 @@ var ServicesAPI = {
 					}
 				});
 			}
-
+*/
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
