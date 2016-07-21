@@ -57,6 +57,63 @@
     border: 1px solid #FCA700;
 }
 
+.btn-brand-hompage4_5_1{
+    background-color: transparent;
+    background: inherit;
+    color: #ffffff;
+    border: 1px solid #fff;
+}
+
+.btn-brand-hompage4_5_1:hover{
+    background-color: white;
+    background: white;
+    color: #333;
+    border: 1px solid #333;
+}
+
+/**** new full promo component ****/
+.full-promo{
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 250px;
+    margin-bottom: 30px;
+}
+.full-promo__background{
+    background: black;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+
+}
+
+.full-promo__description--title{
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.full-promo__description--subTitle{
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.full-promo__description{
+    position: absolute;
+    margin: auto;
+    position: absolute;
+    height:150px;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+}
+
+
+/**** End full promo component ****/
+
+
+
 @media screen and (min-width: 768px) {
 
     /***** header stuff *****/
@@ -71,7 +128,25 @@
     /***** Endheader stuff *****/
 
 
+    /**** new full promo component ****/
+    .full-promo{
 
+        height: 300px;
+    }
+
+    .full-promo__description--title{
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+    .full-promo__description--subTitle{
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 30px;
+    }
+
+
+    /**** End full promo component ****/
 
 }
 
@@ -93,7 +168,26 @@
 
 
     .promocard{
-        min-height: 400px;
+        min-height: 350px;
     }
 
+    /**** new full promo component ****/
+    .full-promo{
+
+        height: 400px;
+    }
+
+    .full-promo__description--title{
+        font-size: 38px;
+        line-height: 32px;
+        margin-bottom: 10px;
+    }
+    .full-promo__description--subTitle{
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+
+
+    /**** End full promo component ****/
 }
