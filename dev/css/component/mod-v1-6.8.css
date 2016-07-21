@@ -1,3 +1,41 @@
+/***** header stuff *****/
+
+.search-trigger.pull-right{
+    float: left !important;
+}
+
+.login-trigger--minimized + .search-trigger > .search-trigger__label {
+    margin-top: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
+
+.login-trigger--minimized + .search-trigger > .search-trigger__icon {
+    top: 15px;
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+}
+
+.login-trigger--minimized + .search-trigger > .search-trigger__icon {
+    top: 15px;
+    -webkit-transition: all 500ms ease 0s;
+    -moz-transition: all 500ms ease 0s;
+    -o-transition: all 500ms ease 0s;
+    transition: all 500ms ease 0s;
+}
+.login-trigger--minimized + .search-trigger > .search-trigger__container {
+    top: 0;
+}
+
+
+/***** Endheader stuff *****/
+
 .get-quote__container, .find-office__container {
     height: auto;
     min-height: 220px;
@@ -98,6 +136,16 @@
 }
 
 @media screen and (min-width: 768px) {
+    /***** header stuff *****/
+    .search-trigger{
+        width: 130px;
+    }
+
+    .search-trigger.pull-right{
+        float: left !important;
+    }
+
+    /***** Endheader stuff *****/
     .quote-office {
         margin-top: -60px;
     }
@@ -177,6 +225,19 @@
 }
 
 @media screen and (min-width: 1024px) {
+    /***** header stuff *****/
+    .search-trigger.pull-right{
+        float: right !important;
+    }
+    .search-trigger__container--open{
+        width: 130px;
+    }
+
+    .search-trigger__icon--open{
+        left: 100px;
+    }
+
+    /***** Endheader stuff *****/
     .carousel-caption--hero {
         font-size: 32px;
         line-height: 36px;
