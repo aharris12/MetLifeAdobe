@@ -1,0 +1,111 @@
+.life-insurance-quote .life-insurance-quote-left{
+    background: white;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.09) 1px 3px 5px 0px;
+    font-size: 13px;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.life-insurance-quote .life-insurance-quote-left .quote-left-header{
+    font-size: 22px;
+    line-height: 26px;
+    padding-bottom: 20px;
+}
+
+.life-insurance-quote .life-insurance-quote-left .quote-left-top ul{
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.life-insurance-quote .life-insurance-quote-left .quote-left-top ul li{
+    margin-bottom:10px;
+}
+
+.life-insurance-quote .life-insurance-quote-left .quote-left-bottom{
+    margin-top:15px;
+    padding-top:15px;
+    border-top: 1px solid #ccc;
+}
+
+.life-insurance-quote-right{
+    background: #2C77C5;
+    padding:25px;
+    box-shadow: rgba(0, 0, 0, 0.09) 1px 3px 5px 0px;
+    color:white;
+}
+
+.life-insurance-quote .life-insurance-quote-right .quote-right-header{
+    margin-bottom: 15px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .life-insurance-quote{
+        display:table;
+        width: 96%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .life-insurance-quote .life-insurance-quote-left{
+        display:table-cell;
+        width: 50%;
+        padding: 30px;
+        font-size: 14px;
+    }
+
+    .life-insurance-quote .life-insurance-quote-left p{
+        font-size: 14px;
+    }
+
+    .life-insurance-quote .life-insurance-quote-left .quote-left-bottom{
+        margin-top:20px;
+        padding-top:20px;
+        border-top: 1px solid #ccc;
+    }
+
+    .life-insurance-quote .life-insurance-quote-right{
+        display:table-cell;
+        width:50%;
+        padding: 30px;
+
+    }
+
+    .life-insurance-quote .life-insurance-quote-right .quote-right-header{
+        font-size: 16px;
+
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .life-insurance-quote{
+        width: 85%;
+        max-width: 1300px;
+    }
+    .life-insurance-quote .life-insurance-quote-left p{
+        font-size: 16px;
+    }
+
+
+    .life-insurance-quote .life-insurance-quote-left{
+
+        padding: 40px;
+        font-size: 16px;
+    }
+    .life-insurance-quote .life-insurance-quote-right{
+        padding: 40px;
+        font-size: 16px;
+    }
+
+    .life-insurance-quote .life-insurance-quote-left .quote-left-header{
+        font-size: 24px;
+        line-height: 28px;
+
+    }
+    .life-insurance-quote .life-insurance-quote-right .quote-right-header{
+        font-size: 18px;
+
+    }
+}
