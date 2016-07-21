@@ -21,3 +21,17 @@ function setSearchSide(){
 
     }
 };
+
+$(".newLifeStage-tile").click(function(){
+    $(".newLifeStage-tile").removeClass("active");
+    $(".newLifeStage-tile p").addClass("hidden");
+    $(".newLifeStage-tile img").removeClass("hidden");
+    $(this).addClass("active");
+    $(this).find("p").removeClass("hidden");
+    $(this).find("img").addClass("hidden");
+});
+
+$(".js-lifestage").click(function(){
+   var page = $(".newLifeStage-tile.active").attr("data-redirect");
+    window.location.href= page;
+});

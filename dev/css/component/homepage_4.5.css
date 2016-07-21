@@ -337,8 +337,52 @@
         color: #333;
 
     }
+
+    .homepage-banner-tool p{
+        color: white;
+    }
     /***** End new banner component *****/
 
+    /**** new life stages component *****/
+    .new-lifestages{
+        text-align: center;
+        padding: 50px 0px;
+    }
+    .newLifeStages-title{
+        font-size: 42px;
+        line-height: 48px;
+        width: 60%;
+    }
+    .newLifeStage-tile{
+
+        width: 20%;
+        display:inline-block;
+        float:left;
+        text-align: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .newLifeStage-img p{
+        padding: 15px;
+    }
+
+    .newLifeStage-tile.active{
+        background: #FCA700;
+        opacity: 0.5;
+    }
+    .newLifeStagesDesc{
+        clear:both;
+        font-size: 26px;
+        line-height: 28px;
+    }
+
+    .newLifeStage-img{
+        padding: 50px;
+    }
+    .newLifeStage-tile .newLifeStage-img img{
+        width: 100px;
+    }
+    /**** new life stages component *****/
 }
 
 @media screen and (min-width: 1024px) {
@@ -457,4 +501,36 @@
     }
 
     /***** End new banner component *****/
+
+
+    /**** new life stages component *****/
+    .new-lifestages{
+        text-align: center;
+        padding: 50px 0px;
+    }
+    .newLifeStages-title{
+        font-size: 42px;
+        line-height: 48px;
+        width: 60%;
+    }
+    .newLifeStage-tile{
+
+        width: 20%;
+        display:inline-block;
+        float:left;
+        text-align: center;
+    }
+    .newLifeStagesDesc{
+        clear:both;
+        font-size: 26px;
+        line-height: 28px;
+    }
+
+    .newLifeStage-img{
+        padding: 50px;
+    }
+    .newLifeStage-tile .newLifeStage-img img{
+        width: 125px;
+    }
+    /**** new life stages component *****/
 }
