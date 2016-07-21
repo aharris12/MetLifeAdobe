@@ -120,7 +120,6 @@
         line-height: 20px;
     }
     .cta-promo__container p{
-        width: 100%;
         font-size:14px;
         line-height:20px;
     }
@@ -147,9 +146,6 @@
         width: 47%;
         margin-right: 2%;
         padding: 30px 35px;
-    }
-    .cta-promo__container p{
-        width: 80%;
     }
 
 }
