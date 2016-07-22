@@ -51,6 +51,84 @@ var totalYears = [];
 var radioDials = false;
 
 
+// Start Validations For Unsubscribe Email
+function unsubscribeEmail(form) {
+	var formName= form.name;
+	var formDiv=document.getElementById("webFormUnsubscribeEmail");
+	errorCount = 0;
+	errorMsg = new CArray(30);
+	var i=0;
+	//var emailID;
+
+	// Email Check
+	if(!validateEmail(formName,"email")) {
+		showErrorInline("email");
+		errorCount++;
+		errorMsg[i++] ="email";
+	} else {
+		showErrorNone("email");
+	}
+
+	//emailID = document.getElementById("email").value;
+	if (errorCount > 0) {
+		document.getElementById('email').value = "";
+		document.getElementById('errorText').style.visibility = "visible";
+		document.getElementById('errorText').style.color = "red";
+		document.getElementById('enterEmail').style.display = "block";
+		document.getElementById('thanksMessage').style.display = "none";
+		showFocus(formName,errorMsg);
+		return false;
+	} else {
+		document.getElementById('enterEmail').style.display = "none";
+		document.getElementById('thanksMessage').style.display = "block";
+		document.getElementById('errorText').style.visibility = "hidden";
+		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
+
+		formProcessorSubmit(formName,formDiv,'webformThankyoupagecontainer','webformError','webformException');
+		return false;
+	}
+}
+// End Validations For Unsubscribe Email
+
+// Start Validations For Unsubscribe Email
+function unsubscribeEmailDNSS(form) {
+	var formName= form.name;
+	var formDiv= $(".email--unsubscribe-form");
+	errorCount = 0;
+	errorMsg = new CArray(30);
+	var i=0;
+	//var emailID;
+
+	// Email Check
+	if(!validateEmail(formName,"email")) {
+		showErrorInline("email");
+		errorCount++;
+		errorMsg[i++] ="email";
+	} else {
+		showErrorNone("email");
+	}
+
+	//emailID = document.getElementById("email").value;
+	if (errorCount > 0) {
+		document.getElementById('email').value = "";
+		document.getElementById('errorText').style.visibility = "visible";
+		document.getElementById('errorText').style.color = "red";
+		document.getElementById('enterEmail').style.display = "block";
+		document.getElementById('thanksMessage').style.display = "none";
+		showFocus(formName,errorMsg);
+		return false;
+	} else {
+		document.getElementById('enterEmail').style.display = "none";
+		document.getElementById('thanksMessage').style.display = "block";
+		document.getElementById('errorText').style.visibility = "hidden";
+		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
+
+		UnsubscribeProcessorSubmit(formName,formDiv,'email--unsubscribe-form','webformError','webformException');
+		return false;
+	}
+}
+// End Validations For Unsubscribe Email
+
 $(document).ready(function () {
 
 	ServicesAPI.loadEventListeners();

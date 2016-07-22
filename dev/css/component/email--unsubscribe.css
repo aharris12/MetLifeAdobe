@@ -1,0 +1,63 @@
+.email--unsubscribe{
+    width: 80%;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.email--unsubscribe-message{
+    display: none;
+}
+.email--unsubscribe h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+
+.email--unsubscribe p{
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.email--unsubscribe__form-fields{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.email--unsubscribe__form-fields input{
+    display: inline-block;
+    width:100%;
+    margin-bottom: 10px;
+}
+.email--unsubscribe__form-fields button{
+    display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+    .email--unsubscribe p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .email--unsubscribe__form-fields{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        width: 50%;
+    }
+
+    .email--unsubscribe__form-fields input{
+        display: inline-block;
+        width:60%;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .email--unsubscribe h3{
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+}
