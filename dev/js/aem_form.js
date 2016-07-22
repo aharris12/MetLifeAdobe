@@ -962,7 +962,6 @@ SFDC.form.forEach(function (element) {
         for (var v = 0; v < len; v++) {
             // If field has an observe
 
-            console.log(fields[v].observes.length)
             if (fields[v].observes.length > 0) {
                 // Look at each observe
                 for (var w = 0; w < fields[v].observes.length; w++) {
