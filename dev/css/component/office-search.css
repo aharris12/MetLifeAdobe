@@ -50,7 +50,6 @@
         font-size: 18px;
         line-height: 40px;
     }
-
 }
 @media screen and (min-width: 1024px) {
     .office-search__label{
@@ -60,7 +59,6 @@
         height:60px;
         width: 60px;
     }
-
     .office-search {
         margin-top: 50px;
     }
