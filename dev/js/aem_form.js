@@ -481,8 +481,12 @@ SFDC.form.forEach(function (element) {
 
                 while (i < len) {
                     var field = fields[i];
-                    if (parent.find('#' + field.id).val() != null)
-                        parent.find('#' + field.id).val(parent.find('#' + field.id).val().replace(/\'/g, "'"));
+                    parent.find('#' + field.id).each(function() {
+                        if ($(this).val() != null) {
+                            $(this).val($(this).val().replace(/\'/g, "'"));
+                        }
+                    });
+
                     i++;
                 }
 
