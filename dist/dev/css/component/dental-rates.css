@@ -1,0 +1,107 @@
+.dental {
+    text-align: center;
+}
+.dental-cta {
+    margin-bottom: 20px;
+}
+.dental-cta__header {
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.dental-search {
+    /*Accounting for margin-bottom of 10px on button.*/
+    padding: 20px 20px 10px;
+    margin-bottom: 20px;
+}
+
+.dental-search__title {
+    display: inline-block;
+    color: white;
+    /*Axshare says 16px, but doesn't render visually according to axshare*/
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 300;
+    margin-right: 5px;
+}
+
+.dental-cta__desc {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.dental-search__input {
+    display: inline-block;
+    width: 33%;
+}
+
+.dental-search--center-mobile {
+    margin: 0 auto;
+}
+
+.btn-dental {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.dental-rates-link__first-link {
+    margin-bottom: 20px;
+}
+
+.dental-rates-link__second-link {
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .dental-search__title {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .btn-dental {
+        display: inline;
+        width: inherit;
+    }
+
+    .dental-search {
+        width: 50%;
+        margin: 0 auto 20px;
+        padding: 30px 10px 30px;
+    }
+
+    .dental-search--center-mobile {
+        display: inline-block;
+    }
+
+    .dental-rates-link__first-link {
+        margin-bottom: 30px;
+    }
+
+    .dental-rates-link__second-link {
+        margin-bottom: 40px;
+    }
+
+    .dental-cta__header {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .dental {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .dental-rates-links__first-link {
+        margin-bottom: 40px;
+    }
+
+    .dental-rates-links__second-link {
+        margin-bottom: 50px;
+    }
+
+    .dental-cta__header {
+        margin-top: 40px;
+    }
+}

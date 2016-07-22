@@ -1,0 +1,26 @@
+.email-unsub__action input{
+    width: 100%;
+    padding: initial;
+    padding-left: 7px;
+}
+
+.email-unsub__action a{
+    width: 100%;
+    margin-top: 15px;
+}
+
+div.email-unsub ~ div.contact-us > div.wrapper {
+    border:0px;
+}
+
+@media screen and (min-width: 768px) {
+    .email-unsub{
+        padding: 60px 0 50px;
+    }
+    .email-unsub__action input{
+        width: 30%;
+    }
+    .email-unsub__action a{
+        width: auto;
+    }
+}
