@@ -1,0 +1,6 @@
+@media all and (min-width:0\0) and (min-resolution:.001dpcm)
+{
+    select {
+        background-image:url('/static/images/icon_selectionarrows_white.png')!important;
+    }
+} 
