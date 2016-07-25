@@ -1,0 +1,29 @@
+.privacy-policies-section{
+    padding-top: 30px;
+}
+
+.privacy-policies-section ul{
+    margin-left:40px;
+    list-style: disc;
+    padding-bottom: 10px;
+}
+.privacy-policies-section ul li{
+    font-size: 14px;
+    line-height:18px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px){
+    .privacy-policies-section{
+        padding: 40px 20px;
+        border-top: 1px solid #ccc;
+    }
+}
+
+
+@media screen and (min-width: 1024px){
+    .privacy-policies-section{
+        padding:50px 20px;
+
+    }
+}
