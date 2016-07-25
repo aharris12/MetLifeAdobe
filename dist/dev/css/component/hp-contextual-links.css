@@ -1,0 +1,103 @@
+.more-content {
+    padding-bottom: 0px;
+    background-color: #efefef;
+}
+.more-content__section {
+    margin-bottom:10px;
+    -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.more-content__section img {
+/*
+    min-height: 155px;
+    max-height: 333px;
+*/
+    width:100%;
+    height:auto;
+}
+.more-content__section h2 {
+    font-size: 22px;
+    line-height:26px;
+    padding: 20px;
+    margin-bottom: 0;
+}
+.more-content__section a:nth-child(2) {
+    font-size: 22px;
+    line-height:26px;
+    color: #333;
+    display: inline-block;
+    text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+    .more-content__section a:nth-child(2) {
+
+        padding: 20px;
+
+    }
+}
+.more-content__section a:hover {
+    color: #2C77C5;
+}
+@media screen and (min-width: 768px) {
+    
+    .more-content {
+        background-color: #ffffff;
+        padding: 30px 0;
+    }
+    .more-content__title {
+        color: #333;
+        font-size: 26px;
+        line-height: 50px;
+        font-weight: 400;
+        text-align:center;
+    }
+    .more-content__section {
+        width: 23.5%;
+        display:inline-block;
+        float:left;
+        margin: 0 2% 0 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .more-content__section a:nth-child(2) {
+        font-size: 14px;
+        line-height:18px;
+        font-weight: 400;
+        padding-top: 10px;
+    }
+    
+    .more-content__section:last-child {
+        margin-right: 0;
+    }
+    .more-content__section img {
+/*
+        min-height: 155px;
+        max-height: 333px;
+*/
+        width:100%;
+        height:auto;
+    }
+    .more-content__section h2 {
+        font-size: 20px;
+        line-height:24px;
+        padding: 0;
+    }
+    .more-content__section:first-child:nth-last-child(3),
+    .more-content__section:first-child:nth-last-child(3) ~ .more-content__section {
+        width: 32%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .more-content {
+        padding-bottom: 50px;
+    }
+    .more-content__section a:nth-child(2) {
+        font-size: 16px;
+        line-height:20px;
+    }
+}

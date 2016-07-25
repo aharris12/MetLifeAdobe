@@ -1,0 +1,133 @@
+/* Image size 500x250 */
+.carousel-indicators {
+    display: none;
+}
+
+.carousel {
+    max-height: 250px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: table;
+    padding: 0 5%;
+}
+
+.carousel-caption--hero {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 5px auto;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.carousel--hero .icon {
+    width: 30px;
+    height: 40px;
+}
+
+/* Image size 800x400 */
+@media screen and (min-width: 480px) {
+    .carousel {
+        max-height: 300px;
+        /*        margin-top:-60px;*/
+    }
+
+    .carousel-caption {
+        padding: 0 15%;
+    }
+
+    .carousel-control {
+        padding-top: 130px;
+        z-index: 10;
+    }
+}
+
+/* Image size 1100x550 */
+@media screen and (min-width: 768px) {
+    .carousel {
+        max-height: 315px;
+    }
+
+    .carousel-indicators {
+        display: block;
+        bottom: 27.5%;
+    }
+
+    .carousel-caption {
+        padding: 0 15%;
+    }
+
+    .carousel-control {
+        padding-top: 100px;
+    }
+
+    .carousel-caption--hero {
+        font-size: 3.6vw;
+        line-height: 4vw;
+        padding-bottom: 95px;
+    }
+
+    .carousel-indicators--visible {
+        display: block;
+        bottom: 30%;
+    }
+}
+
+/* Image size 1350x675 */
+@media screen and (min-width: 1024px) {
+    .carousel-inner > .item > a > img {
+        min-height: 400px;
+    }
+
+    .carousel {
+        max-height: 400px;
+    }
+
+    .carousel--hero .icon{
+        width: 35px;
+    }
+
+    .carousel-caption {
+        padding: 0 15%;
+    }
+
+    .carousel-control {
+        padding-top: 170px;
+    }
+}
+
+/* Image size 1350x675 */
+@media screen and (min-width: 1280px) {
+    .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
+        max-height: 400px;
+    }
+
+    .carousel-caption {
+        padding: 0 20%;
+    }
+
+    .carousel-control {
+        padding-top: 180px;
+    }
+
+}
+
+/* Image size 2600*1000 */
+@media screen and (min-width: 1900px) {
+    .carousel {
+        height: 400px;
+    }
+
+    .carousel--hero .icon {
+        font-size: 3vw;
+    }
+}
