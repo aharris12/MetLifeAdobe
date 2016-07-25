@@ -16,8 +16,13 @@
 .more-content {
     background-color: inherit;
 }
+
 .more-content__section {
     background-color: inherit;
+}
+
+.more-content__section h2 {
+    font-size: 2vw;
 }
 
 .more-content__section a:nth-child(3):active, .more-content__section a:nth-child(3):hover  {
@@ -46,6 +51,9 @@
     .more-content__section:last-child {
         margin-right: 0;
     }
+    .more-content__section h2 {
+        line-height: 40px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -58,7 +66,7 @@
         line-height: 18px;
         letter-spacing: 1px;
     }
-    .more-content__section {
-
+    .more-content__section h2 {
+        line-height: 50px;
     }
 }
