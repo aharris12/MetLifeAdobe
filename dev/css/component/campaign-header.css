@@ -154,20 +154,20 @@
     .campaign-header__popup__contact {
         width: 100%;
     }
-    .campaign-header__popup__contact input {
+  /*  .campaign-header__popup__contact input {
         width: 50%;
-    }
+    }*/
     .campaign-header__popup__contact a {
         float: right;
         min-width: 40px;
         width: auto;
     }
 }
-@media screen and (min-width: 992px) {
+/*@media screen and (min-width: 992px) {
     .campaign-header__popup__contact input {
         width: 55%;
     }
-}
+}*/
 @media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
@@ -179,7 +179,7 @@
 
     .campaign-header .campaign-header__popup.open {
         top: 70px;
-        width: 30%;
+        width: 40%;
     }
     .campaign-header__section .campaign-header-right{
         background-color: transparent;
@@ -195,8 +195,9 @@
         width: 50%;
     }
 }
+/*
 @media screen and (min-width: 1200px) {
     .campaign-header__popup__contact input {
         width: 55%;
     }
-}
+}*/
