@@ -5,6 +5,27 @@
 
 
 /***** Rate Tables Begin ****************************************************************/
+    // Open & Close Monthly Rates Dropdown
+if ($(".expand_button").length > 0 || $(".monthly_rates").length > 0) {
+    $(".monthly_rates .expand_button").click(function () {
+        if ($(".monthly_rates").has(".wrapper-general")) {
+            $(".expanded").siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        } else {
+            $(this).siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        }
+    });
+}
+
 if ($(".rate_table").length > 0) {
     var tableColumns = 3;
 
@@ -137,26 +158,6 @@ if ($(".rate_table").length > 0) {
         var parent = $(this).closest(".rate_table");
         parent.find(".content_top").scrollLeft($(this).scrollLeft());
         parent.find(".content_left").scrollTop($(this).scrollTop());
-    });
-
-    // Open & Close Monthly Rates Dropdown
-    $(".monthly_rates .expand_button").click(function () {
-        if($(".monthly_rates").has(".wrapper-general")) {
-            $(".expanded").siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        } else {
-            $(this).siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        }
-
     });
 
     // Resize Rate table
