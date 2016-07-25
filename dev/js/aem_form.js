@@ -9,7 +9,9 @@ if (typeof SFDC === "undefined") {
 var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
+
     var parent = $("." + element.type);
+    console.log(parent)
    /* $(".contact-sidebar.type");
     $('[data-fid="contact-sidebar"]');*/
     var submitText = parent.find('.form-submit').text();
@@ -966,7 +968,7 @@ SFDC.form.forEach(function (element) {
         for (var v = 0; v < len; v++) {
             // If field has an observe
 
-            if (fields[v].observes.length > 0) {
+            if (fields[v].observes != null && fields[v].observes.length > 0) {
                 // Look at each observe
                 for (var w = 0; w < fields[v].observes.length; w++) {
                     // If the observe comes from a checkbox group

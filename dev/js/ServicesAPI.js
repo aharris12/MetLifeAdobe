@@ -274,7 +274,7 @@ $('[data-required=true]').on('blur keyup', function () {
 		$this.val("");
 	}
 	var val = $this.val();
-	if (val.length == 0) {
+	if (val != null && val.length == 0) {
 		$this.addClass('error');
 		//$this.val(placeholder);
 	} else {
@@ -623,7 +623,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
-	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
