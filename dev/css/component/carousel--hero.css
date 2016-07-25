@@ -27,6 +27,7 @@
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .carousel--hero .icon {
@@ -63,17 +64,25 @@
     }
 
     .carousel-caption {
-        padding: 0 15%;
-    }
+        text-align: left;
+        width: 51%;
+        max-width: 1300px;
+        margin-left: 7.5%;
+        padding: 0;
+     }
 
     .carousel-control {
         padding-top: 100px;
     }
 
     .carousel-caption--hero {
-        font-size: 3.6vw;
-        line-height: 4vw;
+        font-size: 3vw;
+        line-height: 3.2vw;
         padding-bottom: 95px;
+        height: 400px;
+        width: 60%;
+        position: relative;
+        margin: 0;
     }
 
     .carousel-indicators--visible {
@@ -96,9 +105,9 @@
         width: 35px;
     }
 
-    .carousel-caption {
+    /*.carousel-caption {
         padding: 0 15%;
-    }
+    }*/
 
     .carousel-control {
         padding-top: 170px;
@@ -111,9 +120,9 @@
         max-height: 400px;
     }
 
-    .carousel-caption {
+    /*.carousel-caption {
         padding: 0 20%;
-    }
+    }*/
 
     .carousel-control {
         padding-top: 180px;
