@@ -184,10 +184,7 @@ module.exports = function (grunt) {
                     'dev/css/component/inview.css',
                     'dev/css/component/tooltipster.css',
                     'dev/css/component/generic-content.css',
-                    'dev/css/us/component/carousel--hero.css',
-                    'dev/css/us/component/cta-quote-tool.css',
-                    'dev/css/us/component/promo-card.css',
-                    'dev/css/us/component/hp-contextual-links-us.css',
+                    'dev/css/us/component/*.css',
                     'dev/css/theme/ie9select.css'
                 ],
                 dest: 'dist/css/metlife.us.css'
@@ -385,7 +382,6 @@ module.exports = function (grunt) {
                         'dev/css/component/inview.css',
                         'dev/css/component/tooltipster.css',
                         'dev/css/component/generic-content.css',
-                        'dev/css/component/generic-content.css',
                         'dev/css/theme/ie9select.css'
 
 
@@ -473,11 +469,7 @@ module.exports = function (grunt) {
                         'dev/css/component/inview.css',
                         'dev/css/component/tooltipster.css',
                         'dev/css/component/generic-content.css',
-                        'dev/css/component/generic-content.css',
-                        'dev/css/us/component/carousel--hero.css',
-                        'dev/css/us/component/cta-quote-tool.css',
-                        'dev/css/us/component/promo-card.css',
-                        'dev/css/us/component/hp-contextual-links-us.css',
+                        'dev/css/us/component/*.css',
                         'dev/css/theme/ie9select.css'
                     ]
                 }
