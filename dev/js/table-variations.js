@@ -5,27 +5,6 @@
 
 
 /***** Rate Tables Begin ****************************************************************/
-    // Open & Close Monthly Rates Dropdown
-if ($(".expand_button").length > 0 || $(".monthly_rates").length > 0) {
-    $(".monthly_rates .expand_button").click(function () {
-        if ($(".monthly_rates").has(".wrapper-general")) {
-            $(".expanded").siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        } else {
-            $(this).siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        }
-    });
-}
-
 if ($(".rate_table").length > 0) {
     var tableColumns = 3;
 
@@ -88,15 +67,15 @@ if ($(".rate_table").length > 0) {
             }
         }
     });
-    
-    
+
+
     //Swipe when user click on indicators below the table in Mobile view
     $('.rate_table .carousel-indicators > li').click(function() {
-        
+
         //Determine active and clicked indicators
         var activeIndicator = $(this).parent().find("li.active").index() + 1;
         var clickedIndicator = $(this).index() + 1;
-        
+
         //Determine if we need to swipe RIGHT or LEFT
         if (clickedIndicator > activeIndicator) {
             //Swipe Left
@@ -158,6 +137,26 @@ if ($(".rate_table").length > 0) {
         var parent = $(this).closest(".rate_table");
         parent.find(".content_top").scrollLeft($(this).scrollLeft());
         parent.find(".content_left").scrollTop($(this).scrollTop());
+    });
+
+    // Open & Close Monthly Rates Dropdown
+    $(".monthly_rates .expand_button").click(function () {
+        if($(".monthly_rates").has(".wrapper-general")) {
+            $(".expanded").siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        } else {
+            $(this).siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        }
+
     });
 
     // Resize Rate table
