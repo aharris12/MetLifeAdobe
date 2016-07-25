@@ -389,18 +389,7 @@ module.exports = function (grunt) {
                         'dev/css/theme/ie9select.css'
 
 
-                    ]
-                }
-            }
-        }, //cssmin
-
-        cssmin: {
-            options: {
-                shorthandCompacting: false,
-                roundingPrecision: -1
-            },
-            target: {
-                files: {
+                    ],
                     'dist/css/metlife.us.min.css': [
                         'dev/css/theme/bootstrap-metlife.css',
                         'dev/css/theme/icon-metlife.css',
@@ -494,6 +483,7 @@ module.exports = function (grunt) {
                 }
             }
         }, //cssmin
+
 
         css_import: {
             your_target: {
