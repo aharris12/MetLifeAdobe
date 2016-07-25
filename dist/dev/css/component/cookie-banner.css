@@ -1,0 +1,108 @@
+.cookieShell {
+	position: fixed;
+	z-index: 1010;
+	background-color: #2377C5;
+	color: #fff;
+	width: 100%;
+	border-bottom: 1px solid #0E5DAE;
+	font-size: 14px;
+	top:0;
+	padding:9px;
+	min-height: 342px;
+}
+.cookie__header{
+	top:342px;
+}
+
+.cookie__megamenu{
+	top:392px;
+}
+
+.cookieShell--title{
+	text-align: left;
+}
+
+
+.cookieShell--title p{
+	text-align: left;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.cookieShell--description{
+	font-size: 14px;
+	line-height: 20px;
+	padding-left: 0px;
+}
+
+.cookieShell--description p{
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	padding-bottom: 20px;
+	margin:0;
+}
+
+.cookieShell--description a{
+	color: #fff;
+	text-decoration: underline;
+}
+
+.cookieShell--button {
+	text-align: center;
+}
+
+@media screen and (min-width: 768px){
+	.cookie__header{
+		top:154px;
+	}
+	.cookie__megamenu{
+		top:203px;
+	}
+
+	.cookieShell {
+		min-height: 133px;
+	}
+	.cookieShell--title{
+		padding: 0px 40px;
+		margin-top: -5px;
+	}
+	.cookieShell--title p{
+		text-align: right;
+	}
+
+	.cookieShell--description p{
+		padding-left: 20px;
+	}
+
+	.cookieShell--button {
+		margin-bottom: 0px;
+		margin-left: 0;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.cookieShell {
+		padding:30px;
+	}
+	.cookie__header{
+		top:159px;
+	}
+
+	.cookie__megamenu{
+		top:203px;
+	}
+	.cookie-megamenu--minimized{
+		top:183px;
+	}
+	.cookieShell {
+		height: 160px;
+	}
+
+}
+@media screen and (max-width: 767px) {
+	.cookie__search{
+		top: 392px;
+	}
+}

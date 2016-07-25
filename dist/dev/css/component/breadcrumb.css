@@ -1,0 +1,78 @@
+.wrapper.breadcrumb {
+    width:100%;
+    padding: 0 10px;
+}
+
+.breadcrumb {
+    width:100%;
+    color: #999;
+    position: absolute
+}
+
+.breadcrumb{
+    display: none;
+    letter-spacing: 1px;
+    font-size: 11px;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    border-bottom: 1px solid #2377c5;
+}
+.breadcrumb a:hover{
+    color: #2377C5;
+}
+.breadcrumb__crumb:last-of-type{
+    border: none;
+}
+
+.breadcrumb__crumb:not(:last-child)::after {
+    content: "\0020\203A\0020";
+}
+
+.breadcrumb--back{
+    display:inline-block;
+}
+
+.breadcrumb__crumb--back{
+    border-bottom: 1px solid #add0f0;
+    font-weight: 600;
+}
+
+.breadcrumb__crumb--back:hover{
+    text-decoration: none;
+}
+
+.breadcrumb__crumb--back-glyph::before{
+    content: "\2039";
+    margin: 0 5px;
+    border-bottom: none;
+}
+
+
+@media screen and (min-width: 768px){
+    .breadcrumb{
+        display: block;
+        padding-top: 10px;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    .breadcrumb{
+        display: block;
+        padding-top: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .breadcrumb{
+        display: block;
+        padding-top: 15px;
+        height:45px;
+    }
+}
+
+.aem :not(:last-child)::after {
+     content: "";
+}
