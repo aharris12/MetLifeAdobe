@@ -46,7 +46,7 @@ $(window).resize(function () {
 
     if (!$(".hidden-xs").is(":visible")) {
 
-        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").width('100%');
+        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container, .cta_header_quote_type_of_insurance--sub").width('100%');
     } else {
 
         setAddressContainerWidth();
@@ -64,6 +64,17 @@ function setAddressContainerWidth() {
 
 
         }
+    }
+    if($(".cta_header_quote_type_of_insurance--sub").length != 0){
+        if ($(".hidden-xs").is(":visible")) {
+            var minusWidth = $(".js-productSelector")[0].getBoundingClientRect().width;
+            var calcWidth = (minusWidth + 10).toFixed(2);
+
+            $(".cta_header_quote_type_of_insurance--sub").css("width", "Calc(100% - " + calcWidth + "px" + ")");
+
+
+        }
+
     }
 };
 
