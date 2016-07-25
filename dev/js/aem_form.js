@@ -11,7 +11,6 @@ var JsonOccupations = {};
 SFDC.form.forEach(function (element) {
 
     var parent = $("." + element.type);
-    console.log(parent)
    /* $(".contact-sidebar.type");
     $('[data-fid="contact-sidebar"]');*/
     var submitText = parent.find('.form-submit').text();
