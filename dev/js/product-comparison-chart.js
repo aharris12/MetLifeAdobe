@@ -21,8 +21,8 @@ function productComparisonChart() {
 
     // Init first block
     $('.product_chart .carousel-item').removeClass('selected');
-    $('.product_chart .carousel-item:first-child').addClass('selected');
-    $('.product_chart .carousel-tab:first-child').show();
+    $('.product_chart .carousel-item:first-of-type').addClass('selected');
+    $('.product_chart .carousel-tab:first-of-type').show();
 
 
     // Determine how many blocks to show based on screen width
@@ -40,7 +40,7 @@ function productComparisonChart() {
         slides.slice(i, i + splitter).wrapAll("<div class='item'></div>");
     }
 
-    $('.product_chart .item:first-child').addClass('active');
+    $('.product_chart .item:first-of-type').addClass('active');
 
 
     // Style first tab after a carousel slide
@@ -74,7 +74,7 @@ function micrositeCarouselSetup() {
 
                     }
                 } else {
-                    if ($(this).is(".carousel-item:last-child")) {
+                    if ($(this).is(".carousel-item:last-of-type")) {
                         $(this).find(".microsite-column-category").addClass("mcc2");
                         $(this).parent().find(".carousel-item").first().find(".microsite-column-category").first().clone().appendTo($(this)).addClass("visible-xs mcc2");
                         $(this).parent().find(".carousel-item").first().find(".column-wrapper").first().clone().appendTo($(this)).addClass("visible-xs col2");
@@ -93,7 +93,7 @@ function micrositeCarouselSetup() {
                 break;
             case (3):
                 $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper').first().remove();
-                $(this).find('.column-wrapper:last-child').addClass("hidden-xs");
+                $(this).find('.column-wrapper:last-of-type').addClass("hidden-xs");
                 break;
             case (4):
                 $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:nth-child(-n+3)').remove();
@@ -216,7 +216,7 @@ function micrositeComparisonChart() {
 
     // Init first block
     $('.microsite-product-chart .carousel-item').removeClass('selected');
-    $('.microsite-product-chart .carousel-item:first-child').addClass('selected');
+    $('.microsite-product-chart .carousel-item:first-of-type').addClass('selected');
 
     // Determine how many blocks to show based on screen width
 
@@ -237,7 +237,7 @@ function micrositeComparisonChart() {
     }
 
 
-    $('.microsite-product-chart .item:first-child').addClass('active');
+    $('.microsite-product-chart .item:first-of-type').addClass('active');
 
     // Style first tab after a carousel slide
     $('#micrositeComparisonChartCarousel').bind('slid.bs.carousel', function (e) {
