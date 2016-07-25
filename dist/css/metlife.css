@@ -18034,7 +18034,7 @@ text-align: center;
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
 	font-size: 13px;
-	line-height: 16px
+	line-height: 16px;
 	color: #333333;
 	font-weight: 400;
 	background-color: #EDF6CE;

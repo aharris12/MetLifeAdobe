@@ -16,7 +16,7 @@
     <!-- build:template
     <%= message %>
     /build -->
-    <!-- build:css css/metlife.min.css -->
+    <!-- build:css css/metlife.us.min.css -->
     <link href="css/theme/bootstrap-metlife.css" rel="stylesheet">
     <link href="css/theme/icon-metlife.css" rel="stylesheet">
     <link href="css/theme/form-metlife.css" rel="stylesheet">
@@ -98,6 +98,11 @@
     <link href="css/component/inview.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
     <link href="css/component/tooltipster.css" rel="stylesheet">
+	<link href="css/us/component/carousel--hero.css" rel="stylesheet">
+	<link href="css/us/component/cta-quote-tool.css" rel="stylesheet">
+	<link href="css/us/component/get-quote-find-office.css" rel="stylesheet">
+	<link href="css/us/component/promo-card.css" rel="stylesheet">
+	<link href="css/us/component/hp-contextual-links-us.css" rel="stylesheet">
     <!-- /build -->
 </head>
 <body>
@@ -2789,8 +2794,7 @@
 </div>
 <!-- Dental Overlay -->
 
-<!--Added contextual links html 2/23/16 Ian-->
-<!--Begin Contextual Links-->
+<!--HP Contextual Links-->
 <div class="container">
     <div class="row wrapper more-content">
         <h2 class="more-content__title hidden-xs">Headline Lorem Ipsum text</h2>
@@ -2813,8 +2817,30 @@
         </div>
     </div>
 </div>
-<!--End Contextual Links -->
-<!--End of Added contextual links html 2/23/16 Ian-->
+
+<!--Skinny Product Tile-->
+<div class="container bg-gray-1st">
+	<div class="row wrapper in_view">
+
+		<div class="product-row__tile--img-tile box-shadow skinny-promo-tile">
+			<div class="product-row__tile__img-tile__img product-row__tile__img-tile__img__left"
+			     style="background-image: url('images/product_card/subcat_promo_card.png');">
+			</div>
+			<div class="product-row__tile--img-tile__text pull-right">
+				<div class="product-row__tile--img-tile__text--left">
+					<div class="product-row__tile__promo white">Headline Copy of 40 Characters maximum.
+					</div>
+					<p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo
+						tempor incididunt ut labore et dolore magna aliqua ut enad.</p>
+				</div>
+				<div class="product-row__tile--img-tile__text--right">
+					<a href="skinnyLink" class="btn-brand-2nd table">Start Saving</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 <!-- Promo Card -->
 <div class="container bg-gray-1st">
@@ -2834,23 +2860,7 @@
     </div>
 </div>
 
-<!-- Promo Card -->
-<!--<div class="container bg-gray-1st">
-	<div class="row wrapper promocard white">
-		<div class="promocard__image bg clickable"
-		     data-redirect="http://www.google.com"
-		     data-target="_blank" title="Image Alt"
-		     style="background-image: url('images/promo_card__man_with_glasses.jpg');">
-		</div>
-		<div class="promocard__content">
-			<div class="promocard__content__header">Insurance for Your Employees</div>
-			<div class="promocard__content__text">
-				Attract and retain top talent with employee benefit solutions that are compelling—and cost effective.
-			</div>
-			<a href="#" class="btn btn-brand-2nd">LEARN MORE</a>
-		</div>
-	</div>
-</div>-->
+
 
 <!-- Disclaimer -->
 <div class="container bg-gray-1st">
@@ -3317,13 +3327,6 @@
 </div>-->
 
 
-<!--<div id="suggestionsbox" class="suggestionsbox ">
-	<table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
-		<tbody class="ss-gac-m" id="search_suggest">
-		<tr class="ss-gac-a"><td class="ss-gac-c"></td><td class="ss-gac-d">Suggestions</td></tr><tr class="ss-gac-b"><td class="ss-gac-c js-searchSuggestions" colspan="2">life ins<b>urance</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c js-searchSuggestions" colspan="2">life ins<b>urance claim form</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life ins<b>urance calculator</b></td></tr><tr class="ss-gac-a"><td class="ss-gac-c" colspan="2">life ins<b>urance customer</b></td></tr><tr class="ss-gac-e"><td colspan="2"><span>close</span></td></tr></tbody>
-	</table>
-</div>-->
-
 <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
 <!-- build:js js/vendors.min.js -->
@@ -3396,6 +3399,7 @@
 <script src="js/_plugins/oo_engine.min.js"></script>
 <script src="js/_plugins/oo_conf.js"></script>
 <!-- /build -->
+
 
 <!--<script type="text/javascript" src="js/dtagent622_bdxjnpr23_1019.js"
         data-dtconfig="tp=500,50,0|cors=1|reportUrl=https://metlife.compuwareapmaas.com:8443/dynaTraceMonitor"></script>
