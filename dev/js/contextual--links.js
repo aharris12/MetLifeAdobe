@@ -24,8 +24,6 @@ $(window).resize(function(){
 
 function homePageUsSkinnyBannerSpacing(){
 	var container = $(".skinny-promo-tile");
-	console.log(container)
-	console.log(container.length > 0 &&  $(".promocard ").length > 0)
 	if (container.length > 0 &&  $(".promocard ").length > 0) {
 		container.css("cssText", "margin-top: 0px !important; margin-bottom: -20px !important;");
 	}
