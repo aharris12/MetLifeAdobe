@@ -102,7 +102,7 @@ function micrositeCarouselSetup() {
             case (5):
                 $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:not(:nth-last-child(-n+2))').remove();
                 ;
-                $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:nth-child(-n+3), .column-wrapper:last-of-type').remove();
+                $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:nth-child(-n+3), .column-wrapper:last-child').remove();
                 $(this).find('.column-wrapper:nth-child(n+4)').addClass("hidden-xs");
                 break;
             default:
