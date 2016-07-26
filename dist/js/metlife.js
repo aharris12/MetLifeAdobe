@@ -1174,7 +1174,7 @@ $(window).resize(function () {
 
     if (!$(".hidden-xs").is(":visible")) {
 
-        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container").width('100%');
+        $(".find-office__zip-city-state-container, .find-office__dental-container, .find-office__vision-container, .cta_header_quote_type_of_insurance--sub").width('100%');
     } else {
 
         setAddressContainerWidth();
@@ -1192,6 +1192,17 @@ function setAddressContainerWidth() {
 
 
         }
+    }
+    if($(".cta_header_quote_type_of_insurance--sub").length != 0){
+        if ($(".hidden-xs").is(":visible")) {
+            var minusWidth = $(".js-productSelector")[0].getBoundingClientRect().width;
+            var calcWidth = (minusWidth + 10).toFixed(2);
+
+            $(".cta_header_quote_type_of_insurance--sub").css("width", "Calc(100% - " + calcWidth + "px" + ")");
+
+
+        }
+
     }
 };
 
@@ -17133,8 +17144,8 @@ $(document).ready(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
+	homePageUsSkinnyBannerSpacing();
 });
 
 $(window).resize(function(){
@@ -17144,9 +17155,16 @@ $(window).resize(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
 });
+
+function homePageUsSkinnyBannerSpacing(){
+	var container = $(".skinny-promo-tile");
+	if (container.length > 0 &&  $(".promocard ").length > 0) {
+		container.addClass("skinny-promo-tile-homepage")
+		container.parent().addClass("skinny-card")
+	}
+}
 
 function spacingCtaAndDisclaimer(){
 	 var container = $(".promocard ");

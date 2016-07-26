@@ -5090,8 +5090,7 @@ a:visited {
     font-size: 1.25em;
     font-weight: 300;
 }
-
-.get-quote__container, .find-office__container {
+.quote-office--left, .quote-office--right{
     height:200px;
     background-color:#0e5dae;
     float:left;
@@ -5100,6 +5099,29 @@ a:visited {
     display:table;
     margin-bottom:25px;
     min-height: 210px;
+    padding: 30px 20px;
+}
+.quote-office--right {
+    background-color: #2c77c5;
+    float: right;
+}
+.cta-promo__container p, .cta-promo__container h3 {
+     width: 100%;
+     vertical-align: middle;
+     text-align: center;
+ }
+.cta-promo__container p{
+   font-size: 13px;
+    line-height: 18px;
+}
+.cta-promo__container h3 {
+    font-size: 16px;
+    line-height: 20px;
+}
+.cta-promo__container a{
+    display: table;
+    margin-bottom: 0;
+    width: auto;
 }
 .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
     width: 100%;
@@ -5116,17 +5138,6 @@ a:visited {
     margin-left: 0;
     float: left;
 }
-.find-office__container {
-    background-color:#2c77c5;
-    float:right;
-}
-.get-quote, .find-office {
-    display:table-cell;
-    vertical-align: middle;
-    text-align: left;
-    padding: 30px 20px;
-}
-
 .find-office__dental-container,
 .find-office__vision-container {
     display:none;
@@ -5176,27 +5187,28 @@ a:visited {
         margin: -85px auto 0;
         width: 96%;
     }
-    .get-quote__container {
+    .quote-office--left{
         width: 48%;
         margin-left: 1%;
+        margin-bottom: 0;
     }
-    .find-office__container {
+    .quote-office--right{
         width: 48%;
         margin-right: 1%;
-    }
-    .get-quote__container, .find-office__container{
         margin-bottom: 0;
     }
-    .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-        width: 56%;
-        margin-bottom: 0;
+    .cta-promo__container h3 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .cta-promo__container p{
+        font-size:14px;
+        line-height:20px;
     }
     .find-office--submit{
-        margin-left: 10px;
+        margin-left:10px;
         float: right;
     }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
 
 }
 @media screen and (min-width: 1024px) {
@@ -5206,24 +5218,30 @@ a:visited {
         width: 85%;
         max-width: 1300px;
     }
-    .get-quote, .find-office {
+    .quote-office--left{
+        margin-bottom: 0;
+        width: 45%;
         padding: 30px 35px;
+        margin-left: 3.5%;
     }
-    .get-quote__container {
-        width: 47%;
-        margin-left: 2%;
-    }
-    .find-office__container {
+    .quote-office--right{
         width: 47%;
         margin-right: 2%;
+        padding: 30px 35px;
     }
-    .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-        width: 59%;
-    }
+
 }
 
-.noOffice{
-    margin-right: 26%;
+.dark--blue {
+    background-color:#0e5dae;
+}
+.light--blue {
+    background-color: #2c77c5;
+}
+.single__fao--container{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 @media screen and (min-width: 1024px) {
     .divider--scroll {
@@ -9378,8 +9396,7 @@ body{
 }
 @media screen and (min-width: 768px) {
     .office-search{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
     .office-search__label, .office-search__icon,.office-search__input, .office-search__action{
         display: inline-block;
@@ -9393,7 +9410,6 @@ body{
         font-size: 18px;
         line-height: 40px;
     }
-
 }
 @media screen and (min-width: 1024px) {
     .office-search__label{
@@ -9402,6 +9418,9 @@ body{
     .office-search__icon svg{
         height:60px;
         width: 60px;
+    }
+    .office-search {
+        margin-top: 50px;
     }
 }
 .divider-title__title{
@@ -14046,8 +14065,8 @@ span.errorRadio {
     margin-bottom: 0;
 }
 .more-content__section a:nth-child(2) {
-    font-size: 22px;
-    line-height:26px;
+    font-size: 18px;
+    line-height:22px;
     color: #333;
     display: inline-block;
     text-decoration: none;
@@ -14192,14 +14211,6 @@ span.errorRadio {
 
 
 
-/* line 3, ../../../sass/_ctaHeaderToolMobile.scss */
-.cta_header_quote {
-    background-color: #0e5dae;
-    width: 100%;
-    padding: 30px 20px;
-}
-
-/* line 11, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote p {
     font-size: 20px;
     font-weight: 300;
@@ -14207,13 +14218,11 @@ span.errorRadio {
 }
 
 
-/* line 17, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .cta_header_quote_type_of_insurance {
     margin-bottom: 15px;
 }
 
 
-/* line 21, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .select_wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -14230,7 +14239,6 @@ span.errorRadio {
     background-color: #ccc!important;
 }
 
-/* line 31, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote select,  .edit-quote__results select {
     border-radius: 2px;
     width: 100%;
@@ -14246,14 +14254,12 @@ span.errorRadio {
     -ms-appearance: none;
 }
 
-/* line 51, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .state_wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
     width: calc(100% - 118px);
 }
 
-/* line 56, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .btn {
     display: inline-block;
     margin-left: 10px;
@@ -14264,12 +14270,10 @@ span.errorRadio {
     float: left;
 }
 
-/* line 61, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form {
     width: 100%;
 }
 
-/* line 64, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .birth_month_cta_quote,  .cta_header_quote .quote_tool_form .birth_day_cta_quote {
     float: left;
     width: calc(100% / 3 - 6px);
@@ -14285,21 +14289,18 @@ span.errorRadio {
     padding-right: 17px;
 }
 
-/* line 79, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .birth_year_cta_quote {
     width: calc(100% / 3);
     margin-right: 0;
     float:right;
 }
 
-/* line 84, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .dob_input {
     width: 100%;
     clear: both;
     display: block;
 }
 
-/* line 92, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .dob_input .dob_label {
     display: table-cell;
     height: 30px;
@@ -14308,20 +14309,17 @@ span.errorRadio {
     font-size: 12px;
 }
 
-/* line 101, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .dob_wrapper {
     width: 100%;
     overflow-x: hidden;
 }
 
-/* line 106, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .gender_select {
     display: block;
     width: 100%;
     clear: none;
 }
 
-/* line 111, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .gender_select select {
     background-color: #fff;
     width: 100%;
@@ -14340,84 +14338,70 @@ span.errorRadio {
     background-repeat: no-repeat;
 }
 
-/* line 130, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_termLife {
     display: block;
     width: 100%;
     clear: none;
 }
 
-/* line 133, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_termLife select {
     width: 90%;
     width: calc(100% - 29px);
     margin-bottom: 15px;
 }
 
-/* line 141, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_termLife svg  {
     cursor: pointer;
 }
 
-/* line 145, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_gawli {
     display: block;
     width: 100%;
     clear: none;
 }
 
-/* line 148, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_gawli select {
     width: 90%;
     width: calc(100% - 29px);
     margin-bottom: 15px;
 }
 
-/* line 154, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .ca_gawli svg  {
     cursor: pointer;
 }
 
-/* line 159, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .term_length {
     display: block;
 }
 
-/* line 161, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .term_length select {
     margin-bottom: 15px;
 }
 
-/* line 165, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .tobacco_nicotine_users {
     display: block;
 }
 
-/* line 167, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .tobacco_nicotine_users select {
     margin-bottom: 15px;
 }
 
-/* line 171, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .your_health {
     width: 100%;
     display: block;
 }
 
-/* line 174, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .your_health select {
     width: 90%;
     width: calc(100% - 29px);
     margin-bottom: 15px;
 }
 
-/* line 179, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .your_health .open_health_overlay {
     /*position: absolute;*/
     height: 40px;
 }
 
-/* line 182, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .your_health .open_health_overlay svg  {
     position: absolute;
     margin-left: 5px;
@@ -14427,13 +14411,11 @@ span.errorRadio {
 
 }
 
-/* line 193, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .coverage_amount span {
     /*position: absolute;*/
     height: 40px;
 }
 
-/* line 196, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .coverage_amount span svg  {
     position: absolute;
     margin-left: 5px;
@@ -14442,7 +14424,6 @@ span.errorRadio {
 
 }
 
-/* line 205, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_option {
     font-weight: 300;
     font-style: normal;
@@ -14451,7 +14432,6 @@ span.errorRadio {
     line-height: 20px;
 }
 
-/* line 213, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -14459,12 +14439,10 @@ span.errorRadio {
     font-size: 13px;
 }
 
-/* line 218, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .apply_radio {
     margin-right: 5px;
 }
 
-/* line 221, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type img {
     vertical-align: middle;
     width: 35px;
@@ -14472,12 +14450,10 @@ span.errorRadio {
     margin-left: 50px;
 }
 
-/* line 226, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type img {
     cursor: pointer;
 }
 
-/* line 231, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type input[type="radio"] {
     display: none;
     -webkit-appearance: none;
@@ -14487,57 +14463,47 @@ span.errorRadio {
     appearance: none;
 }
 
-/* line 239, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_online {
     cursor: pointer;
 }
 
-/* line 241, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_online img {
     margin-left: 0px;
     margin-bottom: 5px;
 }
 
-/* line 245, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_online span {
     font-size: 14px;
     font-weight: 300;
 }
 
-/* line 250, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_rep {
     cursor: pointer;
 }
 
-/* line 252, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_rep img {
     margin-left: 10px;
     margin-bottom: 5px;
 }
 
-/* line 256, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .apply_type .radio_rep span {
     font-size: 14px;
     font-weight: 300;
 }
 
-/* line 262, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .btn {
     margin-left: 0px;
     display: inline-block;
 }
 
-/* line 267, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form .quoteBottom {
     display: none;
 }
 
-/* line 272, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .quote_tool_form {
     display: none;
 }
 
-/* line 277, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .errorSpan {
     position: relative;
     clear: both;
@@ -14553,14 +14519,12 @@ span.errorRadio {
     border: 1px solid #eb4646;
 }
 
-/* line 291, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .errorSpan .error_arrow_img {
     position: absolute;
     top: -24px;
     height: 30px;
 }
 
-/* line 296, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .errorSpan .errorSpanImg {
     width: 20px;
     height: 20px;
@@ -14568,14 +14532,12 @@ span.errorRadio {
     margin-right: 5px;
 }
 
-/* line 305, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .errorField {
     border: 1px solid #eb4646 !important;
     color: #db3535 !important;
     background-color: #f5d0d0 !important;
 }
 
-/* line 311, ../../../sass/_ctaHeaderToolMobile.scss */
 .cta_header_quote .errorArrow {
     background-position: top 50% right 0px !important;
     background-size: 18px !important;
@@ -14628,17 +14590,11 @@ span.errorRadio {
         margin: 0px;
         float: right;
     }
-    .cta_header_quote {
-        width: 48%;
-        margin-bottom: 0;
-    }
 
-    /* line 16, ../../../sass/_ctaHeaderToolTablet.scss */
     .cta_header_quote .dob_cta_quote {
         display: none;
     }
 
-    /* line 23, ../../../sass/_ctaHeaderToolTablet.scss */
     .cta_header_quote .quote_tool_form .your_health select {
         width: 90%;
         width: calc(100% - 29px);
@@ -14646,14 +14602,12 @@ span.errorRadio {
 
 
 
-    /* line 40, ../../../sass/_ctaHeaderToolTablet.scss */
     .cta_header_quote .errorSpan .error_arrow_img {
         position: absolute;
         top: 99px;
         height: 30px;
     }
 
-    /* line 48, ../../../sass/_ctaHeaderToolTablet.scss */
     .cta_header_quote .coverage_amount span svg use {
         right: 34px;
     }
@@ -14666,26 +14620,13 @@ span.errorRadio {
     }
 }
 
-@media screen and (min-width: 1025px) {
-    .cta_header_quote {
-        margin-bottom: 0;
-        width: 45%;
-        padding: 30px 35px;
-        margin-left: 3.5%;
-    }
+@media screen and (min-width: 1024px) {
 
-    /* /!* line 20, ../../../sass/_ctaHeaderToolDekstop.scss *!/
-	  .cta_header_quote .select_wrapper {
-		 margin-bottom: 15px;
-	 }*/
-
-    /* line 23, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .state_wrapper {
         float: left;
         width: 45%;
     }
 
-    /* line 27, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .dob_cta_quote {
         color: white;
         font-size: 12px;
@@ -14693,7 +14634,6 @@ span.errorRadio {
         display: none;
     }
 
-    /* line 42, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .dob_input {
         text-align: right;
         padding-left: 15px;
@@ -14701,7 +14641,6 @@ span.errorRadio {
         display: inline-block;
     }
 
-    /* line 48, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .dob_input select {
         width: calc(100% / 3 - 6px);
         float: left;
@@ -14712,7 +14651,6 @@ span.errorRadio {
 
     }
 
-    /* line 55, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .gender_select {
         width: 45%;
         display: inline-block;
@@ -14721,7 +14659,6 @@ span.errorRadio {
         padding-right: 0px;
     }
 
-    /* line 63, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .ca_termLife {
         position: relative;
         padding-left: 15px;
@@ -14730,21 +14667,18 @@ span.errorRadio {
         clear: none;
     }
 
-    /* line 68, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .ca_termLife select {
         width: 100%;
         margin-bottom: 15px;
 
     }
 
-    /* line 81, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .ca_termLife span a svg  {
         position: absolute;
         top: 0px;
         right: -25px;
     }
 
-    /* line 89, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .ca_gawli {
         padding-left: 10px;
         display: inline-block;
@@ -14752,7 +14686,6 @@ span.errorRadio {
         clear: none;
     }
 
-    /* line 93, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .ca_gawli select {
         width: 80%;
         margin-bottom: 15px;
@@ -14760,53 +14693,44 @@ span.errorRadio {
         background-position: 90% 50%;
     }
 
-    /* line 102, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .term_length {
         display: inline-block;
         float: left;
         width: 45%;
     }
 
-    /* line 107, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .tobacco_nicotine_users {
         padding-left: 15px;
         display: inline-block;
         width: 55%;
     }
 
-    /* line 112, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .your_health {
         position: relative;
     }
 
-    /* line 114, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .your_health select {
         width: 100%;
     }
 
-    /* line 117, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .your_health svg  {
         position: absolute;
         right: -28px;
         top: 0px;
     }
 
-    /* line 126, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .apply_type .radio_online span {
         font-size: 16px;
     }
 
-    /* line 131, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .quote_tool_form .apply_type .radio_rep span {
         font-size: 16px;
     }
 
-    /* line 139, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .submit_quote_cta_form {
         clear: both;
     }
 
-    /* line 144, ../../../sass/_ctaHeaderToolDekstop.scss */
     .cta_header_quote .errorSpan .error_arrow_img {
         position: absolute;
         top: 97px;
@@ -14838,17 +14762,12 @@ span.errorRadio {
 .quote-tool-form .form-focus:nth-child(odd), .quote-tool-form .floatContentLeft:nth-child(odd) {
     padding-right: 5px;
 }
-/* line 249, ../../../sass/_formVariationsDesktop.scss */
 .quote-tool-form .form-focus:nth-child(even), .quote-tool-form .floatContentLeft:nth-child(even) {
     padding-left: 5px;
 }
 
 .quote-tool-form > div > form > div:nth-last-child(2){
     margin-bottom: 10px;
-}
-
-.noFao{
-    margin-left: 26%;
 }
 
 body  .quote_edit_form {
@@ -18437,12 +18356,215 @@ text-align: center;
         height: 400px;
     }
 }
+.carousel-caption--hero {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 5px auto;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        text-align: left;
+        width: 51%;
+        max-width: 1300px;
+        margin-left: 7.5%;
+        padding: 0;
+    }
+
+    .carousel-caption--hero {
+        font-size: 3vw;
+        line-height: 3.2vw;
+        padding-bottom: 95px;
+        height: 400px;
+        width: 60%;
+        position: relative;
+        margin: 0;
+    }
+}
+
+.get-quote__container, .find-office__container {
+    background-color:#E3E3E3;
+    color:#333;
+    margin-bottom: 15px;
+
+}
+
+.cta_header_quote p, .quote-office__heading{
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.find-office__dental-container a, .find-office__vision-container a{
+    color: #2377C5;
+}
+
+.find-office__dental-container a:hover, .find-office__dental-container a:focus,
+.find-office__vision-container a:hover, .find-office__vision-container a:focus{
+    color: #2377C5;
+
+}
+
+.get-quote, .find-office{
+    padding: 20px;
+}
+
+.btn-group:first-of-type{
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .get-quote, .find-office{
+        padding: 30px 20px;
+    }
 
 
+    .cta_header_quote p, .quote-office__heading{
+        font-size: 20px;
+        margin-bottom: 20px;
+
+    }
+    .quote-office {
+        margin: -85px auto 20px;
+        width: 95%;
+
+    }
+    .get-quote__container {
+        width: calc(50% - 10px);
+        margin-right: 10px;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    .find-office__container {
+        width: calc(50% - 10px);
+        margin-left: 10px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
 
 
+}
 
+@media screen and (min-width: 1024px) {
+    .get-quote, .find-office {
+        padding: 30px 35px;
+    }
 
+    .quote-office {
+        margin-bottom: 30px;
+        width: 85%;
+        max-width: 1300px;
+    }
+
+}
+.more-content__section a:nth-child(2) {
+    padding: 20px 20px 0 20px;
+}
+.more-content__section a:nth-child(3) {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #7A9816;
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.more-content {
+    background-color: inherit;
+}
+
+.more-content__section {
+    background-color: inherit;
+}
+
+.more-content__title {
+    font-size: 2vw;
+}
+
+.more-content__section a:nth-child(3):active, .more-content__section a:nth-child(3):hover  {
+    color: #A0C323;
+}
+
+@media screen and (min-width: 768px) {
+    .more-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .more-content__section a:nth-child(2) {
+        padding: 20px 0 0 0;
+    }
+    .more-content__section a:nth-child(3) {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+        margin-left: 0px;
+        padding-bottom: 0px;
+    }
+    .more-content__section {
+        width: 32%;
+        margin-right: 2%;
+    }
+    .more-content__section:last-child {
+        margin-right: 0;
+    }
+    .more-content__title {
+        line-height: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .more-content {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+    .more-content__section a:nth-child(3) {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+    }
+    .more-content__title {
+        line-height: 50px;
+    }
+}
+.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
+	width: 100%;
+	margin-top:-15px;
+}
+
+@media screen and (max-width: 767px) {
+	.skinny-card{
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
+		margin-top: 0px;
+		margin-bottom: -20px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
+		margin-top: 0;
+		margin-bottom: -20px;
+	}
+}
+.promocard__content {
+    background-color: #3D9CDB;
+}
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {
     select {

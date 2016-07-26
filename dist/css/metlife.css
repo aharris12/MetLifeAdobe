@@ -9410,7 +9410,6 @@ body{
         font-size: 18px;
         line-height: 40px;
     }
-
 }
 @media screen and (min-width: 1024px) {
     .office-search__label{
@@ -9420,7 +9419,6 @@ body{
         height:60px;
         width: 60px;
     }
-
     .office-search {
         margin-top: 50px;
     }
@@ -14067,8 +14065,8 @@ span.errorRadio {
     margin-bottom: 0;
 }
 .more-content__section a:nth-child(2) {
-    font-size: 22px;
-    line-height:26px;
+    font-size: 18px;
+    line-height:22px;
     color: #333;
     display: inline-block;
     text-decoration: none;
