@@ -2441,8 +2441,8 @@ function productComparisonChart() {
 
     // Init first block
     $('.product_chart .carousel-item').removeClass('selected');
-    $('.product_chart .carousel-item:first-child').addClass('selected');
-    $('.product_chart .carousel-tab:first-child').show();
+    $('.product_chart .carousel-item:first-of-type').addClass('selected');
+    $('.product_chart .carousel-tab:first-of-type').show();
 
 
     // Determine how many blocks to show based on screen width
@@ -2460,7 +2460,7 @@ function productComparisonChart() {
         slides.slice(i, i + splitter).wrapAll("<div class='item'></div>");
     }
 
-    $('.product_chart .item:first-child').addClass('active');
+    $('.product_chart .item:first-of-type').addClass('active');
 
 
     // Style first tab after a carousel slide
