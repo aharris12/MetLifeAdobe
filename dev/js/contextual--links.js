@@ -5,8 +5,8 @@ $(document).ready(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
+	homePageUsSkinnyBannerSpacing();
 });
 
 $(window).resize(function(){
@@ -16,9 +16,16 @@ $(window).resize(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
 });
+
+function homePageUsSkinnyBannerSpacing(){
+	var container = $(".skinny-promo-tile");
+	if (container.length > 0 &&  $(".promocard ").length > 0) {
+		container.addClass("skinny-promo-tile-homepage")
+		container.parent().addClass("skinny-card")
+	}
+}
 
 function spacingCtaAndDisclaimer(){
 	 var container = $(".promocard ");

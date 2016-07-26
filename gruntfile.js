@@ -522,10 +522,7 @@ module.exports = function (grunt) {
         processhtml: {
             dist:{
                 options: {
-                    process: true,
-                    data: {
-                        message: '<!-- Packaged on <%= grunt.template.today("mm/dd/yyyy @HH:MM:ss") %> by <%= pkg.author.name %> --><meta name="format-detection" content="telephone=no">'
-                    },
+                    process: true
                 },
                 files: [
                     {
