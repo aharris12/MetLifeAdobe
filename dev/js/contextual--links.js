@@ -5,7 +5,6 @@ $(document).ready(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
 	homePageUsSkinnyBannerSpacing();
 });
@@ -17,7 +16,6 @@ $(window).resize(function(){
 	disclaimerPadding();
 	removeSpacingFAQ();
 	skinnyAndLargeSpacing();
-	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
 });
 
