@@ -200,3 +200,8 @@
         width: 55%;
     }
 }
+@media screen and (max-width: 767px) {
+    .campaign-header__section p {
+       font-size: 12px;
+    }
+}
