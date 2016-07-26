@@ -52,6 +52,21 @@ var radioDials = false;
 
 /****EMAIL UNSUB*************************/
 function UnsubscribeProcessorSubmit(e, o, t, n, r) {
+var url= $(".email--unsubscribe-form").attr("data-url");
+	console.log(url)
+	$.ajax({
+		url: url,
+		contentType: "application/json; charset=utf-8",
+		async: true,
+		dataType: 'json',
+		data: JSON.stringify(quoteRequest),
+		type: 'POST',
+		success: function (response) {
+		},error: function (e) {
+			console.log('error ', e);
+		},
+		timeout: 30000
+	});
 	var i = "/wps/faoproxy/MCDNSSService/emailPost.do",
 		d = document.getElementById(t).innerHTML;
 	dojo.xhrPost({
