@@ -522,7 +522,10 @@ module.exports = function (grunt) {
         processhtml: {
             dist:{
                 options: {
-                    process: true
+                    process: true,
+                    data: {
+                        message: ''
+                    },
                 },
                 files: [
                     {
