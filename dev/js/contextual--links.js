@@ -19,13 +19,13 @@ $(window).resize(function(){
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
-	homePageUsSkinnyBannerSpacing();
 });
 
 function homePageUsSkinnyBannerSpacing(){
 	var container = $(".skinny-promo-tile");
 	if (container.length > 0 &&  $(".promocard ").length > 0) {
-		container.css("cssText", "margin-top: 0px !important; margin-bottom: -20px !important;");
+		container.addClass("skinny-promo-tile-homepage")
+		container.parent().addClass("skinny-card")
 	}
 }
 
