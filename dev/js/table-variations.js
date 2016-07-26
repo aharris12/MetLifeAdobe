@@ -1,37 +1,3 @@
-/**
- * Created by jfeng2 on 12/22/2015.
- */
-
-    // Open & Close Monthly Rates Dropdown
-$(".monthly_rates .expand_button").click(function () {
-    if ($(".rate_table").length > 0) {
-        if($(".monthly_rates").has(".wrapper-general")) {
-            $(".expanded").siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        } else {
-            $(this).siblings(".unexpanded").slideToggle(function () {
-                resizeRateTable();
-            });
-            resizeRateTable();
-            $(this).find(".expand_button_open").toggleClass("hidden");
-            $(this).find(".expand_button_close").toggleClass("hidden");
-        }
-    }else{
-        $(this).siblings(".unexpanded").slideToggle();
-        $(this).find(".expand_button_open").toggleClass("hidden");
-        $(this).find(".expand_button_close").toggleClass("hidden");
-    }
-
-
-
-
-
-});
-
 /***** Rate Tables Begin ****************************************************************/
 if ($(".rate_table").length > 0) {
     var tableColumns = 3;
@@ -158,6 +124,26 @@ if ($(".rate_table").length > 0) {
                 last.prevAll().eq(number - 1).addClass("last");
             }
         }
+    });
+
+    // Open & Close Monthly Rates Dropdown
+    $(".monthly_rates .expand_button").click(function () {
+        if($(".monthly_rates").has(".wrapper-general")) {
+            $(".expanded").siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        } else {
+            $(this).siblings(".unexpanded").slideToggle(function () {
+                resizeRateTable();
+            });
+            resizeRateTable();
+            $(this).find(".expand_button_open").toggleClass("hidden");
+            $(this).find(".expand_button_close").toggleClass("hidden");
+        }
+
     });
 
     // Scrolling for Rate Table
