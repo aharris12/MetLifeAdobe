@@ -7,6 +7,7 @@ $(document).ready(function(){
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
+	homePageUsSkinnyBannerSpacing();
 });
 
 $(window).resize(function(){
@@ -18,7 +19,17 @@ $(window).resize(function(){
 	skinnyAndLargeSpacing();
 	spacingCtaAndDisclaimer();
 	mainPromoAndSmallMediumCards();
+	homePageUsSkinnyBannerSpacing();
 });
+
+function homePageUsSkinnyBannerSpacing(){
+	var container = $(".skinny-promo-tile");
+	console.log(container)
+	console.log(container.length > 0 &&  $(".promocard ").length > 0)
+	if (container.length > 0 &&  $(".promocard ").length > 0) {
+		container.css("cssText", "margin-top: 0px !important; margin-bottom: -20px !important;");
+	}
+}
 
 function spacingCtaAndDisclaimer(){
 	 var container = $(".promocard ");
