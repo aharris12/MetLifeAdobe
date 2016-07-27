@@ -99,3 +99,19 @@
 
     }
 }
+
+
+.generic-form .form-user-grp .birthDateDay, .generic-form .form-user-grp .birthDateMonth, .generic-form .form-user-grp .birthDateYear {
+    width: 30%;
+}
+
+.generic-form .form-user-grp .sectionBar {
+    width: 5%;
+    color: inherit;
+    padding: 10px 0;
+    text-align: center;
+    border: none;
+    background-color: inherit;
+    box-shadow: none;
+}
+

@@ -260,7 +260,8 @@ SFDC.form.forEach(function (element) {
              */
             _addSubjectEvent: function ($subject, id) {
                 //console.log("add subject events");
-
+                console.log($subject.get(0))
+                console.log(id)
                 // Radio buttons and checkBoxes will actually be children of $subject
                 if ($subject.attr("type") == "checkBox") {
                     $subject.change(function () {
@@ -299,6 +300,7 @@ SFDC.form.forEach(function (element) {
                     });
                 }
                 else if ($subject.get(0).tagName.toLowerCase() == 'div') {
+
                     $subject = $subject.find('input');
                     $subject.bind('change', function () {
                         $el = $(this);
