@@ -349,7 +349,7 @@ module.exports = function (grunt) {
                 options: {
                     process: true,
                     data: {
-                        message: '<!-- Packaged on <%= grunt.template.today("mm/dd/yyyy @HH:MM:ss") %> by <%= pkg.author.name %> --><meta name="format-detection" content="telephone=no">'
+                        message: ''
                     },
                 },
                 files: [
