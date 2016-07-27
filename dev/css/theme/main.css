@@ -35,7 +35,7 @@ table {
 
 .wrapper {
     width: 100%;
-    padding: 15px 10px;
+    padding: 0 15px;
     margin: 0 auto;
 }
 
@@ -81,6 +81,7 @@ p {
     width: 100%;
     margin: 0 auto 20px;
 }
+
 .page-title p {
 
     font-size: 13px;
@@ -295,10 +296,34 @@ a:visited {
     cursor: text !important;
 }
 
+.section {
+    padding: 20px 0;
+}
+
+.section--first {
+    padding-top: 0;
+}
+
+.section--first.bg-white {
+    padding-top: 20px;
+}
+
+.section--last {
+    padding-bottom: 0;
+}
+
+.section .container {
+    padding-bottom: 20px;
+}
+
+.section .container:last-child {
+    padding-bottom: 0;
+}
+
 @media screen and (min-width: 768px) {
     .wrapper {
         width: 95%;
-        padding: 0 0 10px 0;
+        padding: 0;
     }
 
     .wrapper.section-title {
@@ -329,6 +354,22 @@ a:visited {
 
     .text-right-tablet-up {
         text-align: right;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+
+    .section--first {
+        padding-top: 0;
+    }
+
+    .section--first.bg-white {
+        padding-top: 30px;
+    }
+
+    .section .container {
+        padding-bottom: 30px;
     }
 }
 
@@ -366,5 +407,21 @@ a:visited {
 
     .download-link:hover {
         text-decoration: underline;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section--first {
+        padding-top: 0;
+    }
+
+    .section--first.bg-white {
+        padding-top: 40px;
+    }
+
+    .section .container {
+        padding-bottom: 40px;
     }
 }

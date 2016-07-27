@@ -1,20 +1,25 @@
-.chart_check{
+.chart_check {
     max-width: 25px;
     height: auto;
-} 
-.product-comparison-chart-description{
-    margin-top: 30px;
-    padding-bottom:0;
 }
 
-.product-comparison-chart-description p{
+.product-comparison-chart-description {
+    /*margin-top: 30px;*/
+    padding-bottom: 0;
+}
+
+.product-comparison-chart-description p {
     margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 /* line 2, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background {
     background: white;
 }
+
 /* line 5, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart {
     width: 86%;
@@ -22,12 +27,14 @@
     margin-right: 7%;
     padding: 20px 10px 0px 10px;
 }
+
 /* line 11, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_insurance_col1 {
     display: inline-block;
     width: 40%;
     float: left;
 }
+
 /* line 16, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_insurance_col1 .product_chart_key0 {
     height: 127px;
@@ -36,12 +43,14 @@
     border-bottom: 1px solid #cccccc !important;
     max-height: 127px;
 }
+
 /* line 26, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_insurance_col1 .product_chart_key1 {
     border-bottom: 1px solid #cccccc;
     display: table;
     width: 100%;
 }
+
 /* line 31, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_insurance_col1 .product_chart_key1 span {
     padding-right: 10px;
@@ -53,6 +62,7 @@
     vertical-align: middle;
     display: table-cell;
 }
+
 /* line 45, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .carousel-item {
     text-align: center;
@@ -62,24 +72,29 @@
     padding-bottom: 15px;
     float: left;
 }
+
 /* line 52, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .carousel-item:nth-child(odd) {
     border-bottom: 1px solid white;
     background-color: #f2f2f2;
 }
+
 /* line 56, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .carousel-item:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 /* line 61, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .top-column {
     height: 127px !important;
     max-height: 135px;
 }
+
 /* line 65, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info {
     border-bottom: 1px solid #ccc;
 }
+
 /* line 69, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info .product_link_top {
     display: block;
@@ -91,6 +106,7 @@
     text-decoration: none;
     text-align: center;
 }
+
 /* line 79, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info .product_link_top .suptag {
     display: inline-block;
@@ -101,6 +117,7 @@
     font-size: 10px;
     line-height: 10px;
 }
+
 /* line 91, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info .life_chart_product_price .price {
     display: inline-block;
@@ -108,12 +125,14 @@
     line-height: 22px;
     font-weight: 600;
 }
+
 /* line 97, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info .life_chart_product_price .sub {
     display: inline-block;
     font-size: 11px;
     font-weight: 400;
 }
+
 /* line 104, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_product_info .coverage_amount {
     display: block;
@@ -123,6 +142,7 @@
     font-weight: 600;
     padding: 0 10px;
 }
+
 /* line 114, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_check_online {
     padding-top: 11px;
@@ -132,6 +152,7 @@
     color: #333333;
     border-bottom: 1px solid #ccc;
 }
+
 /* line 123, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_coverage {
     padding-top: 15px;
@@ -141,25 +162,30 @@
     font-weight: 400;
     color: #333333;
 }
+
 /* line 135, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_cash .chart_cash_check {
     padding-top: 11px;
 }
+
 /* line 140, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_exam {
     padding-top: 5px;
     font-size: 12px;
     line-height: 14px;
 }
+
 /* line 146, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_learn {
     margin-top: 15px;
 }
+
 /* line 149, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_learn div .btn-green {
     display: inline-block;
     margin-bottom: 15px;
 }
+
 /* line 156, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .textlink {
     text-decoration: none;
@@ -180,17 +206,20 @@
     line-height: 14px;
     font-weight: 600;
 }
+
 /* line 173, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .textlink:hover {
     border-bottom-color: #2c77c5;
     color: #2c77c5;
     text-decoration: none;
 }
+
 /* line 180, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .column-cell {
     height: 43px;
     border-bottom: 1px solid #ccc;
 }
+
 /* line 185, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .product_chart .life_chart_cash_nominally {
     padding-top: 10px;
@@ -200,6 +229,7 @@
     font-weight: 400;
     color: #333333;
 }
+
 /* line 198, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .carousel {
     width: 60%;
@@ -208,17 +238,20 @@
     float: right;
     overflow: visible;
 }
+
 /* line 202, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .carousel-control {
     background: none;
     opacity: 1;
 }
+
 /* line 213, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .carousel-control.right {
     position: absolute;
     margin-right: -10%;
     color: #2c77c5 !important;
 }
+
 /* line 219, ../../../sass/_productComparisonChartMobile.scss */
 .product_chart_background .carousel-control.left {
     position: absolute;
@@ -230,6 +263,7 @@
 .legal_pp {
     background: white;
 }
+
 /* line 229, ../../../sass/_productComparisonChartMobile.scss */
 .legal_pp .comp_chart_legal {
     width: 100%;
@@ -243,16 +277,19 @@
     color: #999;
     margin: 10px 0 20px 0;
 }
+
 /* line 242, ../../../sass/_productComparisonChartMobile.scss */
 .legal_pp .comp_chart_legal p span:last-child:before {
     content: "\A";
     white-space: pre;
 }
+
 /* line 250, ../../../sass/_productComparisonChartMobile.scss */
 .legal_pp .comp_chart_legal a {
     color: #2c77c5;
     text-decoration: none;
 }
+
 /* line 254, ../../../sass/_productComparisonChartMobile.scss */
 .legal_pp .comp_chart_legal a:hover {
     text-decoration: none;
@@ -265,6 +302,7 @@
     margin: auto;
     padding: 20px 6px 50px 0px;
 }
+
 /* line 269, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .column-cell {
     font-weight: 600;
@@ -275,6 +313,7 @@
     height: 85px;
     border-bottom: 1px solid #ccc;
 }
+
 /* line 278, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .microsite-column-category {
     height: 100%;
@@ -287,12 +326,13 @@
     text-align: center;
     line-height: 20px;
 }
+
 /* line 290, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .microsite-column-category:not(:last-child) {
     border-right: 1px solid #fff;
 }
 
-.microsite-product-chart .product_chart .microsite-column-category p{
+.microsite-product-chart .product_chart .microsite-column-category p {
     margin-bottom: 0;
     padding: 10px 0;
 }
@@ -302,11 +342,13 @@
     border-right: none;
     background-color: #fff;
 }
+
 /* line 304, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 {
     float: left;
     width: 40%;
 }
+
 /* line 308, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 .column-cell:nth-child(2) {
     padding: 25px 10px 15px 0px;
@@ -314,21 +356,25 @@
     font-size: 12px;
     text-align: right;
 }
+
 /* line 316, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 {
     text-align: right;
 }
+
 /* line 318, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child {
     font-size: 12px;
     font-weight: 600;
     margin: 15px 10px 15px 0px;
 }
+
 /* line 323, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child:after {
     content: "\A";
     white-space: pre;
 }
+
 /* line 328, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:not(:first-child) {
     font-size: 12px;
@@ -338,8 +384,9 @@
     color: #333333;
     text-align: right;
     vertical-align: middle;
-    display:block;
+    display: block;
 }
+
 /* line 342, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
     text-align: center;
@@ -347,41 +394,49 @@
     width: 100%;
     float: left;
 }
+
 /* line 349, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item .column-wrapper {
     float: left;
     width: 20%;
 }
+
 /* line 356, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_chart_learn {
     padding-bottom: 20px;
     padding-top: 10px;
 }
+
 /* line 359, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_chart_learn a {
     display: inline-block;
     margin-top: 15px;
 }
+
 /* line 364, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .life_chart_learn .btn-green {
     width: 90%;
     padding: 5px 15px;
     text-decoration: none;
 }
+
 /* line 371, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel {
     width: 60%;
     float: right;
 }
+
 /* line 376, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
     overflow: hidden;
 }
+
 /* line 378, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item .column-cell {
     text-align: center;
     padding-top: 25px;
 }
+
 /* line 386, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .textlink {
     text-decoration: none;
@@ -401,17 +456,20 @@
     font-size: 12px;
     line-height: 14px;
 }
+
 /* line 403, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .textlink:hover {
     border-bottom-color: #2c77c5;
     color: #2c77c5;
     text-decoration: none;
 }
+
 /* line 414, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .carousel-control {
     background: none;
     opacity: 1;
 }
+
 /* line 416, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .carousel-control img {
     width: 12px;
@@ -420,6 +478,7 @@
     left: 25px;
     top: 50%;
 }
+
 /* line 426, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .carousel-control.right {
     position: absolute;
@@ -427,10 +486,12 @@
     height: 100%;
     padding-top: 0;
 }
-.microsite-product-chart .carousel-control.right svg{
-    position:relative;
+
+.microsite-product-chart .carousel-control.right svg {
+    position: relative;
     top: 50%;
 }
+
 /* line 432, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .carousel-control.left {
     position: absolute;
@@ -439,18 +500,21 @@
     padding-top: 0;
 }
 
-.microsite-product-chart .carousel-control.left svg{
-    position:relative;
+.microsite-product-chart .carousel-control.left svg {
+    position: relative;
     top: 50%;
 }
-    /* line 438, ../../../sass/_productComparisonChartMobile.scss */
+
+/* line 438, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .col2 {
     float: right;
 }
+
 /* line 442, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .mcc2:first-child {
     width: 50%;
 }
+
 /* line 445, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .mcc2:nth-last-child(2) {
     width: 50%;
@@ -459,96 +523,111 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
 
-    .microsite-product-chart .carousel-control{
+    .microsite-product-chart .carousel-control {
         display: none;
     }
+
     .microsite-product-chart .product_chart .carousel-item.visible-xs {
         display: none !important;
     }
 
-    .microsite-product-chart .btn-brand-2nd{
+    .microsite-product-chart .btn-brand-2nd {
         margin-bottom: 0;
     }
-    .product-comparison-chart-description{
-        margin-top: 30px;
+
+    .product-comparison-chart-description {
+        /*margin-top: 30px;*/
     }
 
-    .product-comparison-chart-title{
+    .product-comparison-chart-title {
         padding: 30px 0 20px;
     }
 
-    .product-comparison-chart-title-text{
+    .product-comparison-chart-title-text {
         font-size: 24px;
-        line-height:28px;
+        line-height: 28px;
     }
-
 
     /* line 2, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background {
         background: white;
     }
+
     /* line 5, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart {
         width: 95%;
         margin: auto;
         padding: 20px 0px 40px 0px;
     }
+
     /* line 10, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_insurance_col1 {
         width: 15%;
     }
+
     /* line 15, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .carousel-item {
         width: 20%;
     }
+
     /* line 18, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .carousel-item:nth-child(even) {
         background-color: #ffffff;
     }
+
     /* line 23, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_chart_coverage {
         padding: 15px 5px;
         line-height: 18px;
     }
+
     /* line 28, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_product_info {
         border-bottom: 1px solid #ccc;
     }
+
     /* line 31, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_product_info .product_link_top {
         min-height: 36px;
         font-size: 12px;
         line-height: 18px;
     }
+
     /* line 38, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_product_info .product_link_top .suptag {
         margin-left: 1px;
     }
+
     /* line 46, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_product_info .life_chart_product_price .price {
         display: inline-block;
         font-size: 18px;
     }
+
     /* line 52, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_product_info .coverage_amount {
         margin-top: 10px;
         font-size: 9.5px;
         line-height: 13px;
     }
+
     /* line 63, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_chart_cash .chart_cash_check {
         padding-top: 13px;
     }
+
     /* line 68, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .life_chart_learn {
         margin-top: 15px;
     }
+
     /* line 73, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .column-cell {
         height: 50px;
         max-height: 50px;
         border-bottom: 1px solid #ccc;
     }
+
     /* line 79, ../../../sass/_productComparisonChartTablet.scss */
     .product_chart_background .product_chart .carousel {
         width: 85%;
@@ -566,80 +645,90 @@
         width: 95%;
         padding: 0 0px 50px 0px;
     }
+
     /* line 102, ../../../sass/_productComparisonChartTablet.scss */
     .microsite-product-chart .product_chart .life_insurance_col1 {
         width: 24%;
     }
+
     /* line 108, ../../../sass/_productComparisonChartTablet.scss */
     .microsite-product-chart .product_chart .life_chart_learn {
         padding: 0px 10px 20px 10px;
     }
+
     /* line 111, ../../../sass/_productComparisonChartTablet.scss */
     .microsite-product-chart .product_chart .life_chart_learn .btn-green {
         padding: 10px 20px;
         width: inherit;
     }
+
     /* line 117, ../../../sass/_productComparisonChartTablet.scss */
     .microsite-product-chart .product_chart .carousel {
         width: 76%;
     }
+
     /* line 127, ../../../sass/_productComparisonChartTablet.scss */
     .microsite-product-chart .mcc2:first-child {
         width: 100%;
     }
 
-    .microsite-product-chart .product_chart .column-cell{
+    .microsite-product-chart .product_chart .column-cell {
         padding: 10px;
     }
 
-    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child{
+    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child {
         margin-right: 0;
     }
 
-    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:not(:first-child){
+    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:not(:first-child) {
         margin-right: 0;
     }
 }
+
 @media (min-width: 1024px) {
 
-    .product-comparison-chart-description{
-        margin-top: 40px;
+    .product-comparison-chart-description {
+        /*margin-top: 40px;*/
     }
-    .microsite-product-chart .product_chart .life_insurance_col1 .column-cell:nth-child(2){
+
+    .microsite-product-chart .product_chart .life_insurance_col1 .column-cell:nth-child(2) {
         padding-right: 20px;
     }
 
-    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child{
+    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:first-child {
         margin-right: 5px;
     }
 
-    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:not(:first-child){
+    .microsite-product-chart .product_chart .life_insurance_col1 .product_chart_key1 span:not(:first-child) {
         margin-right: 5px;
     }
+
     .microsite-product-chart .product_chart .carousel-item.visible-xs {
         display: none !important;
     }
 
-    .microsite-product-chart .carousel-control{
+    .microsite-product-chart .carousel-control {
         display: none;
     }
 
-    .microsite-product-chart .btn-brand-2nd{
+    .microsite-product-chart .btn-brand-2nd {
         margin-bottom: 0;
     }
 
-    .product-comparison-chart-title{
-        padding:50px 0 20px;
+    .product-comparison-chart-title {
+        padding: 50px 0 20px;
     }
 
-    .product-comparison-chart-title-text{
+    .product-comparison-chart-title-text {
         font-size: 28px;
-        line-height:32px;
+        line-height: 32px;
     }
+
     /* line 2, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background {
         background: #ffffff;
     }
+
     /* line 5, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart {
         display: block;
@@ -648,69 +737,84 @@
         margin: auto;
         padding: 20px 0px 50px 0px;
     }
+
     /* line 11, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_insurance_col1 {
         width: 15%;
     }
+
     /* line 14, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_insurance_col1 .product_chart_key0 {
         height: 135px;
         max-height: 140px;
     }
+
     /* line 20, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_insurance_col1 .product_chart_key1 span {
         padding-right: 20px;
     }
+
     /* line 27, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .carousel-item {
         width: 20%;
         padding-top: 20px;
         padding-bottom: 20px;
     }
+
     /* line 33, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .carousel-item:nth-child(even) {
         background-color: #ffffff;
     }
+
     /* line 38, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_chart_coverage {
         padding: 15px 5px;
         line-height: 18px;
     }
+
     /* line 45, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_product_info .product_link_top {
         min-height: 36px;
     }
+
     /* line 51, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_product_info .life_chart_product_price .sub {
         font-size: 12px;
     }
+
     /* line 62, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_chart_cash .chart_cash_check {
         padding-top: 13px;
     }
+
     /* line 67, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_chart_exam {
         padding-top: 10px;
     }
+
     /* line 72, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_chart_learn {
         margin-top: 20px;
     }
+
     /* line 75, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .life_chart_learn div .btn-green {
         margin-bottom: 10px;
     }
+
     /* line 83, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .carousel {
         width: 85%;
         float: right;
     }
+
     /* line 87, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .column-cell {
         max-height: 50px;
         height: 50px;
         border-bottom: 1px solid #ccc;
     }
+
     /* line 93, ../../../sass/_productComparisonChartDesktop.scss */
     .product_chart_background .product_chart .top-column {
         height: 130px !important;
@@ -728,26 +832,30 @@
     .microsite-product-chart .product_chart {
         padding: 0 0 50px 0;
     }
+
     /* line 116, ../../../sass/_productComparisonChartDesktop.scss */
     .microsite-product-chart .product_chart .life_insurance_col1 {
         width: 24%;
     }
+
     /* line 124, ../../../sass/_productComparisonChartDesktop.scss */
     .microsite-product-chart .product_chart .life_chart_learn .btn-green {
         padding: 12.5px 20px;
         width: inherit;
     }
+
     /* line 131, ../../../sass/_productComparisonChartDesktop.scss */
     .microsite-product-chart .product_chart .carousel {
         width: 76%;
         float: right;
     }
+
     /* line 139, ../../../sass/_productComparisonChartDesktop.scss */
     .microsite-product-chart .mcc2:first-child {
         width: 100%;
     }
 
-    .microsite-product-chart .product_chart .column-cell{
+    .microsite-product-chart .product_chart .column-cell {
         padding: 15px;
     }
 }

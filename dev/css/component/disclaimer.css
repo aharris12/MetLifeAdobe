@@ -4,6 +4,10 @@
     font-size: 11px;
     margin-bottom: 0;
     line-height: 15px;
+    padding-bottom: 10px;
+}
+.disclaimer:last-child {
+    padding-bottom: 0;
 }
 /*
 .disclaimer:first-of-type {
@@ -59,7 +63,7 @@
     }
 
     .product-comparison-chart-disclaimer {
-        margin: 15px auto 30px;
+        margin: 15px auto 0;
     }
 
     .product-comparison-chart-disclaimer .disclaimer {
@@ -90,7 +94,7 @@
     }
 
     .product-comparison-chart-disclaimer {
-        margin: 20px auto 40px;
+        margin: 20px auto 0;
     }
   /*  .disclaimer.disclaimer--main:first-of-type{
         padding-top: 0px;

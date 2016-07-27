@@ -1,5 +1,5 @@
 .form-card{
-    padding:15px 0;
+    /*padding:15px 0;*/
 }
 
 .form-card__img{
@@ -35,7 +35,7 @@
     .form-card{
         display: table;
         min-height: 380px;
-        margin-top: 36px;
+        /*margin-top: 36px;*/
     }
     .form-card__img{
         display:table-cell;

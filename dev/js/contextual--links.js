@@ -103,16 +103,15 @@ function removingPaddingContextualLinksSmallCards() {
 
 function disclaimerPadding(){
 	var container = $(".disclaimer");
-	if (container.length > 0 && $(".quote-office").length < 1) {
-			if (getViewport() == "desktop") {
-				container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");
-			}  else if (getViewport() == "tablet") {
-				container.css("cssText", "padding-top: 40px; padding-bottom: 10px;");
-			}else{
-				container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
-			}
-	}
-
+	//if (container.length > 0 && $(".quote-office").length < 1) {
+	//		if (getViewport() == "desktop") {
+	//			container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");
+	//		}  else if (getViewport() == "tablet") {
+	//			container.css("cssText", "padding-top: 40px; padding-bottom: 10px;");
+	//		}else{
+	//			container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
+	//		}
+	//}
 }
 
 /*function contextualToolsDisclaimerPadding(){

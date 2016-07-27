@@ -32,11 +32,12 @@
     }
     .office-search__action{
         width: 100%;
+        margin-bottom: 0;
     }
 }
 @media screen and (min-width: 768px) {
     .office-search{
-        margin-top: 40px;
+        /*margin-top: 40px;*/
     }
     .office-search__label, .office-search__icon,.office-search__input, .office-search__action{
         display: inline-block;
@@ -49,6 +50,7 @@
         padding-right: 10px;
         font-size: 18px;
         line-height: 40px;
+        margin-bottom: 0;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -60,6 +62,6 @@
         width: 60px;
     }
     .office-search {
-        margin-top: 50px;
+        /*margin-top: 50px;*/
     }
 }
