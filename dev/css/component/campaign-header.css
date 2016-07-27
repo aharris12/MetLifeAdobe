@@ -6,10 +6,10 @@
     display: table;
     float: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px;
-    -webkit-transition: all 0.1s;
-    -moz-transition: all 0.1s;
-    -o-transition: all 0.1s;
-    transition: all 0.1s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .campaign-header .campaign-header__section {
     float: none;
@@ -56,18 +56,18 @@
 }
 .campaign-header-on-scroll{
     height: 50px !important;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 
 }
 .campaign-header-on-scroll .campaign-header__section .campaign-header-right .campaign-header-ctc{
     line-height: 50px !important;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 @media screen and (max-width: 767px) {
     .campaign-header-login {
@@ -113,17 +113,17 @@
 @media screen and (min-width: 768px) {
     .campaign-header {
         height: 70px;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        -o-transition: all 0.2s;
-        transition: all 0.2s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .campaign-header__section .campaign-header-right .campaign-header-ctc{
         line-height: 70px;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        -o-transition: all 0.2s;
-        transition: all 0.2s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .campaign-header .campaign-header__popup.open {
         top: 70px;
@@ -185,18 +185,18 @@
 @media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        -o-transition: all 0.2s;
-        transition: all 0.2s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .campaign-header__section .campaign-header-right .campaign-header-ctc{
         line-height: 70px;
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        -o-transition: all 0.2s;
-        transition: all 0.2s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .campaign-header .campaign-header__popup.open {
