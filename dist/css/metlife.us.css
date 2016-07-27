@@ -18309,6 +18309,10 @@ text-align: center;
 	width: 19px;
 	height: 19px;
 }
+
+.generic_content{
+    background-color: #fff;
+}
 .generic-content__img__container {
     width: 100%;
     margin-left: auto;
@@ -18317,16 +18321,16 @@ text-align: center;
 .generic-content__img__container img {
     margin-bottom: 20px;
 }
-.monthly_rates .video_container {
+.generic_content .video_container {
     margin-left: auto;
     margin-right: auto;
 }
-.monthly_rates .videoWrapper {
+.generic_content .videoWrapper {
     position: relative;
     height: auto;
     padding-bottom: 0;
 }
-.monthly_rates .videoWrapper object {
+.generic_content .videoWrapper object {
     position: static;
 }
 .wrapper-general {
@@ -18340,21 +18344,100 @@ text-align: center;
 .wrapper-general .overlay-table-layout {
     margin-bottom: 20px;
 }
-.general-caption {
-    margin-bottom: 40px !important;
+.generic_content > p, .generic-content__img__container > p {
+     margin-bottom: 40px !important;
+ }
+.generic-content__img__container > p {
+    text-align: left;
 }
 @media (min-width: 768px) {
     .generic-content__img__container {
         width: 75%;
     }
-    .monthly_rates .video_container {
+    .generic_content .video_container {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
     }
-    .monthly_rates .videoWrapper {
+    .generic_content .videoWrapper {
         height: 400px;
     }
+}
+
+
+
+/* line 2, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content {
+    background-color: #ffffff;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+/* line 6, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content h1 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+/* line 13, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expanded, .generic_content .unexpanded {
+    padding: 0 10px;
+}
+/* line 15, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expanded > div, .generic_content .unexpanded > div {
+    margin-bottom: 20px;
+}
+/* line 21, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .unexpanded {
+    display: none;
+    margin-top: 20px;
+}
+/* line 25, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button {
+    display: block;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-top: 1px solid #cccccc;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+.expand_button .icon{
+    fill:  #8caa0a;
+}
+
+
+/* line 35, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button .expand_button_open, .generic_content .expand_button .expand_button_close {
+    display: inline-block;
+    height: 100%;
+}
+/* line 38, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button .expand_button_open div, .generic_content .expand_button .expand_button_close div {
+    display: table;
+    height: 100%;
+}
+/* line 41, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button .expand_button_open div img, .generic_content .expand_button .expand_button_close div img {
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    width: 11px;
+    margin-right: 10px;
+}
+/* line 48, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button .expand_button_open div span, .generic_content .expand_button .expand_button_close div span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+/* line 55, ../../../sass/_monthlyRatesMobile.scss */
+.generic_content .expand_button:active, .generic_content .expand_button:hover {
+    background-color: #edf6ce;
 }
 .carousel-caption--hero {
     width: 100%;
