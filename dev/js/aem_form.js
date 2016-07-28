@@ -1,6 +1,26 @@
 // Log Code
 var logTest = '';
 
+/******
+ * For Glu formSubmissiontype must be a empty string.
+ *
+ * for Web2Lead we will inject this value form_direct_sfdc_type into the data-form-Type on the .generic-form, this will enable the form to go to web2lead.
+ *
+ */
+
+var formSubmissiontype = "";
+
+function gluIsDown(){
+    $(".generic-form").each(function(){
+        formSubmissiontype = $(this).attr('data-form-Type');
+    });
+}
+
+$(document).ready(function(){
+    gluIsDown();
+    console.log(formSubmissiontype);
+});
+
 if (typeof SFDC === "undefined") {
     var SFDC = {};
     SFDC.form = [];
@@ -9,7 +29,6 @@ if (typeof SFDC === "undefined") {
 var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
-
     var parent = $("." + element.type);
    /* $(".contact-sidebar.type");
     $('[data-fid="contact-sidebar"]');*/
@@ -260,8 +279,6 @@ SFDC.form.forEach(function (element) {
              */
             _addSubjectEvent: function ($subject, id) {
                 //console.log("add subject events");
-                console.log($subject.get(0))
-                console.log(id)
                 // Radio buttons and checkBoxes will actually be children of $subject
                 if ($subject.attr("type") == "checkBox") {
                     $subject.change(function () {
