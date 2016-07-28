@@ -578,6 +578,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-css-import');
     grunt.loadNpmTasks('grunt-cssjoin');
     grunt.loadNpmTasks('grunt-string-replace');
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','string-replace','compress']);
+    //grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','string-replace','compress']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','string-replace']);
 
 }; //wrapper function
