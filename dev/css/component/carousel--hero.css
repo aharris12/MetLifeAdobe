@@ -85,7 +85,7 @@
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
     .carousel-inner > .item > a > img {
-        min-height: 400px;
+        max-height: 400px;
     }
 
     .carousel {
