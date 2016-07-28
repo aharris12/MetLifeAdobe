@@ -1,26 +1,20 @@
 .email--unsubscribe{
-    width: 80%;
-    padding-top: 40px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .email--unsubscribe-message{
     display: none;
 }
-.email--unsubscribe h3{
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-}
-
 
 .email--unsubscribe p{
     font-size: 13px;
     line-height: 18px;
 }
+.email--unsubscribe p:last-of-type{
+    margin-bottom: 40px;
+}
 
 .email--unsubscribe__form-fields{
-    margin-top: 20px;
-    margin-bottom: 20px;
     display: inline-block;
     width: 100%;
 }
@@ -28,20 +22,22 @@
 .email--unsubscribe__form-fields input{
     display: inline-block;
     width:100%;
-    margin-bottom: 10px;
 }
 .email--unsubscribe__form-fields button{
     display: inline-block;
+    margin-bottom: 0px;
 }
 
 @media screen and (min-width: 768px) {
+    .email--unsubscribe{
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
     .email--unsubscribe p{
         font-size: 14px;
         line-height: 20px;
     }
     .email--unsubscribe__form-fields{
-        margin-top: 20px;
-        margin-bottom: 20px;
         display: inline-block;
         width: 50%;
     }
@@ -55,9 +51,14 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .email--unsubscribe h3{
-        font-size: 20px;
-        line-height: 24px;
+    .email--unsubscribe{
+        width: 80%;
+        padding-top: 40px;
+        padding-bottom: 50px;
     }
-
+}
+@media screen and (max-width: 767px) {
+    .email--unsubscribe__form-fields input {
+        margin-bottom: 10px;
+    }
 }
