@@ -347,7 +347,7 @@ SFDC.form.forEach(function (element) {
                 }
             },
 
-        
+
             /********  Validate Date ******/
             validateDate: function (dateString, type) {
                 //console.log("validate date");
@@ -410,7 +410,7 @@ SFDC.form.forEach(function (element) {
                 //console.log("hide error: " + id);
 
                 var element = parent.find('#' + id);
-               
+
                 element.siblings(".errorSpan").css("display", "none");
                 // Go through groups and add only to inside
                 // Ignore button groups, check box groups, and terms and conditions... which do not have inputs
@@ -430,9 +430,9 @@ SFDC.form.forEach(function (element) {
                 //console.log("show error: " + id);
 
                 var element = parent.find('#' + id);
-               
+
                 element.siblings(".errorSpan").css("display", "block");
-               
+
 
                 // Go through groups and add only to inside
                 // Ignore button groups, check box groups, and terms and conditions... which do not have inputs
@@ -715,7 +715,7 @@ SFDC.form.forEach(function (element) {
                     }
                 }
 
-              
+
                 if (bool) {
                     var formElement = parent.find(".generic-form");
                     var jsonData = {};
@@ -793,7 +793,7 @@ SFDC.form.forEach(function (element) {
                             formMessage(parent, "error");
                         }
                     });
-               
+
             } else {
                     parent.find('.form-submit').removeClass("disabled").html(submitText);
                 }
@@ -1005,7 +1005,7 @@ SFDC.form.forEach(function (element) {
         }
     }
 
-    
+
     // Expands Form
     parent.find(".form-user-ctrl, .form-control, .formTextarea").on("focus", function () {
         parent.removeClass('form-off')
