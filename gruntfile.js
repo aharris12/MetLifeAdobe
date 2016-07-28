@@ -559,7 +559,7 @@ module.exports = function (grunt) {
                 options: {
                     replacements: [{
                         pattern: /images/g,
-                        replacement: '/static/images/'
+                        replacement: '/static/images'
                     }
                     ]
                 }

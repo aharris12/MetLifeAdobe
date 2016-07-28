@@ -5425,9 +5425,9 @@ a:visited {
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-    .carousel-inner > .item > a > img {
-        min-height: 400px;
-    }
+   /* .carousel-inner > .item > a > img {
+        max-height: 400px;
+    }*/
 
     .carousel {
         max-height: 400px;
@@ -16043,9 +16043,11 @@ body  .quote_edit_form .submit_quote_edit_form {
     z-index: 1000;
     display: table;
     float: none;
-    -webkit-transition: height 500ms ease 0s;
-    transition: height 500ms ease 0s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .campaign-header .campaign-header__section {
     float: none;
@@ -16092,14 +16094,18 @@ body  .quote_edit_form .submit_quote_edit_form {
 }
 .campaign-header-on-scroll{
     height: 50px !important;
-    -webkit-transition: height 500ms ease 0s;
-    transition: height 500ms ease 0s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 
 }
 .campaign-header-on-scroll .campaign-header__section .campaign-header-right .campaign-header-ctc{
     line-height: 50px !important;
-    -webkit-transition: height 500ms ease 0s;
-    transition: height 500ms ease 0s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 @media screen and (max-width: 767px) {
     .campaign-header-login {
@@ -16145,9 +16151,17 @@ body  .quote_edit_form .submit_quote_edit_form {
 @media screen and (min-width: 768px) {
     .campaign-header {
         height: 70px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .campaign-header__section .campaign-header-right .campaign-header-ctc{
         line-height: 70px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
     .campaign-header .campaign-header__popup.open {
         top: 70px;
@@ -16209,10 +16223,18 @@ body  .quote_edit_form .submit_quote_edit_form {
 @media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .campaign-header__section .campaign-header-right .campaign-header-ctc{
         line-height: 70px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
     }
 
     .campaign-header .campaign-header__popup.open {
@@ -16236,6 +16258,11 @@ body  .quote_edit_form .submit_quote_edit_form {
 @media screen and (min-width: 1200px) {
     .campaign-header__popup__contact input {
         width: 55%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .campaign-header__section p {
+       font-size: 12px;
     }
 }
 .campaign-card .campaign-card-image {
