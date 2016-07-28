@@ -14,6 +14,16 @@
     line-height: 20px;
 }
 
+.content--microsite u{
+    border-bottom: 1px solid #add0f0;
+    text-decoration: none;
+}
+
+.content--microsite u:hover{
+    border-bottom: 1px solid #2377c5;
+
+}
+
 .content-header ul{
     list-style: disc;
     margin-bottom: 10px;
