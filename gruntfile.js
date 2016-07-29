@@ -500,7 +500,7 @@ module.exports = function (grunt) {
         },
 
 
-        copy: {
+      /*  copy: {
             main: {
                 files: [
                     // copy Find an Office JS files
@@ -517,7 +517,7 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'dev/css/', src: ['**'], dest: 'dist/dev/css'},
                 ],
             },
-        },
+        },*/
 
         processhtml: {
             dist:{

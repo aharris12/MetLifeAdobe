@@ -5184,18 +5184,19 @@ a:visited {
 
 @media screen and (min-width: 768px) {
     .quote-office {
-        margin: -85px auto 0;
-        width: 96%;
+        margin: -70px auto 0;
+        width: 95%;
     }
+    .quote-office--left, .quote-office--right {
+        width: calc(50% - 10px);
+    }
+    .quote-office--right  {
+        margin-right:0px;
+    }
+
     .quote-office--left{
-        width: 48%;
-        margin-left: 1%;
-        margin-bottom: 0;
-    }
-    .quote-office--right{
-        width: 48%;
-        margin-right: 1%;
-        margin-bottom: 0;
+
+        margin-left:0px;
     }
     .cta-promo__container h3 {
         font-size: 20px;
@@ -5218,17 +5219,17 @@ a:visited {
         width: 85%;
         max-width: 1300px;
     }
-    .quote-office--left{
-        margin-bottom: 0;
-        width: 45%;
-        padding: 30px 35px;
-        margin-left: 3.5%;
+    .quote-office > .row{
+        margin-left: 35px;
+        margin-right: 35px;
     }
-    .quote-office--right{
-        width: 47%;
-        margin-right: 2%;
-        padding: 30px 35px;
+    .quote-office--left, .quote-office--right {
+        width: calc(50% - 10px);
     }
+
+
+
+
 
 }
 
@@ -18497,7 +18498,7 @@ text-align: center;
     }
 }
 
-.get-quote__container, .find-office__container {
+.quote-office--left, .quote-office--right{
     background-color:#E3E3E3;
     color:#333;
     margin-bottom: 15px;
@@ -18521,17 +18522,13 @@ text-align: center;
 
 }
 
-.get-quote, .find-office{
-    padding: 20px;
-}
-
 .btn-group:first-of-type{
     margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
 
-    .get-quote, .find-office{
+    .quote-office--left, .quote-office--right{
         padding: 30px 20px;
     }
 
@@ -18546,24 +18543,24 @@ text-align: center;
         width: 95%;
 
     }
-    .get-quote__container {
+    .quote-office--left, .quote-office--right{
         width: calc(50% - 10px);
-        margin-right: 10px;
+        margin-right: 0px;
         margin-left: 0;
         margin-bottom: 0;
     }
-    .find-office__container {
+   /* .find-office__container {
         width: calc(50% - 10px);
         margin-left: 10px;
         margin-right: 0;
         margin-bottom: 0;
-    }
+    }*/
 
 
 }
 
 @media screen and (min-width: 1024px) {
-    .get-quote, .find-office {
+    .quote-office--left, .quote-office--right{
         padding: 30px 35px;
     }
 
