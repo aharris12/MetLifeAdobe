@@ -137,17 +137,14 @@
         width: 85%;
         max-width: 1300px;
     }
+    .quote-office > .row{
+        margin-left: 35px;
+        margin-right: 35px;
+    }
     .quote-office--left, .quote-office--right {
-        width: calc(46% - 10px);
-    }
-    .quote-office--right  {
-        margin-right:35px;
+        width: calc(50% - 10px);
     }
 
-    .quote-office--left{
-
-        margin-left:35px;
-    }
 
 
 
