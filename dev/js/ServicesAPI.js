@@ -50,128 +50,25 @@ var totalYears = [];
 //Contact Variables
 var radioDials = false;
 
-/****EMAIL UNSUB*************************/
-function UnsubscribeProcessorSubmit(e, o, t, n, r) {
-var url= $(".email--unsubscribe-form").attr("data-url");
-	console.log(url)
-	$.ajax({
-		url: url,
-		contentType: "application/json; charset=utf-8",
-		async: true,
-		dataType: 'json',
-		data: JSON.stringify(quoteRequest),
-		type: 'POST',
-		success: function (response) {
-		},error: function (e) {
-			console.log('error ', e);
-		},
-		timeout: 30000
-	});
-	var i = "/wps/faoproxy/MCDNSSService/emailPost.do",
-		d = document.getElementById(t).innerHTML;
-	dojo.xhrPost({
-		form: e,
-		url: i,
-		method: "POST",
-		handleAs: "json",
-		content: {
-			increment: callCount++,
-			fileFields: "attachURL"
-		},
-		load: function() {
-			dojo.byId(t).innerHTML = d, dojo.byId(t).style.display = "block", dojo.byId(e).style.visibility = "hidden", dojo.byId(o).style.visibility = "hidden", dojo.byId(o).style.display = "none", dojo.byId(r).style.visibility = "hidden", dojo.byId(n).style.visibility = "hidden"
-		},
-		timeout: 2e4,
-		error: function() {
-			dojo.byId(r).innerHTML = response, dojo.byId(r).style.display = "block", dojo.byId(e).style.visibility = "hidden", document.getElementById(n).style.visibility = "hidden"
-		}
-	})
-}
 
-function unsubscribeEmail(form) {
-	var formName= form.name;
-	var formDiv=document.getElementById("webFormUnsubscribeEmail");
-	errorCount = 0;
-	errorMsg = new CArray(30);
-	var i=0;
-	//var emailID;
 
-	// Email Check
-	if(!validateEmail(formName,"email")) {
-		showErrorInline("email");
-		errorCount++;
-		errorMsg[i++] ="email";
-	} else {
-		showErrorNone("email");
-	}
-
-	//emailID = document.getElementById("email").value;
-	if (errorCount > 0) {
-		document.getElementById('email').value = "";
-		document.getElementById('errorText').style.visibility = "visible";
-		document.getElementById('errorText').style.color = "red";
-		document.getElementById('enterEmail').style.display = "block";
-		document.getElementById('thanksMessage').style.display = "none";
-		showFocus(formName,errorMsg);
-		return false;
-	} else {
-		document.getElementById('enterEmail').style.display = "none";
-		document.getElementById('thanksMessage').style.display = "block";
-		document.getElementById('errorText').style.visibility = "hidden";
-		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
-
-		formProcessorSubmit(formName,formDiv,'webformThankyoupagecontainer','webformError','webformException');
-		return false;
-	}
-}
-
-function unsubscribeEmailDNSS(form) {
-	var formName= form.name;
-	var formDiv= $(".email--unsubscribe-form");
-	errorCount = 0;
-	errorMsg = new CArray(30);
-	var i=0;
-	//var emailID;
-
-	// Email Check
-	if(!validateEmail(formName,"email")) {
-		showErrorInline("email");
-		errorCount++;
-		errorMsg[i++] ="email";
-	} else {
-		showErrorNone("email");
-	}
-
-	//emailID = document.getElementById("email").value;
-	if (errorCount > 0) {
-		document.getElementById('email').value = "";
-		document.getElementById('errorText').style.visibility = "visible";
-		document.getElementById('errorText').style.color = "red";
-		document.getElementById('enterEmail').style.display = "block";
-		document.getElementById('thanksMessage').style.display = "none";
-		showFocus(formName,errorMsg);
-		return false;
-	} else {
-		document.getElementById('enterEmail').style.display = "none";
-		document.getElementById('thanksMessage').style.display = "block";
-		document.getElementById('errorText').style.visibility = "hidden";
-		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
-
-		UnsubscribeProcessorSubmit(formName,formDiv,'email--unsubscribe-form','webformError','webformException');
-		return false;
-	}
-}
 
 $(document).ready(function () {
-
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
 
 });
-//Contact Forms
 
+
+/****EMAIL UNSUB*************************/
+$(".js-emailUnsub").click(function(){
+	$("#email_unsub").blur();
+	ServicesAPI.emailUnsub();
+});
+
+//Contact Forms
 $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 	var radioButton = $(this).siblings('input');
 	if (!radioButton.prop('checked')) {
@@ -3861,5 +3758,49 @@ var ServicesAPI = {
 		}
 
 
+	},
+	emailUnsub: function(){
+		if($("#email_unsub").hasClass("error")){
+			return false;
+		}else{
+			var ajaxUrl = $(".email--unsubscribe-form").attr("data-url");
+			var jsonData = {};
+			var formData = $('form[name="unsubscribeForm"]').serializeArray();
+			$.each(formData, function () {
+				if (jsonData[this.name]) {
+					if (!jsonData[this.name].push) {
+						jsonData[this.name] = [jsonData[this.name]];
+					}
+					jsonData[this.name].push(this.value || '');
+				} else {
+
+					jsonData[this.name] = this.value || '';
+					if (!jsonData[this.name].push) {
+						if (this.name == "prodInt" || this.name == "prodInterest") {
+							jsonData[this.name] = [jsonData[this.name]];
+						}
+					}
+				}
+			});
+			console.log(ajaxUrl)
+			console.log(JSON.stringify(jsonData));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				dataType: 'jsonp',
+				data: JSON.stringify(jsonData),
+				async: true,
+				contentType: 'application/json',
+				processData: false,
+				success: function (returndata) {
+					console.log(returndata);
+					$(".email--unsubscribe--container").toggleClass("hidden");
+					$(".email--unsubscribe-form").hide();
+				},
+				error: function () {
+					console.log("error in ajax form submission");
+				}
+			});
+		}
 	}
 };
