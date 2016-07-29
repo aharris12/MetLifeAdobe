@@ -36,8 +36,7 @@
 }
 @media screen and (min-width: 768px) {
     .office-search{
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
     .office-search__label, .office-search__icon,.office-search__input, .office-search__action{
         display: inline-block;
@@ -60,5 +59,9 @@
     .office-search__icon svg{
         height:60px;
         width: 60px;
+    }
+
+    .office-search {
+        margin-top: 50px;
     }
 }
