@@ -1,6 +1,7 @@
 .email--unsubscribe{
     padding: 20px;
 }
+
 .email--unsubscribe-message{
     display: none;
 }
@@ -29,8 +30,10 @@
 
 @media screen and (min-width: 768px) {
     .email--unsubscribe{
-        padding:30px 30px 40px;
+        width: 100%;
+        padding: 30px 30px 40px;
         margin-left: 0;
+        margin-right: 0;
     }
     .email--unsubscribe__form-fields{
         width: 50%;
@@ -45,9 +48,15 @@
 
 @media screen and (min-width: 1024px) {
     .email--unsubscribe{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 40px 0 50px;
+    }
+    .email--unsubscribe--container{
         width: 80%;
-        padding-top: 40px;
-        padding-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media screen and (max-width: 767px) {
