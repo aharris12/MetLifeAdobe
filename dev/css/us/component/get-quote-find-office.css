@@ -1,4 +1,4 @@
-.get-quote__container, .find-office__container {
+.quote-office--left, .quote-office--right{
     background-color:#E3E3E3;
     color:#333;
     margin-bottom: 15px;
@@ -22,17 +22,13 @@
 
 }
 
-.get-quote, .find-office{
-    padding: 20px;
-}
-
 .btn-group:first-of-type{
     margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
 
-    .get-quote, .find-office{
+    .quote-office--left, .quote-office--right{
         padding: 30px 20px;
     }
 
@@ -47,24 +43,24 @@
         width: 95%;
 
     }
-    .get-quote__container {
+    .quote-office--left, .quote-office--right{
         width: calc(50% - 10px);
-        margin-right: 10px;
+        margin-right: 0px;
         margin-left: 0;
         margin-bottom: 0;
     }
-    .find-office__container {
+   /* .find-office__container {
         width: calc(50% - 10px);
         margin-left: 10px;
         margin-right: 0;
         margin-bottom: 0;
-    }
+    }*/
 
 
 }
 
 @media screen and (min-width: 1024px) {
-    .get-quote, .find-office {
+    .quote-office--left, .quote-office--right{
         padding: 30px 35px;
     }
 

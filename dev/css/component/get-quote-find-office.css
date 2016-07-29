@@ -102,18 +102,19 @@
 
 @media screen and (min-width: 768px) {
     .quote-office {
-        margin: -85px auto 0;
-        width: 96%;
+        margin: -70px auto 0;
+        width: 95%;
     }
+    .quote-office--left, .quote-office--right {
+        width: calc(50% - 10px);
+    }
+    .quote-office--right  {
+        margin-right:0px;
+    }
+
     .quote-office--left{
-        width: 48%;
-        margin-left: 1%;
-        margin-bottom: 0;
-    }
-    .quote-office--right{
-        width: 48%;
-        margin-right: 1%;
-        margin-bottom: 0;
+
+        margin-left:0px;
     }
     .cta-promo__container h3 {
         font-size: 20px;
@@ -136,17 +137,17 @@
         width: 85%;
         max-width: 1300px;
     }
-    .quote-office--left{
-        margin-bottom: 0;
-        width: 45%;
-        padding: 30px 35px;
-        margin-left: 3.5%;
+    .quote-office > .row{
+        margin-left: 35px;
+        margin-right: 35px;
     }
-    .quote-office--right{
-        width: 47%;
-        margin-right: 2%;
-        padding: 30px 35px;
+    .quote-office--left, .quote-office--right {
+        width: calc(50% - 10px);
     }
+
+
+
+
 
 }
 
