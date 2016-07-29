@@ -50,6 +50,117 @@ var totalYears = [];
 //Contact Variables
 var radioDials = false;
 
+/****EMAIL UNSUB*************************/
+function UnsubscribeProcessorSubmit(e, o, t, n, r) {
+var url= $(".email--unsubscribe-form").attr("data-url");
+	console.log(url)
+	$.ajax({
+		url: url,
+		contentType: "application/json; charset=utf-8",
+		async: true,
+		dataType: 'json',
+		data: JSON.stringify(quoteRequest),
+		type: 'POST',
+		success: function (response) {
+		},error: function (e) {
+			console.log('error ', e);
+		},
+		timeout: 30000
+	});
+	var i = "/wps/faoproxy/MCDNSSService/emailPost.do",
+		d = document.getElementById(t).innerHTML;
+	dojo.xhrPost({
+		form: e,
+		url: i,
+		method: "POST",
+		handleAs: "json",
+		content: {
+			increment: callCount++,
+			fileFields: "attachURL"
+		},
+		load: function() {
+			dojo.byId(t).innerHTML = d, dojo.byId(t).style.display = "block", dojo.byId(e).style.visibility = "hidden", dojo.byId(o).style.visibility = "hidden", dojo.byId(o).style.display = "none", dojo.byId(r).style.visibility = "hidden", dojo.byId(n).style.visibility = "hidden"
+		},
+		timeout: 2e4,
+		error: function() {
+			dojo.byId(r).innerHTML = response, dojo.byId(r).style.display = "block", dojo.byId(e).style.visibility = "hidden", document.getElementById(n).style.visibility = "hidden"
+		}
+	})
+}
+
+function unsubscribeEmail(form) {
+	var formName= form.name;
+	var formDiv=document.getElementById("webFormUnsubscribeEmail");
+	errorCount = 0;
+	errorMsg = new CArray(30);
+	var i=0;
+	//var emailID;
+
+	// Email Check
+	if(!validateEmail(formName,"email")) {
+		showErrorInline("email");
+		errorCount++;
+		errorMsg[i++] ="email";
+	} else {
+		showErrorNone("email");
+	}
+
+	//emailID = document.getElementById("email").value;
+	if (errorCount > 0) {
+		document.getElementById('email').value = "";
+		document.getElementById('errorText').style.visibility = "visible";
+		document.getElementById('errorText').style.color = "red";
+		document.getElementById('enterEmail').style.display = "block";
+		document.getElementById('thanksMessage').style.display = "none";
+		showFocus(formName,errorMsg);
+		return false;
+	} else {
+		document.getElementById('enterEmail').style.display = "none";
+		document.getElementById('thanksMessage').style.display = "block";
+		document.getElementById('errorText').style.visibility = "hidden";
+		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
+
+		formProcessorSubmit(formName,formDiv,'webformThankyoupagecontainer','webformError','webformException');
+		return false;
+	}
+}
+
+function unsubscribeEmailDNSS(form) {
+	var formName= form.name;
+	var formDiv= $(".email--unsubscribe-form");
+	errorCount = 0;
+	errorMsg = new CArray(30);
+	var i=0;
+	//var emailID;
+
+	// Email Check
+	if(!validateEmail(formName,"email")) {
+		showErrorInline("email");
+		errorCount++;
+		errorMsg[i++] ="email";
+	} else {
+		showErrorNone("email");
+	}
+
+	//emailID = document.getElementById("email").value;
+	if (errorCount > 0) {
+		document.getElementById('email').value = "";
+		document.getElementById('errorText').style.visibility = "visible";
+		document.getElementById('errorText').style.color = "red";
+		document.getElementById('enterEmail').style.display = "block";
+		document.getElementById('thanksMessage').style.display = "none";
+		showFocus(formName,errorMsg);
+		return false;
+	} else {
+		document.getElementById('enterEmail').style.display = "none";
+		document.getElementById('thanksMessage').style.display = "block";
+		document.getElementById('errorText').style.visibility = "hidden";
+		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
+
+		UnsubscribeProcessorSubmit(formName,formDiv,'email--unsubscribe-form','webformError','webformException');
+		return false;
+	}
+}
 
 $(document).ready(function () {
 
@@ -203,60 +314,6 @@ $('[data-submit-type="clr"]').on('click', function (e) {
 		//alert("invalid");
 	}
 });
-
-/*$('[data-fsubmit]').on('click', function (e) {
-	e.preventDefault();
-	var $this = $(this);
-	var isValid = ServicesAPI.onFSubmit($(this));
-	if (isValid) {
-		var fid = $this.attr('data-fsubmit');
-		var $formid = $('[data-fid=' + fid + ']');
-		ServicesAPI.postLeadform($formid);
-
-		$formid.find('[data-observes-id]').each(function () {
-			$(this).hide();
-		});
-
-		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-			$('.aidFormCon').hide();
-			$('.aiwHeading').hide();
-			$('.advisorClose').hide();
-			$('.adImageThankYou').css("display", "table-cell");
-		} else if (fid == "quoteleadform") {
-			$(this).closest('.quote_right_mlt').hide();
-			$(this).closest('.quote_right_sit').hide();
-			$('.quote_results_thank_you').show();
-		} else if (fid == "contactCard") {
-			var temp = "[data-fid='" + fid + "']";
-			//$("[data-fid='contactCard']").hide();
-			$('.contactCard').hide();
-			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-			setTimeout(function () {
-				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-					$('.contactCard').show();
-					$('#requestFormContactCard_Acc').trigger("reset");
-					$('.form-minimize').trigger('click');
-				});
-			}, 5000);
-		} else if (fid == "contactSidebarQuote") {
-			$(".results-form__text").addClass("hidden");
-			$(".results-form__inputs").addClass("hidden");
-			$(".apply-disclaimer").addClass("hidden");
-			$(".contact-thanks").removeClass("hidden");
-
-		} else {
-			$('.' + fid).fadeOut('slow', function () {
-				setTimeout(function () {
-					$('.contactSliderOuterCon').fadeOut(2000);
-					$('.contactsClose').trigger('click');
-				}, 5000)
-			});
-		}
-	} else {
-		//alert("invalid");
-	}
-});*/
-//New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
