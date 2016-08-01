@@ -397,6 +397,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','50px');
         $('.contact-trigger').addClass('contact-trigger--minimized');
         $('.megamenu').addClass('megamenu--minimized');
+        $('.suggestionsbox').addClass('suggestionsbox_minimized');
         $('body').css('padding-top', '50px');
         //$('.login-container').addClass('login-container--minimized');
         if ($('.microsite-header').length > 0) {
@@ -413,6 +414,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','70px');
         $('.contact-trigger').removeClass('contact-trigger--minimized');
         $('.megamenu').removeClass('megamenu--minimized');
+        $('.suggestionsbox').removeClass('suggestionsbox_minimized');
         //$('.login-container').removeClass('login-container--minimized');
         headerPosition();
     }
