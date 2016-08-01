@@ -60,7 +60,7 @@
     margin-bottom: 0;
 }
 
-.video-faq .video-text__description h3{
+.video-faq .video-text__description h3, .video-faq .video-text__description h2{
     margin-top:10px;
     margin-bottom: 0;
     font-size: 14px;
