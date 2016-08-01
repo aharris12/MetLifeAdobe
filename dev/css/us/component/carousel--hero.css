@@ -14,7 +14,7 @@
         text-align: left;
         width: 51%;
         max-width: 1300px;
-        margin-left: 7.5%;
+        margin-left: 5.5%;
         padding: 0;
     }
 
@@ -27,4 +27,21 @@
         position: relative;
         margin: 0;
     }
+    .carousel--hero .icon {
+        width: 30px;
+        height: 30px;
+    }
+    .carousel--hero .left .icon {
+        right: 15px;
+    }
+
+    .carousel--hero .right .icon {
+        left: 15px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .carousel-caption {
+        margin-left: 7.5%;
+    }
+
 }
