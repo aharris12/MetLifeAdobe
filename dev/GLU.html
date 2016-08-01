@@ -213,8 +213,8 @@
 								       aria-required="true"
 								       id="BirthDatey" type="text" placeholder="AAAA" maxlength="4" size="4">
 							</div>
-						<!--<span class="errorSpan">Por favor indicá tu fecha de nacimiento.
-							Utilizá el formato día-mes-año, por ej: 01-02-1986</span>-->
+							<!--<span class="errorSpan">Por favor indicá tu fecha de nacimiento.
+								Utilizá el formato día-mes-año, por ej: 01-02-1986</span>-->
 						</div>
 					</div>
 				</div>
@@ -257,11 +257,11 @@
 							<input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
 							       id="MobileNumber" name="MobileNumber"
 							       placeholder="Número telefónico alternativo">
-						<!--<span class="errorSpan">Por Favor, ingrese un número de teléfono
-							válido. El número debe contener el código de área y luego el número, por ejemplo para un
-							número de la Ciudad de Buenos Aires será 01147858893 (11 dígitos). En el caso de que sea un
-							teléfono celular, no se debe incluir el prefijo 15, por lo que un celular de la Ciudad de
-							Buenos Aires será 01145633651.</span>-->
+							<!--<span class="errorSpan">Por Favor, ingrese un número de teléfono
+								válido. El número debe contener el código de área y luego el número, por ejemplo para un
+								número de la Ciudad de Buenos Aires será 01147858893 (11 dígitos). En el caso de que sea un
+								teléfono celular, no se debe incluir el prefijo 15, por lo que un celular de la Ciudad de
+								Buenos Aires será 01145633651.</span>-->
 						</div>
 					</div>
 				</div>
@@ -274,10 +274,10 @@
 							</svg>
 							<select name="PrefComm" id="PrefComm" class="form-user-ctrl user-select"
 							        data-required="true" aria-required="true">
-								<option selected="selected" disabled="disabled" value="">Método de contacto preferido
+								<!--<option selected="selected" disabled="disabled" value="">Método de contacto preferido
 								</option>
 								<option value="email">Email</option>
-								<option value="Telefono">Teléfono</option>
+								<option value="Telefono">Teléfono</option>-->
 							</select>
 							<!--<span class="errorSpan">Por favor no olvidés especificar tu método
 								de contacto preferido.</span>-->
@@ -293,7 +293,7 @@
 							</svg>
 							<select name="City" id="City" class="form-user-ctrl user-select"
 							        data-required="true" aria-required="true">
-								<option selected="selected" disabled="disabled" value="">Tu ubicación</option>
+								<!--<option selected="selected" disabled="disabled" value="">Tu ubicación</option>
 								<option value="CABA">Ciudad Autonoma de Buenos Aires</option>
 								<option value="Buenos Aires">Buenos Aires</option>
 								<option value="Cordoba">Córdoba</option>
@@ -318,7 +318,7 @@
 								<option value="La Pampa">La Pampa</option>
 								<option value="Santa Cruz">Santa Cruz</option>
 								<option value="Tierra del Fuego">Tierra del Fuego</option>
-								<option value="Otro pais">Otro país</option>
+								<option value="Otro pais">Otro país</option>-->
 							</select>
 							<!--<span class="errorSpan">Por favor especificá tuubicación.</span>-->
 						</div>
@@ -331,20 +331,20 @@
 							<label for="PartyTypeCode">¿Sos cliente de MetLife ya?</label>
 							<div class="button_group required" id="PartyTypeCode">
 								<label for="PartyTypeCode" class="hidden">¿Soscliente de MetLife ya?</label>
-									<label>
-										<div class="radio_button two-columns" id="PartyTypeCode">
-											<input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="no"
-											       checked="" class="user-radio" data-required="true">
-											<span>No, aún no lo soy.</span>
-										</div>
-									</label>
-									<label>
-										<div class="radio_button two-columns" id="PartyTypeCode">
-											<input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="si"
-											       class="user-radio" data-required="true">
-											<span>Sí, ya soy cliente.</span>
-										</div>
-									</label>
+								<label>
+									<div class="radio_button two-columns" id="PartyTypeCode">
+										<input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="no"
+										       checked="" class="user-radio" data-required="true">
+										<span>No, aún no lo soy.</span>
+									</div>
+								</label>
+								<label>
+									<div class="radio_button two-columns" id="PartyTypeCode">
+										<input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="si"
+										       class="user-radio" data-required="true">
+										<span>Sí, ya soy cliente.</span>
+									</div>
+								</label>
 							</div>
 						</div>
 					</div>
@@ -385,9 +385,11 @@
 							       placeholder="Documento de identidad*">
 							<!--<span class="errorSpan">Por favor, indique su número de
 								documento.</span>-->
+							<div class="form__item--description">Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para
+								ayudarnos a brindarte una respuesta más eficaz.
+							</div>
 						</div>
-						Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para
-						ayudarnos a brindarte una respuesta más eficaz.
+
 					</div>
 				</div>
 
@@ -754,8 +756,8 @@
 	                <use xmlns:xlink="http://www.w3.org/1999/xlink"
 	                     xlink:href="images/icons-metlife.svg#icon-close"></use>
                 </svg></span>
-				<span class="form__title white">Have a rep contact me:</span>
-				<span class="form__subtitle hidden-field">All fields are required</span>
+				<span class="form__title white">Contactanos</span>
+				<span class="form__subtitle hidden-field">*campos obligatorios</span>
 				<form class="generic-form userForm" name="contact-us-form" enctype="multipart/form-data" action=""
 				      method="post"
 				      data-fid="contactAdvisor" data-form-Type="">
@@ -795,8 +797,8 @@
 								<label for="FirstName" class="hidden">First Name</label>
 								<input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
 								       id="FirstName" name="FirstName" title="Nombre" placeholder="Nombre*">
-							<!--<span class="errorSpan">Por favor ingresá tu
-								nombre.</span>-->
+								<!--<span class="errorSpan">Por favor ingresá tu
+									nombre.</span>-->
 							</div>
 						</div>
 					</div>
@@ -807,8 +809,8 @@
 								<label for="LastName" class="hidden">Last Name</label>
 								<input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
 								       id="LastName" name="LastName" title="Apellido" placeholder="Apellido*">
-							<!--<span class="errorSpan">Por favor ingresá tu
-								apellido.</span>-->
+								<!--<span class="errorSpan">Por favor ingresá tu
+									apellido.</span>-->
 							</div>
 						</div>
 					</div>
@@ -830,8 +832,8 @@
 									       aria-required="true"
 									       id="BirthDatey" type="text" placeholder="AAAA" maxlength="4" size="4">
 								</div>
-						<!--<span class="errorSpan">Por favor indicá tu fecha de nacimiento.
-							Utilizá el formato día-mes-año, por ej: 01-02-1986</span>-->
+								<!--<span class="errorSpan">Por favor indicá tu fecha de nacimiento.
+									Utilizá el formato día-mes-año, por ej: 01-02-1986</span>-->
 							</div>
 						</div>
 					</div>
@@ -844,8 +846,8 @@
 								<input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
 								       id="AddrLine" name="AddrLine" title="Dirección de email"
 								       placeholder="Dirección de email*" data-valid-type="email">
-						<!--	<span class="errorSpan">Por favor ingresá una dirección de email
-								válida.</span>-->
+								<!--	<span class="errorSpan">Por favor ingresá una dirección de email
+										válida.</span>-->
 							</div>
 						</div>
 					</div>
@@ -857,12 +859,12 @@
 								<input type="text" class="form-user-ctrl required" data-required="true" aria-required="true"
 								       id="PhNum" name="PhNum" title="Número telefónico"
 								       placeholder="Número telefónico*">
-							<!--<span class="errorSpan">Por favor ingresá un número de teléfono
-								válido. El número debe contener código de área + número por ejemplo, para Ciudad de
-								Buenos
-								Aires, 01147858893 (11 dígitos). En el caso de un teléfono celular, no incluir el
-								prefijo 15
-								por ejemplo, para un celular de Ciudad de Buenos Aires, 01145633651.</span>-->
+								<!--<span class="errorSpan">Por favor ingresá un número de teléfono
+									válido. El número debe contener código de área + número por ejemplo, para Ciudad de
+									Buenos
+									Aires, 01147858893 (11 dígitos). En el caso de un teléfono celular, no incluir el
+									prefijo 15
+									por ejemplo, para un celular de Ciudad de Buenos Aires, 01145633651.</span>-->
 							</div>
 						</div>
 					</div>
@@ -874,11 +876,11 @@
 								<input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
 								       id="MobileNumber" name="MobileNumber"
 								       placeholder="Número telefónico alternativo">
-						<!--<span class="errorSpan">Por Favor, ingrese un número de teléfono
-							válido. El número debe contener el código de área y luego el número, por ejemplo para un
-							número de la Ciudad de Buenos Aires será 01147858893 (11 dígitos). En el caso de que sea un
-							teléfono celular, no se debe incluir el prefijo 15, por lo que un celular de la Ciudad de
-							Buenos Aires será 01145633651.</span>-->
+								<!--<span class="errorSpan">Por Favor, ingrese un número de teléfono
+									válido. El número debe contener el código de área y luego el número, por ejemplo para un
+									número de la Ciudad de Buenos Aires será 01147858893 (11 dígitos). En el caso de que sea un
+									teléfono celular, no se debe incluir el prefijo 15, por lo que un celular de la Ciudad de
+									Buenos Aires será 01145633651.</span>-->
 							</div>
 						</div>
 					</div>
@@ -891,13 +893,13 @@
 								</svg>
 								<select name="PrefComm" id="PrefComm" class="form-user-ctrl user-select"
 								        data-required="true" aria-required="true">
-									<option selected="selected" disabled="disabled" value="">Método de contacto preferido
+								<!--	<option selected="selected" disabled="disabled" value="">Método de contacto preferido
 									</option>
 									<option value="email">Email</option>
-									<option value="Telefono">Teléfono</option>
+									<option value="Telefono">Teléfono</option>-->
 								</select>
-							<!--<span class="errorSpan">Por favor no olvidés especificar tu método
-								de contacto preferido.</span>-->
+								<!--<span class="errorSpan">Por favor no olvidés especificar tu método
+									de contacto preferido.</span>-->
 							</div>
 						</div>
 					</div>
@@ -910,7 +912,7 @@
 								</svg>
 								<select name="City" id="City" class="form-user-ctrl user-select"
 								        data-required="true" aria-required="true">
-									<option selected="selected" disabled="disabled" value="">Tu ubicación</option>
+									<!--<option selected="selected" disabled="disabled" value="">Tu ubicación</option>
 									<option value="CABA">Ciudad Autonoma de Buenos Aires</option>
 									<option value="Buenos Aires">Buenos Aires</option>
 									<option value="Cordoba">Córdoba</option>
@@ -935,7 +937,7 @@
 									<option value="La Pampa">La Pampa</option>
 									<option value="Santa Cruz">Santa Cruz</option>
 									<option value="Tierra del Fuego">Tierra del Fuego</option>
-									<option value="Otro pais">Otro país</option>
+									<option value="Otro pais">Otro país</option>-->
 								</select>
 								<!--<span class="errorSpan">Por favor especificá tuubicación.</span>-->
 							</div>
@@ -993,21 +995,6 @@
 						</div>
 					</div>
 
-				<!--	<div class="row form-row form-hidden hidden-field observer">
-						<div class="col-xs-12">
-							<div class="form-user-grp">
-								<label for="GovtID" class="hidden">GovtID</label>
-								<input type="text" class="form-user-ctrl observe-PartyTypeCode" data-required="true"
-								       aria-required="true" id="GovtID" name="GovtID" title="Documento de identidad"
-								       placeholder="Documento de identidad*">
-							<span class="errorSpan">Por favor, indique su número de
-								documento.</span>
-							</div>
-							Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para
-							ayudarnos a brindarte una respuesta más eficaz.
-						</div>
-					</div>-->
-
 					<div class="row form-row form-hidden hidden-field observer">
 						<div class="col-xs-12">
 							<div class="form-user-grp">
@@ -1015,11 +1002,12 @@
 								<input type="text" class="form-user-ctrl observe-PartyTypeCode" data-required="true"
 								       aria-required="true" id="GovtID" name="GovtID" title="Documento de identidad"
 								       placeholder="Documento de identidad*">
-							<span class="errorSpan">Por favor, indique su número de
-								documento.</span>
+							<!--<span class="errorSpan">Por favor, indique su número de
+								documento.</span>-->
+								<div class="form__item--description">Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para
+									ayudarnos a brindarte una respuesta más eficaz.
+								</div>
 							</div>
-							Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para
-							ayudarnos a brindarte una respuesta más eficaz.
 						</div>
 					</div>
 
@@ -1042,8 +1030,8 @@
 								<input type="text" class="form-user-ctrl observe-LeadBasedOn observe-PartyTypeCode"
 								       data-required="true" aria-required="true" id="EmployerName" name="EmployerName"
 								       title="Nombre de tu organización" placeholder="Nombre de tu organización*">
-							<!--<span class="errorSpan">Por favor, indique el nombre de su
-								organización</span>-->
+								<!--<span class="errorSpan">Por favor, indique el nombre de su
+									organización</span>-->
 							</div>
 						</div>
 					</div>
@@ -1069,8 +1057,8 @@
 							           rows="3" class="form-user-ctrl"
 							           data-placeholder="" data-required="true"
 							           aria-required="true"></textarea>
-							<!--<span class="errorSpan">>Por favor, ingrese su
-								consulta</span>-->
+								<!--<span class="errorSpan">>Por favor, ingrese su
+									consulta</span>-->
 							</div>
 						</div>
 					</div>
@@ -1333,11 +1321,9 @@
 				</form>
 
 
-				<p><span class="contactDisclaimer hidden-field">By clicking submit, you agree that we* may contact you at the number you've provided, possibly using automated technology or a prerecorded voice, to talk about our products and services. If you don't want to give this permission, you can still get a quote or make a purchase by calling us directly at 1-800-638-5433.</span>
+				<p><span class="contactDisclaimer hidden-field">La información ingresada en este formulario es confidencial y será utilizada sólo a efectos de responder tu consulta.</span>
 				</p>
-				<p class="contactDisclaimer hidden-field"> *<a id="headerContactSideBarMetlifeLink"
-				                                               href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A
-					MetLife company</a> or third party acting on MetLife's behalf. </p>
+				<p class="contactDisclaimer hidden-field">Datos Personales: El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley Nº 25.326. LA DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.</p>
 			</div>
 			<div class="contactSideThankyou" id="contactus_lead_thankyou">
 				<div class="thanksHeaderText">Thank you for contacting us.</div>

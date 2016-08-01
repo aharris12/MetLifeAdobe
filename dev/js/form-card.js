@@ -10,9 +10,14 @@ $(document).ready(function() {
 function formCardExpand(){
     var h = $('.contact-container--form-card').outerHeight();
     $(".contact-container--form-card form").click(function() {
-        $('.contact-container--form-card .hidden-field').show();
-       /* $('.contact-container--form-card .observer').hide();*/
+        $('.contact-container--form-card .hidden-field').each(function(){
+            if(!$(this).hasClass("observer")){
+                $(this).show();
+            }
+        })
+       // $('.contact-container--form-card .hidden-field').show();
     });
+
     $('.form-card__img__inner').css('height', h + 'px');
 };
 
@@ -26,5 +31,3 @@ function formCardMinimize(){
             '').find('svg').css('fill','#666');
     });
 };
-
-

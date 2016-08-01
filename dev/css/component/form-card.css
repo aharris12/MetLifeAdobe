@@ -100,9 +100,19 @@
     }
 }
 
-
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+}
 .generic-form .form-user-grp .birthDateDay, .generic-form .form-user-grp .birthDateMonth, .generic-form .form-user-grp .birthDateYear {
-    width: 30%;
+   /* width: 30%;*/
+    display: table-cell;
+}
+
+.input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
 }
 
 .generic-form .form-user-grp .sectionBar {
@@ -113,5 +123,6 @@
     border: none;
     background-color: inherit;
     box-shadow: none;
+    display: table-cell;
 }
 

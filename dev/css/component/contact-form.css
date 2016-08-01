@@ -218,6 +218,10 @@
     padding-left: 25px;
     font-size: 13px;
 }
+.form__item--description{
+    font-size: 13px;
+    padding-top: 5px;
+}
 .form-check-grp label span, .form-radio-grp label span {
     color: #999;
     padding-left: 5px;

@@ -7,7 +7,17 @@ var logTest = '';
  * for Web2Lead we will inject this value form_direct_sfdc_type into the data-form-Type on the .generic-form, this will enable the form to go to web2lead.
  *
  */
-
+$('.form-user-grp > input, .form-user-grp > textarea, .triple-input > input').on('focus', function () {
+  if($(this).hasClass("error")){
+      $(this).removeClass("error")
+  }
+});
+$('.form-user-grp > select').on('change', function () {
+    if($(this).hasClass("error")){
+        $(this).removeClass("error")
+        $(this).closest('.form-user-grp').find('svg').css('fill', '#666');
+    }
+});
 var formSubmissiontype = "";
 
 function gluIsDown(){
@@ -18,7 +28,6 @@ function gluIsDown(){
 
 $(document).ready(function(){
     gluIsDown();
-    console.log(formSubmissiontype);
 });
 
 if (typeof SFDC === "undefined") {
@@ -559,8 +568,11 @@ SFDC.form.forEach(function (element) {
                                 else if (f.type == "select") {
                                     if (parent.find('#' + f.id).get(0).selectedIndex == 0 && parent.find('#' + f.id).val() == null) {
                                         this.showError(f.id, f.type);
+
+                                        parent.find('#' + f.id).closest('.form-user-grp').find('svg').css('fill', '#db3535');
                                     } else {
                                         this.hideError(f.id);
+                                        parent.find('#' + f.id).closest('.form-user-grp').find('svg').css('fill', '#666');
                                     }
                                 }
                                 else if (f.type == "radio") {
@@ -727,8 +739,7 @@ SFDC.form.forEach(function (element) {
 
                         url = '/global-assets/proxy/DirectSFDCProxy.aspx';
                         data = formElement.serialize();
-                    }
-                    else {
+                    } else {
 
                         formData = formElement.serializeArray();
                         if (jsonData["MetlifeJson"]) {
