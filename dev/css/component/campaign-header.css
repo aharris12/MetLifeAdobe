@@ -190,6 +190,10 @@
     .campaign-header-right a {
         font-size: 11px;
     }
+    .campaign-header-login {
+        padding-bottom: 0px;
+        padding-top: 8px;
+    }
 }
 @media screen and (min-width: 992px) {
     .campaign-header__popup__contact input {
