@@ -9,6 +9,11 @@
 	color: #fff;
 	font-weight: 400;
 }
+.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left p{
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+}
 @media screen and (max-width: 767px) {
 	.skinny-card{
 		padding-left: 0px;
@@ -25,6 +30,11 @@
 	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 		font-size: 18px;
 		line-height: 22px;
+	}
+	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left p{
+		font-size: 13px;
+		line-height: 16px;
+		padding-bottom: 2px;
 	}
 }
 
