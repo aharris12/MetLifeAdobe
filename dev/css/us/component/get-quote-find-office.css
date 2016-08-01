@@ -14,6 +14,7 @@
 
 .find-office__dental-container a, .find-office__vision-container a{
     color: #2377C5;
+    font-weight: 300;
 }
 
 .find-office__dental-container a:hover, .find-office__dental-container a:focus,
