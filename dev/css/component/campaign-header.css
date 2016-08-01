@@ -110,6 +110,7 @@
 }
 .campaign-header-ctc h5 {
     font-weight: 400;
+    font-size: 14px;
 }
 .campaign-header-ctc p {
     font-size: .7em;
@@ -175,6 +176,9 @@
     }
     .campaign-header .campaign-header__popup .campaign-header-ctc {
         padding: 0;
+    }
+    .campaign-header-ctc h5 {
+        margin-bottom: 10px;
     }
     .campaign-header__popup__contact {
         width: 100%;
