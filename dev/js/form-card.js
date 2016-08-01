@@ -11,6 +11,7 @@ function formCardExpand(){
     var h = $('.contact-container--form-card').outerHeight();
     $(".contact-container--form-card form").click(function() {
         $('.contact-container--form-card .hidden-field').show();
+       /* $('.contact-container--form-card .observer').hide();*/
     });
     $('.form-card__img__inner').css('height', h + 'px');
 };
