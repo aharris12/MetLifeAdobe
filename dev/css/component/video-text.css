@@ -1,9 +1,25 @@
+
+
 .video-text__video {
     padding: 20px 0px 10px;
 }
 
 .video-faq .video-text__video {
     padding-top: 0;
+}
+.video-faq.accordion{
+    position: relative;
+}
+.video-faq.accordion .accordion__name{
+    padding-top: 10px;
+}
+
+.video-faq.accordion .accordion__link{
+    position: absolute;
+    padding: 0;
+    float: none;
+    right: 40px;
+    top: 12px;
 }
 
 .videoWrapper {
@@ -43,7 +59,7 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
-    margin-top: 10px;
+    display:none;
 }
 
 .video-duration {
@@ -69,17 +85,16 @@
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
     }
 
     .video-faq .video-text__label {
         margin-top: 0;
+        display:block;
     }
 
-    .video-faq .video-text__video {
-        padding-top: 10px;
-    }
 
     .video-text-wrapper {
         padding-bottom: 10px;
@@ -145,13 +160,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
+    }
     .video-text-wrapper {
         padding-bottom: 20px;
     }
 
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
-    }
 
     .wrapper.video-text {
         padding: 30px 0;
@@ -161,6 +177,12 @@
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .video-faq .video-text__label {
+
+        display:block;
+    }
+
 
     .video-faq:first-child:nth-last-child(2),
     .video-faq:first-child:nth-last-child(2) ~ .video-faq.accordion {
