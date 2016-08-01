@@ -14,7 +14,7 @@
     border: none;
 }
 
-.suggestionsbox_minimized table {
+.suggestionsbox--minimized table {
     top: 42px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -61,7 +61,7 @@
         left: 133px;
     }
 
-    .suggestionsbox_minimized table {
+    .suggestionsbox--minimized table {
         top: 42px;
         -webkit-transition: top 0.5s;
         -moz-transition: top 0.5s;
@@ -80,7 +80,7 @@
         transition: top 0.5s;
     }
 
-    .suggestionsbox_minimized table {
+    .suggestionsbox--minimized table {
         top: 42px;
     }
 }
