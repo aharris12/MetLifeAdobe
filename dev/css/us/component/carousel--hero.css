@@ -3,8 +3,6 @@
     display: table-cell;
     vertical-align: middle;
     margin: 5px auto;
-    font-size: 20px;
-    line-height: 24px;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -19,8 +17,6 @@
     }
 
     .carousel-caption--hero {
-        font-size: 3vw;
-        line-height: 3.2vw;
         padding-bottom: 95px;
         height: 400px;
         width: 60%;
