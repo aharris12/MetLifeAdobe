@@ -85,37 +85,13 @@ function unsubscribeEmailDNSS(form) {
 // End Validations For Unsubscribe Email
 
 function UnsubscribeProcessorSubmit() {
-	var formName= $('form[name="unsubscribeForm"]');
-	var jsonData = {};
-	var formData = formName.serializeArray();
-	$.each(formData, function () {
-		if (jsonData[this.name]) {
-
-			if (!jsonData[this.name].push) {
-				jsonData[this.name] = [jsonData[this.name]];
-
-			}
-			jsonData[this.name].push(this.value || '');
-		} else {
-
-			jsonData[this.name] = this.value || '';
-			if (!jsonData[this.name].push) {
-				if (this.name == "prodInt" || this.name == "prodInterest") {
-					jsonData[this.name] = [jsonData[this.name]];
-
-				}
-			}
-		}
-
-	});
-console.log(jsonData)
+	var formData = new FormData($('form[name="unsubscribeForm"]')[0]);
 	var url = $(".email--unsubscribe-form").attr("data-url");
-
 	$.ajax({
 		url: url,
 		type: 'POST',
 		dataType: 'json',
-		data: JSON.stringify(jsonData),
+		data: formData,
 		async: true,
 		contentType: 'application/json',
 		processData: false,
