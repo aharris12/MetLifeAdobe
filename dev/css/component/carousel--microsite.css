@@ -5,7 +5,7 @@
 }
 
 .carousel--microsite .carousel-indicators--visible {
-    bottom: 140px;
+    top: -25px;
 }
 
 .carousel--microsite .carousel-control {
@@ -17,28 +17,32 @@
 }
 .carousel--microsite .carousel-caption {
     bottom: 0;
+    padding: 15px 0;
 }
 
 .carousel-indicators--visible {
     display: block;
 }
 .carousel-caption--bottom {
-    background-color: rgba(35,119,197,0.7);
+    background-color: rgba(35,119,197,1);
     top: auto;
     position: relative;
 }
 
 .carousel-caption--bottom h2 {
-    margin-bottom: 0px;
-    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 22px;
+    font-weight: 300;
+    width: 90%;
 }
 
 .carousel-caption--bottom h3 {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 30px;
+    font-weight: 300;
+    width: 90%;
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 480px) {
@@ -58,7 +62,9 @@
 }
 
 @media screen and (min-width: 768px) {
-
+    .carousel-caption--bottom {
+        background-color: rgba(35, 119, 197, 0.7);
+    }
     .carousel--microsite {
         max-height: none;
         margin-bottom: 30px
@@ -71,8 +77,13 @@
         right: 0;
         height: 30px;
     }
-    .carousel--microsite .carousel-indicators--visible {
-        bottom: 10px;
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 30px;
+        position: absolute;
+    }
+    .carousel--microsite .carousel-indicators--visible{
+        position: absolute;
+        top: 75%;
     }
     .carousel--microsite .carousel-indicators--visible li {
         background: #B6D1EB;
@@ -85,10 +96,7 @@
     .item--microsite {
         max-height:425px;
     }
-    .carousel-caption--bottom {
-        padding: 30px 0 20px;
-        position: absolute;
-    }
+
     .carousel--microsite .carousel-control svg {
         top: 0;
         width: 40px;
@@ -101,6 +109,7 @@
         min-height: 400px;
     }
     .carousel-caption--bottom h2 {
+        width: 80%;
         font-size: 20px;
         line-height: 24px;
     }
@@ -112,6 +121,9 @@
     }
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
+    }
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 35px;
     }
     .carousel-caption--bottom {
         padding: 30px 0 20px;
@@ -127,9 +139,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
-    }
     .item--microsite{
         max-height:500px;
     }
