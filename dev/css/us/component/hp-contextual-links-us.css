@@ -8,13 +8,13 @@
 .more-content__section a:nth-child(3) {
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: 1px;
     color: #7A9816;
     text-decoration: underline;
     display: block;
     margin-top: 10px;
     margin-left: 20px;
     padding-bottom: 20px;
+    font-weight: 600;
 }
 
 .more-content {
