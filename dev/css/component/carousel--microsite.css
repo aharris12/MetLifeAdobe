@@ -42,12 +42,12 @@
 }
 
 .carousel--microsite .carousel-indicators--visible li {
-    background: #B6D1EB;
-    border-color: #B6D1EB;
+    background-color: #fff;
+    border-color: #fff;
+    opacity: 0.5;
 }
 .carousel--microsite .carousel-indicators--visible li.active {
-    background: #fff;
-    border-color: #fff;
+    opacity: 1;
 }
 
 @media screen and (min-width: 480px) {
