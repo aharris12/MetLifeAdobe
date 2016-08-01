@@ -51,8 +51,6 @@ var totalYears = [];
 var radioDials = false;
 
 
-
-
 $(document).ready(function () {
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
@@ -64,9 +62,73 @@ $(document).ready(function () {
 
 /****EMAIL UNSUB*************************/
 $(".js-emailUnsub").click(function(){
-	$("#email_unsub").blur();
-	ServicesAPI.emailUnsub();
+	unsubscribeEmailDNSS()
 });
+
+$("#email_unsub").keydown(function(event){
+	if(event.keyCode == 13) {
+		unsubscribeEmailDNSS()
+		return false;
+	}
+});
+
+// Start Validations For Unsubscribe Email
+function unsubscribeEmailDNSS(form) {
+	$("#email_unsub").blur();
+	if($("#email_unsub").hasClass("error")){
+		return false;
+	}else{
+		UnsubscribeProcessorSubmit();
+		return false;
+	}
+}
+// End Validations For Unsubscribe Email
+
+function UnsubscribeProcessorSubmit() {
+	var formName= $('form[name="unsubscribeForm"]');
+	var jsonData = {};
+	var formData = formName.serializeArray();
+	$.each(formData, function () {
+		if (jsonData[this.name]) {
+
+			if (!jsonData[this.name].push) {
+				jsonData[this.name] = [jsonData[this.name]];
+
+			}
+			jsonData[this.name].push(this.value || '');
+		} else {
+
+			jsonData[this.name] = this.value || '';
+			if (!jsonData[this.name].push) {
+				if (this.name == "prodInt" || this.name == "prodInterest") {
+					jsonData[this.name] = [jsonData[this.name]];
+
+				}
+			}
+		}
+
+	});
+console.log(jsonData)
+	var url = $(".email--unsubscribe-form").attr("data-url");
+
+	$.ajax({
+		url: url,
+		type: 'POST',
+		dataType: 'json',
+		data: JSON.stringify(jsonData),
+		async: true,
+		contentType: 'application/json',
+		processData: false,
+		success: function (returndata) {
+			console.log(returndata);
+			$(".email--unsubscribe-message").toggleClass("hidden");
+			$(".email--unsubscribe-form").hide();
+		},
+		error: function () {
+			console.log("error in ajax form submission");
+		}
+	});
+}
 
 //Contact Forms
 $(".form-radio-grp svg, .image_radio svg").on('click', function () {
@@ -75,8 +137,7 @@ $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 		radioButton.prop('checked', true);
 		var radioName = radioButton.prop('name');
 		$('input[name=' + radioName + ']').siblings('svg').toggle();
-	}
-	;
+	};
 });
 
 $('#productPolicy option[value=""]').attr('selected', true);
@@ -1629,7 +1690,7 @@ var ServicesAPI = {
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
 
-		/*var siteSearchResults = $.getJSON("search.json", function(json) {
+		var siteSearchResults = $.getJSON("search.json", function(json) {
 		 siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
 		 $('.form-item__display').removeClass('hidden');
@@ -1652,12 +1713,12 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL Site Search SERVICE***************/
 
 
 		/************LIVE Site Search SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1691,7 +1752,7 @@ var ServicesAPI = {
 				ServicesAPI.showSorryUnableToLocateMessage();
 			},
 			timeout: 30000
-		});
+		});*/
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
@@ -3787,7 +3848,7 @@ var ServicesAPI = {
 			$.ajax({
 				url: ajaxUrl,
 				type: 'POST',
-				dataType: 'jsonp',
+				dataType: 'json',
 				data: JSON.stringify(jsonData),
 				async: true,
 				contentType: 'application/json',
