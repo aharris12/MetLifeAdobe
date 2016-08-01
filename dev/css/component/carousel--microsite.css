@@ -20,6 +20,16 @@
     padding: 15px 0;
 }
 
+.carousel--microsite .carousel-indicators--visible li {
+    background-color: #fff;
+    border-color: #fff;
+    opacity: 0.5;
+}
+
+.carousel--microsite .carousel-indicators--visible li.active {
+    opacity: 1;
+}
+
 .carousel-indicators--visible {
     display: block;
 }
