@@ -11,57 +11,27 @@
 
 @media screen and (min-width: 768px) {
     .carousel-caption {
-       /* text-align: left;
-        width: 51%;
-        max-width: 1300px;
-        margin-left: 5.5%;
-        padding: 0;*/
-        margin-left: 4.5%;
-
+        margin-left: 40px;
         text-align: left;
         width: 85%;
         max-width: 1300px;
-       /* margin-left: auto;
-
-        margin-right: auto;*/
         padding: 0;
         display: flex;
-        /* justify-content: inherit; */
-        /* position: relative; */
     }
 
     .carousel-caption--hero {
-
-       /* font-size: 3.4vw;
-        line-height: 3.7vw;
-        padding-bottom: 95px;
-        height: 400px;
-        width: 60%;
-        position: relative;
-        margin: 0;*/
-
-
         font-size: 3.4vw;
         line-height: 3.7vw;
         padding-bottom: 95px;
         height: 400px;
         width: 60%;
-        /* position: relative; */
         margin: 0;
-        /* max-width: 200px; */
-        /* display: table; */
         display: flex;
-        /* vertical-align: middle; */
-        /* justify-content: center; */
-        /* top: 17px; */
-        /* padding-top: 145px; */
-        /* text-align: left; */
-        /* vertical-align: middle; */
         align-items: center;
     }
     .carousel--hero .icon {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
     }
     .carousel--hero .left .icon {
         right: 15px;
@@ -73,13 +43,8 @@
 }
 @media screen and (min-width: 1024px) {
     .carousel-caption {
-        /*margin-left: 7.5%;*/
         margin-left: auto;
-
         margin-right: auto;
     }
-    .carousel--hero .icon {
-        width: 30px;
-        height: 30px;
-    }
+
 }
