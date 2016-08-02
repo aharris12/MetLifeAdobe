@@ -29,10 +29,6 @@
         display: flex;
         align-items: center;
     }
-    .carousel--hero .icon {
-        width: 30px;
-        height: 30px;
-    }
     .carousel--hero .left .icon {
         right: 15px;
     }

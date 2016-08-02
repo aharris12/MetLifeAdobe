@@ -30,15 +30,14 @@
 }
 
 .carousel--hero .icon {
-    width: 30px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
         max-height: 300px;
-        /*        margin-top:-60px;*/
     }
 
     .carousel-caption {
@@ -99,7 +98,8 @@
     }
 
     .carousel--hero .icon{
-        width: 35px;
+        width: 30px;
+        width: 30px;
     }
 
     .carousel-caption {
