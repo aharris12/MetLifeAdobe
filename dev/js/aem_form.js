@@ -771,7 +771,9 @@ SFDC.form.forEach(function (element) {
                             }
                         });
                         url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
+                        console.log(url)
                         data = JSON.stringify(jsonData);
+                        console.log(data)
                     }
 
                     $.ajax({
@@ -780,8 +782,12 @@ SFDC.form.forEach(function (element) {
                         data: data,
                         async: true,
                         type: 'POST',
+                        contentType: "application/json; charset=utf-8",
                         success: function (data, status, xhr) {
-
+                            console.log("data.result ", data.result)
+                            console.log("status", status)
+                            console.log("xhr ", xhr)
+                            console.log("status data.result.toLowerCase()", data.result.toLowerCase())
                             switch (data.result.toLowerCase()) {
                                 case "success":
 
