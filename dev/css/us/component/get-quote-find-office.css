@@ -76,3 +76,22 @@
     }
 
 }
+
+.find-office .btn-group .btn {
+    height: 40px;
+}
+
+.btn-group__icon {
+    top: 34px;
+}
+@media screen and (min-width: 768px) {
+    .btn-group__icon {
+        top: 33px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .btn-group__icon {
+        top: 33px;
+    }
+}
