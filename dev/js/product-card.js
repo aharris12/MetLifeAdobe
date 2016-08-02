@@ -26,18 +26,6 @@ $(".product-card .read-more").click(function (e) {
     $('html, body').animate({scrollTop: $(".faq_background").offset().top - height}, 500);
 });
 
-$(function () {
-    if ($('.product-card .action .btn-brand-2nd').length != 0) {
-        $('.product-card .action .btn-brand-2nd')
-            .filter(function () {
-                return $(this).text().toLowerCase().length >= 12;
-            }).each(function (i) {
-            $(this).css("width", "140px");
-        });
-    }
-});
-
-
 if ($('.product-card').length > 0) {
     $('.product-card p').filter(function (index) {
             return $(this).text().length === 0;
