@@ -1,3 +1,6 @@
 .promocard__content {
     background-color: #3D9CDB;
 }
+.promocard__content__header{
+font-weight: 400;
+}
