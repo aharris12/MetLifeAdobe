@@ -372,6 +372,7 @@
 .microsite-product-chart .product_chart .carousel {
     width: 60%;
     float: right;
+    max-height: none;
 }
 /* line 376, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
