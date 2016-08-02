@@ -85,15 +85,14 @@ function unsubscribeEmailDNSS(form) {
 // End Validations For Unsubscribe Email
 
 function UnsubscribeProcessorSubmit() {
-	var formData = new FormData($('form[name="unsubscribeForm"]')[0]);
+	var formData= $('form[name="unsubscribeForm"]').serialize()
 	var url = $(".email--unsubscribe-form").attr("data-url");
+	console.log(formData)
 	$.ajax({
 		url: url,
 		type: 'POST',
-		dataType: 'json',
 		data: formData,
-		async: true,
-		contentType: 'application/json',
+		contentType: 'application/x-www-form-urlencoded',
 		processData: false,
 		success: function (returndata) {
 			console.log(returndata);
