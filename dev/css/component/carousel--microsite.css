@@ -5,7 +5,7 @@
 }
 
 .carousel--microsite .carousel-indicators--visible {
-    bottom: 140px;
+    top: -25px;
 }
 
 .carousel--microsite .carousel-control {
