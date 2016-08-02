@@ -373,6 +373,7 @@
     width: 60%;
     float: right;
     max-height: none;
+    height: auto;
 }
 /* line 376, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
