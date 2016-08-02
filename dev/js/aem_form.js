@@ -737,7 +737,7 @@ SFDC.form.forEach(function (element) {
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
 
-                        url = '/global-assets/proxy/DirectSFDCProxy.aspx';
+                        url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
                         data = formElement.serialize();
                     } else {
 
@@ -770,7 +770,7 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        url = '/global-assets/proxy/GloballeadUtilityProxy.aspx';
+                        url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
                     }
 
