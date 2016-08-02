@@ -4,7 +4,7 @@
 }
 
 .carousel {
-    max-height: 250px;
+/*    max-height: 250px;*/
     overflow: hidden;
     margin-top: 0;
 }
@@ -37,7 +37,7 @@
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
-        max-height: 300px;
+       /* max-height: 300px;*/
         /*        margin-top:-60px;*/
     }
 
@@ -54,7 +54,7 @@
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
-        max-height: 315px;
+     /*   max-height: 315px;*/
     }
 
     .carousel-indicators {
@@ -109,7 +109,7 @@
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
     .carousel--hero, .carousel--hero .carousel-inner, .carousel--hero .carousel-inner .item {
-        max-height: 400px;
+        /*max-height: 400px;*/
     }
 
     .carousel-caption {
