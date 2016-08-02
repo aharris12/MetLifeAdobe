@@ -26,7 +26,8 @@
 }
 
 .more-content__title {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .more-content__section a:nth-child(3):active, .more-content__section a:nth-child(3):hover  {
@@ -55,14 +56,12 @@
     .more-content__section:last-child {
         margin-right: 0;
     }
-    .more-content__title {
-        line-height: 40px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
     .more-content__title {
         font-size: 26px;
+        line-height: 26px;
     }
 
     .more-content {
