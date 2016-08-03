@@ -3,21 +3,22 @@ var currentView = getViewport();
 var currentSpot = 0;
 //Test comment
 function optionalHeaderCTA() {
-    var fao = $('.find-office__container');
-    var quote = $('.get-quote__container');
-    var promo = $('.cta-promo__container');
-    if (quote.length != 0 && promo.length == 0 &&  fao.length== 0) {
-        console.log("enter")
-        $(".get-quote__container").addClass("noFao");
+    var quoteOfficeLeft = $('.quote-office--left');
+    var quoteOfficeRight = $('.quote-office--right');
+    if(quoteOfficeLeft.find("div").first().hasClass("find-office__container")){
+        quoteOfficeLeft.addClass("light--blue");
+        quoteOfficeRight.addClass("dark--blue");
     }
-    if (fao.length != 0 && quote.length == 0 && promo.length == 0) {
-        $(".find-office__container").addClass("noOffice");
+
+    if (quoteOfficeLeft.length != 0 && quoteOfficeRight.length == 0) {
+        quoteOfficeLeft.addClass("single__fao--container")
     }
-    if (promo.length != 0 && quote.length == 0 &&  fao.length == 0) {
-        $(".find-office__container").addClass("noOffice");
+    if (quoteOfficeRight.length != 0 && quoteOfficeLeft.length == 0) {
+        quoteOfficeRight.addClass("single__fao--container")
     }
+
 }
-$(window).load(function () {
+$(window).ready(function () {
     optionalHeaderCTA();
 });
 //DE8968
@@ -396,6 +397,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','50px');
         $('.contact-trigger').addClass('contact-trigger--minimized');
         $('.megamenu').addClass('megamenu--minimized');
+        $('.suggestionsbox').addClass('suggestionsbox--minimized');
         $('body').css('padding-top', '50px');
         //$('.login-container').addClass('login-container--minimized');
         if ($('.microsite-header').length > 0) {
@@ -412,6 +414,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','70px');
         $('.contact-trigger').removeClass('contact-trigger--minimized');
         $('.megamenu').removeClass('megamenu--minimized');
+        $('.suggestionsbox').removeClass('suggestionsbox--minimized');
         //$('.login-container').removeClass('login-container--minimized');
         headerPosition();
     }

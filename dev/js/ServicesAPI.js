@@ -52,23 +52,67 @@ var radioDials = false;
 
 
 $(document).ready(function () {
-
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
 
 });
-//Contact Forms
 
+
+/****EMAIL UNSUB*************************/
+$(".js-emailUnsub").click(function(){
+	unsubscribeEmailDNSS()
+});
+
+$("#email_unsub").keydown(function(event){
+	if(event.keyCode == 13) {
+		unsubscribeEmailDNSS()
+		return false;
+	}
+});
+
+// Start Validations For Unsubscribe Email
+function unsubscribeEmailDNSS(form) {
+	$("#email_unsub").blur();
+	if($("#email_unsub").hasClass("error")){
+		return false;
+	}else{
+		UnsubscribeProcessorSubmit();
+		return false;
+	}
+}
+// End Validations For Unsubscribe Email
+
+function UnsubscribeProcessorSubmit() {
+	var formData= $('form[name="unsubscribeForm"]').serialize()
+	var url = $(".email--unsubscribe-form").attr("data-url");
+	console.log(formData)
+	$.ajax({
+		url: url,
+		type: 'POST',
+		data: formData,
+		contentType: 'application/x-www-form-urlencoded',
+		processData: false,
+		success: function (returndata) {
+			console.log(returndata);
+			$(".email--unsubscribe-message").toggleClass("hidden");
+			$(".email--unsubscribe-form").hide();
+		},
+		error: function () {
+			console.log("error in ajax form submission");
+		}
+	});
+}
+
+//Contact Forms
 $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 	var radioButton = $(this).siblings('input');
 	if (!radioButton.prop('checked')) {
 		radioButton.prop('checked', true);
 		var radioName = radioButton.prop('name');
 		$('input[name=' + radioName + ']').siblings('svg').toggle();
-	}
-	;
+	};
 });
 
 $('#productPolicy option[value=""]').attr('selected', true);
@@ -203,60 +247,6 @@ $('[data-submit-type="clr"]').on('click', function (e) {
 		//alert("invalid");
 	}
 });
-
-/*$('[data-fsubmit]').on('click', function (e) {
-	e.preventDefault();
-	var $this = $(this);
-	var isValid = ServicesAPI.onFSubmit($(this));
-	if (isValid) {
-		var fid = $this.attr('data-fsubmit');
-		var $formid = $('[data-fid=' + fid + ']');
-		ServicesAPI.postLeadform($formid);
-
-		$formid.find('[data-observes-id]').each(function () {
-			$(this).hide();
-		});
-
-		if (fid == "advisorContactForm" || fid == "advisorContactForm-mob") {
-			$('.aidFormCon').hide();
-			$('.aiwHeading').hide();
-			$('.advisorClose').hide();
-			$('.adImageThankYou').css("display", "table-cell");
-		} else if (fid == "quoteleadform") {
-			$(this).closest('.quote_right_mlt').hide();
-			$(this).closest('.quote_right_sit').hide();
-			$('.quote_results_thank_you').show();
-		} else if (fid == "contactCard") {
-			var temp = "[data-fid='" + fid + "']";
-			//$("[data-fid='contactCard']").hide();
-			$('.contactCard').hide();
-			$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').show();
-			setTimeout(function () {
-				$(temp).parents().find('.contactSideThankyou, .contactOtherDetails').fadeOut('slow', function () {
-					$('.contactCard').show();
-					$('#requestFormContactCard_Acc').trigger("reset");
-					$('.form-minimize').trigger('click');
-				});
-			}, 5000);
-		} else if (fid == "contactSidebarQuote") {
-			$(".results-form__text").addClass("hidden");
-			$(".results-form__inputs").addClass("hidden");
-			$(".apply-disclaimer").addClass("hidden");
-			$(".contact-thanks").removeClass("hidden");
-
-		} else {
-			$('.' + fid).fadeOut('slow', function () {
-				setTimeout(function () {
-					$('.contactSliderOuterCon').fadeOut(2000);
-					$('.contactsClose').trigger('click');
-				}, 5000)
-			});
-		}
-	} else {
-		//alert("invalid");
-	}
-});*/
-//New This should be uncommented once form builder is in palce
 
 $('select[data-required=true]').on('change', function () {
 	$(this).trigger('blur');
@@ -440,23 +430,28 @@ $('.form-user-grp > select').on('blur', function () {
 });
 
 /****Product Selector****************************************/
-$(".product__selector").on("change", function(){
-	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-	$(".js-productSelector").attr("href", productSelectorPage);
-});
 
-/*$(".product__selector").on("change", function () {
+
+$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
-	$(".product__selector--sub").removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
-	$(".product__selector--sub").prop("disabled", true);
-	$(".product__selector--sub").val("")
-	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
-	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
-	$(".js-productSelector").attr("href", "#");
+
+	if($(".product__selector--sub").length > 0) {
+		$(".product__selector--sub").removeClass("error");
+		$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+		$(".product__selector--sub").prop("disabled", true);
+		$(".product__selector--sub").val("")
+		$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+		$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
+		$(".js-productSelector").attr("href", "#");
+	}else{
+		var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+		$(".js-productSelector").attr("href", productSelectorPage);
+	}
+
+
 });
 
 $(".product__selector--sub").on("change", function () {
@@ -468,18 +463,18 @@ $(".product__selector--sub").on("change", function () {
 
 $(".js-productSelector").click(function (e) {
 	var url = $(this).attr("href");
-	if ($(".product__selector").find(':selected').val() == "") {
+	if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
+	if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
 	if (url == "#") {
 		e.preventDefault();
 	}
-});*/
+});
 /****Blog Search****************************************/
 
 
@@ -1677,7 +1672,7 @@ var ServicesAPI = {
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
 
-		/*var siteSearchResults = $.getJSON("search.json", function(json) {
+		var siteSearchResults = $.getJSON("search.json", function(json) {
 		 siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
 		 $('.form-item__display').removeClass('hidden');
@@ -1700,12 +1695,12 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL Site Search SERVICE***************/
 
 
 		/************LIVE Site Search SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1739,7 +1734,7 @@ var ServicesAPI = {
 				ServicesAPI.showSorryUnableToLocateMessage();
 			},
 			timeout: 30000
-		});
+		});*/
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
@@ -1772,6 +1767,7 @@ var ServicesAPI = {
 		newsTopic = $('#list_topics').val();
 		newsConcatenator = $(".lists").attr("data-news-concatenator");
 		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+		console.log(url)
 		ServicesAPI.newsRoomServiceCall(url);
 	},
 	pressBackQuery: function () {
@@ -1794,7 +1790,7 @@ var ServicesAPI = {
 		count = 0;
 		$(".results_content").remove();
 		/************LIVE News Room SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1848,11 +1844,11 @@ var ServicesAPI = {
 				console.log('error ', e);
 			},
 			timeout: 30000
-		});*/
+		});
 		/************LIVE News Room SERVICE***************/
 
 		/************LOCAL News Room SERVICE***************/
-			if($("#list_topics").val() === "Studies"){
+			/*if($("#list_topics").val() === "Studies"){
 				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
@@ -1895,8 +1891,8 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}else if($("#list_topics").val() === "Studies"){
-				var newsRoomResults = $.getJSON("news.json", function (data) {
+			}else if($("#list_topics").val() === "Corporate"){
+				var newsRoomResults = $.getJSON("Corporate.json", function (data) {
 					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 						listCount += 6;
 					}
@@ -1938,8 +1934,265 @@ var ServicesAPI = {
 						$(".divider--load-more__link").show();
 					}
 				});
-			}
+			}else if($("#list_topics").val() === "Financial"){
+				var newsRoomResults = $.getJSON("Financial.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
 
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "Investments"){
+				var newsRoomResults = $.getJSON("Investments.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "Products_and_Services"){
+				var newsRoomResults = $.getJSON("Products_and_Services.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "MetLife_Foundation"){
+				var newsRoomResults = $.getJSON("MetLife_Foundation.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else if($("#list_topics").val() === "CSR_Awards"){
+				var newsRoomResults = $.getJSON("CSR_Awards.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}else{
+				var newsRoomResults = $.getJSON("allNews.json", function (data) {
+					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+						listCount += 6;
+					}
+
+					if (firstTimeRunNewsRoom === true) {
+						firstTimeRunNewsRoom = false;
+					}
+					if (firstTimeRunNewsRoomChange === true) {
+						firstTimeRunNewsRoomChange = false;
+					}
+
+
+					newsRoomResults = data.news;
+					if (newsRoomResults.length != 0) {
+						if (!$(".list__item--no-results").hasClass("hidden")) {
+							$(".list__item--no-results").addClass("hidden");
+						}
+						resultsListHTML += "<div class='results_content'>";
+						for (var i = 0; i < newsRoomResults.length; i++) {
+							totalYears.push(newsRoomResults[i].year);
+							totalMonths.push(newsRoomResults[i].month);
+							count++;
+							if (count <= listCount) {
+								resultsListHTML += "<div class=\"list__item\">";
+								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+								resultsListHTML += "</div>";
+							}
+						}
+						resultsListHTML += "</div>";
+						ServicesAPI.createPagination(count);
+						$(resultsListHTML).insertAfter($(".lists"));
+					} else {
+						$(".list__item--no-results").removeClass('hidden');
+					}
+					if (listCount >= newsRoomResults.length) {
+						$(".divider--load-more__link").hide();
+					} else {
+						$(".divider--load-more__link").show();
+					}
+				});
+			}*/
 		/************LOCAL News Room SERVICE***************/
 	},
 	newsRoomTopicsChange: function(){
@@ -3547,5 +3800,49 @@ var ServicesAPI = {
 		}
 
 
+	},
+	emailUnsub: function(){
+		if($("#email_unsub").hasClass("error")){
+			return false;
+		}else{
+			var ajaxUrl = $(".email--unsubscribe-form").attr("data-url");
+			var jsonData = {};
+			var formData = $('form[name="unsubscribeForm"]').serializeArray();
+			$.each(formData, function () {
+				if (jsonData[this.name]) {
+					if (!jsonData[this.name].push) {
+						jsonData[this.name] = [jsonData[this.name]];
+					}
+					jsonData[this.name].push(this.value || '');
+				} else {
+
+					jsonData[this.name] = this.value || '';
+					if (!jsonData[this.name].push) {
+						if (this.name == "prodInt" || this.name == "prodInterest") {
+							jsonData[this.name] = [jsonData[this.name]];
+						}
+					}
+				}
+			});
+			console.log(ajaxUrl)
+			console.log(JSON.stringify(jsonData));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				dataType: 'json',
+				data: JSON.stringify(jsonData),
+				async: true,
+				contentType: 'application/json',
+				processData: false,
+				success: function (returndata) {
+					console.log(returndata);
+					$(".email--unsubscribe--container").toggleClass("hidden");
+					$(".email--unsubscribe-form").hide();
+				},
+				error: function () {
+					console.log("error in ajax form submission");
+				}
+			});
+		}
 	}
 };

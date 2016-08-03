@@ -83,7 +83,7 @@ module.exports = function (grunt) {
                     'dev/css/component/oo_style.css',
                     'dev/css/component/feedback.css',
                     'dev/css/component/404.css',
-                    'dev/css/component/email-unsub.css',
+                    'dev/css/component/email-unsubscribe.css',
                     'dev/css/component/fax.css',
                     'dev/css/component/glossary.css',
                     'dev/css/component/life-insurance-quote.css',
@@ -99,6 +99,95 @@ module.exports = function (grunt) {
 
                 ],
                 dest: 'dist/css/metlife.css'
+            },
+            cssUS: {
+                src: [
+                    'dev/css/theme/bootstrap-metlife.css',
+                    'dev/css/theme/icon-metlife.css',
+                    'dev/css/theme/form-metlife.css',
+                    'dev/css/theme/utility.css',
+                    'dev/css/theme/layout.css',
+                    'dev/css/theme/main.css',
+                    'dev/css/theme/button.css',
+                    'dev/css/theme/pagination.css',
+                    'dev/css/component/global-header.css',
+                    'dev/css/component/login-popout.css',
+                    'dev/css/component/breadcrumb.css',
+                    'dev/css/component/homepage-nav.css',
+                    'dev/css/component/get-quote-find-office.css',
+                    'dev/css/component/divider-scroll-to.css',
+                    'dev/css/component/divider-snoopy.css',
+                    'dev/css/component/carousel--hero.css',
+                    'dev/css/component/carousel--tabs.css',
+                    'dev/css/component/promo-card.css',
+                    'dev/css/component/disclaimer.css',
+                    'dev/css/component/media-contact.css',
+                    'dev/css/component/subnavigation.css',
+                    'dev/css/component/product-module.css',
+                    'dev/css/component/article-list.css',
+                    'dev/css/component/optional-image.css',
+                    'dev/css/component/product-comparison-chart.css',
+                    'dev/css/component/table-variations.css',
+                    'dev/css/component/microsite-header.css',
+                    'dev/css/component/microsite-page-footer.css',
+                    'dev/css/component/carousel--microsite.css',
+                    'dev/css/component/product-tile.css',
+                    'dev/css/component/article.css',
+                    'dev/css/component/media-card.css',
+                    'dev/css/component/office-search.css',
+                    'dev/css/component/contextual-links.css',
+                    'dev/css/component/cta-box.css',
+                    'dev/css/component/content-header.css',
+                    'dev/css/component/section-header.css',
+                    'dev/css/component/contact.css',
+                    'dev/css/component/form-card.css',
+                    'dev/css/component/video-text.css',
+                    'dev/css/component/accordion.css',
+                    'dev/css/component/global-footer.css',
+                    'dev/css/component/divider-load-more.css',
+                    'dev/css/component/subnavigationwithgoback.css',
+                    'dev/css/component/product-card.css',
+                    'dev/css/component/quote-result-card.css',
+                    'dev/css/component/contact-form.css',
+                    'dev/css/component/privacy-policy-index.css',
+                    'dev/css/component/privacy-policy-section.css',
+                    'dev/css/component/search-results.css',
+                    'dev/css/component/hp-contextual-links.css',
+                    'dev/css/component/search-suggestions-box.css',
+                    'dev/css/component/cta-quote-tool.css',
+                    'dev/css/component/quote-tool.css',
+                    'dev/css/component/view-all-rates.css',
+                    'dev/css/component/cookie-banner.css',
+                    'dev/css/component/carousel--blog.css',
+                    'dev/css/component/article-list--blog.css',
+                    'dev/css/component/sidebar--blog.css',
+                    'dev/css/component/category--blog.css',
+                    'dev/css/component/additional-content--blog.css',
+                    'dev/css/component/title-post--blog.css',
+                    'dev/css/component/post--blog.css',
+                    'dev/css/component/post-social--blog.css',
+                    'dev/css/component/campaign-footer.css',
+                    'dev/css/component/campaign-header.css',
+                    'dev/css/component/campaign-card.css',
+                    'dev/css/component/oo_style.css',
+                    'dev/css/component/feedback.css',
+                    'dev/css/component/404.css',
+                    'dev/css/component/email-unsubscribe.css',
+                    'dev/css/component/fax.css',
+                    'dev/css/component/glossary.css',
+                    'dev/css/component/life-insurance-quote.css',
+                    'dev/css/component/options-small.css',
+                    'dev/css/component/overlay.css',
+                    'dev/css/component/sitemap.css',
+                    'dev/css/component/share-chat.css',
+                    'dev/css/component/visiondental-overlay.css',
+                    'dev/css/component/inview.css',
+                    'dev/css/component/tooltipster.css',
+                    'dev/css/component/generic-content.css',
+                    'dev/css/us/component/*.css',
+                    'dev/css/theme/ie9select.css'
+                ],
+                dest: 'dist/css/metlife.us.css'
             },
             vendors: {
                 src: [
@@ -282,7 +371,7 @@ module.exports = function (grunt) {
                         'dev/css/component/oo_style.css',
                         'dev/css/component/feedback.css',
                         'dev/css/component/404.css',
-                        'dev/css/component/email-unsub.css',
+                        'dev/css/component/email-unsubscribe.css',
                         'dev/css/component/fax.css',
                         'dev/css/component/glossary.css',
                         'dev/css/component/life-insurance-quote.css',
@@ -294,14 +383,100 @@ module.exports = function (grunt) {
                         'dev/css/component/inview.css',
                         'dev/css/component/tooltipster.css',
                         'dev/css/component/generic-content.css',
-                        'dev/css/component/generic-content.css',
                         'dev/css/theme/ie9select.css'
 
 
+                    ],
+                    'dist/css/metlife.us.min.css': [
+                        'dev/css/theme/bootstrap-metlife.css',
+                        'dev/css/theme/icon-metlife.css',
+                        'dev/css/theme/form-metlife.css',
+                        'dev/css/theme/utility.css',
+                        'dev/css/theme/layout.css',
+                        'dev/css/theme/main.css',
+                        'dev/css/theme/button.css',
+                        'dev/css/theme/pagination.css',
+                        'dev/css/component/global-header.css',
+                        'dev/css/component/login-popout.css',
+                        'dev/css/component/breadcrumb.css',
+                        'dev/css/component/homepage-nav.css',
+                        'dev/css/component/get-quote-find-office.css',
+                        'dev/css/component/divider-scroll-to.css',
+                        'dev/css/component/divider-snoopy.css',
+                        'dev/css/component/carousel--hero.css',
+                        'dev/css/component/carousel--tabs.css',
+                        'dev/css/component/promo-card.css',
+                        'dev/css/component/disclaimer.css',
+                        'dev/css/component/media-contact.css',
+                        'dev/css/component/subnavigation.css',
+                        'dev/css/component/product-module.css',
+                        'dev/css/component/article-list.css',
+                        'dev/css/component/optional-image.css',
+                        'dev/css/component/product-comparison-chart.css',
+                        'dev/css/component/table-variations.css',
+                        'dev/css/component/microsite-header.css',
+                        'dev/css/component/microsite-page-footer.css',
+                        'dev/css/component/product-tile.css',
+                        'dev/css/component/article.css',
+                        'dev/css/component/media-card.css',
+                        'dev/css/component/office-search.css',
+                        'dev/css/component/contextual-links.css',
+                        'dev/css/component/cta-box.css',
+                        'dev/css/component/content-header.css',
+                        'dev/css/component/section-header.css',
+                        'dev/css/component/contact.css',
+                        'dev/css/component/form-card.css',
+                        'dev/css/component/video-text.css',
+                        'dev/css/component/accordion.css',
+                        'dev/css/component/global-footer.css',
+                        'dev/css/component/divider-load-more.css',
+                        'dev/css/component/subnavigationwithgoback.css',
+                        'dev/css/component/product-card.css',
+                        'dev/css/component/quote-result-card.css',
+                        'dev/css/component/contact-form.css',
+                        'dev/css/component/privacy-policy-index.css',
+                        'dev/css/component/privacy-policy-section.css',
+                        'dev/css/component/search-results.css',
+                        'dev/css/component/hp-contextual-links.css',
+                        'dev/css/component/search-suggestions-box.css',
+                        'dev/css/component/cta-quote-tool.css',
+                        'dev/css/component/quote-tool.css',
+                        'dev/css/component/view-all-rates.css',
+                        'dev/css/component/cookie-banner.css',
+                        'dev/css/component/carousel--blog.css',
+                        'dev/css/component/carousel--microsite.css',
+                        'dev/css/component/article-list--blog.css',
+                        'dev/css/component/sidebar--blog.css',
+                        'dev/css/component/category--blog.css',
+                        'dev/css/component/additional-content--blog.css',
+                        'dev/css/component/title-post--blog.css',
+                        'dev/css/component/post--blog.css',
+                        'dev/css/component/post-social--blog.css',
+                        'dev/css/component/campaign-footer.css',
+                        'dev/css/component/campaign-header.css',
+                        'dev/css/component/campaign-card.css',
+                        'dev/css/component/oo_style.css',
+                        'dev/css/component/feedback.css',
+                        'dev/css/component/404.css',
+                        'dev/css/component/email-unsubscribe.css',
+                        'dev/css/component/fax.css',
+                        'dev/css/component/glossary.css',
+                        'dev/css/component/life-insurance-quote.css',
+                        'dev/css/component/options-small.css',
+                        'dev/css/component/overlay.css',
+                        'dev/css/component/sitemap.css',
+                        'dev/css/component/share-chat.css',
+                        'dev/css/component/visiondental-overlay.css',
+                        'dev/css/component/inview.css',
+                        'dev/css/component/tooltipster.css',
+                        'dev/css/component/generic-content.css',
+                        'dev/css/us/component/*.css',
+                        'dev/css/theme/ie9select.css'
                     ]
                 }
             }
         }, //cssmin
+
 
         css_import: {
             your_target: {
@@ -330,7 +505,7 @@ module.exports = function (grunt) {
                 options: {
                     process: true,
                     data: {
-                        message: '<!-- Packaged on <%= grunt.template.today("mm/dd/yyyy @HH:MM:ss") %> by <%= pkg.author.name %> --><meta name="format-detection" content="telephone=no">'
+                        message: ''
                     },
                 },
                 files: [
@@ -344,6 +519,7 @@ module.exports = function (grunt) {
                 ],
             }
         }, //processhtml
+
 
         compress: {
             main: {
@@ -364,7 +540,7 @@ module.exports = function (grunt) {
                 options: {
                     replacements: [{
                         pattern: /images/g,
-                        replacement: '/static/images/'
+                        replacement: '/static/images'
                     }
                     ]
                 }
@@ -383,6 +559,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-css-import');
     grunt.loadNpmTasks('grunt-cssjoin');
     grunt.loadNpmTasks('grunt-string-replace');
-    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','string-replace','compress']);
+    //grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','copy','string-replace','compress']);
+    grunt.registerTask('default', ['concat', 'uglify', 'cssmin','processhtml','string-replace']);
 
 }; //wrapper function

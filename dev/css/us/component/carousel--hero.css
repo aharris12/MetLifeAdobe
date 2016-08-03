@@ -1,0 +1,46 @@
+.carousel-caption--hero {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 5px auto;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        margin-left: 40px;
+        text-align: left;
+        width: 85%;
+        max-width: 1300px;
+        padding: 0;
+        display: flex;
+    }
+
+    .carousel-caption--hero {
+        font-size: 3.4vw;
+        line-height: 3.7vw;
+        padding-bottom: 95px;
+        height: 400px;
+        width: 60%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    .carousel--hero .left .icon {
+        right: 15px;
+    }
+
+    .carousel--hero .right .icon {
+        left: 15px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .carousel-caption {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
