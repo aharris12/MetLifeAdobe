@@ -733,11 +733,12 @@ SFDC.form.forEach(function (element) {
                     var jsonData = {};
                     var formData;
 
-                    var url;
+                    var url = $(".generic-form").attr("data-url");
+                    console.log(url)
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
 
-                        url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+                        //url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
                         data = formElement.serialize();
                     } else {
 
@@ -770,8 +771,8 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
-                        console.log(url)
+                        //url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
+
                         data = JSON.stringify(jsonData);
                         console.log(data)
                     }
