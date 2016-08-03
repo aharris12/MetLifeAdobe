@@ -5395,7 +5395,7 @@ a:visited {
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
-         max-height: 315px;
+        max-height: 315px;
     }
     .carousel-inner > .item > a > img {
         max-height: 315px;
@@ -5410,7 +5410,7 @@ a:visited {
     }
 
     .carousel-control {
-        padding-top: 100px;
+        padding-top: 120px;
     }
 
     .carousel-caption--hero {
@@ -5473,10 +5473,6 @@ a:visited {
 @media screen and (min-width: 1900px) {
     .carousel {
         height: 400px;
-    }
-
-    .carousel--hero .icon {
-        font-size: 3vw;
     }
 }
 /* 
@@ -7021,7 +7017,7 @@ ol.promocard_content__list li:after {
 .chart_check{
     max-width: 25px;
     height: auto;
-} 
+}
 .product-comparison-chart-description{
     margin-top: 30px;
     padding-bottom:0;
@@ -7465,7 +7461,7 @@ ol.promocard_content__list li:after {
     position:relative;
     top: 50%;
 }
-    /* line 438, ../../../sass/_productComparisonChartMobile.scss */
+/* line 438, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .col2 {
     float: right;
 }
@@ -7477,6 +7473,14 @@ ol.promocard_content__list li:after {
 .microsite-product-chart .mcc2:nth-last-child(2) {
     width: 50%;
     float: right;
+}
+
+.microsite-product-chart .carousel--microsite .carousel-inner{
+    height: auto
+}
+
+.microsite-product-chart .carousel--microsite:after{
+    height: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -8597,9 +8601,11 @@ body{
     height: 100%;
 }
 
-.carousel--microsite .carousel-control svg {
-    position: relative;
+.carousel--microsite .carousel-control .icon {
+    width: 24px;
+    height: 24px;
 }
+
 .carousel--microsite .carousel-caption {
     bottom: 0;
     padding: 15px 0;
@@ -8618,8 +8624,9 @@ body{
 .carousel-indicators--visible {
     display: block;
 }
+
 .carousel-caption--bottom {
-    background-color: rgba(35,119,197,1);
+    background-color: rgba(35, 119, 197, 1);
     top: auto;
     position: relative;
 }
@@ -8660,10 +8667,12 @@ body{
     .carousel-caption--bottom {
         background-color: rgba(35, 119, 197, 0.7);
     }
+
     .carousel--microsite {
         max-height: none;
         margin-bottom: 30px
     }
+
     .carousel--microsite:after {
         background-color: #efefef;
         position: absolute;
@@ -8672,64 +8681,91 @@ body{
         right: 0;
         height: 30px;
     }
-    .carousel--microsite .carousel-caption{
+
+    .carousel--microsite .carousel-caption {
         padding: 15px 0 30px;
         position: absolute;
     }
-    .carousel--microsite .carousel-indicators--visible{
+
+    .carousel--microsite .carousel-indicators--visible {
         position: absolute;
         top: 75%;
     }
+
     .carousel--microsite .carousel-indicators--visible li {
         background: #B6D1EB;
         border-color: #B6D1EB;
     }
+
     .carousel--microsite .carousel-indicators--visible li.active {
         background: #fff;
         border-color: #fff;
     }
+
     .item--microsite {
-        max-height:425px;
+        max-height: 425px;
     }
+
     .carousel-caption--bottom {
         padding: 30px 0 20px;
         position: absolute;
     }
-    .carousel--microsite .carousel-control svg {
-        top: 0;
-        width: 40px;
-        height: 30px;
+
+    .carousel--microsite .carousel-control {
+        padding-top: 176px;
     }
+
+    .carousel--microsite .carousel-control .icon {
+        top: 0;
+    }
+
     .carousel--microsite .carousel-inner {
         height: 400px;
     }
+
     .item--microsite img {
         min-height: 400px;
     }
+
     .carousel-caption--bottom h2 {
         width: 80%;
         font-size: 20px;
         line-height: 24px;
     }
 }
+
 @media screen and (min-width: 1024px) {
 
     .item--microsite {
-        max-height:450px;
+        max-height: 450px;
     }
+
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
     }
-    .carousel--microsite .carousel-caption{
+
+    .carousel--microsite .carousel-control {
+        padding-top: 170px;
+    }
+
+    .carousel--microsite .carousel-control .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel--microsite .carousel-caption {
         padding: 15px 0 35px;
     }
+
     .carousel-caption--bottom {
         padding: 30px 0 20px;
     }
+
     .carousel-caption--bottom h2 {
         font-size: 28px;
         line-height: 32px;
     }
+
     .carousel-caption--bottom h3 {
         font-size: 18px;
         line-height: 26px;
@@ -8737,14 +8773,14 @@ body{
 }
 
 @media screen and (min-width: 1280px) {
-    .item--microsite{
-        max-height:500px;
+    .item--microsite {
+        max-height: 500px;
     }
 }
 
 @media screen and (min-width: 1900px) {
-    .item--microsite{
-        max-height:560px;
+    .item--microsite {
+        max-height: 560px;
     }
 }
 .product-row {
