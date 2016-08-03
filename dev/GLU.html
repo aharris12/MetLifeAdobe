@@ -139,7 +139,7 @@
 
 
 			<form class="generic-form userForm" name="contact-us-form" enctype="multipart/form-data" action=""
-			      method="post" data-fid="contactSidebar" data-form-Type="glu" data-url="https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead">
+			      method="post" data-fid="contactSidebar" data-form-Type="glu">
 				<input type="hidden" id="form_fields" name="form_fields"
 				       value="FirstName,LastName,BirthDate,AddrLine,PhNum,MobileNumber,PrefComm,City,PartyTypeCode,LeadBasedOn,GovtID,PolicyNum,EmployerName,EmployerSize,LeadDesc">
 				<input type="hidden" id="request_type" name="request_type" value="Lead">
@@ -701,7 +701,7 @@
                 </svg></span>
 				<span class="form__title white">Contactanos</span>
 				<span class="form__subtitle hidden-field">*campos obligatorios</span>
-				<form class="generic-form userForm" name="contact-us-form" enctype="multipart/form-data" action=""
+				<form class="generic-form userForm" id="contactCard" name="contact-us-form" enctype="multipart/form-data" action=""
 				      method="post" data-fid="contactAdvisor" data-form-Type="glu" data-url="https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead">
 					<input type="hidden" id="form_fields" name="form_fields"
 					       value="FirstName,LastName,BirthDate,AddrLine,PhNum,MobileNumber,PrefComm,City,PartyTypeCode,LeadBasedOn,GovtID,PolicyNum,EmployerName,EmployerSize,LeadDesc">
@@ -1261,6 +1261,7 @@
 <script src="js/variable.js"></script>
 <script src="js/tooltip-custom.js"></script>
 <script src="js/utility.js"></script>
+<script src="js/ServicesAPI.js"></script>
 <script src="js/global-header.js"></script>
 <script src="js/global-footer.js"></script>
 <script src="js/homepage-nav.js"></script>

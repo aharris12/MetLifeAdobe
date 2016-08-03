@@ -25,6 +25,10 @@ function gluIsDown(){
         formSubmissiontype = $(this).attr('data-form-Type');
     });
 }
+var thisForm;
+$(".form-submit").click(function(){
+    thisForm = $(this).attr("data-fsubmit");
+});
 
 $(document).ready(function(){
     gluIsDown();
@@ -734,11 +738,10 @@ SFDC.form.forEach(function (element) {
                     var formData;
 
                     var url = $(".generic-form").attr("data-url");
-                    console.log(url)
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
 
-                        //url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+                        url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
                         data = formElement.serialize();
                     } else {
 
@@ -771,12 +774,11 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        //url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
+                        url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
 
                         data = JSON.stringify(jsonData);
-                        console.log(data)
                     }
-
+console.log(url)
                     $.ajax({
                         url: url,
                         dataType: 'json',
@@ -785,10 +787,6 @@ SFDC.form.forEach(function (element) {
                         type: 'POST',
                         contentType: "application/json; charset=utf-8",
                         success: function (data, status, xhr) {
-                            console.log("data.result ", data.result)
-                            console.log("status", status)
-                            console.log("xhr ", xhr)
-                            console.log("status data.result.toLowerCase()", data.result.toLowerCase())
                             switch (data.result.toLowerCase()) {
                                 case "success":
 
@@ -1030,16 +1028,17 @@ SFDC.form.forEach(function (element) {
     });
 
     // Closes Form
-    parent.find(".contact-close").on('click', function (evt) {
+    parent.find(".contact-close, .form-minimize").on('click', function (evt) {
         evt.preventDefault();
         formReset(parent, element.fields);
+        //ServicesAPI.resetForm(thisForm)
         parent.find('.form-submit').removeClass("disabled").html(submitText);
     });
 });
 
 /***** Validations **************************************************/
 // Contact Form Validatons
-/*if ($(".generic-form").length > 0) {
+if ($(".generic-form").length > 0) {
     // Validation for Select Fields
     $('select[data-required=true]').on({
         change: function (evt) {
@@ -1093,153 +1092,45 @@ SFDC.form.forEach(function (element) {
         parent.find(".user-checkbox").removeClass('error');
         parent.find(".errorSpan").hide();
     });
-}*/
-/***** Validations **************************************************/
-
-
-/***** Contact Us and Privacy Forms *********************************/
-// Sets the resize for label height
-/*
-if ($(".contact-privacy").length > 0) {
-    contactAboutFromLayout();
 }
-*/
-
-// Initialization for contact form text areas
-/*function contactAboutFromLayout() {
-    // text areas
-    $(".generic-form .formTextarea").closest(".form-hidden, .form-focus").css("width", "100%");
-
-    // terms and conditions
-    $(".generic-form .termsCondition").closest(".form-hidden, .form-focus").css("width", "100%");
-}*/
-/***** Contact Us and Privacy Forms *********************************/
-
-
-/***** Contact Rep with Image ***************************************/
-// Sets the resize for form with contact image
-/*$(window).load(function () {
-    if ($(".contact-rep-with-image").length > 0) {
-        contactRepWithImageSize();
-
-        $(window).on("resize", function () {
-            contactRepWithImageSize();
-        });
-    }
-});*/
-
-// Resize form image
-/*function contactRepWithImageSize() {
-    var parent = $(".contact-rep-with-image");
-    var form = parent.find(".contact-lead-form");
-    var image = parent.find(".image");
-    var img = image.find("img");
-
-    if (image.is(":visible") && form.hasClass("form-off")) {
-        image.height(form.outerHeight());
-    }
-
-    img.css({'height': '100%', 'width': 'auto'});
-
-    if (image.width() > img.width()) {
-        img.css({'height': 'auto', 'width': '100%'});
-    }
-}*/
-/***** Contact Rep with Image ***************************************/
-
-
-/***** Quote Form ***************************************************/
-/*$(document).ready(function () {
-    $(function () {
-        $(document).on('click', 'input[type=text]', function () {
-            this.select();
-        });
-    });
-
-    // CTA Header Quote Tool
-    if ($(".cta_header_quote").length > 0) {
-        $('.insurance-cta-type-switch').prop('selectedIndex', 0);
-        $('.insurance-product-switch').attr("disabled", true);
-        $(".cta_header_quote").find(".select_wrapper").on("change", function () {
-            quoteFormReset();
-            $(".cta_header_quote").find(".generic-form select").each(function () {
-                var defval = $(this).attr("data-default-val");
-                $(this).find("option").each(function () {
-                    if (this.value == defval) {
-                        $(this).parent("select").val(defval);
-                        return false;
-                    } else {
-                        $(this).parent("select").prop("selectedIndex", 0);
-                    }
-                });
-            });
-        });
-        $(".insurance-cta-type-switch").on("change", function () {
-            $('.insurance-product-switch').attr("disabled", false);
-
-            var productSwitch = $('.insurance-cta-type-switch').val();
-            $('.select-insurance-product').addClass('hidden');
-            $('.' + productSwitch).closest('.select-insurance-product').removeClass('hidden');
-            $('.select-insurance-product').next('button').removeClass('hidden');
-            $('.select-insurance-product').css('padding-right', '20px');
-            $('.select-insurance-product').removeClass('col-xs-12');
-            $('.select-insurance-product').addClass('col-xs-10');
-            $('.quote-tool-form form').addClass('hidden');
-            $('.insurance-product-switch').prop('selectedIndex', 0);
-
-            $('.' + productSwitch).change(function () {
-                if ($(this).find("option:selected").attr("data-form-route") != null && $(this).find("option:selected").attr("data-form-route") != "") {
-                    window.location.href = $(this).find("option:selected").attr("data-form-route");
-                }
-                var formToShow = $(this).val();
-                $(this).closest('.select-insurance-product').removeClass('col-xs-10');
-                $(this).closest('.select-insurance-product').addClass('col-xs-12');
-                $('.select-insurance-product').next('button').addClass('hidden');
-                $(this).closest('.select-insurance-product').css('padding-right', '0');
-                $(".quote-tool-form form").hide();
-
-                //All forms for this page will have a hidden class on them by default...therefore we have remove the hidden
-                //class on the form that corresponds to the product selected on the dropdown menu
-                if ($("#" + formToShow).hasClass("hidden")) {
-                    $("#" + formToShow).removeClass("hidden");
-                }
-                $("#" + formToShow).show();
-                $(".generic-form").trigger("reset");
-            });
-        });
-        //$(".cta_header_quote #insurance-type").prop("selectedIndex", 0);
-    }
-
-});*/
-
-
+/***** Validations **************************************************/
 
 
 
 /***** Form Functions ***********************************************/
 // Resets contact forms
-/*function formReset(parent, fields) {
-    parent.addClass('form-off');
-    parent.children().removeAttr("style");
-    parent.find("input, select, textarea").removeClass('error');
-    parent.find(".errorSpan").hide();
-    parent.find('.generic-form')[0].reset();
+function formReset(parent, fields) {
+ /*   parent.addClass('form-off');
+     parent.children().removeAttr("style");
+     parent.find("input, select, textarea").removeClass('error');
+     parent.find(".errorSpan").hide();
+     parent.find('.generic-form')[0].reset();
 
-    if (parent.hasClass("contact-image")) {
-        contactRepWithImageSize();
-    }
+     if (parent.hasClass("contact-image")) {
+     formCardExpand();
+     }*/
 
+    ServicesAPI.resetForm(thisForm)
     // Hide hidden fields
     for (var i = 0; i < fields.length; i++) {
         var field = fields[i];
         if (field.hidden) {
-            parent.find('#' + field.id).closest('.form-focus, .form-hidden').hide();
+            parent.find('#' + field.id).closest('.form-focus, .form-hidden, .hidden-field').hide();
         }
     }
-}*/
+    $(".generic-form").trigger("reset")
+    if (parent.hasClass("contactAdvisor")) {
+        $(".contactCard").show();
+        setTimeout(function () {
+            var h = $('.contact-container--form-card').outerHeight();
+            $('.form-card__img__inner').css('height', h + 'px');
+        }, 01)
+    }
+}
 
 // Displays thank you/error message for contact forms
 function formMessage(parent, status) {
+
     var message;
     if (status == "thanks") {
         message = parent.find(".contactSideThankyou");
@@ -1248,14 +1139,16 @@ function formMessage(parent, status) {
     }
     message.siblings(":visible").fadeOut('slow', function () {
         message.css("display", "table-cell");
+        var h = $('.contact-container--form-card').outerHeight();
+        $('.form-card__img__inner').css('height', h + 'px');
         setTimeout(function () {
-            if (parent.parent().hasClass("contactSliderOuterCon")) {
-                $('.contactSliderOuterCon').fadeOut(800, function () {
+            if (parent.hasClass("contactSliderOuterCon")) {
+                $('.contactSideForm').fadeOut(800, function () {
                     parent.find(".contact-close").trigger("click");
                 });
-            } else if (parent.parent().hasClass("about-contact-us-form")) {
+            } else if (parent.hasClass("contactAdvisor")) {
                 message.fadeOut(800, function () {
-                    parent.find(".contact-close").trigger("click");
+                    parent.find(".form-minimize").trigger("click");
                 });
             }
         }, 5000)
@@ -1311,4 +1204,124 @@ function maskInput(event, input, textbox, location, delimiter) {
     // Reverse a jQuery array of elements
     $.fn.reverse = [].reverse;
 }(jQuery));
+
+
+
+
+
+/***** Contact Us and Privacy Forms *********************************/
+// Sets the resize for label height
+/*
+ if ($(".contact-privacy").length > 0) {
+ contactAboutFromLayout();
+ }
+ */
+
+// Initialization for contact form text areas
+/*function contactAboutFromLayout() {
+ // text areas
+ $(".generic-form .formTextarea").closest(".form-hidden, .form-focus").css("width", "100%");
+
+ // terms and conditions
+ $(".generic-form .termsCondition").closest(".form-hidden, .form-focus").css("width", "100%");
+ }*/
+/***** Contact Us and Privacy Forms *********************************/
+
+
+/***** Contact Rep with Image ***************************************/
+// Sets the resize for form with contact image
+/*$(window).load(function () {
+ if ($(".contact-rep-with-image").length > 0) {
+ contactRepWithImageSize();
+
+ $(window).on("resize", function () {
+ contactRepWithImageSize();
+ });
+ }
+ });*/
+
+// Resize form image
+/*function contactRepWithImageSize() {
+ var parent = $(".form-card");
+ var form = parent.find(".contact-container--form-card");
+ var image = parent.find(".form-card__img__inner");
+ var img = image.find("img");
+
+ if (image.is(":visible") && form.hasClass("form-off")) {
+ image.height(form.outerHeight());
+ }
+
+ img.css({'height': '100%', 'width': 'auto'});
+
+ if (image.width() > img.width()) {
+ img.css({'height': 'auto', 'width': '100%'});
+ }
+ }*/
+/***** Contact Rep with Image ***************************************/
+
+
+/***** Quote Form ***************************************************/
+/*$(document).ready(function () {
+ $(function () {
+ $(document).on('click', 'input[type=text]', function () {
+ this.select();
+ });
+ });
+
+ // CTA Header Quote Tool
+ if ($(".cta_header_quote").length > 0) {
+ $('.insurance-cta-type-switch').prop('selectedIndex', 0);
+ $('.insurance-product-switch').attr("disabled", true);
+ $(".cta_header_quote").find(".select_wrapper").on("change", function () {
+ quoteFormReset();
+ $(".cta_header_quote").find(".generic-form select").each(function () {
+ var defval = $(this).attr("data-default-val");
+ $(this).find("option").each(function () {
+ if (this.value == defval) {
+ $(this).parent("select").val(defval);
+ return false;
+ } else {
+ $(this).parent("select").prop("selectedIndex", 0);
+ }
+ });
+ });
+ });
+ $(".insurance-cta-type-switch").on("change", function () {
+ $('.insurance-product-switch').attr("disabled", false);
+
+ var productSwitch = $('.insurance-cta-type-switch').val();
+ $('.select-insurance-product').addClass('hidden');
+ $('.' + productSwitch).closest('.select-insurance-product').removeClass('hidden');
+ $('.select-insurance-product').next('button').removeClass('hidden');
+ $('.select-insurance-product').css('padding-right', '20px');
+ $('.select-insurance-product').removeClass('col-xs-12');
+ $('.select-insurance-product').addClass('col-xs-10');
+ $('.quote-tool-form form').addClass('hidden');
+ $('.insurance-product-switch').prop('selectedIndex', 0);
+
+ $('.' + productSwitch).change(function () {
+ if ($(this).find("option:selected").attr("data-form-route") != null && $(this).find("option:selected").attr("data-form-route") != "") {
+ window.location.href = $(this).find("option:selected").attr("data-form-route");
+ }
+ var formToShow = $(this).val();
+ $(this).closest('.select-insurance-product').removeClass('col-xs-10');
+ $(this).closest('.select-insurance-product').addClass('col-xs-12');
+ $('.select-insurance-product').next('button').addClass('hidden');
+ $(this).closest('.select-insurance-product').css('padding-right', '0');
+ $(".quote-tool-form form").hide();
+
+ //All forms for this page will have a hidden class on them by default...therefore we have remove the hidden
+ //class on the form that corresponds to the product selected on the dropdown menu
+ if ($("#" + formToShow).hasClass("hidden")) {
+ $("#" + formToShow).removeClass("hidden");
+ }
+ $("#" + formToShow).show();
+ $(".generic-form").trigger("reset");
+ });
+ });
+ //$(".cta_header_quote #insurance-type").prop("selectedIndex", 0);
+ }
+
+ });*/
+
 
