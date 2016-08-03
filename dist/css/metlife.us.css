@@ -5372,15 +5372,14 @@ a:visited {
 }
 
 .carousel--hero .icon {
-    width: 30px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
         max-height: 300px;
-        /*        margin-top:-60px;*/
     }
 
     .carousel-caption {
@@ -5396,12 +5395,14 @@ a:visited {
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
+         max-height: 315px;
+    }
+    .carousel-inner > .item > a > img {
         max-height: 315px;
     }
-
     .carousel-indicators {
         display: block;
-        bottom: 27.5%;
+        bottom: 30%;
     }
 
     .carousel-caption {
@@ -5426,16 +5427,21 @@ a:visited {
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-   /* .carousel-inner > .item > a > img {
+    .carousel-indicators {
+        display: block;
+        bottom: 27.5%;
+    }
+    .carousel-inner > .item > a > img {
         max-height: 400px;
-    }*/
+    }
 
     .carousel {
         max-height: 400px;
     }
 
     .carousel--hero .icon{
-        width: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .carousel-caption {
@@ -7386,6 +7392,8 @@ ol.promocard_content__list li:after {
 .microsite-product-chart .product_chart .carousel {
     width: 60%;
     float: right;
+    max-height: none;
+    height: auto;
 }
 /* line 376, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
@@ -8594,28 +8602,42 @@ body{
 }
 .carousel--microsite .carousel-caption {
     bottom: 0;
+    padding: 15px 0;
+}
+
+.carousel--microsite .carousel-indicators--visible li {
+    background-color: #fff;
+    border-color: #fff;
+    opacity: 0.5;
+}
+
+.carousel--microsite .carousel-indicators--visible li.active {
+    opacity: 1;
 }
 
 .carousel-indicators--visible {
     display: block;
 }
 .carousel-caption--bottom {
-    background-color: rgba(35,119,197,0.7);
+    background-color: rgba(35,119,197,1);
     top: auto;
     position: relative;
 }
 
 .carousel-caption--bottom h2 {
-    margin-bottom: 0px;
-    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 22px;
+    font-weight: 300;
+    width: 90%;
 }
 
 .carousel-caption--bottom h3 {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 30px;
+    font-weight: 300;
+    width: 90%;
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 480px) {
@@ -8635,7 +8657,9 @@ body{
 }
 
 @media screen and (min-width: 768px) {
-
+    .carousel-caption--bottom {
+        background-color: rgba(35, 119, 197, 0.7);
+    }
     .carousel--microsite {
         max-height: none;
         margin-bottom: 30px
@@ -8648,8 +8672,13 @@ body{
         right: 0;
         height: 30px;
     }
-    .carousel--microsite .carousel-indicators--visible {
-        bottom: 10px;
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 30px;
+        position: absolute;
+    }
+    .carousel--microsite .carousel-indicators--visible{
+        position: absolute;
+        top: 75%;
     }
     .carousel--microsite .carousel-indicators--visible li {
         background: #B6D1EB;
@@ -8678,6 +8707,7 @@ body{
         min-height: 400px;
     }
     .carousel-caption--bottom h2 {
+        width: 80%;
         font-size: 20px;
         line-height: 24px;
     }
@@ -8689,6 +8719,9 @@ body{
     }
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
+    }
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 35px;
     }
     .carousel-caption--bottom {
         padding: 30px 0 20px;
@@ -8704,9 +8737,6 @@ body{
 }
 
 @media screen and (min-width: 1280px) {
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
-    }
     .item--microsite{
         max-height:500px;
     }
@@ -10271,12 +10301,56 @@ ul.bullet-list {
 
     }
 }
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+}
+.generic-form .form-user-grp .birthDateDay, .generic-form .form-user-grp .birthDateMonth, .generic-form .form-user-grp .birthDateYear {
+   /* width: 30%;*/
+    display: table-cell;
+}
+
+.input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.generic-form .form-user-grp .sectionBar {
+    width: 5%;
+    color: inherit;
+    padding: 10px 0;
+    text-align: center;
+    border: none;
+    background-color: inherit;
+    box-shadow: none;
+    display: table-cell;
+}
+
+
+
+
 .video-text__video {
     padding: 20px 0px 10px;
 }
 
 .video-faq .video-text__video {
     padding-top: 0;
+}
+.video-faq.accordion{
+    position: relative;
+}
+.video-faq.accordion .accordion__name{
+    padding-top: 10px;
+}
+
+.video-faq.accordion .accordion__link{
+    position: absolute;
+    padding: 0;
+    float: none;
+    right: 40px;
+    top: 12px;
 }
 
 .videoWrapper {
@@ -10316,7 +10390,7 @@ ul.bullet-list {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
-    margin-top: 10px;
+    display:none;
 }
 
 .video-duration {
@@ -10342,17 +10416,16 @@ ul.bullet-list {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
     }
 
     .video-faq .video-text__label {
         margin-top: 0;
+        display:block;
     }
 
-    .video-faq .video-text__video {
-        padding-top: 10px;
-    }
 
     .video-text-wrapper {
         padding-bottom: 10px;
@@ -10418,13 +10491,14 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 1024px) {
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
+    }
     .video-text-wrapper {
         padding-bottom: 20px;
     }
 
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
-    }
 
     .wrapper.video-text {
         padding: 30px 0;
@@ -10434,6 +10508,12 @@ ul.bullet-list {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .video-faq .video-text__label {
+
+        display:block;
+    }
+
 
     .video-faq:first-child:nth-last-child(2),
     .video-faq:first-child:nth-last-child(2) ~ .video-faq.accordion {
@@ -12203,9 +12283,9 @@ ul.bullet-list {
 .product-card .content li:before {
     content: "\0387";
     font-size: 26px;
-    vertical-align: middle;
-    line-height: 20px;
-    padding-right: 10px;
+    vertical-align: top;
+    line-height: 16px;
+    padding-right: 9px;
 }
 
 .product-card .content .intro,
@@ -12546,6 +12626,10 @@ ul.bullet-list {
 
     .product-card .content li {
         font-size: 14px;
+        line-height: 18px;
+    }
+
+    .product-card .content li:before {
         line-height: 18px;
     }
 
@@ -13269,17 +13353,16 @@ manner*/
     height: 100%;
     top: 0;
     overflow-y: auto;
-    padding-left:320px;
     background-color:transparent;
-    width:640px;
+    width:320px;
     z-index:9999;
+    box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
 }
 .contactSliderOuterCon {
     color:#666;
     padding:30px;
     text-transform:none;
     letter-spacing: 0;
-    box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
     overflow: visible;
     background-color:#fff;
     font-size:0.85em;
@@ -13298,11 +13381,10 @@ manner*/
     height: 16px;
 }
 .contact-container {
-    color:#666;
+    color:#fff;
     padding:30px;
     text-transform:none;
     letter-spacing: 0;
-    box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
 }
 .contact-container .productUserType,
 .contact-container .form-check-grp label input + span, .contact-container .form-radio-grp label input + span {
@@ -13482,6 +13564,10 @@ manner*/
     padding-left: 25px;
     font-size: 13px;
 }
+.form__item--description{
+    font-size: 13px;
+    padding-top: 5px;
+}
 .form-check-grp label span, .form-radio-grp label span {
     color: #999;
     padding-left: 5px;
@@ -13648,6 +13734,11 @@ manner*/
 }
 .form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
     background: url("/static/images/form/form_slider_chkbx_selected.png") left top no-repeat;
+    background-size: 17px 17px;
+}
+
+.form-check-grp label input.whiteCheck.user-checkbox[type=checkbox]:checked + span:before{
+    background: url("/static/images/form/form_chkbx_selected_white.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
@@ -14147,10 +14238,9 @@ span.errorRadio {
     cursor: pointer;
 }
 
-
 .suggestionsbox table {
     visibility: visible;
-    width: 346px;
+    width: calc(100% - 20px);;
     position: fixed;
     top: 97px;
     left: 10px;
@@ -14158,6 +14248,13 @@ span.errorRadio {
     border-radius: 0px 0px 2px 2px;
     background: white;
     border: none;
+}
+
+.suggestionsbox--minimized table {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .suggestionsbox table tbody {
@@ -14199,14 +14296,28 @@ span.errorRadio {
         left: 133px;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
+    }
 }
 
 @media (min-width: 1024px) {
     .suggestionsbox table {
         width: 170px;
         left: 221px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+    }
 }
 
 
@@ -16693,32 +16804,6 @@ div.page-not-found ~ div.global-footer > div.wrapper {
         line-height: 260px;
     }    
 }
-.email-unsub__action input{
-    width: 100%;
-    padding: initial;
-    padding-left: 7px;
-}
-
-.email-unsub__action a{
-    width: 100%;
-    margin-top: 15px;
-}
-
-div.email-unsub ~ div.contact-us > div.wrapper {
-    border:0px;
-}
-
-@media screen and (min-width: 768px) {
-    .email-unsub{
-        padding: 60px 0 50px;
-    }
-    .email-unsub__action input{
-        width: 30%;
-    }
-    .email-unsub__action a{
-        width: auto;
-    }
-}
 /********************************* search container css ***************************************/
 .fax__container .contact-container--form-card{
     box-shadow: none;
@@ -18480,22 +18565,38 @@ text-align: center;
 
 @media screen and (min-width: 768px) {
     .carousel-caption {
+        margin-left: 40px;
         text-align: left;
-        width: 51%;
+        width: 85%;
         max-width: 1300px;
-        margin-left: 7.5%;
         padding: 0;
+        display: flex;
     }
 
     .carousel-caption--hero {
-        font-size: 3vw;
-        line-height: 3.2vw;
+        font-size: 3.4vw;
+        line-height: 3.7vw;
         padding-bottom: 95px;
         height: 400px;
         width: 60%;
-        position: relative;
         margin: 0;
+        display: flex;
+        align-items: center;
     }
+    .carousel--hero .left .icon {
+        right: 15px;
+    }
+
+    .carousel--hero .right .icon {
+        left: 15px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .carousel-caption {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 .quote-office--left, .quote-office--right{
@@ -18514,6 +18615,7 @@ text-align: center;
 
 .find-office__dental-container a, .find-office__vision-container a{
     color: #2377C5;
+    font-weight: 300;
 }
 
 .find-office__dental-container a:hover, .find-office__dental-container a:focus,
@@ -18571,19 +18673,42 @@ text-align: center;
     }
 
 }
+
+.find-office .btn-group .btn {
+    height: 40px;
+}
+
+.btn-group__icon {
+    top: 34px;
+}
+@media screen and (min-width: 768px) {
+    .btn-group__icon {
+        top: 33px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .btn-group__icon {
+        top: 33px;
+    }
+}
+.hp--contextual--links{
+   
+}
+
 .more-content__section a:nth-child(2) {
     padding: 20px 20px 0 20px;
 }
 .more-content__section a:nth-child(3) {
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: 1px;
     color: #7A9816;
     text-decoration: underline;
     display: block;
     margin-top: 10px;
     margin-left: 20px;
     padding-bottom: 20px;
+    font-weight: 600;
 }
 
 .more-content {
@@ -18595,7 +18720,8 @@ text-align: center;
 }
 
 .more-content__title {
-    font-size: 2vw;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .more-content__section a:nth-child(3):active, .more-content__section a:nth-child(3):hover  {
@@ -18604,7 +18730,7 @@ text-align: center;
 
 @media screen and (min-width: 768px) {
     .more-content {
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 20px;
     }
     .more-content__section a:nth-child(2) {
@@ -18624,14 +18750,17 @@ text-align: center;
     .more-content__section:last-child {
         margin-right: 0;
     }
-    .more-content__title {
-        line-height: 40px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
+    .more-content__title {
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 30px;
+    }
+
     .more-content {
-        padding-top: 30px;
+        padding-top: 40px;
         padding-bottom: 40px;
     }
     .more-content__section a:nth-child(3) {
@@ -18639,15 +18768,23 @@ text-align: center;
         line-height: 18px;
         letter-spacing: 1px;
     }
-    .more-content__title {
-        line-height: 50px;
-    }
 }
 .product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
 	width: 100%;
 	margin-top:-15px;
 }
-
+.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
+	font-size: 24px;
+	line-height: 28px;
+	width: 90%;
+	color: #fff;
+	font-weight: 400;
+}
+.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left p{
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+}
 @media screen and (max-width: 767px) {
 	.skinny-card{
 		padding-left: 0px;
@@ -18661,6 +18798,15 @@ text-align: center;
 		margin-top: 0px;
 		margin-bottom: -20px;
 	}
+	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left p{
+		font-size: 13px;
+		line-height: 16px;
+		padding-bottom: 2px;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -18668,9 +18814,17 @@ text-align: center;
 		margin-top: 0;
 		margin-bottom: -20px;
 	}
+
+	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
+		font-size: 22px;
+		line-height: 26px;
+	}
 }
 .promocard__content {
     background-color: #3D9CDB;
+}
+.promocard__content__header{
+font-weight: 400;
 }
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
 {

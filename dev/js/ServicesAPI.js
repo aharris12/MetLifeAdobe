@@ -264,7 +264,7 @@ $('[data-required=true]').on('blur keyup', function () {
 		$this.val("");
 	}
 	var val = $this.val();
-	if (val.length == 0) {
+	if (val != null && val.length == 0) {
 		$this.addClass('error');
 		//$this.val(placeholder);
 	} else {
@@ -287,6 +287,14 @@ $(".form-user-ctrl").on('click', function (evt) {
 	if ($(this).hasClass("error")) {
 		$(this).val("");
 	}
+});
+
+$('[data-valid-type=number]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /[0-9]/;
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
@@ -618,7 +626,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
-	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
@@ -3773,14 +3780,13 @@ var ServicesAPI = {
 		}, 5000);
 	},
 	resetForm: function (fid) {
-
 		switch (fid) {
 			case "contactSidebar":
 				//in a timeout to avoid visual conflict with animation
 				setTimeout(function () {
 					$('#requestFormRightNav_Acc').trigger("reset");
-					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-					$('.contactSideForm').toggle();
+					$('.contactSideThankyou, .contactSideSubmitError, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+					$('.contactSideForm').show();
 					$('.contact-container--global').css("right", "-640px");
 				}, 1000);
 				break;

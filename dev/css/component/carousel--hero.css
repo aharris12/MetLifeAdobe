@@ -55,10 +55,12 @@
     .carousel {
         max-height: 315px;
     }
-
+    .carousel-inner > .item > a > img {
+        max-height: 315px;
+    }
     .carousel-indicators {
         display: block;
-        bottom: 27.5%;
+        bottom: 30%;
     }
 
     .carousel-caption {
@@ -83,14 +85,19 @@
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-    /* .carousel-inner > .item > a > img {
-         max-height: 400px;
-     }*/
+    .carousel-indicators {
+        display: block;
+        bottom: 27.5%;
+    }
+    .carousel-inner > .item > a > img {
+        max-height: 400px;
+    }
+
     .carousel {
         max-height: 400px;
     }
 
-    .carousel--hero .icon {
+    .carousel--hero .icon{
         width: 30px;
         height: 30px;
     }
