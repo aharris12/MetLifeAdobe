@@ -53,7 +53,7 @@
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
-         max-height: 315px;
+        max-height: 315px;
     }
     .carousel-inner > .item > a > img {
         max-height: 315px;
@@ -68,7 +68,7 @@
     }
 
     .carousel-control {
-        padding-top: 100px;
+        padding-top: 120px;
     }
 
     .carousel-caption--hero {
@@ -131,9 +131,5 @@
 @media screen and (min-width: 1900px) {
     .carousel {
         height: 400px;
-    }
-
-    .carousel--hero .icon {
-        font-size: 3vw;
     }
 }
