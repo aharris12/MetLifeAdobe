@@ -251,7 +251,7 @@ module.exports = function (grunt) {
                     'dev/js/feedback.js',
                     'dev/js/cookie.js',
                     'dev/js/ServicesAPI.js',
-                    'dev/aem_form.js',
+                    'dev/js/aem_form.js',
                     'dev/js/suggestions.js',
                     'dev/js/campaign-header.js',
                     'dev/js/campaign-card.js',
