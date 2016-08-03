@@ -5372,15 +5372,14 @@ a:visited {
 }
 
 .carousel--hero .icon {
-    width: 30px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     .carousel {
         max-height: 300px;
-        /*        margin-top:-60px;*/
     }
 
     .carousel-caption {
@@ -5396,12 +5395,14 @@ a:visited {
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
     .carousel {
+         max-height: 315px;
+    }
+    .carousel-inner > .item > a > img {
         max-height: 315px;
     }
-
     .carousel-indicators {
         display: block;
-        bottom: 27.5%;
+        bottom: 30%;
     }
 
     .carousel-caption {
@@ -5426,16 +5427,21 @@ a:visited {
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
-   /* .carousel-inner > .item > a > img {
+    .carousel-indicators {
+        display: block;
+        bottom: 27.5%;
+    }
+    .carousel-inner > .item > a > img {
         max-height: 400px;
-    }*/
+    }
 
     .carousel {
         max-height: 400px;
     }
 
     .carousel--hero .icon{
-        width: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .carousel-caption {
@@ -7386,6 +7392,8 @@ ol.promocard_content__list li:after {
 .microsite-product-chart .product_chart .carousel {
     width: 60%;
     float: right;
+    max-height: none;
+    height: auto;
 }
 /* line 376, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .product_chart .carousel-item {
@@ -8594,28 +8602,42 @@ body{
 }
 .carousel--microsite .carousel-caption {
     bottom: 0;
+    padding: 15px 0;
+}
+
+.carousel--microsite .carousel-indicators--visible li {
+    background-color: #fff;
+    border-color: #fff;
+    opacity: 0.5;
+}
+
+.carousel--microsite .carousel-indicators--visible li.active {
+    opacity: 1;
 }
 
 .carousel-indicators--visible {
     display: block;
 }
 .carousel-caption--bottom {
-    background-color: rgba(35,119,197,0.7);
+    background-color: rgba(35,119,197,1);
     top: auto;
     position: relative;
 }
 
 .carousel-caption--bottom h2 {
-    margin-bottom: 0px;
-    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 18px;
     line-height: 22px;
+    font-weight: 300;
+    width: 90%;
 }
 
 .carousel-caption--bottom h3 {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 30px;
+    font-weight: 300;
+    width: 90%;
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 480px) {
@@ -8635,7 +8657,9 @@ body{
 }
 
 @media screen and (min-width: 768px) {
-
+    .carousel-caption--bottom {
+        background-color: rgba(35, 119, 197, 0.7);
+    }
     .carousel--microsite {
         max-height: none;
         margin-bottom: 30px
@@ -8648,8 +8672,13 @@ body{
         right: 0;
         height: 30px;
     }
-    .carousel--microsite .carousel-indicators--visible {
-        bottom: 10px;
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 30px;
+        position: absolute;
+    }
+    .carousel--microsite .carousel-indicators--visible{
+        position: absolute;
+        top: 75%;
     }
     .carousel--microsite .carousel-indicators--visible li {
         background: #B6D1EB;
@@ -8678,6 +8707,7 @@ body{
         min-height: 400px;
     }
     .carousel-caption--bottom h2 {
+        width: 80%;
         font-size: 20px;
         line-height: 24px;
     }
@@ -8689,6 +8719,9 @@ body{
     }
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
+    }
+    .carousel--microsite .carousel-caption{
+        padding: 15px 0 35px;
     }
     .carousel-caption--bottom {
         padding: 30px 0 20px;
@@ -8704,9 +8737,6 @@ body{
 }
 
 @media screen and (min-width: 1280px) {
-    .carousel-caption--bottom{
-        padding: 30px 0 20px;
-    }
     .item--microsite{
         max-height:500px;
     }
@@ -10271,12 +10301,28 @@ ul.bullet-list {
 
     }
 }
+
+
 .video-text__video {
     padding: 20px 0px 10px;
 }
 
 .video-faq .video-text__video {
     padding-top: 0;
+}
+.video-faq.accordion{
+    position: relative;
+}
+.video-faq.accordion .accordion__name{
+    padding-top: 10px;
+}
+
+.video-faq.accordion .accordion__link{
+    position: absolute;
+    padding: 0;
+    float: none;
+    right: 40px;
+    top: 12px;
 }
 
 .videoWrapper {
@@ -10316,7 +10362,7 @@ ul.bullet-list {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
-    margin-top: 10px;
+    display:none;
 }
 
 .video-duration {
@@ -10342,17 +10388,16 @@ ul.bullet-list {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
     }
 
     .video-faq .video-text__label {
         margin-top: 0;
+        display:block;
     }
 
-    .video-faq .video-text__video {
-        padding-top: 10px;
-    }
 
     .video-text-wrapper {
         padding-bottom: 10px;
@@ -10418,13 +10463,14 @@ ul.bullet-list {
 }
 
 @media screen and (min-width: 1024px) {
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
+    }
     .video-text-wrapper {
         padding-bottom: 20px;
     }
 
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
-    }
 
     .wrapper.video-text {
         padding: 30px 0;
@@ -10434,6 +10480,12 @@ ul.bullet-list {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .video-faq .video-text__label {
+
+        display:block;
+    }
+
 
     .video-faq:first-child:nth-last-child(2),
     .video-faq:first-child:nth-last-child(2) ~ .video-faq.accordion {
@@ -12203,9 +12255,9 @@ ul.bullet-list {
 .product-card .content li:before {
     content: "\0387";
     font-size: 26px;
-    vertical-align: middle;
-    line-height: 20px;
-    padding-right: 10px;
+    vertical-align: top;
+    line-height: 16px;
+    padding-right: 9px;
 }
 
 .product-card .content .intro,
@@ -12546,6 +12598,10 @@ ul.bullet-list {
 
     .product-card .content li {
         font-size: 14px;
+        line-height: 18px;
+    }
+
+    .product-card .content li:before {
         line-height: 18px;
     }
 
@@ -14147,10 +14203,9 @@ span.errorRadio {
     cursor: pointer;
 }
 
-
 .suggestionsbox table {
     visibility: visible;
-    width: 346px;
+    width: calc(100% - 20px);;
     position: fixed;
     top: 97px;
     left: 10px;
@@ -14158,6 +14213,13 @@ span.errorRadio {
     border-radius: 0px 0px 2px 2px;
     background: white;
     border: none;
+}
+
+.suggestionsbox--minimized table {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .suggestionsbox table tbody {
@@ -14199,14 +14261,28 @@ span.errorRadio {
         left: 133px;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
+    }
 }
 
 @media (min-width: 1024px) {
     .suggestionsbox table {
         width: 170px;
         left: 221px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+    }
 }
 
 
@@ -16692,32 +16768,6 @@ div.page-not-found ~ div.global-footer > div.wrapper {
         font-size: 260px;
         line-height: 260px;
     }    
-}
-.email-unsub__action input{
-    width: 100%;
-    padding: initial;
-    padding-left: 7px;
-}
-
-.email-unsub__action a{
-    width: 100%;
-    margin-top: 15px;
-}
-
-div.email-unsub ~ div.contact-us > div.wrapper {
-    border:0px;
-}
-
-@media screen and (min-width: 768px) {
-    .email-unsub{
-        padding: 60px 0 50px;
-    }
-    .email-unsub__action input{
-        width: 30%;
-    }
-    .email-unsub__action a{
-        width: auto;
-    }
 }
 /********************************* search container css ***************************************/
 .fax__container .contact-container--form-card{

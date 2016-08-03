@@ -499,26 +499,6 @@ module.exports = function (grunt) {
             }
         },
 
-
-        /*  copy: {
-         main: {
-         files: [
-         // copy Find an Office JS files
-         //{expand: true, cwd: 'dev/js/', src: ['fao.js'], dest: 'dist/js'},
-         //{expand: true, cwd: 'dev/js/', src: ['markerwithlabel.js'], dest: 'dist/js'},
-
-         // copy SVG and FAVICON files
-         {expand: true, cwd: 'dev/images/', src: ['*.{svg,ico}'], dest: 'dist/images/', filter: 'isFile'},
-         // copy FONTS files
-         {expand: true, cwd: 'dev/fonts/', src: ['**'], dest: 'dist/fonts/'},
-         // copy Original JS files
-         {expand: true, cwd: 'dev/js/', src: ['**'], dest: 'dist/dev/js'},
-         // copy Original CSS files
-         {expand: true, cwd: 'dev/css/', src: ['**'], dest: 'dist/dev/css'},
-         ],
-         },
-         },*/
-
         processhtml: {
             dist:{
                 options: {
