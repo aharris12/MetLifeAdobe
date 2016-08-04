@@ -296,38 +296,6 @@ a:visited {
     cursor: text !important;
 }
 
-.padding-top-none {
-    padding-top: 0;
-}
-
-.padding-bottom-none {
-    padding-bottom: 0;
-}
-
-.padding-top-sm {
-    padding-top: 10px;
-}
-
-.padding-bottom-sm {
-    padding-bottom: 10px;
-}
-
-.padding-top-md {
-    padding-top: 10px;
-}
-
-.padding-bottom-md {
-    padding-bottom: 10px;
-}
-
-.padding-top-lg {
-    padding-top: 10px;
-}
-
-.padding-bottom-lg {
-    padding-bottom: 10px;
-}
-
 @media screen and (min-width: 768px) {
     .wrapper {
         width: 95%;
@@ -362,30 +330,6 @@ a:visited {
 
     .text-right-tablet-up {
         text-align: right;
-    }
-
-    .padding-top-sm {
-        padding-top: 20px;
-    }
-
-    .padding-bottom-sm {
-        padding-bottom: 20px;
-    }
-
-    .padding-top-md {
-        padding-top: 20px;
-    }
-
-    .padding-bottom-md {
-        padding-bottom: 20px;
-    }
-
-    .padding-top-lg {
-        padding-top: 30px;
-    }
-
-    .padding-bottom-lg {
-        padding-bottom: 30px;
     }
 }
 
@@ -423,29 +367,5 @@ a:visited {
 
     .download-link:hover {
         text-decoration: underline;
-    }
-
-    .padding-top-sm {
-        padding-top: 20px;
-    }
-
-    .padding-bottom-sm {
-        padding-bottom: 20px;
-    }
-
-    .padding-top-md {
-        padding-top: 40px;
-    }
-
-    .padding-bottom-md {
-        padding-bottom: 40px;
-    }
-
-    .padding-top-lg {
-        padding-top: 50px;
-    }
-
-    .padding-bottom-lg {
-        padding-bottom: 50px;
     }
 }
