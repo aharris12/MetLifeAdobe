@@ -91,7 +91,7 @@
 
 @media screen and (min-width: 768px) {
     .quote-office {
-        margin: -85px auto 0;
+        margin: -70px auto 0;
         width: 96%;
     }
     .get-quote__container {
@@ -120,7 +120,7 @@
 @media screen and (min-width: 1024px) {
     .quote-office {
         margin-bottom: 40px;
-        margin-top:-85px;
+        margin-top:-70px;
         width: 85%;
         max-width: 1300px;
     }
