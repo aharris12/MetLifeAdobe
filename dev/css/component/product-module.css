@@ -114,7 +114,7 @@
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
-    margin: 0 0 10px;
+    margin: 0 -10px;
 }
 .product-module__medium:last-child {
     margin-bottom: 0;
