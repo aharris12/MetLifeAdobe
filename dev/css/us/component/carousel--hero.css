@@ -47,3 +47,10 @@
         padding-bottom: 70px;
     }
 }
+@media screen and (min-width: 1700px) {
+    .carousel-caption--hero {
+        font-size: 3vw;
+        line-height: 3.3vw;
+    }
+
+}
