@@ -1,22 +1,22 @@
 $(document).ready(function(){
-	removingPaddingContextualLinksContactForm();
-	removingPaddingContextualLinksProductTiles();
-	removingPaddingContextualLinksSmallCards();
-	disclaimerPadding();
-	removeSpacingFAQ();
-	skinnyAndLargeSpacing();
-	mainPromoAndSmallMediumCards();
-	homePageUsSkinnyBannerSpacing();
+	//removingPaddingContextualLinksContactForm();
+	//removingPaddingContextualLinksProductTiles();
+	//removingPaddingContextualLinksSmallCards();
+	//disclaimerPadding();
+	//removeSpacingFAQ();
+	//skinnyAndLargeSpacing();
+	//mainPromoAndSmallMediumCards();
+	//homePageUsSkinnyBannerSpacing();
 });
 
 $(window).resize(function(){
-	removingPaddingContextualLinksContactForm();
-	removingPaddingContextualLinksProductTiles();
-	removingPaddingContextualLinksSmallCards();
-	disclaimerPadding();
-	removeSpacingFAQ();
-	skinnyAndLargeSpacing();
-	mainPromoAndSmallMediumCards();
+	//removingPaddingContextualLinksContactForm();
+	//removingPaddingContextualLinksProductTiles();
+	//removingPaddingContextualLinksSmallCards();
+	//disclaimerPadding();
+	//removeSpacingFAQ();
+	//skinnyAndLargeSpacing();
+	//mainPromoAndSmallMediumCards();
 });
 
 function homePageUsSkinnyBannerSpacing(){
@@ -105,11 +105,11 @@ function disclaimerPadding(){
 	var container = $(".disclaimer");
 	if (container.length > 0 && $(".quote-office").length < 1) {
 			if (getViewport() == "desktop") {
-				container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");
+				//container.css("cssText", "padding-top: 50px; padding-bottom: 20px;");
 			}  else if (getViewport() == "tablet") {
-				container.css("cssText", "padding-top: 40px; padding-bottom: 10px;");
+				//container.css("cssText", "padding-top: 40px; padding-bottom: 10px;");
 			}else{
-				container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
+				//container.css("cssText", "padding-top: 10px; padding-bottom: 10px;");
 			}
 	}
 

@@ -46,9 +46,9 @@ $(".product-row__tile__img-tile__img").click(function(){
 });
 function productTilePadding(){
     if (getViewport() == "desktop" || getViewport() == "tablet"){
-        $(".product-row").parent().css("padding","0 0 10px 0px");
+        //$(".product-row").parent().css("padding","0 0 10px 0px");
     }else{
-        $(".product-row").parent().css("padding","0 10px 10px 10px");
+        //$(".product-row").parent().css("padding","0 10px 10px 10px");
     }
 
 }
