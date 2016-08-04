@@ -1,37 +1,38 @@
-.divider-title__title{
+.divider-title__title {
     text-align: center;
     font-size: 20px;
     font-weight: 400;
 }
 
-.contextual-links-row{
+.contextual-links-row {
     padding: 0;
 }
 
-.contextual-links-row a:hover{
+.contextual-links-row a:hover {
     text-decoration: none;
 }
 
-.contextual-link{
+.contextual-link {
     display: block;
     height: 60px;
     border-bottom: 1px solid #cccccc;
 }
 
-.contextual-link__content{
+.contextual-link__content {
 
     padding-left: 25px;
-    height:100%;
+    height: 100%;
 }
 
-.contextual-link__content svg{
+.contextual-link__content svg {
     position: relative;
     top: 20px;
     right: 10px;
 }
+
 .contextual-link__content__label {
     position: relative;
-    height:100%;
+    height: 100%;
 }
 
 .contextual-link__content__label p {
@@ -41,6 +42,7 @@
     line-height: 60px;
     height: 100%;
 }
+
 .contextual-link__content__label svg {
     position: absolute;
     top: 35%;
@@ -49,92 +51,104 @@
     width: 14px;
 }
 
+@media screen and (max-width: 767px) {
+
+    .contextual-link:first-of-type {
+        border-top: 1px solid #cccccc;
+    }
+
+    .contextual-link__content__label {
+        display: table;
+        width: 100%;
+    }
+
+    .contextual-link__content__label p, .contextual-link__content__label svg {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .contextual-link {
+        width: 100%;
+    }
+}
+
 @media screen and (min-width: 768px) {
-    .contextual-links-row>div{
+    .contextual-links-row > div {
         display: inline-block;
     }
 
     .divider-title__title {
         font-size: 28px;
-        line-height:32px;
+        line-height: 32px;
         margin: 0 auto;
         padding-bottom: 20px;
     }
-    .contextual-links-row{
+
+    .contextual-links-row {
         text-align: center;
         font-size: 0;
     }
 
-    .contextual-link{
+    .contextual-link {
         display: inline-block;
         border-bottom: none;
         height: auto;
-        vertical-align:top;
+        vertical-align: top;
     }
 
-    .contextual-link:hover{
+    .contextual-link:hover {
         background-color: rgba(173, 208, 240, 0.2);
     }
-    .contextual-link{
-        width:20%;
+
+    .contextual-link {
+        width: 20%;
     }
 
-    .contextual-link__content{
+    .contextual-link__content {
         padding: 40px 0;
         font-size: 11px;
         line-height: 16px;
         letter-spacing: 1px;
     }
 
-    .contextual-link__content__label p{
+    .contextual-link__content__label p {
         padding: 0;
         width: 140px;
         margin: 0 auto;
-        font-weight:600;
-        text-align:center;
-        height:32px;
+        font-weight: 600;
+        text-align: center;
+        height: 32px;
         font-size: 11px;
         line-height: 16px;
     }
-    .contextual-link__content svg{
+
+    .contextual-link__content svg {
         display: none;
     }
 
-    .contextual-link__content__img{
+    .contextual-link__content__img {
         height: 50px;
         width: auto;
         margin: 0 auto;
         display: block;
     }
+
     .divider-title {
-        padding: 40px 0 20px 0;
+        /*padding: 40px 0 20px 0;*/
+        padding-bottom: 20px;
         text-align: center;
     }
-    
+
 }
-@media (min-width: 1024px) {
+
+@media screen and (min-width: 1024px) {
     .divider-title {
-        padding: 50px 0 20px 0;
+        /*padding: 50px 0 20px 0;*/
+        padding-bottom: 20px;
     }
+
     .divider-title__title {
         font-size: 30px;
-        line-height:34px;
-    }
-}
-@media screen and (max-width: 767px) {
-
-    .contextual-link:first-of-type{
-        border-top: 1px solid #cccccc;
-    }
-    .contextual-link__content__label{
-        display: table;
-        width: 100%;
-    }
-    .contextual-link__content__label p,  .contextual-link__content__label svg{
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .contextual-link {
-        width: 100%;
+        line-height: 34px;
     }
 }

@@ -37,7 +37,7 @@
     }
 
     .product-comparison-chart-disclaimer {
-        margin: 15px auto 30px;
+        margin: 15px auto 0;
     }
 
     .product-comparison-chart-disclaimer .disclaimer {
@@ -57,7 +57,7 @@
     }
 
     .product-comparison-chart-disclaimer {
-        margin: 20px auto 40px;
+        margin: 20px auto 0;
     }
 
 }

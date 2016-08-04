@@ -40,7 +40,9 @@ function productComparisonChart() {
         slides.slice(i, i + splitter).wrapAll("<div class='item'></div>");
     }
 
-    $('.microsite-product-chart .item').first().addClass('active');
+    //$('.microsite-product-chart .item').first().addClass('active');
+    $('.product_chart .item').first().addClass('active');
+
 
 
     // Style first tab after a carousel slide

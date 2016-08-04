@@ -1,5 +1,4 @@
 
-
 .video-text__video {
     padding: 20px 0px 10px;
 }
@@ -7,14 +6,16 @@
 .video-faq .video-text__video {
     padding-top: 0;
 }
-.video-faq.accordion{
+
+.video-faq.accordion {
     position: relative;
 }
-.video-faq.accordion .accordion__name{
+
+.video-faq.accordion .accordion__name {
     padding-top: 10px;
 }
 
-.video-faq.accordion .accordion__link{
+.video-faq.accordion .accordion__link {
     position: absolute;
     padding: 0;
     float: none;
@@ -59,7 +60,7 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
-    display:none;
+    display: none;
 }
 
 .video-duration {
@@ -69,32 +70,31 @@
     margin: 0;
 }
 
-.video-faq .video_duration{
+.video-faq .video_duration {
     font-size: 12px;
-    line-height:16px;
+    line-height: 16px;
     font-weight: 400;
     margin-bottom: 0;
 }
 
-.video-faq .video-text__description h3{
-    margin-top:10px;
+.video-faq .video-text__description h3 {
+    margin-top: 10px;
     margin-bottom: 0;
     font-size: 14px;
-    line-height:20px;
+    line-height: 20px;
     font-weight: 600;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
 
-    .video-faq.accordion .accordion__name{
+    .video-faq.accordion .accordion__name {
         padding-top: 0px;
     }
 
     .video-faq .video-text__label {
         margin-top: 0;
-        display:block;
+        display: block;
     }
-
 
     .video-text-wrapper {
         padding-bottom: 10px;
@@ -110,7 +110,7 @@
 
     .video-faq {
         width: 100%;
-        margin-bottom: 10px;
+        /*margin-bottom: 10px;*/
     }
 
     .video-faq:first-child:nth-last-child(2),
@@ -161,13 +161,13 @@
 
 @media screen and (min-width: 1024px) {
 
-    .video-faq.accordion .accordion__name{
+    .video-faq.accordion .accordion__name {
         padding-top: 0px;
     }
+
     .video-text-wrapper {
         padding-bottom: 20px;
     }
-
 
     .wrapper.video-text {
         padding: 30px 0;
@@ -175,14 +175,13 @@
 
     .video-faq {
         width: 100%;
-        margin-bottom: 20px;
+        /*margin-bottom: 20px;*/
     }
 
     .video-faq .video-text__label {
 
-        display:block;
+        display: block;
     }
-
 
     .video-faq:first-child:nth-last-child(2),
     .video-faq:first-child:nth-last-child(2) ~ .video-faq.accordion {
