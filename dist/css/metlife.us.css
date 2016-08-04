@@ -12317,11 +12317,11 @@ ul.bullet-list {
 }
 
 .product-card .content li:before {
-    content: "\0387";
-    font-size: 26px;
-    vertical-align: top;
+    content: "\2022";
+    font-size: 13px;
     line-height: 16px;
-    padding-right: 9px;
+    vertical-align: top;
+    padding-right: 11px;
 }
 
 .product-card .content .intro,
