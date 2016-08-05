@@ -432,23 +432,29 @@ $('.form-user-grp > select').on('blur', function () {
 });
 
 /****Product Selector****************************************/
-$(".product__selector").on("change", function(){
-	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-	$(".js-productSelector").attr("href", productSelectorPage);
-});
 
-/*$(".product__selector").on("change", function () {
+
+$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
-	$(".product__selector--sub").removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
-	$(".product__selector--sub").prop("disabled", true);
-	$(".product__selector--sub").val("")
-	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
-	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
-	$(".js-productSelector").attr("href", "#");
+
+	if($(".product__selector--sub").length > 0) {
+		$(".product__selector--sub").removeClass("error");
+		$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+		$(".product__selector--sub").prop("disabled", true);
+		$(".product__selector--sub").val("")
+		$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+		$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
+		$(".js-productSelector").attr("href", "#");
+	}else{
+		var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+		$(".js-productSelector").attr("href", productSelectorPage);
+		$(".js-productSelector").addClass("pull-left");
+	}
+
+
 });
 
 $(".product__selector--sub").on("change", function () {
@@ -460,18 +466,18 @@ $(".product__selector--sub").on("change", function () {
 
 $(".js-productSelector").click(function (e) {
 	var url = $(this).attr("href");
-	if ($(".product__selector").find(':selected').val() == "") {
+	if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
+	if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
 	if (url == "#") {
 		e.preventDefault();
 	}
-});*/
+});
 /****Blog Search****************************************/
 
 
@@ -990,6 +996,9 @@ var ServicesAPI = {
 		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
+		}
+		if($(".js-productSelector").length > 0 && !$(".product__selector--sub").length > 0) {
+			$(".js-productSelector").addClass("pull-left");
 		}
 	},
 	replaceAll: function (txt, replace, with_this) {
