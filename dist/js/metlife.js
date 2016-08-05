@@ -113,21 +113,22 @@ var currentView = getViewport();
 var currentSpot = 0;
 //Test comment
 function optionalHeaderCTA() {
-    var fao = $('.find-office__container');
-    var quote = $('.get-quote__container');
-    var promo = $('.cta-promo__container');
-    if (quote.length != 0 && promo.length == 0 &&  fao.length== 0) {
-        console.log("enter")
-        $(".get-quote__container").addClass("noFao");
+    var quoteOfficeLeft = $('.quote-office--left');
+    var quoteOfficeRight = $('.quote-office--right');
+    if(quoteOfficeLeft.find("div").first().hasClass("find-office__container")){
+        quoteOfficeLeft.addClass("light--blue");
+        quoteOfficeRight.addClass("dark--blue");
     }
-    if (fao.length != 0 && quote.length == 0 && promo.length == 0) {
-        $(".find-office__container").addClass("noOffice");
+
+    if (quoteOfficeLeft.length != 0 && quoteOfficeRight.length == 0) {
+        quoteOfficeLeft.addClass("single__fao--container")
     }
-    if (promo.length != 0 && quote.length == 0 &&  fao.length == 0) {
-        $(".find-office__container").addClass("noOffice");
+    if (quoteOfficeRight.length != 0 && quoteOfficeLeft.length == 0) {
+        quoteOfficeRight.addClass("single__fao--container")
     }
+
 }
-$(window).load(function () {
+$(window).ready(function () {
     optionalHeaderCTA();
 });
 //DE8968
@@ -506,6 +507,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','50px');
         $('.contact-trigger').addClass('contact-trigger--minimized');
         $('.megamenu').addClass('megamenu--minimized');
+        $('.suggestionsbox').addClass('suggestionsbox--minimized');
         $('body').css('padding-top', '50px');
         //$('.login-container').addClass('login-container--minimized');
         if ($('.microsite-header').length > 0) {
@@ -522,6 +524,7 @@ function adjustMegaMenu() {
         //$('.login-container').css('top','70px');
         $('.contact-trigger').removeClass('contact-trigger--minimized');
         $('.megamenu').removeClass('megamenu--minimized');
+        $('.suggestionsbox').removeClass('suggestionsbox--minimized');
         //$('.login-container').removeClass('login-container--minimized');
         headerPosition();
     }
@@ -629,7 +632,7 @@ function closeContactForm() {
 
 $(".megamenu__main-item-label.visible-xs").click(function (e) {
     e.preventDefault();
-})
+});
 
 $(document).ready(function(){
     footerBorder();
@@ -6309,23 +6312,29 @@ $('.form-user-grp > select').on('blur', function () {
 });
 
 /****Product Selector****************************************/
-$(".product__selector").on("change", function(){
-	var productSelectorPage = $(this).find(':selected').attr("data-product-url");
-	$(".js-productSelector").attr("href", productSelectorPage);
-});
 
-/*$(".product__selector").on("change", function () {
+
+$(".product__selector").on("change", function () {
 	var selectedProduct = $(this).find(':selected').attr("data-product-type");
 	$(this).removeClass("error");
-	$(".product__selector--sub").removeClass("error");
 	$(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
-	$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
-	$(".product__selector--sub").prop("disabled", true);
-	$(".product__selector--sub").val("")
-	$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
-	$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
-	$(".js-productSelector").attr("href", "#");
+
+	if($(".product__selector--sub").length > 0) {
+		$(".product__selector--sub").removeClass("error");
+		$(".cta_header_quote_type_of_insurance--sub").addClass("hidden");
+		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#666');
+		$(".product__selector--sub").prop("disabled", true);
+		$(".product__selector--sub").val("")
+		$("[data-product-sub='" + selectedProduct + "']").removeClass("hidden");
+		$("[data-product-sub='" + selectedProduct + "']").find(".product__selector--sub").prop("disabled", false);
+		$(".js-productSelector").attr("href", "#");
+	}else{
+		var productSelectorPage = $(this).find(':selected').attr("data-product-url");
+		$(".js-productSelector").attr("href", productSelectorPage);
+		$(".js-productSelector").addClass("pull-left");
+	}
+
+
 });
 
 $(".product__selector--sub").on("change", function () {
@@ -6337,18 +6346,18 @@ $(".product__selector--sub").on("change", function () {
 
 $(".js-productSelector").click(function (e) {
 	var url = $(this).attr("href");
-	if ($(".product__selector").find(':selected').val() == "") {
+	if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
 		$(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 		$(".product__selector").addClass("error")
 	}
-	if ($(".product__selector--sub").find(':selected').val() == "") {
+	if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
 		$(".product__selector--sub").addClass("error")
 		$(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
 	}
 	if (url == "#") {
 		e.preventDefault();
 	}
-});*/
+});
 /****Blog Search****************************************/
 
 
@@ -6867,6 +6876,9 @@ var ServicesAPI = {
 		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
+		}
+		if($(".js-productSelector").length > 0 && !$(".product__selector--sub").length > 0) {
+			$(".js-productSelector").addClass("pull-left");
 		}
 	},
 	replaceAll: function (txt, replace, with_this) {
