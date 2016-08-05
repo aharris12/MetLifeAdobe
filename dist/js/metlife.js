@@ -632,7 +632,7 @@ function closeContactForm() {
 
 $(".megamenu__main-item-label.visible-xs").click(function (e) {
     e.preventDefault();
-})
+});
 
 $(document).ready(function(){
     footerBorder();
@@ -6878,6 +6878,9 @@ var ServicesAPI = {
 		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
+		}
+		if($(".js-productSelector").length > 0 && !$(".product__selector--sub").length > 0) {
+			$(".js-productSelector").addClass("pull-left");
 		}
 	},
 	replaceAll: function (txt, replace, with_this) {

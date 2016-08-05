@@ -522,4 +522,4 @@ function closeContactForm() {
 
 $(".megamenu__main-item-label.visible-xs").click(function (e) {
     e.preventDefault();
-})
+});
