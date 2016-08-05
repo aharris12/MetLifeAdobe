@@ -43,7 +43,6 @@
 }
 .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
     float: left;
-    margin-bottom: 5px;
 }
 .find-office__zip-city-state{
     padding-right: 50px;
