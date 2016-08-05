@@ -6331,7 +6331,6 @@ $(".product__selector").on("change", function () {
 	}else{
 		var productSelectorPage = $(this).find(':selected').attr("data-product-url");
 		$(".js-productSelector").attr("href", productSelectorPage);
-		$(".js-productSelector").addClass("pull-left");
 	}
 
 
@@ -6876,9 +6875,6 @@ var ServicesAPI = {
 		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
-		}
-		if($(".js-productSelector").length > 0 && !$(".product__selector--sub").length > 0) {
-			$(".js-productSelector").addClass("pull-left");
 		}
 	},
 	replaceAll: function (txt, replace, with_this) {
