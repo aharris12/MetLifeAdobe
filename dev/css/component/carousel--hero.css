@@ -15,18 +15,19 @@
     right: 0;
     left: 0;
     width: 100%;
-    display: table;
+    display: flex;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: table-cell;
+    display: flex;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
+    align-items: center;
 }
 
 .carousel--hero .icon {
@@ -36,45 +37,51 @@
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
-    .carousel {
-        max-height: 300px;
-    }
+    /* .carousel {
+		max-height: 300px;
+	 }*/
 
     .carousel-caption {
         padding: 0 15%;
     }
 
     .carousel-control {
-        padding-top: 130px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        /* padding-top: 130px;*/
         z-index: 10;
     }
 }
 
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
+    .item{
+        max-height: 320px;
+        min-height: 240px;
+    }
     .carousel {
-        max-height: 315px;
+        min-height: 240px;
+        max-height: 320px;
     }
-    .carousel-inner > .item > a > img {
-        max-height: 315px;
-    }
+
     .carousel-indicators {
         display: block;
-        bottom: 30%;
+        bottom: 25%;
     }
 
     .carousel-caption {
         padding: 0 15%;
     }
 
-    .carousel-control {
-        padding-top: 120px;
-    }
-
+    /*  .carousel-control {
+		  padding-top: 100px;
+	  }
+  */
     .carousel-caption--hero {
         font-size: 3.6vw;
         line-height: 4vw;
-        padding-bottom: 95px;
+        padding-bottom: 55px;
     }
 
     .carousel-indicators--visible {
@@ -85,6 +92,9 @@
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
+    .carousel-caption--hero {
+        padding-bottom: 70px;
+    }
     .carousel-indicators {
         display: block;
         bottom: 27.5%;
@@ -106,9 +116,9 @@
         padding: 0 15%;
     }
 
-    .carousel-control {
-        padding-top: 170px;
-    }
+    /*  .carousel-control {
+		  padding-top: 170px;
+	  }*/
 }
 
 /* Image size 1350x675 */
@@ -120,16 +130,15 @@
     .carousel-caption {
         padding: 0 20%;
     }
-
-    .carousel-control {
-        padding-top: 180px;
-    }
-
 }
 
 /* Image size 2600*1000 */
 @media screen and (min-width: 1900px) {
     .carousel {
         height: 400px;
+    }
+
+    .carousel--hero .icon {
+        font-size: 3vw;
     }
 }
