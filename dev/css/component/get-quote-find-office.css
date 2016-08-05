@@ -42,7 +42,6 @@
     width: auto;
 }
 .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
-    width: 100%;
     float: left;
     margin-bottom: 5px;
 }
