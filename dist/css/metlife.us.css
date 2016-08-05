@@ -12480,7 +12480,7 @@ ul.bullet-list {
 
 .shadow {
     background: #fff;
-    top: 72px !important;
+    top: 68px !important;
     position: absolute;
     display: table-row-group !important;
 }
@@ -12489,18 +12489,16 @@ ul.bullet-list {
     border: 1px solid #e3e3e3;
     border-radius: 2px;
     background: #fff;
-    white-space: nowrap !important;
     cursor: pointer;
     line-height: 16px;
     margin-top: -1px;
     z-index: 900;
     position: absolute;
-    padding: 0 10px 10px;
 }
 
 .shadow .output div {
-    padding: 1px 3px;
     font-size: 13px;
+    padding: 5px 10px;
 }
 
 .shadow .output {
