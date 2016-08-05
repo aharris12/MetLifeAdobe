@@ -5173,7 +5173,7 @@ a:visited {
 
 @media screen and (min-width: 768px) {
     .quote-office {
-        margin: -85px auto 0;
+        margin: -70px auto 0;
         width: 96%;
     }
     .get-quote__container {
@@ -5202,7 +5202,7 @@ a:visited {
 @media screen and (min-width: 1024px) {
     .quote-office {
         margin-bottom: 40px;
-        margin-top:-85px;
+        margin-top:-70px;
         width: 85%;
         max-width: 1300px;
     }
@@ -5338,18 +5338,19 @@ a:visited {
     right: 0;
     left: 0;
     width: 100%;
-    display: table;
+    display: flex;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: table-cell;
+    display: flex;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
+    align-items: center;
 }
 
 .carousel--hero .icon {
@@ -5359,45 +5360,51 @@ a:visited {
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
-    .carousel {
-        max-height: 300px;
-    }
+   /* .carousel {
+       max-height: 300px;
+    }*/
 
     .carousel-caption {
         padding: 0 15%;
     }
 
     .carousel-control {
-        padding-top: 130px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+       /* padding-top: 130px;*/
         z-index: 10;
     }
 }
 
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
+    .item{
+        max-height: 320px;
+        min-height: 240px;
+    }
     .carousel {
-         max-height: 315px;
+        min-height: 240px;
+        max-height: 320px;
     }
-    .carousel-inner > .item > a > img {
-        max-height: 315px;
-    }
+
     .carousel-indicators {
         display: block;
-        bottom: 30%;
+        bottom: 25%;
     }
 
     .carousel-caption {
         padding: 0 15%;
     }
 
-    .carousel-control {
+  /*  .carousel-control {
         padding-top: 100px;
     }
-
+*/
     .carousel-caption--hero {
         font-size: 3.6vw;
         line-height: 4vw;
-        padding-bottom: 95px;
+        padding-bottom: 55px;
     }
 
     .carousel-indicators--visible {
@@ -5408,6 +5415,9 @@ a:visited {
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
+    .carousel-caption--hero {
+        padding-bottom: 70px;
+    }
     .carousel-indicators {
         display: block;
         bottom: 27.5%;
@@ -5429,9 +5439,9 @@ a:visited {
         padding: 0 15%;
     }
 
-    .carousel-control {
+  /*  .carousel-control {
         padding-top: 170px;
-    }
+    }*/
 }
 
 /* Image size 1350x675 */
@@ -5443,11 +5453,6 @@ a:visited {
     .carousel-caption {
         padding: 0 20%;
     }
-
-    .carousel-control {
-        padding-top: 180px;
-    }
-
 }
 
 /* Image size 2600*1000 */
@@ -8738,7 +8743,7 @@ body{
 }
 
 .product-row__tile__img-tile__img {
-    min-height: 150px;
+
     display: block;
     width: 100%;
     background-size: cover;
@@ -14672,7 +14677,7 @@ span.errorRadio {
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     .cta_header_quote {
         margin-bottom: 0;
         width: 45%;

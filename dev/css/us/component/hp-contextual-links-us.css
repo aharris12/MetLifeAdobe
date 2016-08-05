@@ -45,7 +45,6 @@
     .more-content__section a:nth-child(3) {
         font-size: 12px;
         line-height: 16px;
-        letter-spacing: 0.5px;
         margin-left: 0px;
         padding-bottom: 0px;
     }
@@ -72,6 +71,5 @@
     .more-content__section a:nth-child(3) {
         font-size: 14px;
         line-height: 18px;
-        letter-spacing: 1px;
     }
 }
