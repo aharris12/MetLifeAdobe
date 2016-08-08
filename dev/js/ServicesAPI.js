@@ -564,7 +564,7 @@ function searchForTopic(nameKey, obj) {
 		console.log(obj.news[i].topics);
 		console.log(obj);
 		if(obj.news[i].topics === nameKey) {
-			console.log("made it")
+			console.log("made it");
 			arrWithFilteredTopics[i] = obj.news[i];
 		}
 	}
@@ -1847,6 +1847,8 @@ var ServicesAPI = {
 		} else if (newsYear === "All") {
 			url += newsTopic + query;
 			console.log(url);
+		} else if (newsYear !== "All") {
+			url += newsYear + query;
 		}
 		ServicesAPI.newsRoomServiceCall(url, newsMonth, newsTopic);
 	},
