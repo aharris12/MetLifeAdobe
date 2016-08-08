@@ -47,7 +47,7 @@ var newsTopic;
 var newsConcatenator;
 var totalMonths = [];
 var totalYears = [];
-var monthToIntegerMapping = {};
+var integerToMonthMapping = {};
 
 //Contact Variables
 var radioDials = false;
@@ -526,20 +526,58 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 
 //Parse the json object locally to display the selected months
 //For production, the month filtering will occur on the backend
-function parseNewsRoomResultsLocally(results, monthSelected) {
+function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) {
 	var numResults = results.length;
 	var filteredResults = [];
-	for(var i = 0; i < numResults; i++) {
-		if(results[i].month === "All") {
-			break;
-		} else if(results[i].month === monthSelected) {
-			filteredResults.push(results[i]);
+	//If All months is selected, we don't begin filtering yet
+	if(monthSelected === integerToMonthMapping[0]) {
+		filteredResults = results;
+	} else {
+		for(var i = 0; i < numResults; i++) {
+			//filter result for the given months
+			if(results[i].month === monthSelected) {
+				filteredResults.push(results[i]);
+			}
 		}
 	}
+	console.log(filteredResults.news);
+	console.log(filteredResults.news.constructor === Array);
+	//Next filter for the topic selected
+	console.log(newsTopicSelected);
+	if(newsTopicSelected === "master-json-object") {
+		filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+	} else {
+		filteredResults = searchForTopic(newsTopicSelected, filteredResults);
+		filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+	}
+
 	return filteredResults;
 }
 
-function mapMonthToInteger() {
+function searchForTopic(nameKey, obj) {
+	var arrWithFilteredTopics = [];
+	console.log(obj);
+	console.log(obj.news);
+	console.log(nameKey);
+	console.log(Object.keys(obj).length);
+	for (var i = 0; i < obj.news.length; i++) {
+		console.log(obj.news[i].topics);
+		console.log(obj);
+		if(obj.news[i].topics === nameKey) {
+			console.log("made it")
+			arrWithFilteredTopics[i] = obj.news[i];
+		}
+	}
+	console.log(arrWithFilteredTopics);
+	obj["news"] = arrWithFilteredTopics;
+	return obj;
+}
+
+$(function() {
+	integerToMonthMapping = mapIntegerToMonth();
+});
+
+function mapIntegerToMonth() {
 	//Array that will map the months to integers (including the "All" option)
 	var monthToIntMapping = {};
 	var monthsInDropDown = $("#list_month").children();
@@ -550,9 +588,15 @@ function mapMonthToInteger() {
 	return monthToIntMapping;
 }
 
-$(function() {
-	monthToIntegerMapping = mapMonthToInteger();
-});
+function filterBasedOnNewsType() {
+
+}
+
+//function sortPressRoomArticles(results) {
+//	results.sort(function(a, b) {
+//		a.year - b.year
+//	})
+//}
 
 
 /**** Press Room Search****************************************/
@@ -1798,9 +1842,13 @@ var ServicesAPI = {
 		//prod implementation of url
 		//url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
 		//local implementation of url
-		url += newsTopic + query;
-		console.log(url);
-		ServicesAPI.newsRoomServiceCall(url);
+		if(newsYear === "All" && newsMonth === "All") {
+			url += newsTopic + query;
+		} else if (newsYear === "All") {
+			url += newsTopic + query;
+			console.log(url);
+		}
+		ServicesAPI.newsRoomServiceCall(url, newsMonth, newsTopic);
 	},
 	pressBackQuery: function () {
 		var month = sessionStorage.getItem("press_month");
@@ -1816,7 +1864,7 @@ var ServicesAPI = {
 		sessionStorage.removeItem("press_year");
 		sessionStorage.removeItem("press_search");
 	},
-	newsRoomServiceCall: function (input) {
+	newsRoomServiceCall: function (input, selectedMonth, newsTopicPicked) {
 		resultsListHTML = "";
 		var url = input;
 		count = 0;
@@ -2237,7 +2285,6 @@ var ServicesAPI = {
 				if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
 					listCount += 6;
 				}
-
 				if (firstTimeRunNewsRoom === true) {
 					firstTimeRunNewsRoom = false;
 				}
@@ -2246,7 +2293,10 @@ var ServicesAPI = {
 				}
 
 
-				newsRoomResults = data.news;
+				var results = parseNewsRoomResultsLocally(data, selectedMonth, newsTopicPicked);
+
+				newsRoomResults = results.news;
+				console.log(newsRoomResults);
 				if (newsRoomResults.length != 0) {
 					if (!$(".list__item--no-results").hasClass("hidden")) {
 						$(".list__item--no-results").addClass("hidden");
@@ -2302,6 +2352,7 @@ var ServicesAPI = {
 		var selectMonth = $('#list_month');
 		selectMonth.empty();
 		selectMonth.append('<option value="All" selected>All</option>');
+		selectYear.append('<option value="All" selected>All</option>');
 		var thisMonth;
 		if($("#list_topics").prop('selectedIndex') === 0){
 			for(var i = 1; i <=12; i++){
