@@ -467,6 +467,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .product-row__tile__img-tile__img {
+        min-height: 150px;
+    }
     .single-promo {
         margin-bottom: 0px;
     }

@@ -2,7 +2,6 @@
     background-color:#E3E3E3;
     color:#333;
     margin-bottom: 15px;
-
 }
 
 .cta_header_quote p, .quote-office__heading{
@@ -39,6 +38,7 @@
         width: 95%;
     }
     .quote-office--left, .quote-office--right {
+        margin-bottom: 0px;
         width: calc(50% - 10px);
     }
 }

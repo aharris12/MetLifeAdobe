@@ -5091,15 +5091,13 @@ a:visited {
     font-weight: 300;
 }
 .quote-office--left, .quote-office--right{
-    height:200px;
     background-color:#0e5dae;
     float:left;
     color:#fff;
     width:100%;
     display:table;
     margin-bottom:25px;
-    min-height: 210px;
-    padding: 30px 20px;
+    padding: 20px 20px;
 }
 .quote-office--right {
     background-color: #2c77c5;
@@ -5185,6 +5183,8 @@ a:visited {
         margin: -70px auto 0;
     }
     .quote-office--left, .quote-office--right {
+        height:200px;
+        min-height: 210px;
         width: calc(50% - 10px);
         padding: 30px 20px;
     }
@@ -9196,6 +9196,9 @@ body{
 }
 
 @media screen and (max-width: 767px) {
+    .product-row__tile__img-tile__img {
+        min-height: 150px;
+    }
     .single-promo {
         margin-bottom: 0px;
     }
