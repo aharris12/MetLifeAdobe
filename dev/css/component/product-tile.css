@@ -79,6 +79,7 @@
     padding: 20px;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .product-row__tile__promo {
@@ -221,7 +222,7 @@
 
     .product-row__tile--img-tile__text {
         display: table-cell;
-        padding: 40px 3%;
+        padding: 20px 3%;
         width: 68%;
         text-align: left;
     }

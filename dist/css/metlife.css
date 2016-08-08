@@ -5088,7 +5088,7 @@ a:visited {
 }
 .quote-office__heading {
     font-size: 1.25em;
-    font-weight: 300;
+    font-weight: 400;
 }
 .quote-office--left, .quote-office--right{
     background-color:#0e5dae;
@@ -5441,7 +5441,8 @@ a:visited {
         bottom: 27.5%;
     }
     .carousel-inner > .item > a > img {
-        max-height: 400px;
+       /* max-height: 400px;*/
+        position: relative;
     }
 
     .carousel {
@@ -5461,6 +5462,24 @@ a:visited {
         padding-top: 170px;
     }*/
 }
+@media screen and (min-width: 1100px) and (max-width: 1300px){
+    .carousel-inner > .item > a > img {
+        top: -50px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .carousel-inner > .item > a > img {
+        top: -65px;
+    }
+}
+
+@media screen and (min-width: 1800px){
+    .carousel-inner > .item > a > img {
+        top: -75px;
+    }
+}
+
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
@@ -8808,6 +8827,7 @@ body{
     padding: 20px;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .product-row__tile__promo {
@@ -8950,7 +8970,7 @@ body{
 
     .product-row__tile--img-tile__text {
         display: table-cell;
-        padding: 40px 3%;
+        padding: 20px 3%;
         width: 68%;
         text-align: left;
     }
@@ -14226,7 +14246,7 @@ span.errorRadio {
 
 .cta_header_quote p {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     color: #ffffff;
 }
 
