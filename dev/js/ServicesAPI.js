@@ -47,6 +47,7 @@ var newsTopic;
 var newsConcatenator;
 var totalMonths = [];
 var totalYears = [];
+var monthToIntegerMapping = {};
 
 //Contact Variables
 var radioDials = false;
@@ -521,6 +522,38 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 	}
 	sessionStorage.removeItem("press_back");
 });
+
+
+//Parse the json object locally to display the selected months
+//For production, the month filtering will occur on the backend
+function parseNewsRoomResultsLocally(results, monthSelected) {
+	var numResults = results.length;
+	var filteredResults = [];
+	for(var i = 0; i < numResults; i++) {
+		if(results[i].month === "All") {
+			break;
+		} else if(results[i].month === monthSelected) {
+			filteredResults.push(results[i]);
+		}
+	}
+	return filteredResults;
+}
+
+function mapMonthToInteger() {
+	//Array that will map the months to integers (including the "All" option)
+	var monthToIntMapping = {};
+	var monthsInDropDown = $("#list_month").children();
+	$.each(monthsInDropDown, function(index, value) {
+		var int = "" + index;
+		monthToIntMapping[int] = $(value).val();
+	});
+	return monthToIntMapping;
+}
+
+$(function() {
+	monthToIntegerMapping = mapMonthToInteger();
+});
+
 
 /**** Press Room Search****************************************/
 
