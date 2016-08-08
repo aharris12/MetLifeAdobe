@@ -15,6 +15,10 @@ body{
     vertical-align: middle;
 }
 
+.microsite-header h1{
+    margin-bottom: 0;
+}
+
 .microsite-header .megamenu-trigger{
     width: 41px;
     display:block;
@@ -47,12 +51,18 @@ body{
     vertical-align: middle;
 }
 
-.microsite-trigger__icon{
+.microsite-header .megamenu-trigger__icon{
     fill: #2c77c5;
 }
 
-.megamenu-trigger__icon--open {
-    background-color: transparent;
+.microsite-trigger__icon {
+    height: 17px;
+    width: 19px;
+}
+
+.microsite-trigger__icon--close{
+    height: 16px;
+    width: 16px;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
