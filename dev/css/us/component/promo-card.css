@@ -13,5 +13,6 @@ font-weight: 400;
 @media screen and (min-width: 1024px) {
     .promocard {
         margin-top: 30px;
+        margin-bottom: 15px;
     }
 }
