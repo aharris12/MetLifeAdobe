@@ -3,7 +3,9 @@
     overflow: visible;
     background-color: #efefef;
 }
-
+.carousel--microsite .carousel-caption{
+    display: block;
+}
 .carousel--microsite .carousel-indicators--visible {
     bottom: 140px;
 }
