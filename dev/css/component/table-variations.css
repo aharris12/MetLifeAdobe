@@ -516,10 +516,6 @@
     font-weight: 400;
     padding-bottom: 15px;
 }
-/* line 13, ../../../sass/_monthlyRatesMobile.scss */
-.monthly_rates .expanded, .monthly_rates .unexpanded {
-    padding: 0 10px;
-}
 /* line 15, ../../../sass/_monthlyRatesMobile.scss */
 .monthly_rates .expanded > div, .monthly_rates .unexpanded > div {
     margin-bottom: 20px;
