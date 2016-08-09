@@ -121,8 +121,6 @@ function footerBorder(){
 function footerBorder(){
     if ($(".disclaimer").length == 0){
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("border-top", "none");
-        $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("padding-top", "0");
-
     }
 }
 

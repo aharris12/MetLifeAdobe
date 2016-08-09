@@ -4594,7 +4594,7 @@ a:visited {
     font-size: 0.8em;
     text-transform: none;
     font-weight: 400;
-    padding: 5px 10px;
+    padding: 5px 15px;
     letter-spacing: 0;
     line-height: 1.25em;
 }
@@ -5088,18 +5088,16 @@ a:visited {
 }
 .quote-office__heading {
     font-size: 1.25em;
-    font-weight: 300;
+    font-weight: 400;
 }
 .quote-office--left, .quote-office--right{
-    height:200px;
     background-color:#0e5dae;
     float:left;
     color:#fff;
     width:100%;
     display:table;
     margin-bottom:25px;
-    min-height: 210px;
-    padding: 30px 20px;
+    padding: 20px 20px;
 }
 .quote-office--right {
     background-color: #2c77c5;
@@ -5185,6 +5183,7 @@ a:visited {
         margin: -70px auto 0;
     }
     .quote-office--left, .quote-office--right {
+        min-height: 210px;
         width: calc(50% - 10px);
         padding: 30px 20px;
     }
@@ -5441,7 +5440,8 @@ a:visited {
         bottom: 27.5%;
     }
     .carousel-inner > .item > a > img {
-        max-height: 400px;
+       /* max-height: 400px;*/
+        position: relative;
     }
 
     .carousel {
@@ -5461,6 +5461,24 @@ a:visited {
         padding-top: 170px;
     }*/
 }
+@media screen and (min-width: 1100px) and (max-width: 1300px){
+    .carousel-inner > .item > a > img {
+        top: -50px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .carousel-inner > .item > a > img {
+        top: -65px;
+    }
+}
+
+@media screen and (min-width: 1800px){
+    .carousel-inner > .item > a > img {
+        top: -75px;
+    }
+}
+
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1280px) {
@@ -8808,6 +8826,7 @@ body{
     padding: 20px;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .product-row__tile__promo {
@@ -8950,7 +8969,7 @@ body{
 
     .product-row__tile--img-tile__text {
         display: table-cell;
-        padding: 40px 3%;
+        padding: 20px 3%;
         width: 68%;
         text-align: left;
     }
@@ -9124,6 +9143,9 @@ body{
 }
 
 @media screen and (min-width: 1024px) {
+    .product-row__tile--img-tile__text {
+        padding: 40px 3%;
+    }
     .product-row__tile__title {
         font-size: 22px;
         line-height: 26px;
@@ -9196,6 +9218,9 @@ body{
 }
 
 @media screen and (max-width: 767px) {
+    .product-row__tile__img-tile__img {
+        min-height: 150px;
+    }
     .single-promo {
         margin-bottom: 0px;
     }
@@ -14223,7 +14248,7 @@ span.errorRadio {
 
 .cta_header_quote p {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     color: #ffffff;
 }
 
@@ -18427,7 +18452,6 @@ text-align: center;
     background-color:#E3E3E3;
     color:#333;
     margin-bottom: 15px;
-
 }
 
 .cta_header_quote p, .quote-office__heading{
@@ -18464,6 +18488,7 @@ text-align: center;
         width: 95%;
     }
     .quote-office--left, .quote-office--right {
+        margin-bottom: 0px;
         width: calc(50% - 10px);
     }
 }
@@ -18485,22 +18510,31 @@ text-align: center;
 
 .find-office .btn-group .btn {
     height: 40px;
+    line-height: 3.4em;
 }
 
 .btn-group__icon {
-    top: 34px;
+    top: 29px;
 }
 @media screen and (min-width: 768px) {
+    .find-office .btn-group .btn {
+        line-height: 3.2em;
+    }
     .btn-group__icon {
-        top: 33px;
+        top: 31px;
     }
 }
 
 @media screen and (min-width: 1024px) {
+    .find-office .btn-group .btn {
+        line-height: 3em;
+    }
     .btn-group__icon {
-        top: 33px;
+        top: 31px;
     }
 }
+
+
 .hp--contextual--links{
    
 }
@@ -18513,7 +18547,7 @@ text-align: center;
     line-height: 18px;
     color: #7A9816;
     text-decoration: underline;
-    display: block;
+    display: inline-block;
     margin-top: 10px;
     margin-left: 20px;
     padding-bottom: 20px;
@@ -18540,7 +18574,7 @@ text-align: center;
 @media screen and (min-width: 768px) {
     .more-content {
         padding-top: 30px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
     .more-content__section a:nth-child(2) {
         padding: 20px 0 0 0;
@@ -18583,7 +18617,6 @@ text-align: center;
 .skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 	font-size: 24px;
 	line-height: 28px;
-	width: 90%;
 	color: #fff;
 	font-weight: 400;
 }
@@ -18597,6 +18630,7 @@ text-align: center;
 		padding-left: 0px;
 		padding-right: 0px;
 		padding-bottom: 10px;
+		padding-top: 0px;
 	}
 }
 
@@ -18639,12 +18673,13 @@ font-weight: 400;
 @media screen and (max-width: 1024px) and (min-width: 768px) {
     .promocard {
         margin-top: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 5px;
     }
 }
 @media screen and (min-width: 1024px) {
     .promocard {
         margin-top: 30px;
+        margin-bottom: 0px;
     }
 }
 @media all and (min-width:0\0) and (min-resolution:.001dpcm)
