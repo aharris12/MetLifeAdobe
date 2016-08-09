@@ -7998,7 +7998,7 @@ ol.promocard_content__list li:after {
 
 /* line 157, ../../../sass/_tableVariationsMobile.scss */
 .comparison-table-layout {
-    margin: 20px 0;
+    margin: 15px 0 5px;
     font-size: 0;
 }
 /* line 160, ../../../sass/_tableVariationsMobile.scss */
@@ -8152,10 +8152,10 @@ ol.promocard_content__list li:after {
         padding: 20px 0;
     }
 
-    /* line 41, ../../../sass/_tableVariationsTablet.scss */
     .comparison-table-layout {
-        margin: 20px 0;
+        margin: 20px 0 10px;
     }
+
     /* line 43, ../../../sass/_tableVariationsTablet.scss */
     .comparison-table-layout .comparison-table {
         width: 50%;
@@ -8267,10 +8267,6 @@ ol.promocard_content__list li:after {
         padding: 20px 0;
     }
 
-    /* line 44, ../../../sass/_tableVariationsDesktop.scss */
-    .comparison-table-layout {
-        margin: 20px 0;
-    }
     /* line 46, ../../../sass/_tableVariationsDesktop.scss */
     .comparison-table-layout .comparison-table {
         width: 50%;
@@ -8314,7 +8310,6 @@ ol.promocard_content__list li:after {
 .monthly_rates {
     background-color: #ffffff;
     padding-top: 20px;
-    margin-bottom: 30px;
 }
 /* line 6, ../../../sass/_monthlyRatesMobile.scss */
 .monthly_rates h1 {
@@ -8324,14 +8319,8 @@ ol.promocard_content__list li:after {
     font-weight: 400;
     padding-bottom: 15px;
 }
-/* line 13, ../../../sass/_monthlyRatesMobile.scss */
-.monthly_rates .expanded, .monthly_rates .unexpanded {
-    padding: 0 10px;
-}
 /* line 15, ../../../sass/_monthlyRatesMobile.scss */
-.monthly_rates .expanded > div, .monthly_rates .unexpanded > div {
-    margin-bottom: 20px;
-}
+
 /* line 21, ../../../sass/_monthlyRatesMobile.scss */
 .monthly_rates .unexpanded {
     display: none;
