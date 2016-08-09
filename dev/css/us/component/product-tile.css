@@ -1,6 +1,7 @@
-.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
+.product-row__tile--img-tile.skinny-promo-tile-homepage{
 	width: 100%;
-	margin-top:-15px;
+	margin-top:initial;
+	margin-bottom:initial;
 }
 .skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 	font-size: 24px;
@@ -23,10 +24,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
-		margin-top: 0px;
-		margin-bottom: -20px;
-	}
+
 	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 		font-size: 18px;
 		line-height: 22px;
@@ -39,10 +37,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-	.product-row__tile--img-tile.box-shadow.skinny-promo-tile-homepage{
-		margin-top: 0;
-		margin-bottom: -20px;
-	}
 
 	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 		font-size: 22px;
