@@ -5185,6 +5185,7 @@ a:visited {
         margin: -70px auto 0;
     }
     .quote-office--left, .quote-office--right {
+        height:200px;
         min-height: 210px;
         width: calc(50% - 10px);
         padding: 30px 20px;
@@ -5357,13 +5358,13 @@ a:visited {
     right: 0;
     left: 0;
     width: 100%;
-    display: flex;
+    display: flex !important;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: flex;
+    display: flex !important;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
@@ -5376,7 +5377,9 @@ a:visited {
     width: 24px;
     height: 24px;
 }
-
+.carousel--hero .carousel-inner .item > a {
+    display: block;
+}
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     /* .carousel {
@@ -5388,7 +5391,7 @@ a:visited {
     }
 
     .carousel-control {
-        display: inline-flex;
+        display: inline-flex !important;
         justify-content: center;
         align-items: center;
         /* padding-top: 130px;*/
