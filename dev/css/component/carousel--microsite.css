@@ -7,7 +7,7 @@
     display: block;
 }
 .carousel--microsite .carousel-indicators--visible {
-    bottom: 140px;
+    top:-25px;
 }
 
 .carousel--microsite .carousel-control {
@@ -124,10 +124,6 @@
         position: absolute;
     }
 
-    .carousel--microsite .carousel-control {
-        padding-top: 176px;
-    }
-
     .carousel--microsite .carousel-control .icon {
         top: 0;
     }
@@ -155,10 +151,6 @@
 
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
-    }
-
-    .carousel--microsite .carousel-control {
-        padding-top: 170px;
     }
 
     .carousel--microsite .carousel-control .icon {

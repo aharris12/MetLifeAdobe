@@ -79,6 +79,7 @@
     padding: 20px;
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .product-row__tile__promo {
@@ -221,7 +222,7 @@
 
     .product-row__tile--img-tile__text {
         display: table-cell;
-        padding: 40px 3%;
+        padding: 20px 3%;
         width: 68%;
         text-align: left;
     }
@@ -395,6 +396,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .product-row__tile--img-tile__text {
+        padding: 40px 3%;
+    }
     .product-row__tile__title {
         font-size: 22px;
         line-height: 26px;
@@ -467,6 +471,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .product-row__tile__img-tile__img {
+        min-height: 150px;
+    }
     .single-promo {
         margin-bottom: 0px;
     }
