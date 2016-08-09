@@ -396,6 +396,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .product-row__tile--img-tile__text {
+        padding: 40px 3%;
+    }
     .product-row__tile__title {
         font-size: 22px;
         line-height: 26px;
