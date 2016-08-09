@@ -774,12 +774,18 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
+                        url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
 
                         data = JSON.stringify(jsonData);
                     }
 console.log(url)
                     $.ajax({
+                        headers: {
+                            'Authorization':'Basic YWxpY29zdGFnZXZpZXc6QWwxYzBTdEch',
+                            'partner_userName':'gluuser2',
+                            'partner_pwd':'HRr2m0+R28ezfIdDvuBLdg',
+                            'partner_name':'MetLife CP Redesign Sites'
+                        },
                         url: url,
                         dataType: 'json',
                         data: data,
