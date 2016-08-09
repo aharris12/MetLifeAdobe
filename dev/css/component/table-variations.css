@@ -190,7 +190,7 @@
 
 /* line 157, ../../../sass/_tableVariationsMobile.scss */
 .comparison-table-layout {
-    margin: 20px 0 10px;
+    margin: 15px 0 5px;
     font-size: 0;
 }
 /* line 160, ../../../sass/_tableVariationsMobile.scss */
@@ -343,6 +343,11 @@
         height: 60px;
         padding: 20px 0;
     }
+
+    .comparison-table-layout {
+        margin: 20px 0 10px;
+    }
+
     /* line 43, ../../../sass/_tableVariationsTablet.scss */
     .comparison-table-layout .comparison-table {
         width: 50%;
