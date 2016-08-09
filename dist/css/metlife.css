@@ -5183,7 +5183,6 @@ a:visited {
         margin: -70px auto 0;
     }
     .quote-office--left, .quote-office--right {
-        height:200px;
         min-height: 210px;
         width: calc(50% - 10px);
         padding: 30px 20px;
