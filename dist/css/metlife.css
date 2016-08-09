@@ -5185,10 +5185,10 @@ a:visited {
 @media screen and (min-width: 768px) {
     .quote-office {
         margin: -70px auto 0;
-        width: 95%;
     }
     .quote-office--left, .quote-office--right {
         width: calc(50% - 10px);
+        padding: 30px 20px;
     }
     .quote-office--right  {
         margin-right:0px;
@@ -5215,7 +5215,7 @@ a:visited {
 @media screen and (min-width: 1024px) {
     .quote-office {
         margin-bottom: 40px;
-        margin-top:-85px;
+        margin-top:-70px;
         width: 85%;
         max-width: 1300px;
     }
@@ -5225,6 +5225,7 @@ a:visited {
     }
     .quote-office--left, .quote-office--right {
         width: calc(50% - 10px);
+        padding: 30px 35px;
     }
 
 
@@ -5357,18 +5358,19 @@ a:visited {
     right: 0;
     left: 0;
     width: 100%;
-    display: table;
+    display: flex;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: table-cell;
+    display: flex;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
+    align-items: center;
 }
 
 .carousel--hero .icon {
@@ -5378,45 +5380,51 @@ a:visited {
 
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
-    .carousel {
-        max-height: 300px;
-    }
+    /* .carousel {
+		max-height: 300px;
+	 }*/
 
     .carousel-caption {
         padding: 0 15%;
     }
 
     .carousel-control {
-        padding-top: 130px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        /* padding-top: 130px;*/
         z-index: 10;
     }
 }
 
 /* Image size 1100x550 */
 @media screen and (min-width: 768px) {
+    .item{
+        max-height: 320px;
+        min-height: 240px;
+    }
     .carousel {
-         max-height: 315px;
+        min-height: 240px;
+        max-height: 320px;
     }
-    .carousel-inner > .item > a > img {
-        max-height: 315px;
-    }
+
     .carousel-indicators {
         display: block;
-        bottom: 30%;
+        bottom: 25%;
     }
 
     .carousel-caption {
         padding: 0 15%;
     }
 
-    .carousel-control {
-        padding-top: 100px;
-    }
-
+    /*  .carousel-control {
+		  padding-top: 100px;
+	  }
+  */
     .carousel-caption--hero {
         font-size: 3.6vw;
         line-height: 4vw;
-        padding-bottom: 95px;
+        padding-bottom: 55px;
     }
 
     .carousel-indicators--visible {
@@ -5427,6 +5435,9 @@ a:visited {
 
 /* Image size 1350x675 */
 @media screen and (min-width: 1024px) {
+    .carousel-caption--hero {
+        padding-bottom: 70px;
+    }
     .carousel-indicators {
         display: block;
         bottom: 27.5%;
@@ -5448,9 +5459,9 @@ a:visited {
         padding: 0 15%;
     }
 
-    .carousel-control {
-        padding-top: 170px;
-    }
+    /*  .carousel-control {
+		  padding-top: 170px;
+	  }*/
 }
 
 /* Image size 1350x675 */
@@ -5462,11 +5473,6 @@ a:visited {
     .carousel-caption {
         padding: 0 20%;
     }
-
-    .carousel-control {
-        padding-top: 180px;
-    }
-
 }
 
 /* Image size 2600*1000 */
@@ -7021,7 +7027,7 @@ ol.promocard_content__list li:after {
 .chart_check{
     max-width: 25px;
     height: auto;
-} 
+}
 .product-comparison-chart-description{
     margin-top: 30px;
     padding-bottom:0;
@@ -7465,7 +7471,7 @@ ol.promocard_content__list li:after {
     position:relative;
     top: 50%;
 }
-    /* line 438, ../../../sass/_productComparisonChartMobile.scss */
+/* line 438, ../../../sass/_productComparisonChartMobile.scss */
 .microsite-product-chart .col2 {
     float: right;
 }
@@ -7477,6 +7483,14 @@ ol.promocard_content__list li:after {
 .microsite-product-chart .mcc2:nth-last-child(2) {
     width: 50%;
     float: right;
+}
+
+.microsite-product-chart .carousel--microsite .carousel-inner{
+    height: auto
+}
+
+.microsite-product-chart .carousel--microsite:after{
+    height: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -8588,7 +8602,9 @@ body{
     overflow: visible;
     background-color: #efefef;
 }
-
+.carousel--microsite .carousel-caption{
+    display: block;
+}
 .carousel--microsite .carousel-indicators--visible {
     bottom: 140px;
 }
@@ -8597,9 +8613,11 @@ body{
     height: 100%;
 }
 
-.carousel--microsite .carousel-control svg {
-    position: relative;
+.carousel--microsite .carousel-control .icon {
+    width: 24px;
+    height: 24px;
 }
+
 .carousel--microsite .carousel-caption {
     bottom: 0;
     padding: 15px 0;
@@ -8618,8 +8636,9 @@ body{
 .carousel-indicators--visible {
     display: block;
 }
+
 .carousel-caption--bottom {
-    background-color: rgba(35,119,197,1);
+    background-color: rgba(35, 119, 197, 1);
     top: auto;
     position: relative;
 }
@@ -8660,10 +8679,12 @@ body{
     .carousel-caption--bottom {
         background-color: rgba(35, 119, 197, 0.7);
     }
+
     .carousel--microsite {
         max-height: none;
         margin-bottom: 30px
     }
+
     .carousel--microsite:after {
         background-color: #efefef;
         position: absolute;
@@ -8672,64 +8693,91 @@ body{
         right: 0;
         height: 30px;
     }
-    .carousel--microsite .carousel-caption{
+
+    .carousel--microsite .carousel-caption {
         padding: 15px 0 30px;
         position: absolute;
     }
-    .carousel--microsite .carousel-indicators--visible{
+
+    .carousel--microsite .carousel-indicators--visible {
         position: absolute;
         top: 75%;
     }
+
     .carousel--microsite .carousel-indicators--visible li {
         background: #B6D1EB;
         border-color: #B6D1EB;
     }
+
     .carousel--microsite .carousel-indicators--visible li.active {
         background: #fff;
         border-color: #fff;
     }
+
     .item--microsite {
-        max-height:425px;
+        max-height: 425px;
     }
+
     .carousel-caption--bottom {
         padding: 30px 0 20px;
         position: absolute;
     }
-    .carousel--microsite .carousel-control svg {
-        top: 0;
-        width: 40px;
-        height: 30px;
+
+    .carousel--microsite .carousel-control {
+        padding-top: 176px;
     }
+
+    .carousel--microsite .carousel-control .icon {
+        top: 0;
+    }
+
     .carousel--microsite .carousel-inner {
         height: 400px;
     }
+
     .item--microsite img {
         min-height: 400px;
     }
+
     .carousel-caption--bottom h2 {
         width: 80%;
         font-size: 20px;
         line-height: 24px;
     }
 }
+
 @media screen and (min-width: 1024px) {
 
     .item--microsite {
-        max-height:450px;
+        max-height: 450px;
     }
+
     .carousel--microsite .carousel-indicators--visible {
         bottom: 15px;
     }
-    .carousel--microsite .carousel-caption{
+
+    .carousel--microsite .carousel-control {
+        padding-top: 170px;
+    }
+
+    .carousel--microsite .carousel-control .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel--microsite .carousel-caption {
         padding: 15px 0 35px;
     }
+
     .carousel-caption--bottom {
         padding: 30px 0 20px;
     }
+
     .carousel-caption--bottom h2 {
         font-size: 28px;
         line-height: 32px;
     }
+
     .carousel-caption--bottom h3 {
         font-size: 18px;
         line-height: 26px;
@@ -8737,14 +8785,14 @@ body{
 }
 
 @media screen and (min-width: 1280px) {
-    .item--microsite{
-        max-height:500px;
+    .item--microsite {
+        max-height: 500px;
     }
 }
 
 @media screen and (min-width: 1900px) {
-    .item--microsite{
-        max-height:560px;
+    .item--microsite {
+        max-height: 560px;
     }
 }
 .product-row {
@@ -8781,7 +8829,7 @@ body{
 }
 
 .product-row__tile__img-tile__img {
-    min-height: 150px;
+
     display: block;
     width: 100%;
     background-size: cover;
@@ -12281,11 +12329,11 @@ ul.bullet-list {
 }
 
 .product-card .content li:before {
-    content: "\0387";
-    font-size: 26px;
-    vertical-align: top;
+    content: "\2022";
+    font-size: 13px;
     line-height: 16px;
-    padding-right: 9px;
+    vertical-align: top;
+    padding-right: 11px;
 }
 
 .product-card .content .intro,
@@ -12434,7 +12482,7 @@ ul.bullet-list {
 
 .shadow {
     background: #fff;
-    top: 72px !important;
+    top: 68px !important;
     position: absolute;
     display: table-row-group !important;
 }
@@ -12443,18 +12491,16 @@ ul.bullet-list {
     border: 1px solid #e3e3e3;
     border-radius: 2px;
     background: #fff;
-    white-space: nowrap !important;
     cursor: pointer;
     line-height: 16px;
     margin-top: -1px;
     z-index: 900;
     position: absolute;
-    padding: 0 10px 10px;
 }
 
 .shadow .output div {
-    padding: 1px 3px;
     font-size: 13px;
+    padding: 5px 10px;
 }
 
 .shadow .output {

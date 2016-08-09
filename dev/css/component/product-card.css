@@ -76,11 +76,11 @@
 }
 
 .product-card .content li:before {
-    content: "\0387";
-    font-size: 26px;
-    vertical-align: top;
+    content: "\2022";
+    font-size: 13px;
     line-height: 16px;
-    padding-right: 9px;
+    vertical-align: top;
+    padding-right: 11px;
 }
 
 .product-card .content .intro,
@@ -229,7 +229,7 @@
 
 .shadow {
     background: #fff;
-    top: 72px !important;
+    top: 68px !important;
     position: absolute;
     display: table-row-group !important;
 }
@@ -238,18 +238,16 @@
     border: 1px solid #e3e3e3;
     border-radius: 2px;
     background: #fff;
-    white-space: nowrap !important;
     cursor: pointer;
     line-height: 16px;
     margin-top: -1px;
     z-index: 900;
     position: absolute;
-    padding: 0 10px 10px;
 }
 
 .shadow .output div {
-    padding: 1px 3px;
     font-size: 13px;
+    padding: 5px 10px;
 }
 
 .shadow .output {

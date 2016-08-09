@@ -1,12 +1,17 @@
+.carousel-caption {
+    display: flex;
+}
+
 .carousel-caption--hero {
     width: 100%;
-    display: table-cell;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -16,31 +21,36 @@
         width: 85%;
         max-width: 1300px;
         padding: 0;
-        display: flex;
     }
 
     .carousel-caption--hero {
         font-size: 3.4vw;
         line-height: 3.7vw;
-        padding-bottom: 95px;
-        height: 400px;
-        width: 60%;
+        padding-bottom: 55px;
+        width: 65%;
         margin: 0;
-        display: flex;
-        align-items: center;
-    }
-    .carousel--hero .left .icon {
-        right: 15px;
+        padding-left: 7.5vw;
     }
 
-    .carousel--hero .right .icon {
-        left: 15px;
-    }
 }
 @media screen and (min-width: 1024px) {
+    .carousel-caption--hero {
+        padding-bottom: 95px;
+        width:60%;
+    }
     .carousel-caption {
         margin-left: auto;
         margin-right: auto;
+    }
+    .carousel-caption--hero {
+        padding-left: 0px;
+        padding-bottom: 70px;
+    }
+}
+@media screen and (min-width: 1700px) {
+    .carousel-caption--hero {
+        font-size: 3vw;
+        line-height: 3.3vw;
     }
 
 }
