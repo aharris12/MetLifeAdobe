@@ -432,11 +432,11 @@
         line-height: 18px;
     }
 
-    .company-search-label {
+    .product-card .content p.company-search-label {
         display: inline;
         width: 30%;
         text-align: left;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .content-body input {
@@ -449,7 +449,7 @@
     }
 
     .shadow {
-        left: 162px !important;
+        left: 151px !important;
         top: 62px !important;
     }
 
