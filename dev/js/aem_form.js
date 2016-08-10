@@ -778,20 +778,19 @@ SFDC.form.forEach(function (element) {
 
                         data = JSON.stringify(jsonData);
                     }
-console.log(url)
+                    console.log(url)
                     $.ajax({
-                        headers: {
-                            'Authorization':'Basic YWxpY29zdGFnZXZpZXc6QWwxYzBTdEch',
-                            'partner_userName':'gluuser2',
-                            'partner_pwd':'HRr2m0+R28ezfIdDvuBLdg',
-                            'partner_name':'MetLife CP Redesign Sites'
-                        },
                         url: url,
                         dataType: 'json',
                         data: data,
                         async: true,
                         type: 'POST',
                         contentType: "application/json; charset=utf-8",
+                        headers: {
+                            'Met_User':'gluuser2',
+                            'Met_Pwd':'HRr2m0+R28ezfIdDvuBLdg',
+                            'Met_PTNR_NM ':'MetLife CP Redesign Sites'
+                        },
                         success: function (data, status, xhr) {
                             switch (data.result.toLowerCase()) {
                                 case "success":
