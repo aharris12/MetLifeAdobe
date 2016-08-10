@@ -5962,6 +5962,7 @@ $("#unsubscribeForm").submit(function(event){
 });
 // Start Validations For Unsubscribe Email
 function unsubscribeEmailDNSS(form) {
+	$(".js-toggleEmailMessageFail").addClass("hidden");
 	$("#email").blur();
 	if($("#email").hasClass("error")){
 		return false;
@@ -5984,11 +5985,13 @@ function UnsubscribeProcessorSubmit() {
 			processData: false,
 			success: function (returndata) {
 				console.log(returndata);
-				$(".email--unsubscribe-message").toggleClass("hidden");
+				$(".js-toggleEmailMessageDefault").addClass("hidden");
+				$(".js-js-toggleEmailMessageSuccess").removeClass("hidden");
 				$(".email--unsubscribe-form").hide();
 			},
 			error: function () {
 				console.log("error in ajax form submission");
+				$(".js-toggleEmailMessageFail").removeClass("hidden");
 			}
 		});
 	}
