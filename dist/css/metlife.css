@@ -12238,11 +12238,11 @@ ul.bullet-list {
 }
 
 .product-card .content li:before {
-    content: "\0387";
-    font-size: 26px;
-    vertical-align: top;
+    content: "\2022";
+    font-size: 13px;
     line-height: 16px;
-    padding-right: 9px;
+    vertical-align: top;
+    padding-right: 11px;
 }
 
 .product-card .content .intro,
@@ -12594,11 +12594,11 @@ ul.bullet-list {
         line-height: 18px;
     }
 
-    .company-search-label {
+    .product-card .content p.company-search-label {
         display: inline;
         width: 30%;
         text-align: left;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .content-body input {
@@ -12611,7 +12611,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        left: 162px !important;
+        left: 151px !important;
         top: 62px !important;
     }
 
