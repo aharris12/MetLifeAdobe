@@ -36,6 +36,7 @@
 }
 .accordion__title span:hover{
     color: #429dd9;
+    text-decoration: underline;
 }
 
 .accordion__title span{

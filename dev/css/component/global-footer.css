@@ -541,7 +541,9 @@
     line-height: 20px;
     font-weight: 400;
 }
-
+.language__link:hover{
+    text-decoration: underline;
+}
 .language__link:nth-child(3) {
     display: inline-block;
 }
@@ -602,7 +604,9 @@
     padding-bottom: 20px;
     margin: 0;
 }
-
+.footer-legal__link a:hover{
+    text-decoration: underline;
+}
 .footer-legal__link a {
     margin: 0 3px;
 

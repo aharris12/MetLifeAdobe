@@ -10568,6 +10568,7 @@ ul.bullet-list {
 }
 .accordion__title span:hover{
     color: #429dd9;
+    text-decoration: underline;
 }
 
 .accordion__title span{
@@ -11186,7 +11187,9 @@ ul.bullet-list {
     line-height: 20px;
     font-weight: 400;
 }
-
+.language__link:hover{
+    text-decoration: underline;
+}
 .language__link:nth-child(3) {
     display: inline-block;
 }
@@ -11247,7 +11250,9 @@ ul.bullet-list {
     padding-bottom: 20px;
     margin: 0;
 }
-
+.footer-legal__link a:hover{
+    text-decoration: underline;
+}
 .footer-legal__link a {
     margin: 0 3px;
 
@@ -13323,6 +13328,12 @@ manner*/
     min-height: 100%;
     position: relative;
     padding-bottom: 100px;
+}
+.contactDisclaimer{
+    color:#999;
+    font-size:11px;
+    line-height:15px;
+    font-weight:400;
 }
 .contact-close {
     top:10px;
