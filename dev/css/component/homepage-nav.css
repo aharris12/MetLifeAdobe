@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 996;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.34) 10%, rgba(0, 0, 0, 0) 50%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.34) 10%, rgba(0, 0, 0, 0) 100%);
     background-color: transparent;
 }
 
