@@ -1863,7 +1863,7 @@ input[type="radio"] {
 .form-icon-wrapper svg {
     position: absolute;
     top: 10px;
-    right: 2px;
+    right: 8px;
     fill: #666;
     width: 19px;
     height: 18px;
@@ -4269,6 +4269,7 @@ a:visited {
 }
 
 @media screen and (min-width: 768px) {
+
     .login-container-header--left {
         padding: 0 0 0 30px;
         transition: padding 0.3s ease 0s;
@@ -4358,6 +4359,8 @@ a:visited {
 }
 
 .login-container .login-popout__title {
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 400;
     text-transform: none;
     text-align: center;
@@ -4712,6 +4715,9 @@ a:visited {
 .login-container-alert h2 {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 .login-container-alert p {
@@ -4719,9 +4725,12 @@ a:visited {
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 @media (min-width: 1024px) {
+
     .login-container-alert {
         margin-top: -20px;
         margin-bottom: 20px;
@@ -4751,6 +4760,21 @@ a:visited {
     width: 100% !important;
     height: 100% !important;
     overflow-y: scroll !important;
+}
+@media screen and (min-width: 768px) {
+    .login-container-alert h2 {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .login-container-alert p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .login-container .login-popout__title{
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 .wrapper.breadcrumb {
     width:100%;
@@ -4834,7 +4858,7 @@ a:visited {
     position: absolute;
     z-index: 996;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.34) 10%, rgba(0, 0, 0, 0) 50%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.34) 10%, rgba(0, 0, 0, 0) 100%);
     background-color: transparent;
 }
 
@@ -5099,6 +5123,10 @@ a:visited {
     margin-bottom:25px;
     padding: 20px 20px;
 }
+.find-office__dental-container a, .find-office__vision-container a{
+    color: #2377C5;
+    font-weight: 400;
+}
 .quote-office--right {
     background-color: #2c77c5;
     float: right;
@@ -5185,6 +5213,7 @@ a:visited {
         margin: -70px auto 0;
     }
     .quote-office--left, .quote-office--right {
+        height:200px;
         min-height: 210px;
         width: calc(50% - 10px);
         padding: 30px 20px;
@@ -5357,13 +5386,13 @@ a:visited {
     right: 0;
     left: 0;
     width: 100%;
-    display: flex;
+    display: flex !important;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: flex;
+    display: flex !important;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
@@ -5376,7 +5405,9 @@ a:visited {
     width: 24px;
     height: 24px;
 }
-
+.carousel--hero .carousel-inner .item > a {
+    display: block;
+}
 /* Image size 800x400 */
 @media screen and (min-width: 480px) {
     /* .carousel {
@@ -5388,7 +5419,7 @@ a:visited {
     }
 
     .carousel-control {
-        display: inline-flex;
+        display: inline-flex !important;
         justify-content: center;
         align-items: center;
         /* padding-top: 130px;*/
@@ -5826,6 +5857,7 @@ ol.promocard_content__list li:after {
     font-size: 11px;
     margin-bottom: 0;
     line-height: 15px;
+    font-weight: 400;
 }
 /*
 .disclaimer:first-of-type {
@@ -5857,6 +5889,7 @@ ol.promocard_content__list li:after {
 @media screen and (min-width: 768px) {
     .disclaimer {
         padding-bottom: 20px;
+        line-height: 16px;
     }
   /*  .disclaimer {
         padding-top: 0;
@@ -5896,6 +5929,8 @@ ol.promocard_content__list li:after {
 @media screen and (min-width: 1024px) {
     .disclaimer {
         padding-bottom: 20px;
+        font-size: 12px;
+        line-height: 18px;
     }
   /*  .disclaimer {
         font-size: 12px;
@@ -12562,8 +12597,8 @@ ul.bullet-list {
     .company-search-label {
         text-align: left;
         margin-bottom: 10px;
-        font-size: 13px !important;
-        line-height: 40px !important;
+        font-size: 13px;
+        line-height: 40px;
     }
 
     .company-search-container {
@@ -12601,7 +12636,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        top: 92px !important;
+        top: 68px !important;
     }
 
     .company-search-input-container {
@@ -12683,16 +12718,16 @@ ul.bullet-list {
         line-height: 18px;
     }
 
-    .company-search-label {
+    .product-card .content p.company-search-label {
         display: inline;
         width: 30%;
         text-align: left;
-        font-size: 14px !important;
+        font-size: 13px;
     }
 
     .content-body input {
         margin-top: 20px;
-        width: 45%;
+        width: 40%;
     }
 
     .expand-content {
@@ -12700,7 +12735,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        left: 162px !important;
+        left: 151px !important;
         top: 62px !important;
     }
 
@@ -13879,6 +13914,14 @@ span.errorRadio {
     -webkit-appearance: none;
     outline: 0;
 }
+
+.contactDisclaimer{
+    font-size: 11px;
+    line-height: 15px;
+    color: #999;
+    font-weight: 400;
+}
+
 .privacy-policy-index {
     margin-top: 20px;
 }

@@ -72,6 +72,7 @@
 }
 
 @media screen and (min-width: 768px) {
+
     .login-container-header--left {
         padding: 0 0 0 30px;
         transition: padding 0.3s ease 0s;
@@ -161,6 +162,8 @@
 }
 
 .login-container .login-popout__title {
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 400;
     text-transform: none;
     text-align: center;
@@ -515,6 +518,9 @@
 .login-container-alert h2 {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 .login-container-alert p {
@@ -522,9 +528,12 @@
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 @media (min-width: 1024px) {
+
     .login-container-alert {
         margin-top: -20px;
         margin-bottom: 20px;
@@ -554,4 +563,19 @@
     width: 100% !important;
     height: 100% !important;
     overflow-y: scroll !important;
+}
+@media screen and (min-width: 768px) {
+    .login-container-alert h2 {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .login-container-alert p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .login-container .login-popout__title{
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
