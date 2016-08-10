@@ -12,6 +12,7 @@ var newsConcatenator;
 var totalMonths = [];
 var totalYears = [];
 var integerToMonthMapping = {};
+var monthToIntegerMapping = {};
 removeProtoObject = false;
 
 
@@ -22,16 +23,38 @@ $(".divider--load-more__link").click(function (e) {
     newsRoomServiceConstruction();
 });
 
-$("#list_month, #list_year").change(function () {
+//$("#list_month, #list_year").change(function () {
+//    firstTimeRunNewsRoomChange = true;
+//    totalYears = [];
+//    totalMonths = [];
+//    listCount = 0;
+//    newsRoomServiceConstruction();
+//});
+
+//when a new year is selected, the month dropdown should
+//default to "All", the Topics dropdown should remain the
+//same, and a new query should be fired.
+$("#list_year").change(function () {
     firstTimeRunNewsRoomChange = true;
+    $("#list_month").val(integerToMonthMapping["0"]);
     totalYears = [];
     totalMonths = [];
     listCount = 0;
     newsRoomServiceConstruction();
+    setTimeout(function () {
+        newsRoomYearChange();
+    }, 500);
 });
 
+//When a new list topic is selected, the month and year
+//dropdowns should reset to "All", and a new query should be
+//fired
 $("#list_topics").change(function () {
     firstTimeRunNewsRoomChange = true;
+    //The first value of the integerToMonthMapping will be
+    //the same for the month and year dropdown
+    $("#list_year").val(integerToMonthMapping["0"]);
+    $("#list_month").val(integerToMonthMapping["0"]);
     totalYears = [];
     totalMonths = [];
     listCount = 0;
@@ -41,10 +64,9 @@ $("#list_topics").change(function () {
     }, 500);
 });
 
-//$('#list_year').change(function() {
-//    newsRoomServiceConstruction();
-//    newsRoomYearChange();
-//});
+$("#list_month").change(function() {
+   newsRoomServiceConstruction();
+});
 
 function newsRoomYearChange() {
     var firstTime = false;
@@ -246,6 +268,7 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
         dataType: 'json',
         type: 'GET',
         success: function(data) {
+            console.log(data);
             if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
                 listCount += 6;
             }
@@ -299,6 +322,7 @@ function newsRoomServiceConstruction() {
     var url = $(".lists").attr("data-news-url");
     var query = $(".lists").attr("data-news-query-parameter");
     newsMonth = $("#list_month").val();
+    console.log(newsMonth);
     newsYear = $("#list_year").val();
     newsTopic = $('#list_topics').val();
     newsConcatenator = $(".lists").attr("data-news-concatenator");
@@ -314,43 +338,61 @@ function newsRoomServiceConstruction() {
         url += newsYear + query;
     }
     newsRoomServiceCall(url, newsMonth, newsTopic);
-};
+}
 
 function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) {
-    var numResults = results.length;
-    var filteredResults = [];
-    //If All months is selected, we don't begin filtering yet
-    if(monthSelected === integerToMonthMapping[0]) {
-        filteredResults = results;
-    } else {
-        for(var i = 0; i < numResults; i++) {
-            //filter result for the given months
-            if(results[i].month === monthSelected) {
-                filteredResults.push(results[i]);
-            }
+    var numResults = results.news.length;
+    console.log(results);
+    console.log(monthSelected);
+    console.log(newsTopicSelected);
+    var intRepresentationOfMonthToFilterOn = 0;
+    for(var month in monthToIntegerMapping) {
+        if(month === monthSelected) {
+            console.log(parseInt(monthToIntegerMapping[month]));
+            intRepresentationOfMonthToFilterOn = parseInt(monthToIntegerMapping[month]);
         }
     }
-    //Next filter for the topic selected
-    console.log(newsTopicSelected);
+    var filteredResults = {};
+    //If All months is selected, we don't begin filtering yet
+    if(monthSelected === integerToMonthMapping["0"]) {
+        console.log("Month is All");
+        filteredResults = results;
+    } else {
+        console.log(numResults);
+        filteredResults["news"] = [];
+        filteredResults["results"] = 0;
+        for(var i = 0; i < numResults; i++) {
+            //filter result for the given months
+            if(results.news[i].month === intRepresentationOfMonthToFilterOn) {
+                console.log(results.news[i].month);
+                console.log(monthSelected);
+                filteredResults.news.push(results.news[i]);
+            }
+        }
+        filteredResults["results"] = filteredResults["news"].length;
+    }
+    console.log(filteredResults);
+    //Next filter for the topic selected, if "All" topics is selected sort by year first, then month
     if(newsTopicSelected === "master-json-object") {
         filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
     } else {
+        //else filter the topics and then sort by year then month.
         filteredResults = searchForTopic(newsTopicSelected, filteredResults);
         filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
     }
-
     return filteredResults;
 }
 
-function searchForTopic(nameKey, obj) {
+function searchForTopic(nameKey, results) {
     var arrWithFilteredTopics = [];
     var count = 0;
-    for (var i = 0; i < obj.news.length; i++) {
-        if(obj.news[i].topics === nameKey) {
-            arrWithFilteredTopics[count] = obj.news[i];
+    for (var i = 0; i < results.news.length; i++) {
+        if(results.news[i].topics === nameKey) {
+            arrWithFilteredTopics[count] = results.news[i];
             count++;
         }
     }
+    //Create new object that mimics the json object we get back
     var filteredObj = {};
     filteredObj["news"] = arrWithFilteredTopics;
     filteredObj["results"] = arrWithFilteredTopics.length;
@@ -359,6 +401,7 @@ function searchForTopic(nameKey, obj) {
 
 $(function() {
     integerToMonthMapping = mapIntegerToMonth();
+    monthToIntegerMapping = mapMonthToInteger(integerToMonthMapping);
 });
 
 function mapIntegerToMonth() {
@@ -370,4 +413,12 @@ function mapIntegerToMonth() {
         monthToIntMapping[int] = $(value).val();
     });
     return monthToIntMapping;
+}
+
+function mapMonthToInteger(integerToMonth) {
+    var reverseMap = {};
+    for (var key in integerToMonth) {
+        reverseMap[integerToMonth[key]] = key;
+    }
+    return reverseMap;
 }
