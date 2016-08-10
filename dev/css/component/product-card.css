@@ -310,12 +310,7 @@
         color: #333;
     }
 
-    .company-search-label {
-        text-align: left;
-        margin-bottom: 10px;
-        font-size: 13px !important;
-        line-height: 40px !important;
-    }
+
 
     .company-search-container {
         text-align: left;
@@ -397,6 +392,12 @@
         margin-top: 0;
         margin-bottom: 30px;
     }
+    .company-search-label {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 40px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -430,16 +431,17 @@
         line-height: 18px;
     }
 
-    .company-search-label {
+    .product-card .content p.company-search-label {
         display: inline;
         width: 30%;
         text-align: left;
-        font-size: 14px !important;
+        font-size: 13px;
     }
+
 
     .content-body input {
         margin-top: 20px;
-        width: 45%;
+        width: 40%;
     }
 
     .expand-content {
@@ -470,4 +472,5 @@
     .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
         margin-bottom: 40px;
     }
+
 }
