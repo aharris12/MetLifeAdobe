@@ -981,15 +981,17 @@
 
                     <!-- Chris edit 3/30/2016 -->
                     <div class="company-search-container">
-                        <p class="company-search-label"><b>Find out if your eligible:</b></p>
-                        <div class="company-search-input-container">
-                            <input type="search" id="companyName" class="comapny-name-search"
-                                   placeholder="Enter your company name...">
-                            <button class="btn-brand-2nd" type="submit"
-                                    onclick="getCode(document.getElementById('companyName').value);">Go
-                            </button>
+                    <p class="company-search-label"><b>Find out if your eligible:</b></p>
+                    <input type="search" id="companyName" class="comapny-name-search"
+                           placeholder="Enter your company name...">
+                    <button class="btn-brand-2nd" type="submit"
+                            onclick="getCode(document.getElementById('companyName').value);">Go
+                    </button>
+                    <div class="shadow" id="shadow">
+                        <div class="output" id="output">
                         </div>
                     </div>
+                </div>
 
                     <p>Employees and members of participating companies or associations can enjoy these
                         benefits:</p>
@@ -2023,14 +2025,11 @@
 <script src="js/campaign-card.js"></script>
 <script src="js/glossary.js"></script>
 <script src="js/toqjshashtable.js"></script>
+<script src="js/toqdata.js"></script>
 <script src="js/blogpost.js"></script>
 <script src="js/product-card.js"></script>
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
-<script src="js/toolkit-contextual-links.js"></script>
-<script src="js/toolkit-search-page.js"></script>
-<script src="js/toolkit-column.js"></script>
-<script src="js/toolkit-page-title-banner.js"></script>
 <script src="js/share-chat.js"></script>
 <script src="js/contact-us.js"></script>
 <!-- /build -->

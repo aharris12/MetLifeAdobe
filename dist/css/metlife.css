@@ -12240,9 +12240,9 @@ ul.bullet-list {
 .product-card .content li:before {
     content: "\0387";
     font-size: 26px;
-    vertical-align: middle;
-    line-height: 20px;
-    padding-right: 10px;
+    vertical-align: top;
+    line-height: 16px;
+    padding-right: 9px;
 }
 
 .product-card .content .intro,
@@ -12391,7 +12391,7 @@ ul.bullet-list {
 
 .shadow {
     background: #fff;
-    top: 72px !important;
+    top: 68px !important;
     position: absolute;
     display: table-row-group !important;
 }
@@ -12400,18 +12400,16 @@ ul.bullet-list {
     border: 1px solid #e3e3e3;
     border-radius: 2px;
     background: #fff;
-    white-space: nowrap !important;
     cursor: pointer;
     line-height: 16px;
     margin-top: -1px;
     z-index: 900;
     position: absolute;
-    padding: 0 10px 10px;
 }
 
 .shadow .output div {
-    padding: 1px 3px;
     font-size: 13px;
+    padding: 5px 10px;
 }
 
 .shadow .output {
@@ -12472,7 +12470,12 @@ ul.bullet-list {
         color: #333;
     }
 
-
+    .company-search-label {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 40px;
+    }
 
     .company-search-container {
         text-align: left;
@@ -12509,7 +12512,7 @@ ul.bullet-list {
     }
 
     .shadow {
-        top: 92px !important;
+        top: 68px !important;
     }
 
     .company-search-input-container {
@@ -12554,12 +12557,6 @@ ul.bullet-list {
         margin-top: 0;
         margin-bottom: 30px;
     }
-    .company-search-label {
-        text-align: left;
-        margin-bottom: 10px;
-        font-size: 12px;
-        line-height: 40px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -12587,19 +12584,22 @@ ul.bullet-list {
         line-height: 18px;
     }
 
+    .product-card .content li:before {
+        line-height: 18px;
+    }
+
     .product-card .content span,
     .product-card .content p {
         font-size: 14px;
         line-height: 18px;
     }
 
-    .product-card .content p.company-search-label {
+    .company-search-label {
         display: inline;
         width: 30%;
         text-align: left;
-        font-size: 13px;
+        font-size: 14px;
     }
-
 
     .content-body input {
         margin-top: 20px;
@@ -12634,7 +12634,6 @@ ul.bullet-list {
     .product-row__tile--img-tile.box-shadow.skinny-promo-tile.product-card__skinny-promo--margin {
         margin-bottom: 40px;
     }
-
 }
 .wrapper__quote-card {
     width: 100%;
