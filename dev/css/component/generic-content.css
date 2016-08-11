@@ -23,9 +23,7 @@
     position: static;
 }
 .wrapper-general {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 .wrapper-general .table-title {
     margin-bottom: 20px;
@@ -40,6 +38,7 @@
     text-align: left;
 }
 @media (min-width: 768px) {
+
     .generic-content__img__container {
         width: 75%;
     }
