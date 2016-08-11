@@ -268,10 +268,6 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
         type: 'GET',
         success: function(data) {
             console.log(data);
-            if(listYearChange) {
-                newsRoomTopicsChange();
-                listYearChange = false;
-            }
             if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
                 listCount += 6;
             }
@@ -283,6 +279,7 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
             }
 
             var results = parseNewsRoomResultsLocally(data, selectedMonth, newsTopicPicked);
+
             newsRoomResults = results.news;
             if (newsRoomResults.length != 0) {
                 if (!$(".list__item--no-results").hasClass("hidden")) {
@@ -305,6 +302,10 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
                 $(resultsListHTML).insertAfter($(".lists"));
             } else {
                 $(".list__item--no-results").removeClass('hidden');
+            }
+            if(listYearChange) {
+                newsRoomYearChange();
+                listYearChange = false;
             }
             if (listCount >= newsRoomResults.length) {
                 $(".divider--load-more__link").hide();
