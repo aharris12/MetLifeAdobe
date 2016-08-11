@@ -17,6 +17,10 @@
     margin-bottom:25px;
     padding: 20px 20px;
 }
+.find-office__dental-container a, .find-office__vision-container a{
+    color: #2377C5;
+    font-weight: 400;
+}
 .quote-office--right {
     background-color: #2c77c5;
     float: right;

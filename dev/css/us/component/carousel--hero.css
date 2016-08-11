@@ -49,8 +49,10 @@
 }
 @media screen and (min-width: 1700px) {
     .carousel-caption--hero {
-        font-size: 3vw;
-        line-height: 3.3vw;
+        width:65%;
     }
-
+    .carousel-caption--hero {
+        font-size: 60px;
+        line-height: 60px;
+    }
 }

@@ -102,7 +102,7 @@ function UnsubscribeProcessorSubmit() {
 			success: function (returndata) {
 				console.log(returndata);
 				$(".js-toggleEmailMessageDefault").addClass("hidden");
-				$(".js-js-toggleEmailMessageSuccess").removeClass("hidden");
+				$(".js-toggleEmailMessageSuccess").removeClass("hidden");
 				$(".email--unsubscribe-form").hide();
 			},
 			error: function () {
