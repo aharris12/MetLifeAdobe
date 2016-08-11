@@ -2,7 +2,6 @@
     background-color:#E3E3E3;
     color:#333;
     margin-bottom: 15px;
-
 }
 
 .cta_header_quote p, .quote-office__heading{
@@ -12,10 +11,7 @@
     color: #333;
 }
 
-.find-office__dental-container a, .find-office__vision-container a{
-    color: #2377C5;
-    font-weight: 300;
-}
+
 
 .find-office__dental-container a:hover, .find-office__dental-container a:focus,
 .find-office__vision-container a:hover, .find-office__vision-container a:focus{
@@ -39,6 +35,7 @@
         width: 95%;
     }
     .quote-office--left, .quote-office--right {
+        margin-bottom: 0px;
         width: calc(50% - 10px);
     }
 }
@@ -60,19 +57,27 @@
 
 .find-office .btn-group .btn {
     height: 40px;
+    line-height: 3.4em;
 }
 
 .btn-group__icon {
-    top: 34px;
+    top: 29px;
 }
 @media screen and (min-width: 768px) {
+    .find-office .btn-group .btn {
+        line-height: 3.2em;
+    }
     .btn-group__icon {
-        top: 33px;
+        top: 31px;
     }
 }
 
 @media screen and (min-width: 1024px) {
+    .find-office .btn-group .btn {
+        line-height: 3em;
+    }
     .btn-group__icon {
-        top: 33px;
+        top: 31px;
     }
 }
+

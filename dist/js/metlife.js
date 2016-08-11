@@ -756,8 +756,6 @@ function footerBorder(){
 function footerBorder(){
     if ($(".disclaimer").length == 0){
         $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("border-top", "none");
-        $(".global-footer .wrapper:not(.global-footer--microsite .wrapper)").css("padding-top", "0");
-
     }
 }
 
@@ -5947,21 +5945,26 @@ $(document).ready(function () {
 
 
 /****EMAIL UNSUB*************************/
-$(".js-emailUnsub").click(function(){
-	unsubscribeEmailDNSS()
+$(".js-emailUnsub").click(function(event){
+	event.preventDefault();
+	unsubscribeEmailDNSS();
 });
 
-$("#email_unsub").keydown(function(event){
+$("#email").keydown(function(event){
 	if(event.keyCode == 13) {
-		unsubscribeEmailDNSS()
+		unsubscribeEmailDNSS();
 		return false;
 	}
 });
-
+$("#unsubscribeForm").submit(function(event){
+	event.preventDefault();
+	unsubscribeEmailDNSS();
+});
 // Start Validations For Unsubscribe Email
 function unsubscribeEmailDNSS(form) {
-	$("#email_unsub").blur();
-	if($("#email_unsub").hasClass("error")){
+	$(".js-toggleEmailMessageFail").addClass("hidden");
+	$("#email").blur();
+	if($("#email").hasClass("error")){
 		return false;
 	}else{
 		UnsubscribeProcessorSubmit();
@@ -5971,24 +5974,27 @@ function unsubscribeEmailDNSS(form) {
 // End Validations For Unsubscribe Email
 
 function UnsubscribeProcessorSubmit() {
-	var formData= $('form[name="unsubscribeForm"]').serialize()
-	var url = $(".email--unsubscribe-form").attr("data-url");
-	console.log(formData)
-	$.ajax({
-		url: url,
-		type: 'POST',
-		data: formData,
-		contentType: 'application/x-www-form-urlencoded',
-		processData: false,
-		success: function (returndata) {
-			console.log(returndata);
-			$(".email--unsubscribe-message").toggleClass("hidden");
-			$(".email--unsubscribe-form").hide();
-		},
-		error: function () {
-			console.log("error in ajax form submission");
-		}
-	});
+	if($("#email").val() != null && $("#email").val() != "" && $("#email").val() != " ") {
+		var formData = $('form[name="unsubscribeForm"]').serialize()
+		var url = $(".email--unsubscribe-form").attr("data-url");
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: formData,
+			contentType: 'application/x-www-form-urlencoded',
+			processData: false,
+			success: function (returndata) {
+				console.log(returndata);
+				$(".js-toggleEmailMessageDefault").addClass("hidden");
+				$(".js-toggleEmailMessageSuccess").removeClass("hidden");
+				$(".email--unsubscribe-form").hide();
+			},
+			error: function () {
+				console.log("error in ajax form submission");
+				$(".js-toggleEmailMessageFail").removeClass("hidden");
+			}
+		});
+	}
 }
 
 //Contact Forms

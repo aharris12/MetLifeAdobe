@@ -13,6 +13,7 @@ var totalMonths = [];
 var totalYears = [];
 var integerToMonthMapping = {};
 var monthToIntegerMapping = {};
+//Not sure where this came from
 removeProtoObject = false;
 
 
