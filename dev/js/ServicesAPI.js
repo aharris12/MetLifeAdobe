@@ -36,17 +36,6 @@ if ($(".find-an-x-search__container").length > 0) {
 //Forms Lib Variables
 var searchAgainFlag = false;
 
-
-//News Room Variables
-var firstTimeRunNewsRoom = true;
-var firstTimeRunNewsRoomChange = true;
-var newsMonth;
-var newsYear;
-var newsTopic;
-var newsConcatenator;
-var totalMonths = [];
-var totalYears = [];
-
 //Contact Variables
 var radioDials = false;
 
@@ -272,7 +261,7 @@ $('[data-required=true]').on('blur keyup', function () {
 		$this.val("");
 	}
 	var val = $this.val();
-	if (val != null && val.length == 0) {
+	if (val.length == 0) {
 		$this.addClass('error');
 		//$this.val(placeholder);
 	} else {
@@ -295,14 +284,6 @@ $(".form-user-ctrl").on('click', function (evt) {
 	if ($(this).hasClass("error")) {
 		$(this).val("");
 	}
-});
-
-$('[data-valid-type=number]').on('blur', function (evt) {
-	evt.preventDefault();
-	var $this = $(this);
-	var val = $this.val();
-	var re = /[0-9]/;
-	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
@@ -493,31 +474,6 @@ $("#blog-category-dropdown").on("change", function () {
 });
 
 /****News Room Search****************************************/
-$(".divider--load-more__link").click(function (e) {
-	e.preventDefault();
-	totalYears = [];
-	totalMonths = [];
-	ServicesAPI.newsRoomServiceConstruction();
-});
-
-$("#list_month, #list_year").change(function () {
-	firstTimeRunNewsRoomChange = true;
-	totalYears = [];
-	totalMonths = [];
-	listCount = 0;
-	ServicesAPI.newsRoomServiceConstruction();
-});
-$("#list_topics").change(function () {
-	firstTimeRunNewsRoomChange = true;
-	totalYears = [];
-	totalMonths = [];
-	listCount = 0;
-	ServicesAPI.newsRoomServiceConstruction();
-	setTimeout(function () {
-		ServicesAPI.newsRoomTopicsChange();
-	}, 500);
-
-});
 
 // Store News Room search parameters
 $(".list").on("click", ".list__item a", function () {
@@ -538,6 +494,9 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 	}
 	sessionStorage.removeItem("press_back");
 });
+
+
+
 
 /**** Press Room Search****************************************/
 
@@ -634,6 +593,7 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
+	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
@@ -642,16 +602,16 @@ $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	}
 });
 /*$("tbody.ss-gac-m").on("click", ".ss-gac-a, .ss-gac-b, .ss-gac-c, .ss-gac-d", function () {
-	var searchTerm = $(this).find(".ss-gac-c").text();
-	$(".search-trigger__search-box").val(searchTerm);
-	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
-		$(".search-trigger__search-box").val(searchTerm);
-		ServicesAPI.legacySearch(searchTerm);
-	} else {
-		//For Integration we only need this statment
-		ServicesAPI.redirectToSearchResultsPage(searchTerm);
-	}
-});*/
+ var searchTerm = $(this).find(".ss-gac-c").text();
+ $(".search-trigger__search-box").val(searchTerm);
+ if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
+ $(".search-trigger__search-box").val(searchTerm);
+ ServicesAPI.legacySearch(searchTerm);
+ } else {
+ //For Integration we only need this statment
+ ServicesAPI.redirectToSearchResultsPage(searchTerm);
+ }
+ });*/
 
 
 // Search in Page
@@ -806,19 +766,19 @@ $('.maps-button').click(function (clickedButton) {
 	}
 });
 /*function gmapsAutoCompleteInit() {
-	if (typeof countryCode !== 'undefined') {
-		var options = {
-			componentRestrictions: {country: countryCode}
-		};
-		$('.gmaps-auto-complete').each(function () {
-			new google.maps.places.Autocomplete($(this)[0], options);
-		});
-	} else {
-		$('.gmaps-auto-complete').each(function () {
-			new google.maps.places.Autocomplete($(this)[0]);
-		});
-	}
-}*/
+ if (typeof countryCode !== 'undefined') {
+ var options = {
+ componentRestrictions: {country: countryCode}
+ };
+ $('.gmaps-auto-complete').each(function () {
+ new google.maps.places.Autocomplete($(this)[0], options);
+ });
+ } else {
+ $('.gmaps-auto-complete').each(function () {
+ new google.maps.places.Autocomplete($(this)[0]);
+ });
+ }
+ }*/
 var countryCode ="us";
 
 $(window).on('load', function (e) {
@@ -995,7 +955,8 @@ var ServicesAPI = {
 		if ($(".news-room").length > 0) {
 			listCount = 6;
 			ServicesAPI.pressBackQuery();
-			ServicesAPI.newsRoomServiceConstruction();
+			//Refer to news-room.js to find this function
+			newsRoomServiceConstruction();
 		}
 		if ($(".blog-list").length > 0) {
 			var url = $(".blog-list").attr("data-url");
@@ -1681,7 +1642,41 @@ var ServicesAPI = {
 		/************LOCAL Site Search SERVICE***************/
 
 		var siteSearchResults = $.getJSON("search.json", function(json) {
-		 siteSearchResults = json.response.docs;
+			siteSearchResults = json.response.docs;
+			if (siteSearchResults.length != 0) {
+				$('.form-item__display').removeClass('hidden');
+				// $(".page-count").removeClass('hidden');
+				$(".no-results").addClass('hidden');
+				//results_content is the default component for listing out general results
+				resultsListHTML += "<div class=\"results_content\">";
+				for (var i = 0; i < siteSearchResults.length; i++) {
+					count++;
+					resultsListHTML += "<div class=\"list__item--no-border\">";
+					resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
+					resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
+					resultsListHTML += "</div>";
+				}
+				resultsListHTML += "</div>";
+			} else {
+				$('.form-item__display').removeClass('hidden');
+				$(".page-count").addClass('hidden');
+				$(".no-results").removeClass('hidden');
+			}
+			$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+			ServicesAPI.createPagination(count);
+		});
+		/************LOCAL Site Search SERVICE***************/
+
+
+		/************LIVE Site Search SERVICE***************/
+		/*$.ajax({
+		 url: url,
+		 contentType: "application/json; charset=utf-8",
+		 async: true,
+		 dataType: 'json',
+		 type: 'GET',
+		 success: function (data) {
+		 var siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
 		 $('.form-item__display').removeClass('hidden');
 		 // $(".page-count").removeClass('hidden');
@@ -1703,46 +1698,12 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 });
-		/************LOCAL Site Search SERVICE***************/
-
-
-		/************LIVE Site Search SERVICE***************/
-		/*$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-				var siteSearchResults = json.response.docs;
-				if (siteSearchResults.length != 0) {
-					$('.form-item__display').removeClass('hidden');
-					// $(".page-count").removeClass('hidden');
-					$(".no-results").addClass('hidden');
-					//results_content is the default component for listing out general results
-					resultsListHTML += "<div class=\"results_content\">";
-					for (var i = 0; i < siteSearchResults.length; i++) {
-						count++;
-						resultsListHTML += "<div class=\"list__item--no-border\">";
-						resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-						resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
-						resultsListHTML += "</div>";
-					}
-					resultsListHTML += "</div>";
-				} else {
-					$('.form-item__display').removeClass('hidden');
-					$(".page-count").addClass('hidden');
-					$(".no-results").removeClass('hidden');
-				}
-				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-				ServicesAPI.createPagination(count);
-			},
-			error: function (e) {
-				ServicesAPI.showSorryUnableToLocateMessage();
-			},
-			timeout: 30000
-		});*/
+		 },
+		 error: function (e) {
+		 ServicesAPI.showSorryUnableToLocateMessage();
+		 },
+		 timeout: 30000
+		 });*/
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
@@ -1767,17 +1728,6 @@ var ServicesAPI = {
 		}
 
 	},
-	newsRoomServiceConstruction: function () {
-		var url = $(".lists").attr("data-news-url");
-		var query = $(".lists").attr("data-news-query-parameter");
-		newsMonth = $("#list_month").val();
-		newsYear = $("#list_year").val();
-		newsTopic = $('#list_topics').val();
-		newsConcatenator = $(".lists").attr("data-news-concatenator");
-		url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
-		console.log(url)
-		ServicesAPI.newsRoomServiceCall(url);
-	},
 	pressBackQuery: function () {
 		var month = sessionStorage.getItem("press_month");
 		var year = sessionStorage.getItem("press_year");
@@ -1791,488 +1741,6 @@ var ServicesAPI = {
 		sessionStorage.removeItem("press_month");
 		sessionStorage.removeItem("press_year");
 		sessionStorage.removeItem("press_search");
-	},
-	newsRoomServiceCall: function (input) {
-		resultsListHTML = "";
-		var url = input;
-		count = 0;
-		$(".results_content").remove();
-		/************LIVE News Room SERVICE***************/
-		$.ajax({
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			async: true,
-			dataType: 'json',
-			type: 'GET',
-			success: function (data) {
-
-				if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-					listCount += 6;
-				}
-
-				if (firstTimeRunNewsRoom === true) {
-					firstTimeRunNewsRoom = false;
-				}
-				if (firstTimeRunNewsRoomChange === true) {
-					firstTimeRunNewsRoomChange = false;
-				}
-
-
-				newsRoomResults = data.news;
-				if (newsRoomResults.length != 0) {
-					if (!$(".list__item--no-results").hasClass("hidden")) {
-						$(".list__item--no-results").addClass("hidden");
-					}
-					resultsListHTML += "<div class='results_content'>";
-					for (var i = 0; i < newsRoomResults.length; i++) {
-						totalYears.push(newsRoomResults[i].year);
-						totalMonths.push(newsRoomResults[i].month);
-						count++;
-						if (count <= listCount) {
-							resultsListHTML += "<div class=\"list__item\">";
-							resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-							resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-							resultsListHTML += "</div>";
-						}
-					}
-					resultsListHTML += "</div>";
-					ServicesAPI.createPagination(count);
-					$(resultsListHTML).insertAfter($(".lists"));
-				} else {
-					$(".list__item--no-results").removeClass('hidden');
-				}
-				if (listCount >= newsRoomResults.length) {
-					$(".divider--load-more__link").hide();
-				} else {
-					$(".divider--load-more__link").show();
-				}
-
-			},
-			error: function (e) {
-				console.log('error ', e);
-			},
-			timeout: 30000
-		});
-		/************LIVE News Room SERVICE***************/
-
-		/************LOCAL News Room SERVICE***************/
-			/*if($("#list_topics").val() === "Studies"){
-				var newsRoomResults = $.getJSON("newsStudies.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "Corporate"){
-				var newsRoomResults = $.getJSON("Corporate.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "Financial"){
-				var newsRoomResults = $.getJSON("Financial.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "Investments"){
-				var newsRoomResults = $.getJSON("Investments.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "Products_and_Services"){
-				var newsRoomResults = $.getJSON("Products_and_Services.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "MetLife_Foundation"){
-				var newsRoomResults = $.getJSON("MetLife_Foundation.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else if($("#list_topics").val() === "CSR_Awards"){
-				var newsRoomResults = $.getJSON("CSR_Awards.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}else{
-				var newsRoomResults = $.getJSON("allNews.json", function (data) {
-					if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-						listCount += 6;
-					}
-
-					if (firstTimeRunNewsRoom === true) {
-						firstTimeRunNewsRoom = false;
-					}
-					if (firstTimeRunNewsRoomChange === true) {
-						firstTimeRunNewsRoomChange = false;
-					}
-
-
-					newsRoomResults = data.news;
-					if (newsRoomResults.length != 0) {
-						if (!$(".list__item--no-results").hasClass("hidden")) {
-							$(".list__item--no-results").addClass("hidden");
-						}
-						resultsListHTML += "<div class='results_content'>";
-						for (var i = 0; i < newsRoomResults.length; i++) {
-							totalYears.push(newsRoomResults[i].year);
-							totalMonths.push(newsRoomResults[i].month);
-							count++;
-							if (count <= listCount) {
-								resultsListHTML += "<div class=\"list__item\">";
-								resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-								resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-								resultsListHTML += "</div>";
-							}
-						}
-						resultsListHTML += "</div>";
-						ServicesAPI.createPagination(count);
-						$(resultsListHTML).insertAfter($(".lists"));
-					} else {
-						$(".list__item--no-results").removeClass('hidden');
-					}
-					if (listCount >= newsRoomResults.length) {
-						$(".divider--load-more__link").hide();
-					} else {
-						$(".divider--load-more__link").show();
-					}
-				});
-			}*/
-		/************LOCAL News Room SERVICE***************/
-	},
-	newsRoomTopicsChange: function(){
-		totalYears.sort(function(a, b){return a - b});
-		totalMonths.sort(function(a, b){return a - b});
-		totalYears = unique(totalYears);
-		totalMonths = unique(totalMonths);
-		var selectYear = $('#list_year');
-		selectYear.empty();
-		var firstTime = true;
-		for (var i in totalYears) {
-			if(firstTime === true){
-				selectYear.append('<option value="'+totalYears[i] +'" selected>'+totalYears[i]+'</option>');
-			}else {
-				selectYear.append('<option value="' + totalYears[i] + '">' + totalYears[i] + '</option>');
-			}
-		}
-		firstTime = false;
-		var selectMonth = $('#list_month');
-		selectMonth.empty();
-		selectMonth.append('<option value="All" selected>All</option>');
-		var thisMonth;
-		if($("#list_topics").prop('selectedIndex') === 0){
-			for(var i = 1; i <=12; i++){
-				thisMonth = $(".month_"+ i).text();
-				selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
-			}
-		}else{
-
-			for (var i in totalMonths) {
-				switch(totalMonths[i]){
-					case 1:
-						thisMonth = $(".month_1").text();
-						break;
-					case 2:
-						thisMonth = $(".month_2").text();
-						break;
-					case 3:
-						thisMonth = $(".month_3").text();
-						break;
-					case 4:
-						thisMonth = $(".month_4").text();
-						break;
-					case 5:
-						thisMonth = $(".month_5").text();
-						break;
-					case 6:
-						thisMonth = $(".month_6").text();
-						break;
-					case 7:
-						thisMonth = $(".month_7").text();
-						break;
-					case 8:
-						thisMonth = $(".month_8").text();
-						break;
-					case 9:
-						thisMonth = $(".month_9").text();
-						break;
-					case 10:
-						thisMonth = $(".month_10").text();
-						break;
-					case 11:
-						thisMonth = $(".month_11").text();
-						break;
-					default:
-						thisMonth = $(".month_12").text();
-						break;
-				}
-				selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
-			}
-		}
-
 	},
 	blogsServiceCall: function (input, searchType) {
 		resultsListHTML = "";
@@ -3788,13 +3256,14 @@ var ServicesAPI = {
 		}, 5000);
 	},
 	resetForm: function (fid) {
+
 		switch (fid) {
 			case "contactSidebar":
 				//in a timeout to avoid visual conflict with animation
 				setTimeout(function () {
 					$('#requestFormRightNav_Acc').trigger("reset");
-					$('.contactSideThankyou, .contactSideSubmitError, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-					$('.contactSideForm').show();
+					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+					$('.contactSideForm').toggle();
 					$('.contact-container--global').css("right", "-640px");
 				}, 1000);
 				break;
