@@ -50,136 +50,77 @@ var totalYears = [];
 //Contact Variables
 var radioDials = false;
 
-/****EMAIL UNSUB*************************/
-function UnsubscribeProcessorSubmit(e, o, t, n, r) {
-var url= $(".email--unsubscribe-form").attr("data-url");
-	console.log(url)
-	$.ajax({
-		url: url,
-		contentType: "application/json; charset=utf-8",
-		async: true,
-		dataType: 'json',
-		data: JSON.stringify(quoteRequest),
-		type: 'POST',
-		success: function (response) {
-		},error: function (e) {
-			console.log('error ', e);
-		},
-		timeout: 30000
-	});
-	var i = "/wps/faoproxy/MCDNSSService/emailPost.do",
-		d = document.getElementById(t).innerHTML;
-	dojo.xhrPost({
-		form: e,
-		url: i,
-		method: "POST",
-		handleAs: "json",
-		content: {
-			increment: callCount++,
-			fileFields: "attachURL"
-		},
-		load: function() {
-			dojo.byId(t).innerHTML = d, dojo.byId(t).style.display = "block", dojo.byId(e).style.visibility = "hidden", dojo.byId(o).style.visibility = "hidden", dojo.byId(o).style.display = "none", dojo.byId(r).style.visibility = "hidden", dojo.byId(n).style.visibility = "hidden"
-		},
-		timeout: 2e4,
-		error: function() {
-			dojo.byId(r).innerHTML = response, dojo.byId(r).style.display = "block", dojo.byId(e).style.visibility = "hidden", document.getElementById(n).style.visibility = "hidden"
-		}
-	})
-}
-
-function unsubscribeEmail(form) {
-	var formName= form.name;
-	var formDiv=document.getElementById("webFormUnsubscribeEmail");
-	errorCount = 0;
-	errorMsg = new CArray(30);
-	var i=0;
-	//var emailID;
-
-	// Email Check
-	if(!validateEmail(formName,"email")) {
-		showErrorInline("email");
-		errorCount++;
-		errorMsg[i++] ="email";
-	} else {
-		showErrorNone("email");
-	}
-
-	//emailID = document.getElementById("email").value;
-	if (errorCount > 0) {
-		document.getElementById('email').value = "";
-		document.getElementById('errorText').style.visibility = "visible";
-		document.getElementById('errorText').style.color = "red";
-		document.getElementById('enterEmail').style.display = "block";
-		document.getElementById('thanksMessage').style.display = "none";
-		showFocus(formName,errorMsg);
-		return false;
-	} else {
-		document.getElementById('enterEmail').style.display = "none";
-		document.getElementById('thanksMessage').style.display = "block";
-		document.getElementById('errorText').style.visibility = "hidden";
-		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
-
-		formProcessorSubmit(formName,formDiv,'webformThankyoupagecontainer','webformError','webformException');
-		return false;
-	}
-}
-
-function unsubscribeEmailDNSS(form) {
-	var formName= form.name;
-	var formDiv= $(".email--unsubscribe-form");
-	errorCount = 0;
-	errorMsg = new CArray(30);
-	var i=0;
-	//var emailID;
-
-	// Email Check
-	if(!validateEmail(formName,"email")) {
-		showErrorInline("email");
-		errorCount++;
-		errorMsg[i++] ="email";
-	} else {
-		showErrorNone("email");
-	}
-
-	//emailID = document.getElementById("email").value;
-	if (errorCount > 0) {
-		document.getElementById('email').value = "";
-		document.getElementById('errorText').style.visibility = "visible";
-		document.getElementById('errorText').style.color = "red";
-		document.getElementById('enterEmail').style.display = "block";
-		document.getElementById('thanksMessage').style.display = "none";
-		showFocus(formName,errorMsg);
-		return false;
-	} else {
-		document.getElementById('enterEmail').style.display = "none";
-		document.getElementById('thanksMessage').style.display = "block";
-		document.getElementById('errorText').style.visibility = "hidden";
-		//document.unsubscribeForm.subject.value = "Unsubscribe this Email ID: "+emailID;
-
-		UnsubscribeProcessorSubmit(formName,formDiv,'email--unsubscribe-form','webformError','webformException');
-		return false;
-	}
-}
 
 $(document).ready(function () {
-
 	ServicesAPI.loadEventListeners();
 	if ($("#searchInPage").length != 0) {
 		$("#searchInPage").val("");
 	}
 
 });
-//Contact Forms
 
+
+/****EMAIL UNSUB*************************/
+$(".js-emailUnsub").click(function(event){
+	event.preventDefault();
+	unsubscribeEmailDNSS();
+});
+
+$("#email").keydown(function(event){
+	if(event.keyCode == 13) {
+		unsubscribeEmailDNSS();
+		return false;
+	}
+});
+$("#unsubscribeForm").submit(function(event){
+	event.preventDefault();
+	unsubscribeEmailDNSS();
+});
+// Start Validations For Unsubscribe Email
+function unsubscribeEmailDNSS(form) {
+	$(".js-toggleEmailMessageFail").addClass("hidden");
+	$("#email").blur();
+	if($("#email").hasClass("error")){
+		return false;
+	}else{
+		UnsubscribeProcessorSubmit();
+		return false;
+	}
+}
+// End Validations For Unsubscribe Email
+
+function UnsubscribeProcessorSubmit() {
+	if($("#email").val() != null && $("#email").val() != "" && $("#email").val() != " ") {
+		var formData = $('form[name="unsubscribeForm"]').serialize()
+		var url = $(".email--unsubscribe-form").attr("data-url");
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: formData,
+			contentType: 'application/x-www-form-urlencoded',
+			processData: false,
+			success: function (returndata) {
+				console.log(returndata);
+				$(".js-toggleEmailMessageDefault").addClass("hidden");
+				$(".js-toggleEmailMessageSuccess").removeClass("hidden");
+				$(".email--unsubscribe-form").hide();
+			},
+			error: function () {
+				console.log("error in ajax form submission");
+				$(".js-toggleEmailMessageFail").removeClass("hidden");
+			}
+		});
+	}
+}
+
+//Contact Forms
 $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 	var radioButton = $(this).siblings('input');
 	if (!radioButton.prop('checked')) {
 		radioButton.prop('checked', true);
 		var radioName = radioButton.prop('name');
 		$('input[name=' + radioName + ']').siblings('svg').toggle();
-	}
-	;
+	};
 });
 
 $('#productPolicy option[value=""]').attr('selected', true);
@@ -331,7 +272,7 @@ $('[data-required=true]').on('blur keyup', function () {
 		$this.val("");
 	}
 	var val = $this.val();
-	if (val.length == 0) {
+	if (val != null && val.length == 0) {
 		$this.addClass('error');
 		//$this.val(placeholder);
 	} else {
@@ -354,6 +295,14 @@ $(".form-user-ctrl").on('click', function (evt) {
 	if ($(this).hasClass("error")) {
 		$(this).val("");
 	}
+});
+
+$('[data-valid-type=number]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /[0-9]/;
+	ServicesAPI.validateOnType(val, $this, re);
 });
 
 $('[data-valid-type=text]').on('blur', function (evt) {
@@ -685,7 +634,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
-	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
@@ -1732,7 +1680,7 @@ var ServicesAPI = {
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
 
-		/*var siteSearchResults = $.getJSON("search.json", function(json) {
+		var siteSearchResults = $.getJSON("search.json", function(json) {
 		 siteSearchResults = json.response.docs;
 		 if (siteSearchResults.length != 0) {
 		 $('.form-item__display').removeClass('hidden');
@@ -1755,12 +1703,12 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL Site Search SERVICE***************/
 
 
 		/************LIVE Site Search SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			url: url,
 			contentType: "application/json; charset=utf-8",
 			async: true,
@@ -1794,7 +1742,7 @@ var ServicesAPI = {
 				ServicesAPI.showSorryUnableToLocateMessage();
 			},
 			timeout: 30000
-		});
+		});*/
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
@@ -3840,14 +3788,13 @@ var ServicesAPI = {
 		}, 5000);
 	},
 	resetForm: function (fid) {
-
 		switch (fid) {
 			case "contactSidebar":
 				//in a timeout to avoid visual conflict with animation
 				setTimeout(function () {
 					$('#requestFormRightNav_Acc').trigger("reset");
-					$('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-					$('.contactSideForm').toggle();
+					$('.contactSideThankyou, .contactSideSubmitError, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
+					$('.contactSideForm').show();
 					$('.contact-container--global').css("right", "-640px");
 				}, 1000);
 				break;
@@ -3861,5 +3808,49 @@ var ServicesAPI = {
 		}
 
 
+	},
+	emailUnsub: function(){
+		if($("#email_unsub").hasClass("error")){
+			return false;
+		}else{
+			var ajaxUrl = $(".email--unsubscribe-form").attr("data-url");
+			var jsonData = {};
+			var formData = $('form[name="unsubscribeForm"]').serializeArray();
+			$.each(formData, function () {
+				if (jsonData[this.name]) {
+					if (!jsonData[this.name].push) {
+						jsonData[this.name] = [jsonData[this.name]];
+					}
+					jsonData[this.name].push(this.value || '');
+				} else {
+
+					jsonData[this.name] = this.value || '';
+					if (!jsonData[this.name].push) {
+						if (this.name == "prodInt" || this.name == "prodInterest") {
+							jsonData[this.name] = [jsonData[this.name]];
+						}
+					}
+				}
+			});
+			console.log(ajaxUrl)
+			console.log(JSON.stringify(jsonData));
+			$.ajax({
+				url: ajaxUrl,
+				type: 'POST',
+				dataType: 'json',
+				data: JSON.stringify(jsonData),
+				async: true,
+				contentType: 'application/json',
+				processData: false,
+				success: function (returndata) {
+					console.log(returndata);
+					$(".email--unsubscribe--container").toggleClass("hidden");
+					$(".email--unsubscribe-form").hide();
+				},
+				error: function () {
+					console.log("error in ajax form submission");
+				}
+			});
+		}
 	}
 };

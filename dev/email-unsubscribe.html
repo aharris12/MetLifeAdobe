@@ -994,17 +994,24 @@
 <div class="container">
     <div class="row wrapper email--unsubscribe">
         <div class="email--unsubscribe--container">
-            <p>To unsubscribe from MetLife marketing emails, please enter your email address below.</p>
-            <p><b>Please note:</b> If you are eligible for benefits from a MetLife company through your employer, this opt-out will
-                not apply to emails relating to those benefits.</p>
-            <div class="email--unsubscribe-message">
+            <div class="email--unsubscribe-message js-toggleEmailMessageDefault">
+                <p>To unsubscribe from MetLife marketing emails, please enter your email address below.</p>
+                <p><b>Please note:</b> If you are eligible for benefits from a MetLife company through your employer, this opt-out will
+                  not apply to emails relating to those benefits.</p>
+            </div>
+            <div class="email--unsubscribe-message js-toggleEmailMessageSuccess hidden">
                 <p><strong>Thank You!</strong></p>
                 <p>Your email address has been unsubscribed and will be removed from our marketing list
                     within the next 10 days.</p>
             </div>
+            <div class="email--unsubscribe-message js-toggleEmailMessageFail hidden">
+                <p><strong>Sorry</strong></p>
+                <p>This text should be replaced by author</p>
+            </div>
             <div class="email--unsubscribe-form" data-url="/wps/faoproxy/MCDNSSService/emailPost.do">
-                <form id="unsubscribeForm" name="unsubscribeForm"  onsubmit="javascript:return unsubscribeEmailDNSS(this);"
-                      action="" method="post" enctype="multipart/form-data"><input type="hidden" name="pageFrom">
+                <form id="unsubscribeForm" name="unsubscribeForm"
+                      action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="pageFrom">
                     <input type="hidden" value="email,pageFrom" name="sortOrder">
                     <input type="hidden" id="id" value="dnss@metlife.com" name="id">
                     <input type="hidden" id="subject" value="metlife.com unsubscribe email" name="subject">
@@ -1021,11 +1028,10 @@
                     <input type="hidden" id="isLead" value="false" name="isLead">
                     <div class="email--unsubscribe__form-fields">
 
-                        <label class="hidden" for="email_unsub">Email</label>
-                        <input name="email_unsub" id="email_unsub" type="text" class="form-user-ctrl" placeholder="Email"
+                        <label class="hidden" for="email">Email</label>
+                        <input name="email" id="email" type="text" class="form-user-ctrl" placeholder="Email"
                                data-required="true" aria-required="true" data-valid-type="email">
-                        <button type="submit" class="btn btn-brand-2nd">Unsubscribe</button>
-
+                        <button type="button" class="btn btn-brand-2nd js-emailUnsub">Unsubscribe</button>
                     </div>
                 </form>
             </div>

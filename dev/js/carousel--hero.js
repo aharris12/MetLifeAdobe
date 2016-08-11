@@ -60,12 +60,12 @@ $(document).ready(function () {
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause;
     //Adjust carousel-caption container's height
-    $.lazyLoadXT.onload = function () {
+   /* $.lazyLoadXT.onload = function() {
         $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };
+    };*/
 
 
-    $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
+    /*$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());*/
 
     //Reloadoad images on resize
     var resizeTimeout;
@@ -74,9 +74,9 @@ $(document).ready(function () {
             checkDuplicates: false
         });
         clearTimeout(resizeTimeout);
-    });
-    $(window).resize(function () {
-        $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
+      });
+    $( window ).resize(function() {
+        //$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
         resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
                 checkDuplicates: false

@@ -2,10 +2,6 @@
     padding: 20px;
 }
 
-.email--unsubscribe-message{
-    display: none;
-}
-
 .email--unsubscribe p{
     font-size: 14px;
     line-height: 20px;
