@@ -2,16 +2,13 @@
     color: #999;
     font-size: 11px;
     line-height: 15px;
-    padding-bottom: 10px;
     margin-bottom: 0;
 }
 .disclaimer:last-child {
     padding-bottom: 0;
 }
 
-.disclaimer--microsite {
-    padding-top: 20px;
-}
+
 
 .disclaimer--product-module {
     padding-top: 20px;
@@ -28,13 +25,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .disclaimer {
-        padding-bottom: 20px;
-    }
 
-    .disclaimer--microsite {
-        padding-top: 40px;
-    }
 
     .product-comparison-chart-disclaimer {
         margin: 15px auto 0;
@@ -52,9 +43,6 @@
         width: 65%;
     }
 
-    .disclaimer--microsite {
-        padding-top: 50px;
-    }
 
     .product-comparison-chart-disclaimer {
         margin: 20px auto 0;
