@@ -111,10 +111,11 @@
 .campaign-header-ctc h5 {
     font-weight: 400;
     font-size: 14px;
+    color: #A4D8F1;
 }
 .campaign-header-ctc p {
-    font-size: .7em;
-    line-height: 1.3em;
+    font-size: 10px;
+    line-height: 15px;
 }
 .campaign-header__popup__contact input {
     width: 100%;
@@ -152,6 +153,7 @@
     .campaign-header .campaign-header__popup.open {
         width: 40%;
         padding: 15px;
+        max-width: 450px;
     }
     .campaign-header__section .campaign-header-right a{
         width:70%;
@@ -178,7 +180,8 @@
         padding: 0;
     }
     .campaign-header-ctc h5 {
-        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 20px;
     }
     .campaign-header__popup__contact {
         width: 100%;
@@ -236,7 +239,7 @@
         padding-top: 6px;
     }
     .campaign-header__popup__contact input {
-        width: 50%;
+        width: 55%;
     }
     .campaign-header__section p {
         font-size: 13px;
@@ -245,6 +248,6 @@
 }
 @media screen and (min-width: 1200px) {
     .campaign-header__popup__contact input {
-        width: 55%;
+        width: 60%;
     }
 }
