@@ -15,6 +15,7 @@ var integerToMonthMapping = {};
 var monthToIntegerMapping = {};
 //Not sure where this came from
 removeProtoObject = false;
+var listYearChange = false;
 
 
 $(".divider--load-more__link").click(function (e) {
@@ -41,10 +42,8 @@ $("#list_year").change(function () {
     totalYears = [];
     totalMonths = [];
     listCount = 0;
+    listYearChange = true;
     newsRoomServiceConstruction();
-    setTimeout(function () {
-        newsRoomYearChange();
-    }, 500);
 });
 
 //When a new list topic is selected, the month and year
@@ -269,6 +268,10 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
         type: 'GET',
         success: function(data) {
             console.log(data);
+            if(listYearChange) {
+                newsRoomTopicsChange();
+                listYearChange = false;
+            }
             if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
                 listCount += 6;
             }
