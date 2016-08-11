@@ -69,14 +69,13 @@ $("#list_month").change(function() {
 });
 
 function newsRoomYearChange() {
-    var firstTime = false;
     totalMonths.sort(function(a, b){return a - b});
     totalMonths = unique(totalMonths);
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="All" selected>All</option>');
     var thisMonth;
-    if($("#list_topics").prop('selectedIndex') === 0){
+    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
         for(var i = 1; i <=12; i++){
             thisMonth = $(".month_"+ i).text();
             selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
