@@ -789,7 +789,7 @@ SFDC.form.forEach(function (element) {
                         headers: {
                             'Met_User':'gluuser2',
                             'Met_Pwd':'HRr2m0+R28ezfIdDvuBLdg',
-                            'Met_PTNR_NM ':'MetLife CP Redesign Sites'
+                            'Met_PTNR_NM':'MetLife CP Redesign Sites'
                         },
                         success: function (data, status, xhr) {
                             switch (data.result.toLowerCase()) {
