@@ -1,0 +1,28 @@
+{
+  "name": "MetLife",
+  "version": "1.0.0",
+  "description": "Concat and minify CSS and JS Files",
+  "author": {
+    "name": "MetLife",
+    "email": "",
+    "url": "http://www.metlife.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "license": "",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-css-import": "^0.1.7",
+    "grunt-cssjoin": "^0.3.0",
+    "grunt-processhtml": "^0.3.8",
+    "grunt-string-replace": "^1.2.1"
+  }
+}
