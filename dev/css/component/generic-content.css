@@ -57,13 +57,13 @@
     font-size: 14px;
     line-height: 20px;
 }
-.wrapper-general ul{
+.generic-content-ul{
     margin-bottom: 20px;
     padding-left: 40px;
     font-size: 13px;
     line-height:16px;
 }
-.wrapper-general ul li{
+.generic-content-ul li{
     list-style: disc;
     margin-bottom:10px;
 }
