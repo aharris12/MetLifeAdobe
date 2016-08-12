@@ -184,10 +184,11 @@
         line-height: 20px;
     }
     .campaign-header__popup__contact {
-        width: 100%;
+        display: flex;
     }
     .campaign-header__popup__contact input {
-        width: 50%;
+        flex: 1;
+        margin-right: 10px;
     }
     .campaign-header__popup__contact a {
         float: right;
