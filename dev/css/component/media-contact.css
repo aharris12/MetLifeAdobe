@@ -99,7 +99,11 @@
     font-size: 1.75em;
     font-weight: 700;
 }
-
+@media screen and (max-width: 767px) {
+    .media-contact__list__section:last-of-type {
+        border-bottom: 1px solid #ccc;
+    }
+}
 @media screen and (min-width: 768px){
 
     .media-contact__list__section__title{
