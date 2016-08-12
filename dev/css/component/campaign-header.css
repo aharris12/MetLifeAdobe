@@ -138,10 +138,6 @@
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
-    .campaign-header .campaign-header__popup.open {
-        top: 70px;
-        width: 30%;
-    }
     .campaign-header .campaign-header__section:first-of-type p:not(:first-child) {
         display: inline-block;
         width: auto;
@@ -151,9 +147,10 @@
         float: right;
     }
     .campaign-header .campaign-header__popup.open {
-        width: 40%;
+        top: 70px;
+        width: 30%;
         padding: 15px;
-        max-width: 450px;
+        min-width: 450px;
     }
     .campaign-header__section .campaign-header-right a{
         width:70%;
@@ -203,11 +200,6 @@
         padding-top: 8px;
     }
 }
-@media screen and (min-width: 992px) {
-    .campaign-header__popup__contact input {
-        width: 55%;
-    }
-}
 @media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
@@ -224,11 +216,6 @@
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
-
-    .campaign-header .campaign-header__popup.open {
-        top: 70px;
-        width: 30%;
-    }
     .campaign-header__section .campaign-header-right{
         background-color: transparent;
     }
@@ -239,16 +226,8 @@
         padding-bottom: 0px;
         padding-top: 6px;
     }
-    .campaign-header__popup__contact input {
-        width: 55%;
-    }
     .campaign-header__section p {
         font-size: 13px;
         line-height: 15px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .campaign-header__popup__contact input {
-        width: 60%;
     }
 }
