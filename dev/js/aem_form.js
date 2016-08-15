@@ -1150,6 +1150,10 @@ function formMessage(parent, status) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
                 });
+            } else if (parent.hasClass("twoColumnContactForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
             }
         }, 5000)
     });

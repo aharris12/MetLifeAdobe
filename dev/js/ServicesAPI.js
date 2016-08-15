@@ -3764,9 +3764,9 @@ var ServicesAPI = {
 				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
 				break;
 
-			case "contactSingle":
-				$('.contact-us__contact-form').fadeOut(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+			case "twoColumnContactForm":
+				$('.twoColumnContactForm .contact-us__contact-form').fadeOut(1000);
+				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeIn(800);
 				break;
 
 		}
@@ -3791,10 +3791,10 @@ var ServicesAPI = {
 				}, 1000);
 				break;
 
-			case "contactSingle":
-				$('#requestFormRContactUs_Acc').trigger("reset");
-				$('.contact-us__contact-form').fadeIn(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+			case "twoColumnContactForm":
+				$('#twoColumnContactForm').trigger("reset");
+				$('.twoColumnContactForm .contact-us__contact-form').fadeIn(1000);
+				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeOut(2000);
 				break;
 
 		}
