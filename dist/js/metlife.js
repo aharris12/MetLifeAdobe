@@ -343,6 +343,7 @@ $('.megamenu-trigger').on('click', function () {
         currentSpot = $('body').scrollTop();
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
+        $("html, body").animate({scrollTop: 0}, 1);
     } else {
         $(".icon-close.megamenu-trigger__icon").css("display", "none");
         $(".icon-menu.megamenu-trigger__icon").css("display", "inline-block");
