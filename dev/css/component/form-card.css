@@ -77,7 +77,7 @@
         width: 40%
     }
     .contactAdvisorSingle{
-        display: block;
+        display: table;
         width: 40%;
     }
     .contact-container--form-card .contactSidebarBtns button{
