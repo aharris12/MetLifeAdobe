@@ -3797,6 +3797,12 @@ var ServicesAPI = {
 				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeOut(2000);
 				break;
 
+			case "contactAdvisorSingle":
+				$('#contactAdvisorSingle').trigger("reset");
+				$('.contactAdvisorSingle .contact-us__contact-form').fadeIn(1000);
+				$('.contactAdvisorSingle .contactSideThankyou').fadeOut(2000);
+				break;
+
 		}
 
 

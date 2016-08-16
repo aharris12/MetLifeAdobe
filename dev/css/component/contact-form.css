@@ -151,6 +151,7 @@
 .twoColumnContactForm {
     display: table;
     box-shadow: none;
+    padding: 0 10px;
 }
 
 .twoColumnContactForm .contactSidebarBtns button{
@@ -162,7 +163,7 @@
     font-weight: 300;
     line-height: 15px;
     margin-top:10px;
-    margin_bottom:5px;
+    margin-bottom:5px;
 }
 
 .form-row--clear{
@@ -212,6 +213,7 @@
         margin: 0 auto;
         padding-bottom: 40px;
     }
+
 }
 
 
@@ -282,7 +284,9 @@
 }
 .contactSidebarBtns {
     margin: 10px 0 0 0;
-
+}
+.twoColumnContactForm .contactSidebarBtns{
+    margin: 10px 0 5px 0;
 }
 .text-right {
     text-align: right;
