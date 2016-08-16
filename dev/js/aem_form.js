@@ -67,7 +67,7 @@ SFDC.form.forEach(function (element) {
                 $(document).ready(function () {
                     var domain = document.domain;
                     parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
-
+                   // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {
                             e.preventDefault();
@@ -737,11 +737,12 @@ SFDC.form.forEach(function (element) {
                     var jsonData = {};
                     var formData;
 
-                    var url = $(".generic-form").attr("data-url");
+                    var url = formElement.attr("data-url");
+                    console.log(url)
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
 
-                        url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+                        //url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
                         data = formElement.serialize();
                     } else {
 
@@ -774,11 +775,9 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
-
+                       // url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
                     }
-                    console.log(url)
                     $.ajax({
                         url: url,
                         dataType: 'json',
@@ -786,11 +785,11 @@ SFDC.form.forEach(function (element) {
                         async: true,
                         type: 'POST',
                         contentType: "application/json; charset=utf-8",
-                        headers: {
+                       /* headers: {
                             'Met_User':'gluuser2',
                             'Met_Pwd':'HRr2m0+R28ezfIdDvuBLdg',
                             'Met_PTNR_NM':'MetLife CP Redesign Sites'
-                        },
+                        },*/
                         success: function (data, status, xhr) {
                             switch (data.result.toLowerCase()) {
                                 case "success":
