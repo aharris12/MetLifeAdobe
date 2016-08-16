@@ -164,7 +164,9 @@
     .campaign-header .campaign-header__section .campaign-header--logo img {
         height: 28px;
     }
-
+    .campaign-header-login {
+        padding: 6px 0 0 0;
+    }
     .campaign-header-login span {
         color: #2c77c5;
     }
