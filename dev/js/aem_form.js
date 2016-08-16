@@ -1137,6 +1137,7 @@ function formMessage(parent, status) {
     } else {
         message = parent.find(".contactSideSubmitError");
     }
+    console.log(parent);
     message.siblings(":visible").fadeOut('slow', function () {
         message.css("display", "table-cell");
         var h = $('.contact-container--form-card').outerHeight();
@@ -1149,6 +1150,15 @@ function formMessage(parent, status) {
             } else if (parent.hasClass("contactAdvisor")) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
+                });
+            } else if (parent.hasClass("twoColumnContactForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("contactAdvisorSingle")) {
+                message.fadeOut(800, function () {
+                    parent.find(".form-minimize").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             }
         }, 5000)
