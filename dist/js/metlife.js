@@ -9125,9 +9125,9 @@ var ServicesAPI = {
 				$('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
 				break;
 
-			case "contactSingle":
-				$('.contact-us__contact-form').fadeOut(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeIn(800);
+			case "twoColumnContactForm":
+				$('.twoColumnContactForm .contact-us__contact-form').fadeOut(1000);
+				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeIn(800);
 				break;
 
 		}
@@ -9153,10 +9153,16 @@ var ServicesAPI = {
 				}, 1000);
 				break;
 
-			case "contactSingle":
-				$('#requestFormRContactUs_Acc').trigger("reset");
-				$('.contact-us__contact-form').fadeIn(1000);
-				$('#contact-single_thankyou, #contact-single_other').fadeOut(2000);
+			case "twoColumnContactForm":
+				$('#twoColumnContactForm').trigger("reset");
+				$('.twoColumnContactForm .contact-us__contact-form').fadeIn(1000);
+				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeOut(2000);
+				break;
+
+			case "contactAdvisorSingle":
+				$('#contactAdvisorSingle').trigger("reset");
+				$('.contactAdvisorSingle .contact-us__contact-form').fadeIn(1000);
+				$('.contactAdvisorSingle .contactSideThankyou').fadeOut(2000);
 				break;
 
 		}
@@ -10347,6 +10353,7 @@ function formMessage(parent, status) {
     } else {
         message = parent.find(".contactSideSubmitError");
     }
+    console.log(parent);
     message.siblings(":visible").fadeOut('slow', function () {
         message.css("display", "table-cell");
         var h = $('.contact-container--form-card').outerHeight();
@@ -10359,6 +10366,15 @@ function formMessage(parent, status) {
             } else if (parent.hasClass("contactAdvisor")) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
+                });
+            } else if (parent.hasClass("twoColumnContactForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("contactAdvisorSingle")) {
+                message.fadeOut(800, function () {
+                    parent.find(".form-minimize").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             }
         }, 5000)
