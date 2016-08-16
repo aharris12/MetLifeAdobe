@@ -24,7 +24,12 @@
 }
 
 @media screen and (min-width: 768px) {
-
+	.skinny-promo-tile .product-row__tile--img-tile__text{
+		min-height: 100px;
+	}
+	.product-row__tile--img-tile__text--right a{
+		margin-bottom: 0px;
+	}
 	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 		font-size: 18px;
 		line-height: 22px;
@@ -37,7 +42,9 @@
 }
 
 @media screen and (min-width: 1024px) {
-
+	.skinny-promo-tile .product-row__tile--img-tile__text{
+		min-height: 120px;
+	}
 	.skinny-promo-tile-homepage .product-row__tile--img-tile__text .product-row__tile--img-tile__text--left .product-row__tile__promo{
 		font-size: 22px;
 		line-height: 26px;

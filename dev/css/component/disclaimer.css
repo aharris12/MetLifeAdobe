@@ -4,6 +4,7 @@
     font-size: 11px;
     margin-bottom: 0;
     line-height: 15px;
+    font-weight: 400;
 }
 /*
 .disclaimer:first-of-type {
@@ -35,6 +36,7 @@
 @media screen and (min-width: 768px) {
     .disclaimer {
         padding-bottom: 20px;
+        line-height: 16px;
     }
   /*  .disclaimer {
         padding-top: 0;
@@ -74,6 +76,8 @@
 @media screen and (min-width: 1024px) {
     .disclaimer {
         padding-bottom: 20px;
+        font-size: 12px;
+        line-height: 18px;
     }
   /*  .disclaimer {
         font-size: 12px;
