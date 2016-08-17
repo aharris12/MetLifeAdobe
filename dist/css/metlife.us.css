@@ -10306,6 +10306,10 @@ ul.bullet-list {
     margin-bottom: 0px;
 }
 
+.contactAdvisorSingle{
+   display: table;
+}
+
 @media screen and (min-width: 768px){
     .form-card{
         display: table;
@@ -10347,6 +10351,10 @@ ul.bullet-list {
         display: table-cell;
         width: 40%
     }
+    .contactAdvisorSingle{
+        display: table;
+        width: 40%;
+    }
     .contact-container--form-card .contactSidebarBtns button{
         width:inherit;
     }
@@ -10363,10 +10371,12 @@ ul.bullet-list {
     .contact-container--form-card{
         width: 34%
     }
+    .contactAdvisorSingle{
+        width: 40%;
+    }
     .form-card__img__text h3{
         font-size: 32px;
         line-height:36px;
-
     }
     .form-card__img__text p{
         font-size: 18px;
@@ -13478,13 +13488,20 @@ manner*/
 .contact-close .icon {
     font-size:1.2em;
 }
-.form__title {
+.form__title{
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     display: block;
     margin-bottom: 6px;
 }
+
+.two-column-form-title.form__title{
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+}
+
 .form__subtitle {
     font-weight: 400;
     font-style: italic;
@@ -13562,10 +13579,32 @@ manner*/
     width: 100%;
 }
 
-
 .formFail .errorSpan{
     width: 120%;
 }
+
+.twoColumnContactForm {
+    display: table;
+    box-shadow: none;
+    padding: 0 10px;
+}
+
+.twoColumnContactForm .contactSidebarBtns button{
+    width: 100%;
+}
+
+.twoColumnContactForm .form-item__title{
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 15px;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.form-row--clear{
+    clear: both;
+}
+
 @media screen and (max-width: 767px) {
     .formFail .errorSpan{
         top: 35%;
@@ -13586,6 +13625,30 @@ manner*/
         max-width: 320px;
         width: auto;
     }
+    .twoColumnContactForm .contactSidebarBtns button{
+        width: inherit;
+    }
+    .left-column, .right-column{
+        width: 50%;
+    }
+
+    .left-column{
+        float:left;
+        padding-right: 10px;
+        clear: both;
+    }
+
+    .right-column{
+        float: right;
+        padding-left: 10px;
+    }
+    .twoColumnContactForm{
+        display: table;
+        width: 65%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
 }
 
 
@@ -13640,6 +13703,7 @@ manner*/
 .form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
     font-size: 13px;
+    padding-right: 30px;
 }
 .form__item--description{
     font-size: 13px;
@@ -13655,7 +13719,9 @@ manner*/
 }
 .contactSidebarBtns {
     margin: 10px 0 0 0;
-
+}
+.twoColumnContactForm .contactSidebarBtns{
+    margin: 10px 0 5px 0;
 }
 .text-right {
     text-align: right;
@@ -13683,7 +13749,10 @@ manner*/
     display: none;
 }
 .contact-container--form-card .contactSideThankyou,
-.contact-container--form-card .contactSideSubmitError {
+.contact-container--form-card .contactSideSubmitError,
+.twoColumnContactForm .contactSideThankyou,
+.twoColumnContactForm .contactSideSubmitError
+{
     text-align: center;
     position: relative;
     top: 10%;
@@ -13774,16 +13843,16 @@ manner*/
 
 
 .form-radio-grp label input.user-radio + span:before {
-     content: ' ';
-     position: absolute;
-     left: 0;
-     top: 0;
-     display: inline-block;
-     width: 17px;
-     height: 17px;
-     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
-     background-size: 17px 17px;
- }
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
+    background-size: 17px 17px;
+}
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
     background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
@@ -13856,6 +13925,12 @@ manner*/
 .form-user-grp select option{
     background-color: #fff !important;
 }
+
+.twoColumnContactForm .form-radio-grp label{
+    height: 40px;
+    line-height: 40px;
+}
+
 @media screen and (min-width: 768px) {
     .form-row [class*="col-sm-6"]:nth-of-type(odd) {
         padding-right:5px;
@@ -13877,6 +13952,16 @@ manner*/
     }
     .form-row {
         margin:5px 0;
+    }
+    .two-column-contact-form-container{
+
+    }
+    .twoColumnContactForm.form__title{
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .twoColumnContactForm .form-radio-grp label{
+        display: inline-block;
     }
 }
 
@@ -13903,6 +13988,10 @@ span.errorRadio {
     .form__title {
         padding-top: 8px;
         font-size: 20px;
+    }
+    .two-column-form-title.form__title{
+        font-size: 28px;
+        line-height: 32px;
     }
 }
 
