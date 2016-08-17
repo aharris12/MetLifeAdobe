@@ -57,13 +57,13 @@
     font-size: 14px;
     line-height: 20px;
 }
-.generic-content-ul{
+.rich-text-component ul{
     margin-bottom: 20px;
     padding-left: 40px;
     font-size: 13px;
     line-height:16px;
 }
-.generic-content-ul li{
+.rich-text-component ul li{
     list-style: disc;
     margin-bottom:10px;
 }
