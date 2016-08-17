@@ -16720,7 +16720,15 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 .campaign-card .campaign-card-section {
     position:relative;
-
+}
+.campaign-contact-form .form__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333;
+}
+.campaign-contact-form .form__subtitle {
+    color: #333;
 }
 @media screen and (min-width: 768px) {
 
