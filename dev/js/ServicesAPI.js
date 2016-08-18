@@ -5,6 +5,10 @@ var count = 0;
 var resultsListHTML = "";
 var loadingMore = false;
 var page = 1;
+//Site Search Variables
+var numSearchResults = 10;
+var searchPaginationNumber;
+var searchPaginationPrev;
 //Quote Tool variables
 var quoteDomain;
 var quotelanguage;
@@ -286,6 +290,15 @@ $(".form-user-ctrl").on('click', function (evt) {
 	}
 });
 
+$('[data-valid-type=number]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /[0-9]/;
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+
 $('[data-valid-type=text]').on('blur', function (evt) {
 	evt.preventDefault();
 	var $this = $(this);
@@ -524,10 +537,13 @@ if ($(".js-formLib").length > 0) {
 
 // Search Results Page Search Start
 $('.js-searchSubmit').on('click', function () {
-	var searchRequest = $(".js-searchTextBox").val();
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+	/*var searchRequest = $(".js-searchTextBox").val();*/
+	var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+	/*var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;*/
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url");
 	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
+		searchPaginationPrev = undefined;
+		ServicesAPI.searchServiceCall(url, searchRequest);
 	}
 });
 
@@ -593,7 +609,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
-	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
@@ -637,27 +652,38 @@ $('.js-SearchBox').click(function (e) {
 		window.location.href = urlStr;
 	}
 });
-$('.search-results-container__correction-text > a').on('click', function (e) {
-	e.preventDefault();
-	var correctionClickedOn = $(this).text();
-});
 
-$('.search-results-container__correction-text > a').on('click', function (e) {
+
+$('.js-searchSuggestion').on('click', function (e) {
 	e.preventDefault();
-	var correctionClickedOn = $(this).children('span').text();
+	var correctionClickedOn = $(this).text().split(" ").join("+OR+");
 	var searchRequest = correctionClickedOn;
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+	$(".js-searchTextBox").val($(this).text())
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url");
 	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
+		searchPaginationPrev = undefined;
+		ServicesAPI.searchServiceCall(url, correctionClickedOn);
 	}
 });
 
 //Pagination Update
 $(".page-count").on('change', function () {
-	listCount = $(this).val();
-	ServicesAPI.createPagination(count);
-	ServicesAPI.resetMap();
-	ServicesAPI.showLocation();
+	if ($(".find-an-x-search__container").length > 0) {
+		listCount = $(this).val();
+		ServicesAPI.createPagination(count);
+		ServicesAPI.resetMap();
+		ServicesAPI.showLocation();
+	}
+	if($(".search-results-container").length > 0){
+		listCount =parseInt($(this).val());
+		numSearchResults = $(this).val();
+		var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+		var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+		if (searchRequest) {
+			ServicesAPI.searchServiceCall(url, searchRequest);
+		}
+
+	}
 });
 
 //Find an X Click Functions
@@ -1223,6 +1249,126 @@ var ServicesAPI = {
 			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + result);
 		}
 	},
+	createPaginationSearch: function (result) {
+		$('.results_content').children().removeClass('.hidden');
+		var notHiddenList = $(".results_content").children().not('.hidden');
+		var listLength = result;
+		var st_cnt = 0;
+		var end_cnt = 0;
+		var next_label = $(".next_label").text();
+		var prev_label = $(".prev_label").text();
+		// Setting listLength to 0 manually when only undefined are returned
+		if (typeof result != 'undefined') {
+			if (result.count == 0)
+				listLength = 0;
+		}
+		if (result < listCount) {
+			$('.results_pagination').addClass('hidden');
+			$(".results_content").children().removeClass('hidden');
+			st_cnt = 1;
+			end_cnt = listCount;
+			st_cnt = 1;
+			end_cnt = listCount;
+		} else {
+			st_cnt = 1;
+			end_cnt = listCount;
+			$('.results_pagination').removeClass('hidden');
+			$(".results_content").children().addClass('hidden');
+			$(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
+			var startPage;
+			if(searchPaginationPrev != undefined){
+				startPage = searchPaginationPrev;
+			}else{
+				startPage = 1;
+			}
+			$('.results_pagination').bootpag({
+				total: Math.ceil(listLength / listCount),
+				page: startPage,            // default page
+				next: next_label,    // visible pagination
+				leaps: false,
+				prev: prev_label,        // next/prev leaps through maxVisible
+				maxVisible: 10,
+				wrapClass: 'pagination',
+				activeClass: 'active',
+				disabledClass: 'disabled',
+				nextClass: 'next',
+				prevClass: 'prev',
+				lastClass: 'last',
+				firstClass: 'first'
+			}).on("page", function (event, num) {
+				searchPaginationPrev = num;
+				console.log(num)
+				if (num == 1) {
+					$(".results_content").children(':lt(' + listCount + ')').removeClass('hidden');
+					st_cnt = 1;
+					end_cnt = listCount;
+				}else {
+					var start = (listCount * (num - 1)) - 1;
+					var end = listCount;
+					$(".results_content").children(':gt(' + start + '):lt(' + end + ')').removeClass('hidden');
+					st_cnt = listCount * (num - 1) + 1;
+					end_cnt = listCount * num;
+				}
+				console.log("end_cnt ", end_cnt + "> listLength ", listLength)
+				console.log(end_cnt > listLength)
+				if (end_cnt > listLength) {
+					end_cnt = listLength;
+				}
+				$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + 'of' + '&nbsp;' + end_cnt);
+				// ... after content load -> change total to 10
+				/*$('.results_pagination').bootpag({
+				 total: Math.ceil(count / listCount),
+				 maxVisible: listCount
+				 });*/
+				searchPaginationNumber = num;
+				if(num != 1){
+					searchPaginationNumber = num + "0";
+					searchPaginationNumber -= 10;
+					console.log(searchPaginationNumber)
+				}
+
+				sessionStorage.setItem("paginationNumber", num);
+				var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+				var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+				if (searchRequest) {
+					ServicesAPI.searchServiceCall(url, searchRequest);
+				}
+				if($(".search-results-container").length > 0){
+					if (sessionStorage.getItem("paginationNumber") !== null) {
+						var thisItem = sessionStorage.getItem("paginationNumber")
+						$(".pagination.bootpag li").each(function(){
+							$(this).removeClass("active");
+							if($(this).attr("data-lp") == thisItem){
+								$(this).addClass("active");
+							}
+							if($(this).hasClass("prev") || $(this).hasClass("next")){
+								$(this).removeClass("active");
+							}
+						});
+						window.sessionStorage.clear();
+					}
+				}
+				event.stopImmediatePropagation();
+				return false;
+			});
+		}
+
+		if (count == 0) {
+			st_cnt = listLength;
+			end_cnt = listLength;
+			$('.display-text > span:nth-of-type(2)').addClass('hidden');
+			$('.results_pagination').addClass('hidden');
+		}
+		else {
+			$('.display-text > span:nth-of-type(2)').removeClass('hidden');
+			$('.display-text > span:nth-of-type(2)').html('&nbsp;' + count);
+		}
+		if (end_cnt < result) {
+			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + end_cnt);
+		} else {
+			$('.display-text > span:first-of-type').html(st_cnt + '&nbsp;' + '-' + '&nbsp;' + result);
+		}
+	},
 	formatQuotePremium: function (premium) {
 		//if(premium != Math.round(premium)){
 		var dec = parseFloat(Math.round(premium * 100) / 100).toFixed(2);
@@ -1630,54 +1776,34 @@ var ServicesAPI = {
 			}
 		}
 	},
-	searchServiceCall: function (input) {
+	searchServiceCall: function (url, query, e) {
 		count = 0;
-		var url = input;
-		var querySearch = ServicesAPI.getQueryStringNew()["query"];
-		if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
-			url += "?query=" + querySearch;
+		/*test_json_frontend*/
+		var frontEnd = $(".js-searchSubmit").attr("data-front-end");
+		//var url = input;
+		//var querySearch = ServicesAPI.getQueryStringNew()["query"];
+		/*if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
+		 url += "?query=" + querySearch;
+		 }*/
+		var site = $(".js-searchSubmit").attr("data-site");
+		if(searchPaginationNumber == undefined){
+			var url = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0';
+		}else{
+			var url = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0&start='+searchPaginationNumber ;
 		}
+		console.log(url)
 		$(".results_content").remove();
+		$(".js-searchSuggestion").children().remove();
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
-
-		var siteSearchResults = $.getJSON("search.json", function(json) {
-			siteSearchResults = json.response.docs;
-			if (siteSearchResults.length != 0) {
-				$('.form-item__display').removeClass('hidden');
-				// $(".page-count").removeClass('hidden');
-				$(".no-results").addClass('hidden');
-				//results_content is the default component for listing out general results
-				resultsListHTML += "<div class=\"results_content\">";
-				for (var i = 0; i < siteSearchResults.length; i++) {
-					count++;
-					resultsListHTML += "<div class=\"list__item--no-border\">";
-					resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-					resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
-					resultsListHTML += "</div>";
-				}
-				resultsListHTML += "</div>";
-			} else {
-				$('.form-item__display').removeClass('hidden');
-				$(".page-count").addClass('hidden');
-				$(".no-results").removeClass('hidden');
-			}
-			$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-			ServicesAPI.createPagination(count);
-		});
-		/************LOCAL Site Search SERVICE***************/
-
-
-		/************LIVE Site Search SERVICE***************/
-		/*$.ajax({
-		 url: url,
-		 contentType: "application/json; charset=utf-8",
-		 async: true,
-		 dataType: 'json',
-		 type: 'GET',
-		 success: function (data) {
-		 var siteSearchResults = json.response.docs;
+		/*var siteSearchResults = $.getJSON("search-gsa.json", function(data) {
+		 siteSearchResults = data.GSP.RES.R;
+		 var sitSearchResultsUrl = '.DU';
+		 var sitSearchResultsTitle = '.T';
+		 var sitSearchResultsContent = '.S';
+		 console.log(siteSearchResults)
 		 if (siteSearchResults.length != 0) {
+
 		 $('.form-item__display').removeClass('hidden');
 		 // $(".page-count").removeClass('hidden');
 		 $(".no-results").addClass('hidden');
@@ -1685,9 +1811,12 @@ var ServicesAPI = {
 		 resultsListHTML += "<div class=\"results_content\">";
 		 for (var i = 0; i < siteSearchResults.length; i++) {
 		 count++;
+		 sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+		 sitSearchResultsTitle =  data.GSP.RES.R[i].T;
+		 sitSearchResultsContent = data.GSP.RES.R[i].S;
 		 resultsListHTML += "<div class=\"list__item--no-border\">";
-		 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-		 resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
+		 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+		 resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
 		 resultsListHTML += "</div>";
 		 }
 		 resultsListHTML += "</div>";
@@ -1698,12 +1827,69 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 },
-		 error: function (e) {
-		 ServicesAPI.showSorryUnableToLocateMessage();
-		 },
-		 timeout: 30000
 		 });*/
+
+		/************LOCAL Site Search SERVICE***************/
+
+
+		/************LIVE Site Search SERVICE***************/
+		$.ajax({
+			url: url,
+			dataType: 'json',
+			type: 'GET',
+			async: false,
+			contentType: 'application/x-www-form-urlencoded',
+			processData: false,
+			success: function (data) {
+				console.log(data)
+				if(data.GSP.Spelling != undefined) {
+					$(".form-item__display").hide();
+					$(".search-results-container__correction-text").removeClass("hidden");
+					var correctSpelling= data.GSP.Spelling.Suggestion[0].qe;
+
+					var correctionHtml = '<a href="#">'+correctSpelling+'</a>';
+					$(".js-searchSuggestion").append(correctionHtml);
+				}else if(data.GSP.RES.M != undefined){
+					$(".form-item__display").show();
+					$(".search-results-container__correction-text").addClass("hidden");
+					var totalResults = data.GSP.RES.M;
+					console.log(totalResults)
+					siteSearchResults = data.GSP.RES.R;
+					var sitSearchResultsUrl;
+					var sitSearchResultsTitle;
+					var sitSearchResultsContent;
+					if (siteSearchResults.length != 0) {
+
+						$('.form-item__display').removeClass('hidden');
+						// $(".page-count").removeClass('hidden');
+						$(".no-results").addClass('hidden');
+						//results_content is the default component for listing out general results
+						resultsListHTML += "<div class=\"results_content\">";
+						for (var i = 0; i < siteSearchResults.length; i++) {
+							count++;
+							sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+							sitSearchResultsTitle = data.GSP.RES.R[i].T;
+							sitSearchResultsContent = data.GSP.RES.R[i].S;
+							resultsListHTML += "<div class=\"list__item--no-border\">";
+							resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+							resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+							resultsListHTML += "</div>";
+						}
+						resultsListHTML += "</div>";
+					} else {
+						$('.form-item__display').removeClass('hidden');
+						$(".page-count").addClass('hidden');
+						$(".no-results").removeClass('hidden');
+					}
+				}
+				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+				ServicesAPI.createPaginationSearch(totalResults);
+			},
+			error: function (e) {
+				ServicesAPI.showSorryUnableToLocateMessage();
+			},
+			timeout: 30000
+		});
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
