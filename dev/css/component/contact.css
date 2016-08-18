@@ -33,6 +33,9 @@
     margin-bottom: 30px;
 }
 
+.contact-us__result-group:last-of-type {
+    margin-bottom: 0;
+}
 .contact-us__listing-row,
 .contact-us__address-block {
     margin-bottom: 10px;
