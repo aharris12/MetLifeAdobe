@@ -10061,15 +10061,6 @@ body{
     margin-bottom: 20px;
 }
 
-.contact-us__bullet-list,
-.contact-us__single__login {
-    margin-top: 20px;
-}
-
-.contact-us__bullet-list {
-    margin-top: 10px;
-}
-
 .contact-us__phone-block {
     margin-bottom: 20px;
     font-size: 0.9em;
@@ -10091,18 +10082,6 @@ body{
 
 .contact-us__phone-block:nth-child(even) {
     clear: left;
-}
-
-ul.bullet-list {
-    clear: left;
-    display: block;
-    list-style-type: disc;
-    margin-left: 30px;
-}
-
-.contact-us__bullet-list li {
-    margin-bottom: 10px;
-    padding-left: 10px;
 }
 
 .contact-us__contact-form__wrapper {
@@ -10185,10 +10164,6 @@ ul.bullet-list {
 
     .contact-us__header--large {
         margin-bottom: 15px;
-    }
-
-    .contact-us__listing-row ul.bullet-list {
-        margin-top: 0px;
     }
 
     .contact-us__contact-form__wrapper {
@@ -18750,6 +18725,10 @@ text-align: center;
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 1px;
+    }
+    .rich-text-component ul{
+        font-size: 14px;
+        line-height:18px;
     }
 }
 

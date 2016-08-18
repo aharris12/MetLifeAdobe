@@ -98,6 +98,10 @@
         line-height: 20px;
         letter-spacing: 1px;
     }
+    .rich-text-component ul{
+        font-size: 14px;
+        line-height:18px;
+    }
 }
 
 
