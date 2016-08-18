@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     
-    <link rel="stylesheet" href="css/metlife.min.css">
+    <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
 <body>
@@ -833,238 +833,567 @@
 
         </div>
 
-        <!-- Component Begin -->
-        <div class="contact-container contact-container--form-card">
-            <div class="contactCard">
-                <span class="pull-right form-minimize hidden-field hidden-xs"><svg class="icon white">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                         xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
-                </svg></span>
-                <span class="form__title white">Have a rep contact me:</span>
-                <span class="form__subtitle hidden-field">All fields are required</span>
+        <!--Form card Form only-->
+        <div class="contact-container contact-container--form-card contactAdvisorSingle pull-right">
+                    <div class="contactCard contact-us__contact-form">
+                <span class="pull-right form-minimize hidden-field hidden-xs">
+                    <svg class="icon white">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
+                    </svg>
+                </span>
+                        <span class="form__title white">Have a rep contact me:</span>
+                        <span class="form__subtitle hidden-field">All fields are required</span>
 
-                <form id="requestFormContactCard_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                      method="post" class="userForm" data-fid="contactCard">
-                    <input type="hidden" id="thankYouPage" name="thankYouPage">
-                    <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
-                    <input type="hidden" id="isLead" name="isLead" value="true">
-                    <input type="hidden" id="subject" value="Consult with a MetLife Representative" name="subject">
-                    <input type="hidden" id="site" value="MetLife Online: Consult with a MetLife Representative"
-                           name="site">
-                    <input type="hidden" id="requiredFields"
-                           value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType"
-                           name="requiredFields">
-                    <input type="hidden" id="confirmationmailText"
-                           value="*****PLEASE DO NOT REPLY TO THIS AUTO-ACKNOWLEDGEMENT***** Dear 'Name', Thank You for contacting MetLife Online Support. We have received your inquiry, which will be personally reviewed by one of our consultants. Our normal response time is within 1-2 business days. We believe in world class service and will do everything we can to make sure that your inquiry is answered promptly and accurately. Should you wish to speak with a Customer Service Consultant you may call 866-881-0784 between the hours of 8am and 5pm, Central Time, Monday through Friday. Please be advised that some computers may have a firwewall or spam blocker, which may not allow our email to be received to you. Please be sure to add our email address to your address book, so that it will not be blocked. If you experience additional difficulties in receiving your email, we might suggest using a different computer. Your message identification number is 'MessageID'. Thank you, MetLife Online Customer Support 'Gurantees for the if in life.'"
-                           name="confirmationmailText">
-                    <input type="hidden"
-                           value="firstName,lastName,address,city,state,zip,email,phone,contactTime,requestType,prodInt,policyNo,questionOrComment,pageFrom"
-                           id="sortOrder" name="sortOrder">
-                    <input type="hidden" value="ML_ST_Home_sidebar" name="pageFrom">
-                    <input type="hidden" value="state,email,prodInt" name="lstPnPParameters">
-                    <input type="hidden" name="bWFCompleted" value="Y">
-                    <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
-                    <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+                        <form class="generic-form userForm"
+                              id="contactAdvisorSingle"
+                              name="contact-us-form"
+                              enctype="multipart/form-data"
+                              action=""
+                              method="post"
+                              data-fid="contactAdvisorSingle"
+                              data-form-Type="glu"
+                              data-url="ReplaceME">
+                            <input type="hidden" id="form_fields" name="form_fields"
+                                   value="FirstName,LastName,BirthDate,AddrLine,PhNum,MobileNumber,PrefComm,City,PartyTypeCode,LeadBasedOn,GovtID,PolicyNum,EmployerName,EmployerSize,LeadDesc">
+                            <input type="hidden" id="request_type" name="request_type" value="Lead">
+                            <input type="hidden" name="region" value="LATAM">
+                            <input type="hidden" name="country" value="ARGENTINA">
+                            <input type="hidden" id="post_url" name="post_url" value="">
+                            <input type="hidden" name="PublishedDate" value="5/27/2016 3:24:03 PM">
+                            <input type="hidden" id="Domain" name="Domain" value="">
+                            <input type="hidden" id="xmlformname" name="xmlformname" value="Contactenos">
+                            <input type="hidden" id="LanguageValue" name="LanguageValue" value="ES">
 
-                    <div class="form-user-grp">
-                        <label for="firstName_Acc" class="hidden">First Name</label>
-                        <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                               placeholder="First Name" data-required="true" aria-required="true">
-                    </div>
-                    <div class="form-user-grp">
-                        <label class="hidden" for="lastName_Acc">Last Name</label>
-                        <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                               placeholder="Last Name" data-required="true" aria-required="true">
-                    </div>
-                    <div class="form-user-grp hidden-field">
-                        <label class="hidden" for="address_Acc">Address</label>
-                        <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
-                               data-required="true" aria-required="true">
-                    </div>
-                    <div class="form-user-grp hidden-field">
-                        <label class="hidden" for="city_Acc">City</label>
-                        <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
-                               data-required="true" aria-required="true">
-                    </div>
-                    <div class="form-statezip-grp row hidden-field">
-                        <div class="form-user-grp form-state form-icon-wrapper">
-                            <svg class="icon">
-                                <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
-                            </svg>
-                            <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
-                                    data-required="true" aria-required="true">
-                                <option value="" selected="selected">State</option>
-                                <option class="general" value="AL">AL</option>
-                                <option class="general" value="AK">AK</option>
-                                <option class="general" value="AZ">AZ</option>
-                                <option class="general" value="AR">AR</option>
-                                <option class="general" value="CA">CA</option>
-                                <option class="general" value="CO">CO</option>
-                                <option class="general" value="CT">CT</option>
-                                <option class="general" value="DC">DC</option>
-                                <option class="general" value="DE">DE</option>
-                                <option class="general" value="FL">FL</option>
-                                <option class="general" value="GA">GA</option>
-                                <option class="general" value="HI">HI</option>
-                                <option class="general" value="IA">IA</option>
-                                <option class="general" value="ID">ID</option>
-                                <option class="general" value="IL">IL</option>
-                                <option class="general" value="IN">IN</option>
-                                <option class="general" value="KS">KS</option>
-                                <option class="general" value="KY">KY</option>
-                                <option class="general" value="LA">LA</option>
-                                <option class="general" value="MA">MA</option>
-                                <option class="general" value="MD">MD</option>
-                                <option class="general" value="ME">ME</option>
-                                <option class="general" value="MI">MI</option>
-                                <option class="general" value="MN">MN</option>
-                                <option class="general" value="MO">MO</option>
-                                <option class="general" value="MS">MS</option>
-                                <option class="general" value="MT">MT</option>
-                                <option class="general" value="NC">NC</option>
-                                <option class="general" value="ND">ND</option>
-                                <option class="general" value="NE">NE</option>
-                                <option class="general" value="NH">NH</option>
-                                <option class="general" value="NJ">NJ</option>
-                                <option class="general" value="NM">NM</option>
-                                <option class="general" value="NV">NV</option>
-                                <option class="general" value="NY">NY</option>
-                                <option class="general" value="OH">OH</option>
-                                <option class="general" value="OK">OK</option>
-                                <option class="general" value="OR">OR</option>
-                                <option class="general" value="PA">PA</option>
-                                <option class="general" value="PR">PR</option>
-                                <option class="general" value="RI">RI</option>
-                                <option class="general" value="SC">SC</option>
-                                <option class="general" value="SD">SD</option>
-                                <option class="general" value="TN">TN</option>
-                                <option class="general" value="TX">TX</option>
-                                <option class="general" value="UT">UT</option>
-                                <option class="general" value="VA">VA</option>
-                                <option class="general" value="VT">VT</option>
-                                <option class="general" value="WA">WA</option>
-                                <option class="general" value="WI">WI</option>
-                                <option class="general" value="WV">WV</option>
-                                <option class="general" value="WY">WY</option>
-                            </select>
-                        </div>
-                        <div class="form-user-grp form-zip hidden-field">
-                            <label class="hidden" for="zip_Acc">Zip</label>
-                            <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
-                                   data-required="true" aria-required="true" data-valid-type="zip">
-                        </div>
-                    </div>
-                    <div class="form-user-grp">
-                        <label class="hidden" for="email_Acc">Email</label>
-                        <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
-                               data-required="true" aria-required="true" data-valid-type="email">
-                        <span class="errorSpan"><img class="errorSpanImg"
-                                                     src="/static/images/form/icon_form_error.png"
-                                                     alt="! Error Image">Please enter a valid email address.</span>
-                    </div>
-                    <div class="form-user-grp">
-                        <label class="hidden" for="phone_Acc">Phone</label>
-                        <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
-                               placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
-                               data-valid-type="phone">
-                        <span class="errorSpan"><img class="errorSpanImg"
-                                                     src="/static/images/form/icon_form_error.png"
-                                                     alt="! Error Image">Please enter a valid phone number.</span>
-                    </div>
-                    <div class="productPolicyTypes hidden-field">
-                        <div class="form-user-grp form-icon-wrapper">
-                            <svg class="icon">
-                                <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
-                            </svg>
-                            <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
-                                    title="In reference to ..." data-required="true" aria-required="true"
-                                    data-valid-status="failed">
-                                <option value="">In reference to ...</option>
-                                <option value="New Product/Planning Services">New Product/Policy</option>
-                                <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
-                            </select>
-                        </div>
-                        <div class="productUserType newProductUser">
-                            <div class="form-check-grp">
-                                <div class="productCount">- Select up to 5 -</div>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox" class="user-checkbox"
-                                           value="ANN"><span>Annuity</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
-                                           class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
-                                           class="user-checkbox" value="B01"><span>Disability Income</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
-                                           class="user-checkbox" value="L06"><span>Financial Review</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
-                                           class="user-checkbox" value="INV"><span>Investments</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox" class="user-checkbox"
-                                           value="IRA"><span>IRA</span>
-                                </label>
-                                <label>
-                                    <input name="prodInt" id="prodInt_Acc_Life" type="checkbox" class="user-checkbox"
-                                           value="LIF"><span>Life Insurance</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="productUserType existingProductUser">
-                            <div class="form-user-grp">
-                                <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
-                                <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                       placeholder="Policy/Contract #" data-placeholder="">
-                            </div>
-                            <div class="form-user-grp">
-                                <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
-                                          rows="3" class="form-user-ctrl productUserQuestion"
-                                          data-placeholder=""></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-left contactSidebarBtns">
-                        <button id="headerContactSideBarSumbit" type="submit"
-                                class="contatMeContactCardBtn border-radius-rounded btn btn-brand-2nd"
-                                data-fsubmit="contactCard">SUBMIT
-                        </button>
-                    </div>
-                    <p class="contactDisclaimer hidden-field hidden-field">
-                        By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
-                        using automated technology or a prerecorded voice, to talk about our products and services. If
-                        you don't want to give this permission, you can still get a quote or make a purchase by calling
-                        us directly at 1-800-638-5433.
-                    </p>
+                            <input type="hidden" id="AnalyticsChannelName" name="AnalyticsChannelName" value="">
+                            <input type="hidden" id="AnalyticsSourceName" name="AnalyticsSourceName" value="">
+                            <input type="hidden" id="AnalyticsCampnCont" name="AnalyticsCampnCont" value="">
+                            <input type="hidden" id="AnalyticsCampnName" name="AnalyticsCampnName" value="">
+                            <input type="hidden" id="AnalyticsCampnTermKey" name="AnalyticsCampnTermKey" value="">
 
-                    <p class="contactDisclaimer hidden-field">
-                        *<a id="headerContactSideBarMetlifeLink"
-                            href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
-                        company</a> or third party acting on MetLife's behalf.
-                    </p>
-                </form>
-            </div>
-            <div class="contactSideThankyou" id="contactus_lead_thankyou">
-                <div class="thanksHeaderText">Thank you for contacting us.</div>
-                <div class="thanksSubText">Someone from MetLife will be reaching shortly to provide you help.</div>
-            </div>
-            <div class="contactOtherDetails">
-                <div class="contactSideCall">
-                    <a href="tel://+1-800-638-5433">CALL: 1-800-METLIFE</a>
+                            <input type="hidden" id="LeadAssociatedSourceDesc" name="LeadAssociatedSourceDesc" value="">
+                            <input type="hidden" id="QuoteInfo" name="QuoteInfo" value="">
+
+                            <input type="hidden" id="Form_submission_ReferralURL" name="Form_submission_ReferralURL" value="">
+                            <input type="hidden" id="Form_submission_ReferralURL_type" name="Form_submission_ReferralURL_type"
+                                   value="hidden">
+                            <input type="hidden" id="Form_submission_ReferralURL_label" name="Form_submission_ReferralURL_label"
+                                   value="Form submission ReferralURL">
+                            <input type="hidden" id="Form_submission_ReferralURL_validationType"
+                                   name="Form_submission_ReferralURL_validationType" value="none">
+                            <input type="hidden" id="Form_submission_ReferralURL_state" name="Form_submission_ReferralURL_state"
+                                   value="enabled">
+
+                            <div class="row form-row">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="FirstName" class="hidden">First Name</label>
+                                        <input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
+                                               id="FirstName" name="FirstName" title="Nombre" placeholder="Nombre*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="LastName" class="hidden">Last Name</label>
+                                        <input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
+                                               id="LastName" name="LastName" title="Apellido" placeholder="Apellido*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <input class="hidden" name="BirthDate" id="BirthDateInput">
+
+                                        <div class="BirthDate input-group triple-input" id="BirthDate">
+                                            <input class="form-control birthDateMonth required" data-required="true"
+                                                   aria-required="true"
+                                                   id="BirthDated" type="text" placeholder="DD" maxlength="2" size="2">
+                                            <label class="form-control sectionBar">-</label>
+                                            <input class="form-control birthDateDay required" data-required="true"
+                                                   aria-required="true"
+                                                   id="BirthDatem" type="text" placeholder="MM" maxlength="2" size="2">
+                                            <label class="form-control sectionBar">-</label>
+                                            <input class="form-control birthDateYear required" data-required="true"
+                                                   aria-required="true"
+                                                   id="BirthDatey" type="text" placeholder="AAAA" maxlength="4" size="4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row form-row form-hidden">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="AddrLine" class="hidden">Email</label>
+                                        <input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
+                                               id="AddrLine" name="AddrLine" title="Dirección de email"
+                                               placeholder="Dirección de email*" data-valid-type="email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="PhNum" class="hidden">Phone</label>
+                                        <input type="text" class="form-user-ctrl required" data-required="true"
+                                               aria-required="true"
+                                               id="PhNum" name="PhNum" title="Número telefónico"
+                                               placeholder="Número telefónico*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="MobileNumber" class="hidden">Mobile Phone</label>
+                                        <input type="text" class="form-user-ctrl" data-required="true" aria-required="true"
+                                               id="MobileNumber" name="MobileNumber"
+                                               placeholder="Número telefónico alternativo">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp form-icon-wrapper">
+                                        <svg class="icon">
+                                            <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                                        </svg>
+                                        <select name="PrefComm" id="PrefComm" class="form-user-ctrl user-select"
+                                                data-required="true" aria-required="true">
+
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp form-icon-wrapper">
+                                        <svg class="icon">
+                                            <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                                        </svg>
+                                        <select name="City" id="City" class="form-user-ctrl user-select"
+                                                data-required="true" aria-required="true">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-radio-grp">
+                                        <label for="PartyTypeCode">¿Sos cliente de MetLife ya?</label>
+
+                                        <div class="button_group required" id="PartyTypeCode">
+                                            <label for="PartyTypeCode" class="hidden">¿Soscliente de MetLife ya?</label>
+                                            <label>
+                                                <div class="radio_button two-columns" id="PartyTypeCode">
+                                                    <input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="no"
+                                                           checked="" class="user-radio whiteRadioDial" data-required="true">
+                                                    <span>No, aún no lo soy.</span>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <div class="radio_button two-columns" id="PartyTypeCode">
+                                                    <input type="radio" id="PartyTypeCode" name="PartyTypeCode" value="si"
+                                                           class="user-radio whiteRadioDial" data-required="true">
+                                                    <span>Sí, ya soy cliente.</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-radio-grp">
+                                        <label for="LeadBasedOn">Tu contacto refiere a</label>
+
+                                        <div class="button_group required" id="LeadBasedOn">
+                                            <label for="LeadBasedOn" class="hidden">Tucontacto refiere a</label>
+                                            <label>
+                                                <div class="radio_button two-columns" id="LeadBasedOn">
+                                                    <input type="radio" id="LeadBasedOn" name="LeadBasedOn" value="individual"
+                                                           checked="" class="user-radio whiteRadioDial">
+                                                    <span>Una póliza individual.</span>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <div class="radio_button two-columns" id="LeadBasedOn">
+                                                    <input type="radio" id="LeadBasedOn" name="LeadBasedOn" value="empresa"
+                                                           class="user-radio whiteRadioDial">
+                                                    <span>Una póliza a través de tu empresa.</span>
+                                                </div>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field observer">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="GovtID" class="hidden">GovtID</label>
+                                        <input type="text" class="form-user-ctrl observe-PartyTypeCode" data-required="true"
+                                               aria-required="true" id="GovtID" name="GovtID" title="Documento de identidad"
+                                               placeholder="Documento de identidad*">
+
+                                        <div class="form__item--description">Si tu consulta es referida a una póliza existente,
+                                            por favor indicá tu número de documento para
+                                            ayudarnos a brindarte una respuesta más eficaz.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field observer">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="PolicyNum" class="hidden">PolicyNum</label>
+                                        <input type="text" class="form-user-ctrl observe-PartyTypeCode observe-LeadBasedOn"
+                                               data-required="true" aria-required="true" id="PolicyNum" name="PolicyNum"
+                                               title="Nro. de póliza" placeholder="Nro. de póliza">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field observer">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="EmployerName" class="hidden">EmployerName</label>
+
+                                        <input type="text" class="form-user-ctrl observe-LeadBasedOn observe-PartyTypeCode"
+                                               data-required="true" aria-required="true" id="EmployerName" name="EmployerName"
+                                               title="Nombre de tu organización" placeholder="Nombre de tu organización*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field observer">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="EmployerSize" class="hidden">EmployerSize</label>
+                                        <input type="text" class="form-user-ctrl observe-LeadBasedOn observe-PartyTypeCode"
+                                               data-required="true" aria-required="true" id="EmployerSize" name="EmployerSize"
+                                               title="Cantidad apróximada de empleados"
+                                               placeholder="Cantidad apróximada de empleados">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-row form-hidden hidden-field">
+                                <div class="col-xs-12">
+                                    <div class="form-user-grp">
+                                        <label for="LeadDesc" class="hidden">LeadDesc</label>
+							 <textarea name="LeadDesc" id="LeadDesc"
+                                       placeholder="Inquietudes, comentarios o preguntas de Producto*"
+                                       rows="3" class="form-user-ctrl"
+                                       data-placeholder="" data-required="true"
+                                       aria-required="true"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contactSidebarBtns">
+                                <button type="submit" class="form-submit contatMeSidebarBtn btn btn-brand-2nd"
+                                        data-fsubmit="contactAdvisorSingle"
+                                        data-proctext="Precesando" data-submit-type="glu">
+                                    Enviar
+                                </button>
+                            </div>
+
+
+                            <script type="text/javascript">
+                                if (typeof SFDC === "undefined") {
+                                    var SFDC = {};
+                                    SFDC.form = [];
+                                }
+                                // JSON data for form fields
+                                SFDC.form.push({
+                                    // List of fields generated by the back-end
+                                    type: "contactAdvisorSingle",
+                                    fields: [
+                                        {
+                                            id: 'FirstName',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'LastName',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'BirthDate',
+                                            type: 'dob',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'AddrLine',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'email_Req',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'PhNum',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'numeric_Req',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'MobileNumber',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'numeric',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'PrefComm',
+                                            type: 'select',
+                                            tooltip: '',
+                                            options: [
+                                                {
+                                                    label: "Método de contacto preferido",
+                                                    name: "", options: [
+                                                    {"Email": "email"},
+                                                    {"Teléfono": "Telefono"}
+                                                ]
+                                                }
+                                            ],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'City',
+                                            type: 'select',
+                                            tooltip: '',
+                                            options: [
+                                                {
+                                                    label: "Tu ubicación",
+                                                    name: "Ciudades", options: [
+                                                    {"Ciudad Autonoma de Buenos Aires": "CABA"},
+                                                    {"Buenos Aires": "Buenos Aires"},
+                                                    {"Córdoba": "Cordoba"},
+                                                    {"Santa Fé": "Santa Fe"},
+                                                    {"Mendoza": "Mendoza"},
+                                                    {"Tucumán": "Tucuman"},
+                                                    {"Entre Ríos": "Entre Rios"},
+                                                    {"Salta": "Salta"},
+                                                    {"Misiones": "Misiones"},
+                                                    {"Chaco": "Chaco"},
+                                                    {"Corrientes": "Corrientes"},
+                                                    {"Santiago del Estero": "Santiago del Estero"},
+                                                    {"Jujuy": "Jujuy"},
+                                                    {"San Juan": "San Juan"},
+                                                    {"Río Negro": "Rio Negro"},
+                                                    {"Formosa": "Formosa"},
+                                                    {"Neuquén": "Neuquen"},
+                                                    {"Chubut": "Chubut"},
+                                                    {"San Luis": "San Luis"},
+                                                    {"Catamarca": "Catamarca"},
+                                                    {"La Rioja": "La Rioja"},
+                                                    {"La Pampa": "La Pampa"},
+                                                    {"Santa Cruz": "Santa Cruz"},
+                                                    {"Tierra del Fuego": "Tierra del Fuego"},
+                                                    {"Otro país": "Otro pais"}
+                                                ]
+                                                }
+                                            ],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'PartyTypeCode',
+                                            type: 'radio',
+                                            tooltip: '',
+                                            options: [
+                                                {"No, aún no lo soy.": "no"},
+                                                {"Sí, ya soy cliente.": "si"}
+                                            ],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'LeadBasedOn',
+                                            type: 'radio',
+                                            tooltip: '',
+                                            options: [
+                                                {"Una póliza individual.": "individual"},
+                                                {"Una póliza a través de tu empresa.": "empresa"}
+                                            ],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        },
+                                        {
+                                            id: 'GovtID',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: 'Si tu consulta es referida a una póliza existente, por favor indicá tu número de documento para ayudarnos a brindarte una respuesta más eficaz.',
+                                            validator: 'required',
+                                            observes: [
+                                                {
+                                                    field: 'PartyTypeCode',
+                                                    values: [
+                                                        "si"]
+                                                }
+                                            ],
+                                            hidden: true
+                                        },
+                                        {
+                                            id: 'PolicyNum',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: false,
+                                            observes: [
+                                                {
+                                                    field: 'PartyTypeCode',
+                                                    values: [
+                                                        "si"]
+                                                }
+                                                , {
+                                                    field: 'LeadBasedOn',
+                                                    values: [
+                                                        "empresa"]
+                                                }
+                                            ],
+                                            hidden: true
+                                        },
+                                        {
+                                            id: 'EmployerName',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [
+                                                {
+                                                    field: 'LeadBasedOn',
+                                                    values: [
+                                                        "empresa"]
+                                                }
+                                                , {
+                                                    field: 'PartyTypeCode',
+                                                    values: [
+                                                        "no"]
+                                                }
+                                            ],
+                                            hidden: true
+                                        },
+                                        {
+                                            id: 'EmployerSize',
+                                            type: 'text',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'numeric',
+                                            observes: [
+                                                {
+                                                    field: 'LeadBasedOn',
+                                                    values: [
+                                                        "empresa"]
+                                                }
+                                                , {
+                                                    field: 'PartyTypeCode',
+                                                    values: [
+                                                        "no"]
+                                                }
+                                            ],
+                                            hidden: true
+                                        },
+                                        {
+                                            id: 'LeadDesc',
+                                            type: 'textArea',
+                                            tooltip: '',
+                                            options: [],
+                                            description: '',
+                                            validator: 'required',
+                                            observes: [],
+                                            hidden: false
+                                        }]
+                                });
+                            </script>
+                        </form>
+                        <p>
+                            <span class="contactDisclaimer hidden-field">La información ingresada en este formulario es confidencial y será utilizada sólo a efectos de responder tu consulta.</span>
+                        </p>
+
+                        <p class="contactDisclaimer hidden-field">
+                            Datos Personales: El titular de los datos personales tiene la
+                            facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a
+                            seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el
+                            artículo 14, inciso 3 de la Ley Nº 25.326. LA DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES,
+                            Órgano de control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que se
+                            interpongan con relación al incumplimiento de las normas sobre protección de datos personales.
+                        </p>
+                    </div>
+                    <div class="contactSideThankyou" id="contactus_lead_thankyou">
+                        <div class="thanksHeaderText">Thank you for contacting us.</div>
+                        <div class="thanksSubText">Someone from MetLife will be reaching shortly to provide you help.</div>
+                    </div>
+                    <div class="contactSideSubmitError" id="contactus_lead_submit_error">
+                        <div class="thanksHeaderText">Error!</div>
+                        <div class="thanksSubText">An error occured while submitting your information.</div>
+                    </div>
+                    <div class="contactOtherDetails">
+                        <div class="contactSideCall">
+                            <a href="tel:1-800-638-5433">0-800-222-7500</a>
+                        </div>
+                        <div class="otherContactOptions">
+                            <a id="headerContactSideBarAllOtherOptionsLink"
+                               href="https://www.metlife.com/about/corporate-profile/contact/metlife/index.html">Más opciones de
+                                contacto</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="otherContactOptions">
-                    <a id="headerContactSideBarAllOtherOptionsLink"
-                       href="https://www.metlife.com/about/corporate-profile/contact/metlife/index.html">ALL OTHER
-                        CONTACT OPTIONS</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
