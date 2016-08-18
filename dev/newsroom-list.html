@@ -904,7 +904,8 @@
                     </div>
                     <div class="form-item__field form-icon-wrapper form-item__field--xs">
                         <select id="list_year">
-                            <option value="2015" selected>2015</option>
+                            <option value="All" selected>All</option>
+                            <option value="2015">2015</option>
                             <option value="2014">2014</option>
                             <option value="2013">2013</option>
                             <option value="2012">2012</option>
@@ -922,18 +923,18 @@
                     <div class="form-item__field form-icon-wrapper form-item__field--md">
                         <select id="list_month">
                             <option value="All" selected>All</option>
-                            <option value="jan">Jan</option>
-                            <option value="feb">Feb</option>
-                            <option value="mar">Mar</option>
-                            <option value="apr">Apr</option>
-                            <option value="may">May</option>
-                            <option value="jun">Jun</option>
-                            <option value="jul">Jul</option>
-                            <option value="aug">Aug</option>
-                            <option value="sep">Sep</option>
-                            <option value="oct">Oct</option>
-                            <option value="nov">Nov</option>
-                            <option value="dec">Dec</option>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
                         </select>
                         <div class="hidden">
                             <div class="month_1">Jan</div>
@@ -959,7 +960,8 @@
                     </div>
                     <div class="form-item__field form-icon-wrapper form-item__field--md form-icon">
                         <select id="list_topics">
-                            <option value="All" selected>All Topics</option>
+                            <!--<option value="All" selected>All Topics</option>-->
+                            <option value="master-json-object" selected>All Topics</option>
                             <option value="Corporate">Corporate</option>
                             <option value="Financial">Financial</option>
                             <option value="Investments">Investments</option>
@@ -979,7 +981,8 @@
 <!--DE2840 fix 5/31/16-->
 <div class="container">
     <div class="row wrapper list margin-t">
-        <div class="lists" data-news-url="http://localhost:4502/content/metlife/ga/jcr:content/content-parsys/news_room_archive.archive." data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">
+        <!--<div class="lists" data-news-url="http://localhost:4502/content/metlife/ga/jcr:content/content-parsys/news_room_archive.archive." data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">-->
+        <div class="lists" data-news-url="http://localhost/MetLifeAdobe/dev/" data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">
             <h2 class="list__title">News Releases</h2>
         </div>
 
@@ -1738,6 +1741,7 @@
 <script src="js/product-card.js"></script>
 <script src="js/aem_form.js"></script>
 <script src="js/inview.js"></script>
+<script src="js/news-room.js"></script>
 <!-- /build -->
 <!-- build:js js/feedback.min.js -->
 <script src="js/_plugins/oo_engine.min.js"></script>

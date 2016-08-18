@@ -265,6 +265,8 @@ module.exports = function (grunt) {
                     'dev/js/product-card.js',
                     'dev/js/contextual--links.js',
                     'dev/js/email.js',
+                    'dev/js/general--content.js',
+                    'dev/js/news-room.js',
                     'dev/js/inview.js'
 
 

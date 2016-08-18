@@ -2500,8 +2500,8 @@ a:visited {
 }
 
 .brand-6th {
-    color: #add0f0;
-    fill: #add0f0;
+    color: #a4d8f1;
+    fill: #a4d8f1;
 }
 
 .brand-gray-1st {
@@ -8822,7 +8822,7 @@ body{
 }
 
 .product-row__tile__bottom a:first-of-type{
-    color: #fff;
+    color: #fff !important;
 } 
 .product-row__tile {
     margin-bottom: 10px;
@@ -10306,6 +10306,10 @@ ul.bullet-list {
     margin-bottom: 0px;
 }
 
+.contactAdvisorSingle{
+   display: table;
+}
+
 @media screen and (min-width: 768px){
     .form-card{
         display: table;
@@ -10347,6 +10351,10 @@ ul.bullet-list {
         display: table-cell;
         width: 40%
     }
+    .contactAdvisorSingle{
+        display: table;
+        width: 40%;
+    }
     .contact-container--form-card .contactSidebarBtns button{
         width:inherit;
     }
@@ -10363,10 +10371,12 @@ ul.bullet-list {
     .contact-container--form-card{
         width: 34%
     }
+    .contactAdvisorSingle{
+        width: 40%;
+    }
     .form-card__img__text h3{
         font-size: 32px;
         line-height:36px;
-
     }
     .form-card__img__text p{
         font-size: 18px;
@@ -13478,13 +13488,20 @@ manner*/
 .contact-close .icon {
     font-size:1.2em;
 }
-.form__title {
+.form__title{
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
     display: block;
     margin-bottom: 6px;
 }
+
+.two-column-form-title.form__title{
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+}
+
 .form__subtitle {
     font-weight: 400;
     font-style: italic;
@@ -13562,10 +13579,32 @@ manner*/
     width: 100%;
 }
 
-
 .formFail .errorSpan{
     width: 120%;
 }
+
+.twoColumnContactForm {
+    display: table;
+    box-shadow: none;
+    padding: 0 10px;
+}
+
+.twoColumnContactForm .contactSidebarBtns button{
+    width: 100%;
+}
+
+.twoColumnContactForm .form-item__title{
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 15px;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.form-row--clear{
+    clear: both;
+}
+
 @media screen and (max-width: 767px) {
     .formFail .errorSpan{
         top: 35%;
@@ -13586,6 +13625,30 @@ manner*/
         max-width: 320px;
         width: auto;
     }
+    .twoColumnContactForm .contactSidebarBtns button{
+        width: inherit;
+    }
+    .left-column, .right-column{
+        width: 50%;
+    }
+
+    .left-column{
+        float:left;
+        padding-right: 10px;
+        clear: both;
+    }
+
+    .right-column{
+        float: right;
+        padding-left: 10px;
+    }
+    .twoColumnContactForm{
+        display: table;
+        width: 65%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
 }
 
 
@@ -13640,6 +13703,7 @@ manner*/
 .form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
     font-size: 13px;
+    padding-right: 30px;
 }
 .form__item--description{
     font-size: 13px;
@@ -13655,7 +13719,9 @@ manner*/
 }
 .contactSidebarBtns {
     margin: 10px 0 0 0;
-
+}
+.twoColumnContactForm .contactSidebarBtns{
+    margin: 10px 0 5px 0;
 }
 .text-right {
     text-align: right;
@@ -13683,7 +13749,10 @@ manner*/
     display: none;
 }
 .contact-container--form-card .contactSideThankyou,
-.contact-container--form-card .contactSideSubmitError {
+.contact-container--form-card .contactSideSubmitError,
+.twoColumnContactForm .contactSideThankyou,
+.twoColumnContactForm .contactSideSubmitError
+{
     text-align: center;
     position: relative;
     top: 10%;
@@ -13774,16 +13843,16 @@ manner*/
 
 
 .form-radio-grp label input.user-radio + span:before {
-     content: ' ';
-     position: absolute;
-     left: 0;
-     top: 0;
-     display: inline-block;
-     width: 17px;
-     height: 17px;
-     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
-     background-size: 17px 17px;
- }
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
+    background-size: 17px 17px;
+}
 .form-radio-grp label input.user-radio[type=radio]:checked + span:before{
     background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
@@ -13856,6 +13925,12 @@ manner*/
 .form-user-grp select option{
     background-color: #fff !important;
 }
+
+.twoColumnContactForm .form-radio-grp label{
+    height: 40px;
+    line-height: 40px;
+}
+
 @media screen and (min-width: 768px) {
     .form-row [class*="col-sm-6"]:nth-of-type(odd) {
         padding-right:5px;
@@ -13877,6 +13952,16 @@ manner*/
     }
     .form-row {
         margin:5px 0;
+    }
+    .two-column-contact-form-container{
+
+    }
+    .twoColumnContactForm.form__title{
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .twoColumnContactForm .form-radio-grp label{
+        display: inline-block;
     }
 }
 
@@ -13903,6 +13988,10 @@ span.errorRadio {
     .form__title {
         padding-top: 8px;
         font-size: 20px;
+    }
+    .two-column-form-title.form__title{
+        font-size: 28px;
+        line-height: 32px;
     }
 }
 
@@ -14075,10 +14164,12 @@ span.errorRadio {
     font-weight: 400;
     font-style: italic;
 }
-
+.form-item--search-filter {
+    margin-top: 5px;
+}
 .form-item__search {
     width: 100%;
-    margin: 5px 0 15px 0;
+    margin-right: 15px;
 }
 
 .form-item__display {
@@ -14119,9 +14210,14 @@ span.errorRadio {
     color: #999;
     z-index: 0;
 }
+
 #form-refineSearchQuery_sr{
     z-index: 2;
     position: relative;
+}
+
+.search-filter__button {
+    vertical-align: top;
 }
 
 @media screen and (max-width: 767px) {
@@ -14149,10 +14245,13 @@ span.errorRadio {
     .form-item--search-filter .icon-search {
         display: none;
     }
+    .form-item--search-filter {
+        margin-top: 30px;
+    }
 
     .form-item__search {
         width: 450px;
-        margin: 30px 10px 0 0;
+        margin-right: 10px;
     }
 
     .contact-lead-form {
@@ -14172,7 +14271,6 @@ span.errorRadio {
         width: 50px;
         display: inline-block;
         background-size: 18px 40px;
-        padding-left: 10px;
         border-radius: 2px;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -14184,7 +14282,11 @@ span.errorRadio {
 
 @media screen and (min-width: 1024px) {
     .form-item--search-filter {
-        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .form-item__search {
+        margin-right: 10px;
     }
 
     .search-results-container {
@@ -14197,10 +14299,6 @@ span.errorRadio {
 
     .list__item--no-border {
         margin-bottom: 30px;
-    }
-
-    .form-item__search {
-        margin: 40px 10px 0 0;
     }
 
     .contact-lead-form {
@@ -16259,10 +16357,10 @@ body  .quote_edit_form .submit_quote_edit_form {
     text-align: center;
     line-height: 50px;
 }
-.campaign-header .campaign-header__section .campaign-header--logo img {
-    width: auto;
-    height: 20px;
-}
+/*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+    /*width: auto;*/
+    /*height: 20px;*/
+/*}*/
 .campaign-header .campaign-header__popup {
     display: none;
     text-align: left;
@@ -16308,7 +16406,6 @@ body  .quote_edit_form .submit_quote_edit_form {
     .campaign-header-login {
         position: absolute;
         z-index: 2;
-        /* right: 5px; */
         letter-spacing: 1px;
         margin-top: -10px;
     }
@@ -16316,28 +16413,38 @@ body  .quote_edit_form .submit_quote_edit_form {
 .campaign-header-login a{
     float: right;
 }
-
+.campaign-header__section p {
+    font-size: 14px;
+    line-height: 18px;
+}
 .campaign-header-login span{
     color:white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .campaign-header-login svg{
     vertical-align: top;
-    margin-left:5px;
-
+    margin-left: 0;
+    width: 15px;
 }
 .campaign-header-right a {
     font-size:12px;
+    text-transform: uppercase;
 }
 .campaign-header-right svg {
     display: none
 }
 .campaign-header-ctc h5 {
     font-weight: 400;
+    font-size: 14px;
+    color: #a4d8f1;
 }
 .campaign-header-ctc p {
-    font-size: .7em;
-    line-height: 1.3em;
+    font-size: 10px;
+    line-height: 15px;
 }
 .campaign-header__popup__contact input {
     width: 100%;
@@ -16353,68 +16460,85 @@ body  .quote_edit_form .submit_quote_edit_form {
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
-    .campaign-header__section .campaign-header-right .campaign-header-ctc{
+
+    .campaign-header__section .campaign-header-right .campaign-header-ctc {
         line-height: 70px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
+
     .campaign-header .campaign-header__popup.open {
         top: 70px;
         width: 30%;
+        min-width: 450px;
     }
+
     .campaign-header .campaign-header__section:first-of-type p:not(:first-child) {
         display: inline-block;
         width: auto;
     }
-    .campaign-header__section .campaign-header-right{
+
+    .campaign-header__section .campaign-header-right {
         width: 50%;
         float: right;
     }
+
     .campaign-header .campaign-header__popup.open {
         width: 40%;
         padding: 15px;
     }
-    .campaign-header__section .campaign-header-right a{
-        width:70%;
+
+    .campaign-header__section .campaign-header-right a {
+        width: 70%;
     }
-    .campaign-header .campaign-header__section .campaign-header--logo img {
-        height: 28px;
-    }
-    .campaign-header-login span{
+
+    /*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+        /*height: 28px;*/
+    /*}*/
+
+    .campaign-header-login span {
         color: #2c77c5;
     }
+
     .campaign-header-right svg {
         display: inline;
         top: 4px;
         left: 3px;
     }
-    .campaign-header-login svg{
+
+    .campaign-header-login svg {
         color: #2c77c5;
         fill: #2c77c5;
     }
-    .campaign-header-on-scroll .campaign-header__popup.open{
+
+    .campaign-header-on-scroll .campaign-header__popup.open {
         top: 50px;
     }
+
     .campaign-header .campaign-header__popup .campaign-header-ctc {
         padding: 0;
     }
+
     .campaign-header__popup__contact {
-        width: 100%;
+        display: flex
     }
+
     .campaign-header__popup__contact input {
-        width: 50%;
+        flex: 1;
+        margin-right: 10px;
     }
+
     .campaign-header__popup__contact a {
         float: right;
         min-width: 40px;
         width: auto;
     }
-}
-@media screen and (min-width: 992px) {
-    .campaign-header__popup__contact input {
-        width: 55%;
+    .campaign-header-ctc h5 {
+        font-size: 13px;
+        line-height: 20px;
+        color: #a4d8f1;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -16448,18 +16572,12 @@ body  .quote_edit_form .submit_quote_edit_form {
         padding-bottom: 0px;
         padding-top: 6px;
     }
-    .campaign-header__popup__contact input {
-        width: 50%;
-    }
 }
-@media screen and (min-width: 1200px) {
-    .campaign-header__popup__contact input {
-        width: 55%;
-    }
-}
+
 @media screen and (max-width: 767px) {
     .campaign-header__section p {
        font-size: 12px;
+       line-height: 15px;
     }
 }
 .campaign-card .campaign-card-image {
@@ -16602,7 +16720,15 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 .campaign-card .campaign-card-section {
     position:relative;
-
+}
+.campaign-contact-form .form__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #333;
+}
+.campaign-contact-form .form__subtitle {
+    color: #333;
 }
 @media screen and (min-width: 768px) {
 
@@ -18566,13 +18692,13 @@ text-align: center;
     font-size: 14px;
     line-height: 20px;
 }
-.wrapper-general ul{
+.rich-text-component ul{
     margin-bottom: 20px;
     padding-left: 40px;
     font-size: 13px;
     line-height:16px;
 }
-.wrapper-general ul li{
+.rich-text-component ul li{
     list-style: disc;
     margin-bottom:10px;
 }
