@@ -63,6 +63,11 @@ table {
     padding-top: 30px;
 }
 
+.wrapper--sides-only {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .header--font-weight-400 {
     font-weight: 400;
 }
