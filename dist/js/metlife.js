@@ -6847,6 +6847,7 @@ var ServicesAPI = {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
 		}
+		ServicesAPI.dropDownPreselection();
 	},
 	replaceAll: function (txt, replace, with_this) {
 		return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'), with_this);
@@ -9211,6 +9212,23 @@ var ServicesAPI = {
 					console.log("error in ajax form submission");
 				}
 			});
+		}
+	},
+	dropDownPreselection: function(){
+		if($(".js-DropDownPreselect").length > 0){
+			if (window.location.hash) {
+				var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+				var exists = false;
+				$('.js-DropDownPreselect option').each(function(){
+					console.log(this.value == hash)
+					if (this.value == hash) {
+						exists = true;
+						$(".js-DropDownPreselect").val(hash);
+						$(".js-DropDownPreselect").trigger("change");
+						return false;
+					}
+				});
+			}
 		}
 	}
 };
