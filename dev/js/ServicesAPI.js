@@ -9,6 +9,7 @@ var page = 1;
 var numSearchResults = 10;
 var searchPaginationNumber;
 var searchPaginationPrev;
+var searchUrl;
 //Quote Tool variables
 var quoteDomain;
 var quotelanguage;
@@ -1787,11 +1788,11 @@ var ServicesAPI = {
 		 }*/
 		var site = $(".js-searchSubmit").attr("data-site");
 		if(searchPaginationNumber == undefined){
-			var url = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0';
+			searchUrl = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0';
 		}else{
-			var url = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0&start='+searchPaginationNumber ;
+			searchUrl = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0&start='+searchPaginationNumber ;
 		}
-		console.log(url)
+		console.log(searchUrl)
 		$(".results_content").remove();
 		$(".js-searchSuggestion").children().remove();
 		resultsListHTML = "";
@@ -1834,7 +1835,7 @@ var ServicesAPI = {
 
 		/************LIVE Site Search SERVICE***************/
 		$.ajax({
-			url: url,
+			url: searchUrl,
 			dataType: 'json',
 			type: 'GET',
 			async: false,
