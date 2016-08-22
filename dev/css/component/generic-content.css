@@ -57,13 +57,13 @@
     font-size: 14px;
     line-height: 20px;
 }
-.wrapper-general ul{
+.rich-text-component ul{
     margin-bottom: 20px;
     padding-left: 40px;
     font-size: 13px;
     line-height:16px;
 }
-.wrapper-general ul li{
+.rich-text-component ul li{
     list-style: disc;
     margin-bottom:10px;
 }
@@ -97,6 +97,10 @@
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 1px;
+    }
+    .rich-text-component ul{
+        font-size: 14px;
+        line-height:18px;
     }
 }
 

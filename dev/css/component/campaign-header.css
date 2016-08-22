@@ -24,10 +24,10 @@
     text-align: center;
     line-height: 50px;
 }
-.campaign-header .campaign-header__section .campaign-header--logo img {
-    width: auto;
-    height: 20px;
-}
+/*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+    /*width: auto;*/
+    /*height: 20px;*/
+/*}*/
 .campaign-header .campaign-header__popup {
     display: none;
     text-align: left;
@@ -161,9 +161,9 @@
         width: 70%;
     }
 
-    .campaign-header .campaign-header__section .campaign-header--logo img {
-        height: 28px;
-    }
+    /*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+        /*height: 28px;*/
+    /*}*/
 
     .campaign-header-login span {
         color: #2c77c5;

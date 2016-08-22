@@ -1,4 +1,6 @@
 .article {
+    font-size: 14px;
+    line-height: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -54,6 +56,17 @@
     margin-bottom: 0;
 }
 
+.article ul {
+    padding-left: 20px;
+    text-indent: -20px;
+}
+
+.article li:before {
+    content: "\2022";
+    vertical-align: top;
+    padding-right: 14px;
+}
+
 @media screen and (min-width: 768px) {
     .article {
         margin-top: 30px
@@ -89,6 +102,11 @@
         font-size: 18px;
         line-height: 22px;
         margin-bottom: 30px;
+    }
+
+    .article ul {
+        padding-left: 40px;
+        text-indent: -20px;
     }
 
     .page-title.page-title--reduced-header-padding {
