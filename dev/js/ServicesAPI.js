@@ -549,8 +549,8 @@ $('.js-searchSubmit').on('click', function () {
 	var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
 	/*var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;*/
 	var url = $(".js-searchSubmit").attr("data-search-ajax-url");
-	console.log(searchDefaultSelect)
-	$(".page-count").val(searchDefaultSelect);
+	/*console.log(searchDefaultSelect)
+	$(".page-count").val(searchDefaultSelect);*/
 	if (searchRequest) {
 		searchStart = 1;
 		searchEnd = 10;
@@ -1805,9 +1805,9 @@ var ServicesAPI = {
 			}
 		});
 
-
+console.log(count)
 		//No results
-		if (count == 0) {
+		if (totalSearchResults == 0) {
 			$('.display-text > span:nth-of-type(2)').addClass('hidden');
 			$('.results_pagination').addClass('hidden');
 		} else {
@@ -1884,15 +1884,16 @@ var ServicesAPI = {
 			processData: false,
 			success: function (data) {
 				console.log(data)
-				if(data.GSP.Spelling != undefined) {
+				if(data.GSP.hasOwnProperty("Spelling")) {
 					$(".form-item__display").hide();
 					$(".search-results-container__correction-text").removeClass("hidden");
 					var correctSpelling= data.GSP.Spelling.Suggestion[0].qe;
-
+					$(".no-results").addClass('hidden');
 					var correctionHtml = '<a href="#">'+correctSpelling+'</a>';
 					$(".js-searchSuggestion").append(correctionHtml);
-				}else if(data.GSP.RES.M != undefined){
+				}else if(data.GSP.hasOwnProperty("RES")){
 					$(".form-item__display").show();
+					$(".page-count").removeClass('hidden');
 					$(".search-results-container__correction-text").addClass("hidden");
 					totalSearchResults = data.GSP.RES.M;
 					console.log(totalSearchResults)
@@ -1918,11 +1919,12 @@ var ServicesAPI = {
 							resultsListHTML += "</div>";
 						}
 						resultsListHTML += "</div>";
-					} else {
-						$('.form-item__display').removeClass('hidden');
-						$(".page-count").addClass('hidden');
-						$(".no-results").removeClass('hidden');
 					}
+				}else{
+					$('.form-item__display').addClass('hidden');
+					$(".page-count").addClass('hidden');
+					$(".no-results").removeClass('hidden');
+					totalSearchResults = 0;
 				}
 				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 				ServicesAPI.createPaginationSearch(totalSearchResults);
