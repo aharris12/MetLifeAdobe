@@ -32,7 +32,7 @@
         ".skinny-card .skinny-promo-tile",
         "body"
       ],
-      "readyEvent": null,
+      "readyEvent": "backstopjs_ready",
       "delay": 500,
       "misMatchThreshold" : 0.1,
       "onBeforeScript": "onBefore.js",

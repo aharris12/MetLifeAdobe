@@ -3,7 +3,7 @@
     "testPairs": [
       {
         "reference": "../../backstop_data/bitmaps_reference/0_0_global-header_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_0_global-header_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_0_global-header_0_phone.png",
         "selector": ".global-header",
         "fileName": "0_0_global-header_0_phone.png",
         "label": "MetLife Homepage",
@@ -11,7 +11,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_1_quote-office--left_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_1_quote-office--left_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_1_quote-office--left_0_phone.png",
         "selector": ".quote-office--left",
         "fileName": "0_1_quote-office--left_0_phone.png",
         "label": "MetLife Homepage",
@@ -19,7 +19,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_2_quote-office--right_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_2_quote-office--right_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_2_quote-office--right_0_phone.png",
         "selector": "quote-office--right",
         "fileName": "0_2_quote-office--right_0_phone.png",
         "label": "MetLife Homepage",
@@ -27,7 +27,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_3_skinny-card_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_3_skinny-card_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_3_skinny-card_0_phone.png",
         "selector": ".skinny-card",
         "fileName": "0_3_skinny-card_0_phone.png",
         "label": "MetLife Homepage",
@@ -35,7 +35,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_4_skinny-cardskinny-promo-tile_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_4_skinny-cardskinny-promo-tile_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_4_skinny-cardskinny-promo-tile_0_phone.png",
         "selector": ".skinny-card .skinny-promo-tile",
         "fileName": "0_4_skinny-cardskinny-promo-tile_0_phone.png",
         "label": "MetLife Homepage",
@@ -43,7 +43,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_5_body_0_phone.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_5_body_0_phone.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_5_body_0_phone.png",
         "selector": "body",
         "fileName": "0_5_body_0_phone.png",
         "label": "MetLife Homepage",
@@ -51,7 +51,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_0_global-header_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_0_global-header_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_0_global-header_1_tablet.png",
         "selector": ".global-header",
         "fileName": "0_0_global-header_1_tablet.png",
         "label": "MetLife Homepage",
@@ -59,7 +59,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_1_quote-office--left_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_1_quote-office--left_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_1_quote-office--left_1_tablet.png",
         "selector": ".quote-office--left",
         "fileName": "0_1_quote-office--left_1_tablet.png",
         "label": "MetLife Homepage",
@@ -67,7 +67,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_2_quote-office--right_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_2_quote-office--right_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_2_quote-office--right_1_tablet.png",
         "selector": "quote-office--right",
         "fileName": "0_2_quote-office--right_1_tablet.png",
         "label": "MetLife Homepage",
@@ -75,7 +75,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_3_skinny-card_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_3_skinny-card_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_3_skinny-card_1_tablet.png",
         "selector": ".skinny-card",
         "fileName": "0_3_skinny-card_1_tablet.png",
         "label": "MetLife Homepage",
@@ -83,7 +83,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_4_skinny-cardskinny-promo-tile_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_4_skinny-cardskinny-promo-tile_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_4_skinny-cardskinny-promo-tile_1_tablet.png",
         "selector": ".skinny-card .skinny-promo-tile",
         "fileName": "0_4_skinny-cardskinny-promo-tile_1_tablet.png",
         "label": "MetLife Homepage",
@@ -91,7 +91,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_5_body_1_tablet.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_5_body_1_tablet.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_5_body_1_tablet.png",
         "selector": "body",
         "fileName": "0_5_body_1_tablet.png",
         "label": "MetLife Homepage",
@@ -99,7 +99,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_0_global-header_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_0_global-header_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_0_global-header_2_desktop.png",
         "selector": ".global-header",
         "fileName": "0_0_global-header_2_desktop.png",
         "label": "MetLife Homepage",
@@ -107,7 +107,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_1_quote-office--left_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_1_quote-office--left_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_1_quote-office--left_2_desktop.png",
         "selector": ".quote-office--left",
         "fileName": "0_1_quote-office--left_2_desktop.png",
         "label": "MetLife Homepage",
@@ -115,7 +115,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_2_quote-office--right_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_2_quote-office--right_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_2_quote-office--right_2_desktop.png",
         "selector": "quote-office--right",
         "fileName": "0_2_quote-office--right_2_desktop.png",
         "label": "MetLife Homepage",
@@ -123,7 +123,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_3_skinny-card_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_3_skinny-card_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_3_skinny-card_2_desktop.png",
         "selector": ".skinny-card",
         "fileName": "0_3_skinny-card_2_desktop.png",
         "label": "MetLife Homepage",
@@ -131,7 +131,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_4_skinny-cardskinny-promo-tile_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_4_skinny-cardskinny-promo-tile_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_4_skinny-cardskinny-promo-tile_2_desktop.png",
         "selector": ".skinny-card .skinny-promo-tile",
         "fileName": "0_4_skinny-cardskinny-promo-tile_2_desktop.png",
         "label": "MetLife Homepage",
@@ -139,7 +139,7 @@
       },
       {
         "reference": "../../backstop_data/bitmaps_reference/0_5_body_2_desktop.png",
-        "test": "../../backstop_data/bitmaps_test/20160819-142110/0_5_body_2_desktop.png",
+        "test": "../../backstop_data/bitmaps_test/20160819-155351/0_5_body_2_desktop.png",
         "selector": "body",
         "fileName": "0_5_body_2_desktop.png",
         "label": "MetLife Homepage",
@@ -147,5 +147,5 @@
       }
     ]
   },
-  "lastConfigHash": "91c6a9aaa2bb7bfbc5b07589e58e23df6c897c20"
+  "lastConfigHash": "03db90be2cf8657fe8205e885e8916cd37dc01ab"
 }
