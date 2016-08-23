@@ -72,7 +72,7 @@
 @media screen and (max-width: 767px) {
     .campaign-header-login {
         position: absolute;
-        z-index: 2;
+        z-index: 1000;
         letter-spacing: 1px;
         margin-top: -10px;
     }
