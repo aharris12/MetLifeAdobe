@@ -14,11 +14,10 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     
-    <link rel="stylesheet" href="css/metlife.min.css"/>
+    <link rel="stylesheet" href="css/metlife.min.css">
 
 </head>
 <body>
-
 
 <!-- Global Header -->
 <div class="row global-header">
@@ -97,7 +96,6 @@
 		</div>-->
     </div>
 </div>
-
 
 <!--New Mega Menu -->
 <div class="row megamenu">
@@ -279,7 +277,8 @@
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
             <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction" data-service="glu">
+                  method="post" class="userForm" data-fid="contactSidebar"
+                  data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction" data-service="glu">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -300,10 +299,11 @@
                 <input type="hidden" name="bWFCompleted" value="Y">
                 <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
                 <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
-                <input type="hidden" name="isSync" id="isSync" value="no" />
-                <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com" />
-                <input type="hidden" name="xmlPath" id="xmlPath" value="/cwa/metlife/system/assets/gls/validationxmls/" />
-                <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal" />
+                <input type="hidden" name="isSync" id="isSync" value="no"/>
+                <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com"/>
+                <input type="hidden" name="xmlPath" id="xmlPath"
+                       value="/cwa/metlife/system/assets/gls/validationxmls/"/>
+                <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal"/>
 
 
                 <div class="row form-row">
@@ -311,11 +311,11 @@
                         <div class="form-user-grp">
                             <label for="firstName_Acc" class="hidden">First Name</label>
                             <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="First Name" data-required="true" aria-required="true" data-valid-type="text">
+                                   placeholder="First Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row form-row">
@@ -323,23 +323,23 @@
                         <div class="form-user-grp">
                             <label class="hidden" for="lastName_Acc">Last Name</label>
                             <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Last Name" data-required="true" aria-required="true" data-valid-type="text">
+                                   placeholder="Last Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row form-row">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="address_Acc">Address</label>
-                            <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
+                            <input name="address" id="address_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Address"
                                    data-required="true" aria-required="true">
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row form-row">
@@ -351,7 +351,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row form-row">
@@ -428,7 +427,6 @@
                 </div>
 
 
-
                 <div class="row form-row">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
@@ -452,7 +450,6 @@
                 </div>
 
 
-
                 <div class="row form-row">
                     <div class="col-xs-12">
                         <div class="form-user-grp form-icon-wrapper">
@@ -464,14 +461,21 @@
                                     data-valid-status="failed"
                                     data-request-type>
                                 <option value="">In reference to ...</option>
-                                <option value="New Product/Planning Services"  data-product-url="/wps/glsproxy/gls/processlead.do" >New Product/Planning Services</option>
-                                <option value="Existing Product/Policy" data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing Product/Policy</option>
+                                <option value="New Product/Planning Services"
+                                        data-product-url="/wps/glsproxy/gls/processlead.do">New Product/Planning
+                                    Services
+                                </option>
+                                <option value="Existing Product/Policy"
+                                        data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing
+                                    Product/Policy
+                                </option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="row form-row" data-observes-id="requestType" data-observes-value="New Product/Planning Services">
+                <div class="row form-row" data-observes-id="requestType"
+                     data-observes-value="New Product/Planning Services">
                     <div class="col-xs-12">
                         <div class="form-radio-grp">
                             <label>
@@ -491,7 +495,8 @@
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true" aria-required="true">
+                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true"
+                                   aria-required="true">
                         </div>
                     </div>
                 </div>
@@ -499,9 +504,11 @@
                 <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
                     <div class="col-xs-12">
                         <div class="form-user-grp">
-										 <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
+										 <textarea name="questionOrComment" id="questionOrComment_Acc"
+                                                   placeholder="Question"
                                                    rows="3" class="form-user-ctrl productUserQuestion"
-                                                   data-placeholder="" data-required="true" aria-required="true"></textarea>
+                                                   data-placeholder="" data-required="true"
+                                                   aria-required="true"></textarea>
                         </div>
                     </div>
                 </div>
@@ -550,7 +557,8 @@
 
 <!-- Login Overlay -->
 <div class="login-container">
-    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
+    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST"
+          onSubmit="return loginFunction();">
         <div class="row login-container-header">
             <div class="col-xs-2 login-container--close">
                 <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
@@ -567,7 +575,8 @@
         <div class="row login-popout__title login-container-alert">
             <div>
                 <h2>Maintenance Alert</h2>
-                <p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be unavailable. We'are sorry for the inconvinience.</p>
+                <p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be
+                    unavailable. We'are sorry for the inconvinience.</p>
             </div>
         </div>
         <h2 class="login-popout__title">Select account type to log in:</h2>
@@ -586,7 +595,8 @@
                     <!--<svg class="icon info tooltip">-->
                     <!--<use xlink:href="/static/images/icons-metlife.svg#icon-info"></use>-->
                     <!--</svg>-->
-                    <img src="/static/images/ico_tooltip_blue.png" class="tooltip tip-icon" title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
+                    <img src="/static/images/ico_tooltip_blue.png" class="tooltip tip-icon"
+                         title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
                 </div>
                 <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
                     <div class="login-popout-msg">
@@ -740,7 +750,8 @@
                         </svg>
                         <ul>
                             <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
-                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
+                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans
+                                Administration</a>
                             </li>
                             <li class="login-type__link"><a href="">Annuities Administration</a></li>
                         </ul>
@@ -755,7 +766,8 @@
                             <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
                             </li>
                             <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
-                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
+                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -831,13 +843,13 @@
                     </div>
                 </a>
             </li>
-          <!--  <li class="subnav-go-back__list__item">
-                <a href="#" class="subnav-go-back__list__item__anchor">
-                    <div>
-                        <p class="subnav-go-back__list__item__anchor__label">Whole Life Insurance</p>
-                    </div>
-                </a>
-            </li>-->
+            <!--  <li class="subnav-go-back__list__item">
+                  <a href="#" class="subnav-go-back__list__item__anchor">
+                      <div>
+                          <p class="subnav-go-back__list__item__anchor__label">Whole Life Insurance</p>
+                      </div>
+                  </a>
+              </li>-->
             <!--<li class="subnav-go-back__list__item">
                 <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
@@ -897,11 +909,13 @@
     </div>
 </div>
 
+<!-- Content Authorable Section Begin -------------------------------------------------------------------------->
+
 <!--Product Tiles-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper">
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-10 pad-t-md-0 pad-b-md-20 pad-t-lg-0 pad-b-lg-20">
+    <div class="row wrapper in_view">
         <!--No promo row-->
-        <div class="product-row in_view">
+        <div class="product-row">
             <div class="product-row__tile bg-white box-shadow">
                 <div class="product-row__tile__top">
                     <h3 class="product-row__tile__title"><a href="#" class="brand-gray-4th">Car Insurance</a></h3>
@@ -954,10 +968,10 @@
 </div>
 
 <!--Product Tiles-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper">
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-10 pad-t-md-0 pad-b-md-20 pad-t-lg-0 pad-b-lg-20">
+    <div class="row wrapper in_view">
         <!--Single promo row-->
-        <div class="product-row in_view">
+        <div class="product-row">
             <div class="product-row__tile bg-white box-shadow">
                 <div class="product-row__tile__top">
                     <h3 class="product-row__tile__title"><a href="#" class="brand-gray-4th">RV & Motorcycle
@@ -977,9 +991,12 @@
 
             <div class="product-row__tile bg-white box-shadow">
                 <div class="product-row__tile__top">
-                    <h3 class="product-row__tile__title"><a href="#" class="brand-gray-4th">Product Name Title 2 line (40 Char.) max</a></h3>
+                    <h3 class="product-row__tile__title"><a href="#" class="brand-gray-4th">Product Name Title 2 line
+                        (40 Char.) max</a></h3>
 
-                    <p class="product-row__tile__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis ut mauris iaculis mattis non vel felis. Donec metus est finibus. 160 characters max.</p>
+                    <p class="product-row__tile__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+                        amet turpis ut mauris iaculis mattis non vel felis. Donec metus est finibus. 160 characters
+                        max.</p>
                 </div>
                 <div class="product-row__tile__bottom">
                     <a href="#" class="btn-brand-2nd table">Learn More</a>
@@ -1013,11 +1030,10 @@
 </div>
 
 <!--Product Tiles-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper">
-
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-10 pad-t-md-0 pad-b-md-20 pad-t-lg-0 pad-b-lg-40">
+    <div class="row wrapper in_view">
         <!--Double promo row-->
-        <div class="product-row in_view">
+        <div class="product-row">
             <div class="product-row__tile bg-white box-shadow">
                 <div class="product-row__tile__top">
                     <h3 class="product-row__tile__title"><a href="#" class="brand-gray-4th">RV & Motorcycle
@@ -1041,7 +1057,8 @@
                 </div>
                 <div class="product-row__tile--img-tile__text">
                     <div class="product-row__tile__top">
-                        <div class="product-row__tile__promo">  <div class="white">BIGPromo Headlin 40 char. max</div>
+                        <div class="product-row__tile__promo">
+                            <div class="white">BIGPromo Headlin 40 char. max</div>
                         </div>
                         <h4>Sub Header 30 characters max.</h4>
 
@@ -1051,7 +1068,8 @@
                             more.</p>
                     </div>
                     <div class="product-row__tile__bottom">
-                        <a href="DoubleLink" class="btn-brand-4th table" id="auto-insurance_banner-tile_content-link">Learn More</a>
+                        <a href="DoubleLink" class="btn-brand-4th table" id="auto-insurance_banner-tile_content-link">Learn
+                            More</a>
                     </div>
                 </div>
             </div>
@@ -1061,12 +1079,10 @@
 </div>
 
 <!--Product Tiles-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper">
-
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-10 pad-t-md-0 pad-b-md-30 pad-t-lg-0 pad-b-lg-40">
+    <div class="row wrapper in_view">
         <!--Triple promo row-->
-        <div class="product-row in_view">
-            <!-- Jessica edit 2/17/2016-->
+        <div class="product-row">
             <div class="product-row__tile--img-tile box-shadow">
 
                 <div class="product-row__tile__img-tile__img box-shadow"
@@ -1094,11 +1110,9 @@
     </div>
 </div>
 
-<!--Jessica Edit 03-23-16 -->
 <!--Small Product Module -->
-<div class="container product-module__small-wrapper bg-gray-1st">
-    <div class="row wrapper product-module product-module--table  in_view">
-
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-0 pad-t-md-0 pad-b-md-0 pad-t-lg-0 pad-b-lg-0">
+    <div class="row wrapper product-module product-module--table in_view">
         <div class="product-module__small product-module__small--main bg-white">
             <h2>Other Protection Products</h2>
 
@@ -1147,12 +1161,9 @@
     </div>
 </div>
 
-<!-- Updated by anthony 5/17/2016 defect 8871-->
 <!--Contextual Links-->
-<div class="container contextual-links">
-    <div class="row bg-gray-1st">
-        <div class="wrapper contextual-links-row in_view">
-
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-20 pad-t-md-0 pad-b-md-0 pad-t-lg-0 pad-b-lg-0">
+    <div class="row wrapper contextual-links-row in_view">
             <a href="#" class="contextual-link">
                 <div class="contextual-link__content">
                     <img class="contextual-link__content__img hidden-xs" src="/static/images/icon_group_insurance.png">
@@ -1214,13 +1225,11 @@
                 </div>
             </a>
         </div>
-    </div>
 </div>
 
 <!--Skinny Product Tile-->
-<div class="container bg-gray-1st">
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-20 pad-t-md-0 pad-b-md-40 pad-t-lg-0 pad-b-lg-40">
     <div class="row wrapper in_view">
-
         <div class="product-row__tile--img-tile box-shadow skinny-promo-tile">
             <div class="product-row__tile__img-tile__img product-row__tile__img-tile__img__left"
                  style="background-image: url('/static/images/product_card/subcat_promo_card.png');">
@@ -1241,32 +1250,8 @@
     </div>
 </div>
 
-<!--Skinny Product Tile-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper in_view">
-
-        <div class="product-row__tile--img-tile box-shadow skinny-promo-tile">
-            <div class="product-row__tile__img-tile__img"
-                 style="background-image: url('/static/images/product_card/subcat_promo_card.png');">
-            </div>
-            <div class="product-row__tile--img-tile__text">
-                <div class="product-row__tile--img-tile__text--left">
-                    <div class="product-row__tile__promo white">Headline Copy of 40 Characters maximum.
-                    </div>
-                    <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo
-                        tempor incididunt ut labore et dolore magna aliqua ut enad.</p>
-                </div>
-                <div class="product-row__tile--img-tile__text--right">
-                    <a href="skinny" class="btn-brand-2nd table">Start Saving</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 <!--Office Search-->
-<div class="container bg-gray-1st">
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-20 pad-t-md-0 pad-b-md-40 pad-t-lg-0 pad-b-lg-40">
     <div class="row wrapper in_view">
         <div class="office-search">
             <span class="office-search__icon">
@@ -1275,138 +1260,116 @@
                 </svg>
            </span>
             <p class="office-search__label">Find a MetLife Office Near You</p>
-            <input class="office-search__input" type="text" placeholder="Zip or City, State" data-required="true" aria-required="true">
-            <a href="#" class="btn-brand-4th office-search__action js-SearchBox" data-service-url="/my/service.json" data-href="http://localhost:63348/MetLifeAdobe/dev/fao.html" data-fao-market="us">Find</a>
+            <input class="office-search__input" type="text" placeholder="Zip or City, State" data-required="true"
+                   aria-required="true">
+            <a href="#" class="btn-brand-4th office-search__action js-SearchBox" data-service-url="/my/service.json"
+               data-href="http://localhost:63348/MetLifeAdobe/dev/fao.html" data-fao-market="us">Find</a>
         </div>
     </div>
 </div>
 
-<!--Jessica edit 4-4-16-->
 <!--Large Product Tile-->
-<div class="container bg-gray-1st">
+<div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-20 pad-t-md-0 pad-b-md-40 pad-t-lg-0 pad-b-lg-50">
     <div class="row wrapper in_view">
-<!--Changed 5/18/16 by anthony harris -->
-            <div class="product-row__tile--img-tile box-shadow large-promo-tile">
-                <div class="product-row__tile__img-tile__img"
-                     style="background-image: url('/static/images/product_card/subcat_promo_card.png');">
-                </div>
-                <div class="product-row__tile--img-tile__text">
-                    <div class="product-row__tile__promo white">Headline Copy of 55 Characters maximum.
-                    </div>
-                    <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo tempor
-                        incididunt ut labore et dolore magna aliqua ut enad.</p>
-                    <a href="large" class="btn-brand-2nd table">Call to Action</a>
-
-                </div>
+        <div class="product-row__tile--img-tile box-shadow large-promo-tile">
+            <div class="product-row__tile__img-tile__img"
+                 style="background-image: url('/static/images/product_card/subcat_promo_card.png');">
             </div>
+            <div class="product-row__tile--img-tile__text">
+                <div class="product-row__tile__promo white">Headline Copy of 55 Characters maximum.
+                </div>
+                <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo tempor
+                    incididunt ut labore et dolore magna aliqua ut enad.</p>
+                <a href="large" class="btn-brand-2nd table">Call to Action</a>
+
+            </div>
+        </div>
 
     </div>
 </div>
-
-<!--Large Product Tile-->
-<div class="container bg-gray-1st">
-    <div class="row wrapper in_view">
-        <!--Changed 5/18/16 by anthony harris -->
-            <div class="product-row__tile--img-tile box-shadow large-promo-tile">
-                <div class="product-row__tile--img-tile__text">
-                    <div class="product-row__tile__promo white">Headline Copy of 55 Characters maximum.
-                    </div>
-                    <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed douiuio eiusmo tempor
-                        incididunt ut labore et dolore magna aliqua ut enad.</p>
-                    <a href="large" class="btn-brand-2nd table">Call to Action</a>
-
-                </div>
-                <div class="product-row__tile__img-tile__img"
-                     style="background-image: url('/static/images/product_card/subcat_promo_card.png');">
-                </div>
-            </div>
-    </div>
-</div>
-
 
 <!--Disclaimer -->
-<div class="container bg-gray-1st">
-    <div class="row wrapper metlife-brand-9">
-        <p class="disclaimer">
-            *Sample rate shown is for Simplified Issue Term Life Insurance for a 30 year-old female, $10,000
-            coverage.
-            Rates based on current age, gender and face amount. Premiums will increase every 5 years up to age 90 on
-            the
-            policy anniversary date after you reach an age ending in "1" or "6” (for example: 41, 46, 51). There is
-            no
-            medical exam for this product, just some health questions. Coverage is guaranteed to age 90 so long as
-            premiums are paid. Product features and availability may vary by state. Monthly premium rates shown are
-            as
-            of June 2015 and may be subject to change. If the insured dies by suicide within the first two policy
-            years,
-            we will refund the premiums paid, less any policy loans. Simplified Issue Term Life insurance is issued
-            by
-            MetLife Insurance Company USA, Charlotte, NC 28277 (form #5E-26-13), and in New York by Metropolitan
-            Life
-            Insurance Company, New York, NY 10166 (form #1E-26-13-NY).
-        </p>
-
-        <p class="disclaimer">
-            **Average annual savings based on national savings figures reported by new MetLife Auto & Home®
-            policyholders who called our call center and switched their auto policies to MetLife Auto & Home from
-            1/14,
-            to 12/14. Source: MetLife Auto & Home internal research (2015).
-        </p>
-
-        <p class="disclaimer">
-            Like most group benefit programs, benefit programs offered by MetLife and its affiliates contain certain
-            exclusions, exceptions, waiting periods, reductions, limitations and terms for keeping them in force.
-            Please
-            contact MetLife or your plan administrator for complete details.
-        </p>
-
-        <p class="disclaimer">
-            Disability insurance is issued by Metropolitan Life Insurance Company on IDI2000-P/NC, IDI2000-P/NC-ML,
-            IDI2000-P/GR, AH 5-88, AH 6-90, AH 7-96-CA, AH 8-96-CA and IDIP12-01-IDIP12-05, IDIP12-08. April 2014
-            All
-            policies, riders and provisions may not be available in all states, at all issue ages and to all
-            occupational classes. Ask your representative for complete details. Eligibility is subject to
-            underwriting
-            approval. For policies issued in New York: These policies provide disability income insurance only. They
-            do
-            NOT provide basic hospital, basic medical or major medical insurance as defined by the New York State
-            Department of Financial Services. The expected benefit ratio for these policies is at least 50%. This
-            ratio
-            is the portion of future premiums that MetLife expects to return as benefits when averaged over all
-            people
-            with the applicable policy.
-        </p>
-
-        <p class="disclaimer">
-            Group dental insurance policies featuring the MetLife Preferred Dentist Program are underwritten by
-            Metropolitan Life Insurance Company, New York, NY. Dental Managed Care Plan benefits are provided by
-            Metropolitan Life Insurance Company, a New York corporation in NY. Dental HMO plan benefits are provided
-            by:
-            SafeGuard Health Plans, Inc., a California corporation in CA; SafeGuard Health Plans, Inc., a Florida
-            corporation in FL; SafeGuard Health Plans, Inc., a Texas corporation in TX; and MetLife Health Plans,
-            Inc.,
-            a Delaware corporation and Metropolitan Life Insurance Company, a New York corporation in NJ. The Dental
-            HMO/Managed Care companies are part of the MetLife family of companies. "DHMO" is used to refer to
-            product
-            designs that may differ by state of residence of the enrollee, including but not limited to:
-            "Specialized
-            Health Care Service Plans" in California; "Prepaid Limited Health Service Organizations" as described in
-            Chapter 636 of the Florida statutes in Florida; "Single Service Health Maintenance Organizations" in
-            Texas;
-            and "Dental Plan Organizations" as described in the Dental Plan Organization Act in New Jersey.
-        </p>
-
-        <p class="disclaimer">
-            MetLife Vision benefits are underwritten by Metropolitan Life Insurance Company, New York, NY. Certain
-            claims and network administration services are provided through Vision Service Plan (VSP), Rancho
-            Cordova,
-            CA. VSP is not affiliated with Metropolitan Life Insurance Company or its affiliates. In certain states,
-            availability of MetLife's Group Vision benefits is subject to regulatory approval. MetLife VisionAccess
-            is a
-            discount program and not an insured benefit. It is provided through VSP.
-        </p>
+<div class="disclaimer">
+    <div class="container bg-gray-1st pad-t-sm-0 pad-b-sm-40 pad-t-md-0 pad-b-md-40 pad-t-lg-0 pad-b-lg-40">
+        <div class="row wrapper metlife-brand-9">
+            <p>
+                *Sample rate shown is for Simplified Issue Term Life Insurance for a 30 year-old female, $10,000
+                coverage.
+                Rates based on current age, gender and face amount. Premiums will increase every 5 years up to age 90 on
+                the
+                policy anniversary date after you reach an age ending in "1" or "6” (for example: 41, 46, 51). There is
+                no
+                medical exam for this product, just some health questions. Coverage is guaranteed to age 90 so long as
+                premiums are paid. Product features and availability may vary by state. Monthly premium rates shown are
+                as
+                of June 2015 and may be subject to change. If the insured dies by suicide within the first two policy
+                years,
+                we will refund the premiums paid, less any policy loans. Simplified Issue Term Life insurance is issued
+                by
+                MetLife Insurance Company USA, Charlotte, NC 28277 (form #5E-26-13), and in New York by Metropolitan
+                Life
+                Insurance Company, New York, NY 10166 (form #1E-26-13-NY).
+            </p>
+            <p>
+                **Average annual savings based on national savings figures reported by new MetLife Auto & Home®
+                policyholders who called our call center and switched their auto policies to MetLife Auto & Home from
+                1/14,
+                to 12/14. Source: MetLife Auto & Home internal research (2015).
+            </p>
+            <p>
+                Like most group benefit programs, benefit programs offered by MetLife and its affiliates contain certain
+                exclusions, exceptions, waiting periods, reductions, limitations and terms for keeping them in force.
+                Please
+                contact MetLife or your plan administrator for complete details.
+            </p>
+            <p>
+                Disability insurance is issued by Metropolitan Life Insurance Company on IDI2000-P/NC, IDI2000-P/NC-ML,
+                IDI2000-P/GR, AH 5-88, AH 6-90, AH 7-96-CA, AH 8-96-CA and IDIP12-01-IDIP12-05, IDIP12-08. April 2014
+                All
+                policies, riders and provisions may not be available in all states, at all issue ages and to all
+                occupational classes. Ask your representative for complete details. Eligibility is subject to
+                underwriting
+                approval. For policies issued in New York: These policies provide disability income insurance only. They
+                do
+                NOT provide basic hospital, basic medical or major medical insurance as defined by the New York State
+                Department of Financial Services. The expected benefit ratio for these policies is at least 50%. This
+                ratio
+                is the portion of future premiums that MetLife expects to return as benefits when averaged over all
+                people
+                with the applicable policy.
+            </p>
+            <p>
+                Group dental insurance policies featuring the MetLife Preferred Dentist Program are underwritten by
+                Metropolitan Life Insurance Company, New York, NY. Dental Managed Care Plan benefits are provided by
+                Metropolitan Life Insurance Company, a New York corporation in NY. Dental HMO plan benefits are provided
+                by:
+                SafeGuard Health Plans, Inc., a California corporation in CA; SafeGuard Health Plans, Inc., a Florida
+                corporation in FL; SafeGuard Health Plans, Inc., a Texas corporation in TX; and MetLife Health Plans,
+                Inc.,
+                a Delaware corporation and Metropolitan Life Insurance Company, a New York corporation in NJ. The Dental
+                HMO/Managed Care companies are part of the MetLife family of companies. "DHMO" is used to refer to
+                product
+                designs that may differ by state of residence of the enrollee, including but not limited to:
+                "Specialized
+                Health Care Service Plans" in California; "Prepaid Limited Health Service Organizations" as described in
+                Chapter 636 of the Florida statutes in Florida; "Single Service Health Maintenance Organizations" in
+                Texas;
+                and "Dental Plan Organizations" as described in the Dental Plan Organization Act in New Jersey.
+            </p>
+            <p>
+                MetLife Vision benefits are underwritten by Metropolitan Life Insurance Company, New York, NY. Certain
+                claims and network administration services are provided through Vision Service Plan (VSP), Rancho
+                Cordova,
+                CA. VSP is not affiliated with Metropolitan Life Insurance Company or its affiliates. In certain states,
+                availability of MetLife's Group Vision benefits is subject to regulatory approval. MetLife VisionAccess
+                is a
+                discount program and not an insured benefit. It is provided through VSP.
+            </p>
+        </div>
     </div>
 </div>
+
+<!-- Content Authorable Section End -------------------------------------------------------------------------->
 
 <!-- Global Footer -->
 <div class="container bg-gray-1st global-footer">
@@ -1832,9 +1795,11 @@
                     <hr class="hidden-sm hidden-md hidden-lg">
                     <span class="footer-disclaimer">
                     <span class="footer-legal__bullet"></span>
-                        <div class="footer-legal__copyright">&copy; 2015 Metropolitan Life Insurance Company, New York, NY. All Rights Reserved.<br>
+                        <div class="footer-legal__copyright">&copy; 2015 Metropolitan Life Insurance Company, New York,
+                            NY. All Rights Reserved.<br>
                             PEANUTS &copy; 2015 <a href="https://www.metlife.com/about/copyright/index.html">Peanuts
-                                Worldwide LLC</a>&nbsp;L0815434097 [exp1016][All States][DC,PR].</div>
+                                Worldwide LLC</a>&nbsp;L0815434097 [exp1016][All States][DC,PR].
+                        </div>
                     </span>
                 </div>
             </div>
