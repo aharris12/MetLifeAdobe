@@ -31,26 +31,16 @@ $(document).ready(function () {
         interval: carouselInterval
     });
 
-    if (typeof swipe == 'function') { //check if function is defined
-        $(".carousel.slide").swipe({
-            swipe: function (event, direction, distance, duration, fingerCount) {
-                if (direction == "left")
-                    $(this).carousel("next");
-                else if (direction == "right")
-                    $(this).carousel("prev");
-            },
-            threshold: 20
-        });
-    }
-
     $(".carousel.slide").swipe({
         swipe: function (event, direction, distance, duration, fingerCount) {
+            //console.log(direction);
             if (direction == "left")
                 $(this).carousel("next");
             else if (direction == "right")
                 $(this).carousel("prev");
         },
-        threshold: 20
+        threshold: 20,
+        allowPageScroll:"vertical"
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
 
