@@ -9332,6 +9332,12 @@ body{
     margin-bottom: 20px;
 }
 
+.article-date {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
 .article.contact-item {
     margin-bottom: 20px;
 }
@@ -14292,6 +14298,9 @@ span.errorRadio {
     .search-results-container__correction-text {
         margin: 20px 15px 30px;
     }
+    .list__item--no-border:first-of-type {
+           margin-top: 20px;
+       }
 
     .list__item--no-border {
         margin-bottom: 30px;
