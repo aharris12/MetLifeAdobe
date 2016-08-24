@@ -167,6 +167,8 @@
 
 .updateInfoForm {
     display: table;
+    padding: 5px 10px;
+    width: 100%;
 }
 
 .twoColumnContactForm .contactSidebarBtns button {
@@ -579,6 +581,7 @@
 
 .updateInfoForm .contatMeSidebarBtn {
     width: 100%;
+    padding-bottom: 20px;
 }
 
 .updateInfoForm .form-user-grp {
@@ -626,7 +629,11 @@
     .updateInfoForm {
         width: 90%;
         margin: auto;
-        padding-top: 40px;
+        padding: 40px 0 0;
+    }
+
+    .updateInfoForm .form-user-grp{
+        padding: 0;
     }
 
     .updateInfoForm .form-section {
@@ -685,6 +692,15 @@
         .updateInfoForm {
             width: 65%;
             margin: auto;
+        }
+        .updateInfoForm .form-section {
+            margin-bottom: 35px;
+        }
+        .updateInfoForm .form-row {
+            margin: 7.5px 0;
+        }
+        .updateInfoForm .optional-section {
+            margin-top: 40px;
         }
     }
 }

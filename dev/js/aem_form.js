@@ -796,8 +796,6 @@ SFDC.form.forEach(function (element) {
                         // url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
 
-                        // Debug for Jessica Feng:
-                        debugger;
                     }
                     $.ajax({
                         url: url,
