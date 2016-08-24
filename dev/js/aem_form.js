@@ -468,6 +468,8 @@ SFDC.form.forEach(function (element) {
             submitForm: function () {
                 //console.log("submit form");
 
+
+
                 // Post the form, handling any error messages that come back, etc.
 
                 var switchformID = $('#switch_form_fieldID').val();
@@ -755,8 +757,18 @@ SFDC.form.forEach(function (element) {
                         } else {
                             jsonData["MetlifeJson"] = "Crownpeak Form";
                         }
+
+                        // 6 fields from the x form need to be concatenated
+                        var concFields = ["ref1Name", "ref1Email", "ref1Phone",
+                                          "ref2Name", "ref2Email", "ref2Phone"];
+                        var concatenated = [];
+
                         $.each(formData, function () {
-                            if (jsonData[this.name]) {
+                            // Check if values should be concatenated
+                            if($.inArray(this.name, concFields) > -1) {
+                                concatenated.push(this.value);
+                            }
+                            else if (jsonData[this.name]) {
                                 if (!jsonData[this.name].push) {
                                     jsonData[this.name] = [jsonData[this.name]];
                                 }
@@ -775,8 +787,17 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
+
+                        // If the concatenated array is not empty, append it to the data:
+                        if(concatenated.length > 0) {
+                            jsonData["LeadDesc"] = concatenated.join();
+                        }
+
                         // url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
+
+                        // Debug for Jessica Feng:
+                        debugger;
                     }
                     $.ajax({
                         url: url,

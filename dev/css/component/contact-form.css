@@ -165,6 +165,10 @@
     padding: 0 10px;
 }
 
+.updateInfoForm {
+    display: table;
+}
+
 .twoColumnContactForm .contactSidebarBtns button {
     width: 100%;
 }
@@ -349,7 +353,9 @@
 .contact-container--form-card .contactSideThankyou,
 .contact-container--form-card .contactSideSubmitError,
 .twoColumnContactForm .contactSideThankyou,
-.twoColumnContactForm .contactSideSubmitError {
+.twoColumnContactForm .contactSideSubmitError,
+.updateInfoForm .contactSideThankyou,
+.updateInfoForm .contactSideSubmitError {
     text-align: center;
     position: relative;
     top: 10%;
@@ -657,7 +663,7 @@
         position: static;
     }
 
-    .updateInfoForm .contatMeSidebarBtn{
+    .updateInfoForm .contatMeSidebarBtn {
         width: inherit;
     }
 
@@ -681,17 +687,19 @@
             margin: auto;
         }
     }
+}
 
-    .form-user-grp .form-user-ctrl:focus {
-        background-color: #fff;
-        border-color: #2377c5;
-        -webkit-appearance: none;
-        outline: 0;
-    }
+.form-user-grp .form-user-ctrl:focus {
+    background-color: #fff;
+    border-color: #2377c5;
+    -webkit-appearance: none;
+    outline: 0;
+}
 
-    .contactDisclaimer {
-        font-size: 11px;
-        line-height: 15px;
-        color: #999;
-        font-weight: 400;
-    }
+.contactDisclaimer {
+    font-size: 11px;
+    line-height: 15px;
+    color: #999;
+    font-weight: 400;
+}
+
