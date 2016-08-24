@@ -1159,6 +1159,10 @@ function formMessage(parent, status) {
                 message.fadeOut(800, function () {
                     ServicesAPI.resetForm(thisForm);
                 });
+            } else if (parent.hasClass("updateInfoForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
             } else if (parent.hasClass("contactAdvisorSingle")) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
