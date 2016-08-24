@@ -32,9 +32,9 @@ $(document).ready(function () {
     });
 
     $(".carousel.slide").swipe({
-        swipeStatus: function (event, phase, direction, distance, duration, fingers, fingerData, currentDirection) {
-            console.log(direction);
-        },
+        //swipeStatus: function (event, phase, direction, distance, duration, fingers, fingerData, currentDirection) {
+        //    console.log(direction);
+        //},
         swipeLeft: function (event, direction, distance, duration, fingerCount) {
             $(this).carousel("next");
         },
