@@ -2807,6 +2807,7 @@ function productTileHeight() {
                 var bottomElements = $(this).find(".product-row__tile__top");
                 var subcatProductCards = $(this).find(".product-row__tile");
                 subcatProductCards.css("height", "auto");
+                $(".product-row__tile__bottom").css("min-height","auto");
                 elements.css('min-height', "auto");
                 bottomElements.css('min-height', "auto");
                 if ($(this).find(".product-row__tile").length == 1) {

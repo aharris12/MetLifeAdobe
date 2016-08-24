@@ -9142,7 +9142,7 @@ body{
     }
 
     .single-promo .product-row__tile--img-tile__text {
-        padding: 16px 3%;
+        padding: 10px 3%;
     }
 
     .product-row__tile--img-tile__text--left {
@@ -9175,6 +9175,7 @@ body{
         width: 66%;
         float: left;
         clear: none;
+        position: relative;
     }
 
     .double-promo .product-row__tile__img-tile__img {
@@ -9184,10 +9185,13 @@ body{
     }
 
     .double-promo .product-row__tile--img-tile__text {
-        padding: 0 3%;
+        padding: 10px 3%;
         float: left;
         width: 50%;
         text-align: center;
+        height:100%;
+        top:0;
+        position: absolute;
     }
 
     .triple-promo {
@@ -11541,7 +11545,7 @@ ul.bullet-list {
     }
 
     .global-footer .wrapper {
-        padding-top: 40px;
+        padding-top: 25px;
     }
 
     .footer-main__item {
@@ -11810,6 +11814,9 @@ ul.bullet-list {
 }
 
 @media (min-width: 1024px) {
+    .global-footer .wrapper {
+        padding-top: 40px;
+    }
     .dd-container {
         width: 74%;
     }

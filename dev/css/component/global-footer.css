@@ -658,7 +658,7 @@
     }
 
     .global-footer .wrapper {
-        padding-top: 40px;
+        padding-top: 25px;
     }
 
     .footer-main__item {
@@ -927,6 +927,9 @@
 }
 
 @media (min-width: 1024px) {
+    .global-footer .wrapper {
+        padding-top: 40px;
+    }
     .dd-container {
         width: 74%;
     }
