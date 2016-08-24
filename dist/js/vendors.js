@@ -11378,6 +11378,7 @@ if (typeof jQuery === 'undefined') {
     RIGHT = "right",
     UP = "up",
     DOWN = "down",
+    STAY = "stay",
     IN = "in",
     OUT = "out",
 
@@ -12919,6 +12920,7 @@ if (typeof jQuery === 'undefined') {
       maxData[RIGHT] = createMaximumVO(RIGHT);
       maxData[UP] = createMaximumVO(UP);
       maxData[DOWN] = createMaximumVO(DOWN);
+      maxData[STAY] = createMaximumVO(STAY);
 
       return maxData;
     }
@@ -13034,6 +13036,7 @@ if (typeof jQuery === 'undefined') {
      * @inner
      */
     function calculateDirection(startPoint, endPoint) {
+      if (startPoint.x === endPoint.x && startPoint.y === endPoint.y) return STAY;
       var angle = calculateAngle(startPoint, endPoint);
 
       if ((angle <= 45) && (angle >= 0)) {

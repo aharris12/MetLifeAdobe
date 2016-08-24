@@ -859,7 +859,7 @@ $('.carousel-indicators li').click(function () {
 var carouselInterval = $(".carousel").attr("data-interval");
 $(document).ready(function () {
 
-    $("#carouselHero, #carouselMicrosite").each(function() {
+    $("#carouselHero, #carouselMicrosite").each(function () {
         if ($(this).find(".carousel-inner .item").length <= 1) {
             $(this).find(".carousel-indicators").hide();
             $(this).find(".carousel-control").hide();
@@ -871,26 +871,19 @@ $(document).ready(function () {
         interval: carouselInterval
     });
 
-    if (typeof swipe == 'function') { //check if function is defined
-        $(".carousel.slide").swipe({
-            swipe: function (event, direction, distance, duration, fingerCount) {
-                if (direction == "left")
-                    $(this).carousel("next");
-                else if (direction == "right")
-                    $(this).carousel("prev");
-            },
-            threshold: 20
-        });
-    }
-
     $(".carousel.slide").swipe({
-        swipe: function (event, direction, distance, duration, fingerCount) {
-            if (direction == "left")
-                $(this).carousel("next");
-            else if (direction == "right")
-                $(this).carousel("prev");
+        //swipeStatus: function (event, phase, direction, distance, duration, fingers, fingerData, currentDirection) {
+        //    console.log(direction);
+        //},
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            $(this).carousel("next");
         },
-        threshold: 20
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            $(this).carousel("prev");
+        },
+        threshold: 20,
+        allowPageScroll: "vertical"
+        //preventDefaultEvents: false
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
 
@@ -900,9 +893,9 @@ $(document).ready(function () {
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause;
     //Adjust carousel-caption container's height
-   /* $.lazyLoadXT.onload = function() {
-        $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };*/
+    /* $.lazyLoadXT.onload = function() {
+     $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
+     };*/
 
 
     /*$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());*/
@@ -914,8 +907,8 @@ $(document).ready(function () {
             checkDuplicates: false
         });
         clearTimeout(resizeTimeout);
-      });
-    $( window ).resize(function() {
+    });
+    $(window).resize(function () {
         //$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
         resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
@@ -6396,7 +6389,9 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 	if (url != null) {
 		window.location.href = url;
 	} else {
-		window.location.href = "/Press_Room";
+		//window.location.href = "/Press_Room";
+		window.history.go(-1);
+		return false;
 	}
 	sessionStorage.removeItem("press_back");
 });
@@ -9528,8 +9523,12 @@ SFDC.form.forEach(function (element) {
 
                 var o = this;
                 $(document).ready(function () {
-                    var domain = document.domain;
-                    parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
+                    //var domain = document.domain;
+                    console.log(parent.find(".generic-form"))
+                    var domain = parent.find(".generic-form").attr("data-domain");
+                    console.log(domain)
+                    parent.find('#Domain').attr("value", domain);
+                   // parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
                     // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {

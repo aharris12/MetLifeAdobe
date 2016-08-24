@@ -65,8 +65,12 @@ SFDC.form.forEach(function (element) {
 
                 var o = this;
                 $(document).ready(function () {
-                    var domain = document.domain;
-                    parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
+                    //var domain = document.domain;
+                    console.log(parent.find(".generic-form"))
+                    var domain = parent.find(".generic-form").attr("data-domain");
+                    console.log(domain)
+                    parent.find('#Domain').attr("value", domain);
+                   // parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
                     // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {
