@@ -859,7 +859,7 @@ $('.carousel-indicators li').click(function () {
 var carouselInterval = $(".carousel").attr("data-interval");
 $(document).ready(function () {
 
-    $("#carouselHero, #carouselMicrosite").each(function() {
+    $("#carouselHero, #carouselMicrosite").each(function () {
         if ($(this).find(".carousel-inner .item").length <= 1) {
             $(this).find(".carousel-indicators").hide();
             $(this).find(".carousel-control").hide();
@@ -871,26 +871,19 @@ $(document).ready(function () {
         interval: carouselInterval
     });
 
-    if (typeof swipe == 'function') { //check if function is defined
-        $(".carousel.slide").swipe({
-            swipe: function (event, direction, distance, duration, fingerCount) {
-                if (direction == "left")
-                    $(this).carousel("next");
-                else if (direction == "right")
-                    $(this).carousel("prev");
-            },
-            threshold: 20
-        });
-    }
-
     $(".carousel.slide").swipe({
-        swipe: function (event, direction, distance, duration, fingerCount) {
-            if (direction == "left")
-                $(this).carousel("next");
-            else if (direction == "right")
-                $(this).carousel("prev");
+        //swipeStatus: function (event, phase, direction, distance, duration, fingers, fingerData, currentDirection) {
+        //    console.log(direction);
+        //},
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            $(this).carousel("next");
         },
-        threshold: 20
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            $(this).carousel("prev");
+        },
+        threshold: 20,
+        allowPageScroll: "vertical"
+        //preventDefaultEvents: false
     });
     // Lazyload image for first slide, wait 5 sec, then load images for remaining slides
 
@@ -900,9 +893,9 @@ $(document).ready(function () {
     //var carouselCaptionPaddingBottom = 100;
     $.lazyLoadXT.autoLoadTime = lazyPause;
     //Adjust carousel-caption container's height
-   /* $.lazyLoadXT.onload = function() {
-        $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
-    };*/
+    /* $.lazyLoadXT.onload = function() {
+     $('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
+     };*/
 
 
     /*$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());*/
@@ -914,8 +907,8 @@ $(document).ready(function () {
             checkDuplicates: false
         });
         clearTimeout(resizeTimeout);
-      });
-    $( window ).resize(function() {
+    });
+    $(window).resize(function () {
         //$('.carousel .carousel-caption--hero').innerHeight($('.carousel').height());
         resizeTimeout = setTimeout(function () {
             $(window).lazyLoadXT({
@@ -8355,11 +8348,16 @@ console.log(count)
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
+			if($('.different_services_dropdown').length > 0){
 			specialty = $('.different_services_dropdown').val();
+			}else{
+				specialty = "";
+			}
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
+		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -8368,14 +8366,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
@@ -8830,16 +8828,20 @@ console.log(count)
 			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
-
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		if(specialty == ""){
+			return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
+		}else{
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		}
 	},
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
 			radiusSelector = '&radius=' + radius,
 			specialtySelector = '&specialty=' + specialty;
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+
 	},
 	updatePageFrom: function (name) {
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
@@ -9362,6 +9364,10 @@ console.log(count)
 				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeIn(800);
 				break;
 
+			case "updateInfoForm":
+				$('.updateInfoForm .contact-us__contact-form').fadeOut(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeIn(800);
+				break;
 		}
 
 		$('.info-mandatory').removeClass("error-mandatory");
@@ -9397,6 +9403,11 @@ console.log(count)
 				$('.contactAdvisorSingle .contactSideThankyou').fadeOut(2000);
 				break;
 
+			case "updateInfoForm":
+				$('#updateInfoForm').trigger("reset");
+				$('.updateInfoForm .contact-us__contact-form').fadeIn(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
+				break;
 		}
 
 
@@ -9937,6 +9948,8 @@ SFDC.form.forEach(function (element) {
             submitForm: function () {
                 //console.log("submit form");
 
+
+
                 // Post the form, handling any error messages that come back, etc.
 
                 var switchformID = $('#switch_form_fieldID').val();
@@ -10224,8 +10237,18 @@ SFDC.form.forEach(function (element) {
                         } else {
                             jsonData["MetlifeJson"] = "Crownpeak Form";
                         }
+
+                        // 6 fields from the x form need to be concatenated
+                        var concFields = ["ref1Name", "ref1Email", "ref1Phone",
+                                          "ref2Name", "ref2Email", "ref2Phone"];
+                        var concatenated = [];
+
                         $.each(formData, function () {
-                            if (jsonData[this.name]) {
+                            // Check if values should be concatenated
+                            if($.inArray(this.name, concFields) > -1) {
+                                concatenated.push(this.value);
+                            }
+                            else if (jsonData[this.name]) {
                                 if (!jsonData[this.name].push) {
                                     jsonData[this.name] = [jsonData[this.name]];
                                 }
@@ -10244,8 +10267,15 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
+
+                        // If the concatenated array is not empty, append it to the data:
+                        if(concatenated.length > 0) {
+                            jsonData["LeadDesc"] = concatenated.join();
+                        }
+
                         // url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
+
                     }
                     $.ajax({
                         url: url,
@@ -10625,6 +10655,10 @@ function formMessage(parent, status) {
                     parent.find(".form-minimize").trigger("click");
                 });
             } else if (parent.hasClass("twoColumnContactForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("updateInfoForm")){
                 message.fadeOut(800, function () {
                     ServicesAPI.resetForm(thisForm);
                 });
