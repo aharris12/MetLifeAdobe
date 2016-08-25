@@ -8346,11 +8346,14 @@ console.log(count)
 		radiusInMiles = $('.find_an_office_radius').val();
 		if (faoMarket.toLowerCase() == "us") {
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
-			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
+			if($('.different_services_dropdown').length > 0){
 			specialty = $('.different_services_dropdown').val();
-			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
+			}else{
+				specialty = "";
+			}
 		}
+		var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		/************LIVE FAO SERVICE***************/
 		$.ajax({
 			type: 'GET',
