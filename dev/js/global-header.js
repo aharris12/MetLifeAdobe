@@ -373,8 +373,6 @@ $('.megamenu-trigger').on('click', function () {
     }
 });
 
-$(".megamenu").hasClass()
-
 $('.search-trigger__icon, .search-trigger__label').click(function () {
     openSearchBox();
 });
