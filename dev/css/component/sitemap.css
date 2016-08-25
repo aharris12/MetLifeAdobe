@@ -131,6 +131,9 @@
 @media screen and (min-width: 768px) {
     .sitemap--Links .sitemap-link--Container {
         padding-top: 10px;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .sitemap--Links .sitemap-link--Container .sitemap-link--Links .sitemap-link--Row {
