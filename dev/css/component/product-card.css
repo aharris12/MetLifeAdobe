@@ -7,11 +7,9 @@
 }
 
 .product-card__img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+
     max-height: 188px;
-    min-height: 120px;
+    min-height: 150px;
 }
 
 .product-card .title {
