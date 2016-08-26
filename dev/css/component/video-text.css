@@ -24,6 +24,9 @@
 
 .videoWrapper {
     position: relative;
+}
+
+.videoWrapper--youtube{
     padding-bottom: 56.25%
 }
 
@@ -73,6 +76,19 @@
     line-height:16px;
     font-weight: 400;
     margin-bottom: 0;
+}
+
+.video-text--full .video-text__description--full p{
+    font-size: 12px;
+    line-height:16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.video-text--full .video-text__description--full h3{
+    font-size: 14px;
+    line-height:20px;
+    font-weight: 600;
 }
 
 .video-faq .video-text__description h3{
