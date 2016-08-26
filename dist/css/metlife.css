@@ -10650,7 +10650,7 @@ body{
 
 .videoWrapper {
     position: relative;
-    padding-bottom: 56.25%
+    /*padding-bottom: 56.25%*/
 }
 
 .videoWrapper object {
@@ -10699,6 +10699,19 @@ body{
     line-height:16px;
     font-weight: 400;
     margin-bottom: 0;
+}
+
+.video-text--full .video-text__description--full p{
+    font-size: 12px;
+    line-height:16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.video-text--full .video-text__description--full h3{
+    font-size: 14px;
+    line-height:20px;
+    font-weight: 600;
 }
 
 .video-faq .video-text__description h3{
@@ -16768,6 +16781,10 @@ body  .quote_edit_form .submit_quote_edit_form {
         letter-spacing: 1px;
         margin-top: -10px;
     }
+    .campaign-header__section p {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .campaign-header-login a{
     float: right;
@@ -16933,12 +16950,6 @@ body  .quote_edit_form .submit_quote_edit_form {
     }
 }
 
-@media screen and (max-width: 767px) {
-    .campaign-header__section p {
-       font-size: 12px;
-       line-height: 15px;
-    }
-}
 .campaign-card .campaign-card-image {
     height: 150px;
 }
