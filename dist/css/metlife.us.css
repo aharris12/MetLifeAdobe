@@ -10650,7 +10650,10 @@ body{
 
 .videoWrapper {
     position: relative;
-    /*padding-bottom: 56.25%*/
+}
+
+.videoWrapper--youtube{
+    padding-bottom: 56.25%
 }
 
 .videoWrapper object {
