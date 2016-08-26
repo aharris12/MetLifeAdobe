@@ -859,6 +859,17 @@
     overflow-y: hidden;
 }
 
+.megamenu--open--mobile {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    position: fixed;
+    overflow-x: hidden;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
 .megamenu__main-item {
     background-color: #3d9cdb;
     border-bottom: 1px solid rgba(14, 93, 174, 0.2);
