@@ -140,18 +140,11 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu() {
     if (getViewport() == "mobile") {
-        /*if ($('body').hasClass('overlay-scroll__parent')) {
-         $('body').removeClass('overlay-scroll__parent')
-         }
-         if ($('.megamenu').hasClass('overlay-scroll__child')) {
-         $('.megamenu').removeClass('overlay-scroll__child')
-         }
-         if ($('.login-container').hasClass('overlay-scroll__child')) {
-         $('.login-container').removeClass('overlay-scroll__child')
-         }*/
-        if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
-            $(".megamenu--open").addClass("megamenu--open--mobile");
-            $("body").css("overflow", "hidden");
+        if($(".megamenu").hasClass("megamenu--open")) {
+            if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
+                $(".megamenu--open").addClass("megamenu--open--mobile");
+                $("body").css("overflow", "hidden");
+            }
         }
     }
     if (getViewport() == "tablet" || getViewport() == "desktop") {
@@ -365,27 +358,6 @@ $('.megamenu-trigger').on('click', function () {
 
     closeContactForm();
     $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
-
-    if (getViewport() != "mobile") {
-        if ($('body').hasClass('overlay-scroll__parent')) {
-            $('body').removeClass('overlay-scroll__parent')
-        } else {
-            $('body').addClass('overlay-scroll__parent')
-        }
-        if ($('.megamenu').hasClass('overlay-scroll__child')) {
-            $('.megamenu').removeClass('overlay-scroll__child')
-            $(".global-header__middle").removeClass("menu--left")
-
-        } else {
-            $('.megamenu').addClass('overlay-scroll__child')
-            $(".global-header__middle").addClass("menu--left")
-        }
-        if ($('.login-types').hasClass('overlay-scroll__child')) {
-            $('.login-types').removeClass('overlay-scroll__child');
-            $('.login-container').removeClass('overlay-scroll__child');
-        }
-
-    }
 
     if (getViewport() == "desktop") {
 
@@ -8063,13 +8035,13 @@ console.log(count)
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
@@ -8097,13 +8069,13 @@ console.log(count)
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
