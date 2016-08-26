@@ -6892,8 +6892,11 @@ ol.promocard_content__list li:after {
 .forms-library-category-others h2, .list__title {
     padding-bottom: 0;
     border-left: 20px solid transparent;
-    font-size: 1em;
-    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color:#333;
+    font-weight: 600;
 }
 
 .list [data-form-library-msg] {
@@ -6905,6 +6908,7 @@ ol.promocard_content__list li:after {
 .list [data-form-library-msg] .list__title {
     font-size: 16px;
     line-height: 20px;
+    margin-bottom: 20px;
 }
 
 .list__item {
@@ -6968,12 +6972,98 @@ ol.promocard_content__list li:after {
 
 .form-item__label--large .form-icon-wrapper {
     display: inline-block;
-    width: auto;
     margin: 10px auto;
     width: 280px;
 }
 
+
+[data-form-library-msg] {
+    display: none;
+    font-size: 1em;
+}
+
+[data-form-library-msg="all"] {
+    display: block;
+}
+
+[data-form-library-msg] .list__copy {
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 10px;
+    display: none;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.list__item:last-of-type {
+    margin-bottom: 0;
+}
+
+.forms-library-category-others p, .list__footer-copy {
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 16px;
+    list-style-type: disc;
+    font-weight: 400;
+    color: #666;
+}
+
+.forms-library-category-others ul, .other-form {
+    font-size: 14px;
+    list-style-type: disc;
+    margin: 10px 0 30px 60px;
+}
+.forms-library-category-others ul li b {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #666;
+}
+.forms-library-category-others ul li .other-form__item {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.other-form__item h4 {
+    margin-bottom: 0;
+    font-size: 1em;
+}
+.section-title .section-title__title{
+    font-size: 16px;
+    line-height:20px;
+    font-weight: 400;
+    color: #333
+}
+
+.section-title .brand-gray-2nd.hidden-xs{
+    font-size: 11px;
+    line-height:15px;
+    font-weight: 300;
+    color: #666
+}
 @media (min-width: 768px) {
+    .section-title .section-title__title{
+        font-size: 14px;
+        line-height:20px;
+    }
+
+    .section-title .brand-gray-2nd.hidden-xs{
+        font-size: 11px;
+        line-height:16px;
+    }
+    .forms-library-category-others ul li .other-form__item {
+        line-height: 20px;
+    }
+    .forms-library-category-others p, .list__footer-copy{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .forms-library-category-others h2, .list__title {
+        font-size: 16px;
+    }
     .list__item p{
         font-size: 13px;
         line-height: 20px;
@@ -6981,6 +7071,9 @@ ol.promocard_content__list li:after {
     .list [data-form-library-msg] .list__title {
         font-size: 18px;
         line-height: 22px;
+    }
+    [data-form-library-msg] .list__copy{
+        display: block;
     }
 
     .list-filter__container, .list__container {
@@ -7038,56 +7131,11 @@ ol.promocard_content__list li:after {
     }
 }
 
-[data-form-library-msg] {
-    display: none;
-    font-size: 1em;
-}
-
-[data-form-library-msg="all"] {
-    display: block;
-}
-
-[data-form-library-msg] .list__copy {
-    padding: 10px 20px 0px 20px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
-
-.list__item:last-of-type {
-    margin-bottom: 0;
-}
-
-.forms-library-category-others p, .list__footer-copy {
-    padding-left: 20px;
-    font-size: 14px;
-    list-style-type: disc;
-    margin-top: 10px;
-}
-
-.forms-library-category-others ul, .other-form {
-    font-size: 14px;
-    list-style-type: disc;
-    margin: 10px 0 30px 60px;
-}
-.forms-library-category-others ul li b {
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 600;
-}
-.forms-library-category-others ul li .other-form__item {
-    margin-bottom: 10px;
-    display: block;
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 400;
-    margin-top: 10px;
-}
-
-.other-form__item h4 {
-    margin-bottom: 0;
-    font-size: 1em;
-}
 @media (min-width: 1024px) {
+    .section-title .brand-gray-2nd.hidden-xs{
+        font-size: 12px;
+        line-height:18px;
+    }
     .forms-library-category-others ul li .other-form__item {
         font-size: 13px;
         line-height: 16px;
