@@ -76,6 +76,10 @@
         letter-spacing: 1px;
         margin-top: -10px;
     }
+    .campaign-header__section p {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 .campaign-header-login a{
     float: right;
@@ -238,12 +242,5 @@
     .campaign-header-login{
         padding-bottom: 0px;
         padding-top: 6px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .campaign-header__section p {
-       font-size: 12px;
-       line-height: 15px;
     }
 }

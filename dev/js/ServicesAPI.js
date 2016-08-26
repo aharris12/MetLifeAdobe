@@ -511,7 +511,9 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 	if (url != null) {
 		window.location.href = url;
 	} else {
-		window.location.href = "/Press_Room";
+		//window.location.href = "/Press_Room";
+		window.history.go(-1);
+		return false;
 	}
 	sessionStorage.removeItem("press_back");
 });
@@ -2168,13 +2170,13 @@ console.log(count)
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
@@ -2202,13 +2204,13 @@ console.log(count)
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
@@ -2468,11 +2470,16 @@ console.log(count)
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
+			if($('.different_services_dropdown').length > 0){
 			specialty = $('.different_services_dropdown').val();
+			}else{
+				specialty = "";
+			}
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
+		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2481,14 +2488,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
@@ -2943,16 +2950,20 @@ console.log(count)
 			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
-
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		if(specialty == ""){
+			return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
+		}else{
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		}
 	},
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
 			radiusSelector = '&radius=' + radius,
 			specialtySelector = '&specialty=' + specialty;
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+
 	},
 	updatePageFrom: function (name) {
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
@@ -3475,6 +3486,10 @@ console.log(count)
 				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeIn(800);
 				break;
 
+			case "updateInfoForm":
+				$('.updateInfoForm .contact-us__contact-form').fadeOut(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeIn(800);
+				break;
 		}
 
 		$('.info-mandatory').removeClass("error-mandatory");
@@ -3510,6 +3525,11 @@ console.log(count)
 				$('.contactAdvisorSingle .contactSideThankyou').fadeOut(2000);
 				break;
 
+			case "updateInfoForm":
+				$('#updateInfoForm').trigger("reset");
+				$('.updateInfoForm .contact-us__contact-form').fadeIn(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
+				break;
 		}
 
 

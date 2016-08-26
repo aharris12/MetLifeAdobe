@@ -28,8 +28,8 @@ $(".product-card .read-more").click(function (e) {
 
 if ($('.product-card').length > 0) {
     $('.product-card p').filter(function (index) {
-            return $(this).text().length === 0;
-        })
+        return $(this).text().length === 0;
+    })
         .css('margin-bottom', "0");
     $(".product-card .content").find("ul + .hidden-xs:last-child, span + .hidden-xs:last-child, p + .hidden-xs:last-child").prev().addClass("product-card__content-body--margin");
 }
@@ -51,3 +51,34 @@ function addProperMarginToBottom() {
 
 addProperMarginToBottom();
 /***** Product Card Module End ************************************************************/
+
+
+function productCardSetImage() {
+    if ($(".product-card__img").length != 0) {
+        if ($(".hidden-xs").is(":visible")) {
+
+                $(".product-card__img").each(function () {
+                    $(this).css('background-image', 'url(' + $(this).attr("data-backgroundDesktop-src") + ')');
+                    $(this).css('background-size', 'cover');
+                    $(this).css('background-position', 'center center');
+                });
+
+        } else{
+
+                $(".product-card__img").each(function () {
+                    $(this).css('background-image', 'url(' + $(this).attr("data-backgroundMobile-src") + ')');
+                    $(this).css('background-size', 'cover');
+                    $(this).css('background-position', 'center center');
+
+                });
+
+        }
+    }
+};
+
+$(window).on("load",function(){
+    productCardSetImage();
+});
+$(window).resize(function(){
+    productCardSetImage();
+});

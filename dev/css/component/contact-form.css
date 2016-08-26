@@ -5,42 +5,46 @@
     height: 100%;
     top: 0;
     overflow-y: auto;
-    background-color:transparent;
-    width:320px;
-    z-index:9999;
+    background-color: transparent;
+    width: 320px;
+    z-index: 9999;
     box-shadow: 0 1px 4px 1px rgba(74, 74, 74, 0.49);
 }
+
 .contactSliderOuterCon {
-    color:#666;
-    padding:30px;
-    text-transform:none;
+    color: #666;
+    padding: 30px;
+    text-transform: none;
     letter-spacing: 0;
     overflow: visible;
-    background-color:#fff;
-    font-size:0.85em;
+    background-color: #fff;
+    font-size: 0.85em;
     min-height: 100%;
     position: relative;
     padding-bottom: 100px;
 }
+
 .contact-close {
-    top:10px;
-    right:30px;
-    position:absolute;
+    top: 10px;
+    right: 30px;
+    position: absolute;
 }
 
-.contact-close .icon{
+.contact-close .icon {
     width: 16px;
     height: 16px;
 }
+
 .contact-container {
-    color:#fff;
-    padding:30px;
-    text-transform:none;
+    color: #fff;
+    padding: 30px;
+    text-transform: none;
     letter-spacing: 0;
 }
+
 .contact-container .productUserType,
 .contact-container .form-check-grp label input + span, .contact-container .form-radio-grp label input + span {
-    color:#fff;
+    color: #fff;
 }
 
 /*
@@ -51,9 +55,10 @@
 }
 */
 .contact-close .icon {
-    font-size:1.2em;
+    font-size: 1.2em;
 }
-.form__title{
+
+.form__title {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -61,7 +66,7 @@
     margin-bottom: 6px;
 }
 
-.two-column-form-title.form__title{
+.two-column-form-title.form__title {
     text-align: center;
     font-size: 24px;
     line-height: 28px;
@@ -74,8 +79,9 @@
     color: #999999;
     line-height: 1em;
     margin-bottom: 5px;
-    display:block;
+    display: block;
 }
+
 .contact_side_heading {
     font-weight: 500;
     font-style: normal;
@@ -83,22 +89,27 @@
     color: #4A4A4A;
     line-height: 20px;
 }
+
 .form-user-grp {
     padding: 2px 0;
     position: relative;
 }
+
 .form-state {
     width: 61%;
     float: left;
 }
+
 .form-zip {
     width: 36%;
     margin-left: 6px;
     float: right;
 }
+
 .error-mandatory {
     color: #EB4646;
 }
+
 .errorSpan {
     left: auto;
     top: auto;
@@ -118,8 +129,7 @@
     bottom: 6px;
 }
 
-
-.contact-container__contact-us-page .errorSpan{
+.contact-container__contact-us-page .errorSpan {
     position: static;
     white-space: normal;
     height: auto;
@@ -131,6 +141,7 @@
     margin-right: 6px;
     margin-top: -2px;
 }
+
 .errorSpan {
     right: 100%;
     margin-right: 12px;
@@ -144,7 +155,7 @@
     width: 100%;
 }
 
-.formFail .errorSpan{
+.formFail .errorSpan {
     width: 120%;
 }
 
@@ -154,60 +165,71 @@
     padding: 0 10px;
 }
 
-.twoColumnContactForm .contactSidebarBtns button{
+.updateInfoForm {
+    display: table;
+    padding: 5px 10px;
     width: 100%;
 }
 
-.twoColumnContactForm .form-item__title{
+.twoColumnContactForm .contactSidebarBtns button {
+    width: 100%;
+}
+
+.twoColumnContactForm .form-item__title {
     font-size: 12px;
     font-weight: 300;
     line-height: 15px;
-    margin-top:10px;
-    margin-bottom:5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
-.form-row--clear{
+.form-row--clear {
     clear: both;
 }
 
 @media screen and (max-width: 767px) {
-    .formFail .errorSpan{
+    .formFail .errorSpan {
         top: 35%;
-        left:1px;
-        width:102%;
+        left: 1px;
+        width: 102%;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .formFail .errorSpan{
+    .formFail .errorSpan {
         top: 40px;
     }
+
     #requestFormRightNav_Acc .form-state {
         width: 55%;
     }
+
     .campaign-contact-form form button {
         min-width: 40px;
         max-width: 320px;
         width: auto;
     }
-    .twoColumnContactForm .contactSidebarBtns button{
+
+    .twoColumnContactForm .contactSidebarBtns button {
         width: inherit;
     }
-    .left-column, .right-column{
+
+    .left-column, .right-column {
         width: 50%;
     }
 
-    .left-column{
-        float:left;
+    .left-column {
+        float: left;
         padding-right: 10px;
-        clear: both;
+        /*clear: both;*/
     }
 
-    .right-column{
+    .right-column {
         float: right;
         padding-left: 10px;
     }
-    .twoColumnContactForm{
+
+    .twoColumnContactForm {
         display: table;
         width: 65%;
         margin: 0 auto;
@@ -215,7 +237,6 @@
     }
 
 }
-
 
 .errorSpan:after, .errorSpan:before {
     left: 100%;
@@ -227,18 +248,21 @@
     position: absolute;
     pointer-events: none;
 }
+
 .errorSpan:after {
     border-color: rgba(187, 0, 0, 0);
     border-left-color: #db3535;
     border-width: 7px;
     margin-top: -8px;
 }
-.contact-container__contact-us-page .errorSpan:after{
+
+.contact-container__contact-us-page .errorSpan:after {
     -webkit-transform: rotate(7deg);
     transform: rotate(270deg);
     top: 50px;
     left: 50%;
 }
+
 /*
 .errorSpanOpen:before {
 	border-color: rgba(187, 0, 0, 0);
@@ -248,49 +272,61 @@
 }
 */
 .contactSideForm .form-icon-wrapper svg {
-    top:12px;
+    top: 12px;
 }
+
 .productUserType {
     display: none;
 }
+
 .productCount {
     margin-bottom: 5px;
 }
+
 .form-check-grp label, .form-radio-grp label {
     display: block;
     position: relative;
     line-height: 20px;
 }
-.form-check-grp label input , .form-radio-grp label input {
+
+.form-check-grp label input, .form-radio-grp label input {
     visibility: hidden;
     position: absolute;
 }
+
 .form-check-grp label input + span, .form-radio-grp label input + span {
     padding-left: 25px;
     font-size: 13px;
     padding-right: 30px;
 }
-.form__item--description{
+
+.form__item--description {
     font-size: 13px;
     padding-top: 5px;
 }
+
 .form-check-grp label span, .form-radio-grp label span {
     color: #999;
     padding-left: 5px;
     font-weight: normal;
 }
+
 .productUserType {
     display: none;
 }
+
 .contactSidebarBtns {
     margin: 10px 0 0 0;
 }
-.twoColumnContactForm .contactSidebarBtns{
+
+.twoColumnContactForm .contactSidebarBtns {
     margin: 10px 0 5px 0;
 }
+
 .text-right {
     text-align: right;
 }
+
 .contactCard > p {
     Padding: 20px 0px 10px 0px;
     font-size: 11px;
@@ -300,6 +336,7 @@
     text-align: left;
     margin-bottom: 0px;
 }
+
 .contactCard > p.contactDisclaimer {
     padding-top: 0px;
 }
@@ -307,22 +344,26 @@
 .contactCard > p a {
     text-decoration: underline;
 }
+
 .contactSideThankyou, .contactSideSubmitError {
     text-align: center;
     position: absolute;
     top: 24%;
     display: none;
 }
+
 .contact-container--form-card .contactSideThankyou,
 .contact-container--form-card .contactSideSubmitError,
 .twoColumnContactForm .contactSideThankyou,
-.twoColumnContactForm .contactSideSubmitError
-{
+.twoColumnContactForm .contactSideSubmitError,
+.updateInfoForm .contactSideThankyou,
+.updateInfoForm .contactSideSubmitError {
     text-align: center;
     position: relative;
     top: 10%;
     display: none;
 }
+
 .thanksHeaderText {
     text-align: center;
     font-size: 28px;
@@ -330,6 +371,7 @@
     font-weight: 300;
     color: #333;
 }
+
 .thanksSubText {
     padding-top: 10px;
     font-size: 14px;
@@ -337,6 +379,7 @@
     font-weight: 300;
     color: #666;
 }
+
 .contactOtherDetails {
     text-align: center;
     position: absolute;
@@ -345,38 +388,39 @@
     width: 100%;
 }
 
-.contact-container--form-card .contactOtherDetails{
-    display:none;
+.contact-container--form-card .contactOtherDetails {
+    display: none;
 }
+
 .contact-container--form-card .contactOtherDetails {
     bottom: 0;
     right: auto;
     position: relative;
 }
+
 .contact-container--form-card .thanksHeaderText,
 .contact-container--form-card .thanksSubText,
 .contact-container--form-card .contactSideCall a,
 .contact-container--form-card .otherContactOptions a {
-    color:#fff;
+    color: #fff;
 }
 
-.col-sm-3 .form-statezip-grp{
-    margin-right:5px;
-    margin-left:5px;
+.col-sm-3 .form-statezip-grp {
+    margin-right: 5px;
+    margin-left: 5px;
 }
+
 .contact-container--form-card .icon {
-    top:12px;
+    top: 12px;
     cursor: pointer;
 }
 
-.contact-container--form-card > .contactCard > span > .icon{
+.contact-container--form-card > .contactCard > span > .icon {
     top: -20px;
     left: 23px;
     width: 18px;
     height: 18px;
 }
-
-
 
 .contactSideCall {
     color: #2377c5;
@@ -386,6 +430,7 @@
     letter-spacing: 0.5px;
     margin: 20px auto;
 }
+
 .contactSidebarCon {
     position: relative;
     background-color: #fff;
@@ -396,6 +441,7 @@
     padding-bottom: 100px;
 
 }
+
 .otherContactOptions a {
     border-bottom: 1px solid #aed1f2;
     color: #2377c5;
@@ -404,8 +450,6 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
-
-
 
 .form-radio-grp label input.user-radio + span:before {
     content: ' ';
@@ -418,7 +462,8 @@
     background: url("/static/images/form/form_radio_unselected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
-.form-radio-grp label input.user-radio[type=radio]:checked + span:before{
+
+.form-radio-grp label input.user-radio[type=radio]:checked + span:before {
     background: url("/static/images/form/form_radio_selected_gray.png") left top no-repeat;
     background-size: 17px 17px;
 }
@@ -427,7 +472,8 @@
     background: url("/static/images/form/form_radio_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
-.form-radio-grp label input.user-radio[type=radio].whiteRadioDial:checked + span:before{
+
+.form-radio-grp label input.user-radio[type=radio].whiteRadioDial:checked + span:before {
     background: url("/static/images/form/form_radio_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
@@ -443,133 +489,233 @@
     background: url("/static/images/form/form_slider_chkbx_unselected.png") left top no-repeat;
     background-size: 17px 17px;
 }
-.form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before{
+
+.form-check-grp label input.user-checkbox[type=checkbox]:checked + span:before {
     background: url("/static/images/form/form_slider_chkbx_selected.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
-.form-check-grp label input.whiteCheck.user-checkbox[type=checkbox]:checked + span:before{
+.form-check-grp label input.whiteCheck.user-checkbox[type=checkbox]:checked + span:before {
     background: url("/static/images/form/form_chkbx_selected_white.png") left top no-repeat;
     background-size: 17px 17px;
 }
 
 .form-row [class*="col-"] {
-    padding-right:0;
-    padding-left:0;
+    padding-right: 0;
+    padding-left: 0;
 }
-.contact-us__contact-form [class*="col-"] .form-icon-wrapper svg  {
-    top:12px;
+
+.contact-us__contact-form [class*="col-"] .form-icon-wrapper svg {
+    top: 12px;
 }
-.contact-us__contact-form{
+
+.contact-us__contact-form {
     position: relative;
     font-size: 0.85em;
 }
 
-#contact-single_thankyou{
+#contact-single_thankyou {
     display: none;
     position: relative;
     text-align: center;
 }
-#contact-single_other{
+
+#contact-single_other {
     position: inherit;
 }
-.contact-us__contact-form__wrapper{
-    margin-top:0px;
+
+.contact-us__contact-form__wrapper {
+    margin-top: 0px;
 }
 
-#requestFormRContactUs_Acc .form-check-grp, #requestFormRContactUs_Acc .form-radio-grp{
-    padding-top:5px;
-    padding-bottom:5px;
+#requestFormRContactUs_Acc .form-check-grp, #requestFormRContactUs_Acc .form-radio-grp {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.contact-us__contact-form-container .contact-us__contact-form__wrapper{
+
+.contact-us__contact-form-container .contact-us__contact-form__wrapper {
     box-shadow: none;
 }
-.form-user-grp select{
+
+.form-user-grp select {
     background-color: #fff;
 }
-.form-user-grp select option{
+
+.form-user-grp select option {
     background-color: #fff !important;
 }
 
-.twoColumnContactForm .form-radio-grp label{
+.twoColumnContactForm .form-radio-grp label {
     height: 40px;
     line-height: 40px;
 }
 
+.form-section {
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.updateInfoForm .form-section {
+    clear: both;
+}
+
+.updateInfoForm .form-section-header {
+    display: block;
+    clear: both;
+    margin-bottom: 5px;
+}
+
+.updateInfoForm .form-section-title {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.updateInfoForm .required-section {
+    border-bottom: 1px solid #ccc;
+}
+
+.updateInfoForm .optional-section {
+    margin-top: 20px;
+}
+
+.updateInfoForm .contatMeSidebarBtn {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.updateInfoForm .form-user-grp {
+    padding: 5px 0;
+}
+
 @media screen and (min-width: 768px) {
     .form-row [class*="col-sm-6"]:nth-of-type(odd) {
-        padding-right:5px;
+        padding-right: 5px;
     }
-    .form-row [class*="col-sm-6"]:nth-of-type(even) {
-        padding-left:5px;
-    }
-    .form-row [class*="col-sm-2"]:nth-of-type(1) {
-        padding-right:5px;
-    }
-    .form-row [class*="col-sm-2"]:nth-of-type(2) {
-        padding-right:5px;
-    }
-    .form-row [class*="col-sm-2"]:nth-of-type(3) {
-        padding-right:5px;
-    }
-    .form-row [class*="col-sm-8"] {
-        padding-left:5px;
-    }
-    .form-row {
-        margin:5px 0;
-    }
-    .two-column-contact-form-container{
 
+    .form-row [class*="col-sm-6"]:nth-of-type(even) {
+        padding-left: 5px;
     }
-    .twoColumnContactForm.form__title{
+
+    .form-row [class*="col-sm-2"]:nth-of-type(1) {
+        padding-right: 5px;
+    }
+
+    .form-row [class*="col-sm-2"]:nth-of-type(2) {
+        padding-right: 5px;
+    }
+
+    .form-row [class*="col-sm-2"]:nth-of-type(3) {
+        padding-right: 5px;
+    }
+
+    .form-row [class*="col-sm-8"] {
+        padding-left: 5px;
+    }
+
+    .form-row {
+        margin: 5px 0;
+    }
+
+    .twoColumnContactForm.form__title {
         font-size: 28px;
         line-height: 32px;
     }
-    .twoColumnContactForm .form-radio-grp label{
+
+    .twoColumnContactForm .form-radio-grp label {
         display: inline-block;
     }
-}
 
-.productUserType {
-    margin-top:10px;
-}
-
-[data-observes-id]{
-    display: none;
-}
-
-span.errorRadio {
-    color: #EB4646 !important;
-}
-
-.campaign-contact-form .contactOtherDetails {
-    position: static;
-}
-
-@media screen and (min-width: 1024px) {
-    #requestFormRightNav_Acc .form-state {
-        width: 61%;
+    .updateInfoForm {
+        width: 90%;
+        margin: auto;
+        padding: 40px 0 0;
     }
-    .form__title {
-        padding-top: 8px;
-        font-size: 20px;
+
+    .updateInfoForm .form-user-grp{
+        padding: 0;
     }
-    .two-column-form-title.form__title{
-        font-size: 28px;
-        line-height: 32px;
+
+    .updateInfoForm .form-section {
+        margin-bottom: 25px;
+    }
+
+    .updateInfoForm .form-section:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .updateInfoForm .form-section-header {
+        margin-bottom: 0;
+    }
+
+    .updateInfoForm .optional-section {
+        margin-top: 30px;
+    }
+
+    .productUserType {
+        margin-top: 10px;
+    }
+
+    [data-observes-id] {
+        display: none;
+    }
+
+    span.errorRadio {
+        color: #EB4646 !important;
+    }
+
+    .campaign-contact-form .contactOtherDetails {
+        position: static;
+    }
+
+    .updateInfoForm .contatMeSidebarBtn {
+        width: inherit;
+    }
+
+    @media screen and (min-width: 1024px) {
+        #requestFormRightNav_Acc .form-state {
+            width: 61%;
+        }
+
+        .form__title {
+            padding-top: 8px;
+            font-size: 20px;
+        }
+
+        .two-column-form-title.form__title {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
+        .updateInfoForm {
+            width: 65%;
+            margin: auto;
+        }
+        .updateInfoForm .form-section {
+            margin-bottom: 35px;
+        }
+        .updateInfoForm .form-row {
+            margin: 7.5px 0;
+        }
+        .updateInfoForm .optional-section {
+            margin-top: 40px;
+        }
     }
 }
 
-.form-user-grp .form-user-ctrl:focus{
+.form-user-grp .form-user-ctrl:focus {
     background-color: #fff;
     border-color: #2377c5;
     -webkit-appearance: none;
     outline: 0;
 }
 
-.contactDisclaimer{
+.contactDisclaimer {
     font-size: 11px;
     line-height: 15px;
     color: #999;
     font-weight: 400;
 }
+
