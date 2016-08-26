@@ -11755,8 +11755,11 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur(function () {
-    ss_clear();
+$('body').on('click touchstart tap', function (e) {
+    var suggestions = $(".suggestionsbox");
+    if (!suggestions.is(e.target)) {
+        ss_clear();
+    }
 });
 
 /**
