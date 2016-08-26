@@ -30,18 +30,11 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu() {
     if (getViewport() == "mobile") {
-        /*if ($('body').hasClass('overlay-scroll__parent')) {
-         $('body').removeClass('overlay-scroll__parent')
-         }
-         if ($('.megamenu').hasClass('overlay-scroll__child')) {
-         $('.megamenu').removeClass('overlay-scroll__child')
-         }
-         if ($('.login-container').hasClass('overlay-scroll__child')) {
-         $('.login-container').removeClass('overlay-scroll__child')
-         }*/
-        if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
-            $(".megamenu--open").addClass("megamenu--open--mobile");
-            $("body").css("overflow", "hidden");
+        if($(".megamenu").hasClass("megamenu--open")) {
+            if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
+                $(".megamenu--open").addClass("megamenu--open--mobile");
+                $("body").css("overflow", "hidden");
+            }
         }
     }
     if (getViewport() == "tablet" || getViewport() == "desktop") {
@@ -255,27 +248,6 @@ $('.megamenu-trigger').on('click', function () {
 
     closeContactForm();
     $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
-
-    if (getViewport() != "mobile") {
-        if ($('body').hasClass('overlay-scroll__parent')) {
-            $('body').removeClass('overlay-scroll__parent')
-        } else {
-            $('body').addClass('overlay-scroll__parent')
-        }
-        if ($('.megamenu').hasClass('overlay-scroll__child')) {
-            $('.megamenu').removeClass('overlay-scroll__child')
-            $(".global-header__middle").removeClass("menu--left")
-
-        } else {
-            $('.megamenu').addClass('overlay-scroll__child')
-            $(".global-header__middle").addClass("menu--left")
-        }
-        if ($('.login-types').hasClass('overlay-scroll__child')) {
-            $('.login-types').removeClass('overlay-scroll__child');
-            $('.login-container').removeClass('overlay-scroll__child');
-        }
-
-    }
 
     if (getViewport() == "desktop") {
 
