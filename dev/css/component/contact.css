@@ -14,18 +14,20 @@
      font-size: 16px;
      font-weight: 600;
      line-height: 20px;
-
  }
 .contact-us__address_header {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
 }
 
 .contact-us--small-size-font,
 .contact-results--small-heading {
     font-size: 14px;
     font-weight: 600;
+}
+.contact-us--small-size-font{
+    line-height: 20px;
 }
 
 .contact-results--large-heading {
