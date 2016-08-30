@@ -1,5 +1,5 @@
 /**
- * Created by icunningham on 8/9/2016.
+ * Created by icunningham on 8/30/2016.
  */
 //
 // Press Room Variables
@@ -65,7 +65,7 @@ $("#list_topics").change(function () {
 });
 
 $("#list_month").change(function() {
-   newsRoomServiceConstruction();
+    newsRoomServiceConstruction();
 });
 
 function newsRoomYearChange() {
@@ -73,7 +73,7 @@ function newsRoomYearChange() {
     totalMonths = unique(totalMonths);
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="" selected>All</option>');
+    selectMonth.append('<option value="All" selected>All</option>');
     var thisMonth;
     if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
         for(var i = 1; i <=12; i++){
@@ -133,7 +133,7 @@ function newsRoomTopicsChange(){
     totalMonths = unique(totalMonths);
     var selectYear = $('#list_year');
     selectYear.empty();
-    selectYear.append('<option value="" selected>All</option>');
+    selectYear.append('<option value="All" selected>All</option>');
     var firstTime = true;
     for(var i = (totalYears.length - 1); i >= 0; i--) {
         selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
@@ -141,7 +141,7 @@ function newsRoomTopicsChange(){
     firstTime = false;
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="" selected>All</option>');
+    selectMonth.append('<option value="All" selected>All</option>');
     var thisMonth;
     if($("#list_topics").prop('selectedIndex') === 0){
         for(var i = 1; i <=12; i++){
@@ -366,7 +366,6 @@ function newsRoomServiceConstruction() {
 //}
 /************LOCAL News Room Url Constructor***************/
 
-//Only needed for local testing
 function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) {
     var numResults = results.news.length;
     console.log(results);
@@ -410,7 +409,6 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
     return filteredResults;
 }
 
-//Only needed for local testing
 function searchForTopic(nameKey, results) {
     var arrWithFilteredTopics = [];
     var count = 0;
@@ -427,7 +425,6 @@ function searchForTopic(nameKey, results) {
     return filteredObj;
 }
 
-//document.ready for mapping the months that are contained within the dropdown months
 $(function() {
     integerToMonthMapping = mapIntegerToMonth();
     monthToIntegerMapping = mapMonthToInteger(integerToMonthMapping);
@@ -451,3 +448,4 @@ function mapMonthToInteger(integerToMonth) {
     }
     return reverseMap;
 }
+
