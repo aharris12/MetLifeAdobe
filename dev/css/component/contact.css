@@ -50,6 +50,9 @@
 
 .contact-us__header {
     margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .contact-us__header--large {
@@ -119,7 +122,10 @@
 }
 
 .wrapper__contact-us__bottom-box--smaller .clearfix--margin-top {
+    font-size: 13px;
     font-weight: 400;
+    line-height: 14px;
+    text-align: left;
 }
 
 .wrapper__contact-us__bottom-box__links:last-child {
@@ -179,7 +185,9 @@
 }
 
 @media screen and (max-width: 767px) {
-
+    .wrapper__contact-us__bottom-box--smaller .clearfix--margin-top {
+        line-height: 18px;
+    }
     .contact-us__dropdown {
         padding: 5px 0px 20px;
     }
@@ -223,7 +231,10 @@
     .contact-us__result {
         padding-top: 20px;
     }
-
+    .contact-us__header {
+        font-size: 18px;
+        line-height: 40px;
+    }
     .contact-us__header--large {
         margin-bottom: 15px;
     }
@@ -302,8 +313,7 @@
 
     .contact-us__header {
         margin-bottom: 20px;
-        font-weight: 400;
-        font-size: 1.85em;
+        font-size: 20px;
     }
 
     .wrapper__contact-us__bottom-box__links:last-child {
