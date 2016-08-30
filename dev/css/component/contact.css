@@ -231,10 +231,7 @@
     .contact-us__result {
         padding-top: 20px;
     }
-    .contact-us__header {
-        font-size: 18px;
-        line-height: 40px;
-    }
+
     .contact-us__header--large {
         margin-bottom: 15px;
     }
@@ -249,10 +246,6 @@
 }
 
 @media screen and (min-width: 768px) {
-    .contact-us {
-        /*        padding: 50px 0;*/
-    }
-
     .contact-us__address_header {
         font-size: 20px;
         line-height: 24px;
@@ -310,10 +303,10 @@
         text-align: center;
         margin-bottom: 40px;
     }
-
     .contact-us__header {
+        font-size: 18px;
+        line-height: 40px;
         margin-bottom: 20px;
-        font-size: 20px;
     }
 
     .wrapper__contact-us__bottom-box__links:last-child {
@@ -368,6 +361,7 @@
     }
 
     .contact-us__header {
+        font-size: 20px;
         margin-bottom: 30px;
     }
 
