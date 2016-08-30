@@ -9533,6 +9533,8 @@ SFDC.form.forEach(function (element) {
                     var domain = parent.find(".generic-form").attr("data-domain");
                     console.log(domain)
                     parent.find('#Domain').attr("value", domain);
+                    var LeadAssociatedSourceDesc = document.URL.replace(/^(?:\/\/|[^\/]+)*\//, "");
+                    parent.find('#LeadAssociatedSourceDesc').attr("value", LeadAssociatedSourceDesc);
                    // parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
                     // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
