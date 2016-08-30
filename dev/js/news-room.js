@@ -337,7 +337,7 @@ function newsRoomServiceConstruction() {
     newsTopic = $('#list_topics').val();
     newsConcatenator = $(".lists").attr("data-news-concatenator");
     //prod implementation of url
-    url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+    url += "year=" + newsYear + "&" + "month=" + newsMonth + "&" + "topic" + newsTopic;
     newsRoomServiceCall(url, newsMonth, newsTopic);
 }
 /************Live News Room Url Constructor***************/
