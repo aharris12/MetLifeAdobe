@@ -579,9 +579,12 @@ $('.login-trigger').click(function (e) {
         $(".global-header__middle").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
+            console.log('megamenu visible');
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
-            $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
+            $('.icon-close').toggle();
+            $(".js-megaMenuToggle").toggleClass("hidden");
+            $('.icon-menu').toggle();
         }
     }
 });
