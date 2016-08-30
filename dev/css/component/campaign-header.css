@@ -38,14 +38,18 @@
 
 }
 
-.campaign-header .campaign-header__popup .campaign-header-ctc p a {
-    color: #fff;
-    text-decoration: underline;
-}
-
 .campaign-header .campaign-header__popup .campaign-header-ctc {
     padding: 10px;
     color: #a4d8f1;
+}
+
+.campaign-header .campaign-header__popup .campaign-header-ctc h5 {
+    color: #fff;
+}
+
+.campaign-header .campaign-header__popup .campaign-header-ctc p a {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .campaign-header__popup__contact {
