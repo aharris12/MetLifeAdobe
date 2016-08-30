@@ -2479,7 +2479,7 @@ console.log(count)
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2488,14 +2488,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});*/
+		});
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-			var faoSearchResults = $.getJSON("fao.json", function(data) {
+		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });
+		 });*/
 		/************LOCAL FAO SERVICE***************/
 
 	},
