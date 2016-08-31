@@ -11747,9 +11747,9 @@ function ss_clear(nofocus) {
      */
 }
 
-$('body').on('click touchstart tap', function (e) {
-    var suggestions = $(".suggestionsbox");
-    if (!suggestions.is(e.target)) {
+$('body').on('click touchstart tap', function (event) {
+    var target = $(event.target);
+    if (target.closest(".suggestionsbox").length == 0) {
         ss_clear();
     }
 });
