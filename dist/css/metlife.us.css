@@ -12792,6 +12792,16 @@ body{
     font-weight: 400;
 }
 
+.product-card .action .btn-brand-1st span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.product-card .action .btn-brand-1st svg {
+    display: table-cell;
+    margin-left: 5px;
+}
+
 @media screen and (min-width: 768px) {
 
     .product-card {
