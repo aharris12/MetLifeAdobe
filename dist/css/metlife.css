@@ -6460,6 +6460,10 @@ ol.promocard_content__list li:after {
     line-height: 16px;
 }
 
+product-module__list ul:last-child, p:last-child {
+    margin-bottom: 0;
+}
+
 .product-module__top {
     margin-bottom: 15px;
 }
