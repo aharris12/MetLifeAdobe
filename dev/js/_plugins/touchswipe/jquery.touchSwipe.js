@@ -160,6 +160,7 @@
     RIGHT = "right",
     UP = "up",
     DOWN = "down",
+    STAY = "stay",
     IN = "in",
     OUT = "out",
 
@@ -1701,6 +1702,7 @@
       maxData[RIGHT] = createMaximumVO(RIGHT);
       maxData[UP] = createMaximumVO(UP);
       maxData[DOWN] = createMaximumVO(DOWN);
+      maxData[STAY] = createMaximumVO(STAY);
 
       return maxData;
     }
@@ -1816,6 +1818,7 @@
      * @inner
      */
     function calculateDirection(startPoint, endPoint) {
+      if (startPoint.x === endPoint.x && startPoint.y === endPoint.y) return STAY;
       var angle = calculateAngle(startPoint, endPoint);
 
       if ((angle <= 45) && (angle >= 0)) {

@@ -5,6 +5,18 @@ var count = 0;
 var resultsListHTML = "";
 var loadingMore = false;
 var page = 1;
+//Site Search Variables
+var numSearchResults = 10;
+var searchPaginationNumber;
+var searchPaginationPrev;
+var searchUrl;
+var searchStart = 1;
+var searchEnd = 10;
+var totalSearchResults;
+if ($(".page-count").length > 0) {
+	var searchDefaultSelect = $(".page-count").val();
+}
+
 //Quote Tool variables
 var quoteDomain;
 var quotelanguage;
@@ -286,6 +298,15 @@ $(".form-user-ctrl").on('click', function (evt) {
 	}
 });
 
+$('[data-valid-type=number]').on('blur', function (evt) {
+	evt.preventDefault();
+	var $this = $(this);
+	var val = $this.val();
+	var re = /[0-9]/;
+	ServicesAPI.validateOnType(val, $this, re);
+});
+
+
 $('[data-valid-type=text]').on('blur', function (evt) {
 	evt.preventDefault();
 	var $this = $(this);
@@ -490,7 +511,9 @@ $(".breadcrumb__crumb--back").on("click", function (evt) {
 	if (url != null) {
 		window.location.href = url;
 	} else {
-		window.location.href = "/Press_Room";
+		//window.location.href = "/Press_Room";
+		window.history.go(-1);
+		return false;
 	}
 	sessionStorage.removeItem("press_back");
 });
@@ -524,10 +547,18 @@ if ($(".js-formLib").length > 0) {
 
 // Search Results Page Search Start
 $('.js-searchSubmit').on('click', function () {
-	var searchRequest = $(".js-searchTextBox").val();
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+	/*var searchRequest = $(".js-searchTextBox").val();*/
+	var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+	/*var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;*/
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+	/*console.log(searchDefaultSelect)
+	$(".page-count").val(searchDefaultSelect);*/
 	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
+		searchStart = 1;
+		searchEnd = 10;
+		searchPaginationPrev = undefined;
+		searchPaginationNumber = 0;
+		ServicesAPI.searchServiceCall(url, searchRequest);
 	}
 });
 
@@ -593,7 +624,6 @@ $('.search-trigger__search-box').keypress(function (e) {
 
 $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
 	var searchTerm = $(".search-trigger__search-box").val();
-	console.log(searchTerm)
 	if ($(".search-trigger__search-box").hasClass("js-oldSearch")) {
 		ServicesAPI.legacySearch(searchTerm);
 	} else {
@@ -637,27 +667,41 @@ $('.js-SearchBox').click(function (e) {
 		window.location.href = urlStr;
 	}
 });
-$('.search-results-container__correction-text > a').on('click', function (e) {
-	e.preventDefault();
-	var correctionClickedOn = $(this).text();
-});
 
-$('.search-results-container__correction-text > a').on('click', function (e) {
+
+$('.js-searchSuggestion').on('click', function (e) {
 	e.preventDefault();
-	var correctionClickedOn = $(this).children('span').text();
+	var correctionClickedOn = $(this).text().split(" ").join("+OR+");
 	var searchRequest = correctionClickedOn;
-	var url = $(".js-searchSubmit").attr("data-search-ajax-url") + "?query=" + searchRequest;
+	$(".js-searchTextBox").val($(this).text())
+	var url = $(".js-searchSubmit").attr("data-search-ajax-url");
 	if (searchRequest) {
-		ServicesAPI.searchServiceCall(url);
+		searchStart = 1;
+		searchEnd = 10;
+		searchPaginationPrev = undefined;
+		searchPaginationNumber = 0;
+		ServicesAPI.searchServiceCall(url, correctionClickedOn);
 	}
 });
 
 //Pagination Update
 $(".page-count").on('change', function () {
-	listCount = $(this).val();
-	ServicesAPI.createPagination(count);
-	ServicesAPI.resetMap();
-	ServicesAPI.showLocation();
+	if ($(".find-an-x-search__container").length > 0) {
+		listCount = $(this).val();
+		ServicesAPI.createPagination(count);
+		ServicesAPI.resetMap();
+		ServicesAPI.showLocation();
+	}
+	if($(".search-results-container").length > 0){
+		listCount = parseInt($(this).val());
+		numSearchResults = $(this).val();
+		var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+		var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+		if (searchRequest) {
+			ServicesAPI.searchServiceCall(url, searchRequest);
+		}
+
+	}
 });
 
 //Find an X Click Functions
@@ -962,6 +1006,7 @@ var ServicesAPI = {
 			var url = $(".blog-list").attr("data-url");
 			ServicesAPI.blogsServiceCall(url, "mostRecent")
 		}
+		ServicesAPI.dropDownPreselection();
 	},
 	replaceAll: function (txt, replace, with_this) {
 		return txt.replace(new RegExp('\\b' + replace + '\\b', 'gi'), with_this);
@@ -1630,54 +1675,180 @@ var ServicesAPI = {
 			}
 		}
 	},
-	searchServiceCall: function (input) {
-		count = 0;
-		var url = input;
-		var querySearch = ServicesAPI.getQueryStringNew()["query"];
-		if (querySearch !== null && querySearch !== undefined && querySearch !== "" && querySearch !== " ") {
-			url += "?query=" + querySearch;
+	createPaginationSearch: function () {
+		$('.results_content').children().removeClass('.hidden');
+		var next_label = $(".next_label").text();
+		var prev_label = $(".prev_label").text();
+		// Setting totalSearchResults to 0 manually when only undefined are returned
+		if (typeof totalSearchResults != 'undefined') {
+			if (totalSearchResults.count == 0)
+				totalSearchResults = 0;
 		}
+		//If there are less total results than the number of results to show
+		if (totalSearchResults < listCount) {
+			$('.results_pagination').addClass('hidden');
+			$(".results_content").children().removeClass('hidden');
+			searchEnd = totalSearchResults;
+			console.log("less results than listItem searchStart ", searchStart)
+			console.log("less results than listItem searchEnd ", searchEnd)
+		} else {
+			//searchStart = 1;
+			//First time loading , end count should be what ever the value is of the drop down box
+			//searchEnd = listCount;
+			console.log("first time loading searchStart ", searchStart)
+			console.log("first time loading searchEnd ", searchEnd)
+			$('.results_pagination').removeClass('hidden');
+			var startPage;
+			if(searchPaginationPrev != undefined){
+				startPage = searchPaginationPrev;
+			}else{
+				startPage = 1;
+			}
+		}
+		console.log("searchEnd < totalSearchResults ", searchEnd < totalSearchResults)
+		console.log("searchStart ", searchStart);
+		console.log("searchEnd ",searchEnd);
+		console.log("totalSearchResults ",totalSearchResults);
+		if (searchEnd < totalSearchResults) {
+			$('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + searchEnd);
+		} else {
+			$('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
+		}
+
+		$('.results_pagination').bootpag({
+			total: Math.ceil(totalSearchResults / listCount),
+			page: startPage,            // default page
+			next: next_label,    // visible pagination
+			leaps: false,
+			prev: prev_label,        // next/prev leaps through maxVisible
+			maxVisible: 10,
+			wrapClass: 'pagination',
+			activeClass: 'active',
+			disabledClass: 'disabled',
+			nextClass: 'next',
+			prevClass: 'prev',
+			lastClass: 'last',
+			firstClass: 'first'
+		}).on("page", function (event, num) {
+			searchPaginationPrev = num;
+			console.log(num)
+			searchPaginationNumber = num;
+			//If num is not 1 we have clicked one of the other pagination items.
+			searchPaginationNumber = num + "0";
+			searchPaginationNumber -= 10;
+			if(listCount != 10){
+				searchPaginationNumber += listCount - 10;
+			}
+		/*	if(num != 1){
+				//set search pagination number to num ie 1 + 0 - 10, So if we click the 2nd pagination number then this number will be 10 which is what we set our start to for the next search
+				searchPaginationNumber = num + "0";
+				searchPaginationNumber -= 10;
+
+			}else{
+				searchPaginationNumber = undefined;
+			}*/
+
+			console.log("search pagination number ",searchPaginationNumber)
+			sessionStorage.setItem("paginationNumber", num);
+			var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+			var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+			if (searchRequest) {
+				ServicesAPI.searchServiceCall(url, searchRequest);
+			}
+
+			if($(".search-results-container").length > 0){
+				if (sessionStorage.getItem("paginationNumber") !== null) {
+					var thisItem = sessionStorage.getItem("paginationNumber")
+					$(".pagination.bootpag li").each(function(){
+						$(this).removeClass("active");
+						if($(this).attr("data-lp") == thisItem){
+							$(this).addClass("active");
+						}
+						if($(this).hasClass("prev") || $(this).hasClass("next")){
+							$(this).removeClass("active");
+						}
+					});
+					window.sessionStorage.clear();
+				}
+			}
+			/*if (num == 1) {
+			 searchStart = 1;
+			 console.log(searchStart)
+			 //this should be the last number of items in the set example 40-49
+			 searchEnd = listCount;
+			 console.log(searchEnd)
+			 }else {
+			 //this should be the last number of items in the set example 40-49
+			 //This sets the start to search pagination number plus 1. So if you click pagnation 2 this would be 10
+			 searchStart = searchPaginationNumber + 10;
+			 console.log("searchStart " ,searchStart)
+
+			 //this sets the end to search padination number + list count which is the number of items to show, So if you click paganation 2 this would be 10 + 10.
+			 searchEnd = searchPaginationNumber + listCount + 10;
+			 console.log("searchEnd ", searchEnd)
+			 }*/
+			console.log("searchEnd ", searchEnd + "> totalSearchResults ", totalSearchResults)
+			console.log(searchEnd > totalSearchResults)
+			if (searchEnd > totalSearchResults) {
+				searchEnd = totalSearchResults;
+			}
+			console.log("searchEnd ", searchEnd)
+			console.log("searchEnd < totalSearchResults ", searchEnd < totalSearchResults)
+			console.log("searchStart ", searchStart);
+			console.log("searchEnd ",searchEnd);
+			console.log("totalSearchResults ",totalSearchResults);
+			if (searchEnd < totalSearchResults) {
+				console.log(searchStart + " " + searchEnd)
+				$('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + searchEnd);
+			} else {
+				console.log(totalSearchResults - listCount + " " + totalSearchResults)
+				$('.display-text > span:first-of-type').html(totalSearchResults - listCount + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
+
+			}
+		});
+
+console.log(count)
+		//No results
+		if (totalSearchResults == 0) {
+			$('.display-text > span:nth-of-type(2)').addClass('hidden');
+			$('.results_pagination').addClass('hidden');
+		} else {
+			$('.display-text > span:nth-of-type(2)').removeClass('hidden');
+			$('.display-text > span:nth-of-type(2)').html('&nbsp;' + totalSearchResults);
+		}
+
+
+
+	},
+	searchServiceCall: function (url, query, e) {
+		count = 0;
+		var frontEnd = $(".js-searchSubmit").attr("data-front-end");
+		var site = $(".js-searchSubmit").attr("data-site");
+		console.log("ajax searchPaginationNumber " ,searchPaginationNumber)
+		if(searchPaginationNumber == undefined || searchPaginationNumber == 0){
+			searchUrl = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0';
+			searchStart = 1;
+			searchEnd = listCount;
+		}else{
+			searchUrl = url + 'access=p&output=xml_no_dtd&ie=UTF-8&oe=UTF-8&proxystylesheet=' + frontEnd+ '&client=' + frontEnd+ '&q='+query+'&num='+numSearchResults+'&getfields=*&site=' + site +'&rc=0&start='+searchPaginationNumber ;
+			searchStart = searchPaginationNumber;
+			searchEnd = searchPaginationNumber + listCount;
+		}
+		console.log("ajax search start ", searchStart)
+		console.log("ajax search searchEnd ", searchEnd)
+		console.log(searchUrl)
 		$(".results_content").remove();
+		$(".js-searchSuggestion").children().remove();
 		resultsListHTML = "";
 		/************LOCAL Site Search SERVICE***************/
-
-		var siteSearchResults = $.getJSON("search.json", function(json) {
-			siteSearchResults = json.response.docs;
-			if (siteSearchResults.length != 0) {
-				$('.form-item__display').removeClass('hidden');
-				// $(".page-count").removeClass('hidden');
-				$(".no-results").addClass('hidden');
-				//results_content is the default component for listing out general results
-				resultsListHTML += "<div class=\"results_content\">";
-				for (var i = 0; i < siteSearchResults.length; i++) {
-					count++;
-					resultsListHTML += "<div class=\"list__item--no-border\">";
-					resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-					resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
-					resultsListHTML += "</div>";
-				}
-				resultsListHTML += "</div>";
-			} else {
-				$('.form-item__display').removeClass('hidden');
-				$(".page-count").addClass('hidden');
-				$(".no-results").removeClass('hidden');
-			}
-			$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-			ServicesAPI.createPagination(count);
-		});
-		/************LOCAL Site Search SERVICE***************/
-
-
-		/************LIVE Site Search SERVICE***************/
-		/*$.ajax({
-		 url: url,
-		 contentType: "application/json; charset=utf-8",
-		 async: true,
-		 dataType: 'json',
-		 type: 'GET',
-		 success: function (data) {
-		 var siteSearchResults = json.response.docs;
+		/*var siteSearchResults = $.getJSON("search-gsa.json", function(data) {
+		 siteSearchResults = data.GSP.RES.R;
+		 var sitSearchResultsUrl = '.DU';
+		 var sitSearchResultsTitle = '.T';
+		 var sitSearchResultsContent = '.S';
+		 console.log(siteSearchResults)
 		 if (siteSearchResults.length != 0) {
+
 		 $('.form-item__display').removeClass('hidden');
 		 // $(".page-count").removeClass('hidden');
 		 $(".no-results").addClass('hidden');
@@ -1685,9 +1856,12 @@ var ServicesAPI = {
 		 resultsListHTML += "<div class=\"results_content\">";
 		 for (var i = 0; i < siteSearchResults.length; i++) {
 		 count++;
+		 sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+		 sitSearchResultsTitle =  data.GSP.RES.R[i].T;
+		 sitSearchResultsContent = data.GSP.RES.R[i].S;
 		 resultsListHTML += "<div class=\"list__item--no-border\">";
-		 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + siteSearchResults[i].url + "\">" + siteSearchResults[i].title + "</a>";
-		 resultsListHTML += "<p>" + siteSearchResults[i].content + "</p>";
+		 resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+		 resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
 		 resultsListHTML += "</div>";
 		 }
 		 resultsListHTML += "</div>";
@@ -1698,12 +1872,70 @@ var ServicesAPI = {
 		 }
 		 $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
 		 ServicesAPI.createPagination(count);
-		 },
-		 error: function (e) {
-		 ServicesAPI.showSorryUnableToLocateMessage();
-		 },
-		 timeout: 30000
 		 });*/
+		/************LOCAL Site Search SERVICE***************/
+
+
+		/************LIVE Site Search SERVICE***************/
+		$.ajax({
+			url: searchUrl,
+			dataType: 'json',
+			type: 'GET',
+			async: false,
+			contentType: 'application/x-www-form-urlencoded',
+			processData: false,
+			success: function (data) {
+				console.log(data)
+				if(data.GSP.hasOwnProperty("Spelling")) {
+					$(".form-item__display").hide();
+					$(".search-results-container__correction-text").removeClass("hidden");
+					var correctSpelling= data.GSP.Spelling.Suggestion[0].qe;
+					$(".no-results").addClass('hidden');
+					var correctionHtml = '<a href="#">'+correctSpelling+'</a>';
+					$(".js-searchSuggestion").append(correctionHtml);
+				}else if(data.GSP.hasOwnProperty("RES")){
+					$(".form-item__display").show();
+					$(".page-count").removeClass('hidden');
+					$(".search-results-container__correction-text").addClass("hidden");
+					totalSearchResults = data.GSP.RES.M;
+					console.log(totalSearchResults)
+					var siteSearchResults = data.GSP.RES.R;
+					var sitSearchResultsUrl;
+					var sitSearchResultsTitle;
+					var sitSearchResultsContent;
+					if (siteSearchResults.length != 0) {
+
+						$('.form-item__display').removeClass('hidden');
+						// $(".page-count").removeClass('hidden');
+						$(".no-results").addClass('hidden');
+						//results_content is the default component for listing out general results
+						resultsListHTML += "<div class=\"results_content\">";
+						for (var i = 0; i < siteSearchResults.length; i++) {
+							count++;
+							sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+							sitSearchResultsTitle = data.GSP.RES.R[i].T;
+							sitSearchResultsContent = data.GSP.RES.R[i].S;
+							resultsListHTML += "<div class=\"list__item--no-border\">";
+							resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+							resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+							resultsListHTML += "</div>";
+						}
+						resultsListHTML += "</div>";
+					}
+				}else{
+					$('.form-item__display').addClass('hidden');
+					$(".page-count").addClass('hidden');
+					$(".no-results").removeClass('hidden');
+					totalSearchResults = 0;
+				}
+				$(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+				ServicesAPI.createPaginationSearch(totalSearchResults);
+			},
+			error: function (e) {
+				ServicesAPI.showSorryUnableToLocateMessage();
+			},
+			timeout: 30000
+		});
 		/************LIVE SERVICE***************/
 	},
 	legacySearch: function (serchQuery) {
@@ -1938,13 +2170,13 @@ var ServicesAPI = {
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
@@ -1972,13 +2204,13 @@ var ServicesAPI = {
 								resultsListHTML += "<div class=\"list__item--right\">";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
 								if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-									resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-									resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-									resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
 								} else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-									resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+									resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
 								}
 								resultsListHTML += "</a>";
 								resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
@@ -2238,9 +2470,14 @@ var ServicesAPI = {
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
+			if($('.different_services_dropdown').length > 0){
 			specialty = $('.different_services_dropdown').val();
+			}else{
+				specialty = "";
+			}
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
+		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
 		$.ajax({
 			type: 'GET',
@@ -2713,16 +2950,20 @@ var ServicesAPI = {
 			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
-
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		if(specialty == ""){
+			return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
+		}else{
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		}
 	},
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
 			radiusSelector = '&radius=' + radius,
 			specialtySelector = '&specialty=' + specialty;
+			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
 
-		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
+
 	},
 	updatePageFrom: function (name) {
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
@@ -3245,6 +3486,10 @@ var ServicesAPI = {
 				$('.twoColumnContactForm .contactSideThankyou, .twoColumnContactForm .contact-single_other').fadeIn(800);
 				break;
 
+			case "updateInfoForm":
+				$('.updateInfoForm .contact-us__contact-form').fadeOut(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeIn(800);
+				break;
 		}
 
 		$('.info-mandatory').removeClass("error-mandatory");
@@ -3280,6 +3525,11 @@ var ServicesAPI = {
 				$('.contactAdvisorSingle .contactSideThankyou').fadeOut(2000);
 				break;
 
+			case "updateInfoForm":
+				$('#updateInfoForm').trigger("reset");
+				$('.updateInfoForm .contact-us__contact-form').fadeIn(1000);
+				$('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
+				break;
 		}
 
 
@@ -3326,6 +3576,23 @@ var ServicesAPI = {
 					console.log("error in ajax form submission");
 				}
 			});
+		}
+	},
+	dropDownPreselection: function(){
+		if($(".js-DropDownPreselect").length > 0){
+			if (window.location.hash) {
+				var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+				var exists = false;
+				$('.js-DropDownPreselect option').each(function(){
+					console.log(this.value == hash)
+					if (this.value == hash) {
+						exists = true;
+						$(".js-DropDownPreselect").val(hash);
+						$(".js-DropDownPreselect").trigger("change");
+						return false;
+					}
+				});
+			}
 		}
 	}
 };

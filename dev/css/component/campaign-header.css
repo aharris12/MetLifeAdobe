@@ -11,32 +11,38 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 .campaign-header .campaign-header__section {
     float: none;
     display: table-cell;
     vertical-align: middle;
 
 }
-.campaign-header__section .campaign-header-right{
+
+.campaign-header__section .campaign-header-right {
     background-color: #0e5dae;
 }
-.campaign-header__section .campaign-header-right .campaign-header-ctc{
+
+.campaign-header__section .campaign-header-right .campaign-header-ctc {
     text-align: center;
     line-height: 50px;
 }
-.campaign-header .campaign-header__section .campaign-header--logo img {
-    width: auto;
-    height: 20px;
-}
+
+/*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+/*width: auto;*/
+/*height: 20px;*/
+/*}*/
 .campaign-header .campaign-header__popup {
     display: none;
     text-align: left;
 
 }
-.campaign-header .campaign-header__popup .campaign-header-ctc p a{
+
+.campaign-header .campaign-header__popup .campaign-header-ctc p a {
     color: #fff;
     text-decoration: underline;
 }
+
 .campaign-header .campaign-header__popup .campaign-header-ctc {
     padding: 10px;
 }
@@ -44,17 +50,20 @@
 .campaign-header__popup__contact {
     margin-bottom: 10px;
 }
+
 .campaign-header__popup__contact input {
     width: 100%;
     margin-bottom: 10px;
 }
+
 .campaign-header .campaign-header__popup.open {
     position: fixed;
     right: 0;
     top: 50px;
     z-index: 100;
 }
-.campaign-header-on-scroll{
+
+.campaign-header-on-scroll {
     height: 50px !important;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -62,13 +71,15 @@
     transition: all 0.5s;
 
 }
-.campaign-header-on-scroll .campaign-header__section .campaign-header-right .campaign-header-ctc{
+
+.campaign-header-on-scroll .campaign-header__section .campaign-header-right .campaign-header-ctc {
     line-height: 50px !important;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 @media screen and (max-width: 767px) {
     .campaign-header-login {
         position: absolute;
@@ -76,49 +87,64 @@
         letter-spacing: 1px;
         margin-top: -10px;
     }
+
+    .campaign-header__section p {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
-.campaign-header-login a{
+
+.campaign-header-login a {
     float: right;
 }
+
 .campaign-header__section p {
     font-size: 14px;
     line-height: 18px;
 }
-.campaign-header-login span{
-    color:white;
+
+.campaign-header-login span {
+    color: white;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.campaign-header-login svg{
+.campaign-header-login svg {
     vertical-align: top;
     margin-left: 0;
     width: 15px;
 }
+
 .campaign-header-right a {
-    font-size:12px;
+    font-size: 12px;
     text-transform: uppercase;
 }
+
 .campaign-header-right svg {
     display: none
 }
+
 .campaign-header-ctc h5 {
     font-weight: 400;
     font-size: 14px;
     color: #a4d8f1;
 }
+
 .campaign-header-ctc p {
     font-size: 10px;
     line-height: 15px;
 }
+
 .campaign-header__popup__contact input {
     width: 100%;
 }
+
 .campaign-header__popup__contact a {
     width: 100%;
 }
+
 @media screen and (min-width: 768px) {
     .campaign-header {
         height: 70px;
@@ -161,8 +187,11 @@
         width: 70%;
     }
 
-    .campaign-header .campaign-header__section .campaign-header--logo img {
-        height: 28px;
+    /*.campaign-header .campaign-header__section .campaign-header--logo img {*/
+    /*height: 28px;*/
+    /*}*/
+    .campaign-header-login {
+        padding: 6px 0 0 0;
     }
 
     .campaign-header-login span {
@@ -202,12 +231,14 @@
         min-width: 40px;
         width: auto;
     }
+
     .campaign-header-ctc h5 {
         font-size: 13px;
         line-height: 20px;
         color: #a4d8f1;
     }
 }
+
 @media screen and (min-width: 1024px) {
     .campaign-header {
         height: 70px;
@@ -217,7 +248,7 @@
         transition: all 0.5s;
     }
 
-    .campaign-header__section .campaign-header-right .campaign-header-ctc{
+    .campaign-header__section .campaign-header-right .campaign-header-ctc {
         line-height: 70px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
@@ -229,21 +260,17 @@
         top: 70px;
         width: 30%;
     }
-    .campaign-header__section .campaign-header-right{
+
+    .campaign-header__section .campaign-header-right {
         background-color: transparent;
     }
-    .campaign-header__section .campaign-header-right a{
-        float:right;
+
+    .campaign-header__section .campaign-header-right a {
+        float: right;
     }
-    .campaign-header-login{
+
+    .campaign-header-login {
         padding-bottom: 0px;
         padding-top: 6px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .campaign-header__section p {
-       font-size: 12px;
-       line-height: 15px;
     }
 }

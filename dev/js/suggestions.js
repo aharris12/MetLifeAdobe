@@ -910,8 +910,11 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur(function () {
-    ss_clear();
+$('body').on('click touchstart tap', function (event) {
+    var target = $(event.target);
+    if (target.closest(".suggestionsbox").length == 0) {
+        ss_clear();
+    }
 });
 
 /**
