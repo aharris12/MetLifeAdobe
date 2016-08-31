@@ -910,12 +910,14 @@ function ss_clear(nofocus) {
      */
 }
 
-$('body').on('click touchstart tap', function (event) {
-    var target = $(event.target);
-    if (target.closest(".suggestionsbox").length == 0) {
-        ss_clear();
-    }
-});
+if ($(".suggestionsbox").length > 0) {
+    $('body').on('click touchstart tap', function (event) {
+        var target = $(event.target);
+        if (target.closest(".suggestionsbox").length == 0) {
+            ss_clear();
+        }
+    });
+}
 
 /**
  * Hides search suggestions.
