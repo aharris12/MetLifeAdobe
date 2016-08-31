@@ -10116,9 +10116,10 @@ body{
 }
 
 .contact-us--medium-size-font {
-    font-size: 16px;
-}
-
+     font-size: 16px;
+     font-weight: 600;
+     line-height: 20px;
+ }
 .contact-us__address_header {
     font-size: 18px;
     line-height: 22px;
@@ -10129,6 +10130,9 @@ body{
 .contact-results--small-heading {
     font-size: 14px;
     font-weight: 600;
+}
+.contact-us--small-size-font{
+    line-height: 20px;
 }
 
 .contact-results--large-heading {
@@ -10151,6 +10155,9 @@ body{
 
 .contact-us__header {
     margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .contact-us__header--large {
@@ -10220,7 +10227,10 @@ body{
 }
 
 .wrapper__contact-us__bottom-box--smaller .clearfix--margin-top {
+    font-size: 13px;
     font-weight: 400;
+    line-height: 14px;
+    text-align: left;
 }
 
 .wrapper__contact-us__bottom-box__links:last-child {
@@ -10280,7 +10290,9 @@ body{
 }
 
 @media screen and (max-width: 767px) {
-
+    .wrapper__contact-us__bottom-box--smaller .clearfix--margin-top {
+        line-height: 18px;
+    }
     .contact-us__dropdown {
         padding: 5px 0px 20px;
     }
@@ -10339,10 +10351,6 @@ body{
 }
 
 @media screen and (min-width: 768px) {
-    .contact-us {
-        /*        padding: 50px 0;*/
-    }
-
     .contact-us__address_header {
         font-size: 20px;
         line-height: 24px;
@@ -10400,11 +10408,10 @@ body{
         text-align: center;
         margin-bottom: 40px;
     }
-
     .contact-us__header {
+        font-size: 18px;
+        line-height: 40px;
         margin-bottom: 20px;
-        font-weight: 400;
-        font-size: 1.85em;
     }
 
     .wrapper__contact-us__bottom-box__links:last-child {
@@ -10459,6 +10466,7 @@ body{
     }
 
     .contact-us__header {
+        font-size: 20px;
         margin-bottom: 30px;
     }
 
@@ -12790,6 +12798,16 @@ body{
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
+}
+
+.product-card .action .btn-brand-1st span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.product-card .action .btn-brand-1st svg {
+    display: table-cell;
+    margin-left: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -18521,6 +18539,10 @@ text-align: center;
     .sitemap-section .sitemap-section-links .sitemap-section-links-container{
         padding-bottom: 40px;
     }
+}
+
+.sitemap--Links p {
+    margin-bottom: 0;
 }
 
 .sitemap--Links .sitemap-link--Container .sitemap-link--Title {
