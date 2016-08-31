@@ -71,6 +71,12 @@
 
 .sitemap--Links p {
     margin-bottom: 0;
+    padding-bottom: 10px;
+    line-height: 16px;
+}
+
+.sitemap-category-column {
+    padding-right: 10px;
 }
 
 .sitemap--Links .sitemap-link--Container .sitemap-link--Title {
