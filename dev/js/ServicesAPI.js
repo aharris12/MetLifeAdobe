@@ -709,6 +709,8 @@ $(".page-count").on('change', function () {
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
 	if (getViewport() == "mobile") {
 		$('.find-an-x-search--expand').show();
+		$(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
+
 	}
 });
 /*$("body").on("click tap", function (e) {
@@ -734,7 +736,14 @@ $(".search_location_image").on('click touchstart', function () {
 		ServicesAPI.showLocation();
 	}
 });
+$(".cta_search").on("focus", function(){
+	if(!$(".hidden-xs").is(":visible")){
+		$(".find-an-x-search--expand").removeClass("hidden-xs");
+	}else{
+		$(".find-an-x-search--expand").addClass("hidden-xs");
+	}
 
+});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
 	//handle empty val
 	if ($(".cta_search").val().length + 1 === 0) {
@@ -2483,7 +2492,7 @@ console.log(count)
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2492,14 +2501,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-			/*var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
