@@ -776,7 +776,13 @@ $('.get-directions-buttons .btn').on('click', function () {
 });
 
 $(".get-directions-form .get_directions_button").on('click', function () {
-	ServicesAPI.getDirections();
+	console.log($(".from-address").val().length + 1)
+	if ($(".from-address").val() == "" ||$(".from-address").val() == " " ) {
+		$(".from-address").addClass('error');
+	} else {
+		$(".from-address").removeClass('error');
+		ServicesAPI.getDirections();
+	}
 });
 
 /* back link on directions page work*/
@@ -2492,7 +2498,7 @@ console.log(count)
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2501,14 +2507,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-			/*var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
