@@ -2962,21 +2962,34 @@ console.log(count)
 			}
 		});
 	},
+	/************Alex and Pablo solution FAO Url Constructor***************/
+	//buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
+	//	var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+	//		lngSelector = '.longitude=' + lng.toString().replace('.', ','),
+	//		radiusSelector = '.radius=' + radius,
+	//		specialtySelector = '.specialty=' + specialty;
+	//		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+	//},
+	/************Alex and Pablo solution FAO Url Constructor***************/
+
+	/************Diego FAO Url Constructor***************/
 	buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
-		var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
-			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
-			radiusSelector = '.radius=' + radius,
-			specialtySelector = '.specialty=' + specialty;
-			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		var latSelector = 'latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+			lngSelector = '&longitude=' + lng.toString().replace('.', ','),
+			radiusSelector = '&radius=' + radius,
+			specialtySelector = '&specialty=' + specialty;
+		//return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+
+		//modified url for integration
+		return baseUrl + latSelector + lngSelector + radius + specialty + "&format=json";
 	},
+	/************Diego FAO Url Constructor***************/
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
 			radiusSelector = '&radius=' + radius,
 			specialtySelector = '&specialty=' + specialty;
 			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
-
-
 	},
 	updatePageFrom: function (name) {
 		var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
