@@ -1,3 +1,7 @@
+.results_pagination {
+    text-align: center;
+}
+
 .pagination {
     display: inline-block;
     padding-left: 0;
@@ -43,8 +47,12 @@
 
 .pagination .prev a,
 .pagination .next a {
-    font-weight: 600;
-    text-transform: uppercase;
+    /*font-weight: 600;*/
+    /*text-transform: uppercase;*/
+}
+
+.pagination .last {
+    display: none;
 }
 
 .pagination > li > a,
@@ -63,6 +71,12 @@
     border: 1px solid #ccc;
     padding: 0 8px;
     margin-left: -1px;
+}
+
+@media (min-width: 768px) {
+    .results_pagination {
+        text-align: left;
+    }
 }
 
 @media (min-width: 1024px) {
