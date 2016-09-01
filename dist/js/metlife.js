@@ -18705,7 +18705,7 @@ function newsRoomYearChange() {
         }
     }else{
         for (var i in totalMonths) {
-            for(var j = 0; j<12; j++) {
+            for(var j = 0; j<monthsList.length; j++) {
                 var monthItem = $(monthsList[j]);
                 if(monthItem.data('month-value') === totalMonths[i]){
                     selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
@@ -18813,7 +18813,7 @@ function newsRoomTopicsChange(){
     }else{
 
         for (var i in totalMonths) {
-            for(var j = 0; j<12; j++) {
+            for(var j = 0; j<monthsList.length; j++) {
                 var monthItem = $(monthsList[j]);
                 if(monthItem.data('month-value') === totalMonths[i]){
                     selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
