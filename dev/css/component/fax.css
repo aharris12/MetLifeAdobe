@@ -288,12 +288,16 @@
     font-weight: normal;
     display: block;
 }
+.results_office_phone a, .results_office_fax a{
+    text-decoration: underline;
+    color: #2c77c5;
+}
 
 .fax-results__container .results_list_container .results_office_result .results_office_fax{
     padding: 0 0 0 10%;
     font-size: 12px;
     font-weight: normal;
-    display: none;
+
 }
 
 /**************************** End Results containcer css ****************************/
@@ -476,7 +480,11 @@
 }
 
 @media screen and (min-width: 768px) {
-
+    .results_office_phone a, .results_office_fax a{
+        text-decoration: none;
+        color: #333;
+        pointer-events: none;
+    }
     /***************************** search container css ***********************************/
 
     .find-an-x-search__container{
