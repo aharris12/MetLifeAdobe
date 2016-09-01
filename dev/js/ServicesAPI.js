@@ -2479,7 +2479,7 @@ console.log(count)
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+	/*	$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2488,14 +2488,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
@@ -2623,11 +2623,11 @@ console.log(count)
 
 				if (fclt_gender) {
 					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+						resultsListHTML += "<a href=\"tel:" +fclt_phone + "\" class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</a>";
 					resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
 				} else {
 					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+						resultsListHTML += "<a href=\"tel:" +fclt_phone + "\" class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</a>";
 				}
 
 				if (fclt_alt_phone)
