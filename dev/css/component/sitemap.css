@@ -69,6 +69,10 @@
     }
 }
 
+.sitemap--Links p {
+    margin-bottom: 0;
+}
+
 .sitemap--Links .sitemap-link--Container .sitemap-link--Title {
     color: #333;
     font-weight: 600;
