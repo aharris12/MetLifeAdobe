@@ -2962,13 +2962,38 @@ console.log(count)
 			}
 		});
 	},
+	/************LOCAL Global FAO Url Constructor***************/
+	//buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
+	//	var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+	//		lngSelector = '.longitude=' + lng.toString().replace('.', ','),
+	//		radiusSelector = '.radius=' + radius,
+	//		specialtySelector = '.specialty=' + specialty;
+	//		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+	//},
+	/************LOCAL Global FAO Url Constructor***************/
+
+	/************LIVE Global FAO Url Constructor***************/
 	buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
-		var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
-			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
-			radiusSelector = '.radius=' + radius,
-			specialtySelector = '.specialty=' + specialty;
-			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+		var latSelector = 'latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+			lngSelector = '&longitude=' + lng.toString().replace('.', ','),
+			radiusSelector = '&radius=' + radius,
+			specialtySelector = '&specialty=' + specialty;
+
+		if(specialty == "") {
+
+			//Modified url for integration
+			return baseUrl + latSelector + lngSelector + radius;
+
+
+		}else {
+
+			//return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+
+			//modified url for integration
+			return baseUrl + latSelector + lngSelector + radius + specialty;
+		}
 	},
+	/************LIVE Global FAO Url Constructor***************/
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
 			lngSelector = '&longitude=' + lng.toString(),
