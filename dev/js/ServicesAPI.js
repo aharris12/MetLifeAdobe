@@ -33,6 +33,7 @@ var startPointGeoCode;
 var startPointGMarker;
 var radiusInMiles;
 var specialty = "";
+var specialtyDisplay = "";
 var map;
 var blueMarker;
 var blackMarker;
@@ -2468,18 +2469,21 @@ console.log(count)
 		radiusInMiles = $('.find_an_office_radius').val();
 		if (faoMarket.toLowerCase() == "us") {
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
+			specialtyDisplay='Auto, Home, Renters, ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
 			if($('.different_services_dropdown').length > 0){
-			specialty = $('.different_services_dropdown').val();
+			specialty = encodeURIComponent($('.different_services_dropdown').val());
+				specialtyDisplay= $('.different_services_dropdown').val();
 			}else{
+				specialtyDisplay ="";
 				specialty = "";
 			}
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		$.ajax({
+		/*$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -2488,14 +2492,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});
+		});*/
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-		/*	var faoSearchResults = $.getJSON("fao.json", function(data) {
+			var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });*/
+		 });
 		/************LOCAL FAO SERVICE***************/
 
 	},
@@ -2585,12 +2589,16 @@ console.log(count)
 				resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
 				resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
 				if (fclt_education) {
-					resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
+					if(specialtyDisplay != ""){
+						resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + specialtyDisplay + "</p>";
+					}
 					resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
 					resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
 				} else {
-					resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
+					if(specialtyDisplay != "") {
+						resultsListHTML += "<p class=\"results_office_type\">" + specialtyDisplay + "</p>";
+					}
 					resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
 				}
