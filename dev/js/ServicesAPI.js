@@ -2981,7 +2981,7 @@ console.log(count)
 		//return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
 
 		//modified url for integration
-		return baseUrl + latSelector + lngSelector + radius + specialty;
+		return baseUrl + latSelector + lngSelector + radius + specialty + "&format=json";
 	},
 	/************Diego FAO Url Constructor***************/
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
