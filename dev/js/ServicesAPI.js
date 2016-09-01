@@ -1,6 +1,7 @@
 //Variables for all Services
 var bootPagNum = 0;
 var listCount = 10;
+var maxPagCount = 5;
 var count = 0;
 var resultsListHTML = "";
 var loadingMore = false;
@@ -1222,7 +1223,7 @@ var ServicesAPI = {
 			$('.results_pagination').bootpag({
 				total: Math.ceil(listLength / listCount),
 				page: 1,            // default page
-				maxVisible: listCount,
+				maxVisible: maxPagCount,
 				next: next_label,    // visible pagination
 				leaps: true,
 				prev: prev_label        // next/prev leaps through maxVisible
@@ -1247,7 +1248,7 @@ var ServicesAPI = {
 				// ... after content load -> change total to 10
 				$('.results_pagination').bootpag({
 					total: Math.ceil(count / listCount),
-					maxVisible: listCount
+					maxVisible: maxPagCount
 				});
 			});
 		}
@@ -1721,7 +1722,7 @@ var ServicesAPI = {
 			next: next_label,    // visible pagination
 			leaps: false,
 			prev: prev_label,        // next/prev leaps through maxVisible
-			maxVisible: 10,
+			maxVisible: maxPagCount,
 			wrapClass: 'pagination',
 			activeClass: 'active',
 			disabledClass: 'disabled',

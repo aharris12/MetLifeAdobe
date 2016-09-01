@@ -2,56 +2,69 @@
     display: inline-block;
     padding-left: 0;
     margin: 20px 0;
-    border-radius: 4px;
 }
-.pagination>li {
+
+.pagination > li {
     display: inline;
 }
-.pagination>li:first-child>a, 
-.pagination>li:first-child>span {
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
     margin-left: 0;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
 }
-.pagination>.disabled>span, 
-.pagination>.disabled>span:hover, 
-.pagination>.disabled>span:focus, 
-.pagination>.disabled>a, 
-.pagination>.disabled>a:hover, 
-.pagination>.disabled>a:focus {
-    color: #777;
-    background-color: #fff;
-    border-color: #ddd;
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus {
+    color: #ccc;
     cursor: not-allowed;
 }
-.pagination>.active>a,
-.pagination>.active>span,
-.pagination>.active>a:hover,
-.pagination>.active>span:hover,
-.pagination>.active>a:focus,
-.pagination>.active>span:focus {
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
     z-index: 2;
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
+    font-weight: 600;
+    background-color: #2377C5;
     cursor: default;
 }
-.pagination>li:last-child>a, 
-.pagination>li:last-child>span {
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
+
+.pagination .prev a,
+.pagination .next a {
+    font-weight: 600;
+    text-transform: uppercase;
 }
-.pagination>li>a, .pagination>li>span {
+
+.pagination > li > a,
+.pagination > li > span {
     position: relative;
+    height: 30px;
+    min-width: 30px;
     float: left;
-    padding: 6px 12px;
-    line-height: 1.42857143;
+    color: #2377C5;
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
     text-decoration: none;
-    color: #337ab7;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    padding: 0 8px;
     margin-left: -1px;
 }
+
 @media (min-width: 1024px) {
     .pagination {
         margin: 10px 0 30px 20px;
