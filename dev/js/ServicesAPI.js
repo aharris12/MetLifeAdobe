@@ -776,7 +776,6 @@ $('.get-directions-buttons .btn').on('click', function () {
 });
 
 $(".get-directions-form .get_directions_button").on('click', function () {
-	console.log($(".from-address").val().length + 1)
 	if ($(".from-address").val() == "" ||$(".from-address").val() == " " ) {
 		$(".from-address").addClass('error');
 	} else {
