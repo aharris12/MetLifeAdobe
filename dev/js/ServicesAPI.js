@@ -59,6 +59,8 @@ $(document).ready(function () {
 		$("#searchInPage").val("");
 	}
 
+	$('.findOfficeText').text($('.page-title__heading').text());
+
 });
 
 
