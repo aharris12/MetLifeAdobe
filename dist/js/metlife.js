@@ -18865,7 +18865,7 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     				if (count <= listCount) {
     					resultsListHTML += "<div class=\"list__item\">";
     					resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-    					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+    					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].articleTitle + "</a>";
     					resultsListHTML += "</div>";
     				}
     			}
