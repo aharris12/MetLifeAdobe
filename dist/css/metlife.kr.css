@@ -17451,7 +17451,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 }
 
 .find-an-x-search__container{
-    padding-top: 25px;
+    padding-top: 5px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -17475,7 +17475,9 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     display: block;
     position: relative;
     padding: 0px 20px;
-    margin-bottom: 10px;
+}
+.cta_search__container .find-an-x-input__container__margin{
+    margin-bottom:10px;
 }
 
 
@@ -17503,7 +17505,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 .cta_search__container .find-an-x-search--expand .directions_button{
     width: 100%;
     display:inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 10px;
 }
 
@@ -17601,10 +17603,11 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     padding-top: 6px;
     float: left;
     height: 34px;
+    font-size: 13px;
 }
 
 .fax-results__container .results_list_container .default_results_text{
-    padding: 20px 0px;
+    padding: 0px 0px 20px;
     font-size: 14px;
     line-height: 20px;
 }
@@ -18073,6 +18076,8 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 }
 
 @media screen and (min-width: 1024px) {
+
+
     /************************** search container css ********************************************/
     .find-an-x-search__container{
         max-width: 761px;
@@ -18128,6 +18133,12 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 
     .fax-results__container .results_list_container .results_office_result .dentist_right{
         width: 47%;
+    }
+    .find-an-x-search--expand .form-icon-wrapper{
+        display: inline-block;
+    }
+    .find-an-x-search--expand .form-icon-wrapper svg{
+        right:15px;
     }
 }
 .glossary {

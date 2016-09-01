@@ -709,6 +709,8 @@ $(".page-count").on('change', function () {
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
 	if (getViewport() == "mobile") {
 		$('.find-an-x-search--expand').show();
+		$(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
+
 	}
 });
 /*$("body").on("click tap", function (e) {
@@ -734,7 +736,14 @@ $(".search_location_image").on('click touchstart', function () {
 		ServicesAPI.showLocation();
 	}
 });
+$(".cta_search").on("focus", function(){
+	if(!$(".hidden-xs").is(":visible")){
+		$(".find-an-x-search--expand").removeClass("hidden-xs");
+	}else{
+		$(".find-an-x-search--expand").addClass("hidden-xs");
+	}
 
+});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
 	//handle empty val
 	if ($(".cta_search").val().length + 1 === 0) {
@@ -2958,11 +2967,7 @@ console.log(count)
 			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
-		if(specialty == ""){
-			return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
-		}else{
 			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
-		}
 	},
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
