@@ -120,6 +120,7 @@
 .campaign-header-ctc h5 {
     font-weight: 400;
     font-size: 14px;
+    color: #a4d8f1;
 }
 
 .campaign-header-ctc p {
@@ -194,6 +195,10 @@
     /*.campaign-header .campaign-header__section .campaign-header--logo img {*/
     /*height: 28px;*/
     /*}*/
+    .campaign-header-login {
+        padding: 6px 0 0 0;
+    }
+
     .campaign-header-login span {
         color: #2c77c5;
     }
@@ -235,6 +240,7 @@
     .campaign-header-ctc h5 {
         font-size: 13px;
         line-height: 20px;
+        color: #a4d8f1;
     }
 }
 

@@ -579,9 +579,12 @@ $('.login-trigger').click(function (e) {
         $(".global-header__middle").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
+            console.log('megamenu visible');
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
-            $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
+            $('.icon-close').toggle();
+            $(".js-megaMenuToggle").toggleClass("hidden");
+            $('.icon-menu').toggle();
         }
     }
 });
@@ -5898,6 +5901,7 @@ var startPointGeoCode;
 var startPointGMarker;
 var radiusInMiles;
 var specialty = "";
+var specialtyDisplay = "";
 var map;
 var blueMarker;
 var blackMarker;
@@ -6573,6 +6577,8 @@ $(".page-count").on('change', function () {
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
 	if (getViewport() == "mobile") {
 		$('.find-an-x-search--expand').show();
+		$(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
+
 	}
 });
 /*$("body").on("click tap", function (e) {
@@ -6598,7 +6604,14 @@ $(".search_location_image").on('click touchstart', function () {
 		ServicesAPI.showLocation();
 	}
 });
+$(".cta_search").on("focus", function(){
+	if(!$(".hidden-xs").is(":visible")){
+		$(".find-an-x-search--expand").removeClass("hidden-xs");
+	}else{
+		$(".find-an-x-search--expand").addClass("hidden-xs");
+	}
 
+});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
 	//handle empty val
 	if ($(".cta_search").val().length + 1 === 0) {
@@ -8333,18 +8346,21 @@ console.log(count)
 		radiusInMiles = $('.find_an_office_radius').val();
 		if (faoMarket.toLowerCase() == "us") {
 			specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
+			specialtyDisplay='Auto, Home, Renters, ETC...';
 			var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		} else {
 			if($('.different_services_dropdown').length > 0){
-			specialty = $('.different_services_dropdown').val();
+			specialty = encodeURIComponent($('.different_services_dropdown').val());
+				specialtyDisplay= $('.different_services_dropdown').val();
 			}else{
+				specialtyDisplay ="";
 				specialty = "";
 			}
 			var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
 		}
 		console.log(serviceUrl)
 		/************LIVE FAO SERVICE***************/
-		/*$.ajax({
+		$.ajax({
 			type: 'GET',
 			url: serviceUrl,
 			success: function (data) {
@@ -8353,14 +8369,14 @@ console.log(count)
 			error: function () {
 				ServicesAPI.handleServiceError()
 			}
-		});*/
+		});
 		/************LIVE FAO SERVICE***************/
 
 		/************LOCAL FAO SERVICE***************/
-			var faoSearchResults = $.getJSON("fao.json", function(data) {
+			/*var faoSearchResults = $.getJSON("fao.json", function(data) {
 		 ServicesAPI.generateOfficeItems(data);
 		 ServicesAPI.createPagination(count);
-		 });
+		 });*/
 		/************LOCAL FAO SERVICE***************/
 
 	},
@@ -8450,12 +8466,16 @@ console.log(count)
 				resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
 				resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
 				if (fclt_education) {
-					resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
+					if(specialtyDisplay != ""){
+						resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + specialtyDisplay + "</p>";
+					}
 					resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
 					resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
 				} else {
-					resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
+					if(specialtyDisplay != "") {
+						resultsListHTML += "<p class=\"results_office_type\">" + specialtyDisplay + "</p>";
+					}
 					resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
 				}
@@ -8488,17 +8508,17 @@ console.log(count)
 
 				if (fclt_gender) {
 					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+						resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": <a href='tel:" + fclt_phone.replace(/\./g, '-') + "'>" + fclt_phone.replace(/\./g, '-') + "</a></p>";
 					resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
 				} else {
 					if (fclt_phone)
-						resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+						resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": <a href='tel:" + fclt_phone.replace(/\./g, '-') + "'>" + fclt_phone.replace(/\./g, '-') + "</a></p>";
 				}
 
 				if (fclt_alt_phone)
-					resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": " + fclt_alt_phone.replace(/\./g, '-') + "</p>";
+					resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": <a href='tel:" + fclt_alt_phone.replace(/\./g, '-') + "'>" + fclt_alt_phone.replace(/\./g, '-') + "</a></p>";
 				if (fclt_fax)
-					resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
+					resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": <a href='tel:" + fclt_fax.replace(/\./g, '-') + "'>" + fclt_fax.replace(/\./g, '-') + "</a></p>";
 				if (fclt_email)
 					resultsListHTML += "<p class=\"results_office_phone\">" + label_email + ": " + fclt_email + "</p>";
 				if (fclt_secondary_email)
@@ -8815,11 +8835,7 @@ console.log(count)
 			lngSelector = '.longitude=' + lng.toString().replace('.', ','),
 			radiusSelector = '.radius=' + radius,
 			specialtySelector = '.specialty=' + specialty;
-		if(specialty == ""){
-			return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
-		}else{
 			return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
-		}
 	},
 	buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
 		var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
@@ -9533,6 +9549,8 @@ SFDC.form.forEach(function (element) {
                     var domain = parent.find(".generic-form").attr("data-domain");
                     console.log(domain)
                     parent.find('#Domain').attr("value", domain);
+                    var LeadAssociatedSourceDesc = document.URL.replace(/^(?:\/\/|[^\/]+)*\//, "");
+                    parent.find('#LeadAssociatedSourceDesc').attr("value", LeadAssociatedSourceDesc);
                    // parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
                     // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
@@ -11742,12 +11760,14 @@ function ss_clear(nofocus) {
      */
 }
 
-$('body').on('click touchstart tap', function (e) {
-    var suggestions = $(".suggestionsbox");
-    if (!suggestions.is(e.target)) {
-        ss_clear();
-    }
-});
+if ($(".suggestionsbox").length > 0) {
+    $('body').on('click touchstart tap', function (event) {
+        var target = $(event.target);
+        if ($("#search_suggest").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
+            clear_suggestions();
+        }
+    });
+}
 
 /**
  * Hides search suggestions.
@@ -12034,7 +12054,7 @@ function ss_handleMouseC() {
             var x = rows[ri].getElementsByTagName('td');
 
             $('#searchInPage,#Search').val($(x)[0].innerText);
-console.log($('#searchInPage,#Search').val())
+            console.log($('#searchInPage,#Search').val())
             var searchTerm = $(".search-trigger__search-box").val();
             console.log(searchTerm)
 
@@ -18624,64 +18644,164 @@ $("#list_month").change(function() {
    newsRoomServiceConstruction();
 });
 
+//Local function implementation...to be deleted
+//function newsRoomYearChange() {
+//    totalMonths.sort(function(a, b){return a - b});
+//    totalMonths = unique(totalMonths);
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    selectMonth.append('<option value="All" selected>All</option>');
+//    var thisMonth;
+//    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
+//        for(var i = 1; i <=12; i++){
+//            thisMonth = $(".month_"+ i).text();
+//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//        }
+//    }else{
+//
+//        for (var i in totalMonths) {
+//            switch(totalMonths[i]){
+//                case 1:
+//                    thisMonth = $(".month_1").text();
+//                    break;
+//                case 2:
+//                    thisMonth = $(".month_2").text();
+//                    break;
+//                case 3:
+//                    thisMonth = $(".month_3").text();
+//                    break;
+//                case 4:
+//                    thisMonth = $(".month_4").text();
+//                    break;
+//                case 5:
+//                    thisMonth = $(".month_5").text();
+//                    break;
+//                case 6:
+//                    thisMonth = $(".month_6").text();
+//                    break;
+//                case 7:
+//                    thisMonth = $(".month_7").text();
+//                    break;
+//                case 8:
+//                    thisMonth = $(".month_8").text();
+//                    break;
+//                case 9:
+//                    thisMonth = $(".month_9").text();
+//                    break;
+//                case 10:
+//                    thisMonth = $(".month_10").text();
+//                    break;
+//                case 11:
+//                    thisMonth = $(".month_11").text();
+//                    break;
+//                default:
+//                    thisMonth = $(".month_12").text();
+//                    break;
+//            }
+//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
+//        }
+//    }
+//}
+
+
+//AEM modified function from Diego
 function newsRoomYearChange() {
     totalMonths.sort(function(a, b){return a - b});
     totalMonths = unique(totalMonths);
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="All" selected>All</option>');
-    var thisMonth;
+    selectMonth.append('<option value="" selected>All</option>');
+    var thisMonth, thisMonthValue;
+    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
     if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
-        for(var i = 1; i <=12; i++){
-            thisMonth = $(".month_"+ i).text();
-            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+        for(var i =0; i < monthsList.length; i++) {
+            var monthItem = $(monthsList[i]);
+            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
     }else{
-
         for (var i in totalMonths) {
-            switch(totalMonths[i]){
-                case 1:
-                    thisMonth = $(".month_1").text();
+            for(var j = 0; j<monthsList.length; j++) {
+                var monthItem = $(monthsList[j]);
+                if(monthItem.data('month-value') === totalMonths[i]){
+                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
                     break;
-                case 2:
-                    thisMonth = $(".month_2").text();
-                    break;
-                case 3:
-                    thisMonth = $(".month_3").text();
-                    break;
-                case 4:
-                    thisMonth = $(".month_4").text();
-                    break;
-                case 5:
-                    thisMonth = $(".month_5").text();
-                    break;
-                case 6:
-                    thisMonth = $(".month_6").text();
-                    break;
-                case 7:
-                    thisMonth = $(".month_7").text();
-                    break;
-                case 8:
-                    thisMonth = $(".month_8").text();
-                    break;
-                case 9:
-                    thisMonth = $(".month_9").text();
-                    break;
-                case 10:
-                    thisMonth = $(".month_10").text();
-                    break;
-                case 11:
-                    thisMonth = $(".month_11").text();
-                    break;
-                default:
-                    thisMonth = $(".month_12").text();
-                    break;
+                }
             }
-            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
         }
     }
 }
 
+//Local function implementation...to be deleted
+//function newsRoomTopicsChange(){
+//    totalYears.sort(function(a, b){return a - b});
+//    totalMonths.sort(function(a, b){return a - b});
+//    totalYears = unique(totalYears);
+//    totalMonths = unique(totalMonths);
+//    var selectYear = $('#list_year');
+//    selectYear.empty();
+//    selectYear.append('<option value="All" selected>All</option>');
+//    var firstTime = true;
+//    for(var i = (totalYears.length - 1); i >= 0; i--) {
+//        selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
+//    }
+//    firstTime = false;
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    selectMonth.append('<option value="All" selected>All</option>');
+//    var thisMonth;
+//    if($("#list_topics").prop('selectedIndex') === 0){
+//        for(var i = 1; i <=12; i++){
+//            thisMonth = $(".month_"+ i).text();
+//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//        }
+//    }else{
+//
+//        for (var i in totalMonths) {
+//            switch(totalMonths[i]){
+//                case 1:
+//                    thisMonth = $(".month_1").text();
+//                    break;
+//                case 2:
+//                    thisMonth = $(".month_2").text();
+//                    break;
+//                case 3:
+//                    thisMonth = $(".month_3").text();
+//                    break;
+//                case 4:
+//                    thisMonth = $(".month_4").text();
+//                    break;
+//                case 5:
+//                    thisMonth = $(".month_5").text();
+//                    break;
+//                case 6:
+//                    thisMonth = $(".month_6").text();
+//                    break;
+//                case 7:
+//                    thisMonth = $(".month_7").text();
+//                    break;
+//                case 8:
+//                    thisMonth = $(".month_8").text();
+//                    break;
+//                case 9:
+//                    thisMonth = $(".month_9").text();
+//                    break;
+//                case 10:
+//                    thisMonth = $(".month_10").text();
+//                    break;
+//                case 11:
+//                    thisMonth = $(".month_11").text();
+//                    break;
+//                default:
+//                    thisMonth = $(".month_12").text();
+//                    break;
+//            }
+//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
+//        }
+//    }
+//
+//}
+
+//AEM modified function from Diego
 function newsRoomTopicsChange(){
     totalYears.sort(function(a, b){return a - b});
     totalMonths.sort(function(a, b){return a - b});
@@ -18689,7 +18809,7 @@ function newsRoomTopicsChange(){
     totalMonths = unique(totalMonths);
     var selectYear = $('#list_year');
     selectYear.empty();
-    selectYear.append('<option value="All" selected>All</option>');
+    selectYear.append('<option value="" selected>All</option>');
     var firstTime = true;
     for(var i = (totalYears.length - 1); i >= 0; i--) {
         selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
@@ -18697,55 +18817,24 @@ function newsRoomTopicsChange(){
     firstTime = false;
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="All" selected>All</option>');
-    var thisMonth;
+    selectMonth.append('<option value="" selected>All</option>');
+    var thisMonth, thisMonthValue;
+    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
     if($("#list_topics").prop('selectedIndex') === 0){
-        for(var i = 1; i <=12; i++){
-            thisMonth = $(".month_"+ i).text();
-            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+        for(var i =0; i < monthsList.length; i++) {
+            var monthItem = $(monthsList[i]);
+            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
     }else{
 
         for (var i in totalMonths) {
-            switch(totalMonths[i]){
-                case 1:
-                    thisMonth = $(".month_1").text();
+            for(var j = 0; j<monthsList.length; j++) {
+                var monthItem = $(monthsList[j]);
+                if(monthItem.data('month-value') === totalMonths[i]){
+                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
                     break;
-                case 2:
-                    thisMonth = $(".month_2").text();
-                    break;
-                case 3:
-                    thisMonth = $(".month_3").text();
-                    break;
-                case 4:
-                    thisMonth = $(".month_4").text();
-                    break;
-                case 5:
-                    thisMonth = $(".month_5").text();
-                    break;
-                case 6:
-                    thisMonth = $(".month_6").text();
-                    break;
-                case 7:
-                    thisMonth = $(".month_7").text();
-                    break;
-                case 8:
-                    thisMonth = $(".month_8").text();
-                    break;
-                case 9:
-                    thisMonth = $(".month_9").text();
-                    break;
-                case 10:
-                    thisMonth = $(".month_10").text();
-                    break;
-                case 11:
-                    thisMonth = $(".month_11").text();
-                    break;
-                default:
-                    thisMonth = $(".month_12").text();
-                    break;
+                }
             }
-            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
         }
     }
 
@@ -18755,129 +18844,136 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     resultsListHTML = "";
     var url = input;
     count = 0;
+    console.log(input);
     $(".results_content").remove();
     /************LIVE News Room SERVICE***************/
-    //$.ajax({
-    //	url: url,
-    //	contentType: "application/json; charset=utf-8",
-    //	async: true,
-    //	dataType: 'json',
-    //	type: 'GET',
-    //	success: function (data) {
-    //
-    //		if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-    //			listCount += 6;
-    //		}
-    //
-    //		if (firstTimeRunNewsRoom === true) {
-    //			firstTimeRunNewsRoom = false;
-    //		}
-    //		if (firstTimeRunNewsRoomChange === true) {
-    //			firstTimeRunNewsRoomChange = false;
-    //		}
-    //
-    //
-    //		newsRoomResults = data.news;
-    //		if (newsRoomResults.length != 0) {
-    //			if (!$(".list__item--no-results").hasClass("hidden")) {
-    //				$(".list__item--no-results").addClass("hidden");
-    //			}
-    //			resultsListHTML += "<div class='results_content'>";
-    //			for (var i = 0; i < newsRoomResults.length; i++) {
-    //				totalYears.push(newsRoomResults[i].year);
-    //				totalMonths.push(newsRoomResults[i].month);
-    //				count++;
-    //				if (count <= listCount) {
-    //					resultsListHTML += "<div class=\"list__item\">";
-    //					resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-    //					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-    //					resultsListHTML += "</div>";
-    //				}
-    //			}
-    //			resultsListHTML += "</div>";
-    //			ServicesAPI.createPagination(count);
-    //			$(resultsListHTML).insertAfter($(".lists"));
-    //		} else {
-    //			$(".list__item--no-results").removeClass('hidden');
-    //		}
-    //		if (listCount >= newsRoomResults.length) {
-    //			$(".divider--load-more__link").hide();
-    //		} else {
-    //			$(".divider--load-more__link").show();
-    //		}
-    //
-    //	},
-    //	error: function (e) {
-    //		console.log('error ', e);
-    //	},
-    //	timeout: 30000
-    //});
-    /************LIVE News Room SERVICE***************/
-
-    /************LOCAL News Room SERVICE***************/
-
     $.ajax({
-        url: url,
-        contentType: "application/json charset=utf-8",
-        async: true,
-        dataType: 'json',
-        type: 'GET',
-        success: function(data) {
-            console.log(data);
-            if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
-                listCount += 6;
-            }
-            if (firstTimeRunNewsRoom === true) {
-                firstTimeRunNewsRoom = false;
-            }
-            if (firstTimeRunNewsRoomChange === true) {
-                firstTimeRunNewsRoomChange = false;
-            }
+    	url: url,
+    	contentType: "application/json; charset=utf-8",
+    	async: true,
+    	dataType: 'json',
+    	type: 'GET',
+    	success: function (data) {
 
-            var results = parseNewsRoomResultsLocally(data, selectedMonth, newsTopicPicked);
+    		if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+    			listCount += 6;
+    		}
 
-            newsRoomResults = results.news;
-            if (newsRoomResults.length != 0) {
-                if (!$(".list__item--no-results").hasClass("hidden")) {
-                    $(".list__item--no-results").addClass("hidden");
-                }
-                resultsListHTML += "<div class='results_content'>";
-                for (var i = 0; i < newsRoomResults.length; i++) {
-                    totalYears.push(newsRoomResults[i].year);
-                    totalMonths.push(newsRoomResults[i].month);
-                    count++;
-                    if (count <= listCount) {
-                        resultsListHTML += "<div class=\"list__item\">";
-                        resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-                        resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
-                        resultsListHTML += "</div>";
-                    }
-                }
-                resultsListHTML += "</div>";
-                ServicesAPI.createPagination(count);
-                $(resultsListHTML).insertAfter($(".lists"));
-            } else {
-                $(".list__item--no-results").removeClass('hidden');
-            }
+    		if (firstTimeRunNewsRoom === true) {
+    			firstTimeRunNewsRoom = false;
+    		}
+    		if (firstTimeRunNewsRoomChange === true) {
+    			firstTimeRunNewsRoomChange = false;
+    		}
+
+
+    		newsRoomResults = data.news;
+    		if (newsRoomResults.length != 0) {
+    			if (!$(".list__item--no-results").hasClass("hidden")) {
+    				$(".list__item--no-results").addClass("hidden");
+    			}
+    			resultsListHTML += "<div class='results_content'>";
+    			for (var i = 0; i < newsRoomResults.length; i++) {
+    				totalYears.push(newsRoomResults[i].year);
+    				totalMonths.push(newsRoomResults[i].month);
+    				count++;
+    				if (count <= listCount) {
+    					resultsListHTML += "<div class=\"list__item\">";
+    					resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+    					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].articleTitle + "</a>";
+    					resultsListHTML += "</div>";
+    				}
+    			}
+    			resultsListHTML += "</div>";
+    			ServicesAPI.createPagination(count);
+    			$(resultsListHTML).insertAfter($(".lists"));
+    		} else {
+    			$(".list__item--no-results").removeClass('hidden');
+    		}
             if(listYearChange) {
                 newsRoomYearChange();
                 listYearChange = false;
             }
-            if (listCount >= newsRoomResults.length) {
-                $(".divider--load-more__link").hide();
-            } else {
-                $(".divider--load-more__link").show();
-            }
-        },
-        error: function (e) {
-            $('.list__item--no-results').removeClass("hidden");
-            console.log('error ', e);
-        },
-        timeout: 30000
+    		if (listCount >= newsRoomResults.length) {
+    			$(".divider--load-more__link").hide();
+    		} else {
+    			$(".divider--load-more__link").show();
+    		}
+
+    	},
+    	error: function (e) {
+      $('.list__item--no-results').removeClass("hidden");
+    		console.log('error ', e);
+    	},
+    	timeout: 30000
     });
+    /************LIVE News Room SERVICE***************/
+
+    /************LOCAL News Room SERVICE***************/
+
+    //$.ajax({
+    //    url: url,
+    //    contentType: "application/json charset=utf-8",
+    //    async: true,
+    //    dataType: 'json',
+    //    type: 'GET',
+    //    success: function(data) {
+    //        console.log(data);
+    //        if (firstTimeRunNewsRoom === false || firstTimeRunNewsRoomChange === false) {
+    //            listCount += 6;
+    //        }
+    //        if (firstTimeRunNewsRoom === true) {
+    //            firstTimeRunNewsRoom = false;
+    //        }
+    //        if (firstTimeRunNewsRoomChange === true) {
+    //            firstTimeRunNewsRoomChange = false;
+    //        }
+    //
+    //        var results = parseNewsRoomResultsLocally(data, selectedMonth, newsTopicPicked);
+    //
+    //        newsRoomResults = results.news;
+    //        if (newsRoomResults.length != 0) {
+    //            if (!$(".list__item--no-results").hasClass("hidden")) {
+    //                $(".list__item--no-results").addClass("hidden");
+    //            }
+    //            resultsListHTML += "<div class='results_content'>";
+    //            for (var i = 0; i < newsRoomResults.length; i++) {
+    //                totalYears.push(newsRoomResults[i].year);
+    //                totalMonths.push(newsRoomResults[i].month);
+    //                count++;
+    //                if (count <= listCount) {
+    //                    resultsListHTML += "<div class=\"list__item\">";
+    //                    resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
+    //                    resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+    //                    resultsListHTML += "</div>";
+    //                }
+    //            }
+    //            resultsListHTML += "</div>";
+    //            ServicesAPI.createPagination(count);
+    //            $(resultsListHTML).insertAfter($(".lists"));
+    //        } else {
+    //            $(".list__item--no-results").removeClass('hidden');
+    //        }
+    //        if(listYearChange) {
+    //            newsRoomYearChange();
+    //            listYearChange = false;
+    //        }
+    //        if (listCount >= newsRoomResults.length) {
+    //            $(".divider--load-more__link").hide();
+    //        } else {
+    //            $(".divider--load-more__link").show();
+    //        }
+    //    },
+    //    error: function (e) {
+    //        $('.list__item--no-results').removeClass("hidden");
+    //        console.log('error ', e);
+    //    },
+    //    timeout: 30000
+    //});
     /************LOCAL News Room SERVICE***************/
 }
 
+/************Live News Room Url Constructor***************/
 function newsRoomServiceConstruction() {
     var url = $(".lists").attr("data-news-url");
     var query = $(".lists").attr("data-news-query-parameter");
@@ -18887,19 +18983,40 @@ function newsRoomServiceConstruction() {
     newsTopic = $('#list_topics').val();
     newsConcatenator = $(".lists").attr("data-news-concatenator");
     //prod implementation of url
-    //url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
-    //local implementation of url
-    if(newsYear === "All" && newsMonth === "All") {
-        url += newsTopic + query;
-    } else if (newsYear === "All") {
-        url += newsTopic + query;
-        console.log(url);
-    } else if (newsYear !== "All") {
-        url += newsYear + query;
-    }
+    url += "year=" + newsYear + "&" + "month=" + newsMonth + "&" + "topic=" + newsTopic;
     newsRoomServiceCall(url, newsMonth, newsTopic);
 }
+/************Live News Room Url Constructor***************/
 
+/************LOCAL News Room Url Constructor***************/
+//function newsRoomServiceConstruction() {
+//    var url = $(".lists").attr("data-news-url");
+//    var query = $(".lists").attr("data-news-query-parameter");
+//    newsMonth = $("#list_month").val();
+//    console.log(newsMonth);
+//    newsYear = $("#list_year").val();
+//    newsTopic = $('#list_topics').val();
+//    newsConcatenator = $(".lists").attr("data-news-concatenator");
+//    //prod implementation of url
+//    //url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
+//    //local implementation of url
+//    console.log(newsTopic);
+//    if(newsYear === "All" && newsMonth === "All") {
+//        console.log(newsTopic);
+//        url += newsTopic + query;
+//        console.log(url);
+//    } else if (newsYear === "All") {
+//        url += newsTopic + query;
+//        console.log(url);
+//    } else if (newsYear !== "All") {
+//        url += newsYear + query;
+//    }
+//    console.log(url);
+//    newsRoomServiceCall(url, newsMonth, newsTopic);
+//}
+/************LOCAL News Room Url Constructor***************/
+
+//Only needed for local testing
 function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) {
     var numResults = results.news.length;
     console.log(results);
@@ -18943,6 +19060,7 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
     return filteredResults;
 }
 
+//Only needed for local testing
 function searchForTopic(nameKey, results) {
     var arrWithFilteredTopics = [];
     var count = 0;
@@ -18959,6 +19077,7 @@ function searchForTopic(nameKey, results) {
     return filteredObj;
 }
 
+//document.ready for mapping the months that are contained within the dropdown months
 $(function() {
     integerToMonthMapping = mapIntegerToMonth();
     monthToIntegerMapping = mapMonthToInteger(integerToMonthMapping);
