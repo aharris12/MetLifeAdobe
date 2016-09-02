@@ -11,6 +11,11 @@ $(window).scroll(function () {
 
     } else {
         $(".campaign-header").removeClass("campaign-header-on-scroll");
+    }
 
+    if(scrollPos > 5) {
+        $('.global-header__logo').addClass('global-header__logo--minimized');
+    } else {
+        $('.global-header__logo').removeClass('global-header__logo--minimized')
     }
 });

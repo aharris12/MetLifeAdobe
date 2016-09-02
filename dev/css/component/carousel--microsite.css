@@ -20,6 +20,7 @@
 }
 
 .carousel--microsite .carousel-caption {
+    display: block;
     bottom: 0;
     padding: 15px 0;
 }

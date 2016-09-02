@@ -8,9 +8,9 @@ var logTest = '';
  *
  */
 $('.form-user-grp > input, .form-user-grp > textarea, .triple-input > input').on('focus', function () {
-  if($(this).hasClass("error")){
-      $(this).removeClass("error")
-  }
+    if($(this).hasClass("error")){
+        $(this).removeClass("error")
+    }
 });
 $('.form-user-grp > select').on('change', function () {
     if($(this).hasClass("error")){
@@ -43,8 +43,8 @@ var JsonOccupations = {};
 
 SFDC.form.forEach(function (element) {
     var parent = $("." + element.type);
-   /* $(".contact-sidebar.type");
-    $('[data-fid="contact-sidebar"]');*/
+    /* $(".contact-sidebar.type");
+     $('[data-fid="contact-sidebar"]');*/
     var submitText = parent.find('.form-submit').text();
     var processingText = parent.find('.form-submit').attr("data-proctext");
 
@@ -65,9 +65,15 @@ SFDC.form.forEach(function (element) {
 
                 var o = this;
                 $(document).ready(function () {
-                    var domain = document.domain;
-                    parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
-
+                    //var domain = document.domain;
+                    console.log(parent.find(".generic-form"))
+                    var domain = parent.find(".generic-form").attr("data-domain");
+                    console.log(domain)
+                    parent.find('#Domain').attr("value", domain);
+                    var LeadAssociatedSourceDesc = document.URL.replace(/^(?:\/\/|[^\/]+)*\//, "");
+                    parent.find('#LeadAssociatedSourceDesc').attr("value", LeadAssociatedSourceDesc);
+                   // parent.find('#Domain').attr("value", window.location.protocol + "//" + domain);
+                    // parent.find('#Domain').attr("value", "https://redesign-ar.metlifestage.com");
                     // Bind initial form events...
                     parent.find('.generic-form').bind('submit', function (e) {
                             e.preventDefault();
@@ -128,9 +134,9 @@ SFDC.form.forEach(function (element) {
                     }
 
                     // set height of forms
-                   /* if ($(".contact-rep-with-image").length > 0) {
-                        contactRepWithImageSize();
-                    }*/
+                    /* if ($(".contact-rep-with-image").length > 0) {
+                     contactRepWithImageSize();
+                     }*/
 
                     // Add required class
                     if (field.validator != "") {
@@ -468,6 +474,8 @@ SFDC.form.forEach(function (element) {
             submitForm: function () {
                 //console.log("submit form");
 
+
+
                 // Post the form, handling any error messages that come back, etc.
 
                 var switchformID = $('#switch_form_fieldID').val();
@@ -737,11 +745,12 @@ SFDC.form.forEach(function (element) {
                     var jsonData = {};
                     var formData;
 
-                    var url = $(".generic-form").attr("data-url");
+                    var url = formElement.attr("data-url");
+                    console.log(url)
                     var data;
                     if (formSubmissiontype == "form_direct_sfdc_type") {
 
-                        url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+                        //url = 'https://login.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
                         data = formElement.serialize();
                     } else {
 
@@ -754,8 +763,18 @@ SFDC.form.forEach(function (element) {
                         } else {
                             jsonData["MetlifeJson"] = "Crownpeak Form";
                         }
+
+                        // 6 fields from the x form need to be concatenated
+                        var concFields = ["ref1Name", "ref1Email", "ref1Phone",
+                                          "ref2Name", "ref2Email", "ref2Phone"];
+                        var concatenated = [];
+
                         $.each(formData, function () {
-                            if (jsonData[this.name]) {
+                            // Check if values should be concatenated
+                            if($.inArray(this.name, concFields) > -1) {
+                                concatenated.push(this.value);
+                            }
+                            else if (jsonData[this.name]) {
                                 if (!jsonData[this.name].push) {
                                     jsonData[this.name] = [jsonData[this.name]];
                                 }
@@ -774,11 +793,16 @@ SFDC.form.forEach(function (element) {
                                 jsonData[this.name] = selected;
                             }
                         });
-                        url = 'https://ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
 
+                        // If the concatenated array is not empty, append it to the data:
+                        if(concatenated.length > 0) {
+                            jsonData["LeadDesc"] = concatenated.join();
+                        }
+
+                        // url = 'https://qa.ese.metlife.com/MLGlobalLead/leadservice/ProcessGLUlead';
                         data = JSON.stringify(jsonData);
+
                     }
-console.log(url)
                     $.ajax({
                         url: url,
                         dataType: 'json',
@@ -786,6 +810,11 @@ console.log(url)
                         async: true,
                         type: 'POST',
                         contentType: "application/json; charset=utf-8",
+                        /* headers: {
+                         'Met_User':'gluuser2',
+                         'Met_Pwd':'HRr2m0+R28ezfIdDvuBLdg',
+                         'Met_PTNR_NM':'MetLife CP Redesign Sites'
+                         },*/
                         success: function (data, status, xhr) {
                             switch (data.result.toLowerCase()) {
                                 case "success":
@@ -810,7 +839,7 @@ console.log(url)
                         }
                     });
 
-            } else {
+                } else {
                     parent.find('.form-submit').removeClass("disabled").html(submitText);
                 }
             },
@@ -841,9 +870,9 @@ console.log(url)
                     for (var key in opt) {
 
                         // button grouping start
-                       /* if (i % mod == 0) {
-                            h += "<div>";
-                        }*/
+                        /* if (i % mod == 0) {
+                         h += "<div>";
+                         }*/
 
                         // button
                         h += '<label>';
@@ -861,8 +890,8 @@ console.log(url)
 
                         // button grouping end
                         /*if ((i + 1) % mod == 0) {
-                            h += "</div>";
-                        }*/
+                         h += "</div>";
+                         }*/
                     }
                     i++;
                 }
@@ -881,7 +910,7 @@ console.log(url)
                     }
                 }
 
-               //parent.find('#' + id).append(h);
+                //parent.find('#' + id).append(h);
             },
 
             /***
@@ -1100,7 +1129,7 @@ if ($(".generic-form").length > 0) {
 /***** Form Functions ***********************************************/
 // Resets contact forms
 function formReset(parent, fields) {
- /*   parent.addClass('form-off');
+    /*   parent.addClass('form-off');
      parent.children().removeAttr("style");
      parent.find("input, select, textarea").removeClass('error');
      parent.find(".errorSpan").hide();
@@ -1137,6 +1166,7 @@ function formMessage(parent, status) {
     } else {
         message = parent.find(".contactSideSubmitError");
     }
+    console.log(parent);
     message.siblings(":visible").fadeOut('slow', function () {
         message.css("display", "table-cell");
         var h = $('.contact-container--form-card').outerHeight();
@@ -1145,10 +1175,25 @@ function formMessage(parent, status) {
             if (parent.hasClass("contactSliderOuterCon")) {
                 $('.contactSideForm').fadeOut(800, function () {
                     parent.find(".contact-close").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             } else if (parent.hasClass("contactAdvisor")) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("twoColumnContactForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("updateInfoForm")){
+                message.fadeOut(800, function () {
+                    ServicesAPI.resetForm(thisForm);
+                });
+            } else if (parent.hasClass("contactAdvisorSingle")) {
+                message.fadeOut(800, function () {
+                    parent.find(".form-minimize").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             }
         }, 5000)

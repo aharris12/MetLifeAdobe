@@ -910,9 +910,14 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur(function () {
-    ss_clear();
-});
+if ($(".suggestionsbox").length > 0) {
+    $('body').on('click touchstart tap', function (event) {
+        var target = $(event.target);
+        if ($("#search_suggest").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
+            clear_suggestions();
+        }
+    });
+}
 
 /**
  * Hides search suggestions.
@@ -1199,7 +1204,7 @@ function ss_handleMouseC() {
             var x = rows[ri].getElementsByTagName('td');
 
             $('#searchInPage,#Search').val($(x)[0].innerText);
-console.log($('#searchInPage,#Search').val())
+            console.log($('#searchInPage,#Search').val())
             var searchTerm = $(".search-trigger__search-box").val();
             console.log(searchTerm)
 
