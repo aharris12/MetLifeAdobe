@@ -5430,19 +5430,19 @@ a:visited {
 }
 
 .carousel-caption {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    width: 100%;
-    max-height: 250px;
-    display: flex !important;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: flex !important;
+    display: flex;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
@@ -8743,6 +8743,7 @@ body{
 }
 
 .carousel--microsite .carousel-caption {
+    display: block;
     bottom: 0;
     padding: 15px 0;
 }
