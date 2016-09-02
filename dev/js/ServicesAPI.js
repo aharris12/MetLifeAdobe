@@ -3525,14 +3525,13 @@ var ServicesAPI = {
         }, 5000);
     },
     resetForm: function (fid) {
-
         switch (fid) {
             case "contactSidebar":
                 //in a timeout to avoid visual conflict with animation
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
-                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType').fadeOut(2000);
-                    $('.contactSideForm').toggle();
+                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType, .contactSideSubmitError').fadeOut(2000);
+                    $('.contactSideForm').show();
                     $('.contact-container--global').css("right", "-640px");
                 }, 1000);
                 break;
