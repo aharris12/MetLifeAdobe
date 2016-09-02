@@ -956,7 +956,10 @@ $(".insurance-type").on("change", function () {
     quoteProduct = $(this).find(':selected').attr('data-product');
     $(".js-hideButton").hide();
 });
-
+String.prototype.replaceAll = function(str1, str2, ignore)
+{
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+}
 String.prototype.toTitleCase = function () {
     var i, j, str, lowers, uppers;
     str = this.replace(/([^\W_]+[^\s-]*) */g, function (txt) {
@@ -1899,8 +1902,11 @@ var ServicesAPI = {
                     $(".form-item__display").hide();
                     $(".search-results-container__correction-text").removeClass("hidden");
                     var correctSpelling = data.GSP.Spelling.Suggestion[0].qe;
+                    var newchar = ' '
+                    correctSpelling = correctSpelling.split('+OR+').join(newchar);
+                    console.log(correctSpelling)
                     $(".no-results").addClass('hidden');
-                    var correctionHtml = '<a href="#">' + correctSpelling + '</a>';
+                    var correctionHtml = '<a href="#">' + correctSpelling+ '</a>';
                     $(".js-searchSuggestion").append(correctionHtml);
                 } else if (data.GSP.hasOwnProperty("RES")) {
                     $(".form-item__display").show();
