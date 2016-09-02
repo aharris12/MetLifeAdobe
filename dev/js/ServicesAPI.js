@@ -1200,8 +1200,6 @@ var ServicesAPI = {
         var listLength = result;
         var st_cnt = 0;
         var end_cnt = 0;
-        var next_label = $(".next_label").text();
-        var prev_label = $(".prev_label").text();
         // Setting listLength to 0 manually when only undefined are returned
         if (typeof result != 'undefined') {
             if (result.count == 0)
@@ -1680,8 +1678,6 @@ var ServicesAPI = {
     },
     createPaginationSearch: function () {
         $('.results_content').children().removeClass('.hidden');
-        var next_label = $(".next_label").text();
-        var prev_label = $(".prev_label").text();
         // Setting totalSearchResults to 0 manually when only undefined are returned
         if (typeof totalSearchResults != 'undefined') {
             if (totalSearchResults.count == 0)
