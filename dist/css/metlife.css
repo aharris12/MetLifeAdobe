@@ -10187,11 +10187,20 @@ body{
 }
 
 .contact-us__header--large {
-    font-size: 32px;
+    font-size: 18px;
+    line-height: 22px;
     margin-bottom: 10px;
     font-weight: 400;
 }
-
+.contact-us__sub-header{
+    color: #999;
+    font-size: 13px;
+    line-height: 20px;
+}
+.contact-us__paragraph-header, .contact-us__single-result__paragraph{
+    font-size: 14px;
+    line-height: 20px;
+}
 .contact-us__contact-form__sub-header {
     font-weight: 400;
 }
@@ -10381,6 +10390,10 @@ body{
         font-size: 20px;
         line-height: 24px;
     }
+    .contact-us__header--large {
+        font-size: 24px;
+        line-height: 28px;
+    }
 
     .contact-us__address-block > div {
         width: 65%;
@@ -10484,7 +10497,10 @@ body{
 }
 
 @media screen and (min-width: 1024px) {
-
+    .contact-us__header--large {
+        font-size: 28px;
+        line-height: 32px;
+    }
     .contact-us__results__wrapper > div {
         width: 80%;
         margin-left: auto;
