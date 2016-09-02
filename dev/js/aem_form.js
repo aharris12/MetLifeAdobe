@@ -1175,10 +1175,12 @@ function formMessage(parent, status) {
             if (parent.hasClass("contactSliderOuterCon")) {
                 $('.contactSideForm').fadeOut(800, function () {
                     parent.find(".contact-close").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             } else if (parent.hasClass("contactAdvisor")) {
                 message.fadeOut(800, function () {
                     parent.find(".form-minimize").trigger("click");
+                    ServicesAPI.resetForm(thisForm);
                 });
             } else if (parent.hasClass("twoColumnContactForm")){
                 message.fadeOut(800, function () {
