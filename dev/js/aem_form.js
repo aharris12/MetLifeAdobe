@@ -154,7 +154,7 @@ SFDC.form.forEach(function (element) {
                         if (field.type == "dob") {
                             fieldId = field.id + 'd';
                         }
-                        if (field.type == "phNo") {
+                        if (field.type == "tel") {
                             fieldId = field.id + "ac";
                         }
                         if (field.type == "date") {
@@ -536,34 +536,8 @@ SFDC.form.forEach(function (element) {
                 while (i < len) {
                     var f = fields[i];
                     if (parent.find('#' + f.id).is(":visible")) {
-                        var Phregex = new RegExp(/^\d{3}\-\d+$/);
-                        //var Phregex = new RegExp(/^\d{3}\-\d{3}\-\d{4}$/);
-                        if (f.type == "phNo") {
-                            var number = "";
-                            var areaCode = parent.find('#' + f.id + 'ac').val();
-                            var numericVal = parent.find('#' + f.id + 'num').val();
-
-                            number = areaCode + '-' + numericVal;
-                            parent.find('#' + f.id).val(number);
-                            parent.find('#' + f.id + "Input").val(number);
-                        }
-                        if (f.type == "dob" || f.type == "date") {
-                            var dateInput = "";
-                            var date = parent.find('#' + f.id + 'd').val();
-                            var month = parent.find('#' + f.id + 'm').val();
-                            var year = parent.find('#' + f.id + 'y').val();
-
-                            date = ('0' + date).slice(-2);
-                            month = ('0' + month).slice(-2);
-
-                            if (f.type == "dob" && formSubmissiontype == "form_direct_sfdc_type") {
-                                dateInput = date + '/' + month + '/' + year;
-                            } else {
-                                dateInput = year + '-' + month + '-' + date;
-                            }
-                            parent.find('#' + f.id).val(dateInput);
-                            parent.find('#' + f.id + "Input").val(dateInput);
-                        }
+                        var Phregex = new RegExp(/^\d{1,12}$/);
+                        var MPhregex = new RegExp(/^\d{1,14}$/);
                         var fieldValue = parent.find('#' + f.id).val();
                         switch (f.validator) {
                             case false:
@@ -613,27 +587,40 @@ SFDC.form.forEach(function (element) {
                                         this.hideError(f.id);
                                     }
                                 }
-                                else if (f.type == "phNo") {
-                                    if (Phregex.test(fieldValue)) {
-                                        this.hideError(f.id);
-                                    } else {
-                                        if (formSubmissiontype != "form_direct_sfdc_type") {
-                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", "");
-                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", "");
+                                else if (f.type == "tel") {
+                                    if(f.id=="PhNum"){
+                                        if (Phregex.test(fieldValue)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            this.showError(f.id, f.type);
                                         }
-                                        this.showError(f.id, f.type);
                                     }
+                                    if(f.id=="MobileNumber"){
+                                        if (MPhregex.test(fieldValue)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            this.showError(f.id, f.type);
+                                        }
+                                    }
+
                                 }
                                 break;
                             case "numeric":
                                 if (fieldValue != "") {
-                                    if (f.type == "phNo") {
-                                        if (Phregex.test(fieldValue)) {
-                                            this.hideError(f.id);
-                                        } else {
-                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", "");
-                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", "");
-                                            this.showError(f.id, f.type);
+                                    if (f.type == "tel") {
+                                        if(f.id=="PhNum"){
+                                            if (Phregex.test(fieldValue)) {
+                                                this.hideError(f.id);
+                                            } else {
+                                                this.showError(f.id, f.type);
+                                            }
+                                        }
+                                        if(f.id=="MobileNumber"){
+                                            if (MPhregex.test(fieldValue)) {
+                                                this.hideError(f.id);
+                                            } else {
+                                                this.showError(f.id, f.type);
+                                            }
                                         }
                                     }
                                     else if (f.type == "dob" || f.type == "date") {
@@ -658,27 +645,20 @@ SFDC.form.forEach(function (element) {
                                 }
                                 break;
                             case "numeric_Req":
-                                if (f.type == "phNo") {
-                                    if (Phregex.test(fieldValue)) {
-                                        this.hideError(f.id);
-                                    } else {
-                                        if (formSubmissiontype != "form_direct_sfdc_type") {
-                                            parent.find('#' + f.id + 'ac').find('input[type="text"]').attr("val", " ");
-                                            parent.find('#' + f.id + 'num').find('input[type="text"]').attr("val", " ");
+                                if (f.type == "tel") {
+                                    if(f.id=="PhNum"){
+                                        if (Phregex.test(fieldValue)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            this.showError(f.id, f.type);
                                         }
-                                        this.showError(f.id, f.type);
                                     }
-                                }
-                                else if (f.type == "dob" || f.type == "date") {
-                                    if (!this.validateDate(fieldValue, f.type)) {
-                                        if (f.type == "dob" && formSubmissiontype != "form_direct_sfdc_type") {
-                                            parent.find('#' + f.id + 'd').find('input[type="text"]').attr("val", "");
-                                            parent.find('#' + f.id + 'm').find('input[type="text"]').attr("val", "");
-                                            parent.find('#' + f.id + 'y').find('input[type="text"]').attr("val", "");
+                                    if(f.id=="MobileNumber"){
+                                        if (MPhregex.test(fieldValue)) {
+                                            this.hideError(f.id);
+                                        } else {
+                                            this.showError(f.id, f.type);
                                         }
-                                        this.showError(f.id, f.type);
-                                    } else {
-                                        this.hideError(f.id);
                                     }
                                 }
                                 else {
