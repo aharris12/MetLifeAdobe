@@ -14,7 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     
-    <link rel="stylesheet" href="css/metlife.min.css">
+    <link rel="stylesheet" href="css/metlife.min.css"/>
 
 </head>
 <body>
@@ -819,8 +819,11 @@
                         <label for="list_year">Year:</label>
                     </div>
                     <div class="form-item__field form-icon-wrapper form-item__field--xs">
+                        <svg class="icon">
+                            <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                        </svg>
                         <select id="list_year">
-                            <option value="" selected>All</option>
+                            <option value="All" selected>All</option>
                             <option value="2015">2015</option>
                             <option value="2014">2014</option>
                             <option value="2013">2013</option>
@@ -837,8 +840,11 @@
                         <label for="list_month">Month:</label>
                     </div>
                     <div class="form-item__field form-icon-wrapper form-item__field--md">
+                        <svg class="icon">
+                            <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                        </svg>
                         <select id="list_month">
-                            <option value="" selected>All</option>
+                            <option value="All" selected>All</option>
                             <option value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
                             <option value="Mar">Mar</option>
@@ -852,19 +858,33 @@
                             <option value="Nov">Nov</option>
                             <option value="Dec">Dec</option>
                         </select>
-                        <div class="hidden">
-                            <div class="month_1">Jan</div>
-                            <div class="month_2">Feb</div>
-                            <div class="month_3">Mar</div>
-                            <div class="month_4">Apr</div>
-                            <div class="month_5">May</div>
-                            <div class="month_6">Jun</div>
-                            <div class="month_7">Jul</div>
-                            <div class="month_8">Aug</div>
-                            <div class="month_9">Sep</div>
-                            <div class="month_10">Oct</div>
-                            <div class="month_11">Nov</div>
-                            <div class="month_12">Dec</div>
+                        <!--<div class="hidden">-->
+                            <!--<div class="month_1">Jan</div>-->
+                            <!--<div class="month_2">Feb</div>-->
+                            <!--<div class="month_3">Mar</div>-->
+                            <!--<div class="month_4">Apr</div>-->
+                            <!--<div class="month_5">May</div>-->
+                            <!--<div class="month_6">Jun</div>-->
+                            <!--<div class="month_7">Jul</div>-->
+                            <!--<div class="month_8">Aug</div>-->
+                            <!--<div class="month_9">Sep</div>-->
+                            <!--<div class="month_10">Oct</div>-->
+                            <!--<div class="month_11">Nov</div>-->
+                            <!--<div class="month_12">Dec</div>-->
+                        <!--</div>-->
+                        <div class="hidden pressroom-months-list">
+                            <div class="month-item" data-month-value="january" data-month-text="January"></div>
+                            <div class="month-item" data-month-value="february" data-month-text="February"></div>
+                            <div class="month-item" data-month-value="march" data-month-text="March"></div>
+                            <div class="month-item" data-month-value="april" data-month-text="April"></div>
+                            <div class="month-item" data-month-value="may" data-month-text="May"></div>
+                            <div class="month-item" data-month-value="june" data-month-text="June"></div>
+                            <div class="month-item" data-month-value="july" data-month-text="July"></div>
+                            <div class="month-item" data-month-value="august" data-month-text="August"></div>
+                            <div class="month-item" data-month-value="september" data-month-text="September"></div>
+                            <div class="month-item" data-month-value="october" data-month-text="October"></div>
+                            <div class="month-item" data-month-value="november" data-month-text="November"></div>
+                            <div class="month-item" data-month-value="december" data-month-text="December"></div>
                         </div>
                     </div>
                 </div>
@@ -875,9 +895,12 @@
                         <label for="list_topics"></label>
                     </div>
                     <div class="form-item__field form-icon-wrapper form-item__field--md form-icon">
+                        <svg class="icon">
+                            <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                        </svg>
                         <select id="list_topics">
                             <!--<option value="All" selected>All Topics</option>-->
-                            <option value="" selected>All Topics</option>
+                            <option value="master-json-object" selected>All Topics</option>
                             <option value="Corporate">Corporate</option>
                             <option value="Financial">Financial</option>
                             <option value="Investments">Investments</option>
@@ -897,9 +920,10 @@
 <!--DE2840 fix 5/31/16-->
 <div class="container">
     <div class="row wrapper list margin-t">
-        <div class="lists" data-news-url="http://localhost:4502/content/metlife/ga/jcr:content/content-parsys/news_room_archive.archive." data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">
-        <!--<div class="lists" data-news-url="http://localhost/MetLifeAdobe/dev/" data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">-->
+        <!--<div class="lists" data-news-url="http://localhost:4502/content/metlife/ga/jcr:content/content-parsys/news_room_archive.archive." data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">-->
+        <div class="lists" data-news-url="http://localhost/MetLifeAdobe/dev/" data-news-query-parameter=".json" data-news-concatenator="." data-form-library-msg="all">
             <h2 class="list__title">News Releases</h2>
+
         </div>
 
         <div class="results_content">
