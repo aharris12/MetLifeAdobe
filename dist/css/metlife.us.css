@@ -5505,7 +5505,7 @@ a:visited {
     }
 
     .carousel-control {
-        display: inline-flex !important;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         z-index: 10;
