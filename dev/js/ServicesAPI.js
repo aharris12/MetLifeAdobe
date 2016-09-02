@@ -1226,8 +1226,8 @@ var ServicesAPI = {
                 leaps: false,
                 firstLastUse: true,
                 first: "&#10094;&#10094;",
-                last: "&#10095;&#10095;",
                 prev: "&#10094",
+                last: "&#10095;&#10095;",
                 next: "&#10095;"
             }).on("page", function (event, num) {
                 $(".results_content").children().addClass('hidden');
@@ -1725,16 +1725,9 @@ var ServicesAPI = {
             leaps: false,
             firstLastUse: true,
             first: "&#10094;&#10094;",
-            last: "&#10095;&#10095;",
             prev: "&#10094",
-            next: "&#10095;",
-            wrapClass: 'pagination',
-            activeClass: 'active',
-            disabledClass: 'disabled',
-            nextClass: 'next',
-            prevClass: 'prev',
-            lastClass: 'last',
-            firstClass: 'first'
+            last: "&#10095;&#10095;",
+            next: "&#10095;"
         }).on("page", function (event, num) {
             searchPaginationPrev = num;
             console.log(num);
@@ -1845,41 +1838,41 @@ var ServicesAPI = {
         $(".results_content").remove();
         $(".js-searchSuggestion").children().remove();
         resultsListHTML = "";
-        /************LOCAL Site Search SERVICE***************/
-        /*var siteSearchResults = $.getJSON("search-gsa.json", function(data) {
-         siteSearchResults = data.GSP.RES.R;
-         var sitSearchResultsUrl = '.DU';
-         var sitSearchResultsTitle = '.T';
-         var sitSearchResultsContent = '.S';
-         console.log(siteSearchResults)
-         if (siteSearchResults.length != 0) {
 
-         $('.form-item__display').removeClass('hidden');
-         // $(".page-count").removeClass('hidden');
-         $(".no-results").addClass('hidden');
-         //results_content is the default component for listing out general results
-         resultsListHTML += "<div class=\"results_content\">";
-         for (var i = 0; i < siteSearchResults.length; i++) {
-         count++;
-         sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-         sitSearchResultsTitle =  data.GSP.RES.R[i].T;
-         sitSearchResultsContent = data.GSP.RES.R[i].S;
-         resultsListHTML += "<div class=\"list__item--no-border\">";
-         resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-         resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
-         resultsListHTML += "</div>";
-         }
-         resultsListHTML += "</div>";
-         } else {
-         $('.form-item__display').removeClass('hidden');
-         $(".page-count").addClass('hidden');
-         $(".no-results").removeClass('hidden');
-         }
-         $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-         ServicesAPI.createPagination(count);
-         });*/
         /************LOCAL Site Search SERVICE***************/
-
+        //var siteSearchResults = $.getJSON("search-gsa.json", function (data) {
+        //    siteSearchResults = data.GSP.RES.R;
+        //    var sitSearchResultsUrl = '.DU';
+        //    var sitSearchResultsTitle = '.T';
+        //    var sitSearchResultsContent = '.S';
+        //    console.log(siteSearchResults)
+        //    if (siteSearchResults.length != 0) {
+        //
+        //        $('.form-item__display').removeClass('hidden');
+        //        // $(".page-count").removeClass('hidden');
+        //        $(".no-results").addClass('hidden');
+        //        //results_content is the default component for listing out general results
+        //        resultsListHTML += "<div class=\"results_content\">";
+        //        for (var i = 0; i < siteSearchResults.length; i++) {
+        //            count++;
+        //            sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+        //            sitSearchResultsTitle = data.GSP.RES.R[i].T;
+        //            sitSearchResultsContent = data.GSP.RES.R[i].S;
+        //            resultsListHTML += "<div class=\"list__item--no-border\">";
+        //            resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+        //            resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+        //            resultsListHTML += "</div>";
+        //        }
+        //        resultsListHTML += "</div>";
+        //    } else {
+        //        $('.form-item__display').removeClass('hidden');
+        //        $(".page-count").addClass('hidden');
+        //        $(".no-results").removeClass('hidden');
+        //    }
+        //    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+        //    ServicesAPI.createPagination(count);
+        //});
+        /************LOCAL Site Search SERVICE***************/
 
         /************LIVE Site Search SERVICE***************/
         $.ajax({
@@ -1984,36 +1977,36 @@ var ServicesAPI = {
         $(".results_content").remove();
         count = 0;
         var url = input + "?" + searchType;
-        /*********LOCAL Blog SERVICE***************/
-        /*var blogSearchResults = $.getJSON("blog.json", function(data) {
-         blogSearchResults = data.response.blogs;
-         resultsListHTML += "<div class=\"results_content\">";
-         if (blogSearchResults.length != 0) {
-         for (var i = 0; i < blogSearchResults.length; i++) {
-         count++
-         resultsListHTML += "<div class=\"blog-list__article \">";
-         resultsListHTML += "<div class=\"blog-list__img \">";
-         resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource +"\" alt=\"" + blogSearchResults[i].alttext +"\" class=\"enlarge\">";
-         resultsListHTML += "</div>";
-         resultsListHTML += "<div class=\"blog-list__text\">";
-         resultsListHTML += "<h5>" + blogSearchResults[i].title +"</h5>";
-         resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date +"</span>";
-         resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags +"</span>";
-         resultsListHTML+= "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
-         if(blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " "){
-         resultsListHTML += "<a href=\"" + blogSearchResults[i].link +"\">" + blogSearchResults[i].linktext +"</a>"
-         }
-         resultsListHTML += "</span>";
-         resultsListHTML += "</div>";
-         resultsListHTML += "<div class=\"clearfix\"></div>";
-         resultsListHTML += "</div>";
-         }
-         }
-         resultsListHTML += "</div>";
-         $(resultsListHTML).insertBefore($(".results_pagination"));
-         ServicesAPI.createPagination(count);
-         });*/
 
+        /*********LOCAL Blog SERVICE***************/
+        //var blogSearchResults = $.getJSON("blog.json", function (data) {
+        //    blogSearchResults = data.response.blogs;
+        //    resultsListHTML += "<div class=\"results_content\">";
+        //    if (blogSearchResults.length != 0) {
+        //        for (var i = 0; i < blogSearchResults.length; i++) {
+        //            count++
+        //            resultsListHTML += "<div class=\"blog-list__article \">";
+        //            resultsListHTML += "<div class=\"blog-list__img \">";
+        //            resultsListHTML += "<img src=\"" + blogSearchResults[i].imgsource + "\" alt=\"" + blogSearchResults[i].alttext + "\" class=\"enlarge\">";
+        //            resultsListHTML += "</div>";
+        //            resultsListHTML += "<div class=\"blog-list__text\">";
+        //            resultsListHTML += "<h5>" + blogSearchResults[i].title + "</h5>";
+        //            resultsListHTML += "<span class=\"blog-list__date blog-list__category\">" + blogSearchResults[i].date + "</span>";
+        //            resultsListHTML += "<span class=\"blog-list__category\">" + blogSearchResults[i].tags + "</span>";
+        //            resultsListHTML += "<span class=\"blog-list__description\">" + blogSearchResults[i].description + " ";
+        //            if (blogSearchResults[i].link != null && blogSearchResults[i].link != undefined && blogSearchResults[i].link !== "" && blogSearchResults[i].link !== " ") {
+        //                resultsListHTML += "<a href=\"" + blogSearchResults[i].link + "\">" + blogSearchResults[i].linktext + "</a>"
+        //            }
+        //            resultsListHTML += "</span>";
+        //            resultsListHTML += "</div>";
+        //            resultsListHTML += "<div class=\"clearfix\"></div>";
+        //            resultsListHTML += "</div>";
+        //        }
+        //    }
+        //    resultsListHTML += "</div>";
+        //    $(resultsListHTML).insertBefore($(".results_pagination"));
+        //    ServicesAPI.createPagination(count);
+        //});
         /************LOCAL Blog SERVICE***************/
 
         /************LIVE Blog SERVICE***************/
@@ -2063,86 +2056,86 @@ var ServicesAPI = {
         $(".results_content").remove();
         count = 0;
         var url = input;
+
         /*********LOCAL Forms SERVICE***************/
-        /*var formsSearchResults = $.getJSON("forms.json", function(data) {
-         formsSearchResults = data.response.docs;
-         var metaDataResults = data.response.metaData[0];
-         resultsListHTML += "<div class=\"results_content\">";
-         if (formsSearchResults.length != 0) {
-         for (var i = 0; i < formsSearchResults.length; i++) {
-         count++
-         if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
-         resultsListHTML += "<div class=\"row list__item \">";
-         if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-         resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-         }
-         if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-         resultsListHTML += " <div class=\"list__item--left\">";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-         resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
-         resultsListHTML += "</div>";
-         }
-         if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
-         resultsListHTML += "<div class=\"list__item--right\">";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
-         if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-         resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-         resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-         resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-         resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-         }
-         resultsListHTML += "</a>";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-         resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
-         resultsListHTML += "</div>";
-         }
-         resultsListHTML += "<span class=\"clearfix\"></span>";
-         resultsListHTML += "</div>";
-
-
-         }
-
-         if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
-         resultsListHTML += "<div class=\"row list__item \">";
-         if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
-         resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
-         }
-         if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-         resultsListHTML += " <div class=\"list__item--left\">";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title +"</a>";
-         resultsListHTML += "<p>"+ formsSearchResults[i].file_description +"</p>";
-         resultsListHTML += "</div>";
-         }
-         if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
-         resultsListHTML += "<div class=\"list__item--right\">";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
-         if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
-         resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
-         resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
-         resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
-         } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
-         resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
-         }
-         resultsListHTML += "</a>";
-         resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-         resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
-         resultsListHTML += "</div>";
-         }
-         resultsListHTML += "<span class=\"clearfix\"></span>";
-         resultsListHTML += "</div>";
-         }
-         }
-         }
-         resultsListHTML += "</div>";
-         $(resultsListHTML).insertAfter($(".lists"));
-         ServicesAPI.createPagination(count);
-         });*/
-
+        //var formsSearchResults = $.getJSON("forms.json", function (data) {
+        //    formsSearchResults = data.response.docs;
+        //    var metaDataResults = data.response.metaData[0];
+        //    resultsListHTML += "<div class=\"results_content\">";
+        //    if (formsSearchResults.length != 0) {
+        //        for (var i = 0; i < formsSearchResults.length; i++) {
+        //            count++;
+        //            if (formsSearchResults[i].eform_url != null && formsSearchResults[i].eform_url != undefined && formsSearchResults[i].eform_url != "" && formsSearchResults[i].eform_url != " ") {
+        //                resultsListHTML += "<div class=\"row list__item \">";
+        //                if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+        //                    resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+        //                }
+        //                if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+        //                    resultsListHTML += " <div class=\"list__item--left\">";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+        //                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+        //                    resultsListHTML += "</div>";
+        //                }
+        //                if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
+        //                    resultsListHTML += "<div class=\"list__item--right\">";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
+        //                    if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+        //                        resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+        //                        resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+        //                        resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+        //                        resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+        //                    }
+        //                    resultsListHTML += "</a>";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+        //                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
+        //                    resultsListHTML += "</div>";
+        //                }
+        //                resultsListHTML += "<span class=\"clearfix\"></span>";
+        //                resultsListHTML += "</div>";
+        //
+        //
+        //            }
+        //
+        //            if (formsSearchResults[i].file_url != null && formsSearchResults[i].file_url != undefined && formsSearchResults[i].file_url != "" && formsSearchResults[i].file_url != " ") {
+        //                resultsListHTML += "<div class=\"row list__item \">";
+        //                if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
+        //                    resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
+        //                }
+        //                if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+        //                    resultsListHTML += " <div class=\"list__item--left\">";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+        //                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+        //                    resultsListHTML += "</div>";
+        //                }
+        //                if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
+        //                    resultsListHTML += "<div class=\"list__item--right\">";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
+        //                    if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
+        //                        resultsListHTML += "<img src=\"images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
+        //                        resultsListHTML += "<img src=\"images/icon_powerpoint.png\" alt=\"powerpoint icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "xls" || formsSearchResults[i].file_type.toLowerCase() == "xlsx") {
+        //                        resultsListHTML += "<img src=\"images/icon_excel.png\" alt=\"Excel icon\" class=\"document-icon\">";
+        //                    } else if (formsSearchResults[i].file_type.toLowerCase() == "pdf") {
+        //                        resultsListHTML += "<img src=\"images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
+        //                    }
+        //                    resultsListHTML += "</a>";
+        //                    resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+        //                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+        //                    resultsListHTML += "</div>";
+        //                }
+        //                resultsListHTML += "<span class=\"clearfix\"></span>";
+        //                resultsListHTML += "</div>";
+        //            }
+        //        }
+        //    }
+        //    resultsListHTML += "</div>";
+        //    $(resultsListHTML).insertAfter($(".lists"));
+        //    ServicesAPI.createPagination(count);
+        //});
         /************LOCAL Forms SERVICE***************/
 
         /************LIVE Forms SERVICE***************/
@@ -2482,7 +2475,15 @@ var ServicesAPI = {
             }
             var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
         }
-        console.log(serviceUrl)
+        console.log(serviceUrl);
+
+        /************LOCAL FAO SERVICE***************/
+        //var faoSearchResults = $.getJSON("fao.json", function (data) {
+        //    ServicesAPI.generateOfficeItems(data);
+        //    ServicesAPI.createPagination(count);
+        //});
+        /************LOCAL FAO SERVICE***************/
+
         /************LIVE FAO SERVICE***************/
         $.ajax({
             type: 'GET',
@@ -2495,14 +2496,6 @@ var ServicesAPI = {
             }
         });
         /************LIVE FAO SERVICE***************/
-
-        /************LOCAL FAO SERVICE***************/
-        /*	var faoSearchResults = $.getJSON("fao.json", function(data) {
-         ServicesAPI.generateOfficeItems(data);
-         ServicesAPI.createPagination(count);
-         });*/
-        /************LOCAL FAO SERVICE***************/
-
     },
     generateOfficeItems: function (responseObject) {
         count = 0;
