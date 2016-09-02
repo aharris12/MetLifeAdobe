@@ -5430,19 +5430,19 @@ a:visited {
 }
 
 .carousel-caption {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    width: 100%;
-    max-height: 250px;
-    display: flex !important;
     padding: 0 5%;
 }
 
 .carousel-caption--hero {
     width: 100%;
-    display: flex !important;
+    display: flex;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
@@ -8743,6 +8743,7 @@ body{
 }
 
 .carousel--microsite .carousel-caption {
+    display: block;
     bottom: 0;
     padding: 15px 0;
 }
@@ -16765,13 +16766,18 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 }
 
+.campaign-header .campaign-header__popup .campaign-header-ctc {
+    padding: 10px;
+    color: #a4d8f1;
+}
+
+.campaign-header .campaign-header__popup .campaign-header-ctc h5 {
+    color: #fff;
+}
+
 .campaign-header .campaign-header__popup .campaign-header-ctc p a {
     color: #fff;
     text-decoration: underline;
-}
-
-.campaign-header .campaign-header__popup .campaign-header-ctc {
-    padding: 10px;
 }
 
 .campaign-header__popup__contact {
@@ -16805,20 +16811,6 @@ body  .quote_edit_form .submit_quote_edit_form {
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-@media screen and (max-width: 767px) {
-    .campaign-header-login {
-        position: absolute;
-        z-index: 2;
-        letter-spacing: 1px;
-        margin-top: -10px;
-    }
-
-    .campaign-header__section p {
-        font-size: 12px;
-        line-height: 15px;
-    }
 }
 
 .campaign-header-login a {
@@ -16870,6 +16862,20 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 .campaign-header__popup__contact a {
     width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .campaign-header-login {
+        position: absolute;
+        z-index: 2;
+        letter-spacing: 1px;
+        margin-top: -10px;
+    }
+
+    .campaign-header__section p {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -17451,7 +17457,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 }
 
 .find-an-x-search__container{
-    padding-top: 25px;
+    padding-top: 5px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -17475,7 +17481,9 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     display: block;
     position: relative;
     padding: 0px 20px;
-    margin-bottom: 10px;
+}
+.cta_search__container .find-an-x-input__container__margin{
+    margin-bottom:10px;
 }
 
 
@@ -17503,7 +17511,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 .cta_search__container .find-an-x-search--expand .directions_button{
     width: 100%;
     display:inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 10px;
 }
 
@@ -17601,10 +17609,11 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     padding-top: 6px;
     float: left;
     height: 34px;
+    font-size: 13px;
 }
 
 .fax-results__container .results_list_container .default_results_text{
-    padding: 20px 0px;
+    padding: 0px 0px 20px;
     font-size: 14px;
     line-height: 20px;
 }
@@ -17727,12 +17736,16 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     font-weight: normal;
     display: block;
 }
+.results_office_phone a, .results_office_fax a{
+    text-decoration: underline;
+    color: #2c77c5;
+}
 
 .fax-results__container .results_list_container .results_office_result .results_office_fax{
     padding: 0 0 0 10%;
     font-size: 12px;
     font-weight: normal;
-    display: none;
+
 }
 
 /**************************** End Results containcer css ****************************/
@@ -17915,7 +17928,11 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 }
 
 @media screen and (min-width: 768px) {
-
+    .results_office_phone a, .results_office_fax a{
+        text-decoration: none;
+        color: #333;
+        pointer-events: none;
+    }
     /***************************** search container css ***********************************/
 
     .find-an-x-search__container{
@@ -18065,6 +18082,8 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 }
 
 @media screen and (min-width: 1024px) {
+
+
     /************************** search container css ********************************************/
     .find-an-x-search__container{
         max-width: 761px;
@@ -18120,6 +18139,12 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 
     .fax-results__container .results_list_container .results_office_result .dentist_right{
         width: 47%;
+    }
+    .find-an-x-search--expand .form-icon-wrapper{
+        display: inline-block;
+    }
+    .find-an-x-search--expand .form-icon-wrapper svg{
+        right:15px;
     }
 }
 .glossary {

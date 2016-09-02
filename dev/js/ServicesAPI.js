@@ -34,6 +34,7 @@ var startPointGeoCode;
 var startPointGMarker;
 var radiusInMiles;
 var specialty = "";
+var specialtyDisplay = "";
 var map;
 var blueMarker;
 var blackMarker;
@@ -708,6 +709,8 @@ $(".page-count").on('change', function () {
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
     if (getViewport() == "mobile") {
         $('.find-an-x-search--expand').show();
+        $(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
+
     }
 });
 /*$("body").on("click tap", function (e) {
@@ -733,7 +736,14 @@ $(".search_location_image").on('click touchstart', function () {
         ServicesAPI.showLocation();
     }
 });
+$(".cta_search").on("focus", function () {
+    if (!$(".hidden-xs").is(":visible")) {
+        $(".find-an-x-search--expand").removeClass("hidden-xs");
+    } else {
+        $(".find-an-x-search--expand").addClass("hidden-xs");
+    }
 
+});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
     //handle empty val
     if ($(".cta_search").val().length + 1 === 0) {
@@ -753,7 +763,7 @@ $(".find_an_office_radius").on('change', function () {
 
 $(document).on('click', ".results_office_name", function () {
     var i = $(this).closest('.results_office_result').index();
-    var index = ((i + 1) + ((bootPagNum) * listCount));
+    var index = ((i + 1) + ((bootPagNum) * listCount))
     google.maps.event.trigger(markersArray[index], 'click');
 });
 
@@ -766,7 +776,12 @@ $('.get-directions-buttons .btn').on('click', function () {
 });
 
 $(".get-directions-form .get_directions_button").on('click', function () {
-    ServicesAPI.getDirections();
+    if ($(".from-address").val() == "" || $(".from-address").val() == " ") {
+        $(".from-address").addClass('error');
+    } else {
+        $(".from-address").removeClass('error');
+        ServicesAPI.getDirections();
+    }
 });
 
 /* back link on directions page work*/
@@ -1726,7 +1741,7 @@ var ServicesAPI = {
             next: "&#10095;"
         }).on("page", function (event, num) {
             searchPaginationPrev = num;
-            console.log(num);
+            console.log(num)
             searchPaginationNumber = num;
             //If num is not 1 we have clicked one of the other pagination items.
             searchPaginationNumber = num + "0";
@@ -1753,7 +1768,7 @@ var ServicesAPI = {
 
             if ($(".search-results-container").length > 0) {
                 if (sessionStorage.getItem("paginationNumber") !== null) {
-                    var thisItem = sessionStorage.getItem("paginationNumber");
+                    var thisItem = sessionStorage.getItem("paginationNumber")
                     $(".pagination.bootpag li").each(function () {
                         $(this).removeClass("active");
                         if ($(this).attr("data-lp") == thisItem) {
@@ -2052,7 +2067,6 @@ var ServicesAPI = {
         $(".results_content").remove();
         count = 0;
         var url = input;
-
         /*********LOCAL Forms SERVICE***************/
         //var formsSearchResults = $.getJSON("forms.json", function (data) {
         //    formsSearchResults = data.response.docs;
@@ -2462,11 +2476,14 @@ var ServicesAPI = {
         radiusInMiles = $('.find_an_office_radius').val();
         if (faoMarket.toLowerCase() == "us") {
             specialty = 'AUTO%2C+HOME%2C+RENTERS%2C+ETC...';
+            specialtyDisplay = 'Auto, Home, Renters, ETC...';
             var serviceUrl = ServicesAPI.buildServiceUrlUS(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
         } else {
             if ($('.different_services_dropdown').length > 0) {
-                specialty = $('.different_services_dropdown').val();
+                specialty = encodeURIComponent($('.different_services_dropdown').val());
+                specialtyDisplay = $('.different_services_dropdown').val();
             } else {
+                specialtyDisplay = "";
                 specialty = "";
             }
             var serviceUrl = ServicesAPI.buildServiceUrl(baseServiceUrl, latitude, longitude, radiusInMiles, specialty);
@@ -2579,12 +2596,16 @@ var ServicesAPI = {
                 resultsListHTML += "<div class=\"results_office_mileage\"><p class=\"results_office_distance\">" + (Math.round(fclt_distance * 100) / 100).toFixed(2) + "</p>";
                 resultsListHTML += "<p class=\"results_office_mi\">" + "&nbsp;" + label_radius_unit + "</p></div>";
                 if (fclt_education) {
-                    resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + fclt_ctgy + "</p>";
+                    if (specialtyDisplay != "") {
+                        resultsListHTML += "<p class=\"results_office_type results_office_type_dentist\">" + specialtyDisplay + "</p>";
+                    }
                     resultsListHTML += "<p class=\"results_office_get_directions results_office_get_directions_dentist\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
                     resultsListHTML += "<p class=\"results_office_street_address dentist_left\">" + fclt_addr.toLowerCase() + "</p>";
                     resultsListHTML += "<p class=\"results_office_education dentist_right\">" + label_education + ": " + fclt_education.toLowerCase() + "</p>";
                 } else {
-                    resultsListHTML += "<p class=\"results_office_type\">" + fclt_ctgy + "</p>";
+                    if (specialtyDisplay != "") {
+                        resultsListHTML += "<p class=\"results_office_type\">" + specialtyDisplay + "</p>";
+                    }
                     resultsListHTML += "<p class=\"results_office_get_directions\"><a href='#' onclick=\"ServicesAPI.getDirectionsPanel(\'" + strDestination + "\');return false;\">" + $('.getDirectionsText').text() + "</a></p>";
                     resultsListHTML += "<p class=\"results_office_street_address\">" + fclt_addr.toLowerCase() + "</p>";
                 }
@@ -2617,17 +2638,17 @@ var ServicesAPI = {
 
                 if (fclt_gender) {
                     if (fclt_phone)
-                        resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+                        resultsListHTML += "<p class=\"results_office_phone dentist_left\">" + label_phone + ": <a href='tel:" + fclt_phone.replace(/\./g, '-') + "'>" + fclt_phone.replace(/\./g, '-') + "</a></p>";
                     resultsListHTML += "<p class=\"results_office_gender dentist_right\">" + label_gender + ": " + fclt_gender.toLowerCase() + "</p>";
                 } else {
                     if (fclt_phone)
-                        resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": " + fclt_phone.replace(/\./g, '-') + "</p>";
+                        resultsListHTML += "<p class=\"results_office_phone\">" + label_phone + ": <a href='tel:" + fclt_phone.replace(/\./g, '-') + "'>" + fclt_phone.replace(/\./g, '-') + "</a></p>";
                 }
 
                 if (fclt_alt_phone)
-                    resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": " + fclt_alt_phone.replace(/\./g, '-') + "</p>";
+                    resultsListHTML += "<p class=\"results_office_phone\">" + label_alt_phone + ": <a href='tel:" + fclt_alt_phone.replace(/\./g, '-') + "'>" + fclt_alt_phone.replace(/\./g, '-') + "</a></p>";
                 if (fclt_fax)
-                    resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": " + fclt_fax.replace(/\./g, '-') + "</p>";
+                    resultsListHTML += "<p class=\"results_office_fax\">" + label_fax + ": <a href='tel:" + fclt_fax.replace(/\./g, '-') + "'>" + fclt_fax.replace(/\./g, '-') + "</a></p>";
                 if (fclt_email)
                     resultsListHTML += "<p class=\"results_office_phone\">" + label_email + ": " + fclt_email + "</p>";
                 if (fclt_secondary_email)
@@ -2939,25 +2960,34 @@ var ServicesAPI = {
             }
         });
     },
+    /************Alex and Pablo solution FAO Url Constructor***************/
+    //buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
+    //	var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+    //		lngSelector = '.longitude=' + lng.toString().replace('.', ','),
+    //		radiusSelector = '.radius=' + radius,
+    //		specialtySelector = '.specialty=' + specialty;
+    //		return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+    //},
+    /************Alex and Pablo solution FAO Url Constructor***************/
+
+    /************Diego FAO Url Constructor***************/
     buildServiceUrl: function (baseUrl, lat, lng, radius, specialty) {
-        var latSelector = '.latitude=' + lat.toString().replace('.', ','), //sling selector workaround
-            lngSelector = '.longitude=' + lng.toString().replace('.', ','),
-            radiusSelector = '.radius=' + radius,
-            specialtySelector = '.specialty=' + specialty;
-        if (specialty == "") {
-            return baseUrl + latSelector + lngSelector + radiusSelector + ".json";
-        } else {
-            return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
-        }
+        var latSelector = 'latitude=' + lat.toString().replace('.', ','), //sling selector workaround
+            lngSelector = '&longitude=' + lng.toString().replace('.', ','),
+            radiusSelector = '&radius=' + radius,
+            specialtySelector = '&specialty=' + specialty;
+        //return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + ".json";
+
+        //modified url for integration
+        return baseUrl + latSelector + lngSelector + radius + specialty + "&format=json";
     },
+    /************Diego FAO Url Constructor***************/
     buildServiceUrlUS: function (baseUrl, lat, lng, radius, specialty) {
         var latSelector = 'latitude=' + lat.toString(), //sling selector workaround
             lngSelector = '&longitude=' + lng.toString(),
             radiusSelector = '&radius=' + radius,
             specialtySelector = '&specialty=' + specialty;
         return baseUrl + latSelector + lngSelector + radiusSelector + specialtySelector + "&format=json";
-
-
     },
     updatePageFrom: function (name) {
         var pageFrom = ServicesAPI.getQueryStringNoHash()["pageFrom"];
