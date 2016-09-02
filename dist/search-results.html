@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <meta name="robots" content="noindex, nofollow"/>
     <meta name="format-detection" content="telephone=no">
-    <title>MetLife - Homepage</title>
+    <title>MetLife - Search Results</title>
     <link href="/static/images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -864,7 +864,10 @@
                 <form id="frm_refineSearchResult" name="searchForm" method="get" action="/search">
                     <fieldset>
                         <div class="inputHolderSR" id="inputHolderSR">
-                            <input type="text" id="form-refineSearchQuery_sr" name="query" value="Life Insurance" class="searchResultsInputSR form-user-ctrl js-searchTextBox" onkeyup="setSearchResultsPageIDS();ss_handleKey(event);drawTextBox('',event);" autocomplete="off"/>
+                            <input type="text" id="form-refineSearchQuery_sr" name="query" value="Life Insurance"
+                                   class="searchResultsInputSR form-user-ctrl js-searchTextBox"
+                                   onkeyup="setSearchResultsPageIDS();ss_handleKey(event);drawTextBox('',event);"
+                                   autocomplete="off"/>
                             <input type="text" class="searchResultsInputBackSR" id="overlayerback_sr" value=""/>
 
                             <div id="suggestionsbox" class="suggestionsbox">
@@ -882,7 +885,8 @@
                 </form>
                 <!--<input placeholder="Search" class="form-user-ctrl">-->
             </div>
-            <button class="btn-brand-2nd search-filter__button js-searchSubmit" data-front-end="test_json_frontend" data-site="dev_metlife_com" data-search-ajax-url="https://vijay.www.metlife.com/wps/search?">
+            <button class="btn-brand-2nd search-filter__button js-searchSubmit" data-front-end="test_json_frontend"
+                    data-site="dev_metlife_com" data-search-ajax-url="https://vijay.www.metlife.com/wps/search?">
                 <svg class="icon icon-search blue">
                     <use xlink:href="/static/images/icons-metlife.svg#icon-search"></use>
                 </svg>
@@ -917,21 +921,17 @@
 
             <!-- pagination -->
             <div class="results_pagination hidden">
-                <ul class="pagination bootpag results_pagination_paginator">
-                    <li><a href="#">Prev</a>
+                <ul class="pagination bootpag">
+                    <li data-lp="1" class="first disabled"><a href="javascript:void(0);">&#10094;&#10094;</a>
                     </li>
-                    <li><a href="#">1</a>
-                    </li>
-                    <li><a href="#">2</a>
-                    </li>
-                    <li><a href="#">3</a>
-                    </li>
-                    <li><a href="#">4</a>
-                    </li>
-                    <li><a href="#">5</a>
-                    </li>
-                    <li><a href="#">Next</a>
-                    </li>
+                    <li data-lp="1" class="prev disabled"><a href="javascript:void(0);">&#10094;</a></li>
+                    <li data-lp="1" class="active"><a href="javascript:void(0);">1</a></li>
+                    <li data-lp="2"><a href="javascript:void(0);">2</a></li>
+                    <li data-lp="3"><a href="javascript:void(0);">3</a></li>
+                    <li data-lp="4"><a href="javascript:void(0);">4</a></li>
+                    <li data-lp="5"><a href="javascript:void(0);">5</a></li>
+                    <li data-lp="2" class="next"><a href="javascript:void(0);">&#10095;</a></li>
+                    <li data-lp="12" class="last"><a href="javascript:void(0);">&#10095;&#10095;</a></li>
                 </ul>
             </div>
 
@@ -1499,11 +1499,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="hidden">
-    <div class="prev_label">Prev</div>
-    <div class="next_label">Next</div>
 </div>
 
 <!-- Disclaimer -->
