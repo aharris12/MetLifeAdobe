@@ -38,13 +38,18 @@
 
 }
 
+.campaign-header .campaign-header__popup .campaign-header-ctc {
+    padding: 10px;
+    color: #a4d8f1;
+}
+
+.campaign-header .campaign-header__popup .campaign-header-ctc h5 {
+    color: #fff;
+}
+
 .campaign-header .campaign-header__popup .campaign-header-ctc p a {
     color: #fff;
     text-decoration: underline;
-}
-
-.campaign-header .campaign-header__popup .campaign-header-ctc {
-    padding: 10px;
 }
 
 .campaign-header__popup__contact {
@@ -78,20 +83,6 @@
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-@media screen and (max-width: 767px) {
-    .campaign-header-login {
-        position: absolute;
-        z-index: 2;
-        letter-spacing: 1px;
-        margin-top: -10px;
-    }
-
-    .campaign-header__section p {
-        font-size: 12px;
-        line-height: 15px;
-    }
 }
 
 .campaign-header-login a {
@@ -143,6 +134,20 @@
 
 .campaign-header__popup__contact a {
     width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .campaign-header-login {
+        position: absolute;
+        z-index: 2;
+        letter-spacing: 1px;
+        margin-top: -10px;
+    }
+
+    .campaign-header__section p {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
 
 @media screen and (min-width: 768px) {

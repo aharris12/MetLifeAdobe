@@ -68,64 +68,164 @@ $("#list_month").change(function() {
    newsRoomServiceConstruction();
 });
 
+//Local function implementation...to be deleted
+//function newsRoomYearChange() {
+//    totalMonths.sort(function(a, b){return a - b});
+//    totalMonths = unique(totalMonths);
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    selectMonth.append('<option value="All" selected>All</option>');
+//    var thisMonth;
+//    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
+//        for(var i = 1; i <=12; i++){
+//            thisMonth = $(".month_"+ i).text();
+//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//        }
+//    }else{
+//
+//        for (var i in totalMonths) {
+//            switch(totalMonths[i]){
+//                case 1:
+//                    thisMonth = $(".month_1").text();
+//                    break;
+//                case 2:
+//                    thisMonth = $(".month_2").text();
+//                    break;
+//                case 3:
+//                    thisMonth = $(".month_3").text();
+//                    break;
+//                case 4:
+//                    thisMonth = $(".month_4").text();
+//                    break;
+//                case 5:
+//                    thisMonth = $(".month_5").text();
+//                    break;
+//                case 6:
+//                    thisMonth = $(".month_6").text();
+//                    break;
+//                case 7:
+//                    thisMonth = $(".month_7").text();
+//                    break;
+//                case 8:
+//                    thisMonth = $(".month_8").text();
+//                    break;
+//                case 9:
+//                    thisMonth = $(".month_9").text();
+//                    break;
+//                case 10:
+//                    thisMonth = $(".month_10").text();
+//                    break;
+//                case 11:
+//                    thisMonth = $(".month_11").text();
+//                    break;
+//                default:
+//                    thisMonth = $(".month_12").text();
+//                    break;
+//            }
+//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
+//        }
+//    }
+//}
+
+
+//AEM modified function from Diego
 function newsRoomYearChange() {
     totalMonths.sort(function(a, b){return a - b});
     totalMonths = unique(totalMonths);
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="" selected>All</option>');
-    var thisMonth;
+    var thisMonth, thisMonthValue;
+    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
     if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
-        for(var i = 1; i <=12; i++){
-            thisMonth = $(".month_"+ i).text();
-            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+        for(var i =0; i < monthsList.length; i++) {
+            var monthItem = $(monthsList[i]);
+            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
     }else{
-
         for (var i in totalMonths) {
-            switch(totalMonths[i]){
-                case 1:
-                    thisMonth = $(".month_1").text();
+            for(var j = 0; j<monthsList.length; j++) {
+                var monthItem = $(monthsList[j]);
+                if(monthItem.data('month-value') === totalMonths[i]){
+                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
                     break;
-                case 2:
-                    thisMonth = $(".month_2").text();
-                    break;
-                case 3:
-                    thisMonth = $(".month_3").text();
-                    break;
-                case 4:
-                    thisMonth = $(".month_4").text();
-                    break;
-                case 5:
-                    thisMonth = $(".month_5").text();
-                    break;
-                case 6:
-                    thisMonth = $(".month_6").text();
-                    break;
-                case 7:
-                    thisMonth = $(".month_7").text();
-                    break;
-                case 8:
-                    thisMonth = $(".month_8").text();
-                    break;
-                case 9:
-                    thisMonth = $(".month_9").text();
-                    break;
-                case 10:
-                    thisMonth = $(".month_10").text();
-                    break;
-                case 11:
-                    thisMonth = $(".month_11").text();
-                    break;
-                default:
-                    thisMonth = $(".month_12").text();
-                    break;
+                }
             }
-            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
         }
     }
 }
 
+//Local function implementation...to be deleted
+//function newsRoomTopicsChange(){
+//    totalYears.sort(function(a, b){return a - b});
+//    totalMonths.sort(function(a, b){return a - b});
+//    totalYears = unique(totalYears);
+//    totalMonths = unique(totalMonths);
+//    var selectYear = $('#list_year');
+//    selectYear.empty();
+//    selectYear.append('<option value="All" selected>All</option>');
+//    var firstTime = true;
+//    for(var i = (totalYears.length - 1); i >= 0; i--) {
+//        selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
+//    }
+//    firstTime = false;
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    selectMonth.append('<option value="All" selected>All</option>');
+//    var thisMonth;
+//    if($("#list_topics").prop('selectedIndex') === 0){
+//        for(var i = 1; i <=12; i++){
+//            thisMonth = $(".month_"+ i).text();
+//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//        }
+//    }else{
+//
+//        for (var i in totalMonths) {
+//            switch(totalMonths[i]){
+//                case 1:
+//                    thisMonth = $(".month_1").text();
+//                    break;
+//                case 2:
+//                    thisMonth = $(".month_2").text();
+//                    break;
+//                case 3:
+//                    thisMonth = $(".month_3").text();
+//                    break;
+//                case 4:
+//                    thisMonth = $(".month_4").text();
+//                    break;
+//                case 5:
+//                    thisMonth = $(".month_5").text();
+//                    break;
+//                case 6:
+//                    thisMonth = $(".month_6").text();
+//                    break;
+//                case 7:
+//                    thisMonth = $(".month_7").text();
+//                    break;
+//                case 8:
+//                    thisMonth = $(".month_8").text();
+//                    break;
+//                case 9:
+//                    thisMonth = $(".month_9").text();
+//                    break;
+//                case 10:
+//                    thisMonth = $(".month_10").text();
+//                    break;
+//                case 11:
+//                    thisMonth = $(".month_11").text();
+//                    break;
+//                default:
+//                    thisMonth = $(".month_12").text();
+//                    break;
+//            }
+//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
+//        }
+//    }
+//
+//}
+
+//AEM modified function from Diego
 function newsRoomTopicsChange(){
     totalYears.sort(function(a, b){return a - b});
     totalMonths.sort(function(a, b){return a - b});
@@ -142,54 +242,23 @@ function newsRoomTopicsChange(){
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="" selected>All</option>');
-    var thisMonth;
+    var thisMonth, thisMonthValue;
+    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
     if($("#list_topics").prop('selectedIndex') === 0){
-        for(var i = 1; i <=12; i++){
-            thisMonth = $(".month_"+ i).text();
-            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+        for(var i =0; i < monthsList.length; i++) {
+            var monthItem = $(monthsList[i]);
+            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
     }else{
 
         for (var i in totalMonths) {
-            switch(totalMonths[i]){
-                case 1:
-                    thisMonth = $(".month_1").text();
+            for(var j = 0; j<monthsList.length; j++) {
+                var monthItem = $(monthsList[j]);
+                if(monthItem.data('month-value') === totalMonths[i]){
+                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
                     break;
-                case 2:
-                    thisMonth = $(".month_2").text();
-                    break;
-                case 3:
-                    thisMonth = $(".month_3").text();
-                    break;
-                case 4:
-                    thisMonth = $(".month_4").text();
-                    break;
-                case 5:
-                    thisMonth = $(".month_5").text();
-                    break;
-                case 6:
-                    thisMonth = $(".month_6").text();
-                    break;
-                case 7:
-                    thisMonth = $(".month_7").text();
-                    break;
-                case 8:
-                    thisMonth = $(".month_8").text();
-                    break;
-                case 9:
-                    thisMonth = $(".month_9").text();
-                    break;
-                case 10:
-                    thisMonth = $(".month_10").text();
-                    break;
-                case 11:
-                    thisMonth = $(".month_11").text();
-                    break;
-                default:
-                    thisMonth = $(".month_12").text();
-                    break;
+                }
             }
-            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
         }
     }
 
@@ -199,6 +268,7 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     resultsListHTML = "";
     var url = input;
     count = 0;
+    console.log(input);
     $(".results_content").remove();
     /************LIVE News Room SERVICE***************/
     $.ajax({
@@ -234,7 +304,7 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     				if (count <= listCount) {
     					resultsListHTML += "<div class=\"list__item\">";
     					resultsListHTML += "<span class=\"list__item__date\">" + newsRoomResults[i].publishedDate + "</span>";
-    					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].title + "</a>";
+    					resultsListHTML += "<a class=\"list__item__title\" href=\"" + newsRoomResults[i].link + "\">" + newsRoomResults[i].articleTitle + "</a>";
     					resultsListHTML += "</div>";
     				}
     			}
@@ -337,7 +407,7 @@ function newsRoomServiceConstruction() {
     newsTopic = $('#list_topics').val();
     newsConcatenator = $(".lists").attr("data-news-concatenator");
     //prod implementation of url
-    url += "year=" + newsYear + "&" + "month=" + newsMonth + "&" + "topic" + newsTopic;
+    url += "year=" + newsYear + "&" + "month=" + newsMonth + "&" + "topic=" + newsTopic;
     newsRoomServiceCall(url, newsMonth, newsTopic);
 }
 /************Live News Room Url Constructor***************/
@@ -354,14 +424,18 @@ function newsRoomServiceConstruction() {
 //    //prod implementation of url
 //    //url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
 //    //local implementation of url
+//    console.log(newsTopic);
 //    if(newsYear === "All" && newsMonth === "All") {
+//        console.log(newsTopic);
 //        url += newsTopic + query;
+//        console.log(url);
 //    } else if (newsYear === "All") {
 //        url += newsTopic + query;
 //        console.log(url);
 //    } else if (newsYear !== "All") {
 //        url += newsYear + query;
 //    }
+//    console.log(url);
 //    newsRoomServiceCall(url, newsMonth, newsTopic);
 //}
 /************LOCAL News Room Url Constructor***************/
