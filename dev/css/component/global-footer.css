@@ -591,16 +591,15 @@
 }
 
 .footer-legal__copy {
-    font-size: 0.75em;
-    line-height: 1.75;
+    font-size: 12px;
+    line-height: 20px;
 }
 
 .footer-legal__link {
     text-align: center;
     font-size: 14px;
     line-height: 15px;
-    padding-bottom: 20px;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .footer-legal__link a {
@@ -631,7 +630,7 @@
 
 .footer-legal__bullet {
     display: inline-block;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 15px;
     margin: 0 5px;
 }
@@ -642,7 +641,92 @@
     text-align: left;
 }
 
-@media (min-width: 768px) {
+.country_header {
+    display: block;
+    cursor: default;
+}
+
+.country_header:hover {
+    text-decoration: none;
+}
+
+.country__list {
+    background-color: #fff;
+    padding: 0;
+}
+
+.country__group {
+    background-color: #fff;
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.country__group:hover {
+    background-color: #f2f2f2;
+    text-decoration: none;
+    color: #2377c5;
+}
+
+.global-footer hr {
+    margin: 25px -25px 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.footer-disclaimer {
+    display: inline;
+    text-align: left;
+    width: 100%;
+}
+
+.dd-option.header .dd-option-image {
+    display: none;
+}
+
+.global-footer .wrapper.padding-80-0.quote {
+    border: 0;
+}
+
+@media screen and (max-width: 367px) {
+    .footer-legal__link a {
+        font-size: 14px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .country__selected {
+        padding: 7px 4px 8px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .country__label {
+        padding-left: 10px;
+    }
+
+    .dd-selected label {
+        display: none;
+    }
+
+    .dd-select {
+        width: 43%;
+        float: right;
+        border: none;
+    }
+
+    .dd-options {
+        margin-top: 52px;
+    }
+
+    .dd-selected-image {
+        height: 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
     .social__link svg {
         height: 19px;
         width: 19px;
@@ -650,12 +734,17 @@
 
     .global-footer--microsite {
         border-top: none;
-        padding-top: 10px;
+        padding-top: 20px;
     }
 
     .global-footer--microsite .footer-legal__link a, .footer-legal__call--microsite a {
         font-size: 1em;
         line-height: 24px;
+    }
+
+    .global-footer--microsite .footer-legal__copy {
+        padding-left: 0;
+        padding-top: 15px;
     }
 
     .global-footer {
@@ -670,20 +759,21 @@
         width: 20%;
     }
 
-    .global-footer--microsite {
-        padding-top: 20px;
-    }
-
-    .footer-legal__logo-container{
+    .footer-legal__logo-container {
         width: auto;
     }
 
-    .footer-legal__copy{
+    .footer-legal__copy {
         padding-left: 50px;
     }
 
     .footer-legal__link {
-        margin: 0 10px 0 -15px;
+        display: inline;
+        font-size: 12px;
+        text-align: left;
+        border-bottom: 0 solid #ccc;
+        padding-bottom: 0;
+        margin: 0;
     }
 
     .footer-legal__link a {
@@ -714,7 +804,7 @@
         display: block;
     }
 
-    .footer-legal__logo a{
+    .footer-legal__logo a {
         letter-spacing: 0.3px;
     }
 
@@ -752,7 +842,6 @@
     }
 
     .footer-legal__copyright {
-        line-height: 1.55em;
         display: inline;
     }
 
@@ -842,10 +931,6 @@
         line-height: 2.3em;
     }
 
-    /*.footer-legal > div {
-        width: auto;
-    }*/
-
     .footer-legal__logo {
         width: 130px;
         padding: 4px 0 5px 0;
@@ -857,7 +942,7 @@
     }
 
     .footer-legal__bullet {
-        margin: 0 10px;
+        /*margin: 0 10px;*/
     }
 
     .footer-legal__call {
@@ -872,48 +957,9 @@
     .footer-legal__call--microsite {
         padding-left: 25px;
     }
-
-    .footer-legal__link {
-        font-size: 12px;
-        text-align: left;
-        padding-bottom: 0;
-        border-bottom: 0px solid #ccc;
-        margin: 0;
-        float: left;
-        margin-right: 5px;
-    }
 }
 
-.dd-option.header .dd-option-image {
-    display: none;
-}
-
-@media (max-width: 767px) {
-
-    .country__label {
-        padding-left: 10px;
-    }
-
-    .dd-selected label {
-        display: none;
-    }
-
-    .dd-select {
-        width: 43%;
-        float: right;
-        border: none;
-    }
-
-    .dd-options {
-        margin-top: 52px;
-    }
-
-    .dd-selected-image {
-        height: 28px;
-    }
-}
-
-@media (min-width: 769px) {
+@media screen and (min-width: 769px) {
     .dd-container {
         width: 75%;
         float: right;
@@ -932,69 +978,7 @@
     }
 }
 
-@media (min-width: 1024px) {
-    .dd-container {
-        width: 74%;
-    }
-
-    .dd-options {
-        width: 95.5%;
-    }
-}
-
-@media screen and (max-width: 367px) {
-    .footer-legal__link a {
-        font-size: 14px;
-        line-height: 15px;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .country__selected {
-        padding: 7px 4px 8px;
-    }
-}
-
-.country_header {
-    display: block;
-    cursor: default;
-}
-
-.country_header:hover {
-    text-decoration: none;
-}
-
-.country__list {
-    background-color: #fff;
-    padding: 0;
-}
-
-.country__group {
-    background-color: #fff;
-    width: 100%;
-    height: 40px;
-    display: block;
-}
-
-.country__group:hover {
-    background-color: #f2f2f2;
-    text-decoration: none;
-    color: #2377c5;
-}
-
-.global-footer hr {
-    margin: 25px -25px 0px;
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-
-.footer-disclaimer {
-    display: inline;
-    text-align: left;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
     .footer-main__label {
         font-size: 16px;
         line-height: 20px;
@@ -1006,13 +990,18 @@
         line-height: 16px;
     }
 
-    .footer-country{
+    .footer-country {
         min-width: 285px;
     }
 
     .footer-legal__link {
         font-size: 12px;
         line-height: 20px;
+    }
+
+    .global-footer--microsite .footer-legal__copy {
+        padding-left: 100px;
+        padding-top: 0;
     }
 
     .country__label {
@@ -1049,7 +1038,7 @@
         margin-top: 0;
     }
 
-    .footer-legal__copy{
+    .footer-legal__copy {
         padding-left: 100px;
     }
 
@@ -1097,9 +1086,13 @@
         min-width: 215px;
         left: 70px;
     }
-}
 
-.global-footer .wrapper.padding-80-0.quote {
-    border: 0;
+    .dd-container {
+        width: 74%;
+    }
+
+    .dd-options {
+        width: 95.5%;
+    }
 }
 
