@@ -64,7 +64,7 @@ if ($(".rate_table").length > 0) {
 
 
     //Swipe when user click on indicators below the table in Mobile view
-    $('.rate_table .carousel-indicators > li').click(function() {
+    $('.rate_table .carousel-indicators > li').click(function () {
 
         //Determine active and clicked indicators
         var activeIndicator = $(this).parent().find("li.active").index() + 1;
@@ -73,7 +73,7 @@ if ($(".rate_table").length > 0) {
         //Determine if we need to swipe RIGHT or LEFT
         if (clickedIndicator > activeIndicator) {
             //Swipe Left
-            var numOfColumnsToSwipe = '+=' + 100 * (clickedIndicator - activeIndicator) + '%' ;
+            var numOfColumnsToSwipe = '+=' + 100 * (clickedIndicator - activeIndicator) + '%';
             var parent = $(this).closest(".rate_table");
             if (!parent.find(".controls ol li").last().hasClass("active") && $('.controls').is(':visible')) {
                 var number = parent.find("td.last").nextAll().length;
@@ -99,7 +99,7 @@ if ($(".rate_table").length > 0) {
             }
         } else if (clickedIndicator < activeIndicator) {
             //Swipe Right
-            var numOfColumnsToSwipe = '-=' + 100 * (activeIndicator - clickedIndicator) + '%' ;
+            var numOfColumnsToSwipe = '-=' + 100 * (activeIndicator - clickedIndicator) + '%';
             var parent = $(this).closest(".rate_table");
             if (!parent.find(".controls ol li").first().hasClass("active") && $('.controls').is(':visible')) {
                 var number = parent.find("td.first").prevAll().length;
@@ -128,7 +128,7 @@ if ($(".rate_table").length > 0) {
 
     // Open & Close Monthly Rates Dropdown
     $(".monthly_rates .expand_button").click(function () {
-        if($(".monthly_rates").has(".wrapper-general")) {
+        if ($(".monthly_rates").has(".wrapper-general")) {
             $(".expanded").siblings(".unexpanded").slideToggle(function () {
                 resizeRateTable();
             });
@@ -152,7 +152,6 @@ if ($(".rate_table").length > 0) {
         parent.find(".content_top").scrollLeft($(this).scrollLeft());
         parent.find(".content_left").scrollTop($(this).scrollTop());
     });
-
 
 
     // Resize Rate table
@@ -197,8 +196,6 @@ function formatRateTable() {
             var bodyLocation = parent.find(".content_body--variation .content_table");
 
 
-
-
             for (var i = 0; i < parent.find(".content_temp tbody tr").length; i++) {
                 bodyLocation.append("<tr></tr>");
                 for (var j = 0; j < parent.find(".content_temp tr:first-child td").length; j++) {
@@ -212,13 +209,13 @@ function formatRateTable() {
                             bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + j + "'>" + bodyContent + "</td>");
                             j++;
                             bodyContent = parent.find(".content_temp tr").eq(i).children("td").eq(j).text();
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + (j-1) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + (j - 1) + "'>" + bodyContent + "</td>");
                             break;
                         default:
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + ((j+1)/2) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + ((j + 1) / 2) + "'>" + bodyContent + "</td>");
                             j++;
                             bodyContent = parent.find(".content_temp tr").eq(i).children("td").eq(j).text();
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + (j/2) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + (j / 2) + "'>" + bodyContent + "</td>");
                     }
                 }
             }
@@ -395,8 +392,8 @@ function setHealthGuidelinesTableHeader() {
             })
         });
     }
-    if ($(".rate_table--variation-2").length>0){
-        $(".overlay-table-section .rate_table--variation-2").find(".content_table th:not(':first-child')").attr("colspan",'2');
+    if ($(".rate_table--variation-2").length > 0) {
+        $(".overlay-table-section .rate_table--variation-2").find(".content_table th:not(':first-child')").attr("colspan", '2');
     }
 }
 
