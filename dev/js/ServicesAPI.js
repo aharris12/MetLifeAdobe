@@ -838,11 +838,12 @@ $('.maps-button').click(function (clickedButton) {
  });
  }
  }*/
-var countryCode = "us";
+var countryCode = "";
 
 $(window).on('load', function (e) {
 
     if ($(".fax__container").length > 0) {
+        countryCode = $(".directions_button").attr("data-fao-market");
         faoURL = window.location.href;
         blackMarker = $('.pngPath_icon_locpin_blk').text();
         blueMarker = $('.pngPath_icon_locpin_blue').text();
@@ -859,6 +860,7 @@ $(window).on('load', function (e) {
         }
     }
     if ($(".find-office__zip-city-state").length > 0) {
+        countryCode = $(".find-office__submit").attr("data-fao-market");
         if (typeof countryCode !== 'undefined') {
             var options = {
                 componentRestrictions: {country: countryCode}
