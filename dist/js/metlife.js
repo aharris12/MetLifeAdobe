@@ -10887,9 +10887,9 @@ var ss_cached = [];
 
 var ss_gsa_host = null;
 
-var ajaxURL = $('.search-trigger__container' > input).attr('data-search-url');
-var dataSuggestionsFrontEnd = $('.search-trigger__container' > input).attr('data-suggestions-frontend');
-var dataSuggestionsSite = $('.search-trigger__container' > input).attr('data-suggestions-site');
+var ajaxURL = $('.search-trigger__container input').attr('data-search-url');
+var dataSuggestionsFrontEnd = $('.search-trigger__container input').attr('data-suggestions-frontend');
+var dataSuggestionsSite = $('.search-trigger__container input').attr('data-suggestions-site');
 if (window.location.href.indexOf("metlife.com/mmi", 0) >= 0) {
     ajaxURL = "/wps/mmi/suggest";
 }
