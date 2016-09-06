@@ -294,7 +294,7 @@ a:visited {
     padding-right: 60px;
 }
 
-.disabled-anchor {
+.contactDisclaimer .disabled-anchor {
     color: #999999 !important;
     text-decoration: none !important;
     cursor: text !important;
