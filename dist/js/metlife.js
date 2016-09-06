@@ -6670,11 +6670,12 @@ $('.maps-button').click(function (clickedButton) {
  });
  }
  }*/
-var countryCode = "us";
+var countryCode = "";
 
 $(window).on('load', function (e) {
 
     if ($(".fax__container").length > 0) {
+        countryCode = $(".directions_button").attr("data-fao-market");
         faoURL = window.location.href;
         blackMarker = $('.pngPath_icon_locpin_blk').text();
         blueMarker = $('.pngPath_icon_locpin_blue').text();
@@ -6691,6 +6692,7 @@ $(window).on('load', function (e) {
         }
     }
     if ($(".find-office__zip-city-state").length > 0) {
+        countryCode = $(".find-office__submit").attr("data-fao-market");
         if (typeof countryCode !== 'undefined') {
             var options = {
                 componentRestrictions: {country: countryCode}
@@ -10885,8 +10887,9 @@ var ss_cached = [];
 
 var ss_gsa_host = null;
 
-var ajaxURL = "/wps/suggest";
-
+var ajaxURL = $('.search-trigger__container input').attr('data-search-url');
+var dataSuggestionsFrontEnd = $('.search-trigger__container input').attr('data-suggestions-frontend');
+var dataSuggestionsSite = $('.search-trigger__container input').attr('data-suggestions-site');
 if (window.location.href.indexOf("metlife.com/mmi", 0) >= 0) {
     ajaxURL = "/wps/mmi/suggest";
 }
@@ -11199,6 +11202,7 @@ function ss_composeSuggestUri(qVal, suggestForm) {
      */
     uri = uri +
         '&format=' + encodeURIComponent(ss_protocol);
+    uri += '&client=' + encodeURIComponent(dataSuggestionsFrontEnd) + "&site=" + encodeURIComponent(dataSuggestionsSite);
     return uri;
 }
 
