@@ -153,7 +153,6 @@ if ($(".rate_table").length > 0) {
         parent.find(".content_left").scrollTop($(this).scrollTop());
     });
 
-
     // Resize Rate table
     $(window).on("resize", function () {
         resizeRateTable();
@@ -164,7 +163,7 @@ if ($(".rate_table").length > 0) {
 function formatRateTable() {
     $(".rate_table").each(function () {
         var parent = $(this);
-        if ($(this).hasClass("rate_table--variation-1")) {
+        if (parent.hasClass("rate_table--variation-1")) {
 
             // appends the body content and data-target class
             var bodyContent;
@@ -185,16 +184,12 @@ function formatRateTable() {
                     }
                 }
             }
-
-            //removes temporary content
-            parent.find(".content_temp").remove();
-
-        } else if ($(this).hasClass("rate_table--variation-2")) {
+        }
+        else if (parent.hasClass("rate_table--variation-2")) {
 
             // appends the body content and data-target class
             var bodyContent;
             var bodyLocation = parent.find(".content_body--variation .content_table");
-
 
             for (var i = 0; i < parent.find(".content_temp tbody tr").length; i++) {
                 bodyLocation.append("<tr></tr>");
@@ -219,13 +214,7 @@ function formatRateTable() {
                     }
                 }
             }
-
-            //removes temporary content
-            parent.find(".content_temp").remove();
-
         }
-
-
         else {
             if (parent.parent().hasClass("two-column-table")) {
                 // removes optional components
@@ -289,14 +278,17 @@ function formatRateTable() {
                     }
                 }
             }
-
-            // removes temporary content
-            parent.find(".content_temp").remove();
-
         }
+
+        if (parent.closest(".campaign-card").length > 0) {
+            parent.find(".window").addClass("right-0--desktop-start");
+        } else {
+            parent.find(".window").addClass("right-0--tablet-start");
+        }
+
+        //removes temporary content
+        parent.find(".content_temp").remove();
     });
-
-
 }
 
 
@@ -309,8 +301,36 @@ function resizeRateTable() {
             var rows = parent.find(".content_left tr").length;
             var height = parseInt(parent.find(".content_left").css("max-height"));
 
-            // Set widths for all elements
-            if (!$(".hidden-xs").is(":visible") && !parent.hasClass("table-mobile")) {
+            // Set column width for mobile
+            if (getViewport() == "mobile" && !parent.hasClass("table-mobile")) {
+                mobileColumns();
+                parent.removeClass("table-tablet");
+                parent.removeClass("table-desktop");
+                parent.addClass("table-mobile");
+            }
+
+            // Set column width for table
+            if (getViewport() == "tablet" && !parent.hasClass("table-tablet")) {
+                if (parent.closest(".campaign-card").length > 0) {
+                    mobileColumns();
+                } else {
+                    desktopColumns();
+                }
+
+                parent.removeClass("table-mobile");
+                parent.removeClass("table-desktop");
+                parent.addClass("table-tablet");
+            }
+
+            // Set column width for desktop
+            if (getViewport() == "desktop" && !parent.hasClass("table-desktop")) {
+                desktopColumns();
+                parent.removeClass("table-mobile");
+                parent.removeClass("table-tablet");
+                parent.addClass("table-desktop");
+            }
+
+            function mobileColumns() {
                 var visible;
                 if (columns >= tableColumns) {
                     visible = tableColumns;
@@ -322,13 +342,8 @@ function resizeRateTable() {
                 parent.find(".content_top, .content_body").css("width", visible / (visible + 1) * 100 + "%");
                 parent.find(".window").css("width", columns / visible * 100 + "%");
                 parent.find("td").css("width", 1 / columns * 100 + "%");
-
-                parent.removeClass("table-nonmobile");
-                parent.addClass("table-mobile");
             }
-
-            // Set column width for tablet/ desktop
-            if ((getViewport() == "tablet" || getViewport() == "desktop") && !parent.hasClass("table-nonmobile")) {
+            function desktopColumns() {
                 var width;
                 var max_columns;
                 if (parent.parent().hasClass("comparison-table")) {
@@ -356,9 +371,6 @@ function resizeRateTable() {
                     parent.find(".window").css("width", 100 + "%");
                     parent.find("td").css("width", 1 / columns * 100 + "%");
                 }
-
-                parent.removeClass("table-mobile");
-                parent.addClass("table-nonmobile");
             }
 
             // Vertical height
