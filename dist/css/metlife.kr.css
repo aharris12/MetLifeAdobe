@@ -14853,6 +14853,16 @@ manner*/
         line-height:20px;
     }
 }
+.inputHolderSR .suggestionsbox table {
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    border: 1px #ccc solid;
+}
+
 .suggestionsbox {
     cursor: pointer;
 }
