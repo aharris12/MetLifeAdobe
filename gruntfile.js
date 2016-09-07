@@ -291,7 +291,8 @@ module.exports = function (grunt) {
                     'dev/js/_plugins/typeahead.bundle.js',
                     'dev/js/_plugins/jquery.cookie.js',
                     'dev/js/_plugins/jquery.bootpag.min.js',
-                    'dev/js/_plugins/jquery.inview.js'
+                    'dev/js/_plugins/jquery.inview.js',
+                    'dev/js/ctc_tcpa.js'
                 ],
                 dest: 'dist/js/vendors.js'
             },
