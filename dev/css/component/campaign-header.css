@@ -223,10 +223,16 @@
     }
 
     .campaign-header__popup__contact {
-        display: flex
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
     }
 
     .campaign-header__popup__contact input {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
         flex: 1;
         margin-right: 10px;
     }
