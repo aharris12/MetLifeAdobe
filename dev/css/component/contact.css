@@ -23,7 +23,8 @@
 
 .contact-us--small-size-font,
 .contact-results--small-heading {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 26px;
     font-weight: 600;
 }
 .contact-us--small-size-font{
@@ -46,6 +47,23 @@
 .contact-us__listing-row,
 .contact-us__address-block {
     margin-bottom: 10px;
+}
+.contact-results--large-heading{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+    .contact-us__listing-row a{
+        color: #2377C5;
+    }
+
+
+@media screen and (min-width: 768px) {
+    .contact-us__listing-row a{
+        color: #333;
+        pointer-events: none;
+        cursor: pointer;
+    }
 }
 
 .contact-us__header {
@@ -255,6 +273,11 @@
 }
 
 @media screen and (min-width: 768px) {
+    .contact-us--small-size-font,
+    .contact-results--small-heading {
+        font-size: 14px;
+        line-height: 18px;
+    }
     .contact-us__address_header {
         font-size: 20px;
         line-height: 24px;
@@ -367,7 +390,15 @@
 }
 
 @media screen and (min-width: 1024px) {
-
+    .contact-us--small-size-font,
+    .contact-results--small-heading {
+        line-height: 20px;
+    }
+    .contact-results--large-heading{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+    }
     .contact-us__results__wrapper > div {
         width: 80%;
         margin-left: auto;
