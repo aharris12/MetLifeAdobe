@@ -10074,17 +10074,34 @@ product-module__list ul:last-child, p:last-child {
     line-height:22px;
     font-weight: 400;
 }
-
+.section-header h2{
+    font-size: 18px;
+    line-height:22px;
+    font-weight: 600;
+    color: #333;
+}
 .section-header ul{
     list-style: disc;
     padding-left:20px;
     margin-bottom: 20px;
+    font-weight: 400;
+}
+@media screen and (max-width: 767px){
+    .section-header ul:first-of-type{
+        margin-bottom: 0px;
+    }
+}
+.section-header li{
+    font-weight: 400;
+    font-size: 14px;
+    line-height:18px;
+    margin-bottom: 10px;
 }
 
-.section-header li{
-    font-weight: 600;
-    font-size: 13px;
-    line-height:16px;
+.section-header p{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
 }
 
 .section__number{
@@ -10092,12 +10109,12 @@ product-module__list ul:last-child, p:last-child {
 }
 
 @media screen and (min-width: 768px) {
-    .section h1{
+    .section h2{
         font-size: 20px;
         line-height:24px;
     }
     .section-header{
-        width: 60%;
+
         margin-left: auto;
         margin-right: auto;
     }
@@ -10110,13 +10127,13 @@ product-module__list ul:last-child, p:last-child {
 }
 
 @media screen and (min-width: 1024px) {
-    .section h1{
+    .section h2{
         font-size: 22px;
         line-height: 26px;
     }
 
     .section-header{
-        width: 60%;
+        width: 65%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -10125,10 +10142,6 @@ product-module__list ul:last-child, p:last-child {
         display:inline-block;
         float:left;
         margin-left: 5%;
-    }
-    .section-header li{
-        font-size: 14px;
-        line-height:18px;
     }
 }
 .contact-us {
