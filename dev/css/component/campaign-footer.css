@@ -3,17 +3,26 @@
     width: 50%;
     display: block;
     float:left;
-    border-top: 1px solid #ccc;
     padding: 15px;
     word-break: break-all;
 }
 
-.campaign-footer .campaign-footer-link:nth-last-of-type(-n+3){
+.campaign-footer .campaign-footer-link:nth-child(-n+2){
+    border-top: 1px solid #ccc;
+}
+.campaign-footer .campaign-footer-link{
     border-bottom: 1px solid #ccc;
 }
 
 .campaign-footer .campaign-footer-link:nth-of-type(odd){
     border-right: 1px solid #ccc;
+}
+@media screen and (max-width: 767px) {
+    .campaign-footer .campaign-footer-link:nth-of-type(odd):nth-last-of-type(-n+2) {
+        width:100%;
+        border-bottom: 1px solid #ccc;
+        border-top:none;
+    }
 }
 
 .campaign-footer .campaign-footer__legal{
