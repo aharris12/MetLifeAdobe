@@ -195,7 +195,7 @@ manner*/
 .hider {
     display:block !important
 }
-#lpButtonDiv {
+ .wrapper__quote-card #lpButtonDiv {
     display:block;
 }
 .ctcShort {
@@ -295,7 +295,7 @@ manner*/
     .hider {
         display: block !important;
     }
-    #lpButtonDiv {
+    .wrapper__quote-card  #lpButtonDiv {
         position: fixed;
         top: 0;
         z-index: 1000;
@@ -621,7 +621,7 @@ manner*/
 continue to be generated through the vendor script of whether it will be used in a different
 manner*/
 
-    #lpButtonDiv {
+    .wrapper__quote-card #lpButtonDiv {
         right: 371px;
     }
     .ctcShort {
