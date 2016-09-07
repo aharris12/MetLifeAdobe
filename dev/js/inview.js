@@ -6,7 +6,7 @@ $(window).scroll(function () {
 	});
 });
 
-$(document).ready(function () {
+$(window).on("load", function () {
 	$('.in_view').bind('inview', function (event, visible) {
 		if (visible == true) {
 			$(this).addClass('on');
