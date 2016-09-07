@@ -8530,10 +8530,6 @@ product-module__list ul:last-child, p:last-child {
 }
 
 
-body{
-    padding-top: 0;
-}
-
 .microsite-header{
     height:50px;
     display:table;
