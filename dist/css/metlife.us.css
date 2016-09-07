@@ -14853,6 +14853,16 @@ manner*/
         line-height:20px;
     }
 }
+.inputHolderSR .suggestionsbox table {
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    border: 1px #ccc solid;
+}
+
 .suggestionsbox {
     cursor: pointer;
 }
@@ -19233,6 +19243,8 @@ text-align: center;
 }
 .generic_content {
     background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -19331,10 +19343,6 @@ text-align: center;
     margin-right: auto;
 }
 
-.generic_content .expanded, .generic_content .unexpanded {
-    padding: 0 10px;
-}
-
 .generic_content .expanded > div, .generic_content .unexpanded > div {
     margin-bottom: 20px;
     text-align: left;
@@ -19390,6 +19398,10 @@ text-align: center;
 }
 
 @media screen and (min-width: 768px) {
+    .generic_content {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .generic-content__img__container {
         width: 75%;
     }
