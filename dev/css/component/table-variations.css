@@ -29,6 +29,7 @@
 
 .rate_table .controls .carousel-indicators li {
     border-color: #cccccc;
+    cursor: auto;
 }
 
 .rate_table .controls .carousel-indicators .active {
