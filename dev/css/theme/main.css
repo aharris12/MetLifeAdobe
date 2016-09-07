@@ -63,6 +63,11 @@ table {
     padding-top: 30px;
 }
 
+.wrapper--sides-only {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 .header--font-weight-400 {
     font-weight: 400;
 }
@@ -161,8 +166,8 @@ a:visited {
 }
 
 .brand-6th {
-    color: #add0f0;
-    fill: #add0f0;
+    color: #a4d8f1;
+    fill: #a4d8f1;
 }
 
 .brand-gray-1st {
@@ -289,7 +294,7 @@ a:visited {
     padding-right: 60px;
 }
 
-.disabled-anchor {
+.contactDisclaimer .disabled-anchor {
     color: #999999 !important;
     text-decoration: none !important;
     cursor: text !important;

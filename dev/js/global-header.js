@@ -30,17 +30,19 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu() {
     if (getViewport() == "mobile") {
-        /*if ($('body').hasClass('overlay-scroll__parent')) {
-         $('body').removeClass('overlay-scroll__parent')
-         }
-         if ($('.megamenu').hasClass('overlay-scroll__child')) {
-         $('.megamenu').removeClass('overlay-scroll__child')
-         }
-         if ($('.login-container').hasClass('overlay-scroll__child')) {
-         $('.login-container').removeClass('overlay-scroll__child')
-         }*/
+        if($(".megamenu").hasClass("megamenu--open")) {
+            if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
+                $(".megamenu--open").addClass("megamenu--open--mobile");
+                $("body").css("overflow", "hidden");
+            }
+        }
     }
     if (getViewport() == "tablet" || getViewport() == "desktop") {
+        if($(".megamenu--open").hasClass("megamenu--open--mobile")) {
+            $(".megamenu--open").removeClass("megamenu--open--mobile");
+            $("body").css("overflow", "visible");
+            $("body").css("overflow-x", "hidden");
+        }
         $(".megamenu__sub-items").show();
         if ($('.megamenu').hasClass('megamenu--open')) {
 
@@ -227,12 +229,13 @@ $('body').on('click touchstart tap', function (e) {
 
 
 $('.megamenu-trigger').on('click', function () {
-
-
+    
+    
     if ($(".icon-close.megamenu-trigger__icon").css("display") == "none") {
         currentSpot = $('body').scrollTop();
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
         $(".icon-menu.megamenu-trigger__icon").css("display", "none");
+        $("html, body").animate({scrollTop: 0}, 1);
     } else {
         $(".icon-close.megamenu-trigger__icon").css("display", "none");
         $(".icon-menu.megamenu-trigger__icon").css("display", "inline-block");
@@ -240,32 +243,13 @@ $('.megamenu-trigger').on('click', function () {
     }
 
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
+    $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+    $("html, body, .global-header").toggleClass('megamenu--open--style');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
 
     closeContactForm();
     $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
-
-    if (getViewport() != "mobile") {
-        if ($('body').hasClass('overlay-scroll__parent')) {
-            $('body').removeClass('overlay-scroll__parent')
-        } else {
-            $('body').addClass('overlay-scroll__parent')
-        }
-        if ($('.megamenu').hasClass('overlay-scroll__child')) {
-            $('.megamenu').removeClass('overlay-scroll__child')
-            $(".global-header__middle").removeClass("menu--left")
-
-        } else {
-            $('.megamenu').addClass('overlay-scroll__child')
-            $(".global-header__middle").addClass("menu--left")
-        }
-        if ($('.login-types').hasClass('overlay-scroll__child')) {
-            $('.login-types').removeClass('overlay-scroll__child');
-            $('.login-container').removeClass('overlay-scroll__child');
-        }
-
-    }
 
     if (getViewport() == "desktop") {
 
@@ -351,9 +335,15 @@ $('.megamenu-trigger').on('click', function () {
             }
         }
     } else {
-
         closeSearchBox();
+        $(".megamenu").toggleClass('megamenu--open--mobile');
+        if($(".megamenu").hasClass("megamenu--open--mobile")) {
+            $("body").css("overflow", "hidden");
+        } else {
+            $("body").css("overflow", "visible");
+            $("body").css("overflow-x", "hidden");
 
+        }
     }
 });
 
@@ -481,9 +471,12 @@ $('.login-trigger').click(function (e) {
         $(".global-header__middle").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
+            console.log('megamenu visible');
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
-            $('.megamenu-trigger__link').toggleClass('megamenu-trigger__icon--open');
+            $('.icon-close').toggle();
+            $(".js-megaMenuToggle").toggleClass("hidden");
+            $('.icon-menu').toggle();
         }
     }
 });

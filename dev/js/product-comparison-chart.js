@@ -1,12 +1,7 @@
-/**
- * Created by jfeng2 on 12/21/2015.
- */
-
 $(window).load(function () {
     productComparisonChart();
     micrositeCarouselSetup();
     micrositeComparisonChart();
-
 });
 
 $(window).resize(function (e) {
@@ -15,15 +10,13 @@ $(window).resize(function (e) {
 });
 
 
-//Product Comparison Chart
-
+// Product Comparison Chart
 function productComparisonChart() {
 
     // Init first block
     $('.product_chart .carousel-item').removeClass('selected');
     $('.product_chart .carousel-item').first().addClass('selected');
     $('.product_chart .carousel-tab').first().show();
-
 
     // Determine how many blocks to show based on screen width
     var splitter = 0;
@@ -48,9 +41,7 @@ function productComparisonChart() {
         var nextIndex = $('.item.active > .carousel-item').attr('data-target');
         $('.product_chart .carousel-item').eq(nextIndex).addClass('selected');
     });
-
 }
-
 
 // Microsite comparison chart
 function micrositeCarouselSetup() {
@@ -58,35 +49,27 @@ function micrositeCarouselSetup() {
         var columnNum = $(this).children(".column-wrapper").length;
         switch (columnNum) {
             case (1):
-
                 if ($(".visible-xs").is(":visible")) {
                     if ($(this).parent().next().length != 0) {
-
                         $(this).find(".microsite-column-category").addClass("mcc2");
                         $(this).parent().next().find(".carousel-item").find(".microsite-column-category").clone().appendTo($(this)).addClass("visible-xs mcc2");
                         $(this).parent().next().find(".carousel-item").find(".column-wrapper").first().clone().appendTo($(this)).addClass("visible-xs col2");
-
-
                     } else {
                         $(this).find(".microsite-column-category").addClass("mcc2");
                         $(".carousel-item").first().find(".microsite-column-category").first().clone().appendTo($(this)).addClass("visible-xs mcc2");
                         $(".carousel-item").first().find(".column-wrapper").first().clone().appendTo($(this)).addClass("visible-xs col2");
-
                     }
                 } else {
                     if ($(this).is(".carousel-item").last()) {
                         $(this).find(".microsite-column-category").addClass("mcc2");
                         $(this).parent().find(".carousel-item").first().find(".microsite-column-category").first().clone().appendTo($(this)).addClass("visible-xs mcc2");
                         $(this).parent().find(".carousel-item").first().find(".column-wrapper").first().clone().appendTo($(this)).addClass("visible-xs col2");
-
                     } else {
                         $(this).find(".microsite-column-category").addClass("mcc2");
                         $(this).next(".carousel-item").find(".microsite-column-category").clone().appendTo($(this)).addClass("visible-xs mcc2");
                         $(this).next(".carousel-item").find(".column-wrapper").first().clone().appendTo($(this)).addClass("visible-xs col2");
                     }
-
                 }
-
                 break;
             case (2):
                 $(this).children(".column-wrapper").css("width", "50%");
@@ -101,14 +84,19 @@ function micrositeCarouselSetup() {
                 break;
             case (5):
                 $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:not(:nth-last-child(-n+2))').remove();
-                ;
                 $(this).clone().addClass('visible-xs').insertAfter($(this)).find('.column-wrapper:nth-child(-n+3), .column-wrapper').last().remove();
                 $(this).find('.column-wrapper:nth-child(n+4)').addClass("hidden-xs");
                 break;
             default:
         }
+    });
 
+    $(".microsite-product-chart .carousel-control.left").click(function () {
+        $(".microsite-product-chart .carousel").carousel("prev");
+    });
 
+    $(".microsite-product-chart .carousel-control.right").click(function () {
+        $(".microsite-product-chart .carousel").carousel("next");
     });
 };
 
@@ -116,13 +104,11 @@ function matchHeights() {
     if (!$(".visible-xs").is(":visible")) {
         $(".microsite-product-chart").each(function () {
             var elements = $(this).find(".microsite-column-category:nth-child(1)").not(":hidden");
-
             var height = 0;
 
             elements.css('min-height', '0px');
             elements.each(function () {
                 height = $(this).height() > height ? $(this).height() : height;
-
             });
             elements.css('min-height', height + 'px');
 
@@ -137,28 +123,19 @@ function matchHeights() {
 
                 elements.css('min-height', '0px');
                 elements.each(function () {
-
                     height = $(this).height() > height ? $(this).height() : height;
-
-
                 });
                 elements.css('min-height', height + 'px');
                 $(".left-col-mcc").css('min-height', height + 'px');
                 $(".microsite-product-chart .carousel .carousel-inner .carousel-item ").each(function () {
                     $(this).find(".microsite-column-category:nth-child(3)").css("margin-top", 0 - height);
-
-
                 });
-
-
             }
-
         });
     }
-};
+}
 
 function micrositeComparisonChart() {
-
     matchHeights();
 
     if (!$(".hidden-xs").is(":visible")) {
@@ -176,38 +153,30 @@ function micrositeComparisonChart() {
             $(".microsite-product-chart .carousel .carousel-inner .carousel-item").not('.visible-xs').each(function () {
                 //number of column wrapper in a single carousel-item
                 var columnWrapperNum = $(this).find('.column-wrapper').not('.visible-xs').length;
-                $(this).css('width', columnWrapperNum/columnWrapperNumTotal * 100 + '%');
+                $(this).css('width', columnWrapperNum / columnWrapperNumTotal * 100 + '%');
 
                 $(this).find('.column-wrapper').css('width', 100 / columnWrapperNum + '%');
             });
         });
     }
 
-
     $(".microsite-product-chart .carousel .carousel-inner .carousel-item .column-wrapper").not(".visible-xs").each(function (index) {
-
         if (!$(".visible-xs").is(":visible")) {
             if (index % 2 == 0) {
                 $(this).css("background-color", "#f2f2f2");
             } else {
                 $(this).css("background-color", "#ffffff");
             }
-
-
         }
 
     });
     $(".microsite-product-chart .carousel .carousel-inner .carousel-item .column-wrapper").each(function (index) {
-
-
         if ($(".visible-xs").is(":visible")) {
             if (index % 2 == 0) {
                 $(this).css("background-color", "#f2f2f2");
             } else {
                 $(this).css("background-color", "#ffffff");
             }
-
-
         }
 
     });
@@ -224,7 +193,6 @@ function micrositeComparisonChart() {
     switch (false) {
         case ($(".hidden-xs").is(":visible")):
             splitter = 1;
-
             break;
         default:
             splitter = 5;
@@ -236,7 +204,6 @@ function micrositeComparisonChart() {
         slides.slice(i, i + splitter).wrapAll("<div class='item'></div>");
     }
 
-
     $('.microsite-product-chart .item').first().addClass('active');
 
     // Style first tab after a carousel slide
@@ -245,7 +212,4 @@ function micrositeComparisonChart() {
         var nextIndex = $('.item.active > .carousel-item').attr('data-target');
         $('.microsite-product-chart .carousel-item').eq(nextIndex).addClass('selected');
     });
-
-
-};
-/****** Microsite End ***************************************************************/
+}

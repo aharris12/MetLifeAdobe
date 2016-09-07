@@ -34,7 +34,7 @@
     </div>
     <div class="campaign-header__section col-xs-4 col-sm-4">
         <a class="campaign-header--logo" href="#">
-            <img src="/static/images/MetLife.png" alt="Metlife-Logo">
+            <img src="/static/images/MetLife.png" alt="Metlife-Logo" class="global-header__logo">
         </a>
     </div>
     <div class="campaign-header__section  col-xs-4 col-sm-4">
@@ -49,19 +49,19 @@
     </div>
     <div class="campaign-header__popup bg-brand-3rd">
         <div class="campaign-header-ctc">
-            <h5 class="white text-center">Enter your number below:</h5>
+            <h5 class="text-center">Enter your number below:</h5>
             <div class="campaign-header__popup__contact">
                 <input type="text" placeholder="Phone (XXX-XXX-XXXX)" name="phNumber" data-valid-type="phone">
                 <a class="btn-brand-2nd" href="#">call me now</a>
             </div>
-            <p class="brand-6th">
+            <p>
                 By clicking [Button Name], you agree that we* may contact you at the number you’ve provided, possibly
                 using automated technology or a prerecorded voice, to talk about our products and services. If you don’t
                 want to give this permission, you can still get a quote or make a purchase by calling us directly at
                 [number].
             </p>
 
-            <p class="brand-6th">
+            <p>
                 <a href="#">*A MetLife company</a> or third party acting on MetLife’s behalf.
             </p>
         </div>
@@ -96,6 +96,7 @@
 
                 <div class="campaign-d-content-section campaign-content-linksection">
                     <a class="btn btn-brand-2nd matching-element-width" href="#">Click here</a>
+                    <a id="lpButtonDiv" class="campaign-card-ctc matching-element-width">Click to Chat</a>
                 </div>
                 <div class="campaign-d-content-section campaign-card-addendum">
                     <span>Save more with Special Group Discounts</span>
@@ -388,7 +389,6 @@
         </div>
     </div>
 </div>
-
 
 
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
