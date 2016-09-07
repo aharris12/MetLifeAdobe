@@ -62,73 +62,73 @@ if ($(".rate_table").length > 0) {
         }
     });
 
-
     //Swipe when user click on indicators below the table in Mobile view
-    $('.rate_table .carousel-indicators > li').click(function() {
-
-        //Determine active and clicked indicators
-        var activeIndicator = $(this).parent().find("li.active").index() + 1;
-        var clickedIndicator = $(this).index() + 1;
-
-        //Determine if we need to swipe RIGHT or LEFT
-        if (clickedIndicator > activeIndicator) {
-            //Swipe Left
-            var numOfColumnsToSwipe = '+=' + 100 * (clickedIndicator - activeIndicator) + '%' ;
-            var parent = $(this).closest(".rate_table");
-            if (!parent.find(".controls ol li").last().hasClass("active") && $('.controls').is(':visible')) {
-                var number = parent.find("td.last").nextAll().length;
-                if (number >= tableColumns) {
-                    parent.find('.window').animate({right: numOfColumnsToSwipe}, "slow");
-                    number = tableColumns;
-                }
-                else {
-                    parent.find('.window').animate({right: '+=' + 100 / tableColumns * number + '%'}, "slow");
-                }
-
-                //Set clicked indicator to ACTIVE
-                var indicator = parent.find("ol li.active");
-                indicator.removeClass("active");
-                $('.rate_table .carousel-indicators > li:eq(' + $(this).index() + ')').addClass("active");
-
-                var first = parent.find("td.first");
-                var last = parent.find("td.last");
-                first.removeClass("first");
-                first.nextAll().eq(number - 1).addClass("first");
-                last.removeClass("last");
-                last.nextAll().eq(number - 1).addClass("last");
-            }
-        } else if (clickedIndicator < activeIndicator) {
-            //Swipe Right
-            var numOfColumnsToSwipe = '-=' + 100 * (activeIndicator - clickedIndicator) + '%' ;
-            var parent = $(this).closest(".rate_table");
-            if (!parent.find(".controls ol li").first().hasClass("active") && $('.controls').is(':visible')) {
-                var number = parent.find("td.first").prevAll().length;
-                if (number >= tableColumns) {
-                    parent.find('.window').animate({right: numOfColumnsToSwipe}, "slow");
-                    number = tableColumns;
-                }
-                else {
-                    parent.find('.window').animate({right: '-=' + 100 / tableColumns * number + '%'}, "slow");
-                }
-
-                //Set clicked indicator to ACTIVE
-                var indicator = parent.find("ol li.active");
-                indicator.removeClass("active");
-                $('.rate_table .carousel-indicators > li:eq(' + $(this).index() + ')').addClass("active");
-
-                var first = parent.find("td.first");
-                var last = parent.find("td.last");
-                first.removeClass("first");
-                first.prevAll().eq(number - 1).addClass("first");
-                last.removeClass("last");
-                last.prevAll().eq(number - 1).addClass("last");
-            }
-        }
-    });
+    //$('.rate_table .carousel-indicators > li').click(function () {
+    //
+    //    //Determine active and clicked indicators
+    //    var activeIndicator = $(this).parent().find("li.active").index() + 1;
+    //    var clickedIndicator = $(this).index() + 1;
+    //
+    //    //Determine if we need to swipe RIGHT or LEFT
+    //    if (clickedIndicator > activeIndicator) {
+    //        //Swipe Left
+    //        var numOfColumnsToSwipe = '+=' + 100 * (clickedIndicator - activeIndicator) + '%';
+    //        var parent = $(this).closest(".rate_table");
+    //        if (!parent.find(".controls ol li").last().hasClass("active") && $('.controls').is(':visible')) {
+    //            var number = parent.find("td.last").nextAll().length;
+    //            if (number >= tableColumns) {
+    //                parent.find('.window').animate({right: numOfColumnsToSwipe}, "slow");
+    //                number = tableColumns;
+    //            }
+    //            else {
+    //                parent.find('.window').animate({right: '+=' + 100 / tableColumns * number + '%'}, "slow");
+    //            }
+    //
+    //            //Set clicked indicator to ACTIVE
+    //            var indicator = parent.find("ol li.active");
+    //            indicator.removeClass("active");
+    //            $('.rate_table .carousel-indicators > li:eq(' + $(this).index() + ')').addClass("active");
+    //
+    //            var first = parent.find("td.first");
+    //            var last = parent.find("td.last");
+    //            first.removeClass("first");
+    //            first.nextAll().eq(number - 1).addClass("first");
+    //            last.removeClass("last");
+    //            last.nextAll().eq(number - 1).addClass("last");
+    //        }
+    //    }
+    //    else if (clickedIndicator < activeIndicator) {
+    //        //Swipe Right
+    //        var numOfColumnsToSwipe = '-=' + 100 * (activeIndicator - clickedIndicator) + '%';
+    //        var parent = $(this).closest(".rate_table");
+    //        if (!parent.find(".controls ol li").first().hasClass("active") && $('.controls').is(':visible')) {
+    //            var number = parent.find("td.first").prevAll().length;
+    //            if (number >= tableColumns) {
+    //                parent.find('.window').animate({right: numOfColumnsToSwipe}, "slow");
+    //                number = tableColumns;
+    //            }
+    //            else {
+    //                parent.find('.window').animate({right: '-=' + 100 / tableColumns * number + '%'}, "slow");
+    //            }
+    //
+    //            //Set clicked indicator to ACTIVE
+    //            var indicator = parent.find("ol li.active");
+    //            indicator.removeClass("active");
+    //            $('.rate_table .carousel-indicators > li:eq(' + $(this).index() + ')').addClass("active");
+    //
+    //            var first = parent.find("td.first");
+    //            var last = parent.find("td.last");
+    //            first.removeClass("first");
+    //            first.prevAll().eq(number - 1).addClass("first");
+    //            last.removeClass("last");
+    //            last.prevAll().eq(number - 1).addClass("last");
+    //        }
+    //    }
+    //});
 
     // Open & Close Monthly Rates Dropdown
     $(".monthly_rates .expand_button").click(function () {
-        if($(".monthly_rates").has(".wrapper-general")) {
+        if ($(".monthly_rates").has(".wrapper-general")) {
             $(".expanded").siblings(".unexpanded").slideToggle(function () {
                 resizeRateTable();
             });
@@ -153,8 +153,6 @@ if ($(".rate_table").length > 0) {
         parent.find(".content_left").scrollTop($(this).scrollTop());
     });
 
-
-
     // Resize Rate table
     $(window).on("resize", function () {
         resizeRateTable();
@@ -165,7 +163,7 @@ if ($(".rate_table").length > 0) {
 function formatRateTable() {
     $(".rate_table").each(function () {
         var parent = $(this);
-        if ($(this).hasClass("rate_table--variation-1")) {
+        if (parent.hasClass("rate_table--variation-1")) {
 
             // appends the body content and data-target class
             var bodyContent;
@@ -186,18 +184,12 @@ function formatRateTable() {
                     }
                 }
             }
-
-            //removes temporary content
-            parent.find(".content_temp").remove();
-
-        } else if ($(this).hasClass("rate_table--variation-2")) {
+        }
+        else if (parent.hasClass("rate_table--variation-2")) {
 
             // appends the body content and data-target class
             var bodyContent;
             var bodyLocation = parent.find(".content_body--variation .content_table");
-
-
-
 
             for (var i = 0; i < parent.find(".content_temp tbody tr").length; i++) {
                 bodyLocation.append("<tr></tr>");
@@ -212,23 +204,17 @@ function formatRateTable() {
                             bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + j + "'>" + bodyContent + "</td>");
                             j++;
                             bodyContent = parent.find(".content_temp tr").eq(i).children("td").eq(j).text();
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + (j-1) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='active health-class-" + (j - 1) + "'>" + bodyContent + "</td>");
                             break;
                         default:
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + ((j+1)/2) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + ((j + 1) / 2) + "'>" + bodyContent + "</td>");
                             j++;
                             bodyContent = parent.find(".content_temp tr").eq(i).children("td").eq(j).text();
-                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + (j/2) + "'>" + bodyContent + "</td>");
+                            bodyLocation.find("tr").eq(i + 1).append("<td class='health-class-" + (j / 2) + "'>" + bodyContent + "</td>");
                     }
                 }
             }
-
-            //removes temporary content
-            parent.find(".content_temp").remove();
-
         }
-
-
         else {
             if (parent.parent().hasClass("two-column-table")) {
                 // removes optional components
@@ -292,14 +278,17 @@ function formatRateTable() {
                     }
                 }
             }
-
-            // removes temporary content
-            parent.find(".content_temp").remove();
-
         }
+
+        if (parent.closest(".campaign-card").length > 0) {
+            parent.find(".window").addClass("right-0--desktop-start");
+        } else {
+            parent.find(".window").addClass("right-0--tablet-start");
+        }
+
+        //removes temporary content
+        parent.find(".content_temp").remove();
     });
-
-
 }
 
 
@@ -312,8 +301,36 @@ function resizeRateTable() {
             var rows = parent.find(".content_left tr").length;
             var height = parseInt(parent.find(".content_left").css("max-height"));
 
-            // Set widths for all elements
-            if (!$(".hidden-xs").is(":visible") && !parent.hasClass("table-mobile")) {
+            // Set column width for mobile
+            if (getViewport() == "mobile" && !parent.hasClass("table-mobile")) {
+                mobileColumns();
+                parent.removeClass("table-tablet");
+                parent.removeClass("table-desktop");
+                parent.addClass("table-mobile");
+            }
+
+            // Set column width for table
+            if (getViewport() == "tablet" && !parent.hasClass("table-tablet")) {
+                if (parent.closest(".campaign-card").length > 0) {
+                    mobileColumns();
+                } else {
+                    desktopColumns();
+                }
+
+                parent.removeClass("table-mobile");
+                parent.removeClass("table-desktop");
+                parent.addClass("table-tablet");
+            }
+
+            // Set column width for desktop
+            if (getViewport() == "desktop" && !parent.hasClass("table-desktop")) {
+                desktopColumns();
+                parent.removeClass("table-mobile");
+                parent.removeClass("table-tablet");
+                parent.addClass("table-desktop");
+            }
+
+            function mobileColumns() {
                 var visible;
                 if (columns >= tableColumns) {
                     visible = tableColumns;
@@ -325,13 +342,9 @@ function resizeRateTable() {
                 parent.find(".content_top, .content_body").css("width", visible / (visible + 1) * 100 + "%");
                 parent.find(".window").css("width", columns / visible * 100 + "%");
                 parent.find("td").css("width", 1 / columns * 100 + "%");
-
-                parent.removeClass("table-nonmobile");
-                parent.addClass("table-mobile");
             }
 
-            // Set column width for tablet/ desktop
-            if ((getViewport() == "tablet" || getViewport() == "desktop") && !parent.hasClass("table-nonmobile")) {
+            function desktopColumns() {
                 var width;
                 var max_columns;
                 if (parent.parent().hasClass("comparison-table")) {
@@ -359,9 +372,6 @@ function resizeRateTable() {
                     parent.find(".window").css("width", 100 + "%");
                     parent.find("td").css("width", 1 / columns * 100 + "%");
                 }
-
-                parent.removeClass("table-mobile");
-                parent.addClass("table-nonmobile");
             }
 
             // Vertical height
@@ -395,8 +405,8 @@ function setHealthGuidelinesTableHeader() {
             })
         });
     }
-    if ($(".rate_table--variation-2").length>0){
-        $(".overlay-table-section .rate_table--variation-2").find(".content_table th:not(':first-child')").attr("colspan",'2');
+    if ($(".rate_table--variation-2").length > 0) {
+        $(".overlay-table-section .rate_table--variation-2").find(".content_table th:not(':first-child')").attr("colspan", '2');
     }
 }
 

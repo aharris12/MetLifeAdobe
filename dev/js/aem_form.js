@@ -538,6 +538,24 @@ SFDC.form.forEach(function (element) {
                     if (parent.find('#' + f.id).is(":visible")) {
                         var Phregex = new RegExp(/^\d{1,12}$/);
                         var MPhregex = new RegExp(/^\d{1,14}$/);
+
+                        if (f.type == "dob" || f.type == "date") {
+                            var dateInput = "";
+                            var date = parent.find('#' + f.id + 'd').val();
+                            var month = parent.find('#' + f.id + 'm').val();
+                            var year = parent.find('#' + f.id + 'y').val();
+
+                            date = ('0' + date).slice(-2);
+                            month = ('0' + month).slice(-2);
+
+                            if (f.type == "dob" && formSubmissiontype == "form_direct_sfdc_type") {
+                                dateInput = date + '/' + month + '/' + year;
+                            } else {
+                                dateInput = year + '-' + month + '-' + date;
+                            }
+                            parent.find('#' + f.id).val(dateInput);
+                            parent.find('#' + f.id + "Input").val(dateInput);
+                        }
                         var fieldValue = parent.find('#' + f.id).val();
                         switch (f.validator) {
                             case false:

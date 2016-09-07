@@ -229,8 +229,8 @@ $('body').on('click touchstart tap', function (e) {
 
 
 $('.megamenu-trigger').on('click', function () {
-
-
+    
+    
     if ($(".icon-close.megamenu-trigger__icon").css("display") == "none") {
         currentSpot = $('body').scrollTop();
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
@@ -243,6 +243,8 @@ $('.megamenu-trigger').on('click', function () {
     }
 
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
+    $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+    $("html, body, .global-header").toggleClass('megamenu--open--style');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
 
