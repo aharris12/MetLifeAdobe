@@ -6670,11 +6670,12 @@ $('.maps-button').click(function (clickedButton) {
  });
  }
  }*/
-var countryCode = "us";
+var countryCode = "";
 
 $(window).on('load', function (e) {
 
     if ($(".fax__container").length > 0) {
+        countryCode = $(".directions_button").attr("data-fao-market");
         faoURL = window.location.href;
         blackMarker = $('.pngPath_icon_locpin_blk').text();
         blueMarker = $('.pngPath_icon_locpin_blue').text();
@@ -6691,6 +6692,7 @@ $(window).on('load', function (e) {
         }
     }
     if ($(".find-office__zip-city-state").length > 0) {
+        countryCode = $(".find-office__submit").attr("data-fao-market");
         if (typeof countryCode !== 'undefined') {
             var options = {
                 componentRestrictions: {country: countryCode}
@@ -9997,6 +9999,24 @@ SFDC.form.forEach(function (element) {
                     if (parent.find('#' + f.id).is(":visible")) {
                         var Phregex = new RegExp(/^\d{1,12}$/);
                         var MPhregex = new RegExp(/^\d{1,14}$/);
+
+                        if (f.type == "dob" || f.type == "date") {
+                            var dateInput = "";
+                            var date = parent.find('#' + f.id + 'd').val();
+                            var month = parent.find('#' + f.id + 'm').val();
+                            var year = parent.find('#' + f.id + 'y').val();
+
+                            date = ('0' + date).slice(-2);
+                            month = ('0' + month).slice(-2);
+
+                            if (f.type == "dob" && formSubmissiontype == "form_direct_sfdc_type") {
+                                dateInput = date + '/' + month + '/' + year;
+                            } else {
+                                dateInput = year + '-' + month + '-' + date;
+                            }
+                            parent.find('#' + f.id).val(dateInput);
+                            parent.find('#' + f.id + "Input").val(dateInput);
+                        }
                         var fieldValue = parent.find('#' + f.id).val();
                         switch (f.validator) {
                             case false:
@@ -10885,8 +10905,9 @@ var ss_cached = [];
 
 var ss_gsa_host = null;
 
-var ajaxURL = "/wps/suggest";
-
+var ajaxURL = $('.search-trigger__container input').attr('data-search-url');
+var dataSuggestionsFrontEnd = $('.search-trigger__container input').attr('data-suggestions-frontend');
+var dataSuggestionsSite = $('.search-trigger__container input').attr('data-suggestions-site');
 if (window.location.href.indexOf("metlife.com/mmi", 0) >= 0) {
     ajaxURL = "/wps/mmi/suggest";
 }
@@ -11199,6 +11220,7 @@ function ss_composeSuggestUri(qVal, suggestForm) {
      */
     uri = uri +
         '&format=' + encodeURIComponent(ss_protocol);
+    uri += '&client=' + encodeURIComponent(dataSuggestionsFrontEnd) + "&site=" + encodeURIComponent(dataSuggestionsSite);
     return uri;
 }
 
@@ -19072,7 +19094,7 @@ $(window).scroll(function () {
 	});
 });
 
-$(document).ready(function () {
+$(window).on("load", function () {
 	$('.in_view').bind('inview', function (event, visible) {
 		if (visible == true) {
 			$(this).addClass('on');
