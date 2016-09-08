@@ -1,0 +1,17 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/global/breadcrumb/styles.css -->
+
+<div class="breadcrumb">
+    <span><a href="#lnk">홈</a></span>
+    {% for location in breadcrumb %}
+        {% if not loop.last %}
+            <span><a href="{{ location.href }}">{{ location.text }}</a></span>
+        {% else %}
+            <span>{{ location.text }}</span>
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+
+<!-- COMPONENT END -->

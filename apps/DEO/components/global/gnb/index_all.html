@@ -1,0 +1,39 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/global/gnb/styles.css -->
+<!-- #js# /apps/DEO/components/global/gnb/scripts.js -->
+
+<div class="allmenu-container">
+
+    <div class="allmenu-control">
+        <button type="button" class="allmenu-btn-open"><span class="web-view">메뉴</span><span class="screen_out">열기</span></button>
+        <button type="button" class="allmenu-btn-close"><span class="screen_out">메뉴</span><span class="web-view">닫기</span></button>
+    </div>
+
+
+    <div class="allmenu-wrap">
+        <div class="allmenu-list">
+            <div class="allmenu-list-wrap">
+                <ul>
+                    {% for nav in globalIA %}
+                    <li><a href="{{ nav.href }}" {% if nav.title %} title="{{nav.title}}" target="_blank" {% endif%} class="dep1lnk">{{ nav.text }}</a>
+                        {% if nav.innerMenu %}
+                        <div class="submenu">
+                            <ul>
+                                {% for innerMenu in nav.innerMenu %}
+                                <li><a href="{{ innerMenu.href }}" {% if innerMenu.title %} title="{{innerMenu.title}}" target="_blank"{% endif%}>{{ innerMenu.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="allmenu-banner">배너</div>
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->
