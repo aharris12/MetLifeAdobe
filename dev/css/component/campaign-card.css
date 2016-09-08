@@ -293,4 +293,8 @@
     .campaign-content-linksection a:first-of-type {
 margin-bottom: 20px;
     }
+    .campaign-content-linksection a{
+        width:90%;
+        max-width: 300px;
+    }
 }
