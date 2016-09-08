@@ -121,6 +121,10 @@
     border-left: 20px solid transparent;
 }
 
+.list__item--no-results ul {
+    list-style-type: disc;
+}
+
 .list__item__tips {
     list-style-type: disc;
     font-size: 0.9em;
