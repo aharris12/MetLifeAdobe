@@ -65,6 +65,7 @@
 	position: relative;
 	z-index: 2;
 	cursor: pointer;
+    display: table;
 }
 .share__chat--buttons a{
 	color: white;
