@@ -10011,6 +10011,12 @@ product-module__list ul:last-child, p:last-child {
     margin-bottom: 10px;
 }
 
+.content--microsite .content_anchor__variation{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .content__action .content__action--copy{
     margin-top: 20px;
     margin-bottom:10px;
@@ -18850,15 +18856,19 @@ text-align: center;
 	position: relative;
 	z-index: 2;
 	cursor: pointer;
+    display: table;
 }
 .share__chat--buttons a{
 	color: white;
 	text-decoration: none;
+        display: table-cell;
+    vertical-align: middle;
+}
+.share__chat--buttons svg {
+    display: table-cell;
+    margin-left: 5px;
 }
 
-.share__chat--buttons svg{
-	top: 5px;
-}
 
 .share__chat .share__chat--buttons a:active,.share__chat .share__chat--buttons a:hover, .share__chat .share__chat--buttons a:visited, .share__chat .share__chat--buttons a:focus, .share__chat--buttons:hover, .share__chat--buttons:focus{
 	background-color: #2c77c5;
