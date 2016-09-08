@@ -1,0 +1,30 @@
+<!-- #page css# /apps/DEO/page/category/styles.css -->
+
+{% set subCategory = globalIA[1] %}
+
+{% include paths.apps + "/global/sub-category/index.html" %}
+
+<div class="content">
+
+	{% include paths.apps + "/global/share-ClicktoCall/index.html" %}
+	<div class="comp-container">
+		<div class="categoryList">
+			<!-- h2 ~ h6 선택가능 -->
+			<h3 class="screen_out">상품리스트</h3>
+
+			{% set productList = productList1 %}
+			{% include paths.apps + "/productTilesContainer/index.html" %}
+
+			{% set productList = productList2 %}
+			{% include paths.apps + "/productTilesContainer/index.html" %}
+
+			{% set productList = productList3 %}
+			{% include paths.apps + "/productTilesContainer/index.html" %}
+		</div>
+
+		{% set promoCard = proMotion %}
+		{% include paths.apps + "/promotionCard/index.html" %}
+	</div>
+
+	<!--content area-->
+</div>

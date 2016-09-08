@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* css folder ##category## */
+
+@import "system/styles/basicset.scss";
+
+.share-heading {
+	color: #000;
+}
+
+.categoryList .comp-container:last-child ul li {
+	margin-bottom:0;
+}
