@@ -40,7 +40,7 @@
 .campaign-card .campaign-card-content .campaign-card-content-title {
     font-size: 28px;
     line-height: 30px;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .campaign-card .campaign-card-content .campaign-tel {
@@ -189,6 +189,7 @@
     .campaign-card .campaign-card-content .campaign-card-content-title {
         font-size: 36px;
         line-height: 40px;
+        margin-bottom: 30px;
     }
 
     .campaign-card-section:first-child:nth-last-child(1),
@@ -236,6 +237,11 @@
     .campaign-contact-form .contactDisclaimer {
         display: none;
     }
+    .campaign-card .campaign-card-content .campaign-card-content__subtitle {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
 
 }
 
@@ -254,6 +260,7 @@
     .campaign-card .campaign-card-content .campaign-card-content-title {
         font-size: 44px;
         line-height: 48px;
+        width:80%;
     }
 
     .campaign-card .campaign-card-content {
@@ -272,9 +279,22 @@
     .campaign-card .campaign-card-content .campaign-card-addendum p{
         margin-bottom: 20px;
     }
-
+    .campaign-card .campaign-card-content .campaign-card-content__subtitle {
+        font-size: 18px;
+        line-height: 22px;
+        width:80%;
+    }
 }
 
 .generic-text a{
     text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+    .campaign-content-linksection a:first-of-type {
+margin-bottom: 20px;
+    }
+    .campaign-content-linksection a{
+        width:90%;
+        max-width: 300px;
+    }
 }
