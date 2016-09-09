@@ -1,5 +1,5 @@
-.contact-us {
-    padding: 20px 0;
+.contact-us{
+    padding:20px 0;
 }
 
 .contact-us__dropdown {
@@ -156,9 +156,7 @@
     text-align: left;
 }
 
-.wrapper__contact-us__bottom-box__links:last-child {
-    margin-bottom: 20px;
-}
+
 
 .contact-container__contact-us-page .contactOtherDetails {
     display: none;
@@ -285,11 +283,14 @@
 }
 
 @media screen and (min-width: 768px) {
+
     .wrapper.wrapper__contact-us__bottom-box{
         border-bottom: 1px solid #ccc;
         display: table;
+        border-top: 1px solid #ccc;
+        padding-top: 40px;
     }
-    .contact-us{
+    .contact-us__dropdown{
         padding: 40px 0;
     }
     .contact-us--small-size-font,
@@ -322,7 +323,7 @@
 
     .wrapper__contact-us__bottom-box__links {
         width: 50%;
-        margin-top: 30px;
+        margin-top: 20px;
         display: inline-block;
     }
 
@@ -363,10 +364,6 @@
         font-size: 18px;
         line-height: 40px;
         margin-bottom: 10px;
-    }
-
-    .wrapper__contact-us__bottom-box__links:last-child {
-        margin-bottom: 25px;
     }
 
     .contact-us__phone-block {
@@ -416,8 +413,12 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .contact-us {
+    .contact-us{
         padding: 50px 0;
+    }
+    .wrapper.wrapper__contact-us__bottom-box {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .contact-us--small-size-font,
@@ -444,9 +445,6 @@
         line-height: 26px;
     }
 
-    .wrapper__contact-us__bottom-box__links:last-child {
-        margin-bottom: 50px;
-    }
 
     .section-block,
     .content-block {
