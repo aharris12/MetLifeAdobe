@@ -100,12 +100,22 @@
     .glossary {
         padding: 30px 0 40px;
     }
+
+    .glossary-group{
+
+        width: 95%;
+        margin:auto;
+    }
+
     .glossary-group dt {
         margin-bottom: 10px;
     }
     .glossary-group dd {
         line-height: 18px;
         margin-bottom: 20px;
+    }
+    .glossary-group span{
+        padding-bottom: 10px;
     }
     .selector {
         position: static;
@@ -142,7 +152,8 @@
         padding: 40px 0 50px;
     }
     .glossary-group {
-        width: 80%;
+        width: 85%;
+        max-width: 1300px;
         margin: auto;
     }
     .glossary-group span {

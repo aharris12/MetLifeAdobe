@@ -55,6 +55,14 @@ table {
     text-align: center;
 }
 
+.wrapper.wrapper__contact-us__bottom-box {
+    padding-top: 50px;
+}
+
+.wrapper.wrapper__contact-us__bottom-box--smaller {
+    padding-top: 30px;
+}
+
 .wrapper--sides-only {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
