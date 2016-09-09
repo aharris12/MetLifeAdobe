@@ -1,0 +1,20 @@
+<!-- COMPONENT START -->
+
+{% macro headtag(level, innerTag, classes) %}
+
+    {% if level == "h2" %}
+        <h2 {% if classes %}class="{{ classes }}"{% endif %}>{{ innerTag }}</h2>
+    {% elif level == "h3" %}
+        <h3 {% if classes %}class="{{ classes }}"{% endif %}>{{ innerTag }}</h3>
+    {% elif level == "h4" %}
+        <h4 {% if classes %}class="{{ classes }}"{% endif %}>{{ innerTag }}</h4>
+    {% elif level == "h5" %}
+        <h5 {% if classes %}class="{{ classes }}"{% endif %}>{{ innerTag }}</h5>
+    {% elif level == "h6" %}
+        <h6 {% if classes %}class="{{ classes }}"{% endif %}>{{ innerTag }}</h6>
+    {% endif %}
+
+{% endmacro %}
+
+
+<!-- COMPONENT END -->
