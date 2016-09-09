@@ -104,6 +104,7 @@
     font-size: 13px;
     line-height: 18px;
     display: block;
+    text-transform: uppercase;
 }
 
 .list__item--right {
