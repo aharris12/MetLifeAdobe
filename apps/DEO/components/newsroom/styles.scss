@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/* css folder ##newsroom## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.news-file {
+	position: relative;
+	& a {
+		font-size:11px;
+		font-weight:bold;
+		color: $pointColor1;
+		padding-left:25px;
+		height:20px;
+		line-height:20px;
+		&:after {
+			width:19px;
+			height:20px;
+			content:'';
+			position: absolute;
+			left:0;
+			top:0;
+
+			background-image: url('./images/ico_doc.png');
+			background-repeat: no-repeat;
+			-webkit-background-size:cover;
+			background-size:cover;
+		}
+	}
+	& a.ico-word:after { background-position: -19px 0; }
+	& a.ico-excel:after { background-position: -38px 0; }
+	& a.ico-ppt:after { background-position: -57px 0; }
+}
