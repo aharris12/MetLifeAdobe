@@ -69,8 +69,9 @@ $("#list_month").change(function() {
 
 //Local function implementation...to be deleted
 function newsRoomYearChange() {
-    totalMonths.sort(function(a, b){return a - b});
+    //totalMonths.sort(function(a, b){return a - b});
     totalMonths = unique(totalMonths);
+    totalMonths.sort();
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="All" selected>All</option>');
@@ -157,9 +158,10 @@ function newsRoomYearChange() {
 //Local function implementation...to be deleted
 function newsRoomTopicsChange(){
     totalYears.sort(function(a, b){return a - b});
-    totalMonths.sort(function(a, b){return a - b});
+    //totalMonths.sort(function(a, b){return a - b});
     totalYears = unique(totalYears);
     totalMonths = unique(totalMonths);
+    totalMonths.sort();
     var selectYear = $('#list_year');
     selectYear.empty();
     selectYear.append('<option value="All" selected>All</option>');
