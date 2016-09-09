@@ -11,8 +11,9 @@
     height: 50px;
     text-transform: uppercase;
     z-index: 1000;
-
+    overflow: hidden;
 }
+
 
 .global-header__left, .global-header__middle, .global-header__right {
     background-color: #2c77c5;
@@ -859,16 +860,42 @@
     overflow-y: hidden;
 }
 
-.megamenu--open--mobile {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-    position: fixed;
-    overflow-x: hidden;
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
+@media screen and (max-width: 767px){
+    .megamenu--open--hide{
+        display:none;
+    }
+
+    html.megamenu--open--style{
+        height:100%;
+        position:fixed;
+        overflow-x:hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.megamenu--open--style{
+        height:100%;
+        position: fixed;
+        overflow-y:scroll;
+    }
+
+    .global-header.megamenu--open--style{
+        position:fixed;
+    }
+
+    .megamenu--open--mobile {
+        height: calc(100% - 50px);
+        overflow-y: scroll;
+        position: absolute;
+        overflow-x: hidden;
+        z-index: 2001;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
 }
+
+
 
 .megamenu__main-item {
     background-color: #3d9cdb;
@@ -979,8 +1006,8 @@
 @media screen and (min-width: 768px) {
     .megamenu {
         top: 70px;
-        padding: 40px 0 150px;
         position: fixed;
+        padding: 40px 0 150px;
         overflow: hidden;
         z-index: 2000;
     }
