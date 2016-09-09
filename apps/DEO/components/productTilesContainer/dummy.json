@@ -1,0 +1,38 @@
+{
+	"productList" : [
+		{
+			"productTiles" : {
+				"type" : "basic",
+				"title" : "사망보장 보험",
+				"href" : "#lnk",
+				"sumnail" : "/subcategory/img-product-tile1.png",
+				"alt" : "이미지 대체 텍스트",
+				"contentList" : [
+					"자녀가 독립하기 전까지 충분하게 보장강화",
+					"무해지환급형 가입시 최소 23%~최대 35% 적게",
+					"암ㆍ급성심근경색증ㆍ출혈 진단금",
+					"당신의 마음의 소리까지 듣는 하트 서비스"
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"productTiles" : {
+				"type" : "promotion",
+				"imgURL" : "/subcategory/promo-img0.png",
+				"imgIR" : "대체텍스트 필요시 입력",
+				"promoContent" : {
+					"title" : "무배당 스마트플랜 변액유니버설 종신보험",
+					"text" : [
+						"든든한 사망보장에 적립형 전환기능으로 목적자금 활용이 가능한 보험"
+					]
+				},
+				"link" : {
+					"color" : "blue",
+					"href" : "#lnk",
+					"text" : "더 알아보기"
+				}
+			}
+		}
+	]
+}

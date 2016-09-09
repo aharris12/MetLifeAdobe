@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* css folder ##global/aside## */
+
+
+@import "system/styles/basicset.scss";
+
+.header-aside-wrap {
+	height:100%;
+	max-height:70px;
+	display: table;
+	font-size:0;
+	@include transMove;
+}
+
+
+.aside-design {
+	height:100%;
+	font-size:$basicfontsize;
+	display: inline-block;
+	background: $pointColor1;
+
+
+	& a {
+		width:100%;
+		height:100%;
+		display: table;
+		padding:0 12px;
+
+		& span {
+			min-height: 50px;
+			height:100%;
+			display: table-cell;
+			vertical-align: middle;
+			font-size:14px;
+			color: #ffffff;
+			font-weight:bold;
+			@include transMove;
+
+		}
+	}
+}
+
+
+.header-aside-login {
+	width:80px;
+	height:50px;
+	& span {
+		background: url('./images/icon_lock.png') 98% 50%  no-repeat;
+		-webkit-background-size:10px 14px;
+		background-size:10px 14px;
+		text-indent:0;
+	}
+}
+
+.header-aside-disclosure {
+	display: none;
+}
+
+@media all and (min-width:768px) {
+	.header-aside-wrap {
+		height:70px;
+	}
+
+	.aside-design {
+		text-align: center;
+		& a {
+			width:120px;
+			& span {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.header-aside-login {
+		width:120px;
+		background:$pointColor2;
+		height:70px;
+		@include transMove;
+
+		& span {
+			background: url('./images/icon_lock.png') right 20px center  no-repeat;
+			-webkit-background-size:10px 14px;
+			background-size:10px 14px;
+			text-indent:-20px;
+		}
+	}
+	.header-aside-disclosure {
+		display: inline-block;
+		height:70px;
+		@include transMove;
+	}
+
+	.minisize .header-aside-login, .minisize .header-aside-disclosure  {
+		height:50px;
+		@include transMove;
+	}
+	.aside-design a span {
+		min-height: 50px;
+		@include transMove;
+
+	}
+
+
+	.minisize .header-aside-wrap {
+		height:100%;
+		max-height:50px;
+		@include transMove;
+	}
+}
+
+@media all and (min-width:1024px) {
+
+
+
+}
