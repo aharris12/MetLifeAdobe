@@ -1,4 +1,4 @@
-.contact-us {
+.contact-us{
     padding:20px 0;
 }
 
@@ -11,10 +11,10 @@
 }
 
 .contact-us--medium-size-font {
-     font-size: 16px;
-     font-weight: 600;
-     line-height: 20px;
- }
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
 .contact-us__address_header {
     font-size: 18px;
     line-height: 22px;
@@ -53,9 +53,9 @@
     font-size: 16px;
     line-height: 20px;
 }
-    .contact-us__listing-row a{
-        color: #2377C5;
-    }
+.contact-us__listing-row a{
+    color: #2377C5;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -140,7 +140,9 @@
 .wrapper__contact-us__bottom-box--smaller {
     font-weight: 600;
 }
-
+.wrapper.wrapper__contact-us__bottom-box{
+    display: table;
+}
 .wrapper__contact-us__bottom-box__links {
     width: 100%;
     float: left;
@@ -218,7 +220,7 @@
     }
 
     .wrapper.wrapper__contact-us__bottom-box {
-        padding-top: 0px;
+        padding: 0px;
         text-align: center;
     }
 
@@ -279,15 +281,21 @@
     .contact-us__contact-form__wrapper #headerContactSideBarSumbit {
         width: 100%;
     }
+    .contact-us--small-size-font:not(:first-child):not(:last-child) {
+         padding-bottom: 0px;
+    }
 }
 
 @media screen and (min-width: 768px) {
 
+    .contact-us{
+        padding:0;
+    }
+
     .wrapper.wrapper__contact-us__bottom-box{
         border-bottom: 1px solid #ccc;
-        display: table;
-        border-top: 1px solid #ccc;
         padding-top: 40px;
+        padding-bottom: 40px;
     }
     .contact-us__dropdown{
         padding: 40px 0;
@@ -319,7 +327,6 @@
         padding: 30px 12.5% 0px;
     }
 
-
     .wrapper__contact-us__bottom-box__links {
         width: 50%;
         margin-top: 20px;
@@ -341,7 +348,7 @@
         text-align: right;
     }
     .wrapper__contact-us__bottom-box__links:nth-child(n+3) {
-            padding-top: 10px;
+        padding-top: 10px;
     }
 
 
@@ -412,7 +419,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .contact-us{
+    .contact-us__dropdown{
         padding: 50px 0;
     }
     .wrapper.wrapper__contact-us__bottom-box {
