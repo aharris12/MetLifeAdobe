@@ -2,6 +2,11 @@
     margin-top: 20px;
 }
 
+.privacy-policy-index, .privacy-policies-section{
+    width:100%;
+    max-width: initial;
+}
+
 .privacy-policy-index__linkContainer a{
     width: 100%;
     padding: 15px 20px;
@@ -36,6 +41,14 @@
     font-weight: 400;
 }
 @media screen and (min-width: 768px){
+    .privacy-policies-header .container{
+        width:85%;
+        max-width:1300px;
+    }
+    .privacy-policy-index, .privacy-policies-section{
+        width:95%;
+        max-width: initial;
+    }
     .privacy-policy-index{
         margin-top: 40px;
         padding-bottom: 40px;
@@ -62,6 +75,10 @@
 
 
 @media screen and (min-width: 1024px){
+    .privacy-policy-index, .privacy-policies-section{
+        width:80%;
+        max-width: initial;
+    }
     .privacy-policy-index{
         padding-bottom: 50px;
     }
