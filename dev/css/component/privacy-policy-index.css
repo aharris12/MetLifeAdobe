@@ -12,7 +12,9 @@
 .privacy-policy-index__linkContainer a:last-of-type{
     border-bottom: 1px solid #ccc;
 }
-
+.privacy-policy p:last-of-type{
+    margin-bottom: 0px;
+}
 .privacy-policy-index__Description,
 .privacy-policies-section__title,
 .privacy-policies-section__description,
