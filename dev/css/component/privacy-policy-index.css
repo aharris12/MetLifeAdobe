@@ -68,7 +68,9 @@
     .privacy-policies-section__lastupdated{
         padding-left: 0;
     }
-
+    .privacy-policy-index p{
+        padding-left: 20px;
+    }
 }
 
 
