@@ -1,5 +1,6 @@
 .privacy-policies-section{
     padding-top: 30px;
+    border-top: 1px solid #ccc;
 }
 
 .privacy-policies-section ul{
@@ -16,7 +17,6 @@
 @media screen and (min-width: 768px){
     .privacy-policies-section{
         padding: 40px 20px;
-        border-top: 1px solid #ccc;
     }
 }
 

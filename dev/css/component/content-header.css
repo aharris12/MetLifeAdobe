@@ -26,6 +26,12 @@
     margin-bottom: 10px;
 }
 
+.content--microsite .content_anchor__variation{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .content__action .content__action--copy{
     margin-top: 20px;
     margin-bottom:10px;

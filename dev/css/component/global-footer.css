@@ -702,7 +702,12 @@
 }
 
 @media screen and (max-width: 767px) {
-
+    .language__link{
+        display: none;
+    }
+    .language__link:last-of-type{
+        display: inline-block;
+    }
     .country__label {
         padding-left: 10px;
     }
@@ -852,7 +857,6 @@
 
     .footer-language {
         text-align: left;
-        max-width: 220px;
     }
 
     .footer-logo {
@@ -1048,7 +1052,6 @@
 
     .footer-language {
         text-align: left;
-        max-width: none;
     }
 
     .language__link {
