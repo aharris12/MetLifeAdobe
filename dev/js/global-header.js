@@ -103,6 +103,8 @@ function openSearchBox() {
         }
         //Open searchbox in mobile
         if ($('.search-trigger__container').css("display") == "none") {
+            $("body > :not('.megamenu, .global-header')").removeClass("megamenu--open--hide");
+            $("html, body, .global-header").removeClass('megamenu--open--style');
             $('.search-trigger__icon').addClass('search-trigger__icon--open');
             $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
