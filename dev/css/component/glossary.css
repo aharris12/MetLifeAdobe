@@ -114,6 +114,9 @@
         line-height: 18px;
         margin-bottom: 20px;
     }
+    .glossary-group span{
+        padding-bottom: 10px;
+    }
     .selector {
         position: static;
         top: auto;
