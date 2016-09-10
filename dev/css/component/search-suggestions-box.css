@@ -4,7 +4,7 @@
     position: absolute;
     z-index: 999;
     left: 0;
-    top: 0;
+    top: 40px;
     border: 1px #ccc solid;
 }
 
