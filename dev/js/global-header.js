@@ -471,7 +471,8 @@ $('.login-trigger').click(function (e) {
         $(".global-header__middle").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
-            console.log('megamenu visible');
+            $("body > :not('.megamenu, .global-header')").removeClass("megamenu--open--hide");
+            $("html, body, .global-header").removeClass('megamenu--open--style');
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
             $('.icon-close').toggle();
