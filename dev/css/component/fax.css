@@ -415,6 +415,7 @@
     float: right;
     background-color: white;
     border: none;
+    opacity: 1;
 }
 
 .fax-directions__container .driving-direction-container .get-directions-form .btn-brand-2nd{

@@ -1962,9 +1962,15 @@ var ServicesAPI = {
         window.location.href = str;
     },
     redirectToSearchResultsPage: function (input) {
-        var searchTerm = sessionStorage.setItem("searchTerm", input);
-        var url = $("#metSearchForm").attr("data-path-to-search-results");
-        window.location.href = url;
+        if ($('.searchResultsInputSR').length > 0) {
+            $(this).val(input);
+            $('.search-filter__button').click();
+            clear_suggestions();
+        } else {
+            var searchTerm = sessionStorage.setItem("searchTerm", input);
+            var url = $("#metSearchForm").attr("data-path-to-search-results");
+            window.location.href = url;
+        }
     },
     searchResultsPageLoad: function () {
         var cov = sessionStorage.getItem("searchTerm");
