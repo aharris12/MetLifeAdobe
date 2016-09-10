@@ -11,7 +11,6 @@
     height: 50px;
     text-transform: uppercase;
     z-index: 1000;
-    overflow: hidden;
 }
 
 
@@ -857,7 +856,7 @@
     display: block;
     position: absolute;
     top: 50px;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 @media screen and (max-width: 767px){
@@ -875,7 +874,8 @@
     body.megamenu--open--style{
         height:100%;
         position: fixed;
-        overflow-y:scroll;
+
+        overflow: hidden;
     }
 
     .global-header.megamenu--open--style{
@@ -884,7 +884,7 @@
 
     .megamenu--open--mobile {
         height: calc(100% - 50px);
-        overflow-y: scroll;
+        overflow-y: auto;
         position: absolute;
         overflow-x: hidden;
         z-index: 2001;
