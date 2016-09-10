@@ -19,7 +19,7 @@
 .privacy-policies-section__lastupdated{
     padding-left: 20px;
 }
-.privacy-policy-index__Description{
+.privacy-policies-section__description, .privacy-policy-index__Description{
     font-size: 14px;
     line-height: 20px
 }
