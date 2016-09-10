@@ -19,13 +19,20 @@
 .privacy-policies-section__lastupdated{
     padding-left: 20px;
 }
-
+.privacy-policy-index__Description{
+    font-size: 14px;
+    line-height: 20px
+}
 .privacy-policies-section__title{
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
 }
-
+.privacy-policy-index__linkContainer a{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
 @media screen and (min-width: 768px){
     .privacy-policy-index{
         margin-top: 40px;
@@ -35,7 +42,8 @@
         width: 50%;
         float:left;
         border-top: none;
-
+        font-size: 14px;
+        line-height:18px;
     }
     .privacy-policy-index__linkContainer a:last-of-type{
         border-bottom: none;
