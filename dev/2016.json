@@ -7,14 +7,14 @@
       "title": "CSR_Awards",
       "created": {
         "year": 2014,
-        "month": 2,
+        "month": "february",
         "dayOfMonth": 9,
         "hourOfDay": 15,
         "minute": 40,
         "second": 18
       },
       "name": "news1",
-      "month":1,
+      "month": "january",
       "year" : "2016",
       "path": "/content/metlife/ga/2015/jan/news1",
       "subtitle": "",
@@ -28,14 +28,14 @@
       "title": "Products_and_Services",
       "created": {
         "year": 2014,
-        "month": 2,
+        "month": "february",
         "dayOfMonth": 9,
         "hourOfDay": 15,
         "minute": 40,
         "second": 18
       },
       "name": "news1",
-      "month":1,
+      "month": "january",
       "year" : "2016",
       "path": "/content/metlife/ga/2015/jan/news1",
       "subtitle": "",
@@ -49,14 +49,14 @@
       "title": "MetLife_Foundation",
       "created": {
         "year": 2014,
-        "month": 2,
+        "month": "february",
         "dayOfMonth": 9,
         "hourOfDay": 15,
         "minute": 40,
         "second": 18
       },
       "name": "news1",
-      "month": 1,
+      "month": "january",
       "year" : "2016",
       "path": "/content/metlife/ga/2015/jan/news1",
       "subtitle": "",
@@ -70,14 +70,14 @@
       "title": "Corporate",
       "created": {
         "year": 2014,
-        "month": 2,
+        "month": "february",
         "dayOfMonth": 9,
         "hourOfDay": 15,
         "minute": 40,
         "second": 18
       },
       "name": "news1",
-      "month":7,
+      "month": "july",
       "year" : "2016",
       "path": "/content/metlife/ga/2015/jan/news1",
       "subtitle": "",
@@ -85,20 +85,21 @@
       "navigationTitle": "news1"
     },
     {
+
       "vanityPath": "/content/metlife/ga/2015/jan/news1",
       "link": "news-article.html",
       "topics":"Financial",
       "title": "Financial",
       "created": {
         "year": 2014,
-        "month": 2,
+        "month": "february",
         "dayOfMonth": 9,
         "hourOfDay": 15,
         "minute": 40,
         "second": 18
       },
       "name": "news1",
-      "month":3,
+      "month": "march",
       "year" : "2016",
       "path": "/content/metlife/ga/2015/jan/news1",
       "subtitle": "",
