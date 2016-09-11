@@ -1963,7 +1963,7 @@ var ServicesAPI = {
     },
     redirectToSearchResultsPage: function (input) {
         if ($('.searchResultsInputSR').length > 0) {
-            $(this).val(input);
+            $('.searchResultsInputSR').val(input);
             $('.search-filter__button').click();
             clear_suggestions();
         } else {
