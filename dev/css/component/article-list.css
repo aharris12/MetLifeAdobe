@@ -116,6 +116,7 @@
     margin-right: 5px;
 }
 
+/*DE3211 is where this underline requirement came from*/
 .list__item--right a:last-of-type:hover {
     text-decoration: underline;
 }
