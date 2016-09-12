@@ -129,12 +129,6 @@ $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
-$("[data-fid='contactCard'] input").click(function () {
-    if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
-    }
-});
-
 $('.contactCard .form-minimize').click(function () {
     $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
     $('[data-request-type] option[value=""]').attr('selected', true);
