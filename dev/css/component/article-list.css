@@ -110,6 +110,7 @@
 .list__item--right {
     float: right;
     text-align: center;
+    margin-right: 20px;
 }
 
 .list__item--right a:first-of-type {
