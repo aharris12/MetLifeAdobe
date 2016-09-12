@@ -103,7 +103,9 @@
 .search-filter__button {
     vertical-align: top;
 }
-
+.list__item--no-border{
+    margin-bottom: 20px;
+}
 @media screen and (max-width: 767px) {
     .search-filter__button {
         position: absolute;
