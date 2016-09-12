@@ -20,3 +20,8 @@ $(".media-contact__title").click(function (evt) {
     $(".media-contact__list--variation").slideToggle("slow");
 
 });
+
+//js that checks to apply the margin to the top of related links if it's sibling before is the product-card-tile div
+if($(".related-content").prev().hasClass("product-card-tile")) {
+    $(".related-content").addClass("related-content--dynamic-added-margin-top");
+}
