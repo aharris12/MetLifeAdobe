@@ -1,3 +1,15 @@
+.form-library .lists {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-library .results_content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .list-filter {
     width: 100%;
     margin: 0 auto;
