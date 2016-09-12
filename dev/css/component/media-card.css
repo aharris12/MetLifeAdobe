@@ -35,6 +35,15 @@
 .media-card__content p {
     margin-bottom: 5px;
 }
+
+.media-card__content--margin-bottom {
+    margin-bottom: 20px;
+}
+
+/*Added class for adding top padding to related links when product-tile-container is before related-links within a parsys*/
+.related-content--dynamic-added-margin-top {
+    margin-top: 20px;
+}
 @media screen and (min-width: 768px) {
     .media-card {
         width: 32%;
@@ -48,15 +57,31 @@
         margin-right: 0;
     }
 
-.media-card__content{
-    padding-left: 0;
-    padding-bottom:0;
+    .media-card__content{
+        padding-left: 0;
+        padding-bottom:0;
+    }
+    .media-card__content a:hover{
+        text-decoration: none;
+    }
+    .media-card__content--link-list{
+        border: 0 solid transparent;
+        border-top: 1px solid #ccc;
+    }
+    .media-card__content--margin-bottom {
+        margin-bottom: 20px;
+    }
+    .related-content--dynamic-added-margin-top {
+        margin-top: 40px;
+    }
+
 }
-.media-card__content a:hover{
-    text-decoration: none;
-}
-.media-card__content--link-list{
-    border: 0 solid transparent;
-    border-top: 1px solid #ccc;
-}
+
+@media screen and (min-width: 1024px) {
+    .media-card__content--margin-bottom {
+        margin-bottom: 50px;
+    }
+    .related-content--dynamic-added-margin-top {
+        margin-top: 50px;
+    }
 }
