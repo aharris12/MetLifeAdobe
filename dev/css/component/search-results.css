@@ -106,6 +106,9 @@
 .list__item--no-border{
     margin-bottom: 20px;
 }
+.list__item--no-border:first-of-type {
+    margin-top: 20px;
+}
 @media screen and (max-width: 767px) {
     .search-filter__button {
         position: absolute;
@@ -183,10 +186,6 @@
 
     .search-results-container__correction-text {
         margin: 20px 15px 30px;
-    }
-
-    .list__item--no-border:first-of-type {
-        margin-top: 20px;
     }
 
     .list__item--no-border {
