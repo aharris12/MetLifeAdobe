@@ -130,7 +130,6 @@ $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 $('#productPolicy option[value=""]').attr('selected', true);
 
 $('.contactCard .form-minimize').click(function () {
-    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
     $('[data-request-type] option[value=""]').attr('selected', true);
     $("[data-request-type]").change();
     $('[data-request-type] option[value=""]').attr('selected', true);
