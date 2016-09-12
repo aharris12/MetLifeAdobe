@@ -53,7 +53,7 @@
     padding-bottom:0;
 }
 .media-card__content a:hover{
-    text-decoration: none;
+    text-decoration: underline;
 }
 .media-card__content--link-list{
     border: 0 solid transparent;
