@@ -300,6 +300,11 @@ a:visited {
     cursor: text !important;
 }
 
+.download-link {
+    font-size: 14px;
+    line-height: 20px;
+}
+
 @media screen and (min-width: 768px) {
     .wrapper {
         width: 95%;
@@ -335,6 +340,14 @@ a:visited {
     .text-right-tablet-up {
         text-align: right;
     }
+
+    .download-link {
+        text-transform: uppercase;
+        color: #2c77c5;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 600;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -365,7 +378,8 @@ a:visited {
     .download-link {
         text-transform: uppercase;
         color: #2c77c5;
-        font-size: 0.75em;
+        font-size: 12px;
+        line-height: 20px;
         font-weight: 600;
     }
 
