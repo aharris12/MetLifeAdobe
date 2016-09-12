@@ -112,6 +112,10 @@
     text-align: center;
 }
 
+.list__item--right a:first-of-type {
+    margin-right: 5px;
+}
+
 .list__item__date {
     font-size: 0.7em;
     display: block;
