@@ -116,6 +116,10 @@
     margin-right: 5px;
 }
 
+.list__item--right a:last-of-type:hover {
+    text-decoration: underline;
+}
+
 .list__item__date {
     font-size: 0.7em;
     display: block;
