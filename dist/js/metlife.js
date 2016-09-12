@@ -18771,7 +18771,7 @@ function newsRoomTopicsChange(){
             var monthItem = $(monthsList[i]);
             selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
-    }else{
+    } else {
 
         for (var i in totalMonths) {
             for(var j = 0; j<monthsList.length; j++) {
@@ -18783,7 +18783,6 @@ function newsRoomTopicsChange(){
             }
         }
     }
-
 }
 
 function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
@@ -19006,37 +19005,30 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
     console.log(filteredResults);
     //Next filter for the topic selected, if "All" topics is selected sort by year first, then month
     if(newsTopicSelected === "master-json-object") {
-        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+
+        //filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+
+        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
     } else {
         //else filter the topics and then sort by year then month.
         filteredResults = searchForTopic(newsTopicSelected, filteredResults);
-        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+        //filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
     }
     return filteredResults;
 }
 
 
+
+
 //sort the order of the articles in the list
 //This function was created to account for the changes that Diego has made within the
 //newsRoomTopicsChange and newsRoomYearChange event handlers.
-//function sortArticlesLive(resultsObj) {
-//    //news is an array of objects representing results for each article
-//    resultsObj.news.sort(function(a, b) {
-//        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
-//    });
-//
-//
-//    var tempArr = [];
-//    var count = 0;
-//    for(var article in resultsObj.news) {
-//        tempArr[count] = article.month;
-//        count++;
-//    }
-//
-//    tempArr.sort(function(a, b) {
-//
-//    })
-//}
+function sortArticlesLive(resultsObj) {
+    //news is an array of objects representing results for each article
+    resultsObj.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
+    return resultsObj;
+}
 
 
 //Only needed for local testing
@@ -19106,3 +19098,16 @@ $('.in_view').bind('inview', function (event, visible) {
 		$(this).addClass('on');
 	}
 });
+$(".contact-us__select").on("change", function(){
+	var whichresults = $(".contact-us__select").val();
+	$(".contact-us__results__wrapper").addClass('hidden');
+	if( $(".contact-us__results__wrapper").hasClass(whichresults)){
+		$("." + whichresults).removeClass("hidden");
+	}
+});
+
+//Proper rendering of bullets on the contact-us single page
+if($('.rtf-general-content').length > 0 && $('.rtf-general-content').prev('contact-us-directory')) {
+	$('.rtf-general-content').addClass("rtf-general-content__contact-single--bullets");
+	// console.log("This is true");
+}
