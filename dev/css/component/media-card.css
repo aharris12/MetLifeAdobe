@@ -1,8 +1,16 @@
+.related-content{
+    margin-top: 10px;
+}
+.related-content .related-links{
+    padding-bottom: 0px;
+}
 .related-link {
     margin-bottom: 50px;
 }
-.media-card {
-    margin-bottom: 10px;
+@media screen and (max-width: 767px) {
+    .media-card {
+        margin-bottom: 10px;
+    }
 }
 .media-card__tag{
     position: absolute;
@@ -12,15 +20,30 @@
 .media-card__content{
     padding: 20px;
 }
+.media-card__content.media-card__content--link-list h2{
+     font-size: 22px;
+     line-height:26px;
+     font-weight: 400;
+ }
+.media-card__content.media-card__content--link-list a{
+    font-size: 14px;
+    line-height:18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.media-card__content.media-card__content--link-list a:hover{
+   text-decoration: underline;
+}
 .media-card__content__title:hover{
     color: #2377c5;
     text-decoration: none;
 }
 .media-card__content__title{
-    color: black;
+    color: #333;
+    font-weight: 400;
     margin-bottom: 10px;
-    font-size: 1.5em;
-    line-height: 1.1em;
+    font-size: 22px;
+    line-height:26px;
 }
 .media-card__content__learn-more {
     text-transform: uppercase;
@@ -31,11 +54,27 @@
 .media-card__content__link {
     display:block;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 .media-card__content p {
     margin-bottom: 5px;
+    font-size: 14px;
+    line-height:18px;
+    font-weight: 400;
 }
 @media screen and (min-width: 768px) {
+    .related-content{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .media-card__content__title{
+        font-size: 20px;
+        line-height:24px;
+    }
+    .media-card__content.media-card__content--link-list h2{
+        font-size: 20px;
+        line-height:24px;
+    }
     .media-card {
         width: 32%;
         display: inline-block;
@@ -53,10 +92,33 @@
     padding-bottom:0;
 }
 .media-card__content a:hover{
-    text-decoration: none;
+    text-decoration: underline;
 }
 .media-card__content--link-list{
     border: 0 solid transparent;
     border-top: 1px solid #ccc;
 }
+}
+
+@media screen and (min-width: 1024px) {
+    .related-content{
+        margin-top: 50px;
+    }
+    .media-card__content p {
+        font-size: 14px;
+        line-height:20px;
+    }
+    .media-card__content__title{
+        font-size: 24px;
+        line-height:28px;
+    }
+    .media-card__content.media-card__content--link-list h2 {
+        font-size: 24px;
+        line-height:28px;
+    }
+
+    .media-card__content.media-card__content--link-list a {
+        font-size: 14px;
+        line-height:20px;
+    }
 }

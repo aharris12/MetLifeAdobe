@@ -150,8 +150,8 @@ function resizeMegaMenu() {
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if($(".megamenu--open").hasClass("megamenu--open--mobile")) {
             $(".megamenu--open").removeClass("megamenu--open--mobile");
-            $("body").css("overflow", "visible");
-            $("body").css("overflow-x", "hidden");
+           /* $("body").css("overflow", "visible");
+            $("body").css("overflow-x", "hidden");*/
         }
         $(".megamenu__sub-items").show();
         if ($('.megamenu').hasClass('megamenu--open')) {
@@ -213,6 +213,10 @@ function openSearchBox() {
         }
         //Open searchbox in mobile
         if ($('.search-trigger__container').css("display") == "none") {
+            $("body > :not('.megamenu, .global-header')").removeClass("megamenu--open--hide");
+            $("html, body, .global-header").removeClass('megamenu--open--style');
+            /*$("body").css("overflow", "visible");
+            $("body").css("overflow-x", "hidden");*/
             $('.search-trigger__icon').addClass('search-trigger__icon--open');
             $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
@@ -447,13 +451,13 @@ $('.megamenu-trigger').on('click', function () {
     } else {
         closeSearchBox();
         $(".megamenu").toggleClass('megamenu--open--mobile');
-        if($(".megamenu").hasClass("megamenu--open--mobile")) {
+        /*if($(".megamenu").hasClass("megamenu--open--mobile")) {
             $("body").css("overflow", "hidden");
         } else {
             $("body").css("overflow", "visible");
             $("body").css("overflow-x", "hidden");
 
-        }
+        }*/
     }
 });
 
@@ -581,7 +585,8 @@ $('.login-trigger').click(function (e) {
         $(".global-header__middle").addClass("menu--left")
         $('.' + $(this).attr('data-target')).slideToggle();
         if ($('.megamenu').is(':visible')) {
-            console.log('megamenu visible');
+            $("body > :not('.megamenu, .global-header')").removeClass("megamenu--open--hide");
+            $("html, body, .global-header").removeClass('megamenu--open--style');
             $('.megamenu').removeClass("overlay-scroll__child")
             $('.megamenu').toggleClass('megamenu--open');
             $('.icon-close').toggle();
@@ -598,6 +603,7 @@ $('.contact-trigger').click(function (e) {
         $(this).find("input, select, textarea").removeClass('error');
         $(this).find("input, select, textarea").val('')
     });
+    $(".contactOtherDetails").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 
@@ -5858,6 +5864,7 @@ var searchUrl;
 var searchStart = 1;
 var searchEnd = 10;
 var totalSearchResults;
+var didYouMean;
 if ($(".page-count").length > 0) {
     var searchDefaultSelect = $(".page-count").val();
 }
@@ -5973,14 +5980,7 @@ $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
-$("[data-fid='contactCard'] input").click(function () {
-    if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
-    }
-});
-
 $('.contactCard .form-minimize').click(function () {
-    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
     $('[data-request-type] option[value=""]').attr('selected', true);
     $("[data-request-type]").change();
     $('[data-request-type] option[value=""]').attr('selected', true);
@@ -6549,12 +6549,21 @@ $(".page-count").on('change', function () {
     }
 });
 
+$(".mobile_expand_close").click(function(){
+    $(".find-an-x-search--expand").slideUp();
+    $(".mobile_expand_close").hide();
+});
 //Find an X Click Functions
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
     if (getViewport() == "mobile") {
-        $('.find-an-x-search--expand').show();
+        if($(".find-an-x-search--expand").css("display") == "none"){
+            $(".find-an-x-search--expand").slideDown();
+            $(".mobile_expand_close").show();
+        }
         $(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
 
+    }else{
+        $(".find-an-x-search--expand").slideUp();
     }
 });
 /*$("body").on("click tap", function (e) {
@@ -6580,14 +6589,7 @@ $(".search_location_image").on('click touchstart', function () {
         ServicesAPI.showLocation();
     }
 });
-$(".cta_search").on("focus", function () {
-    if (!$(".hidden-xs").is(":visible")) {
-        $(".find-an-x-search--expand").removeClass("hidden-xs");
-    } else {
-        $(".find-an-x-search--expand").addClass("hidden-xs");
-    }
 
-});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
     //handle empty val
     if ($(".cta_search").val().length + 1 === 0) {
@@ -7541,142 +7543,151 @@ var ServicesAPI = {
         }
     },
     createPaginationSearch: function () {
-        $('.results_content').children().removeClass('.hidden');
-        // Setting totalSearchResults to 0 manually when only undefined are returned
-        if (typeof totalSearchResults != 'undefined') {
-            if (totalSearchResults.count == 0)
-                totalSearchResults = 0;
-        }
-        //If there are less total results than the number of results to show
-        if (totalSearchResults < listCount) {
-            $('.results_pagination').addClass('hidden');
-            $(".results_content").children().removeClass('hidden');
-            searchEnd = totalSearchResults;
-            console.log("less results than listItem searchStart ", searchStart)
-            console.log("less results than listItem searchEnd ", searchEnd)
-        } else {
-            //searchStart = 1;
-            //First time loading , end count should be what ever the value is of the drop down box
-            //searchEnd = listCount;
-            console.log("first time loading searchStart ", searchStart)
-            console.log("first time loading searchEnd ", searchEnd)
-            $('.results_pagination').removeClass('hidden');
-            var startPage;
-            if (searchPaginationPrev != undefined) {
-                startPage = searchPaginationPrev;
-            } else {
-                startPage = 1;
-            }
-        }
-        console.log("searchEnd < totalSearchResults ", searchEnd < totalSearchResults)
-        console.log("searchStart ", searchStart);
-        console.log("searchEnd ", searchEnd);
-        console.log("totalSearchResults ", totalSearchResults);
-        if (searchEnd < totalSearchResults) {
-            $('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + searchEnd);
-        } else {
-            $('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
-        }
-
-        $('.results_pagination').bootpag({
-            total: Math.ceil(totalSearchResults / listCount),
-            page: startPage,            // default page
-            maxVisible: maxPagCount,
-            leaps: false,
-            firstLastUse: true,
-            first: "&#10094;&#10094;",
-            prev: "&#10094",
-            last: "&#10095;&#10095;",
-            next: "&#10095;"
-        }).on("page", function (event, num) {
-            searchPaginationPrev = num;
-            console.log(num)
-            searchPaginationNumber = num;
-            //If num is not 1 we have clicked one of the other pagination items.
-            searchPaginationNumber = num + "0";
-            searchPaginationNumber -= 10;
-            if (listCount != 10) {
-                searchPaginationNumber += listCount - 10;
-            }
-            /*	if(num != 1){
-             //set search pagination number to num ie 1 + 0 - 10, So if we click the 2nd pagination number then this number will be 10 which is what we set our start to for the next search
-             searchPaginationNumber = num + "0";
-             searchPaginationNumber -= 10;
-
-             }else{
-             searchPaginationNumber = undefined;
-             }*/
-
-            console.log("search pagination number ", searchPaginationNumber)
-            sessionStorage.setItem("paginationNumber", num);
-            var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+        if(didYouMean){
             var url = $(".js-searchSubmit").attr("data-search-ajax-url");
-            if (searchRequest) {
-                ServicesAPI.searchServiceCall(url, searchRequest);
+            if (didYouMean) {
+                ServicesAPI.searchServiceCall(url, didYouMean);
             }
 
-            if ($(".search-results-container").length > 0) {
-                if (sessionStorage.getItem("paginationNumber") !== null) {
-                    var thisItem = sessionStorage.getItem("paginationNumber")
-                    $(".pagination.bootpag li").each(function () {
-                        $(this).removeClass("active");
-                        if ($(this).attr("data-lp") == thisItem) {
-                            $(this).addClass("active");
-                        }
-                        if ($(this).hasClass("prev") || $(this).hasClass("next")) {
-                            $(this).removeClass("active");
-                        }
-                    });
-                    window.sessionStorage.clear();
+        }else {
+
+
+            $('.results_content').children().removeClass('.hidden');
+            // Setting totalSearchResults to 0 manually when only undefined are returned
+            if (typeof totalSearchResults != 'undefined') {
+                if (totalSearchResults.count == 0)
+                    totalSearchResults = 0;
+            }
+            //If there are less total results than the number of results to show
+            if (totalSearchResults < listCount) {
+                $('.results_pagination').addClass('hidden');
+                $(".results_content").children().removeClass('hidden');
+                searchEnd = totalSearchResults;
+                console.log("less results than listItem searchStart ", searchStart)
+                console.log("less results than listItem searchEnd ", searchEnd)
+            } else {
+                //searchStart = 1;
+                //First time loading , end count should be what ever the value is of the drop down box
+                //searchEnd = listCount;
+                console.log("first time loading searchStart ", searchStart)
+                console.log("first time loading searchEnd ", searchEnd)
+                $('.results_pagination').removeClass('hidden');
+                var startPage;
+                if (searchPaginationPrev != undefined) {
+                    startPage = searchPaginationPrev;
+                } else {
+                    startPage = 1;
                 }
             }
-            /*if (num == 1) {
-             searchStart = 1;
-             console.log(searchStart)
-             //this should be the last number of items in the set example 40-49
-             searchEnd = listCount;
-             console.log(searchEnd)
-             }else {
-             //this should be the last number of items in the set example 40-49
-             //This sets the start to search pagination number plus 1. So if you click pagnation 2 this would be 10
-             searchStart = searchPaginationNumber + 10;
-             console.log("searchStart " ,searchStart)
-
-             //this sets the end to search padination number + list count which is the number of items to show, So if you click paganation 2 this would be 10 + 10.
-             searchEnd = searchPaginationNumber + listCount + 10;
-             console.log("searchEnd ", searchEnd)
-             }*/
-            console.log("searchEnd ", searchEnd + "> totalSearchResults ", totalSearchResults)
-            console.log(searchEnd > totalSearchResults)
-            if (searchEnd > totalSearchResults) {
-                searchEnd = totalSearchResults;
-            }
-            console.log("searchEnd ", searchEnd)
             console.log("searchEnd < totalSearchResults ", searchEnd < totalSearchResults)
             console.log("searchStart ", searchStart);
             console.log("searchEnd ", searchEnd);
             console.log("totalSearchResults ", totalSearchResults);
             if (searchEnd < totalSearchResults) {
-                console.log(searchStart + " " + searchEnd)
                 $('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + searchEnd);
             } else {
-                console.log(totalSearchResults - listCount + " " + totalSearchResults)
-                $('.display-text > span:first-of-type').html(totalSearchResults - listCount + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
-
+                $('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
             }
-        });
 
-        console.log(count)
-        //No results
-        if (totalSearchResults == 0) {
-            $('.display-text > span:nth-of-type(2)').addClass('hidden');
-            $('.results_pagination').addClass('hidden');
-        } else {
-            $('.display-text > span:nth-of-type(2)').removeClass('hidden');
-            $('.display-text > span:nth-of-type(2)').html('&nbsp;' + totalSearchResults);
+            $('.results_pagination').bootpag({
+                total: Math.ceil(totalSearchResults / listCount),
+                page: startPage,            // default page
+                maxVisible: maxPagCount,
+                leaps: false,
+                firstLastUse: true,
+                first: "&#10094;&#10094;",
+                prev: "&#10094",
+                last: "&#10095;&#10095;",
+                next: "&#10095;"
+            }).on("page", function (event, num) {
+                searchPaginationPrev = num;
+                console.log(num)
+                searchPaginationNumber = num;
+                //If num is not 1 we have clicked one of the other pagination items.
+                searchPaginationNumber = num + "0";
+                searchPaginationNumber -= 10;
+                if (listCount != 10) {
+                    searchPaginationNumber += listCount - 10;
+                }
+                /*	if(num != 1){
+                 //set search pagination number to num ie 1 + 0 - 10, So if we click the 2nd pagination number then this number will be 10 which is what we set our start to for the next search
+                 searchPaginationNumber = num + "0";
+                 searchPaginationNumber -= 10;
+
+                 }else{
+                 searchPaginationNumber = undefined;
+                 }*/
+
+                console.log("search pagination number ", searchPaginationNumber)
+                sessionStorage.setItem("paginationNumber", num);
+                var searchRequest = $(".js-searchTextBox").val().split(" ").join("+OR+");
+                var url = $(".js-searchSubmit").attr("data-search-ajax-url");
+                if (searchRequest) {
+                    ServicesAPI.searchServiceCall(url, searchRequest);
+                }
+
+                if ($(".search-results-container").length > 0) {
+                    if (sessionStorage.getItem("paginationNumber") !== null) {
+                        var thisItem = sessionStorage.getItem("paginationNumber")
+                        $(".pagination.bootpag li").each(function () {
+                            $(this).removeClass("active");
+                            if ($(this).attr("data-lp") == thisItem) {
+                                $(this).addClass("active");
+                            }
+                            if ($(this).hasClass("prev") || $(this).hasClass("next")) {
+                                $(this).removeClass("active");
+                            }
+                        });
+                        window.sessionStorage.clear();
+                    }
+                }
+                /*if (num == 1) {
+                 searchStart = 1;
+                 console.log(searchStart)
+                 //this should be the last number of items in the set example 40-49
+                 searchEnd = listCount;
+                 console.log(searchEnd)
+                 }else {
+                 //this should be the last number of items in the set example 40-49
+                 //This sets the start to search pagination number plus 1. So if you click pagnation 2 this would be 10
+                 searchStart = searchPaginationNumber + 10;
+                 console.log("searchStart " ,searchStart)
+
+                 //this sets the end to search padination number + list count which is the number of items to show, So if you click paganation 2 this would be 10 + 10.
+                 searchEnd = searchPaginationNumber + listCount + 10;
+                 console.log("searchEnd ", searchEnd)
+                 }*/
+                console.log("searchEnd ", searchEnd + "> totalSearchResults ", totalSearchResults)
+                console.log(searchEnd > totalSearchResults)
+                if (searchEnd > totalSearchResults) {
+                    searchEnd = totalSearchResults;
+                }
+                console.log("searchEnd ", searchEnd)
+                console.log("searchEnd < totalSearchResults ", searchEnd < totalSearchResults)
+                console.log("searchStart ", searchStart);
+                console.log("searchEnd ", searchEnd);
+                console.log("totalSearchResults ", totalSearchResults);
+                if (searchEnd < totalSearchResults) {
+                    console.log(searchStart + " " + searchEnd)
+                    $('.display-text > span:first-of-type').html(searchStart + '&nbsp;' + '-' + '&nbsp;' + searchEnd);
+                } else {
+                    console.log(totalSearchResults - listCount + " " + totalSearchResults)
+                    $('.display-text > span:first-of-type').html(totalSearchResults - listCount + '&nbsp;' + '-' + '&nbsp;' + totalSearchResults);
+
+                }
+            });
+
+            console.log(count)
+            //No results
+            if (totalSearchResults == 0) {
+                $('.display-text > span:nth-of-type(2)').addClass('hidden');
+                $('.results_pagination').addClass('hidden');
+            } else {
+                $('.display-text > span:nth-of-type(2)').removeClass('hidden');
+                $('.display-text > span:nth-of-type(2)').html('&nbsp;' + totalSearchResults);
+            }
+
         }
-
-
     },
     searchServiceCall: function (url, query, e) {
         count = 0;
@@ -7735,68 +7746,129 @@ var ServicesAPI = {
         /************LOCAL Site Search SERVICE***************/
 
         /************LIVE Site Search SERVICE***************/
-        $.ajax({
-            url: searchUrl,
-            dataType: 'json',
-            type: 'GET',
-            async: false,
-            contentType: 'application/x-www-form-urlencoded',
-            processData: false,
-            success: function (data) {
-                console.log(data)
-                if (data.GSP.hasOwnProperty("Spelling")) {
-                    $(".form-item__display").hide();
-                    $(".search-results-container__correction-text").removeClass("hidden");
-                    var correctSpelling = data.GSP.Spelling.Suggestion[0].qe;
-                    var newchar = ' '
-                    correctSpelling = correctSpelling.split('+OR+').join(newchar);
-                    console.log(correctSpelling)
-                    $(".no-results").addClass('hidden');
-                    var correctionHtml = '<a href="#">' + correctSpelling+ '</a>';
-                    $(".js-searchSuggestion").append(correctionHtml);
-                } else if (data.GSP.hasOwnProperty("RES")) {
-                    $(".form-item__display").show();
-                    $(".page-count").removeClass('hidden');
-                    $(".search-results-container__correction-text").addClass("hidden");
-                    totalSearchResults = data.GSP.RES.M;
-                    console.log(totalSearchResults)
-                    var siteSearchResults = data.GSP.RES.R;
-                    var sitSearchResultsUrl;
-                    var sitSearchResultsTitle;
-                    var sitSearchResultsContent;
-                    if (siteSearchResults.length != 0) {
-
-                        $('.form-item__display').removeClass('hidden');
-                        // $(".page-count").removeClass('hidden');
-                        $(".no-results").addClass('hidden');
-                        //results_content is the default component for listing out general results
-                        resultsListHTML += "<div class=\"results_content\">";
-                        for (var i = 0; i < siteSearchResults.length; i++) {
-                            count++;
-                            sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-                            sitSearchResultsTitle = data.GSP.RES.R[i].T;
-                            sitSearchResultsContent = data.GSP.RES.R[i].S;
-                            resultsListHTML += "<div class=\"list__item--no-border\">";
-                            resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-                            resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+        if(didYouMean){
+            console.log("suggestions text true")
+            $.ajax({
+                url: searchUrl,
+                dataType: 'json',
+                type: 'GET',
+                async: false,
+                contentType: 'application/x-www-form-urlencoded',
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                    if (data.GSP.hasOwnProperty("RES")) {
+                        $(".form-item__display").show();
+                        $(".page-count").removeClass('hidden');
+                        $(".search-results-container__correction-text").removeClass("hidden");
+                        totalSearchResults = data.GSP.RES.M;
+                        console.log(totalSearchResults)
+                        var siteSearchResults = data.GSP.RES.R;
+                        var sitSearchResultsUrl;
+                        var sitSearchResultsTitle;
+                        var sitSearchResultsContent;
+                        if (siteSearchResults.length != 0) {
+                            var correctionHtml = '<a href="#">' + didYouMean + '</a>';
+                            $(".js-searchSuggestion").append(correctionHtml);
+                            $('.form-item__display').removeClass('hidden');
+                            // $(".page-count").removeClass('hidden');
+                            $(".no-results").addClass('hidden');
+                            //results_content is the default component for listing out general results
+                            resultsListHTML += "<div class=\"results_content\">";
+                            for (var i = 0; i < siteSearchResults.length; i++) {
+                                count++;
+                                sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+                                sitSearchResultsTitle = data.GSP.RES.R[i].T;
+                                sitSearchResultsContent = data.GSP.RES.R[i].S;
+                                resultsListHTML += "<div class=\"list__item--no-border\">";
+                                resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+                                resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+                                resultsListHTML += "</div>";
+                            }
                             resultsListHTML += "</div>";
                         }
-                        resultsListHTML += "</div>";
+                        didYouMean = null;
+                    } else {
+                        $('.form-item__display').addClass('hidden');
+                        $(".page-count").addClass('hidden');
+                        $(".no-results").removeClass('hidden');
+                        totalSearchResults = 0;
                     }
-                } else {
-                    $('.form-item__display').addClass('hidden');
-                    $(".page-count").addClass('hidden');
-                    $(".no-results").removeClass('hidden');
-                    totalSearchResults = 0;
-                }
-                $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-                ServicesAPI.createPaginationSearch(totalSearchResults);
-            },
-            error: function (e) {
-                ServicesAPI.showSorryUnableToLocateMessage();
-            },
-            timeout: 30000
-        });
+                    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+                    ServicesAPI.createPaginationSearch(totalSearchResults);
+                },
+                error: function (e) {
+                    ServicesAPI.showSorryUnableToLocateMessage();
+                },
+                timeout: 30000
+            });
+        }else{
+            console.log("false")
+            $.ajax({
+                url: searchUrl,
+                dataType: 'json',
+                type: 'GET',
+                async: false,
+                contentType: 'application/x-www-form-urlencoded',
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                    if (data.GSP.hasOwnProperty("Spelling")) {
+                        $(".form-item__display").hide();
+                        $(".search-results-container__correction-text").removeClass("hidden");
+                        var correctSpelling = data.GSP.Spelling.Suggestion[0].qe;
+                        var newchar = ' '
+                        correctSpelling = correctSpelling.split('+OR+').join(newchar);
+                        console.log(correctSpelling)
+                        $(".no-results").addClass('hidden');
+                        var correctionHtml = '<a href="#">' + correctSpelling+ '</a>';
+                        $(".js-searchSuggestion").append(correctionHtml);
+                        didYouMean = correctSpelling;
+                    } else if (data.GSP.hasOwnProperty("RES")) {
+                        $(".form-item__display").show();
+                        $(".page-count").removeClass('hidden');
+                        $(".search-results-container__correction-text").addClass("hidden");
+                        totalSearchResults = data.GSP.RES.M;
+                        console.log(totalSearchResults)
+                        var siteSearchResults = data.GSP.RES.R;
+                        var sitSearchResultsUrl;
+                        var sitSearchResultsTitle;
+                        var sitSearchResultsContent;
+                        if (siteSearchResults.length != 0) {
+
+                            $('.form-item__display').removeClass('hidden');
+                            // $(".page-count").removeClass('hidden');
+                            $(".no-results").addClass('hidden');
+                            //results_content is the default component for listing out general results
+                            resultsListHTML += "<div class=\"results_content\">";
+                            for (var i = 0; i < siteSearchResults.length; i++) {
+                                count++;
+                                sitSearchResultsUrl = data.GSP.RES.R[i].DU;
+                                sitSearchResultsTitle = data.GSP.RES.R[i].T;
+                                sitSearchResultsContent = data.GSP.RES.R[i].S;
+                                resultsListHTML += "<div class=\"list__item--no-border\">";
+                                resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
+                                resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
+                                resultsListHTML += "</div>";
+                            }
+                            resultsListHTML += "</div>";
+                        }
+                    } else {
+                        $('.form-item__display').addClass('hidden');
+                        $(".page-count").addClass('hidden');
+                        $(".no-results").removeClass('hidden');
+                        totalSearchResults = 0;
+                    }
+                    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
+                    ServicesAPI.createPaginationSearch(totalSearchResults);
+                },
+                error: function (e) {
+                    ServicesAPI.showSorryUnableToLocateMessage();
+                },
+                timeout: 30000
+            });
+        }
+
         /************LIVE SERVICE***************/
     },
     legacySearch: function (serchQuery) {
@@ -7806,9 +7878,15 @@ var ServicesAPI = {
         window.location.href = str;
     },
     redirectToSearchResultsPage: function (input) {
-        var searchTerm = sessionStorage.setItem("searchTerm", input);
-        var url = $("#metSearchForm").attr("data-path-to-search-results");
-        window.location.href = url;
+        if ($('.searchResultsInputSR').length > 0) {
+            $('.searchResultsInputSR').val(input);
+            $('.search-filter__button').click();
+            clear_suggestions();
+        } else {
+            var searchTerm = sessionStorage.setItem("searchTerm", input);
+            var url = $("#metSearchForm").attr("data-path-to-search-results");
+            window.location.href = url;
+        }
     },
     searchResultsPageLoad: function () {
         var cov = sessionStorage.getItem("searchTerm");
@@ -10230,9 +10308,9 @@ SFDC.form.forEach(function (element) {
                             if (!jsonData["MetlifeJson"].push) {
                                 jsonData["MetlifeJson"] = [jsonData["MetlifeJson"]];
                             }
-                            jsonData["MetlifeJson"].push("Crownpeak Form");
+                            jsonData["MetlifeJson"].push("GLU Form");
                         } else {
-                            jsonData["MetlifeJson"] = "Crownpeak Form";
+                            jsonData["MetlifeJson"] = "GLU Form";
                         }
 
                         // 6 fields from the x form need to be concatenated
@@ -11759,11 +11837,14 @@ function ss_clear(nofocus) {
 if ($(".suggestionsbox").length > 0) {
     $('body').on('click touchstart tap', function (event) {
         var target = $(event.target);
-        if ($("#search_suggest").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
+        if ($(".suggestionsbox > table").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
             clear_suggestions();
         }
     });
 }
+$('.search-trigger__search-box').blur(function() {
+    $(this).val('');
+});
 
 /**
  * Hides search suggestions.
@@ -18584,10 +18665,12 @@ var newsConcatenator;
 var totalMonths = [];
 var totalYears = [];
 var integerToMonthMapping = {};
+var masterMonthArray = [];
 var monthToIntegerMapping = {};
-//Not sure where this came from
+//Not sure where removeProtoObject came from
 removeProtoObject = false;
 var listYearChange = false;
+var listTopicChange = false;
 
 
 $(".divider--load-more__link").click(function (e) {
@@ -18597,13 +18680,6 @@ $(".divider--load-more__link").click(function (e) {
     newsRoomServiceConstruction();
 });
 
-//$("#list_month, #list_year").change(function () {
-//    firstTimeRunNewsRoomChange = true;
-//    totalYears = [];
-//    totalMonths = [];
-//    listCount = 0;
-//    newsRoomServiceConstruction();
-//});
 
 //when a new year is selected, the month dropdown should
 //default to "All", the Topics dropdown should remain the
@@ -18623,6 +18699,7 @@ $("#list_year").change(function () {
 //fired
 $("#list_topics").change(function () {
     firstTimeRunNewsRoomChange = true;
+    listTopicChange = true;
     //The first value of the integerToMonthMapping will be
     //the same for the month and year dropdown
     $("#list_year").val(integerToMonthMapping["0"]);
@@ -18631,79 +18708,49 @@ $("#list_topics").change(function () {
     totalMonths = [];
     listCount = 0;
     newsRoomServiceConstruction();
-    setTimeout(function () {
-        newsRoomTopicsChange();
-    }, 500);
 });
 
 $("#list_month").change(function() {
-   newsRoomServiceConstruction();
+    newsRoomServiceConstruction();
 });
 
 //Local function implementation...to be deleted
 //function newsRoomYearChange() {
-//    totalMonths.sort(function(a, b){return a - b});
+//    //totalMonths.sort(function(a, b){return a - b});
 //    totalMonths = unique(totalMonths);
+//    totalMonths.sort(function(a,b) {
+//        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+//    });
 //    var selectMonth = $('#list_month');
 //    selectMonth.empty();
 //    selectMonth.append('<option value="All" selected>All</option>');
-//    var thisMonth;
+//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
 //    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
 //        for(var i = 1; i <=12; i++){
-//            thisMonth = $(".month_"+ i).text();
-//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//            var monthItem = $(monthsList[i]);
+//            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //        }
 //    }else{
 //
 //        for (var i in totalMonths) {
-//            switch(totalMonths[i]){
-//                case 1:
-//                    thisMonth = $(".month_1").text();
+//            for(var j = 0; j<monthsList.length; j++) {
+//                var monthItem = $(monthsList[j]);
+//                if(monthItem.data('month-value') === totalMonths[i]){
+//                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //                    break;
-//                case 2:
-//                    thisMonth = $(".month_2").text();
-//                    break;
-//                case 3:
-//                    thisMonth = $(".month_3").text();
-//                    break;
-//                case 4:
-//                    thisMonth = $(".month_4").text();
-//                    break;
-//                case 5:
-//                    thisMonth = $(".month_5").text();
-//                    break;
-//                case 6:
-//                    thisMonth = $(".month_6").text();
-//                    break;
-//                case 7:
-//                    thisMonth = $(".month_7").text();
-//                    break;
-//                case 8:
-//                    thisMonth = $(".month_8").text();
-//                    break;
-//                case 9:
-//                    thisMonth = $(".month_9").text();
-//                    break;
-//                case 10:
-//                    thisMonth = $(".month_10").text();
-//                    break;
-//                case 11:
-//                    thisMonth = $(".month_11").text();
-//                    break;
-//                default:
-//                    thisMonth = $(".month_12").text();
-//                    break;
+//                }
 //            }
-//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
 //        }
 //    }
 //}
 
-
 //AEM modified function from Diego
 function newsRoomYearChange() {
-    totalMonths.sort(function(a, b){return a - b});
+    //totalMonths.sort(function(a, b){return a - b});
     totalMonths = unique(totalMonths);
+    totalMonths.sort(function(a,b) {
+        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+    });
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="" selected>All</option>');
@@ -18730,9 +18777,13 @@ function newsRoomYearChange() {
 //Local function implementation...to be deleted
 //function newsRoomTopicsChange(){
 //    totalYears.sort(function(a, b){return a - b});
-//    totalMonths.sort(function(a, b){return a - b});
+//    //totalMonths.sort(function(a, b){return a - b});
 //    totalYears = unique(totalYears);
 //    totalMonths = unique(totalMonths);
+//    totalMonths.sort(function(a,b) {
+//        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+//    });
+//    console.log("Total months after new sort" + totalMonths);
 //    var selectYear = $('#list_year');
 //    selectYear.empty();
 //    selectYear.append('<option value="All" selected>All</option>');
@@ -18744,54 +18795,21 @@ function newsRoomYearChange() {
 //    var selectMonth = $('#list_month');
 //    selectMonth.empty();
 //    selectMonth.append('<option value="All" selected>All</option>');
-//    var thisMonth;
+//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
 //    if($("#list_topics").prop('selectedIndex') === 0){
-//        for(var i = 1; i <=12; i++){
-//            thisMonth = $(".month_"+ i).text();
-//            selectMonth.append('<option value="'+ thisMonth + '">'+thisMonth+'</option>');
+//        for(var i = 1; i <= 12; i++){
+//            var monthItem = $(monthsList[i]);
+//            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //        }
 //    }else{
-//
 //        for (var i in totalMonths) {
-//            switch(totalMonths[i]){
-//                case 1:
-//                    thisMonth = $(".month_1").text();
+//            for(var j = 0; j<monthsList.length; j++) {
+//                var monthItem = $(monthsList[j]);
+//                if(monthItem.data('month-value') === totalMonths[i]){
+//                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //                    break;
-//                case 2:
-//                    thisMonth = $(".month_2").text();
-//                    break;
-//                case 3:
-//                    thisMonth = $(".month_3").text();
-//                    break;
-//                case 4:
-//                    thisMonth = $(".month_4").text();
-//                    break;
-//                case 5:
-//                    thisMonth = $(".month_5").text();
-//                    break;
-//                case 6:
-//                    thisMonth = $(".month_6").text();
-//                    break;
-//                case 7:
-//                    thisMonth = $(".month_7").text();
-//                    break;
-//                case 8:
-//                    thisMonth = $(".month_8").text();
-//                    break;
-//                case 9:
-//                    thisMonth = $(".month_9").text();
-//                    break;
-//                case 10:
-//                    thisMonth = $(".month_10").text();
-//                    break;
-//                case 11:
-//                    thisMonth = $(".month_11").text();
-//                    break;
-//                default:
-//                    thisMonth = $(".month_12").text();
-//                    break;
+//                }
 //            }
-//            selectMonth.append('<option value="'+thisMonth+'">'+thisMonth+'</option>');
 //        }
 //    }
 //
@@ -18800,9 +18818,12 @@ function newsRoomYearChange() {
 //AEM modified function from Diego
 function newsRoomTopicsChange(){
     totalYears.sort(function(a, b){return a - b});
-    totalMonths.sort(function(a, b){return a - b});
+    //totalMonths.sort(function(a, b){return a - b});
     totalYears = unique(totalYears);
     totalMonths = unique(totalMonths);
+    totalMonths.sort(function(a,b) {
+        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+    });
     var selectYear = $('#list_year');
     selectYear.empty();
     selectYear.append('<option value="" selected>All</option>');
@@ -18814,14 +18835,13 @@ function newsRoomTopicsChange(){
     var selectMonth = $('#list_month');
     selectMonth.empty();
     selectMonth.append('<option value="" selected>All</option>');
-    var thisMonth, thisMonthValue;
     var monthsList = $('.pressroom-months-list > div[class="month-item"]');
     if($("#list_topics").prop('selectedIndex') === 0){
         for(var i =0; i < monthsList.length; i++) {
             var monthItem = $(monthsList[i]);
             selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
-    }else{
+    } else {
 
         for (var i in totalMonths) {
             for(var j = 0; j<monthsList.length; j++) {
@@ -18833,7 +18853,6 @@ function newsRoomTopicsChange(){
             }
         }
     }
-
 }
 
 function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
@@ -18862,8 +18881,9 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     			firstTimeRunNewsRoomChange = false;
     		}
 
+            var results = sortArticlesLive(data);
 
-    		newsRoomResults = data.news;
+    		newsRoomResults = results.news;
     		if (newsRoomResults.length != 0) {
     			if (!$(".list__item--no-results").hasClass("hidden")) {
     				$(".list__item--no-results").addClass("hidden");
@@ -18889,6 +18909,10 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
             if(listYearChange) {
                 newsRoomYearChange();
                 listYearChange = false;
+            }
+            if(listTopicChange) {
+                newsRoomTopicsChange();
+                listTopicChange = false;
             }
     		if (listCount >= newsRoomResults.length) {
     			$(".divider--load-more__link").hide();
@@ -18953,6 +18977,10 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     //        if(listYearChange) {
     //            newsRoomYearChange();
     //            listYearChange = false;
+    //        }
+    //        if(listTopicChange) {
+    //            newsRoomTopicsChange();
+    //            listTopicChange = false;
     //        }
     //        if (listCount >= newsRoomResults.length) {
     //            $(".divider--load-more__link").hide();
@@ -19047,14 +19075,31 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
     console.log(filteredResults);
     //Next filter for the topic selected, if "All" topics is selected sort by year first, then month
     if(newsTopicSelected === "master-json-object") {
-        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+
+        //filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+
+        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
     } else {
         //else filter the topics and then sort by year then month.
         filteredResults = searchForTopic(newsTopicSelected, filteredResults);
-        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+        //filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (a.month - b.month);});
+        filteredResults.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
     }
     return filteredResults;
 }
+
+
+
+
+//sort the order of the articles in the list
+//This function was created to account for the changes that Diego has made within the
+//newsRoomTopicsChange and newsRoomYearChange event handlers.
+function sortArticlesLive(resultsObj) {
+    //news is an array of objects representing results for each article
+    resultsObj.news.sort(function(a, b) { return (parseInt(b.year) - parseInt(a.year)) || (masterMonthArray.indexOf(a) - masterMonthArray.indexOf(b))} );
+    return resultsObj;
+}
+
 
 //Only needed for local testing
 function searchForTopic(nameKey, results) {
@@ -19077,6 +19122,10 @@ function searchForTopic(nameKey, results) {
 $(function() {
     integerToMonthMapping = mapIntegerToMonth();
     monthToIntegerMapping = mapMonthToInteger(integerToMonthMapping);
+    //Create an array that will create a master order of months
+    for(var i in integerToMonthMapping) {
+        masterMonthArray[i] = integerToMonthMapping[i];
+    }
 });
 
 function mapIntegerToMonth() {
@@ -19119,3 +19168,16 @@ $('.in_view').bind('inview', function (event, visible) {
 		$(this).addClass('on');
 	}
 });
+$(".contact-us__select").on("change", function(){
+	var whichresults = $(".contact-us__select").val();
+	$(".contact-us__results__wrapper").addClass('hidden');
+	if( $(".contact-us__results__wrapper").hasClass(whichresults)){
+		$("." + whichresults).removeClass("hidden");
+	}
+});
+
+//Proper rendering of bullets on the contact-us single page
+if($('.rtf-general-content').length > 0 && $('.rtf-general-content').prev('contact-us-directory')) {
+	$('.rtf-general-content').addClass("rtf-general-content__contact-single--bullets");
+	// console.log("This is true");
+}

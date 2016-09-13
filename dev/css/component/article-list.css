@@ -101,24 +101,41 @@
 }
 
 .list__item__title {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
     display: block;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .list__item--right {
     float: right;
     text-align: center;
+    margin-right: 20px;
+}
+
+.list__item--right a:first-of-type {
+    margin-right: 5px;
+}
+
+/*DE3211 is where this underline requirement came from*/
+.list__item--right a:last-of-type:hover {
+    text-decoration: underline;
 }
 
 .list__item__date {
-    font-size: 0.7em;
+    font-size: 10px;
+    line-height: 20px;
     display: block;
     color: #999;
 }
 
 .list__item--no-results {
     border-left: 20px solid transparent;
+}
+
+.list__item--no-results ul {
+    list-style-type: disc;
 }
 
 .list__item__tips {
@@ -293,6 +310,11 @@
     .form-item__field--md {
         width: 200px;
     }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -308,6 +330,23 @@
     .list [data-form-library-msg] .list__title{
         font-size: 20px;
         line-height: 24px;
+    }
+
+    .form-library .lists {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form-library .results_content {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
     }
 }
 

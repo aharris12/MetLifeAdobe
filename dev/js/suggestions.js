@@ -915,11 +915,14 @@ function ss_clear(nofocus) {
 if ($(".suggestionsbox").length > 0) {
     $('body').on('click touchstart tap', function (event) {
         var target = $(event.target);
-        if ($("#search_suggest").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
+        if ($(".suggestionsbox > table").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
             clear_suggestions();
         }
     });
 }
+$('.search-trigger__search-box').blur(function() {
+    $(this).val('');
+});
 
 /**
  * Hides search suggestions.

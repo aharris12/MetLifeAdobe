@@ -8,56 +8,35 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="robots" content="noindex, nofollow"/>
-    <title>MetLife - Privacy Policy</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>MetLife - Homepage</title>
     <link href="/static/images/favicon-m.ico" type="image/x-icon" rel="shortcut icon"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     
-    <link rel="stylesheet" href="css/metlife.min.css"/>
-
+    <link rel="stylesheet" href="css/metlife.us.min.css"/>
 </head>
 <body>
-<!--Cookie Banner Start -->
-<script type="text/javascript">
-    // Cookie is automatically added
-    // If false, cookie needs a required button press or navigation to be added
-    var createCookie = true;
-    var cookieName = "MLALUKCookiesAccepted";
-    var Allowimmediatesiteanalytics = false;
 
-    var cookieExpiry = 365;
-    var cookieDelete = false;
-    var cookieNamesDelete = '';
-</script>
-<div class="container">
-    <div class="row cookieShell">
-
-        <div class="wrapper">
-            <div class="inline-block col-sm-2 col-xs-9 cookieShell--title">
-                <p>Cookies on Metlife's UK Website</p>
-            </div>
-
-            <div class="inline-block col-sm-8 col-xs-12 cookieShell--description">
-                <p>Metlife.co.uk uses cookies - by continuing to browse our site, you're agreeing to our use of cookies. To learn more about the cookies we use, please see our <a href="#">privacy policy</a>.</p>
-                <p>Cookies will not be set on your computer, phone, or tablet if you visit our privacy policy from this banner.</p>
-            </div>
-
-            <div class="inline-block col-sm-2 col-xs-2 cookieShell--button">
-                <a href="JavaScript:setAcceptCookieDesktop(true);" class="btn btn-brand-2nd js-cookieAccept">Continue</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-<!--Cookie Banner End -->
 
 <!-- Global Header -->
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
         <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
-            <div><span class="megamenu-trigger__icon"></span></div>
+            <a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-menu"></use>
+                </svg>
 
-            <span class="megamenu-trigger__label">MENU</span>
+                <!--<svg class="icon icon-ico_menu megamenu-trigger__icon">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-ico_menu"></use>
+                </svg>-->
+                <svg class="icon icon-close megamenu-trigger__icon">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
+                </svg>
+                <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+                <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+            </a>
         </div>
         <div class="col home-trigger" title="HOME" data-target="home">
             <a href="#" class="home-trigger__link">
@@ -68,23 +47,36 @@
             </a>
         </div>
         <div class="col search-trigger" title="SEARCH" data-target="search">
-            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
-                <use xlink:href="/static/images/icons-metlife.svg#icon-search"></use>
-            </svg></span>
+	            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-search"></use>
+                </svg></span>
             <span class="search-trigger__label">Search</span>
 
-            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
-                <input type="text" id="searchInPage" class="search-trigger__search-box" placeholder="Search"
+            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container"
+                  data-path-to-search-results="https://qa.www.metlife.com/searchresultsl">
+                <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+                <input type="text" id="searchInPage" class="search-trigger__search-box  search_openTwo"
+                       autocomplete="off" name="query"
+                       onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search"
                        data-placeholder="">
-                <input id="overlayerback" class="search-trigger__search-box" autocomplete="off" type="text">
+                <input id="overlayerback" class="search-trigger__search-box  hdinputsearch_gsa_back hidden"
+                       autocomplete="off" type="text">
+                <!--Begin of fix for QC DE8990 5/25/16-->
+                <a href="#" class="search_location_image">
+                    <svg class="icon brand-1st icon-search js-searchIconMobile">
+                        <use xlink:href="/static/images/icons-metlife.svg#icon-search"></use>
+                    </svg>
+                </a>
+                <!--End of fix for DE8990 5/25/16-->
             </form>
 
         </div>
     </div>
     <div class="col-xs-4 col-sm-2 global-header__middle">
-        <h1><a href="#" title="MetLife Logo"><img src="/static/images/MetLife.png" alt="Metlife"
-                                                  class="global-header__logo img-responsive"></a>
-        </h1>
+        <a href="#" title="MetLife Logo"><img src="/static/images/MetLife.png" alt="Metlife"
+                                              class="global-header__logo img-responsive"></a>
+
     </div>
     <div class="col-xs-4 col-sm-5 global-header__right">
         <!-- Contact Trigger -->
@@ -93,103 +85,67 @@
         </div>
         <!-- Login Trigger -->
         <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
-            <span class="login-trigger__label">
+            <a class="login-trigger__label" href="#">
                 Log in
                 <svg class="icon icon-secure-locked">
                     <use xlink:href="/static/images/icons-metlife.svg#icon-secure-locked"></use>
                 </svg>
-            </span>
+            </a>
         </div>
         <!-- User Logged In Trigger-->
-        <!--<div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
-            <a href="#" class="contact-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
+        <!--<div class="col user-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="user-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
                 <use xlink:href="/static/images/icons-metlife.svg#icon-arrow-down-triangle"></use>
             </svg></a>
         </div>-->
     </div>
 </div>
 
-<!-- Mega Menu -->
+
+<!--New Mega Menu -->
 <div class="row megamenu">
-    <ul class="megamenu__main-items">
+    <ul class="megamenu__main-items megamenu__top--promo">
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label ">INSURANCE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">INSURANCE</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">INSURANCE</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="/Insurance/Life-Insurance/Index.html">Life</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Auto</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Disability</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Dental</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Vision</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp; Health</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Other Protection Products</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp;
+                    Health</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Other Protection
+                    Products</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label visible-xs" href="http://#">View
+                    All</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">RETIREMENT &amp; INVESTMENTS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BUSINESS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BUSINESS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Annuities</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">IRAs</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Mutual Funds</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Benefits for
+                    Employees</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Small Business</a>
+                </li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Retirement & Benefit
+                    Funding</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Healthcare Reform</a>
+                </li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Thought
+                    Leadership</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FINANCIAL PLANNING</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Planning for the Future</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Special Needs Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">LGBT Financial
-                    Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Financial Workshop</a></li>
-
-            </ul>
-        </li>
-        <div class="hidden-xs hidden-sm megamenu__divider"></div>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BUSINESS</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Benefits for Employees</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Small Business</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Retirement
-                    &amp; Benefit Funding</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Healthcare Reform</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Thought Leadership</a></li>
-            </ul>
-        </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BROKERS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BROKERS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BROKERS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -207,7 +163,8 @@
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">ABOUT METLIFE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">About Metlife</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">About Metlife</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -231,47 +188,108 @@
                                                   href="/Press-Room/Index.html">Press Room</a></li>
             </ul>
         </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">SUPPORT &amp; MANAGE</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Contact Us</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">File A Claim</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find an Office
-                    or Advisors</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Dentist</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Vision Provider</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Forms Library</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Unsubscribe/Opt Out</a></li>
-            </ul>
-        </li>
+        <div class="hidden-xs megamenu__divider"></div>
     </ul>
+
+    <ul class="megamenu__main-items megamenu__bottom--promo">
+        <!-- <li class="megamenu__main-item">
+             <a href="#" class="megamenu__main-item-label visible-xs">SUPPORT &amp; MANAGE</a>
+             <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">SUPPORT &amp; MANAGE</a>
+             <svg class="icon icon-chevron-right">
+                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
+             </svg>
+             <ul class="megamenu__sub-items">
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Contact Us</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">File A Claim</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find an Office
+                     or Advisors</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Dentist</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Vision Provider</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Forms Library</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Unsubscribe/Opt Out</a></li>
+             </ul>
+         </li>
+         <li class="megamenu__main-item">
+             <a href="#" class="megamenu__main-item-label visible-xs">SUPPORT &amp; MANAGE</a>
+             <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">SUPPORT &amp; MANAGE</a>
+             <svg class="icon icon-chevron-right">
+                 <use xlink:href="/static/images/icons-metlife.svg#icon-chevron-right"></use>
+             </svg>
+             <ul class="megamenu__sub-items">
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Contact Us</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">File A Claim</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find an Office
+                     or Advisors</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Dentist</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Vision Provider</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Forms Library</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Unsubscribe/Opt Out</a></li>
+             </ul>
+         </li>-->
+        <div class="megamenu--promoboxes">
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="/static/images/mega_menu_1.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Insurance for Your Employees</div>
+                        <div class="megamenu--promobox--content--header--body">Attract and retain top talent with
+                            employee benefit solutions that are compelling-and cost effective. <span>Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="megamenu--promoboxes">
+
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="/static/images/mega_menu_2.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Corprate Reponsibility</div>
+                        <div class="megamenu--promobox--content--header--body">To learn how we are delevering strong
+                            returns and creating long-term value, view our new corprate responsibility report. <span>Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ul>
+
 </div>
 
-<!-- Contact Form -->
+<!-- Contact Form New-->
 <div class="contact-container--global">
-    <div class="contactSliderOuterCon">
+    <div class="contactSliderOuterCon contact-sidebar">
         <a href="#">
-            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
-                <use xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
-            </svg></span>
+	            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
+                </svg></span>
         </a>
 
         <div class="contactSideForm">
             <span class="form__title">Have a rep contact me:</span>
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
-            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
+            <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
+                  method="post" class="userForm" data-fid="contactSidebar"
+                  data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction" data-service="glu">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -292,186 +310,240 @@
                 <input type="hidden" name="bWFCompleted" value="Y">
                 <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
                 <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+                <input type="hidden" name="isSync" id="isSync" value="no"/>
+                <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com"/>
+                <input type="hidden" name="xmlPath" id="xmlPath"
+                       value="/cwa/metlife/system/assets/gls/validationxmls/"/>
+                <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal"/>
 
-                <div class="form-user-grp">
-                    <label for="firstName_Acc" class="hidden">First Name</label>
-                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="First Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="lastName_Acc">Last Name</label>
-                    <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Last Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="address_Acc">Address</label>
-                    <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="city_Acc">City</label>
-                    <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-statezip-grp row">
-                    <div class="form-user-grp form-state form-icon-wrapper">
 
-                        <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
-                                data-required="true" aria-required="true">
-                            <option value="" selected="selected">State</option>
-                            <option class="general" value="AL">AL</option>
-                            <option class="general" value="AK">AK</option>
-                            <option class="general" value="AZ">AZ</option>
-                            <option class="general" value="AR">AR</option>
-                            <option class="general" value="CA">CA</option>
-                            <option class="general" value="CO">CO</option>
-                            <option class="general" value="CT">CT</option>
-                            <option class="general" value="DC">DC</option>
-                            <option class="general" value="DE">DE</option>
-                            <option class="general" value="FL">FL</option>
-                            <option class="general" value="GA">GA</option>
-                            <option class="general" value="HI">HI</option>
-                            <option class="general" value="IA">IA</option>
-                            <option class="general" value="ID">ID</option>
-                            <option class="general" value="IL">IL</option>
-                            <option class="general" value="IN">IN</option>
-                            <option class="general" value="KS">KS</option>
-                            <option class="general" value="KY">KY</option>
-                            <option class="general" value="LA">LA</option>
-                            <option class="general" value="MA">MA</option>
-                            <option class="general" value="MD">MD</option>
-                            <option class="general" value="ME">ME</option>
-                            <option class="general" value="MI">MI</option>
-                            <option class="general" value="MN">MN</option>
-                            <option class="general" value="MO">MO</option>
-                            <option class="general" value="MS">MS</option>
-                            <option class="general" value="MT">MT</option>
-                            <option class="general" value="NC">NC</option>
-                            <option class="general" value="ND">ND</option>
-                            <option class="general" value="NE">NE</option>
-                            <option class="general" value="NH">NH</option>
-                            <option class="general" value="NJ">NJ</option>
-                            <option class="general" value="NM">NM</option>
-                            <option class="general" value="NV">NV</option>
-                            <option class="general" value="NY">NY</option>
-                            <option class="general" value="OH">OH</option>
-                            <option class="general" value="OK">OK</option>
-                            <option class="general" value="OR">OR</option>
-                            <option class="general" value="PA">PA</option>
-                            <option class="general" value="PR">PR</option>
-                            <option class="general" value="RI">RI</option>
-                            <option class="general" value="SC">SC</option>
-                            <option class="general" value="SD">SD</option>
-                            <option class="general" value="TN">TN</option>
-                            <option class="general" value="TX">TX</option>
-                            <option class="general" value="UT">UT</option>
-                            <option class="general" value="VA">VA</option>
-                            <option class="general" value="VT">VT</option>
-                            <option class="general" value="WA">WA</option>
-                            <option class="general" value="WI">WI</option>
-                            <option class="general" value="WV">WV</option>
-                            <option class="general" value="WY">WY</option>
-                        </select>
-                    </div>
-                    <div class="form-user-grp form-zip">
-                        <label class="hidden" for="zip_Acc">Zip</label>
-                        <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
-                               data-required="true" aria-required="true" data-valid-type="zip">
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label for="firstName_Acc" class="hidden">First Name</label>
+                            <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="First Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
+                        </div>
                     </div>
                 </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="email_Acc">Email</label>
-                    <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
-                           data-required="true" aria-required="true" data-valid-type="email">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="/static/images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid email address.</span>
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="phone_Acc">Phone</label>
-                    <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
-                           data-valid-type="phone">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="/static/images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid phone number.</span>
-                </div>
-                <div class="productPolicyTypes">
-                    <div class="form-user-grp form-icon-wrapper">
 
-                        <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
-                                title="In reference to ..." data-required="true" aria-required="true"
-                                data-valid-status="failed">
-                            <option value="">In reference to ...</option>
-                            <option value="New Product/Planning Services">New Product/Policy</option>
-                            <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
-                        </select>
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="lastName_Acc">Last Name</label>
+                            <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Last Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
+                        </div>
                     </div>
-                    <div class="productUserType newProductUser">
-                        <div class="form-check-grp">
-                            <div class="productCount">- Select up to 5 -</div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="address_Acc">Address</label>
+                            <input name="address" id="address_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Address"
+                                   data-required="true" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="city_Acc">City</label>
+                            <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+                                   data-required="true" aria-required="true" data-valid-type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+                                    data-required="true" aria-required="true">
+                                <option value="" selected="selected">State</option>
+                                <option class="general" value="AL">AL</option>
+                                <option class="general" value="AK">AK</option>
+                                <option class="general" value="AZ">AZ</option>
+                                <option class="general" value="AR">AR</option>
+                                <option class="general" value="CA">CA</option>
+                                <option class="general" value="CO">CO</option>
+                                <option class="general" value="CT">CT</option>
+                                <option class="general" value="DC">DC</option>
+                                <option class="general" value="DE">DE</option>
+                                <option class="general" value="FL">FL</option>
+                                <option class="general" value="GA">GA</option>
+                                <option class="general" value="HI">HI</option>
+                                <option class="general" value="IA">IA</option>
+                                <option class="general" value="ID">ID</option>
+                                <option class="general" value="IL">IL</option>
+                                <option class="general" value="IN">IN</option>
+                                <option class="general" value="KS">KS</option>
+                                <option class="general" value="KY">KY</option>
+                                <option class="general" value="LA">LA</option>
+                                <option class="general" value="MA">MA</option>
+                                <option class="general" value="MD">MD</option>
+                                <option class="general" value="ME">ME</option>
+                                <option class="general" value="MI">MI</option>
+                                <option class="general" value="MN">MN</option>
+                                <option class="general" value="MO">MO</option>
+                                <option class="general" value="MS">MS</option>
+                                <option class="general" value="MT">MT</option>
+                                <option class="general" value="NC">NC</option>
+                                <option class="general" value="ND">ND</option>
+                                <option class="general" value="NE">NE</option>
+                                <option class="general" value="NH">NH</option>
+                                <option class="general" value="NJ">NJ</option>
+                                <option class="general" value="NM">NM</option>
+                                <option class="general" value="NV">NV</option>
+                                <option class="general" value="NY">NY</option>
+                                <option class="general" value="OH">OH</option>
+                                <option class="general" value="OK">OK</option>
+                                <option class="general" value="OR">OR</option>
+                                <option class="general" value="PA">PA</option>
+                                <option class="general" value="PR">PR</option>
+                                <option class="general" value="RI">RI</option>
+                                <option class="general" value="SC">SC</option>
+                                <option class="general" value="SD">SD</option>
+                                <option class="general" value="TN">TN</option>
+                                <option class="general" value="TX">TX</option>
+                                <option class="general" value="UT">UT</option>
+                                <option class="general" value="VA">VA</option>
+                                <option class="general" value="VT">VT</option>
+                                <option class="general" value="WA">WA</option>
+                                <option class="general" value="WI">WI</option>
+                                <option class="general" value="WV">WV</option>
+                                <option class="general" value="WY">WY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-4">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="zip_Acc">Zip</label>
+                            <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+                                   data-required="true" aria-required="true" data-valid-type="zip">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="email_Acc">Email</label>
+                            <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+                                   data-required="true" aria-required="true" data-valid-type="email">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="phone_Acc">Phone</label>
+                            <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+                                   data-valid-type="phone">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="requestType" id="requestType" class="form-user-ctrl user-select"
+                                    data-required="true" aria-required="true"
+                                    data-valid-status="failed"
+                                    data-request-type>
+                                <option value="">In reference to ...</option>
+                                <option value="New Product/Planning Services"
+                                        data-product-url="/wps/glsproxy/gls/processlead.do">New Product/Planning
+                                    Services
+                                </option>
+                                <option value="Existing Product/Policy"
+                                        data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing
+                                    Product/Policy
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row" data-observes-id="requestType"
+                     data-observes-value="New Product/Planning Services">
+                    <div class="col-xs-12">
+                        <div class="form-radio-grp">
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox"
-                                       class="user-checkbox" value="ANN"><span>Annuity</span>
+                                <input name="prodInterest" id="prodInt_Acc_Auto_Home" type="radio"
+                                       class="user-radio" value="MPC" data-required="true"><span>Auto &amp; Home</span>
                             </label>
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
-                                       class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
-                                       class="user-checkbox" value="B01"><span>Disability Income</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
-                                       class="user-checkbox" value="L06"><span>Financial Review</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
-                                       class="user-checkbox" value="INV"><span>Investments</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox"
-                                       class="user-checkbox" value="IRA"><span>IRA</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
-                                       class="user-checkbox" value="LIF"><span>Life Insurance</span>
+                                <input name="prodInterest" id="prodInt_Acc_Life" type="radio"
+                                       class="user-radio" value="LIF" data-required="true"><span>Life Insurance</span>
                             </label>
                         </div>
                     </div>
-                    <div class="productUserType existingProductUser">
+                </div>
+
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
+                    <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="">
-                        </div>
-                        <div class="form-user-grp">
-                            <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
-                                      rows="3" class="form-user-ctrl productUserQuestion"
-                                      data-placeholder=""></textarea>
+                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true"
+                                   aria-required="true">
                         </div>
                     </div>
                 </div>
+
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+										 <textarea name="questionOrComment" id="questionOrComment_Acc"
+                                                   placeholder="Question"
+                                                   rows="3" class="form-user-ctrl productUserQuestion"
+                                                   data-placeholder="" data-required="true"
+                                                   aria-required="true"></textarea>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-right contactSidebarBtns">
                     <button id="headerContactSideBarSumbit" type="submit"
                             class="contatMeSidebarBtn border-radius-rounded btn btn-brand-2nd"
-                            data-fsubmit="contactSidebar">SUBMIT
+                            data-fsubmit="contactSidebar" data-submit-type="clr">SUBMIT
                     </button>
                 </div>
-                <p class="contactDisclaimer">
-                    By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
-                    using automated technology or a prerecorded voice, to talk about our products and services. If
-                    you don't want to give this permission, you can still get a quote or make a purchase by calling
-                    us directly at 1-800-638-5433.
-                </p>
-
-                <p class="contactDisclaimer">
-                    *<a id="headerContactSideBarMetlifeLink"
-                        href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
-                    company</a> or third party acting on MetLife's behalf.
-                </p>
             </form>
+
+            <p class="contactDisclaimer">
+                By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
+                using automated technology or a prerecorded voice, to talk about our products and services. If
+                you don't want to give this permission, you can still get a quote or make a purchase by calling
+                us directly at <a class="disabled-anchor" href="tel:1-800-638-5433">1-800-638-5433.</a>
+            </p>
+
+            <p class="contactDisclaimer">
+                *<a id="headerContactSideBarMetlifeLink"
+                    href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
+                company</a> or third party acting on MetLife's behalf.
+            </p>
         </div>
         <div class="contactSideThankyou" id="contactus_lead_thankyou">
             <div class="thanksHeaderText">Thank you for contacting us.</div>
@@ -496,32 +568,60 @@
 
 <!-- Login Overlay -->
 <div class="login-container">
-    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
+    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST"
+          onSubmit="return loginFunction();">
         <div class="row login-container-header">
-            <div class="col-xs-2 login-container--close">
-                <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
-                <svg class="icon">
+            <!--<a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="/static/images/icons-metlife.svg#icon-menu"></use>
+                </svg>
+                <svg class="icon icon-close megamenu-trigger__icon">
                     <use xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
                 </svg>
-                <span class="login-container--close__label">CLOSE</span>
+            </a>-->
+
+            <div class="col-sm-5 login-container-header--left">
+                <div class="login-container--close">
+                    <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
+
+                    <svg class="icon">
+                        <use xlink:href="/static/images/icons-metlife.svg#icon-close"></use>
+                    </svg>
+                    <span class="login-container--close__label">CLOSE</span>
+
+                </div>
             </div>
-            <div class="col-xs-8">
-                <a href="#" title="MetLife Logo"><img src="/static/images/MetLife.png" alt="Metlife"
+            <div class="col-xs-4 col-xs-push-4 col-sm-2 login-container-header--middle">
+                <a href="#" title="MetLife Logo"><img src="/static/images/MetLife.png" alt="Metlife-Logo"
                                                       class="global-header__logo img-responsive"></a>
             </div>
         </div>
+        <div class="row login-popout__title login-container-alert">
+            <div>
+                <h2>Maintenance Alert</h2>
+
+                <p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be
+                    unavailable. We'are sorry for the inconvinience.</p>
+            </div>
+        </div>
         <h2 class="login-popout__title">Select account type to log in:</h2>
+
         <div class="login-popout">
             <div class="form-item login-type-options">
                 <div class="form-item__field form-icon-wrapper">
+                    <svg class="icon">
+                        <use xlink:href="/static/images/icons-metlife.svg#icon-select-arrows"></use>
+                    </svg>
                     <select class="login-type">
                         <option value="for_individuals">For Individuals</option>
                         <option value="for_businesses">For Businesses</option>
                         <option value="for_brokers">For Brokers</option>
                     </select>
-                    <svg class="icon info">
-                        <use xlink:href="/static/images/icons-metlife.svg#icon-info"></use>
-                    </svg>
+                    <!--<svg class="icon info tooltip">-->
+                    <!--<use xlink:href="/static/images/icons-metlife.svg#icon-info"></use>-->
+                    <!--</svg>-->
+                    <img src="/static/images/ico_tooltip_blue.png" class="tooltip tip-icon"
+                         title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
                 </div>
                 <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
                     <div class="login-popout-msg">
@@ -623,12 +723,14 @@
         </div>
         <div class="login-types bg-white">
             <div class="login-type-trigger">
-                <h2 class="login-type-trigger__title">
-                    other account types
-                    <svg class="icon icon-plus">
-                        <use xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
-                    </svg>
-                </h2>
+                <a href="#" class="login-type-trigger__title">
+                    <h2>
+                        other account types
+                        <svg class="icon icon-plus">
+                            <use xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
+                        </svg>
+                    </h2>
+                </a>
             </div>
             <div class="row login-type__details">
                 <div class="col-xs-12 col-sm-4">
@@ -673,7 +775,8 @@
                         </svg>
                         <ul>
                             <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
-                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
+                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans
+                                Administration</a>
                             </li>
                             <li class="login-type__link"><a href="">Annuities Administration</a></li>
                         </ul>
@@ -688,7 +791,8 @@
                             <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
                             </li>
                             <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
-                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
+                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -723,9 +827,12 @@
                     <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
                 </p>
             </div>
+
+
         </div>
     </form>
 </div>
+
 
 <!--Breadcrumb -->
 <div class="container bg-gray-1st">
@@ -749,7 +856,270 @@
 </div>
 
 <!-- Privacy Policies Index -->
-<div class="container">
+<div class="parsys content-parsys">
+    <div xk-section="v1" class="parbase section privacy-policies-header base xk-component xk-section-base">
+        <xk-client-enabled xk-path="b946d3806bbb179e905a3ad7152a0780"></xk-client-enabled>
+        <!-- Privacy Policies Index -->
+        <div class="container">
+            <div class="row wrapper privacy-policy-index">
+                <p>MetLife's privacy policies include guidelines and procedures relating to MetLife's use and disclosure of information about our customers and individuals who visit our website.</p>
+                <div class="privacy-policy-index__linkContainer">
+                    <a href="#online_privacy_policy" target="_self">Online Privacy Policy</a>
+                    <a href="#customer_privacy_policy" target="_self">Customer Privacy Policy</a>
+                    <a href="#sources_for_gathering_additional_information" target="_self">Sources for Gathering Additional Information</a>
+                    <a href="#metlife_auto_&amp;_home®_privacy_policy" target="_self">MetLife Auto &amp; Home® Privacy Policy</a>
+                    <a href="#hipaa_notices_of_privacy_practices" target="_self">HIPAA Notices of Privacy Practices</a>
+                    <a href="#opting_out_of_information_sharing" target="_self">Opting Out of Information Sharing</a>
+                    <a href="#ask_a_privacy_question" target="_self">Ask a Privacy Question</a>
+                    <a href="#email_unsubscribe" target="_self">Email Unsubscribe</a>
+                </div>
+            </div>
+        </div>
+        <!-- Privacy Policies Section -->
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="online_privacy_policy">
+                <h3 class="privacy-policies-section__title">Online Privacy Policy</h3>
+                <div xk-section="v1" class="privacy-policy-0 privacy-policy single parbase abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="88fe8c80cc69984e57eb42287f3b8ed5"></xk-client-enabled>
+                    <p><span class="privacy-policies-section__description">The&nbsp;companies in the MetLife, Inc. family (collectively, “MetLife”) recognize the importance of protecting all information that you, our online visitor, may choose to provide to us. To further this commitment, we have adopted this Online Privacy Policy to tell you how we collect, store, and use the information you provide to us online. Besides this Online Privacy Policy, we also have other more general privacy policies that may apply to you as a MetLife consumer or customer.</span></p>
+                    <p class="privacy-policies-section__lastupdated brand-gray-2nd">Last Update September 18, 2016</p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                            <div xk-section="v1" class="parbase faq section base xk-component xk-section-base">
+                                <xk-client-enabled xk-path="f2ecf24075cdfa723c67187ee9ac35fd"></xk-client-enabled>
+                                <div class="container">
+                                    <div class="row  wrapper">
+                                        <div class="width-80 accordion" data-faq="most_common">
+                                            <div>
+                                                <div class="accordion__name pull-left">
+                                                    Most Common FAQs
+                                                </div>
+                                                <div class="accordion__toggle-all brand-1st pull-right hidden-xs">
+                                                    <span class="expandAll">Expand All</span>
+                                                    <span class="collapseAll">Collapse All</span>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="border-top">
+                                                <div class="accordion__title ">
+                                                    <span class="brand-1st">What information does this Online Privacy Policy cover?</span>
+                                                    <svg class="icon icon-plus accordion__title__icon pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-plus"></use>
+                                                    </svg>
+                                                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-minus"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="accordion__content">
+                                                    <p>It depends on the type of life insurance policy. MetLife offers&nbsp;Guaranteed Acceptance Whole Life Insurance, which is guaranteed acceptance-no medical questions or health exam.For most other MetLife products, your health does affect the price. Depending on your health status, MetLife will offer you a fair price for the risk that they take on when providing you with coverage (assuming you qualify for coverage). For example, there will be a difference in policies for someone who is a heavy smoker compared to the same person who has never smoked. Also, for MetLife's Simplified Issue Term Life Insurance, your health affects whether you qualify for coverage or not, but does not affect the price.</p>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="border-top">
+                                                <div class="accordion__title ">
+                                                    <span class="brand-1st">What types of personal information does MetLife collect about me, an online visitor?</span>
+                                                    <svg class="icon icon-plus accordion__title__icon pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-plus"></use>
+                                                    </svg>
+                                                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-minus"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="accordion__content">
+                                                    <p><img src="http://d2v8ggac1o0f6z.cloudfront.net/gsc/Z90ISB/ed/00/bb/ed00bb6ccab6492795ce50507f711cf9//static/images/faqs/u51368.png?token=bfd5947e17d13b95f2d66d63bf26a9b5" width="871" height="91"></p>
+                                                    <p></p>
+                                                    <p>Permanent life insurance is protection for your entire life, as long as sufficient premiums are paid. Properly structured and maintained permanent life insurance builds equity in the form of cash value which you can use as you see fit. There are many different options and flexible policies to choose from to suit your needs (whole, variable, and universal life, to name a few.)</p>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="customer_privacy_policy">
+                <h3 class="privacy-policies-section__title">Customer Privacy Policy</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-1 parbase abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="2abea664ae467e88ae592bddf7e7505a"></xk-client-enabled>
+                    <p><span class="privacy-policies-section__description">The companies in the MetLife, Inc. family ("MetLife") strongly believe in protecting the confidentiality and security of information we collect about individuals. The material below describes our privacy policy and describes how we treat the information we receive about you if you become a current or former MetLife customer, or apply for any of our products or services.</span></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                            <div xk-section="v1" class="parbase faq section base xk-component xk-section-base">
+                                <xk-client-enabled xk-path="ccc0dc886002e7fd97e1f25d092e46cf"></xk-client-enabled>
+                                <div class="container">
+                                    <div class="row  wrapper">
+                                        <div class="width-80 accordion" data-faq="most_common">
+                                            <div>
+                                                <div class="accordion__name pull-left">
+                                                    Customer Privacy Policy FAQ
+                                                </div>
+                                                <div class="accordion__toggle-all brand-1st pull-right hidden-xs">
+                                                    <span class="expandAll">Expand All</span>
+                                                    <span class="collapseAll">Collapse All</span>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="border-top">
+                                                <div class="accordion__title ">
+                                                    <span class="brand-1st">Why does MetLife need to know about me?</span>
+                                                    <svg class="icon icon-plus accordion__title__icon pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-plus"></use>
+                                                    </svg>
+                                                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-minus"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="accordion__content">
+                                                    <p>The companies in the MetLife, Inc. family ("MetLife") strongly believe in protecting the confidentiality and security of information we collect about individuals. The material below describes our privacy policy and describes how we treat the information we receive about you if you become a current or former MetLife customer, or apply for any of our products or services.</p>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="border-top">
+                                                <div class="accordion__title ">
+                                                    <span class="brand-1st">How does MetLife learn about me?</span>
+                                                    <svg class="icon icon-plus accordion__title__icon pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-plus"></use>
+                                                    </svg>
+                                                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-minus"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="accordion__content">
+                                                    <p>The companies in the MetLife, Inc. family ("MetLife") strongly believe in protecting the confidentiality and security of information we collect about individuals. The material below describes our privacy policy and describes how we treat the information we receive about you if you become a current or former MetLife customer, or apply for any of our products or services.</p>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="border-top">
+                                                <div class="accordion__title ">
+                                                    <span class="brand-1st"> How does MetLife protect what they know about me?</span>
+                                                    <svg class="icon icon-plus accordion__title__icon pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-plus"></use>
+                                                    </svg>
+                                                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static//static/images/icons-metlife.svg#icon-minus"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="accordion__content">
+                                                    <p>The companies in the MetLife, Inc. family ("MetLife") strongly believe in protecting the confidentiality and security of information we collect about individuals. The material below describes our privacy policy and describes how we treat the information we receive about you if you become a current or former MetLife customer, or apply for any of our products or services.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="sources_for_gathering_additional_information">
+                <h3 class="privacy-policies-section__title">Sources for Gathering Additional Information</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-2 parbase abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="77cf44537c0929609f92cffa033bc5f8"></xk-client-enabled>
+                    <p style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;"><span class="privacy-policies-section__description">There are additional sources MetLife may use to get more information.</span></p>
+                    <p style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;"><span class="privacy-policies-section__description">The MetLife family of companies ("MetLife") receives information concerning individuals who apply for or obtain products or services from us. MetLife uses this information only for business purposes. These business purposes include administering our products, processing requested transactions and claims, and evaluating requests for insurance, banking and other products and services we offer.</span></p>
+                    <p style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;"><span class="privacy-policies-section__description">What we know about you (and, if you’re buying insurance from us, what we know about anyone else to be insured) we get mostly from you. But we may also have to find out more from other sources in order to make sure that what we know is correct and complete. Those sources may include adult relatives, employers, consumer reporting agencies, health care providers and others. Some of our sources may give us reports and may disclose what they know to others. We may ask for medical information about you from these sources. If you applied to us for insurance, the "Authorization" that was signed when you applied permits these sources to tell us about you. So we may, for instance, at our expense:</span></p>
+                    <ul style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;">
+                        <li>Ask for a medical exam</li>
+                        <li>Ask for Blood and urine tests</li>
+                        <li>Ask health care providers to give us health data, including information about alcohol or drug rehab</li>
+                    </ul>
+                    <div style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;">
+                        <span class="privacy-policies-section__description">We may also ask a consumer reporting agency for a "consumer report" about you (or anyone else to be insured). Consumer reports may tell us about a lot of things, including information about:</span>
+                    </div>
+                    <ul style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12px;">
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Mode of living</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Reputation</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Work and work history</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Driving Reco4rd</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Finances</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">Any dangerous sports activity</span></li>
+                        <li><span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span style="line-height: 18px;">If we ask an agency for an "investigative" report about you – which means that they will ask others about you – we will ask them to contact you as well.</span></span></li>
+                    </ul>
+                    <div>
+                        <span class="privacy-policies-section__description">T<span style="color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;">he information may be kept by the consumer reporting agency and later given to others as permitted by law. The agency will give you a copy of the report it provides to us, if you ask the agency and can provide adequate identification. If you write to us and we have asked for a consumer report about you, we will tell you so and give you the name, address and phone number of the consumer reporting agency.</span></span>
+                    </div>
+                    <p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span class="privacy-policies-section__description">&nbsp;</span></p>
+                    <p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span class="privacy-policies-section__description">One commonly used source of information is MIB Group, Inc. ("MIB"). It is a nonprofit association of life insurance companies. We and our reinsurers may give MIB health or other information about you. If you apply for life or health coverage from another member of MIB, or claim benefits from another member company; MIB will give that company any information that it has about you. If you contact MIB, it will tell you what it knows about you. You have the right to ask MIB to correct its information about you.</span></p>
+                    <p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; color: rgb(51, 51, 51); font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span class="privacy-policies-section__description">&nbsp;</span></p>
+                    <p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span class="privacy-policies-section__description"><span style="color: rgb(51, 51, 51);">You may do so by writing to MIB, Inc., P.O. Box 105, Essex Station, Boston, MA 02112, by calling MIB at (866) 692-6901 (TTY (866) 346-3642 for the hearing impaired), or by contacting MIB at <a href="https://www.mib.com" target="_blank">www.mib.com</a></span></span></p>
+                    <p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; font-family: &quot;Open Sans&quot;; font-size: 14px; line-height: 20px;"><span style="color: rgb(51, 51, 51);">&nbsp;</span></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="metlife_auto_&amp;_home®_privacy_policy">
+                <h3 class="privacy-policies-section__title">MetLife Auto &amp; Home® Privacy Policy</h3>
+                <div xk-section="v1" class="privacy-policy single parbase privacy-policy-3 abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="c54adb622111e8ac8b7c41ca69ebefa3"></xk-client-enabled>
+                    <p><span class="privacy-policies-section__description"><b>This Privacy Notice is given to you on behalf of one or more of the following companies:</b></span></p>
+                    <p></p>
+                    <p></p>
+                    <ul>
+                        <li>Metroploitan Property and casualty Insurance Company</li>
+                        <li>Metroploitan &nbsp;Casualty Insurance Company</li>
+                        <li>Metroploitan Direct Property and Casualty Insurance Company</li>
+                    </ul>
+                    <p></p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="hipaa_notices_of_privacy_practices">
+                <h3 class="privacy-policies-section__title">HIPAA Notices of Privacy Practices</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-4 parbase abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="252b43135fb79858d66435ac7cdd7a7c"></xk-client-enabled>
+                    <p><span class="privacy-policies-section__description">If you have Dental, Vision, Long-Term Care, Expatriate Benefits, or Medical insurance coverage from MetLife, please click on a link below to read the applicable HIPAA Notice to learn how we protect personal health information we have about you in connection with those coverages.</span></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="opting_out_of_information_sharing">
+                <h3 class="privacy-policies-section__title">Opting Out of Information Sharing</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-5 parbase abstract-tile base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="b946d3806bbb179e905a3ad7152a0780"></xk-client-enabled>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="ask_a_privacy_question">
+                <h3 class="privacy-policies-section__title">Ask a Privacy Question</h3>
+                <div xk-section="v1" class="privacy-policy single parbase abstract-tile privacy-policy-6 base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="b946d3806bbb179e905a3ad7152a0780"></xk-client-enabled>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="email_unsubscribe">
+                <h3 class="privacy-policies-section__title">Email Unsubscribe</h3>
+                <div xk-section="v1" class="privacy-policy single parbase abstract-tile privacy-policy-7 base xk-component xk-section-base">
+                    <xk-client-enabled xk-path="b946d3806bbb179e905a3ad7152a0780"></xk-client-enabled>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container">
     <div class="row wrapper privacy-policy-index">
         <p class="privacy-policy-index__Description">MetLife's privacy policies include guidelines and procedures
             relating to MetLife's use and disclosure of information about our customers and individuals who visit our
@@ -766,9 +1136,184 @@
             <a href="www.google.com">Email Unsubscribe</a>
         </div>
     </div>
-</div>
+</div>-->
 
-<!-- Privacy Policies Section -->
+<!--<div class="parsys content-parsys">
+    <div xk-section="v1" class="parbase section privacy-policies-header base xk-component xk-section-base">
+        &lt;!&ndash; Privacy Policies Index &ndash;&gt;
+        <div class="container">
+            <div class="row wrapper privacy-policy-index">
+                <p><span class="privacy-policy-index__Description">MetLife's privacy policies include guidelines and procedures relating to MetLife's use and disclosure of information about our customers and individuals who visit our website.</span></p>
+                <div class="privacy-policy-index__linkContainer">
+                    <a href="#registro_nacional_de_base_de_datos" target="_self">Registro Nacional de Base de Datos</a>
+                    <a href="#1.1._introducción" target="_self">1.1. INTRODUCCIÓN</a>
+                    <a href="#1.2_objetivo" target="_self">1.2 OBJETIVO</a>
+                    <a href="#1.3_información_personal" target="_self">1.3 INFORMACIÓN PERSONAL</a>
+                    <a href="#1.4._alcance" target="_self">1.4. ALCANCE</a>
+                    <a href="#1.5_cumplimiento_de_esta_política" target="_self">1.5 CUMPLIMIENTO DE ESTA POLÍTICA</a>
+                    <a href="#1.6_la_política" target="_self">1.6 LA POLÍTICA</a>
+                    <a href="#anotaciones" target="_self">ANOTACIONES</a>
+                </div>
+            </div>
+        </div>
+        &lt;!&ndash; Privacy Policies Section &ndash;&gt;
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="registro_nacional_de_base_de_datos">
+                <h3 class="privacy-policies-section__title">Registro Nacional de Base de Datos</h3>
+                <div xk-section="v1" class="privacy-policy-0 privacy-policy single parbase abstract-tile base xk-component xk-section-base">
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                            <div xk-section="v1" class="single newsroom-image parbase section base container xk-component xk-section-base">
+                                &lt;!&ndash;Begin image container&ndash;&gt;
+                                <div class="row">
+                                    <div class="image_container">
+                                        &lt;!&ndash;data-target must match id of the modal window &ndash;&gt;
+                                        <a href="#" data-toggle="modal" data-target="#myModal"> <img src="/static/images/isologo-etica-e-integridad-2015.jpg" alt=""> </a>
+                                        &lt;!&ndash;same id as data-target above.  &ndash;&gt;
+                                        <div id="myModal" class="modal fade" role="dialog">
+                                            <div class="modal-dialog modal-lg">
+                                                &lt;!&ndash;modal content &ndash;&gt;
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"><img src="/static/images/icons_header/icon_close_gray.png" alt="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="/static/images/isologo-etica-e-integridad-2015.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                &lt;!&ndash;End image container&ndash;&gt;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.1._introducción">
+                <h3 class="privacy-policies-section__title">1.1. INTRODUCCIÓN</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-1 parbase abstract-tile base xk-component xk-section-base">
+                    <p><span class="privacy-policies-section__description">MetLife, Inc. (con sus filiales, sucursales, agencias y joint ventures controlados a nivel mundial, "MetLife" o "la Compañía") cuenta con una larga trayectoria de compromiso para proteger la seguridad, confidencialidad e integridad de la Información Personal1&nbsp;y cumplir con todas las leyes y reglamentos en materia de protección de datos. MetLife reconoce que la protección y el adecuado tratamiento de la información personal es importante para mantener la confianza tanto de los clientes como del Asociado2. Las revelaciones inapropiadas o inadvertidas y el tratamiento ilícito de los datos personales pueden dañar la reputación de MetLife, exponiendo a la Compañía a multas jurídicas reglamentarias significativas</span></p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.2_objetivo">
+                <h3 class="privacy-policies-section__title">1.2 OBJETIVO</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-2 parbase abstract-tile base xk-component xk-section-base">
+                    <p class="privacy-policies-section__description"></p>
+                    <p><span class="privacy-policies-section__description">La Política de Protección Global y Protección de Datos MetLife (“Política”) establece los Principios y Directrices de Privacidad Globales de MetLife para garantizar que MetLife y su Asociado (i) salvaguarden la confidencialidad de toda la Información Personal de los clientes, asociados, socios comerciales y otras entidades que le proporcionen dicha información a MetLife, y (ii) el proceso de Información Personal de conformidad con las regulaciones y leyes de privacidad aplicables de protección de datos.</span></p>
+                    <p><span class="privacy-policies-section__description">Esta política también fija el marco de privacidad y protección de datos de la Compañía con respecto a la Información Personal, que también incluye la adhesión al Código de Conducta del Empleado de MetLife y Políticas y Normas de Seguridad IT.</span></p>
+                    <p><span class="privacy-policies-section__description">El cumplimiento de la Política es vital para evitar la divulgación inapropiada, inadvertida o ilícita de la Información Personal. Cualquier pregunta con respecto a la aplicabilidad de esta Política a una unidad de negocio, operación o país asociado se remitirá a la Oficina de Privacidad de MetLife.</span></p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.3_información_personal">
+                <h3 class="privacy-policies-section__title">1.3 INFORMACIÓN PERSONAL</h3>
+                <div xk-section="v1" class="privacy-policy single parbase privacy-policy-3 abstract-tile base xk-component xk-section-base">
+                    <p class="privacy-policies-section__description"></p>
+                    <p><span class="privacy-policies-section__description">Para fines de esta Política, "Información Personal" significa información sobre un individuo identificable3, donde se incluirán, pero sin limitarse, identificación general e información de contacto (como nombre del individuo, correo electrónico, dirección, número de teléfono, número de fax, dirección de residencia o un identificador persistente como un número de cliente guardado en una cookie de sitio web), números de identificación expedidos por organismos o entidades gubernamentales (como un número de seguro social, número de pasaporte, número de identificación nacional, y número de licencia del conductor), información Financiera y detalles de cuentas (como un crédito u otro número de tarjeta de pago, y números de cuenta bancaria), condición médica e información relacionada con la salud (como condiciones físicas, mentales o médicas actuales o anteriores, procedimientos médicos, historia clínica e información de medicamentos recetados), y otros datos personales sensibles (información sobre el origen racial o étnico, opiniones políticas, y orientación sexual). La información demográfica que se combina con información personal también se convierte en información personal (Incluyendo el género, la educación, etc.).</span></p>
+                    <p><span class="privacy-policies-section__description">MetLife vende productos y servicios a particulares y a empresarios y contratos grupales. Un cliente en el contexto de venta al público es un individuo que solicita y/o compra nuestros productos y servicios, así como otros individuos relacionados como individuos asegurados, demandantes, o beneficiarios. En el contexto del grupo un cliente también puede ser un titular del contrato de grupo o tomador del seguro, y cualquier participante individual, beneficiarios o titulares de certificados bajo pólizas grupales.</span></p>
+                    <p><span class="privacy-policies-section__description">Cuando se hace referencia a identificación personal de un cliente, Información Personal incluye, por ejemplo, un registro de conducir o información sobre el estilo de vida del cliente y aficiones, y la información sobre la relación del cliente con MetLife, como la cobertura contratada.</span></p>
+                    <p><span class="privacy-policies-section__description">La Información Personal sobre nuestros asociados se refiere a la amplia variedad de información que mantenemos sobre nuestros asociados basados en su relación con MetLife por ejemplo, información de contacto, fecha de compensación, evaluación(es) de desempeño y revisiones, número de empleado, fecha de nacimiento, fecha de contratación, información de salud, información de beneficios y registros disciplinarios y de asistencia.</span></p>
+                    <p><span class="privacy-policies-section__description">Se considera que la Información Personal se ha convertido en anónima, y ya no se considera información personal, cuando la persona a quien tal información pertenece ya no es identificable a través de esa información o su combinación con otros datos.</span></p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.4._alcance">
+                <h3 class="privacy-policies-section__title">1.4. ALCANCE</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-4 parbase abstract-tile base xk-component xk-section-base">
+                    <p class="privacy-policies-section__description"></p>
+                    <p><span class="privacy-policies-section__description">Esta Política aplica a todos los Asociados de MetLife y a todas las unidades de negocio y operaciones del país que recogen y/o procesan Información Personal. El tratamiento de Información Personal incluye cualquier operación que se realiza sobre la Información Personal, como recolección, grabación, organización, almacenaje, adaptación o alteración, recuperación, consulta, utilización, transferencia, difusión a través de transmisión, diseminación o cualquier otra forma de hacerlo disponible, alineación o combinación, bloqueo, borrado o destrucción. Para los propósitos de esta Política, el término "unidad de negocio" incluye una línea de negocios y/o función administrativa de MetLife. El término "Operación de Campo" incluye cualquier operación de las unidades de negocio de MetLife en países diferentes a los Estados Unidos.</span></p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.5_cumplimiento_de_esta_política">
+                <h3 class="privacy-policies-section__title">1.5 CUMPLIMIENTO DE ESTA POLÍTICA</h3>
+                <div xk-section="v1" class="privacy-policy single privacy-policy-5 parbase abstract-tile base xk-component xk-section-base">
+                    <p class="privacy-policies-section__description"></p>
+                    <p><span class="privacy-policies-section__description">La Política requiere que los Asociados, unidades de negocio y Operaciones de Campo respeten la confidencialidad de la Información Personal y que tal Información Personal se maneje de acuerdo a esta Política. Se requieren unidades de negocio y operaciones de campo para mantener y continuar con las políticas de privacidad y procedimientos que se ajusten con esta Política (”Procedimientos”).</span></p>
+                    <p><span class="privacy-policies-section__description">Si una ley o regulación aplicable a un Asociado, Operación de Campo o unidad de negocio impone obligaciones de protección de datos o de privacidad más estrictas que las establecidas en esta Política, el Asociado, la Operación de Campo y/o la unidad de negocio deben cumplir con las obligaciones más estrictas impuestas por cualquier ley o regulación.</span></p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="1.6_la_política">
+                <h3 class="privacy-policies-section__title">1.6 LA POLÍTICA</h3>
+                <div xk-section="v1" class="privacy-policy single parbase abstract-tile privacy-policy-6 base xk-component xk-section-base">
+                    <p class="privacy-policies-section__description"></p>
+                    <p><b>1.6.1 Principios Globales de Privacidad MetLife</b></p>
+                    <p>Los Principios Globales de Privacidad MetLife (los “Principios”) fueron diseñados para asegurar que todos nuestros Asociados, unidades de negocio y Operaciones de Campo estén alineados con un único conjunto de normas de privacidad. Una Operación de Campo o unidad de negocio están en alineación con los Principios si sus políticas y procedimientos incluyen un conjunto de prácticas que cumplan con la intención de cada Principio. Los Principios establecen procedimientos y medidas de seguridad para proteger la confidencialidad de la Información Personal y asegurar que sólo se comparta si "necesitan conocerla". Los Principios proporcionan una guía para el cumplimiento de las leyes y regulaciones de privacidad y protección de datos.</p>
+                    <p><b>Principio 1:</b>&nbsp;Limitando lo que Recolectamos</p>
+                    <p>Estamos comprometidos con la recopilación de información legal y justa. Nuestro objetivo es definir cuidadosamente nuestro propósito, y recoger sólo lo que necesitamos para servir a ese propósito. Limitamos la información que recopilamos a aquellos artículos que necesitemos para operar nuestro negocio, nos ayude a desarrollar y proveer productos y servicios, y que cumpla con los requisitos reglamentarios.</p>
+                    <p><b>Principio 2:</b>&nbsp;Transparencia en Nuestras Prácticas</p>
+                    <p>Estamos comprometidos con la transparencia. Nos esforzamos por informar suficientemente a las personas con quienes nos relacionamos acerca de la recolección, el uso y las prácticas de divulgación en el momento en que recolectamos la información y cada vez que nuestra política materialmente cambie. Asimismo les informamos a las personas sobre las opciones que tienen para restringir nuestro uso o divulgación. Utilizamos un lenguaje claro y comprensible, y proporcionamos medios asequibles para contactarnos. Con variados estándares globales, nos esforzamos siempre por mantener la coherencia global mientras se reflejan las costumbres locales. Nuestro objetivo es demostrar que MetLife es una compañía global que ofrece niveles consistentes de protección a través de culturas y productos.</p>
+                    <p><b>Principio 3:</b>&nbsp;Acceso Estamos comprometidos en ofrecer a las personas un acceso razonable a su información6. Por acceso, nos referimos a formas económicas para revisar y corregir la información inexacta o incompleta. Cuando se conceda el acceso requeriremos la identidad y autoridad de quienes buscan el acceso a verificar.</p>
+                    <p><b>Principio 4:</b>&nbsp;Calidad e Integridad de Datos</p>
+                    <p>Estamos comprometidos a mantener la integridad de la información sobre las personas. Nos esforzamos por utilizar tecnología, procedimientos documentados y controles internos para facilitar el proceso de cambio a datos personales rápida, exacta y completamente. También nos protegemos contra pérdida a través de métodos de copia de seguridad y recuperación. Y nos esforzamos por asegurar que todas las fuentes que utilizamos para verificar la información sean fiables y de confianza. Nuestro objetivo es la precisión y altos estándares de calidad de datos cada vez que obtenemos información personal de otros.</p>
+                    <p><b>Principio 5:</b>&nbsp;Seguridad de la Información</p>
+                    <p>Estamos comprometidos con la seguridad. Protegemos suficientemente la confidencialidad, seguridad e integridad de la información que se nos confía. Esto significa que revisamos salvaguardias antes de recoger la información, y nos unimos con nuestros socios tecnológicos para poner protecciones razonables en vigor que permitan evitar el mal uso, pérdida, tratamiento o acceso no autorizado. Juntos, revisamos el flujo de información a través de sistemas y geografías para alcanzar niveles consistentes de control. Una salvaguarda que aplicamos es limitar el acceso a registro a aquellos asociados y socios que lo necesiten para hacer su trabajo o cumplir con los requisitos legales. Tomamos este principio muy en serio y ofreceremos reparación a quienes se sientan perjudicados por el acceso no autorizado como se garantizó.</p>
+                    <p><b>Principio 6:</b>&nbsp;Monitoreo / Rendición de Cuentas</p>
+                    <p>Estamos comprometidos a documentar y hacer cumplir los procedimientos que nos ayuden a llevar a cabo nuestro compromiso de proteger la información de las personas. Nos esforzamos por utilizar medidas de seguridad administrativas, herramientas tecnológicas, y acuerdos legales para ayudar a mantener tales procedimientos, y continuamos buscando formas de mejorar nuestras prácticas. Ya que la protección de la información es responsabilidad de cada Asociado y de cada socio de negocios de MetLife, buscamos educar a todos los que manejan información acerca de nuestros compromisos con la privacidad, e imponer las sanciones correspondientes a quienes no los cumplan. Otro aspecto clave para proteger nuestra información es asegurar que quienes actúan en nuestro nombre tomen precauciones suficientes para proteger la información de MetLife acerca de las personas. Esperamos que todos nuestros socios de negocio traten la información de una forma acorde con estos Principios. Tenemos claras nuestras expectativas en cuanto a nuestros acuerdos legales y necesitamos socios que nos informen de inmediato si la información de MetLife alguna vez es eventualmente perdida, robada, o accedida por personas no autorizadas.<br> <br> </p>
+                    <p><b>1.6.2 Tratamiento de Información Personal Todos nuestros Asociados, unidades de negocio y Operaciones de Campo</b>&nbsp;deberán tratar la Información Personal de acuerdo con los procedimientos específicos establecidos para las unidades de negocio y operaciones de campo, cuyos procedimientos aplicarán, como mínimo, lo siguiente:</p>
+                    <p>La Información Personal se tratará de acuerdo con los reglamentos y leyes aplicables de privacidad y protección de datos y todos los requisitos contractuales pertinentes.</p>
+                    <p>Tener en cuenta que la Información Personal sobre los clientes4&nbsp;y Asociados debe ser tratada con estricta confidencialidad y se deben tomar medidas&nbsp;para garantizar su integridad y seguridad.</p>
+                    <p>Asegurarse de que los requisitos legales y reglamentarios adecuados se han cumplido antes de transferir o proporcionar acceso a la Información Personal fuera del país en el que se recolectó5. Cualquier pregunta respecto a las transferencias internacionales de datos personales deberá remitirse al responsable de protección de datos, a la Oficina de Privacidad de MetLife.</p>
+                    <p>Aplicar las medidas técnicas y organizativas adecuadas para proteger la Información Personal que se pierda, que se use incorrectamente, que se acceda sin autorización, que sea mal divulgada, alterada o destruida y todas las demás formas de tratamiento ilícito.</p>
+                    <p>Colaborar, según sea necesario, cuando un cliente o un Asociado solicite ejercer el derecho a la privacidad (por ejemplo, el derecho al acceso o a la corrección) con respecto a su información personal en poder de MetLife, No revele Información Personal a nadie, ya sea por teléfono, electrónicamente o de otra forma, a menos que usted razonablemente crea que la persona está autorizada para recibir esa Información Personal. Consulte con su Gerente antes de entregar dicha información a alguien ajeno a MetLife.</p>
+                    <p>Generalmente, sólo debe ser revelada la Información Personal que se requiera estrictamente para realizar las operaciones de negocio correspondientes.</p>
+                    <p>Tomar todas las suficientes medidas para evitar la divulgación no autorizada o ilegal de Información Personal.</p>
+                    <p>No utilizar la Información Personal para cualquier otro propósito diferente a los negocios de MetLife.</p>
+                    <p>Asegúrese de que todos los procesos que se aplican a la Información Personal cumplan con las Políticas y Normas de Información Tecnológica y con el Código de Conducta del Empleado de MetLife.</p>
+                    <p>Cualquier pregunta relacionada con la forma de tratar la Información Personal se remitirá a la Oficina de Privacidad de MetLife.</p>
+                    <p></p>
+                    <div class=" accordion">
+                        <div class="parsys content-parsys">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row wrapper privacy-policies-section" id="anotaciones">
+                <h3 class="privacy-policies-section__title">ANOTACIONES</h3>
+                <div xk-section="v1" class="privacy-policy single parbase abstract-tile privacy-policy-7 base xk-component xk-section-base">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- Privacy Policies Section
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section1">
         <h3 class="privacy-policies-section__title">Online Privacy Policy</h3>
@@ -781,8 +1326,6 @@
             Privacy Policy, we also have other more general privacy policies that may apply to you as a MetLife
             consumer
             or customer.</p>
-
-        <p class="privacy-policies-section__lastupdated brand-gray-2nd">Last Update December 18, 2013</p>
 
         <div class=" accordion">
             <div>
@@ -800,7 +1343,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -819,7 +1362,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -838,7 +1381,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -857,7 +1400,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -876,7 +1419,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -895,7 +1438,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -914,7 +1457,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -933,7 +1476,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -949,7 +1492,7 @@
     </div>
 </div>
 
-<!-- Privacy Policies Section -->
+&lt;!&ndash; Privacy Policies Section &ndash;&gt;
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section2">
         <h3 class="privacy-policies-section__title">Customer Privacy Policy</h3>
@@ -979,7 +1522,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -998,7 +1541,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1017,7 +1560,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1036,7 +1579,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1055,7 +1598,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1074,7 +1617,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1093,7 +1636,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1112,7 +1655,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1131,7 +1674,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1150,7 +1693,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1169,7 +1712,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1188,7 +1731,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1204,7 +1747,7 @@
     </div>
 </div>
 
-<!-- Privacy Policies Section -->
+&lt;!&ndash; Privacy Policies Section &ndash;&gt;
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section3">
         <h3 class="privacy-policies-section__title">Sources for Gathering Additional Information</h3>
@@ -1272,7 +1815,7 @@
     </div>
 </div>
 
-<!-- Privacy Policies Section -->
+&lt;!&ndash; Privacy Policies Section &ndash;&gt;
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section4">
         <h3 class="privacy-policies-section__title">MetLife Auto & Home® Privacy Policy FAQs</h3>
@@ -1314,7 +1857,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1333,7 +1876,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1352,7 +1895,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1371,7 +1914,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1390,7 +1933,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1409,7 +1952,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1428,7 +1971,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1447,7 +1990,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1466,7 +2009,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1485,7 +2028,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1504,7 +2047,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1523,7 +2066,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                              xlink:href="/static/images/icons-metlife.svg#icon-plus"></use>
                     </svg>
-                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right">
+                    <svg class="icon icon-minus accordion__title__icon accordion__title__icon&#45;&#45;hide pull-right">
                         <use xlink:href="/static/images/icons-metlife.svg#icon-minus"></use>
                     </svg>
                 </div>
@@ -1539,7 +2082,7 @@
     </div>
 </div>
 
-<!-- Privacy Policies Section -->
+&lt;!&ndash; Privacy Policies Section &ndash;&gt;
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section5">
         <h3 class="privacy-policies-section__title">HIPAA Notices of Privacy Practices</h3>
@@ -1547,25 +2090,25 @@
         <p>If you have Dental, Vision, Long-Term Care, Expatriate Benefits, or Medical insurance coverage from MetLife,
             please click on a link below to read the applicable HIPAA Notice to learn how we protect personal health
             information we have about you in connection with those coverages.</p>
-        <!--Begin Optional PDF container-->
+        &lt;!&ndash;Begin Optional PDF container&ndash;&gt;
         <div class="row video-text__document">
-            <div class="wrapper--news-article">
+            <div class="wrapper&#45;&#45;news-article">
                 <img src="/static/images/icon_pdf.png" alt="PDF Icon">
 
-                <div class="video-text__document__descriptor video-text__document__descriptor--full">
+                <div class="video-text__document__descriptor video-text__document__descriptor&#45;&#45;full">
                     <a href="#">Dental, Vision, Long-Term Care, and Expatriate Benefits HIPAA Privacy Notice</a>
 
                     <div>(PDF - XXX KB)</div>
                 </div>
             </div>
         </div>
-        <!--End Optional PDF container-->
-        <!--Begin Optional PDF container-->
+        &lt;!&ndash;End Optional PDF container&ndash;&gt;
+        &lt;!&ndash;Begin Optional PDF container&ndash;&gt;
         <div class="row video-text__document">
-            <div class="wrapper--news-article">
+            <div class="wrapper&#45;&#45;news-article">
                 <img src="/static/images/icon_pdf.png" alt="PDF Icon">
 
-                <div class="video-text__document__descriptor video-text__document__descriptor--full">
+                <div class="video-text__document__descriptor video-text__document__descriptor&#45;&#45;full">
                     <a href="#">Medical Insurance HIPAA Privacy Notice</a>
 
                     <div>(PDF - XXX KB)</div>
@@ -1573,40 +2116,40 @@
             </div>
         </div>
 
-        <!--End Optional PDF container-->
-        <!--Begin Optional PDF container-->
+        &lt;!&ndash;End Optional PDF container&ndash;&gt;
+        &lt;!&ndash;Begin Optional PDF container&ndash;&gt;
         <div class="row video-text__document">
-            <div class="wrapper--news-article">
+            <div class="wrapper&#45;&#45;news-article">
                 <img src="/static/images/icon_pdf.png" alt="PDF Icon">
 
-                <div class="video-text__document__descriptor video-text__document__descriptor--full">
+                <div class="video-text__document__descriptor video-text__document__descriptor&#45;&#45;full">
                     <a href="#">Chinese HIPAA Privacy Notice</a>
 
                     <div>(PDF - XXX KB)</div>
                 </div>
             </div>
         </div>
-        <!--End Optional PDF container-->
-        <!--Begin Optional PDF container-->
+        &lt;!&ndash;End Optional PDF container&ndash;&gt;
+        &lt;!&ndash;Begin Optional PDF container&ndash;&gt;
         <div class="row video-text__document">
-            <div class="wrapper--news-article">
+            <div class="wrapper&#45;&#45;news-article">
                 <img src="/static/images/icon_pdf.png" alt="PDF Icon">
 
-                <div class="video-text__document__descriptor video-text__document__descriptor--full">
+                <div class="video-text__document__descriptor video-text__document__descriptor&#45;&#45;full">
                     <a href="#">Spanish HIPAA Privacy Notice</a>
 
                     <div>(PDF - XXX KB)</div>
                 </div>
             </div>
         </div>
-        <!--End Optional PDF container-->
+        &lt;!&ndash;End Optional PDF container&ndash;&gt;
         <p>If you are a Dental and/or Vision customer and would like information on the Language Assistance Program,
             please <a href="#">click here</a></p>
 
     </div>
 </div>
 
-<!-- Privacy Policies Section -->
+&lt;!&ndash; Privacy Policies Section &ndash;&gt;
 <div class="container">
     <div class="row wrapper privacy-policies-section" id="section6">
         <h3 class="privacy-policies-section__title">Opting Out of Information Sharing</h3>
@@ -1644,7 +2187,7 @@
             You may <a href="#">opt out online</a> or <a href="#">download our customer opt out form</a> in PDF format.
         </p>
     </div>
-</div>
+</div>-->
 
 <!--Two Sided Form Variation modified 16-Mar-2016 by Ryan, pulled form from contact us-single and modified-->
 <div class="container container--no-margin-bottom contact-us__contact-form-container bg-gray-1st">

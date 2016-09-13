@@ -824,6 +824,7 @@
                         </svg>
                         <select id="list_year">
                             <option value="All" selected>All</option>
+                            <option value="2016">2016</option>
                             <option value="2015">2015</option>
                             <option value="2014">2014</option>
                             <option value="2013">2013</option>
@@ -845,33 +846,19 @@
                         </svg>
                         <select id="list_month">
                             <option value="All" selected>All</option>
-                            <option value="Jan">Jan</option>
-                            <option value="Feb">Feb</option>
-                            <option value="Mar">Mar</option>
-                            <option value="Apr">Apr</option>
-                            <option value="May">May</option>
-                            <option value="Jun">Jun</option>
-                            <option value="Jul">Jul</option>
-                            <option value="Aug">Aug</option>
-                            <option value="Sep">Sep</option>
-                            <option value="Oct">Oct</option>
-                            <option value="Nov">Nov</option>
-                            <option value="Dec">Dec</option>
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
                         </select>
-                        <!--<div class="hidden">-->
-                            <!--<div class="month_1">Jan</div>-->
-                            <!--<div class="month_2">Feb</div>-->
-                            <!--<div class="month_3">Mar</div>-->
-                            <!--<div class="month_4">Apr</div>-->
-                            <!--<div class="month_5">May</div>-->
-                            <!--<div class="month_6">Jun</div>-->
-                            <!--<div class="month_7">Jul</div>-->
-                            <!--<div class="month_8">Aug</div>-->
-                            <!--<div class="month_9">Sep</div>-->
-                            <!--<div class="month_10">Oct</div>-->
-                            <!--<div class="month_11">Nov</div>-->
-                            <!--<div class="month_12">Dec</div>-->
-                        <!--</div>-->
                         <div class="hidden pressroom-months-list">
                             <div class="month-item" data-month-value="january" data-month-text="January"></div>
                             <div class="month-item" data-month-value="february" data-month-text="February"></div>
@@ -943,6 +930,20 @@
             <h3>No results found.</h3>
             <h3>Try expanding your date range or search by keyword. </h3>
         </div>
+
+
+        <!--Begin of markup from CDN to ensure proper functioning-->
+        <div class="list__item--no-results hidden list__item__tips">
+            <p><b>No Result Found for this search</b></p>
+            <p><b>Search Tips:</b></p>
+            <ul>
+                <li><b>Check the spelling of your search term</b></li>
+                <li><b>Try using synonyms <br> </b></li>
+                <li><b>Try using fewer words or a piece of your search terms&nbsp;</b></li>
+            </ul>
+            <p><b>Try expanding your date range or search by keyword</b></p>
+        </div>
+        <!--Begin of markup from CDN to ensure proper functioning-->
     </div>
 </div>
 <!--End DE2840 fix 5/31/16-->
