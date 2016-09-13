@@ -2571,23 +2571,23 @@ var ServicesAPI = {
         console.log(serviceUrl);
 
         /************LOCAL FAO SERVICE***************/
-        //var faoSearchResults = $.getJSON("fao.json", function (data) {
-        //    ServicesAPI.generateOfficeItems(data);
-        //    ServicesAPI.createPagination(count);
-        //});
+        var faoSearchResults = $.getJSON("fao.json", function (data) {
+            ServicesAPI.generateOfficeItems(data);
+            ServicesAPI.createPagination(count);
+        });
         /************LOCAL FAO SERVICE***************/
 
         /************LIVE FAO SERVICE***************/
-        $.ajax({
-            type: 'GET',
-            url: serviceUrl,
-            success: function (data) {
-                ServicesAPI.generateOfficeItems(data)
-            },
-            error: function () {
-                ServicesAPI.handleServiceError()
-            }
-        });
+        //$.ajax({
+        //    type: 'GET',
+        //    url: serviceUrl,
+        //    success: function (data) {
+        //        ServicesAPI.generateOfficeItems(data)
+        //    },
+        //    error: function () {
+        //        ServicesAPI.handleServiceError()
+        //    }
+        //});
         /************LIVE FAO SERVICE***************/
     },
     generateOfficeItems: function (responseObject) {

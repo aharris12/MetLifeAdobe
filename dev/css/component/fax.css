@@ -394,6 +394,15 @@
     border: 1px solid #ccc;
 }
 
+.fax-directions__container .driving-direction-container .get-directions-form .get-directions-from-address .from-address.error {
+    border-color: #eb4646;
+    color: #EB4646;
+    background-color: #f5d0d0 !important;
+    background-color: rgba(245, 208, 208, 0.35);
+    fill: #EB4646;
+}
+
+
 .fax-directions__container .driving-direction-container .get-directions-form .get-directions-to-address{
     margin-top: 20px;
 }
