@@ -44,6 +44,7 @@ var selectedMarker;
 var markersArray = [];
 var dir_markerArray = [];
 var dir_to_flag = true;
+var pageTitle;
 if ($(".find-an-x-search__container").length > 0) {
     var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 }
@@ -808,7 +809,7 @@ $(".back-click").on('click', function () {
         ServicesAPI.showLocation();
         if (!$(".find-an-x-search__container").hasClass("hidden")) {
 
-            $('.page-title__heading').text($('.findOfficeText').text());
+            $('.page-title__heading').text(pageTitle);
             ServicesAPI.removeBreadCrumb();
         }
     }
@@ -2883,7 +2884,9 @@ var ServicesAPI = {
         $(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
     },
     getDirectionsPanel: function (strpDestination) {
-        $('.page-title__heading').text($('.getDirectionsText').text());
+        pageTitle= $(".page-title__heading").text();
+        console.log(pageTitle)
+        $('.page-title__heading').text($('.getDirectionsTextPageTitle').text());
         if ($(".generatedBreadCrumb").length == 0) {
             ServicesAPI.addBreadCrumb();
         }
