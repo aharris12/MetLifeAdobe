@@ -731,8 +731,6 @@ $(".find-an-x-search__container .cta_search").on('focus', function (e) {
         }
         $(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
 
-    }else{
-        $(".find-an-x-search--expand").slideUp();
     }
 });
 /*$("body").on("click tap", function (e) {
