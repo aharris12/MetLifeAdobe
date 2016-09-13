@@ -748,6 +748,8 @@
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+    overflow-y: auto;
+
 }
 
 .megamenu--promoboxes {
