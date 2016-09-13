@@ -923,7 +923,7 @@ if ($(".suggestionsbox").length > 0) {
 
 $('body').on('click touchstart tap', function (event) {
     if ($(event.target).is('.search-trigger__search-box')) {
-        console.log('asdf');
+
     } else {
         $('.search-trigger__search-box').val('');
     }
