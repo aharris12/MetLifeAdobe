@@ -40,13 +40,14 @@ if (typeof SFDC === "undefined") {
 }
 
 var JsonOccupations = {};
-
+var submitText;
+var processingText;
 SFDC.form.forEach(function (element) {
     var parent = $("." + element.type);
     /* $(".contact-sidebar.type");
      $('[data-fid="contact-sidebar"]');*/
-    var submitText = parent.find('.form-submit').text();
-    var processingText = parent.find('.form-submit').attr("data-proctext");
+    submitText = parent.find('.form-submit').text();
+    processingText = parent.find('.form-submit').attr("data-proctext");
 
     (function ($) {
         var isValid = true;
@@ -1139,12 +1140,12 @@ function formReset(parent, fields) {
 
     ServicesAPI.resetForm(thisForm)
     // Hide hidden fields
-    for (var i = 0; i < fields.length; i++) {
+    /*for (var i = 0; i < fields.length; i++) {
         var field = fields[i];
         if (field.hidden) {
             parent.find('#' + field.id).closest('.form-focus, .form-hidden, .hidden-field').hide();
         }
-    }
+    }*/
     $(".generic-form").trigger("reset")
     if (parent.hasClass("contactAdvisor")) {
         $(".contactCard").show();
@@ -1186,7 +1187,9 @@ function formMessage(parent, status) {
                 });
             } else if (parent.hasClass("updateInfoForm")){
                 message.fadeOut(800, function () {
+
                     ServicesAPI.resetForm(thisForm);
+                    parent.find('.form-submit').removeClass("disabled").html(submitText);
                 });
             } else if (parent.hasClass("contactAdvisorSingle")) {
                 message.fadeOut(800, function () {

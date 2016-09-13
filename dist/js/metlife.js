@@ -2393,13 +2393,37 @@ function formCardExpand(){
 function formCardMinimize(){
     $(".contact-container--form-card .form-minimize").click(function() {
         $('#contactCard').trigger("reset");
-        $('.contact-container--form-card .hidden-field').hide();
+        if(getViewport() == "mobile"){
+            if(!$('.contact-container--form-card .hidden-field').hasClass("observer")){
+                $('.contact-container--form-card .hidden-field').show();
+            }
+        }else{
+            $('.contact-container--form-card .hidden-field').hide();
+        }
         $('#contactCard').find('.error').removeClass('error');
         $('#contactCard').find('.errorSpan').removeClass('errorSpanOpen');
         $('#contactCard' +
             '').find('svg').css('fill','#666');
     });
 };
+var thisViewPort = getViewport();
+$(window).on("resize",function(){
+    if(thisViewPort != getViewport()){
+        if(getViewport() == "mobile"){
+            $('.contact-container--form-card .hidden-field').each(function(){
+                if(!$(this).hasClass("observer")){
+                    $(this).show();
+                }
+            });
+            thisViewPort = getViewport();
+        }
+        if(getViewport() != "mobile"){
+            $('.contact-container--form-card .hidden-field').hide();
+            thisViewPort = getViewport();
+        }
+        formCardExpand()
+    }
+});
 // Open Menu
 $(".microsite-header .megamenu-trigger").on("click", function (e) {
     $('.' + $(this).attr('data-target')).slideToggle();
@@ -5894,6 +5918,7 @@ var selectedMarker;
 var markersArray = [];
 var dir_markerArray = [];
 var dir_to_flag = true;
+var pageTitle;
 if ($(".find-an-x-search__container").length > 0) {
     var directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 }
@@ -5911,6 +5936,25 @@ $(document).ready(function () {
         $("#searchInPage").val("");
     }
 
+});
+
+$(window).resize(function(){
+    if($(".fax__container").length !=0) {
+        if ($(".hidden-xs").is(":visible")) {
+            $(".google-maps-container").attr('style', function (i, style) {
+                return style.replace(/height[^;]+;?/g, '');
+                google.maps.event.trigger(map, "resize");
+            });
+        }
+
+        if (!$(".hidden-xs").is(":visible")) {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
+
+        }
+        else {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".fax-results__container  > .maps-contact-form-container > button"));
+        }
+    }
 });
 
 
@@ -6562,8 +6606,6 @@ $(".find-an-x-search__container .cta_search").on('focus', function (e) {
         }
         $(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
 
-    }else{
-        $(".find-an-x-search--expand").slideUp();
     }
 });
 /*$("body").on("click tap", function (e) {
@@ -6607,10 +6649,9 @@ $(".find_an_office_radius").on('change', function () {
     ServicesAPI.showLocation();
 });
 
-$(document).on('click', ".results_office_name", function () {
-    var i = $(this).closest('.results_office_result').index();
-    var index = ((i + 1) + ((bootPagNum) * listCount))
-    google.maps.event.trigger(markersArray[index], 'click');
+$("body").on('click tap'," .results_office_name",function(){
+    var i= $(this).closest('.results_office_result').index();
+    google.maps.event.trigger(markersArray[i],  'click');
 });
 
 $('.get-directions-buttons .btn').on('click', function () {
@@ -6642,7 +6683,7 @@ $(".back-click").on('click', function () {
         ServicesAPI.showLocation();
         if (!$(".find-an-x-search__container").hasClass("hidden")) {
 
-            $('.page-title__heading').text($('.findOfficeText').text());
+            $('.page-title__heading').text(pageTitle);
             ServicesAPI.removeBreadCrumb();
         }
     }
@@ -6661,13 +6702,13 @@ $('.maps-button').click(function (clickedButton) {
     if ($('.maps-button').text() == moreMapText) {
         $('.google-maps-container').css('height', '400px');
         $('.maps-button').text(lessMapText);
-        ServicesAPI.resetMap();
-        ServicesAPI.resizeMap();
+        google.maps.event.trigger(map, "resize");
+        ServicesAPI.getMetOffices();
     } else {
         $('.google-maps-container').css('height', '200px');
         $('.maps-button').text(moreMapText);
-        ServicesAPI.resetMap();
-        ServicesAPI.resizeMap();
+        google.maps.event.trigger(map, "resize");
+        ServicesAPI.getMetOffices();
     }
 });
 /*function gmapsAutoCompleteInit() {
@@ -6697,7 +6738,7 @@ $(window).on('load', function (e) {
         if (document.referrer != "") {
             ServicesAPI.showLocation();
         }
-        if ($(".hidden-xs").is(":visible") == false) {
+        if (!$(".hidden-xs").is(":visible")) {
             $(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
 
         }
@@ -8184,7 +8225,7 @@ var ServicesAPI = {
             mapTypeControl: true,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                position: google.maps.ControlPosition.TOP_RIGHT,
+                position: google.maps.ControlPosition.RIGHT_BOTTOM,
                 mapTypeIds: [
                     google.maps.MapTypeId.ROADMAP,
                     google.maps.MapTypeId.SATELLITE
@@ -8330,32 +8371,21 @@ var ServicesAPI = {
             $('.find-an-x-search__container .cta_search').text(zip);
             address = $('.find-an-x-search__container .cta_search').val();
         }
-        var validateAddress = address.trim();
-        var isNumber = /^\d+$/.test(validateAddress);
-        if ((!isNumber) || (isNumber && (address.length === 5))) {
-            $('.errorSpan.error_zip_code').addClass('hidden');
-            if (address != null && address != '' && address != undefined && address != ' ') {
-                geocoder.geocode({"address": address}, function (response, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        ServicesAPI.addAddressToMap(response, status);
-                    } else {
-                        ServicesAPI.resetMap();
-                        ServicesAPI.showSorryUnableToLocateMessage();
-                    }
-                });
-            } else {
-                ServicesAPI.resetMap();
-            }
-        } else {
-            $('.errorSpan.error_zip_code').removeClass('hidden');
-            if ($(".hidden-xs").is(":visible") == true) {
+        $('.errorSpan.error_zip_code').addClass('hidden');
+        if (address != null && address != '' && address != undefined && address != ' ') {
+            geocoder.geocode({"address": address}, function (response, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    ServicesAPI.addAddressToMap(response, status);
 
-                $(".mobile_expand_close").click();
-                $(".error_zip_code").insertAfter(".mobile_expand");
-            }
-            if (($(".hidden-xs").is(":visible") == false) && ($(".mobile_expand").is(":visible"))) {
-                $(".error_zip_code").insertAfter(".mobile_expand_open");
-            }
+                } else {
+                    ServicesAPI.resetMap();
+                    ServicesAPI.showSorryUnableToLocateMessage();
+
+                }
+            });
+        } else {
+            ServicesAPI.resetMap();
+
         }
     },
     addAddressToMap: function (response, status) {
@@ -8678,15 +8708,7 @@ var ServicesAPI = {
 
                 var infowindow = new google.maps.InfoWindow();
                 infowindow.setContent(html);
-                if ($(".hidden-xs").is(":visible")) {
-                    infowindow.open(map, marker);
-                } else {
-
-                }
-                if (presentHighligtedInfo != null) {
-                    presentHighligtedInfo.open(null, marker);
-                }
-                presentHighligtedInfo = infowindow;
+                infowindow.open(map, marker);
             }
         })(marker, officeNumber));
 
@@ -8736,7 +8758,9 @@ var ServicesAPI = {
         $(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
     },
     getDirectionsPanel: function (strpDestination) {
-        $('.page-title__heading').text($('.getDirectionsText').text());
+        pageTitle= $(".page-title__heading").text();
+        console.log(pageTitle)
+        $('.page-title__heading').text($('.getDirectionsTextPageTitle').text());
         if ($(".generatedBreadCrumb").length == 0) {
             ServicesAPI.addBreadCrumb();
         }
@@ -9591,13 +9615,14 @@ if (typeof SFDC === "undefined") {
 }
 
 var JsonOccupations = {};
-
+var submitText;
+var processingText;
 SFDC.form.forEach(function (element) {
     var parent = $("." + element.type);
     /* $(".contact-sidebar.type");
      $('[data-fid="contact-sidebar"]');*/
-    var submitText = parent.find('.form-submit').text();
-    var processingText = parent.find('.form-submit').attr("data-proctext");
+    submitText = parent.find('.form-submit').text();
+    processingText = parent.find('.form-submit').attr("data-proctext");
 
     (function ($) {
         var isValid = true;
@@ -10690,12 +10715,12 @@ function formReset(parent, fields) {
 
     ServicesAPI.resetForm(thisForm)
     // Hide hidden fields
-    for (var i = 0; i < fields.length; i++) {
+    /*for (var i = 0; i < fields.length; i++) {
         var field = fields[i];
         if (field.hidden) {
             parent.find('#' + field.id).closest('.form-focus, .form-hidden, .hidden-field').hide();
         }
-    }
+    }*/
     $(".generic-form").trigger("reset")
     if (parent.hasClass("contactAdvisor")) {
         $(".contactCard").show();
@@ -10737,7 +10762,9 @@ function formMessage(parent, status) {
                 });
             } else if (parent.hasClass("updateInfoForm")){
                 message.fadeOut(800, function () {
+
                     ServicesAPI.resetForm(thisForm);
+                    parent.find('.form-submit').removeClass("disabled").html(submitText);
                 });
             } else if (parent.hasClass("contactAdvisorSingle")) {
                 message.fadeOut(800, function () {
@@ -11842,10 +11869,14 @@ if ($(".suggestionsbox").length > 0) {
         }
     });
 }
-$('.search-trigger__search-box').blur(function() {
-    $(this).val('');
-});
 
+$('body').on('click touchstart tap', function (event) {
+    if ($(event.target).is('.search-trigger__search-box')) {
+
+    } else {
+        $('.search-trigger__search-box').val('');
+    }
+});
 /**
  * Hides search suggestions.
  *
@@ -19177,7 +19208,7 @@ $(".contact-us__select").on("change", function(){
 });
 
 //Proper rendering of bullets on the contact-us single page
-if($('.rtf-general-content').length > 0 && $('.rtf-general-content').prev('contact-us-directory')) {
+if($('.rtf-general-content').length > 0 && $('.rtf-general-content').prev('.contact-us-directory') > 0) {
 	$('.rtf-general-content').addClass("rtf-general-content__contact-single--bullets");
 	// console.log("This is true");
 }
