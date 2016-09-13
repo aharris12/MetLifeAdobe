@@ -132,6 +132,7 @@
 @media screen and (min-width: 1024px) {
     .related-content {
         margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     .media-card__content p {
