@@ -101,10 +101,11 @@
 }
 
 .list__item__title {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
     display: block;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .list__item--right {
@@ -123,7 +124,8 @@
 }
 
 .list__item__date {
-    font-size: 0.7em;
+    font-size: 10px;
+    line-height: 20px;
     display: block;
     color: #999;
 }
@@ -308,6 +310,11 @@
     .form-item__field--md {
         width: 200px;
     }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -335,6 +342,11 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
     }
 }
 
