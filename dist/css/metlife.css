@@ -2643,6 +2643,11 @@ a:visited {
     cursor: text !important;
 }
 
+.download-link {
+    font-size: 14px;
+    line-height: 20px;
+}
+
 @media screen and (min-width: 768px) {
     .wrapper {
         width: 95%;
@@ -2678,6 +2683,14 @@ a:visited {
     .text-right-tablet-up {
         text-align: right;
     }
+
+    .download-link {
+        text-transform: uppercase;
+        color: #2c77c5;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 600;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -2708,7 +2721,8 @@ a:visited {
     .download-link {
         text-transform: uppercase;
         color: #2c77c5;
-        font-size: 0.75em;
+        font-size: 12px;
+        line-height: 20px;
         font-weight: 600;
     }
 
@@ -7008,19 +7022,31 @@ product-module__list ul:last-child, p:last-child {
 }
 
 .list__item__title {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 18px;
     display: block;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .list__item--right {
     float: right;
     text-align: center;
+    margin-right: 20px;
+}
+
+.list__item--right a:first-of-type {
+    margin-right: 5px;
+}
+
+/*DE3211 is where this underline requirement came from*/
+.list__item--right a:last-of-type:hover {
+    text-decoration: underline;
 }
 
 .list__item__date {
-    font-size: 0.7em;
+    font-size: 10px;
+    line-height: 20px;
     display: block;
     color: #999;
 }
@@ -7205,6 +7231,11 @@ product-module__list ul:last-child, p:last-child {
     .form-item__field--md {
         width: 200px;
     }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -7220,6 +7251,23 @@ product-module__list ul:last-child, p:last-child {
     .list [data-form-library-msg] .list__title{
         font-size: 20px;
         line-height: 24px;
+    }
+
+    .form-library .lists {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form-library .results_content {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .list__item__date {
+        font-size: 11px;
+        line-height: 15px;
     }
 }
 
@@ -9623,6 +9671,7 @@ product-module__list ul:last-child, p:last-child {
 .media-card__content__link {
     display:block;
     font-size: 14px;
+    margin-bottom: 10px;
 }
 .media-card__content p {
     margin-bottom: 5px;
@@ -9660,7 +9709,7 @@ product-module__list ul:last-child, p:last-child {
     padding-bottom:0;
 }
 .media-card__content a:hover{
-    text-decoration: none;
+    text-decoration: underline;
 }
 .media-card__content--link-list{
     border: 0 solid transparent;
