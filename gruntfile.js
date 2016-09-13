@@ -357,8 +357,8 @@ module.exports = function (grunt) {
                     'dev/js/email.js',
                     'dev/js/general--content.js',
                     'dev/js/news-room.js',
-                    'dev/js/inview.js'
-
+                    'dev/js/inview.js',
+                    'dev/js/contact-us.js'
 
                 ],
                 dest: 'dist/js/metlife.js'
