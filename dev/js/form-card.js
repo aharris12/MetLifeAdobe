@@ -24,10 +24,34 @@ function formCardExpand(){
 function formCardMinimize(){
     $(".contact-container--form-card .form-minimize").click(function() {
         $('#contactCard').trigger("reset");
-        $('.contact-container--form-card .hidden-field').hide();
+        if(getViewport() == "mobile"){
+            if(!$('.contact-container--form-card .hidden-field').hasClass("observer")){
+                $('.contact-container--form-card .hidden-field').show();
+            }
+        }else{
+            $('.contact-container--form-card .hidden-field').hide();
+        }
         $('#contactCard').find('.error').removeClass('error');
         $('#contactCard').find('.errorSpan').removeClass('errorSpanOpen');
         $('#contactCard' +
             '').find('svg').css('fill','#666');
     });
 };
+var thisViewPort = getViewport();
+$(window).on("resize",function(){
+    if(thisViewPort != getViewport()){
+        if(getViewport() == "mobile"){
+            $('.contact-container--form-card .hidden-field').each(function(){
+                if(!$(this).hasClass("observer")){
+                    $(this).show();
+                }
+            });
+            thisViewPort = getViewport();
+        }
+        if(getViewport() != "mobile"){
+            $('.contact-container--form-card .hidden-field').hide();
+            thisViewPort = getViewport();
+        }
+        formCardExpand()
+    }
+});

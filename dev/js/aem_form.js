@@ -1140,12 +1140,12 @@ function formReset(parent, fields) {
 
     ServicesAPI.resetForm(thisForm)
     // Hide hidden fields
-    for (var i = 0; i < fields.length; i++) {
+    /*for (var i = 0; i < fields.length; i++) {
         var field = fields[i];
         if (field.hidden) {
             parent.find('#' + field.id).closest('.form-focus, .form-hidden, .hidden-field').hide();
         }
-    }
+    }*/
     $(".generic-form").trigger("reset")
     if (parent.hasClass("contactAdvisor")) {
         $(".contactCard").show();
