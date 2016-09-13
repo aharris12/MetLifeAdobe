@@ -40,13 +40,14 @@ if (typeof SFDC === "undefined") {
 }
 
 var JsonOccupations = {};
-
+var submitText;
+var processingText;
 SFDC.form.forEach(function (element) {
     var parent = $("." + element.type);
     /* $(".contact-sidebar.type");
      $('[data-fid="contact-sidebar"]');*/
-    var submitText = parent.find('.form-submit').text();
-    var processingText = parent.find('.form-submit').attr("data-proctext");
+    submitText = parent.find('.form-submit').text();
+    processingText = parent.find('.form-submit').attr("data-proctext");
 
     (function ($) {
         var isValid = true;
@@ -1186,7 +1187,9 @@ function formMessage(parent, status) {
                 });
             } else if (parent.hasClass("updateInfoForm")){
                 message.fadeOut(800, function () {
+
                     ServicesAPI.resetForm(thisForm);
+                    parent.find('.form-submit').removeClass("disabled").html(submitText);
                 });
             } else if (parent.hasClass("contactAdvisorSingle")) {
                 message.fadeOut(800, function () {

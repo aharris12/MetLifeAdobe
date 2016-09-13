@@ -920,10 +920,14 @@ if ($(".suggestionsbox").length > 0) {
         }
     });
 }
-$('.search-trigger__search-box').blur(function() {
-    $(this).val('');
-});
 
+$('body').on('click touchstart tap', function (event) {
+    if ($(event.target).is('.search-trigger__search-box')) {
+
+    } else {
+        $('.search-trigger__search-box').val('');
+    }
+});
 /**
  * Hides search suggestions.
  *
