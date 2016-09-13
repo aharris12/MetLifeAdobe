@@ -85,7 +85,7 @@
     <link href="css/component/oo_style.css" rel="stylesheet">
     <link href="css/component/feedback.css" rel="stylesheet">
     <link href="css/component/404.css" rel="stylesheet">
-    <link href="css/component/email-unsub.css" rel="stylesheet">
+    <link href="css/component/email--unsubscribe.css" rel="stylesheet">
     <link href="css/component/fax.css" rel="stylesheet">
     <link href="css/component/glossary.css" rel="stylesheet">
     <link href="css/component/life-insurance-quote.css" rel="stylesheet">
@@ -94,19 +94,15 @@
     <link href="css/component/sitemap.css" rel="stylesheet">
     <link href="css/component/share-chat.css" rel="stylesheet">
     <link href="css/component/visiondental-overlay.css" rel="stylesheet">
-    <link href="css/component/toolkit-login.css" rel="stylesheet">
-    <link href="css/component/toolkit-searchbox.css" rel="stylesheet">
-    <link href="css/component/toolkit-page-title.css" rel="stylesheet">
-    <link href="css/component/toolkit-contextual-links.css" rel="stylesheet">
-    <link href="css/component/toolkit-idea-submit.css" rel="stylesheet">
-    <link href="css/component/toolkit-column-layouts.css" rel="stylesheet">
-    <link href="css/component/toolkit-download-farm.css" rel="stylesheet">
-    <link href="css/component/toolkit-element-title.css" rel="stylesheet">
-    <link href="css/component/toolkit-search-page.css" rel="stylesheet">
-    <link href="css/component/toolkit-contentblock.css" rel="stylesheet">
-    <link href="css/component/toolkit-divider.css" rel="stylesheet">
+    <link href="css/component/inview.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
-
+    <link href="css/component/tooltipster.css" rel="stylesheet">
+    <link href="css/us/component/carousel--hero.css" rel="stylesheet">
+    <link href="css/us/component/cta-quote-tool.css" rel="stylesheet">
+    <link href="css/us/component/get-quote-find-office.css" rel="stylesheet">
+    <link href="css/us/component/promo-card.css" rel="stylesheet">
+    <link href="css/us/component/product-tile.css" rel="stylesheet">
+    <link href="css/us/component/hp-contextual-links-us.css" rel="stylesheet">
     <!-- /build -->
 
 </head>
@@ -149,9 +145,20 @@
 <div class="row global-header">
     <div class="col-xs-4 col-sm-5 global-header__left">
         <div class="col megamenu-trigger" title="MENU" data-target="megamenu">
-            <div><span class="megamenu-trigger__icon"></span></div>
+            <a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-menu"></use>
+                </svg>
 
-            <span class="megamenu-trigger__label">MENU</span>
+                <!--<svg class="icon icon-ico_menu megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-ico_menu"></use>
+                </svg>-->
+                <svg class="icon icon-close megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg>
+                <span class="megamenu-trigger__label js-megaMenuToggle">MENU</span>
+                <span class="megamenu-trigger__label js-megaMenuToggle hidden">CLOSE</span>
+            </a>
         </div>
         <div class="col home-trigger" title="HOME" data-target="home">
             <a href="#" class="home-trigger__link">
@@ -162,23 +169,36 @@
             </a>
         </div>
         <div class="col search-trigger" title="SEARCH" data-target="search">
-            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
-                <use xlink:href="images/icons-metlife.svg#icon-search"></use>
-            </svg></span>
+	            <span class="search-trigger__icon"><svg class="icon icon-search js-searchIcon">
+                    <use xlink:href="images/icons-metlife.svg#icon-search"></use>
+                </svg></span>
             <span class="search-trigger__label">Search</span>
 
-            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container" data-path-to-search-results="search-results.html">
-                <input type="text" id="searchInPage" class="search-trigger__search-box" placeholder="Search"
+            <form name="metSearchForm" id="metSearchForm" class="search-trigger__container"
+                  data-path-to-search-results="https://qa.www.metlife.com/searchresultsl">
+                <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
+
+                <input type="text" id="searchInPage" class="search-trigger__search-box  search_openTwo"
+                       autocomplete="off" name="query"
+                       onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search"
                        data-placeholder="">
-                <input id="overlayerback" class="search-trigger__search-box" autocomplete="off" type="text">
+                <input id="overlayerback" class="search-trigger__search-box  hdinputsearch_gsa_back hidden"
+                       autocomplete="off" type="text">
+                <!--Begin of fix for QC DE8990 5/25/16-->
+                <a href="#" class="search_location_image">
+                    <svg class="icon brand-1st icon-search js-searchIconMobile">
+                        <use xlink:href="images/icons-metlife.svg#icon-search"></use>
+                    </svg>
+                </a>
+                <!--End of fix for DE8990 5/25/16-->
             </form>
 
         </div>
     </div>
     <div class="col-xs-4 col-sm-2 global-header__middle">
-        <h1><a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
-                                                  class="global-header__logo img-responsive"></a>
-        </h1>
+        <a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
+                                              class="global-header__logo img-responsive"></a>
+
     </div>
     <div class="col-xs-4 col-sm-5 global-header__right">
         <!-- Contact Trigger -->
@@ -187,103 +207,66 @@
         </div>
         <!-- Login Trigger -->
         <div class="col login-trigger pull-right" title="LOGIN" data-target="login-container">
-            <span class="login-trigger__label">
+            <a class="login-trigger__label" href="#">
                 Log in
                 <svg class="icon icon-secure-locked">
                     <use xlink:href="images/icons-metlife.svg#icon-secure-locked"></use>
                 </svg>
-            </span>
+            </a>
         </div>
         <!-- User Logged In Trigger-->
-        <!--<div class="col contact-trigger pull-right" title="CONTACT" data-target="contact-container">
-            <a href="#" class="contact-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
+        <!--<div class="col user-trigger pull-right" title="CONTACT" data-target="contact-container">
+            <a href="#" class="user-trigger__label hidden-xs"><span class="hidden-xs js-loginName">Chad Krokosi </span> <svg class="login-arrow icon icon-secure-locked">
                 <use xlink:href="images/icons-metlife.svg#icon-arrow-down-triangle"></use>
             </svg></a>
         </div>-->
     </div>
 </div>
 
-<!-- Mega Menu -->
+<!--New Mega Menu -->
 <div class="row megamenu">
-    <ul class="megamenu__main-items">
+    <ul class="megamenu__main-items megamenu__top--promo">
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label ">INSURANCE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">INSURANCE</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">INSURANCE</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="/Insurance/Life-Insurance/Index.html">Life</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Auto</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Disability</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Home</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Dental</a></li>
                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Vision</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp; Health</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Other Protection Products</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Accident &amp;
+                    Health</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Other Protection
+                    Products</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label visible-xs" href="http://#">View
+                    All</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">RETIREMENT &amp; INVESTMENTS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BUSINESS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BUSINESS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
             <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Annuities</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">IRAs</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Mutual Funds</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
-
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">APR Calculators</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Benefits for
+                    Employees</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Small Business</a>
+                </li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Retirement & Benefit
+                    Funding</a></li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Healthcare Reform</a>
+                </li>
+                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Thought
+                    Leadership</a></li>
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FINANCIAL PLANNING</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items megamenu__sub-items--action">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label" href="http://#">Planning for the Future</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Special Needs Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">LGBT Financial
-                    Planning</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Financial Workshop</a></li>
-
-            </ul>
-        </li>
-        <div class="hidden-xs hidden-sm megamenu__divider"></div>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BUSINESS</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Benefits for Employees</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Small Business</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Retirement
-                    &amp; Benefit Funding</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Healthcare Reform</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Thought Leadership</a></li>
-            </ul>
-        </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">FOR BROKERS</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">FOR BROKERS</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">FOR BROKERS</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -301,7 +284,8 @@
             </ul>
         </li>
         <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">ABOUT METLIFE</a>
+            <a href="#" class="megamenu__main-item-label visible-xs">About Metlife</a>
+            <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">About Metlife</a>
             <svg class="icon icon-chevron-right">
                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
             </svg>
@@ -325,47 +309,108 @@
                                                   href="/Press-Room/Index.html">Press Room</a></li>
             </ul>
         </li>
-        <li class="megamenu__main-item">
-            <a href="#" class="megamenu__main-item-label">SUPPORT &amp; MANAGE</a>
-            <svg class="icon icon-chevron-right">
-                <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
-            </svg>
-            <ul class="megamenu__sub-items">
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Contact Us</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">File A Claim</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find an Office
-                    or Advisors</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Dentist</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Find a Vision Provider</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Forms Library</a></li>
-                <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
-                                                  href="http://#">Unsubscribe/Opt Out</a></li>
-            </ul>
-        </li>
+        <div class="hidden-xs megamenu__divider"></div>
     </ul>
+
+    <ul class="megamenu__main-items megamenu__bottom--promo">
+        <!-- <li class="megamenu__main-item">
+             <a href="#" class="megamenu__main-item-label visible-xs">SUPPORT &amp; MANAGE</a>
+             <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">SUPPORT &amp; MANAGE</a>
+             <svg class="icon icon-chevron-right">
+                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+             </svg>
+             <ul class="megamenu__sub-items">
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Contact Us</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">File A Claim</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find an Office
+                     or Advisors</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Dentist</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Vision Provider</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Forms Library</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Unsubscribe/Opt Out</a></li>
+             </ul>
+         </li>
+         <li class="megamenu__main-item">
+             <a href="#" class="megamenu__main-item-label visible-xs">SUPPORT &amp; MANAGE</a>
+             <a href="http://www.metlife.com" class="megamenu__main-item-label hidden-xs">SUPPORT &amp; MANAGE</a>
+             <svg class="icon icon-chevron-right">
+                 <use xlink:href="images/icons-metlife.svg#icon-chevron-right"></use>
+             </svg>
+             <ul class="megamenu__sub-items">
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Contact Us</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">File A Claim</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find an Office
+                     or Advisors</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Dentist</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Find a Vision Provider</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Forms Library</a></li>
+                 <li class="megamenu__sub-item"><a class="megamenu__sub-item-label"
+                                                   href="http://#">Unsubscribe/Opt Out</a></li>
+             </ul>
+         </li>-->
+        <div class="megamenu--promoboxes">
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_1.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Insurance for Your Employees</div>
+                        <div class="megamenu--promobox--content--header--body">Attract and retain top talent with
+                            employee benefit solutions that are compelling-and cost effective. <span>Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="megamenu--promoboxes">
+
+            <a href="#">
+                <div class="megamenu--promobox bg-gray-1st">
+                    <div class="megamenu--promobox--img inline-block" data-image-src="images/mega_menu_2.png">
+                    </div>
+                    <div class="megamenu--promobox--content inline-block">
+                        <div class="megamenu--promobox--content--header">Corprate Reponsibility</div>
+                        <div class="megamenu--promobox--content--header--body">To learn how we are delevering strong
+                            returns and creating long-term value, view our new corprate responsibility report. <span>Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ul>
+
 </div>
 
-<!-- Contact Form -->
+<!-- Contact Form New-->
 <div class="contact-container--global">
-    <div class="contactSliderOuterCon">
+    <div class="contactSliderOuterCon contact-sidebar">
         <a href="#">
-            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
-                <use xlink:href="images/icons-metlife.svg#icon-close"></use>
-            </svg></span>
+	            <span class="contact-close pull-right"><svg class="icon brand-gray-1st">
+                    <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                </svg></span>
         </a>
 
         <div class="contactSideForm">
             <span class="form__title">Have a rep contact me:</span>
             <span class="form__subtitle info-mandatory">All fields are required</span>
 
-            <form id="requestFormRightNav_Acc" name="requestFormRightNav_Acc" enctype="multipart/form-data"
-                  method="post" class="userForm" data-fid="contactSidebar" data-url="glu or clr">
+            <form id="contactSidebar" name="contactSidebar" enctype="multipart/form-data"
+                  method="post" class="userForm" data-fid="contactSidebar"
+                  data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction" data-service="glu">
                 <input type="hidden" id="thankYouPage" name="thankYouPage">
                 <input type="hidden" id="id" value="cscontact@metlifeservice.com" name="id">
                 <input type="hidden" id="isLead" name="isLead" value="true">
@@ -386,186 +431,240 @@
                 <input type="hidden" name="bWFCompleted" value="Y">
                 <input type="hidden" name="webformId" id="webformId_ID" value="LIF-ALL-BARN-100">
                 <input type="hidden" value="firstName" name="lstPnPPreFillParameters">
+                <input type="hidden" name="isSync" id="isSync" value="no"/>
+                <input type="hidden" name="xmlDomain" id="xmlDomain" value="https://int.www.cwa.metlife.com"/>
+                <input type="hidden" name="xmlPath" id="xmlPath"
+                       value="/cwa/metlife/system/assets/gls/validationxmls/"/>
+                <input type="hidden" name="xmlformname" id="xmlformname" value="HaveARepVal"/>
 
-                <div class="form-user-grp">
-                    <label for="firstName_Acc" class="hidden">First Name</label>
-                    <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="First Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="lastName_Acc">Last Name</label>
-                    <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Last Name" data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="address_Acc">Address</label>
-                    <input name="address" id="address_Acc" type="text" class="form-user-ctrl" placeholder="Address"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="city_Acc">City</label>
-                    <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
-                           data-required="true" aria-required="true">
-                </div>
-                <div class="form-statezip-grp row">
-                    <div class="form-user-grp form-state form-icon-wrapper">
 
-                        <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
-                                data-required="true" aria-required="true">
-                            <option value="" selected="selected">State</option>
-                            <option class="general" value="AL">AL</option>
-                            <option class="general" value="AK">AK</option>
-                            <option class="general" value="AZ">AZ</option>
-                            <option class="general" value="AR">AR</option>
-                            <option class="general" value="CA">CA</option>
-                            <option class="general" value="CO">CO</option>
-                            <option class="general" value="CT">CT</option>
-                            <option class="general" value="DC">DC</option>
-                            <option class="general" value="DE">DE</option>
-                            <option class="general" value="FL">FL</option>
-                            <option class="general" value="GA">GA</option>
-                            <option class="general" value="HI">HI</option>
-                            <option class="general" value="IA">IA</option>
-                            <option class="general" value="ID">ID</option>
-                            <option class="general" value="IL">IL</option>
-                            <option class="general" value="IN">IN</option>
-                            <option class="general" value="KS">KS</option>
-                            <option class="general" value="KY">KY</option>
-                            <option class="general" value="LA">LA</option>
-                            <option class="general" value="MA">MA</option>
-                            <option class="general" value="MD">MD</option>
-                            <option class="general" value="ME">ME</option>
-                            <option class="general" value="MI">MI</option>
-                            <option class="general" value="MN">MN</option>
-                            <option class="general" value="MO">MO</option>
-                            <option class="general" value="MS">MS</option>
-                            <option class="general" value="MT">MT</option>
-                            <option class="general" value="NC">NC</option>
-                            <option class="general" value="ND">ND</option>
-                            <option class="general" value="NE">NE</option>
-                            <option class="general" value="NH">NH</option>
-                            <option class="general" value="NJ">NJ</option>
-                            <option class="general" value="NM">NM</option>
-                            <option class="general" value="NV">NV</option>
-                            <option class="general" value="NY">NY</option>
-                            <option class="general" value="OH">OH</option>
-                            <option class="general" value="OK">OK</option>
-                            <option class="general" value="OR">OR</option>
-                            <option class="general" value="PA">PA</option>
-                            <option class="general" value="PR">PR</option>
-                            <option class="general" value="RI">RI</option>
-                            <option class="general" value="SC">SC</option>
-                            <option class="general" value="SD">SD</option>
-                            <option class="general" value="TN">TN</option>
-                            <option class="general" value="TX">TX</option>
-                            <option class="general" value="UT">UT</option>
-                            <option class="general" value="VA">VA</option>
-                            <option class="general" value="VT">VT</option>
-                            <option class="general" value="WA">WA</option>
-                            <option class="general" value="WI">WI</option>
-                            <option class="general" value="WV">WV</option>
-                            <option class="general" value="WY">WY</option>
-                        </select>
-                    </div>
-                    <div class="form-user-grp form-zip">
-                        <label class="hidden" for="zip_Acc">Zip</label>
-                        <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
-                               data-required="true" aria-required="true" data-valid-type="zip">
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label for="firstName_Acc" class="hidden">First Name</label>
+                            <input name="firstName" id="firstName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="First Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
+                        </div>
                     </div>
                 </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="email_Acc">Email</label>
-                    <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
-                           data-required="true" aria-required="true" data-valid-type="email">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid email address.</span>
-                </div>
-                <div class="form-user-grp">
-                    <label class="hidden" for="phone_Acc">Phone</label>
-                    <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
-                           placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
-                           data-valid-type="phone">
-                    <span class="errorSpan"><img class="errorSpanImg"
-                                                 src="images/form/icon_form_error.png"
-                                                 alt="! Error Image">Please enter a valid phone number.</span>
-                </div>
-                <div class="productPolicyTypes">
-                    <div class="form-user-grp form-icon-wrapper">
 
-                        <select name="requestType" id="requestType" class="form-user-ctrl user-select productPolicy"
-                                title="In reference to ..." data-required="true" aria-required="true"
-                                data-valid-status="failed">
-                            <option value="">In reference to ...</option>
-                            <option value="New Product/Planning Services">New Product/Policy</option>
-                            <option value="Exisiting Product/Policy">Exisiting Product/Policy</option>
-                        </select>
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="lastName_Acc">Last Name</label>
+                            <input name="lastName" id="lastName_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Last Name" data-required="true" aria-required="true"
+                                   data-valid-type="text">
+                        </div>
                     </div>
-                    <div class="productUserType newProductUser">
-                        <div class="form-check-grp">
-                            <div class="productCount">- Select up to 5 -</div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="address_Acc">Address</label>
+                            <input name="address" id="address_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Address"
+                                   data-required="true" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="city_Acc">City</label>
+                            <input name="city" id="city_Acc" type="text" class="form-user-ctrl" placeholder="City"
+                                   data-required="true" aria-required="true" data-valid-type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="state" id="state_Acc" class="form-user-ctrl user-select" title="State"
+                                    data-required="true" aria-required="true">
+                                <option value="" selected="selected">State</option>
+                                <option class="general" value="AL">AL</option>
+                                <option class="general" value="AK">AK</option>
+                                <option class="general" value="AZ">AZ</option>
+                                <option class="general" value="AR">AR</option>
+                                <option class="general" value="CA">CA</option>
+                                <option class="general" value="CO">CO</option>
+                                <option class="general" value="CT">CT</option>
+                                <option class="general" value="DC">DC</option>
+                                <option class="general" value="DE">DE</option>
+                                <option class="general" value="FL">FL</option>
+                                <option class="general" value="GA">GA</option>
+                                <option class="general" value="HI">HI</option>
+                                <option class="general" value="IA">IA</option>
+                                <option class="general" value="ID">ID</option>
+                                <option class="general" value="IL">IL</option>
+                                <option class="general" value="IN">IN</option>
+                                <option class="general" value="KS">KS</option>
+                                <option class="general" value="KY">KY</option>
+                                <option class="general" value="LA">LA</option>
+                                <option class="general" value="MA">MA</option>
+                                <option class="general" value="MD">MD</option>
+                                <option class="general" value="ME">ME</option>
+                                <option class="general" value="MI">MI</option>
+                                <option class="general" value="MN">MN</option>
+                                <option class="general" value="MO">MO</option>
+                                <option class="general" value="MS">MS</option>
+                                <option class="general" value="MT">MT</option>
+                                <option class="general" value="NC">NC</option>
+                                <option class="general" value="ND">ND</option>
+                                <option class="general" value="NE">NE</option>
+                                <option class="general" value="NH">NH</option>
+                                <option class="general" value="NJ">NJ</option>
+                                <option class="general" value="NM">NM</option>
+                                <option class="general" value="NV">NV</option>
+                                <option class="general" value="NY">NY</option>
+                                <option class="general" value="OH">OH</option>
+                                <option class="general" value="OK">OK</option>
+                                <option class="general" value="OR">OR</option>
+                                <option class="general" value="PA">PA</option>
+                                <option class="general" value="PR">PR</option>
+                                <option class="general" value="RI">RI</option>
+                                <option class="general" value="SC">SC</option>
+                                <option class="general" value="SD">SD</option>
+                                <option class="general" value="TN">TN</option>
+                                <option class="general" value="TX">TX</option>
+                                <option class="general" value="UT">UT</option>
+                                <option class="general" value="VA">VA</option>
+                                <option class="general" value="VT">VT</option>
+                                <option class="general" value="WA">WA</option>
+                                <option class="general" value="WI">WI</option>
+                                <option class="general" value="WV">WV</option>
+                                <option class="general" value="WY">WY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-4">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="zip_Acc">Zip</label>
+                            <input name="zip" id="zip_Acc" type="text" class="form-user-ctrl" placeholder="Zip"
+                                   data-required="true" aria-required="true" data-valid-type="zip">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="email_Acc">Email</label>
+                            <input name="email" id="email_Acc" type="text" class="form-user-ctrl" placeholder="Email"
+                                   data-required="true" aria-required="true" data-valid-type="email">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+                            <label class="hidden" for="phone_Acc">Phone</label>
+                            <input name="phone" id="phone_Acc" type="text" class="form-user-ctrl"
+                                   placeholder="Phone (XXX-XXX-XXXX)" data-required="true" aria-required="true"
+                                   data-valid-type="phone">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row form-row">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp form-icon-wrapper">
+                            <svg class="icon">
+                                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                            </svg>
+                            <select name="requestType" id="requestType" class="form-user-ctrl user-select"
+                                    data-required="true" aria-required="true"
+                                    data-valid-status="failed"
+                                    data-request-type>
+                                <option value="">In reference to ...</option>
+                                <option value="New Product/Planning Services"
+                                        data-product-url="/wps/glsproxy/gls/processlead.do">New Product/Planning
+                                    Services
+                                </option>
+                                <option value="Existing Product/Policy"
+                                        data-product-url="/wps/proxy/MCWebForms5KSales/WebFormServletAction">Existing
+                                    Product/Policy
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-row" data-observes-id="requestType"
+                     data-observes-value="New Product/Planning Services">
+                    <div class="col-xs-12">
+                        <div class="form-radio-grp">
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Annuity" type="checkbox"
-                                       class="user-checkbox" value="ANN"><span>Annuity</span>
+                                <input name="prodInterest" id="prodInt_Acc_Auto_Home" type="radio"
+                                       class="user-radio" value="MPC" data-required="true"><span>Auto &amp; Home</span>
                             </label>
                             <label>
-                                <input name="prodInt" id="prodInt_Acc_Auto_Home" type="checkbox"
-                                       class="user-checkbox" value="MPC"><span>Auto &amp; Home</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Disability" type="checkbox"
-                                       class="user-checkbox" value="B01"><span>Disability Income</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Financial" type="checkbox"
-                                       class="user-checkbox" value="L06"><span>Financial Review</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Investments" type="checkbox"
-                                       class="user-checkbox" value="INV"><span>Investments</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Ira" type="checkbox"
-                                       class="user-checkbox" value="IRA"><span>IRA</span>
-                            </label>
-                            <label>
-                                <input name="prodInt" id="prodInt_Acc_Life" type="checkbox"
-                                       class="user-checkbox" value="LIF"><span>Life Insurance</span>
+                                <input name="prodInterest" id="prodInt_Acc_Life" type="radio"
+                                       class="user-radio" value="LIF" data-required="true"><span>Life Insurance</span>
                             </label>
                         </div>
                     </div>
-                    <div class="productUserType existingProductUser">
+                </div>
+
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
+                    <div class="col-xs-12">
                         <div class="form-user-grp">
                             <label class="hidden" for="policyNo_Acc">Policy/Contract #</label>
                             <input name="policyNo" id="policyNo_Acc" type="text" class="form-user-ctrl"
-                                   placeholder="Policy/Contract #" data-placeholder="">
-                        </div>
-                        <div class="form-user-grp">
-                            <textarea name="questionOrComment" id="questionOrComment_Acc" placeholder="Question"
-                                      rows="3" class="form-user-ctrl productUserQuestion"
-                                      data-placeholder=""></textarea>
+                                   placeholder="Policy/Contract #" data-placeholder="" data-required="true"
+                                   aria-required="true">
                         </div>
                     </div>
                 </div>
+
+                <div class="row form-row" data-observes-id="requestType" data-observes-value="Existing Product/Policy">
+                    <div class="col-xs-12">
+                        <div class="form-user-grp">
+										 <textarea name="questionOrComment" id="questionOrComment_Acc"
+                                                   placeholder="Question"
+                                                   rows="3" class="form-user-ctrl productUserQuestion"
+                                                   data-placeholder="" data-required="true"
+                                                   aria-required="true"></textarea>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-right contactSidebarBtns">
                     <button id="headerContactSideBarSumbit" type="submit"
                             class="contatMeSidebarBtn border-radius-rounded btn btn-brand-2nd"
-                            data-fsubmit="contactSidebar">SUBMIT
+                            data-fsubmit="contactSidebar" data-submit-type="clr">SUBMIT
                     </button>
                 </div>
-                <p class="contactDisclaimer">
-                    By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
-                    using automated technology or a prerecorded voice, to talk about our products and services. If
-                    you don't want to give this permission, you can still get a quote or make a purchase by calling
-                    us directly at 1-800-638-5433.
-                </p>
-
-                <p class="contactDisclaimer">
-                    *<a id="headerContactSideBarMetlifeLink"
-                        href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
-                    company</a> or third party acting on MetLife's behalf.
-                </p>
             </form>
+
+            <p class="contactDisclaimer">
+                By clicking Submit, you agree that we* may contact you at the number you've provided, possibly
+                using automated technology or a prerecorded voice, to talk about our products and services. If
+                you don't want to give this permission, you can still get a quote or make a purchase by calling
+                us directly at <a class="disabled-anchor" href="tel:1-800-638-5433">1-800-638-5433.</a>
+            </p>
+
+            <p class="contactDisclaimer">
+                *<a id="headerContactSideBarMetlifeLink"
+                    href="https://www.metlife.com/about/corporate-profile/affiliates/index.html">A MetLife
+                company</a> or third party acting on MetLife's behalf.
+            </p>
         </div>
         <div class="contactSideThankyou" id="contactus_lead_thankyou">
             <div class="thanksHeaderText">Thank you for contacting us.</div>
@@ -590,32 +689,60 @@
 
 <!-- Login Overlay -->
 <div class="login-container">
-    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST" onSubmit="return loginFunction();">
+    <form id="formLogin" name="formLogin" action="https://online.metlife.com/edge/web/public/identifyUser" method="POST"
+          onSubmit="return loginFunction();">
         <div class="row login-container-header">
-            <div class="col-xs-2 login-container--close">
-                <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
-                <svg class="icon">
+            <!--<a href="#" class="megamenu-trigger__link">
+                <svg class="icon icon-menu megamenu-trigger__icon">
+                    <use xlink:href="images/icons-metlife.svg#icon-menu"></use>
+                </svg>
+                <svg class="icon icon-close megamenu-trigger__icon">
                     <use xlink:href="images/icons-metlife.svg#icon-close"></use>
                 </svg>
-                <span class="login-container--close__label">CLOSE</span>
+            </a>-->
+
+            <div class="col-sm-5 login-container-header--left">
+                <div class="login-container--close">
+                    <!-- span class="megamenu-trigger__icon megamenu-trigger__icon--open"></span -->
+
+                    <svg class="icon">
+                        <use xlink:href="images/icons-metlife.svg#icon-close"></use>
+                    </svg>
+                    <span class="login-container--close__label">CLOSE</span>
+
+                </div>
             </div>
-            <div class="col-xs-8">
-                <a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife"
+            <div class="col-xs-4 col-xs-push-4 col-sm-2 login-container-header--middle">
+                <a href="#" title="MetLife Logo"><img src="images/MetLife.png" alt="Metlife-Logo"
                                                       class="global-header__logo img-responsive"></a>
             </div>
         </div>
+        <div class="row login-popout__title login-container-alert">
+            <div>
+                <h2>Maintenance Alert</h2>
+
+                <p>Beginning 9:00 PM on Friday , May 1 through 10:PM ET on Sunday, May 20. access to this website may be
+                    unavailable. We'are sorry for the inconvinience.</p>
+            </div>
+        </div>
         <h2 class="login-popout__title">Select account type to log in:</h2>
+
         <div class="login-popout">
             <div class="form-item login-type-options">
                 <div class="form-item__field form-icon-wrapper">
+                    <svg class="icon">
+                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                    </svg>
                     <select class="login-type">
                         <option value="for_individuals">For Individuals</option>
                         <option value="for_businesses">For Businesses</option>
                         <option value="for_brokers">For Brokers</option>
                     </select>
-                    <svg class="icon info">
-                        <use xlink:href="images/icons-metlife.svg#icon-info"></use>
-                    </svg>
+                    <!--<svg class="icon info tooltip">-->
+                    <!--<use xlink:href="images/icons-metlife.svg#icon-info"></use>-->
+                    <!--</svg>-->
+                    <img src="images/ico_tooltip_blue.png" class="tooltip tip-icon"
+                         title="age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip age tooltip">
                 </div>
                 <div class="login-popout-msg-container" data-popout-msg="for_individuals-popout">
                     <div class="login-popout-msg">
@@ -717,12 +844,14 @@
         </div>
         <div class="login-types bg-white">
             <div class="login-type-trigger">
-                <h2 class="login-type-trigger__title">
-                    other account types
-                    <svg class="icon icon-plus">
-                        <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
-                    </svg>
-                </h2>
+                <a href="#" class="login-type-trigger__title">
+                    <h2>
+                        other account types
+                        <svg class="icon icon-plus">
+                            <use xlink:href="images/icons-metlife.svg#icon-plus"></use>
+                        </svg>
+                    </h2>
+                </a>
             </div>
             <div class="row login-type__details">
                 <div class="col-xs-12 col-sm-4">
@@ -767,7 +896,8 @@
                         </svg>
                         <ul>
                             <li class="login-type__link"><a href="">Group Benefits Administration</a></li>
-                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans Administration</a>
+                            <li class="login-type__link"><a href="">Employer - Sponsored Savings Plans
+                                Administration</a>
                             </li>
                             <li class="login-type__link"><a href="">Annuities Administration</a></li>
                         </ul>
@@ -782,7 +912,8 @@
                             <li class="login-type__link"><a href="">MetLife Resources Savings &amp; Annuity Programs</a>
                             </li>
                             <li class="login-type__link"><a href="">MetLife Resources Annuity Programs</a></li>
-                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a></li>
+                            <li class="login-type__link"><a href="">Structured Settlements Broker Resources (SBR)</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -817,6 +948,8 @@
                     <a href="#" class="login-popout__action" data-popout-msg="for_individuals">Register</a>
                 </p>
             </div>
+
+
         </div>
     </form>
 </div>
@@ -828,7 +961,8 @@
         <div class="subnav-go-back__menu">
             <a href="#">
                 <span><img class="hidden-xs" src="images/subnav_back_arrow.png" alt="back arrow"></span>
-                <span>All Insurance Products</span>
+                <span class="subnav-go-back__desktop--title">All Insurance Products</span>
+                <span class="subnav-go-back__mobile--title">Life Insurance Products</span>
                 <span><img class="hidden-sm hidden-md hidden-lg" src="images/icon_selectionarrows_white.png"
                            alt="back arrow"></span>
             </a>
@@ -863,20 +997,35 @@
                     </div>
                 </a>
             </li>
-            <li class="subnav-go-back__list__item">
-                <a href="#" class="subnav-go-back__list__item__anchor active">
+            <!--<li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
                         <p class="subnav-go-back__list__item__anchor__label">Life Insurance Quotes</p>
                     </div>
                 </a>
             </li>
             <li class="subnav-go-back__list__item">
-                <a href="#" class="subnav-go-back__list__item__anchor ">
+                <a href="#" class="subnav-go-back__list__item__anchor">
                     <div>
                         <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
                     </div>
                 </a>
             </li>
+            <li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
+                    <div>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
+                    </div>
+                </a>
+            </li>
+
+            <li class="subnav-go-back__list__item">
+                <a href="#" class="subnav-go-back__list__item__anchor">
+                    <div>
+                        <p class="subnav-go-back__list__item__anchor__label">Life Insurance FAQs</p>
+                    </div>
+                </a>
+            </li>-->
 
 
         </ul>
@@ -889,13 +1038,7 @@
         <span class="breadcrumb__crumb">
             <a href="#">Home</a>
         </span>
-        <span class="breadcrumb__crumb">
-            <a href="#">Insurance</a>
-        </span>
-        <span class="breadcrumb__crumb">
-            <a href="#">Life Insurance</a>
-        </span>
-        <span>Life Insurance Quotes</span>
+        <span>Page Title</span>
     </div>
 </div>
 
@@ -1003,7 +1146,7 @@
         <div class="life-insurance-quote-right">
             <!-- will insert the quote tool form and stuff here -->
             <div class="cta_header_quote life-quote-form">
-                <p>I want to get a quote:</p>
+                <p class="life-quote-form__header">I want to get a quote:</p>
 
                 <div class="select_wrapper cta_header_quote_type_of_insurance quoteInsurance">
                     <!--For the tool the value of the selects match to the id's of each form. this should be on some counter that increaments with each product options.
@@ -1311,7 +1454,7 @@
 
 <!-- Contact Rep-->
 <div class="container bg-gray-1st">
-    <div class="row wrapper hidden-xs options-small-component">
+    <div class="row wrapper options-small-component">
         <svg class="icon brand-1st">
             <use xlink:href="images/icons-metlife.svg#icon-bubble"></use>
         </svg>
@@ -1403,20 +1546,19 @@
             </li>
         </ul>
         <div class="row footer-country-language-social">
-            <div class="col-xs-6 col-sm-5 col-md-4 footer-country">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 footer-country js-footerMatchHeights">
                 <div class="row form-icon-wrapper select-country">
-                    <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
-                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                    </svg>
-                    <div class="col-xs-6 col-sm-3 country__label">country</div>
-                    <div class="col-xs-6 col-sm-9 country__selected" id="countrySelected">
+
+                    <div class="col-xs-6 col-sm-2 col-md-3 country__label" id="country__label">country</div>
+                    <div class="col-xs-6 col-sm-9  col-md-9  country__selected" id="countrySelected">
                         <input type="hidden" id="selectedCountry">
                         <span class="country__flag--selected USA" id="countryFlagSelected"></span>
                         <span class="country__name--selected" id="countryNameSelected">United States</span>
+                        <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
+                            <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+                        </svg>
                     </div>
-                    <svg class="icon icon-select-arrows brand-gray-1st" id="countrySVG">
-                        <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
-                    </svg>
+
                 </div>
                 <div class="country__list" id="countryList">
                     <a class="country_header" href="javascript:void(0);">
@@ -1692,16 +1834,16 @@
                     <br class="clearfix">
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 footer-language">
-                <a class="language__link" href="https://www.metlife.com">En Español</a>
-                <a class="language__link" href="http://#">中文</a>
+            <div class="col-xs-6 col-sm-4 col-md-4 footer-language js-footerMatchHeights">
+                <!--<a class="language__link" href="https://www.metlife.com">En Español</a>
+                <a class="language__link" href="http://#">中文</a>-->
                 <a class="language__link" href="http://#">MetLife Worldwide</a>
             </div>
             <div class="clearfix hidden-sm hidden-md hidden-lg"></div>
             <div class="col-xs-6 footer-logo">
                 <img class="img-responsive" src="images/logo_blue.png" alt="Metlife Logo">
             </div>
-            <div class="col-xs-6 col-sm-3 col-md-4 footer-social">
+            <div class="col-xs-6 col-sm-4 col-md-4 footer-social">
                 <div class="social-alignment">
                     <span class="social__label">Follow Us</span>
                     <a class="social__link" href="https://www.facebook.com/metlife" title="Facebook" target="_blank">
@@ -1729,12 +1871,13 @@
             </div>
         </div>
         <div class="row footer-legal">
-            <div class="col-xs-12 col-md-2">
+            <!--7/15/16 added class footer-legal__logo-container to the below element-->
+            <div class="col-xs-12 col-sm-3 col-md-2 footer-legal__logo-container">
                 <a href="" class="hidden-xs footer-legal__logo"><img
                         class="img-responsive" src="images/logo_blue.png" alt="Metlife Logo"></a>
                 <a href="tel:1-888-765-4321" class="footer-legal__call">CALL: 1-888-765-4321</a>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-10 footer-legal__copy">
+            <div class="col-xs-12 col-sm-9 col-md-9 footer-legal__copy">
                 <div class="footer-legal__link">
                     <a href="https://www.metlife.com/about/privacy-policy/index.html">Privacy</a>
                     <span class="footer-legal__bullet footer-legal__bullet--permanent"></span>
@@ -1742,12 +1885,14 @@
                     <span class="footer-legal__bullet footer-legal__bullet--permanent feedback--link"></span>
                     <a href="#" class="feedback--link js-feedback">[+] Feedback</a>
                     <hr class="hidden-sm hidden-md hidden-lg">
-                    <span class="footer-disclaimer">
-                    <span class="footer-legal__bullet"></span>
-                        <div class="footer-legal__copyright">&copy; 2015 Metropolitan Life Insurance Company, New York, NY. All Rights Reserved.<br>
-                            PEANUTS &copy; 2015 <a href="https://www.metlife.com/about/copyright/index.html">Peanuts
-                                Worldwide LLC</a>&nbsp;L0815434097 [exp1016][All States][DC,PR].</div>
-                    </span>
+	                    <span class="footer-disclaimer">
+	                    <span class="footer-legal__bullet"></span>
+	                        <div class="footer-legal__copyright">&copy; 2015 Metropolitan Life Insurance Company, New
+                                York, NY. All Rights Reserved.<br>
+                                PEANUTS &copy; 2015 <a href="https://www.metlife.com/about/copyright/index.html">Peanuts
+                                    Worldwide LLC</a>&nbsp;L0815434097 [exp1016][All States][DC,PR].
+                            </div>
+	                    </span>
                 </div>
             </div>
         </div>
@@ -1755,12 +1900,30 @@
 </div>
 
 <div id="suggestionsbox" class="suggestionsbox ">
-    <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
+    <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table" style="visibility: hidden;">
         <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions"></td>
+            <td class="ss-gac-d">Suggestions</td>
+        </tr>
+        <tr class="ss-gac-b">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance claim form</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance quote</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance calculator</b></td>
+        </tr>
+        <tr class="ss-gac-e">
+            <td colspan="2"><span>close</span></td>
+        </tr>
         </tbody>
     </table>
 </div>
-
 
 <script src="http://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>
 <!-- Required JS Libraries -->
@@ -1776,13 +1939,12 @@
 <script src="js/_plugins/typeahead.bundle.js"></script>
 <script src="js/_plugins/jquery.cookie.js"></script>
 <script src="js/_plugins/jquery.bootpag.min.js"></script>
-<!-- /build -->
-<!-- build:js js/feedback.min.js -->
-<script src="js/_plugins/oo_engine.min.js"></script>
-<script src="js/_plugins/oo_conf.js"></script>
+<script src="js/_plugins/jquery.inview.js"></script>
+<script src="js/_plugins/jquery.tooltipster.min.js"></script>
 <!-- /build -->
 <!-- build:js js/metlife.min.js -->
 <script src="js/variable.js"></script>
+<script src="js/tooltip-custom.js"></script>
 <script src="js/utility.js"></script>
 <script src="js/global-header.js"></script>
 <script src="js/global-footer.js"></script>
@@ -1827,12 +1989,14 @@
 <script src="js/blogpost.js"></script>
 <script src="js/overlay.js"></script>
 <script src="js/aemfixes.js"></script>
-<script src="js/toolkit-contextual-links.js"></script>
-<script src="js/toolkit-search-page.js"></script>
-<script src="js/toolkit-column.js"></script>
-<script src="js/toolkit-page-title-banner.js"></script>
 <script src="js/share-chat.js"></script>
-<script src="js/contact-us.js"></script>
+<script src="js/product-card.js"></script>
+<script src="js/inview.js"></script>
+<script src="js/contextual--links.js"></script>
+<!-- /build -->
+<!-- build:js js/feedback.min.js -->
+<script src="js/_plugins/oo_engine.min.js"></script>
+<script src="js/_plugins/oo_conf.js"></script>
 <!-- /build -->
 </body>
 </html>
