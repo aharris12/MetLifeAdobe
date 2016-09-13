@@ -493,6 +493,7 @@ $('.contact-trigger').click(function (e) {
         $(this).find("input, select, textarea").removeClass('error');
         $(this).find("input, select, textarea").val('')
     });
+    $(".contactOtherDetails").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 

@@ -228,9 +228,9 @@ function newsRoomServiceCall(input, selectedMonth, newsTopicPicked) {
     			firstTimeRunNewsRoomChange = false;
     		}
 
-            //var results = sortArticlesLive(data);
+            var results = sortArticlesLive(data);
 
-    		newsRoomResults = data.news;
+    		newsRoomResults = results.news;
     		if (newsRoomResults.length != 0) {
     			if (!$(".list__item--no-results").hasClass("hidden")) {
     				$(".list__item--no-results").addClass("hidden");
