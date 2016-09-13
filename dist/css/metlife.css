@@ -3839,6 +3839,8 @@ a:visited {
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+    overflow-y: auto;
+
 }
 
 .megamenu--promoboxes {
@@ -10149,7 +10151,7 @@ product-module__list ul:last-child, p:last-child {
         margin-bottom:40px;
     }
 }
-.section h1{
+.section-header h1{
     font-size: 18px;
     line-height:22px;
     font-weight: 400;
@@ -10189,7 +10191,7 @@ product-module__list ul:last-child, p:last-child {
 }
 
 @media screen and (min-width: 768px) {
-    .section h2{
+    .section-header h2{
         font-size: 20px;
         line-height:24px;
     }
@@ -10207,7 +10209,7 @@ product-module__list ul:last-child, p:last-child {
 }
 
 @media screen and (min-width: 1024px) {
-    .section h2{
+    .section-header h2{
         font-size: 22px;
         line-height: 26px;
     }
@@ -14639,14 +14641,37 @@ manner*/
     line-height: 20px;
     font-weight: 400;
 }
+.privacy-policies-header .container .accordion .container .wrapper{
+    width:100%;
+    max-width: initial;
+}
+.privacy-policies-header .container .accordion .container .wrapper .accordion{
+    margin-top: 30px;
+    width:100% !important;
+}
+.privacy-policies-header .accordion .border-top:last-of-type{
+    border-bottom: none;
+}
+.privacy-policies-header .container .accordion .container .wrapper .accordion .accordion__name{
+    padding-left: 0px;
+}
+.privacy-policies-header .container .accordion .container .wrapper .accordion .accordion__title {
+    padding-left: 0px;
+}
+.privacy-policies-header .container .accordion .container .wrapper .accordion .accordion__content {
+    padding-left: 0px;
+}
 @media screen and (min-width: 768px){
+    .privacy-policies-header .container .accordion .container .wrapper .accordion{
+        margin-top: 40px;
+    }
     .privacy-policy-index__Description,
     .privacy-policies-section__title,
     .privacy-policies-section__description,
     .privacy-policies-section__lastupdated{
         padding-left: 20px;
     }
-    .privacy-policies-header .container{
+    .privacy-policies-header > .container{
         width:85%;
         max-width:1300px;
     }
@@ -14682,6 +14707,9 @@ manner*/
 
 
 @media screen and (min-width: 1024px){
+    .privacy-policies-header .container .accordion .container .wrapper .accordion{
+        margin-top: 50px;
+    }
     .privacy-policy-index, .privacy-policies-section{
         width:80%;
         max-width: initial;
@@ -14720,6 +14748,7 @@ manner*/
         padding: 15px 10px;
     }
 }
+
 .privacy-policies-section{
     padding-top: 30px;
     border-top: 1px solid #ccc;
