@@ -63,6 +63,25 @@ $(document).ready(function () {
 
 });
 
+$(window).resize(function(){
+    if($(".fax__container").length !=0) {
+        if ($(".hidden-xs").is(":visible")) {
+            $(".google-maps-container").attr('style', function (i, style) {
+                return style.replace(/height[^;]+;?/g, '');
+                google.maps.event.trigger(map, "resize");
+            });
+        }
+
+        if (!$(".hidden-xs").is(":visible")) {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
+
+        }
+        else {
+            $(".fax__container").find('.contact-container--form-card').insertAfter($(".fax-results__container  > .maps-contact-form-container > button"));
+        }
+    }
+});
+
 
 /****EMAIL UNSUB*************************/
 $(".js-emailUnsub").click(function (event) {
@@ -757,10 +776,9 @@ $(".find_an_office_radius").on('change', function () {
     ServicesAPI.showLocation();
 });
 
-$(document).on('click', ".results_office_name", function () {
-    var i = $(this).closest('.results_office_result').index();
-    var index = ((i + 1) + ((bootPagNum) * listCount))
-    google.maps.event.trigger(markersArray[index], 'click');
+$("body").on('click tap'," .results_office_name",function(){
+    var i= $(this).closest('.results_office_result').index();
+    google.maps.event.trigger(markersArray[i],  'click');
 });
 
 $('.get-directions-buttons .btn').on('click', function () {
@@ -811,13 +829,13 @@ $('.maps-button').click(function (clickedButton) {
     if ($('.maps-button').text() == moreMapText) {
         $('.google-maps-container').css('height', '400px');
         $('.maps-button').text(lessMapText);
-        ServicesAPI.resetMap();
-        ServicesAPI.resizeMap();
+        google.maps.event.trigger(map, "resize");
+        ServicesAPI.getMetOffices();
     } else {
         $('.google-maps-container').css('height', '200px');
         $('.maps-button').text(moreMapText);
-        ServicesAPI.resetMap();
-        ServicesAPI.resizeMap();
+        google.maps.event.trigger(map, "resize");
+        ServicesAPI.getMetOffices();
     }
 });
 /*function gmapsAutoCompleteInit() {
@@ -847,7 +865,7 @@ $(window).on('load', function (e) {
         if (document.referrer != "") {
             ServicesAPI.showLocation();
         }
-        if ($(".hidden-xs").is(":visible") == false) {
+        if (!$(".hidden-xs").is(":visible")) {
             $(".fax__container").find('.contact-container--form-card').insertAfter($(".results_list_container"));
 
         }
@@ -2334,7 +2352,7 @@ var ServicesAPI = {
             mapTypeControl: true,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                position: google.maps.ControlPosition.TOP_RIGHT,
+                position: google.maps.ControlPosition.RIGHT_BOTTOM,
                 mapTypeIds: [
                     google.maps.MapTypeId.ROADMAP,
                     google.maps.MapTypeId.SATELLITE
@@ -2480,32 +2498,21 @@ var ServicesAPI = {
             $('.find-an-x-search__container .cta_search').text(zip);
             address = $('.find-an-x-search__container .cta_search').val();
         }
-        var validateAddress = address.trim();
-        var isNumber = /^\d+$/.test(validateAddress);
-        if ((!isNumber) || (isNumber && (address.length === 5))) {
-            $('.errorSpan.error_zip_code').addClass('hidden');
-            if (address != null && address != '' && address != undefined && address != ' ') {
-                geocoder.geocode({"address": address}, function (response, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        ServicesAPI.addAddressToMap(response, status);
-                    } else {
-                        ServicesAPI.resetMap();
-                        ServicesAPI.showSorryUnableToLocateMessage();
-                    }
-                });
-            } else {
-                ServicesAPI.resetMap();
-            }
-        } else {
-            $('.errorSpan.error_zip_code').removeClass('hidden');
-            if ($(".hidden-xs").is(":visible") == true) {
+        $('.errorSpan.error_zip_code').addClass('hidden');
+        if (address != null && address != '' && address != undefined && address != ' ') {
+            geocoder.geocode({"address": address}, function (response, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    ServicesAPI.addAddressToMap(response, status);
 
-                $(".mobile_expand_close").click();
-                $(".error_zip_code").insertAfter(".mobile_expand");
-            }
-            if (($(".hidden-xs").is(":visible") == false) && ($(".mobile_expand").is(":visible"))) {
-                $(".error_zip_code").insertAfter(".mobile_expand_open");
-            }
+                } else {
+                    ServicesAPI.resetMap();
+                    ServicesAPI.showSorryUnableToLocateMessage();
+
+                }
+            });
+        } else {
+            ServicesAPI.resetMap();
+
         }
     },
     addAddressToMap: function (response, status) {
@@ -2828,15 +2835,7 @@ var ServicesAPI = {
 
                 var infowindow = new google.maps.InfoWindow();
                 infowindow.setContent(html);
-                if ($(".hidden-xs").is(":visible")) {
-                    infowindow.open(map, marker);
-                } else {
-
-                }
-                if (presentHighligtedInfo != null) {
-                    presentHighligtedInfo.open(null, marker);
-                }
-                presentHighligtedInfo = infowindow;
+                infowindow.open(map, marker);
             }
         })(marker, officeNumber));
 
