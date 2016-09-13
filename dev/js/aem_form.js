@@ -757,9 +757,9 @@ SFDC.form.forEach(function (element) {
                             if (!jsonData["MetlifeJson"].push) {
                                 jsonData["MetlifeJson"] = [jsonData["MetlifeJson"]];
                             }
-                            jsonData["MetlifeJson"].push("Crownpeak Form");
+                            jsonData["MetlifeJson"].push("GLU Form");
                         } else {
-                            jsonData["MetlifeJson"] = "Crownpeak Form";
+                            jsonData["MetlifeJson"] = "GLU Form";
                         }
 
                         // 6 fields from the x form need to be concatenated
