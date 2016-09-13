@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+@import "system/styles/basicset.scss";
+
+.foot-center {
+	width:131px;
+	padding:25px 0 10px 0;
+	margin-left:20px;
+	& img {
+		width:100%;
+		padding-bottom:15px;
+	}
+	& span {
+		letter-spacing:-1px;
+		font-weight:500;
+		font-size:14px;
+		color: $pointColor3;
+	}
+}
+
+@media all and (min-width:768px) {
+	.foot-center {
+		position: absolute;
+		left:0;
+		top:40px;
+		width:131px;
+		padding:0 0 0 0;
+		margin-left:0;
+		& img {
+		}
+		& span {
+			width:100%;
+			display: block;
+			font-weight:bold;
+		}
+	}
+}
