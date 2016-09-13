@@ -129,14 +129,7 @@ $(".form-radio-grp svg, .image_radio svg").on('click', function () {
 
 $('#productPolicy option[value=""]').attr('selected', true);
 
-$("[data-fid='contactCard'] input").click(function () {
-    if ($('.contactCard .form-minimize').hasClass('hidden-sm')) {
-        $('.contactCard .form-minimize').removeClass('hidden-sm hidden-md');
-    }
-});
-
 $('.contactCard .form-minimize').click(function () {
-    $('.contactCard .form-minimize').addClass('hidden-sm hidden-md');
     $('[data-request-type] option[value=""]').attr('selected', true);
     $("[data-request-type]").change();
     $('[data-request-type] option[value=""]').attr('selected', true);
@@ -705,12 +698,21 @@ $(".page-count").on('change', function () {
     }
 });
 
+$(".mobile_expand_close").click(function(){
+    $(".find-an-x-search--expand").slideUp();
+    $(".mobile_expand_close").hide();
+});
 //Find an X Click Functions
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
     if (getViewport() == "mobile") {
-        $('.find-an-x-search--expand').show();
+        if($(".find-an-x-search--expand").css("display") == "none"){
+            $(".find-an-x-search--expand").slideDown();
+            $(".mobile_expand_close").show();
+        }
         $(".find-an-x-input__container").addClass("find-an-x-input__container__margin");
 
+    }else{
+        $(".find-an-x-search--expand").slideUp();
     }
 });
 /*$("body").on("click tap", function (e) {
@@ -736,14 +738,7 @@ $(".search_location_image").on('click touchstart', function () {
         ServicesAPI.showLocation();
     }
 });
-$(".cta_search").on("focus", function () {
-    if (!$(".hidden-xs").is(":visible")) {
-        $(".find-an-x-search--expand").removeClass("hidden-xs");
-    } else {
-        $(".find-an-x-search--expand").addClass("hidden-xs");
-    }
 
-});
 $('.find-an-x-search__container .cta_search').on('keypress', function (event) {
     //handle empty val
     if ($(".cta_search").val().length + 1 === 0) {
@@ -1963,7 +1958,7 @@ var ServicesAPI = {
     },
     redirectToSearchResultsPage: function (input) {
         if ($('.searchResultsInputSR').length > 0) {
-            $(this).val(input);
+            $('.searchResultsInputSR').val(input);
             $('.search-filter__button').click();
             clear_suggestions();
         } else {

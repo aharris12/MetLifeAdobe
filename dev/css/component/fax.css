@@ -12,7 +12,7 @@
 }
 
 .find-an-x-search__container{
-    padding-top: 5px;
+    padding-top: 10px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -20,11 +20,11 @@
 .find-an-x-search__container .mobile_expand_close{
     display: none;
     position:absolute;
-    top: 4px;
+    top: -12px;
     right: 2px;
 }
 .find-an-x-search__container .mobile_expand_close svg{
-    height: 16px;
+    height: 13px;
 }
 
 .cta_search__container{
@@ -416,6 +416,7 @@
     background-color: white;
     border: none;
     opacity: 1;
+    -webkit-text-fill-color: #333;
 }
 
 .fax-directions__container .driving-direction-container .get-directions-form .btn-brand-2nd{
@@ -700,5 +701,13 @@
     }
     .find-an-x-search--expand .form-icon-wrapper svg{
         right:15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .fax-results__container .results_list_container .results_office_result .results_office_get_directions a{
+        display: none;
+    }
+    .find-an-x-search--expand{
+        display: none;
     }
 }
