@@ -329,7 +329,7 @@
 
     .wrapper__contact-us__bottom-box__links {
         width: 50%;
-        margin-top: 20px;
+        margin-top: 30px;
         display: inline-block;
     }
 
@@ -347,8 +347,13 @@
         float: left;
         text-align: right;
     }
+    .wrapper__contact-us__bottom-box__links:nth-child(n+1) {
+        padding-bottom: 10px;
+    }
+
     .wrapper__contact-us__bottom-box__links:nth-child(n+3) {
         padding-top: 10px;
+        padding-bottom: 0px;
     }
 
 
@@ -419,6 +424,12 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .wrapper__contact-us__bottom-box__links:nth-child(odd) {
+        padding-right: 60px;
+    }
+    .wrapper__contact-us__bottom-box__links:nth-child(even) {
+        padding-left: 60px;
+    }
     .contact-us__dropdown{
         padding: 50px 0;
     }
