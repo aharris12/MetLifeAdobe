@@ -920,6 +920,9 @@ if ($(".suggestionsbox").length > 0) {
         }
     });
 }
+$('.search-trigger__search-box').blur(function() {
+    $(this).val('');
+});
 
 /**
  * Hides search suggestions.
