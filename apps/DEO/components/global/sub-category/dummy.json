@@ -1,0 +1,52 @@
+{
+	"globalIA" : [
+		{ "href" : "#lnk1", "text" : "회사소개", "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "회사소개"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "경영이념/비전"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연혁"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "CI소개"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "METLIFE 금융그룹"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사회공헌"}
+		]},
+		{ "href" : "#lnk1", "text" : "상품소개" , "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사망보장" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "노후보장" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "건강보장" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "어린이보장"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "목적자금마련" }
+		]},
+		{ "href" : "#lnk1", "text" : "펀드상품", "innerMenu" : [
+			{"href" : "#lnk_dep2", "text" : "국내펀드"},
+			{"href" : "#lnk_dep2", "text" : "해외펀드"},
+			{"href" : "#lnk_dep2", "text" : "펀드매매"},
+			{"href" : "#lnk_dep2", "text" : "펀드투자자교육"},
+			{"href" : "#lnk_dep2", "text" : "수익증권문의"},
+			{"href" : "#lnk_dep2", "text" : "펀드공시"},
+			{"href" : "#lnk_dep2", "text" : "보험계약대출"}
+		]},
+		{ "href" : "#lnk1", "text" : "고객센터", "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "공지/이벤트"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "유용한정보"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "지점안내"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "칭찬/문의/민원"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험금 청구안내"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험범죄신고센터"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "원격지원서비스"}
+		]},
+		{ "href" : "#lnk1", "text" : "혜택서비스" , "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "노블리치센터/이벤트"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "TOP고객서비스"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "METLIFE CAFE"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "LIFE GUIDE/문의/민원"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "청구안내"}
+		]},
+		{ "href" : "#lnk1", "text" : "공시실" , "innerMenu" : [
+			{"href" : "#lnk_dep2", "text" : "정기공영공시"},
+			{"href" : "#lnk_dep2", "text" : "수시공영공시"},
+			{"href" : "#lnk_dep2", "text" : "결산공고"},
+			{"href" : "#lnk_dep2", "text" : "보험상품공시"},
+			{"href" : "#lnk_dep2", "text" : "보험상품가격공시"}
+		]}
+	],
+	"backType" : "baisc"
+}
