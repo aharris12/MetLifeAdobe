@@ -63,13 +63,9 @@
         padding-left: 20px;
     }
     .privacy-policies-header > .container{
-        width:85%;
-        max-width:1300px;
+        width:90%;
     }
-    .privacy-policy-index, .privacy-policies-section{
-        width:95%;
-        max-width: initial;
-    }
+
     .privacy-policy-index{
         margin-top: 40px;
         padding-bottom: 40px;
@@ -98,6 +94,14 @@
 
 
 @media screen and (min-width: 1024px){
+    .privacy-policies-header > .container{
+        width:85%;
+        max-width:1300px;
+    }
+    .privacy-policy-index, .privacy-policies-section{
+        width:95%;
+        max-width: initial;
+    }
     .privacy-policies-header .container .accordion .container .wrapper .accordion{
         margin-top: 50px;
     }
