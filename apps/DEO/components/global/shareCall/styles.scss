@@ -1,0 +1,240 @@
+@charset "utf-8";
+
+/* css folder ##global/shareCall## */
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.share-call{
+	text-align: center;
+	display: table;
+	width:100%;
+	max-width:300px;
+	margin:0 auto;
+	background: #ffffff;
+	@include border-radius($radius : 2px);
+	@include css3-prefix("box-shadow", 1px 3px 5px 0px rgba(0,0,0,0.1));
+}
+.share-sns{
+	float: right;
+	width:50%;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	& button{
+		display: none;
+	}
+	& span {
+		display: inline-block;
+		font-weight:500;
+		color: #000;
+		height: 40px;
+		line-height: 30px;
+		background : {
+			image:url('./images/icon_share.png');
+			position : right 20px center;
+			repeat : no-repeat;
+		}
+		-webkit-background-size:18px 18px;
+		background-size: 18px 18px;
+		vertical-align: top;
+		padding:5px 0 ;
+		background: none;
+	}
+}
+.share-chat {
+	float: left;
+	width:50%;
+	height:50px;
+	display: inline-block;
+	vertical-align: middle;
+	border-right:1px solid #f2f2f2;
+}
+.share-chat>a {
+	padding:10px 45px 6px 25px;
+	color: #000;
+	height:50px;
+	line-height:30px;
+	@include css3-prefix("box-shadow", none);
+}
+.btn-basic.ico-chat {
+	color: $pointColor1;
+	background : {
+		image:url('./images/ico_click_to_chat2.png');
+		position : right 25px center;
+		repeat : no-repeat;
+	}
+	-webkit-background-size:20px 18px;
+	background-size: 20px 18px;
+	width:100%;
+}
+.share-sns-list {
+	display: inline-block;
+	vertical-align: top;
+	padding:5px 0;
+	& a {
+		display: inline-block;
+		width:30px;
+		height:30px;
+		padding:5px 5px;
+		margin-top:5px;
+		& img {
+			width:100%;
+		}
+	}
+
+	& span {
+		display: inline-block;
+	}
+}
+
+.share-call .share-sns-list a.share-print {display: none;}
+
+@media all and (min-width:768px) {
+	.share-call .share-sns-list a.share-print {display: inline-block;}
+	.share-call {
+		z-index:1;
+		position: absolute;
+		width:auto;
+		top:14px;
+		right:0;
+		margin-right:20px;
+		background: none;
+		@include css3-prefix("box-shadow", none);
+
+		& span, & .share-sns-list {
+			display: none;
+		}
+
+		& button {
+			background: #ffffff;
+			display: inline-block;
+			padding-left:10px;
+		}
+
+		& .share-sns-list {
+			padding-left:10px;
+			& a {
+				margin-top:0;
+			}
+		}
+	}
+	.share-call>div:not(:first-child){ margin-left:10px; }
+	.share-call .share-white {
+		color: $pointColor1;
+		border:1px solid #cccccc;
+	}
+	.share-call .share-blue {
+		border:1px solid $pointColor1;
+		background: $pointColor1;
+	}
+
+	.share-sns, .share-chat {
+		float: left;
+		width:auto;
+		height:40px;
+	}
+	.share-chat a {
+
+		height:40px;
+		line-height:40px;
+		padding-top:0;
+		padding-bottom:0;
+	}
+
+	.btn-basic.ico-share {
+		z-index:1;
+		position: relative;
+		height:40px;
+		background : {
+			image:url('./images/icon_share.png');
+			position : right 10px center;
+			repeat : no-repeat;
+		}
+		-webkit-background-size:18px 18px;
+		background-size: 18px 18px;
+		padding-right:38px;
+		border:1px solid #cccccc;
+	}
+
+
+	.active .btn-basic.ico-share {
+		z-index:1;
+		position: relative;
+		background : {
+			image:url('./images/icon_share1.png');
+			position : right 10px center;
+			repeat : no-repeat;
+			color : $pointColor1
+		}
+		color: #ffffff;
+		border:1px solid $pointColor1;
+	}
+
+	.btn-basic.ico-chat {
+		color: #ffffff;
+		background : {
+			image:url('./images/ico_click_to_chat1.png');
+			position : right 10px center;
+			repeat : no-repeat;
+		}
+		-webkit-background-size:20px 18px;
+		background-size: 20px 18px;
+		padding-right:38px;
+		padding-left:10px;
+		@include css3-prefix("box-shadow", rgba(0,0,0,.2) 0 1px 1px 0);
+
+	}
+
+
+	.share-call .btn-basic.ico-share { margin-left:0;}
+	.share-sns-list a img {
+			vertical-align: middle;
+		width:18px;
+		height:18px;
+	}
+
+	.share-sns-listwrap {
+		overflow: hidden;
+		height:40px;
+		width:auto;
+		display: block;
+	}
+
+	.share-call .share-sns-list {
+		position: absolute;
+		width:auto;
+		top:0;
+		left:20px;
+		padding-top:0;
+		padding-bottom:0;
+		padding-right:0;
+		margin-right:0;
+		background: #ffffff url('./images/icon_sharebg.png') right 50% no-repeat;
+		border:1px solid #CCCCCC;
+		@include border-radius($radius :2px);
+		@include css3-prefix("box-shadow", rgba(0,0,0,.2) 0 1px 1px 0);
+		& a {
+			float: left;
+			padding:0;
+			display: inline-block;
+			height:38px;
+			line-height:38px;
+
+		}
+		& a:last-child {
+			padding-right:20px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+		}
+	}
+}
+
+@media all and (min-width:1024px) {
+	.share-call {
+		display: table;
+		margin-right:30px;
+	}
+}

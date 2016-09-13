@@ -1,0 +1,221 @@
+/* global/shareCall css */
+
+.share-call {
+  text-align: center;
+  display: table;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #ffffff;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  -khtml-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.1); }
+
+.share-sns {
+  float: right;
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle; }
+  .share-sns button {
+    display: none; }
+  .share-sns span {
+    display: inline-block;
+    font-weight: 500;
+    color: #000;
+    height: 40px;
+    line-height: 30px;
+    background-image: url("/content/dam/DEO/components/global/shareCall/icon_share.png");
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 18px 18px;
+    background-size: 18px 18px;
+    vertical-align: top;
+    padding: 5px 0;
+    background: none; }
+
+.share-chat {
+  float: left;
+  width: 50%;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid #f2f2f2; }
+
+.share-chat > a {
+  padding: 10px 45px 6px 25px;
+  color: #000;
+  height: 50px;
+  line-height: 30px;
+  -webkit-box-shadow: none;
+  -khtml-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+
+.btn-basic.ico-chat {
+  color: #2377c5;
+  background-image: url("/content/dam/DEO/components/global/shareCall/ico_click_to_chat2.png");
+  background-position: right 25px center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 20px 18px;
+  background-size: 20px 18px;
+  width: 100%; }
+
+.share-sns-list {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px 0; }
+  .share-sns-list a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 5px 5px;
+    margin-top: 5px; }
+    .share-sns-list a img {
+      width: 100%; }
+  .share-sns-list span {
+    display: inline-block; }
+
+.share-call .share-sns-list a.share-print {
+  display: none; }
+
+@media all and (min-width: 768px) {
+  .share-call .share-sns-list a.share-print {
+    display: inline-block; }
+  .share-call {
+    z-index: 1;
+    position: absolute;
+    width: auto;
+    top: 14px;
+    right: 0;
+    margin-right: 20px;
+    background: none;
+    -webkit-box-shadow: none;
+    -khtml-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+    .share-call span, .share-call .share-sns-list {
+      display: none; }
+    .share-call button {
+      background: #ffffff;
+      display: inline-block;
+      padding-left: 10px; }
+    .share-call .share-sns-list {
+      padding-left: 10px; }
+      .share-call .share-sns-list a {
+        margin-top: 0; }
+  .share-call > div:not(:first-child) {
+    margin-left: 10px; }
+  .share-call .share-white {
+    color: #2377c5;
+    border: 1px solid #cccccc; }
+  .share-call .share-blue {
+    border: 1px solid #2377c5;
+    background: #2377c5; }
+  .share-sns, .share-chat {
+    float: left;
+    width: auto;
+    height: 40px; }
+  .share-chat a {
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0;
+    padding-bottom: 0; }
+  .btn-basic.ico-share {
+    z-index: 1;
+    position: relative;
+    height: 40px;
+    background-image: url("/content/dam/DEO/components/global/shareCall/icon_share.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 18px 18px;
+    background-size: 18px 18px;
+    padding-right: 38px;
+    border: 1px solid #cccccc; }
+  .active .btn-basic.ico-share {
+    z-index: 1;
+    position: relative;
+    background-image: url("/content/dam/DEO/components/global/shareCall/icon_share1.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-color: #2377c5;
+    color: #ffffff;
+    border: 1px solid #2377c5; }
+  .btn-basic.ico-chat {
+    color: #ffffff;
+    background-image: url("/content/dam/DEO/components/global/shareCall/ico_click_to_chat1.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 20px 18px;
+    background-size: 20px 18px;
+    padding-right: 38px;
+    padding-left: 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -khtml-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0; }
+  .share-call .btn-basic.ico-share {
+    margin-left: 0; }
+  .share-sns-list a img {
+    vertical-align: middle;
+    width: 18px;
+    height: 18px; }
+  .share-sns-listwrap {
+    overflow: hidden;
+    height: 40px;
+    width: auto;
+    display: block; }
+  .share-call .share-sns-list {
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin-right: 0;
+    background: #ffffff url("/content/dam/DEO/components/global/shareCall/icon_sharebg.png") right 50% no-repeat;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -khtml-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0; }
+    .share-call .share-sns-list a {
+      float: left;
+      padding: 0;
+      display: inline-block;
+      height: 38px;
+      line-height: 38px; }
+    .share-call .share-sns-list a:last-child {
+      padding-right: 20px;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box; } }
+
+@media all and (min-width: 1024px) {
+  .share-call {
+    display: table;
+    margin-right: 30px; } }
