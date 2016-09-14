@@ -86,7 +86,6 @@
 }
 
 .carousel--tabs .carousel--tabs__items {
-    margin: 35px auto 0;
     display: block;
     text-align: center;
 }
@@ -110,6 +109,10 @@
     }
     .carousel--tabs .carousel-control.right {
         right: -2%;
+    }
+
+    .carousel-control {
+        bottom: inherit;
     }
 }
 
