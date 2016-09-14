@@ -65,6 +65,10 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
     }
 
+    .global-header.global-header--minimized .icon.icon-close{
+        top: 17px;
+    }
+
     .global-header__logo {
         padding: 20px 0;
         width: 123px;
@@ -880,7 +884,6 @@
     body.megamenu--open--style{
         height:100%;
         position: fixed;
-
         overflow: hidden;
     }
 
@@ -1015,6 +1018,7 @@
         position: fixed;
         padding: 40px 0 150px;
         overflow: hidden;
+        overflow-y: auto;
         z-index: 2000;
     }
 
