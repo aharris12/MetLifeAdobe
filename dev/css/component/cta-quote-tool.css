@@ -3,13 +3,9 @@
     font-weight: 400;
     color: #ffffff;
 }
-
-
 .cta_header_quote .cta_header_quote_type_of_insurance {
     margin-bottom: 15px;
 }
-
-
 .cta_header_quote .select_wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -364,6 +360,9 @@
     margin-right: 5px;
     vertical-align: bottom;
 }
+.modified-margin-quote-insurance {
+    margin-bottom: 2px;
+}
 @media screen and (max-width: 767px) {
     .cta_header_quote .cta_header_quote_type_of_insurance--sub {
         margin-bottom: 15px;
@@ -377,24 +376,21 @@
         margin: 0px;
         float: right;
     }
-
     .cta_header_quote .dob_cta_quote {
         display: none;
     }
-
     .cta_header_quote .quote_tool_form .your_health select {
         width: 90%;
         width: calc(100% - 29px);
     }
-
-
-
     .cta_header_quote .errorSpan .error_arrow_img {
         position: absolute;
         top: 99px;
         height: 30px;
     }
-
+    .life-insurance-quote-right .cta_header_quote .btn_global {
+        float: left;
+    }
     .cta_header_quote .coverage_amount span svg use {
         right: 34px;
     }

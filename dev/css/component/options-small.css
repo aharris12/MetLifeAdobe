@@ -1,5 +1,6 @@
 .options-small-component {
-text-align: center;
+    text-align: center;
+    padding: 20px 10px 30px 10px;
 }
 .options-small-component svg{
     fill:#333;
