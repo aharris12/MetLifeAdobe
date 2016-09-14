@@ -12614,9 +12614,6 @@ function setElementsWidthToLargest(elements) {
         $(this).css("width", maxWidth);
     });
 }
-/**
- * Created by icunningham on 2/12/2016.
- */
 
 // Case Insensitive ":contains"
 $.expr[":"].contains = $.expr.createPseudo(function (arg) {
@@ -12632,7 +12629,7 @@ if ($(".glossary").length > 0) {
 
     // Swipe for Glossary Letter Selector
     $(".glossary-selector").swipe({
-        swipeLeft: function() {
+        swipeLeft: function () {
             var glossary = $(".selector-container");
             var width = parseFloat(glossary[0].style.width);
             var position = width - (100 + parseFloat(glossary[0].style.right));
@@ -12643,7 +12640,7 @@ if ($(".glossary").length > 0) {
                 glossary.animate({right: '+=' + position + '%'}, "slow");
             }
         },
-        swipeRight: function() {
+        swipeRight: function () {
             var glossary = $(".selector-container");
             var position = parseFloat(glossary[0].style.right);
 
@@ -12698,7 +12695,7 @@ function glossarySelectorInitialize() {
     glossarySelectorSize();
 
     selectorContainer.css("right", "0%");
-    $(".page_title").addClass("glossary-top");
+    $(".page-title").addClass("glossary-top");
 
     selector.show();
     selector.addClass("glossary-height");
