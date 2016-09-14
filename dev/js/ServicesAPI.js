@@ -485,7 +485,7 @@ $(".product__selector--sub").on("change", function () {
     var productSelectorPage = $(this).find(':selected').attr("data-product-url");
     $(this).removeClass("error");
     $(this).parent('.select_wrapper').find('svg').css('fill', '#666');
-    $(".js-productSelector").attr("href", "#");
+    $(".js-productSelector").attr("href", productSelectorPage);
 });
 
 $(".js-productSelector").click(function (e) {
