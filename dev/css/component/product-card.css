@@ -303,6 +303,10 @@
         padding: 30px 10px 30px 30px;
     }
 
+    .content .content-body-no-action {
+        padding: 30px 30px 30px 30px;
+    }
+
     .product-card .action {
         width: 20%;
         padding: 30px 10px;
@@ -414,6 +418,10 @@
 
     .product-card .content-body {
         padding: 40px 10px 40px 40px;
+    }
+
+    .content .content-body-no-action {
+        padding: 40px 40px 40px 40px;
     }
 
     .product-card .action {
