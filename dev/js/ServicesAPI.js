@@ -458,9 +458,9 @@ $('.form-user-grp > select').on('blur', function () {
 
 /****Product Selector****************************************/
 
-
+var selectedProduct;
 $(".product__selector").on("change", function () {
-    var selectedProduct = $(this).find(':selected').attr("data-product-type");
+    selectedProduct = $(this).find(':selected').attr("data-product-type");
     $(this).removeClass("error");
     $(this).parent('.select_wrapper').find('svg').css('fill', '#666');
 
@@ -493,11 +493,15 @@ $(".js-productSelector").click(function (e) {
     if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
         $(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
         $(".product__selector").addClass("error")
+        return;
     }
-    if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
+
+    if ($("[data-product-sub='" + selectedProduct + "']").length > 0  && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
         $(".product__selector--sub").addClass("error")
         $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+        return;
     }
+
     if (url == "#") {
         e.preventDefault();
     }
