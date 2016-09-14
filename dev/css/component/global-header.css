@@ -887,9 +887,9 @@
         overflow: hidden;
     }
 
-    .global-header.megamenu--open--style{
+    /*.global-header.megamenu--open--style{
         position:fixed;
-    }
+    }*/
 
     .megamenu--open--mobile {
         height: calc(100% - 50px);
