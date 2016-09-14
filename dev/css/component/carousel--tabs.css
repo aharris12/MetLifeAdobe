@@ -86,7 +86,6 @@
 }
 
 .carousel--tabs .carousel--tabs__items {
-    margin: 35px auto 0;
     display: block;
     text-align: center;
 }
@@ -110,6 +109,10 @@
     }
     .carousel--tabs .carousel-control.right {
         right: -2%;
+    }
+
+    #lifeStages .carousel-control {
+        bottom: inherit;
     }
 }
 
@@ -176,4 +179,22 @@
 }
 .carousel-item p {
     width:70%;
+}
+
+@media screen and (min-width: 1900px) {
+    #lifeStages {
+        height: inherit;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #lifeStages .item {
+        min-height: inherit;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #lifeStages {
+        min-height: inherit;
+    }
 }

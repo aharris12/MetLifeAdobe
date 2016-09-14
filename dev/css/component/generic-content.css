@@ -165,7 +165,11 @@
 .generic_content .expand_button:active, .generic_content .expand_button:hover {
     background-color: #edf6ce;
 }
-
+.wrapper-general .video-text__document{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
 @media screen and (min-width: 768px) {
     .generic_content {
         padding-left: 0;
@@ -200,7 +204,9 @@
 }
 
 @media screen and (min-width: 1024px) {
-
+    .wrapper-general .video-text__document{
+        width: 80%;
+    }
     .wrapper-general ul {
         font-size: 14px;
         line-height: 18px;
