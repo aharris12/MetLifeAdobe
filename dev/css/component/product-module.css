@@ -84,7 +84,7 @@
     line-height: 16px;
 }
 
-.product-module__list ul:last-child, p:last-child {
+.product-module__list ul:last-child, .product-module__list p:last-child {
     margin-bottom: 0;
 }
 

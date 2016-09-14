@@ -1,6 +1,11 @@
 .optional-image__img {
     margin-bottom: 10px;
 }
+.optional-image__description{
+    font-size: 11px;
+    line-height: 15px;
+    color: #999999;
+}
 
 @media screen and (min-width: 768px) {
     .optional-image__img, .optional-image__description {
@@ -9,8 +14,17 @@
         margin: auto;
         margin-bottom: 10px;
     }
+    .optional-image__description{
+        font-size: 11px;
+        line-height: 16px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
+    .optional-image__description{
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
 
