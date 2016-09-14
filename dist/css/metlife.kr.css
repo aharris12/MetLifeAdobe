@@ -18633,9 +18633,11 @@ div.page-not-found ~ div.global-footer > div.wrapper {
 .glossary {
     padding: 20px 0;
 }
+
 .glossary-group span {
     display: block;
 }
+
 .glossary-group span {
     text-transform: uppercase;
     font-size: 18px;
@@ -18646,10 +18648,12 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
+
 .glossary-group dt,
 .glossary-group dd {
     padding-left: 20px;
 }
+
 .glossary-group dt {
     color: #333333;
     font-weight: 600;
@@ -18657,6 +18661,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     line-height: 20px;
     margin-bottom: 5px;
 }
+
 .glossary-group dd {
     color: #666666;
     font-weight: 400;
@@ -18664,9 +18669,11 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     line-height: 18px;
     margin-bottom: 20px;
 }
+
 .glossary-selector {
     display: none;
 }
+
 .selector {
     position: fixed;
     top: 50px;
@@ -18677,6 +18684,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     background-color: #3D9CDB;
     overflow: hidden;
 }
+
 .selector-container {
     position: relative;
     padding: 0;
@@ -18684,6 +18692,7 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     margin-right: auto;
     margin-left: auto;
 }
+
 .selector a {
     color: #ADD0F0;
     font-size: 18px;
@@ -18701,104 +18710,135 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     -ms-user-select: none;
 
 }
+
 .selector a:not(:last-child) {
     border-right: 1px solid #0a3c6e;
 }
+
 .selector a.active {
     color: #ffffff;
     cursor: pointer;
 }
+
 .glossary-height {
     height: 0;
 }
+
+.glossary-top {
+    margin-top: 50px;
+}
+
 .parent {
     display: table;
     min-height: 1px;
     width: 100%;
 }
+
 .celly1 {
     float: left;
     display: table-cell;
     width: 50%;
     height: 100%;
 }
+
 .celly2 {
     float: right;
     display: table-cell;
     width: 50%;
     height: 100%;
 }
+
 @media (min-width: 768px) {
     .glossary {
         padding: 30px 0 40px;
     }
 
-    .glossary-group{
+    .glossary-group {
 
         width: 95%;
-        margin:auto;
+        margin: auto;
     }
 
     .glossary-group dt {
         margin-bottom: 10px;
     }
+
     .glossary-group dd {
         line-height: 18px;
         margin-bottom: 20px;
     }
-    .glossary-group span{
+
+    .glossary-group span {
         padding-bottom: 10px;
     }
+
     .selector {
         position: static;
         top: auto;
         border-bottom: solid 1px #CCCCCC;
         background-color: #FFFFFF;
     }
+
     .selector.fixed {
         position: fixed;
         top: 50px;
     }
+
     .selector-container {
         right: 0 !important;
         width: 95%;
     }
+
     .selector a {
         color: #CCCCCC;
     }
+
     .selector a.active {
         color: #2C77C5;
     }
+
     .selector a:not(:last-child) {
         border: none;
     }
+
     .selector.active {
         color: #2C77C5;
     }
+
     .glossary-height {
         height: 50px;
     }
+
+    .glossary-top {
+        margin-top: 0;
+    }
 }
+
 @media (min-width: 1024px) {
     .glossary {
         padding: 40px 0 50px;
     }
+
     .glossary-group {
         width: 85%;
         max-width: 1300px;
         margin: auto;
     }
+
     .glossary-group span {
         font-size: 20px;
         line-height: 24px;
     }
+
     .glossary-group dd:last-of-type {
         margin-bottom: 40px;
     }
+
     .selector-container {
         width: 85%;
         max-width: 1300px;
     }
+
     .selector-letters {
         width: 80%;
         margin: auto;
