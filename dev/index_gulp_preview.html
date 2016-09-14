@@ -7,33 +7,103 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!--<title></title>-->
         <title> Metlife </title>
-        <!-- build:css /etc/clientlibs/<@=project.name@>/<@=page.name@>/styles.min.css -->
-        <link rel="stylesheet" href="../../../../dev/css/kr/theme/common.css">
-        <link rel="stylesheet" href="../../../../dev/css/kr/theme/sitecommon.css">
-        <!--<link rel="stylesheet" charset="utf-8" href="/application/setting/styles/app.css" />-->
-        <!-- components style : start -->
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/header/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/gnb/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/search/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/aside/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/sub-category/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/share-ClicktoCall/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/breadcrumb/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/extend/macroButton/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/shareCall/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/productTilesContainer/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/productTiles/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/promotionCard/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/components/global/footer/styles.css">
-        <link rel="stylesheet" href="../../../../apps/DEO/page/category/styles.css">
-        <!-- components style : end -->
-        <!-- build:js /etc/clientlibs/<@=project.name@>/libs/scripts.min.js -->
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/_lib/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/kr/siteObject.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/kr/siteModule.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/kr/TweenMax.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/kr/common.js"></script>
-        <!-- endbuild -->
+        <!-- build:css css/metlife.kr.css -->
+        <link href="css/theme/bootstrap-metlife.css" rel="stylesheet">
+        <link href="css/theme/icon-metlife.css" rel="stylesheet">
+        <link href="css/theme/form-metlife.css" rel="stylesheet">
+        <link href="css/theme/utility.css" rel="stylesheet">
+        <link href="css/theme/layout.css" rel="stylesheet">
+        <link href="css/theme/main.css" rel="stylesheet">
+        <link href="css/theme/button.css" rel="stylesheet">
+        <link href="css/theme/pagination.css" rel="stylesheet">
+        <link href="css/component/global-header.css" rel="stylesheet">
+        <link href="css/component/login-popout.css" rel="stylesheet">
+        <link href="css/component/breadcrumb.css" rel="stylesheet">
+        <link href="css/component/homepage-nav.css" rel="stylesheet">
+        <link href="css/component/get-quote-find-office.css" rel="stylesheet">
+        <link href="css/component/divider-scroll-to.css" rel="stylesheet">
+        <link href="css/component/divider-snoopy.css" rel="stylesheet">
+        <link href="css/component/carousel--hero.css" rel="stylesheet">
+        <link href="css/component/carousel--tabs.css" rel="stylesheet">
+        <link href="css/component/promo-card.css" rel="stylesheet">
+        <link href="css/component/disclaimer.css" rel="stylesheet">
+        <link href="css/component/media-contact.css" rel="stylesheet">
+        <link href="css/component/subnavigation.css" rel="stylesheet">
+        <link href="css/component/product-module.css" rel="stylesheet">
+        <link href="css/component/article-list.css" rel="stylesheet">
+        <link href="css/component/optional-image.css" rel="stylesheet">
+        <link href="css/component/product-comparison-chart.css" rel="stylesheet">
+        <link href="css/component/table-variations.css" rel="stylesheet">
+        <link href="css/component/microsite-header.css" rel="stylesheet">
+        <link href="css/component/microsite-page-footer.css" rel="stylesheet">
+        <link href="css/component/product-tile.css" rel="stylesheet">
+        <link href="css/component/article.css" rel="stylesheet">
+        <link href="css/component/media-card.css" rel="stylesheet">
+        <link href="css/component/office-search.css" rel="stylesheet">
+        <link href="css/component/contextual-links.css" rel="stylesheet">
+        <link href="css/component/cta-box.css" rel="stylesheet">
+        <link href="css/component/content-header.css" rel="stylesheet">
+        <link href="css/component/section-header.css" rel="stylesheet">
+        <link href="css/component/contact.css" rel="stylesheet">
+        <link href="css/component/form-card.css" rel="stylesheet">
+        <link href="css/component/video-text.css" rel="stylesheet">
+        <link href="css/component/accordion.css" rel="stylesheet">
+        <link href="css/component/global-footer.css" rel="stylesheet">
+        <link href="css/component/divider-load-more.css" rel="stylesheet">
+        <link href="css/component/subnavigationwithgoback.css" rel="stylesheet">
+        <link href="css/component/product-card.css" rel="stylesheet">
+        <link href="css/component/quote-result-card.css" rel="stylesheet">
+        <link href="css/component/contact-form.css" rel="stylesheet">
+        <link href="css/component/privacy-policy-index.css" rel="stylesheet">
+        <link href="css/component/privacy-policy-section.css" rel="stylesheet">
+        <link href="css/component/search-results.css" rel="stylesheet">
+        <link href="css/component/hp-contextual-links.css" rel="stylesheet">
+        <link href="css/component/search-suggestions-box.css" rel="stylesheet">
+        <link href="css/component/cta-quote-tool.css" rel="stylesheet">
+        <link href="css/component/quote-tool.css" rel="stylesheet">
+        <link href="css/component/view-all-rates.css" rel="stylesheet">
+        <link href="css/component/cookie-banner.css" rel="stylesheet">
+        <link href="css/component/carousel--blog.css" rel="stylesheet">
+        <link href="css/component/article-list--blog.css" rel="stylesheet">
+        <link href="css/component/sidebar--blog.css" rel="stylesheet">
+        <link href="css/component/category--blog.css" rel="stylesheet">
+        <link href="css/component/additional-content--blog.css" rel="stylesheet">
+        <link href="css/component/title-post--blog.css" rel="stylesheet">
+        <link href="css/component/post--blog.css" rel="stylesheet">
+        <link href="css/component/post-social--blog.css" rel="stylesheet">
+        <link href="css/component/campaign-footer.css" rel="stylesheet">
+        <link href="css/component/campaign-header.css" rel="stylesheet">
+        <link href="css/component/campaign-card.css" rel="stylesheet">
+        <link href="css/component/oo_style.css" rel="stylesheet">
+        <link href="css/component/feedback.css" rel="stylesheet">
+        <link href="css/component/404.css" rel="stylesheet">
+        <link href="css/component/email--unsubscribe.css" rel="stylesheet">
+        <link href="css/component/fax.css" rel="stylesheet">
+        <link href="css/component/glossary.css" rel="stylesheet">
+        <link href="css/component/life-insurance-quote.css" rel="stylesheet">
+        <link href="css/component/options-small.css" rel="stylesheet">
+        <link href="css/component/overlay.css" rel="stylesheet">
+        <link href="css/component/sitemap.css" rel="stylesheet">
+        <link href="css/component/share-chat.css" rel="stylesheet">
+        <link href="css/component/visiondental-overlay.css" rel="stylesheet">
+        <link href="css/component/inview.css" rel="stylesheet">
+        <link href="css/theme/ie9select.css" rel="stylesheet">
+        <link href="css/kr/component/breadcrumb.css" rel="stylesheet">
+        <link href="css/kr/component/contact.css" rel="stylesheet">
+        <link href="css/kr/component/contact-form.css" rel="stylesheet">
+        <link href="css/kr/component/disclaimer.css" rel="stylesheet">
+        <link href="css/kr/component/disclaimer.css" rel="stylesheet">
+        <link href="css/kr/component/global-footer.css" rel="stylesheet">
+        <link href="css/kr/component/global-header.css" rel="stylesheet">
+        <link href="css/kr/component/product-module.css" rel="stylesheet">
+        <link href="css/kr/component/promo-card.css" rel="stylesheet">
+        <link href="css/kr/component/share-chat.css" rel="stylesheet">
+        <link href="css/kr/component/subnavigation.css" rel="stylesheet">
+        <link href="css/kr/theme/common.css" rel="stylesheet">
+        <link href="css/kr/theme/sitecommon.css" rel="stylesheet">
+        <link href="css/kr/theme/options.css" rel="stylesheet">
+
+        <!-- /build -->
 
     </head>
 
@@ -45,7 +115,7 @@
             <header class="header">
                 <div class="header-container">
                     <div class="header-line">
-                        <h1><a href="#lnk"><img src="../../../../apps/DEO/components/global/header/images/logo.png" alt="METLIFE"></a></h1>
+                        <h1><a href="#lnk"><img src="apps/DEO/components/global/header/images/logo.png" alt="METLIFE"></a></h1>
                         <div class="header-utils">
                             <div class="header-gnb">
                                 <div class="allmenu-container">
@@ -134,7 +204,7 @@
                             <form action="?">
                                 <fieldset>
                                     <legend class="screen_out">통합검색</legend>
-                                    <div class="header-search-input"> <label for="header-search-inputarea" class="screen_out">검색어 입력</label> <input type="text" id="header-search-inputarea" class="header-search-inputbox" value="" placeholder="검색어 입력"> </div> <button type="submit" class="header-search-submit"><img src="../../../../apps/DEO/components/global/search/images/icon_search_blue.png" alt="검색"></button>                                    </fieldset>
+                                    <div class="header-search-input"> <label for="header-search-inputarea" class="screen_out">검색어 입력</label> <input type="text" id="header-search-inputarea" class="header-search-inputbox" value="" placeholder="검색어 입력"> </div> <button type="submit" class="header-search-submit"><img src="apps/DEO/components/global/search/images/icon_search_blue.png" alt="검색"></button>                                    </fieldset>
                             </form>
                         </div>
                         <div class="header-aside">
@@ -174,9 +244,9 @@
                                 <div class="share-sns"> <button type="button" class="btn-basic share-white ico-share">공유하기</button>
                                     <div class="share-sns-listwrap">
                                         <div class="share-sns-list"> <span>공유하기</span>
-                                            <a href="#lnk" class="share-print"><img src="../../../../apps/DEO/components/global/shareCall/images/icon_pr.png" alt="프린트"></a>
-                                            <a href="#lnk"><img src="../../../../apps/DEO/components/global/shareCall/images/icon_fb.png" alt="페이스북"></a>
-                                            <a href="#lnk"><img src="../../../../apps/DEO/components/global/shareCall/images/icon_tw.png" alt="트위터"></a>
+                                            <a href="#lnk" class="share-print"><img src="apps/DEO/components/global/shareCall/images/icon_pr.png" alt="프린트"></a>
+                                            <a href="#lnk"><img src="apps/DEO/components/global/shareCall/images/icon_fb.png" alt="페이스북"></a>
+                                            <a href="#lnk"><img src="apps/DEO/components/global/shareCall/images/icon_tw.png" alt="트위터"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +263,7 @@
                                     <ul class="product-tiles-list">
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile2.png" alt="사망보장보험"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile2.png" alt="사망보장보험"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">사망보장보험</a></dt>
                                                         <dd>자녀가 독립하기 전까지 충분하게 보장강화</dd>
@@ -209,7 +279,7 @@
                                         </li>
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile1.png" alt="건강보장보험"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile1.png" alt="건강보장보험"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">건강보장보험</a></dt>
                                                         <dd>고액암 진단시 추가 보장 (특약가입시)</dd>
@@ -225,7 +295,7 @@
                                         </li>
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile3.png" alt="연금보험"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile3.png" alt="연금보험"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">연금보험</a></dt>
                                                         <dd>연금을 받는 중에도 특약으로 질병까지 보장</dd>
@@ -246,7 +316,7 @@
                                     <ul class="product-tiles-list">
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile4.png" alt="VUL"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile4.png" alt="VUL"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">VUL</a></dt>
                                                         <dd>자유로운 입출금 가능</dd>
@@ -261,7 +331,7 @@
                                         </li>
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile6.png" alt="퇴직연금"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile6.png" alt="퇴직연금"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">퇴직연금</a></dt>
                                                         <dd>기업에게는 재정적 안정을 근로자에게는 든든한 미래를</dd>
@@ -275,7 +345,7 @@
                                         </li>
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile5.png" alt="기타상품"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile5.png" alt="기타상품"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">기타상품</a></dt>
                                                         <dd>MetLife의 다양한 상품들을 만나보세요.</dd>
@@ -295,7 +365,7 @@
                                     <ul class="product-tiles-list">
                                         <li>
                                             <div class="product-tiles">
-                                                <a href="#lnk"><img src="../../../../content/dam/DEO/author/subcategory/img-product-tile4.png" alt="가입상담문의"></a>
+                                                <a href="#lnk"><img src="content/dam/DEO/author/subcategory/img-product-tile4.png" alt="가입상담문의"></a>
                                                 <div class="product-tiles-content">
                                                     <dl> <dt class="product-tiles-title"><a href="#lnk">가입상담문의</a></dt>
                                                         <dd>보험가입에 대한 궁금한 점을 친절하게 상담해 드립니다. 상담을 신청하세요.</dd>
@@ -461,7 +531,7 @@
                         </div>
                     </div>
                     <div class="footer-siteinfo">
-                        <div class="foot-center"> <img src="../../../../apps/DEO/components/global/footer/images/logo.png" alt="METLIFE"> <span>고객센터 1588-9600</span> </div>
+                        <div class="foot-center"> <img src="apps/DEO/components/global/footer/images/logo.png" alt="METLIFE"> <span>고객센터 1588-9600</span> </div>
                         <div class="foot-siteuse">
                             <div class="foot-siteuse-mob"> <a href="#lnk" class="textcolor1">개인정보 처리방침</a> <button type="button">약관 및 정책</button> </div>
                             <div class="foot-siteuse-list">
@@ -481,8 +551,8 @@
                             </div>
                         </div>
                         <!--<div class="foot-sitemark">
-			<a href="#lnk"><img src="../../../../content/dam/DEO/author/footer/iso.png" alt=""></a>
-			<a href="#lnk"><img src="../../../../content/dam/DEO/author/footer/kwcag.png" alt=""></a>
+			<a href="#lnk"><img src="content/dam/DEO/author/footer/iso.png" alt=""></a>
+			<a href="#lnk"><img src="content/dam/DEO/author/footer/kwcag.png" alt=""></a>
 		</div>-->
                         <div class="foot-address">
                             <div class="foot-address-wrap">
@@ -499,15 +569,86 @@
         <div class="loading-dimmd" aria-hidden="true">
             <div class="loading"></div>
         </div>
-        <script type="text/javascript" charset="utf-8" src="../../../../dev/js/kr/common.js"></script>
-        <!-- build:js /etc/clientlibs/<@=project.name@>/<@=page.name@>/scripts.min.js -->
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/global/header/scripts.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/global/gnb/scripts.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/global/sub-category/scripts.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/global/shareCall/scripts.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/productTilesContainer/scripts.js"></script>
-        <script type="text/javascript" charset="utf-8" src="../../../../apps/DEO/components/global/footer/scripts.js"></script>
-        <!-- endbuild -->
-    </body>
 
+    <!-- Required JS Libraries -->
+    <!-- build:js js/vendors.min.js -->
+    <script src="js/_plugins/svg4everybody.ie8.js"></script>
+    <script src="js/_lib/jquery-1.11.3.js"></script>
+    <script src="js/_lib/bootstrap.js"></script>
+    <script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.js"></script>
+    <script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.srcset.js"></script>
+    <script src="js/_plugins/lazyloadxt/jquery.lazyloadxt.autoload.js"></script>
+    <script src="js/_plugins/touchswipe/jquery.touchSwipe.js"></script>
+    <script src="js/_plugins/jquery.ddslick.js"></script>
+    <script src="js/_plugins/typeahead.bundle.js"></script>
+    <script src="js/_plugins/jquery.cookie.js"></script>
+    <script src="js/_plugins/jquery.bootpag.min.js"></script>
+    <script src="js/_plugins/jquery.inview.js"></script>
+    <!-- /build -->
+    <!-- build:js js/metlife.kr.min.js -->
+    <script src="js/variable.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/global-header.js"></script>
+    <script src="js/global-footer.js"></script>
+    <script src="js/homepage-nav.js"></script>
+    <script src="js/carousel--hero.js"></script>
+    <script src="js/carousel--tabs.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/cta-box.js"></script>
+    <script src="js/get-quote-find-office.js"></script>
+    <script src="js/svgxuse.js"></script>
+    <script src="js/divider-load-more.js"></script>
+    <script src="js/divider-scroll-to.js"></script>
+    <script src="js/product-module.js"></script>
+    <script src="js/subnavigation.js"></script>
+    <script src="js/login-overlay.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/table-variations.js"></script>
+    <script src="js/media-contact.js"></script>
+    <script src="js/form-card.js"></script>
+    <script src="js/microsite-header.js"></script>
+    <script src="js/product-comparison-chart.js"></script>
+    <script src="js/product-tile.js"></script>
+    <script src="js/form-library.js"></script>
+    <script src="js/subnavigationgoback.js"></script>
+    <script src="js/privacy-policy.js"></script>
+    <script src="js/quote-result-card.js"></script>
+    <script src="js/quote-results.js"></script>
+    <script src="js/suggestions.js"></script>
+    <script src="js/xmlhttp.js"></script>
+    <script src="js/search-box.js"></script>
+    <script src="js/quote-tool.js"></script>
+    <script src="js/result-pages.js"></script>
+    <script src="js/view-all-rates.js"></script>
+    <script src="js/markerwithlabel.js"></script>
+    <script src="js/feedback.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/ServicesAPI.js"></script>
+    <script src="js/campaign-header.js"></script>
+    <script src="js/campaign-card.js"></script>
+    <script src="js/glossary.js"></script>
+    <script src="js/toqjshashtable.js"></script>
+    <script src="js/blogpost.js"></script>
+    <script src="js/overlay.js"></script>
+    <script src="js/aemfixes.js"></script>
+    <script src="js/share-chat.js"></script>
+    <script src="js/product-card.js"></script>
+    <script src="js/aem_form.js"></script>
+    <script src="js/inview.js"></script>
+    <script src="js/kr/common.js"></script>
+    <script src="js/kr/footer.js"></script>
+    <script src="js/kr/gnb.js"></script>
+    <script src="js/kr/header.js"></script>
+    <script src="js/kr/producttilecontainer.js"></script>
+    <script src="js/kr/sharecall.js"></script>
+    <script src="js/kr/siteModule.js"></script>
+    <script src="js/kr/siteObject.js"></script>
+    <script src="js/kr/sub-cat.js"></script>
+    <script src="js/kr/TweenMax.min.js"></script>
+    <!-- /build -->
+    <!-- build:js js/feedback.min.js -->
+    <script src="js/_plugins/oo_engine.min.js"></script>
+    <script src="js/_plugins/oo_conf.js"></script>
+    <!-- /build -->
+    </body>
 </html>
