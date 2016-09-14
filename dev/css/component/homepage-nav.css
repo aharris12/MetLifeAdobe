@@ -159,7 +159,6 @@
 .homepage-sub__link div {
     line-height: 18px;
 }
-
 @media screen and (min-width: 768px) {
     .homepage-nav__link {
         font-size: 12px;
@@ -246,5 +245,10 @@
 
     .homepage-sub-side {
         height: 200px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .homepage-nav__link {
+        padding: 0 15px;
     }
 }
