@@ -270,7 +270,7 @@ function newsRoomTopicsChange(){
     allTextInsert = $('.pressroom-default-values-list > div[class="default-month"]');
     selectMonth.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
     if($("#list_topics").prop('selectedIndex') === 0){
-        for(var i = 1; i <= 12; i++) {
+        for(var i = 1; i <= monthsList.length; i++) {
             var monthItem = $(monthsList[i]);
             selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
