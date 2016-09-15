@@ -51,6 +51,9 @@ $(window).resize(function () {
 
         setAddressContainerWidth();
     }
+
+
+
 });
 
 
@@ -150,4 +153,42 @@ $(".vision_dental_overlay_close").click(function (e) {
     $(".vision_overlay").addClass("hidden");
 });
 
+$(document).ready(function(){
+
+    matchCTAPromoHeights();
+});
+
+
+$(window).resize(function(){
+    matchCTAPromoHeights();
+});
+function matchCTAPromoHeights() {
+    if ($(".hidden-xs").is(":visible")){
+        if($(".quote-office").length !=0){
+            if($(".quote-office--left").length !=0 && $(".quote-office--right").length !=0){
+
+                $(".quote-office").each(function(){
+                    var elements = $(this).find("> .row > div ");
+
+                    var height = 0;
+
+                    elements.css('min-height', '0px');
+                    elements.each(function () {
+
+                        height = $(this).outerHeight() > height ? $(this).outerHeight() : height;
+
+                    });
+                    elements.css('min-height', height + 'px');
+
+                });
+            }
+
+        }
+    }
+    else{
+        $(".quote-office").find("> .row > div ").removeAttr( 'style' );
+
+    }
+
+}
 

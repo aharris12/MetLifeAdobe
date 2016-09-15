@@ -12,7 +12,7 @@
 }
 
 .share__chat div{
-	display: inline-block;
+	display: table;
 }
 
 .share__chat .share__chat--social{

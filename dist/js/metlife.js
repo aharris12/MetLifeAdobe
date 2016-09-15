@@ -143,15 +143,14 @@ function resizeMegaMenu() {
         if($(".megamenu").hasClass("megamenu--open")) {
             if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
                 $(".megamenu--open").addClass("megamenu--open--mobile");
-                $("body").css("overflow", "hidden");
+
             }
         }
     }
     if (getViewport() == "tablet" || getViewport() == "desktop") {
         if($(".megamenu--open").hasClass("megamenu--open--mobile")) {
             $(".megamenu--open").removeClass("megamenu--open--mobile");
-           /* $("body").css("overflow", "visible");
-            $("body").css("overflow-x", "hidden");*/
+
         }
         $(".megamenu__sub-items").show();
         if ($('.megamenu').hasClass('megamenu--open')) {
@@ -215,8 +214,7 @@ function openSearchBox() {
         if ($('.search-trigger__container').css("display") == "none") {
             $("body > :not('.megamenu, .global-header')").removeClass("megamenu--open--hide");
             $("html, body, .global-header").removeClass('megamenu--open--style');
-            /*$("body").css("overflow", "visible");
-            $("body").css("overflow-x", "hidden");*/
+
             $('.search-trigger__icon').addClass('search-trigger__icon--open');
             $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
@@ -451,13 +449,6 @@ $('.megamenu-trigger').on('click', function () {
     } else {
         closeSearchBox();
         $(".megamenu").toggleClass('megamenu--open--mobile');
-        /*if($(".megamenu").hasClass("megamenu--open--mobile")) {
-            $("body").css("overflow", "hidden");
-        } else {
-            $("body").css("overflow", "visible");
-            $("body").css("overflow-x", "hidden");
-
-        }*/
     }
 });
 
@@ -1178,6 +1169,9 @@ $(window).resize(function () {
 
         setAddressContainerWidth();
     }
+
+
+
 });
 
 
@@ -1277,6 +1271,44 @@ $(".vision_dental_overlay_close").click(function (e) {
     $(".vision_overlay").addClass("hidden");
 });
 
+$(document).ready(function(){
+
+    matchCTAPromoHeights();
+});
+
+
+$(window).resize(function(){
+    matchCTAPromoHeights();
+});
+function matchCTAPromoHeights() {
+    if ($(".hidden-xs").is(":visible")){
+        if($(".quote-office").length !=0){
+            if($(".quote-office--left").length !=0 && $(".quote-office--right").length !=0){
+
+                $(".quote-office").each(function(){
+                    var elements = $(this).find("> .row > div ");
+
+                    var height = 0;
+
+                    elements.css('min-height', '0px');
+                    elements.each(function () {
+
+                        height = $(this).outerHeight() > height ? $(this).outerHeight() : height;
+
+                    });
+                    elements.css('min-height', height + 'px');
+
+                });
+            }
+
+        }
+    }
+    else{
+        $(".quote-office").find("> .row > div ").removeAttr( 'style' );
+
+    }
+
+}
 
 
 /*!
@@ -6332,9 +6364,9 @@ $('.form-user-grp > select').on('blur', function () {
 
 /****Product Selector****************************************/
 
-
+var selectedProduct;
 $(".product__selector").on("change", function () {
-    var selectedProduct = $(this).find(':selected').attr("data-product-type");
+    selectedProduct = $(this).find(':selected').attr("data-product-type");
     $(this).removeClass("error");
     $(this).parent('.select_wrapper').find('svg').css('fill', '#666');
 
@@ -6367,11 +6399,15 @@ $(".js-productSelector").click(function (e) {
     if ($(".product__selector").length > 0 && $(".product__selector").find(':selected').val() == "") {
         $(".product__selector").parent('.select_wrapper').find('svg').css('fill', '#db3535');
         $(".product__selector").addClass("error")
+        return;
     }
-    if ($(".product__selector--sub").length > 0 && !$(".product__selector").find(':selected').val() == "" && $(".product__selector--sub").find(':selected').val() == "") {
+
+    if ($("[data-product-sub='" + selectedProduct + "']").length > 0  && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
         $(".product__selector--sub").addClass("error")
         $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
+        return;
     }
+
     if (url == "#") {
         e.preventDefault();
     }
@@ -8175,13 +8211,13 @@ var ServicesAPI = {
                             }
                             if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
                                 resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
                                 resultsListHTML += "</div>";
                             }
                             if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
                                 resultsListHTML += "<div class=\"list__item--right\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\">";
                                 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
                                     resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
                                 } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
@@ -8192,7 +8228,7 @@ var ServicesAPI = {
                                     resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
                                 }
                                 resultsListHTML += "</a>";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
                                 resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
                                 resultsListHTML += "</div>";
                             }
@@ -12578,9 +12614,6 @@ function setElementsWidthToLargest(elements) {
         $(this).css("width", maxWidth);
     });
 }
-/**
- * Created by icunningham on 2/12/2016.
- */
 
 // Case Insensitive ":contains"
 $.expr[":"].contains = $.expr.createPseudo(function (arg) {
@@ -12596,7 +12629,7 @@ if ($(".glossary").length > 0) {
 
     // Swipe for Glossary Letter Selector
     $(".glossary-selector").swipe({
-        swipeLeft: function() {
+        swipeLeft: function () {
             var glossary = $(".selector-container");
             var width = parseFloat(glossary[0].style.width);
             var position = width - (100 + parseFloat(glossary[0].style.right));
@@ -12607,7 +12640,7 @@ if ($(".glossary").length > 0) {
                 glossary.animate({right: '+=' + position + '%'}, "slow");
             }
         },
-        swipeRight: function() {
+        swipeRight: function () {
             var glossary = $(".selector-container");
             var position = parseFloat(glossary[0].style.right);
 
@@ -12662,7 +12695,7 @@ function glossarySelectorInitialize() {
     glossarySelectorSize();
 
     selectorContainer.css("right", "0%");
-    $(".page_title").addClass("glossary-top");
+    $(".page-title").addClass("glossary-top");
 
     selector.show();
     selector.addClass("glossary-height");
@@ -18717,7 +18750,10 @@ $(".divider--load-more__link").click(function (e) {
 //same, and a new query should be fired.
 $("#list_year").change(function () {
     firstTimeRunNewsRoomChange = true;
+
+    //If "All" value is in array
     $("#list_month").val(integerToMonthMapping["0"]);
+
     totalYears = [];
     totalMonths = [];
     listCount = 0;
@@ -18733,8 +18769,15 @@ $("#list_topics").change(function () {
     listTopicChange = true;
     //The first value of the integerToMonthMapping will be
     //the same for the month and year dropdown
+
+    //If "All" value is in array
     $("#list_year").val(integerToMonthMapping["0"]);
     $("#list_month").val(integerToMonthMapping["0"]);
+
+    //If "All" value is coming from content entry
+    //$("#list_year").val(allValueText);
+    //$("#list_month").val(allValueText);
+
     totalYears = [];
     totalMonths = [];
     listCount = 0;
@@ -18754,10 +18797,41 @@ $("#list_month").change(function() {
 //    });
 //    var selectMonth = $('#list_month');
 //    selectMonth.empty();
-//    selectMonth.append('<option value="All" selected>All</option>');
 //    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+//    var allTextInsert = $('.pressroom-default-values-list > div[class="default-month"]');
+//    selectMonth.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
 //    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
-//        for(var i = 1; i <=12; i++){
+//        for(var i = 1; i <= 12; i++){
+//            var monthItem = $(monthsList[i]);
+//            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
+//        }
+//    }else{
+//
+//        for (var i in totalMonths) {
+//            for(var j = 0; j<monthsList.length; j++) {
+//                var monthItem = $(monthsList[j]);
+//                if(monthItem.data('month-value') === totalMonths[i]){
+//                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
+//                    break;
+//                }
+//            }
+//        }
+//    }
+//}
+
+//Local if we take the value from entry and not array
+//function newsRoomYearChange() {
+//    //totalMonths.sort(function(a, b){return a - b});
+//    totalMonths = unique(totalMonths);
+//    totalMonths.sort(function(a,b) {
+//        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+//    });
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+//    selectMonth.append('<option value="' + allValueText +  '" + selected> ' + allText + '</option>');
+//    if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
+//        for(var i = 0; i < 12; i++){
 //            var monthItem = $(monthsList[i]);
 //            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //        }
@@ -18784,11 +18858,11 @@ function newsRoomYearChange() {
     });
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="" selected>All</option>');
-    var thisMonth, thisMonthValue;
     var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+    var allTextInsert = $('.pressroom-default-values-list > div[class="default-month"]');
+    selectMonth.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
     if($("#list_topics").prop('selectedIndex') === 0 && $('#list_year').prop('selectedIndex') === 0){
-        for(var i =0; i < monthsList.length; i++) {
+        for(var i = 0; i < monthsList.length; i++){
             var monthItem = $(monthsList[i]);
             selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
@@ -18817,7 +18891,10 @@ function newsRoomYearChange() {
 //    console.log("Total months after new sort" + totalMonths);
 //    var selectYear = $('#list_year');
 //    selectYear.empty();
-//    selectYear.append('<option value="All" selected>All</option>');
+//    //selectYear.append('<option value="All" selected>All</option>');
+//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+//    var allTextInsert = $('.pressroom-default-values-list > div[class="default-year"]');
+//    selectYear.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
 //    var firstTime = true;
 //    for(var i = (totalYears.length - 1); i >= 0; i--) {
 //        selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
@@ -18825,10 +18902,9 @@ function newsRoomYearChange() {
 //    firstTime = false;
 //    var selectMonth = $('#list_month');
 //    selectMonth.empty();
-//    selectMonth.append('<option value="All" selected>All</option>');
-//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+//    selectMonth.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
 //    if($("#list_topics").prop('selectedIndex') === 0){
-//        for(var i = 1; i <= 12; i++){
+//        for(var i = 0; i <= monthsList.length; i++){
 //            var monthItem = $(monthsList[i]);
 //            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
 //        }
@@ -18843,13 +18919,54 @@ function newsRoomYearChange() {
 //            }
 //        }
 //    }
-//
+//}
+
+
+//Local if we take the value from entry and not array
+//function newsRoomTopicsChange(){
+//    totalYears.sort(function(a, b){return a - b});
+//    //totalMonths.sort(function(a, b){return a - b});
+//    totalYears = unique(totalYears);
+//    totalMonths = unique(totalMonths);
+//    totalMonths.sort(function(a,b) {
+//        return masterMonthArray.indexOf(a) > masterMonthArray.indexOf(b);
+//    });
+//    console.log("Total months after new sort" + totalMonths);
+//    var selectYear = $('#list_year');
+//    selectYear.empty();
+//    //selectYear.append('<option value="All" selected>All</option>');
+//    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+//    selectYear.append('<option value="' + allValueText +  '" + selected> ' + allText + '</option>');
+//    var firstTime = true;
+//    for(var i = (totalYears.length - 1); i >= 0; i--) {
+//        selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
+//    }
+//    firstTime = false;
+//    var selectMonth = $('#list_month');
+//    selectMonth.empty();
+//    selectMonth.append('<option value="' + allTextInsert.data('month-value') +  '" + selected> ' + allTextInsert.data('month-text') + '</option>');
+//    if($("#list_topics").prop('selectedIndex') === 0){
+//        for(var i = 0; i < 12; i++){
+//            var monthItem = $(monthsList[i]);
+//            selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
+//        }
+//    }else{
+//        for (var i in totalMonths) {
+//            for(var j = 0; j<monthsList.length; j++) {
+//                var monthItem = $(monthsList[j]);
+//                if(monthItem.data('month-value') === totalMonths[i]){
+//                    selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
+//                    break;
+//                }
+//            }
+//        }
+//    }
 //}
 
 //AEM modified function from Diego
 function newsRoomTopicsChange(){
     totalYears.sort(function(a, b){return a - b});
-    //totalMonths.sort(function(a, b){return a - b});
+//totalMonths.sort(function(a, b){return a - b});
     totalYears = unique(totalYears);
     totalMonths = unique(totalMonths);
     totalMonths.sort(function(a,b) {
@@ -18857,7 +18974,9 @@ function newsRoomTopicsChange(){
     });
     var selectYear = $('#list_year');
     selectYear.empty();
-    selectYear.append('<option value="" selected>All</option>');
+    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+    var allTextInsert = $('.pressroom-default-values-list > div[class="default-year"]');
+    selectYear.append('<option value="" + selected> ' + allTextInsert.data('year-text') + '</option>');
     var firstTime = true;
     for(var i = (totalYears.length - 1); i >= 0; i--) {
         selectYear.append('<option value="'+totalYears[i] +'" >'+totalYears[i]+'</option>');
@@ -18865,10 +18984,10 @@ function newsRoomTopicsChange(){
     firstTime = false;
     var selectMonth = $('#list_month');
     selectMonth.empty();
-    selectMonth.append('<option value="" selected>All</option>');
-    var monthsList = $('.pressroom-months-list > div[class="month-item"]');
+    allTextInsert = $('.pressroom-default-values-list > div[class="default-month"]');
+    selectMonth.append('<option value="" + selected> ' + allTextInsert.data('month-text') + '</option>');
     if($("#list_topics").prop('selectedIndex') === 0){
-        for(var i =0; i < monthsList.length; i++) {
+        for(var i = 0; i < monthsList.length; i++) {
             var monthItem = $(monthsList[i]);
             selectMonth.append('<option value="'+ monthItem.data('month-value') + '">'+monthItem.data('month-text')+'</option>');
         }
@@ -19051,19 +19170,21 @@ function newsRoomServiceConstruction() {
 //    console.log(newsMonth);
 //    newsYear = $("#list_year").val();
 //    newsTopic = $('#list_topics').val();
+//    console.log(newsYear);
+//    console.log(newsMonth);
 //    newsConcatenator = $(".lists").attr("data-news-concatenator");
 //    //prod implementation of url
 //    //url += newsYear + newsConcatenator + newsMonth + newsConcatenator + newsTopic + query;
 //    //local implementation of url
 //    console.log(newsTopic);
-//    if(newsYear === "All" && newsMonth === "All") {
+//    if((newsYear === "" || newsYear === "Todas" || newsYear === "All") && (newsMonth === "" || newsMonth === "Todas" || newsMonth === "All")) {
 //        console.log(newsTopic);
 //        url += newsTopic + query;
 //        console.log(url);
-//    } else if (newsYear === "All") {
+//    } else if ((newsYear === "" || newsYear === "Todas" || newsYear === "All")) {
 //        url += newsTopic + query;
 //        console.log(url);
-//    } else if (newsYear !== "All") {
+//    } else if ((newsYear !== "" || newsYear !== "Todas" || newsYear !== "All")) {
 //        url += newsYear + query;
 //    }
 //    console.log(url);
@@ -19072,6 +19193,7 @@ function newsRoomServiceConstruction() {
 /************LOCAL News Room Url Constructor***************/
 
 //Only needed for local testing
+
 function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) {
     var numResults = results.news.length;
     console.log(results);
@@ -19086,7 +19208,7 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
     }
     var filteredResults = {};
     //If All months is selected, we don't begin filtering yet
-    if(monthSelected === integerToMonthMapping["0"]) {
+    if(intRepresentationOfMonthToFilterOn === integerToMonthMapping["0"]) {
         console.log("Month is All");
         filteredResults = results;
     } else {
@@ -19094,8 +19216,10 @@ function parseNewsRoomResultsLocally(results, monthSelected, newsTopicSelected) 
         filteredResults["news"] = [];
         filteredResults["results"] = 0;
         for(var i = 0; i < numResults; i++) {
+            console.log(results.news[i].month);
+            console.log(intRepresentationOfMonthToFilterOn);
             //filter result for the given months
-            if(results.news[i].month === intRepresentationOfMonthToFilterOn) {
+            if(results.news[i].month === monthSelected) {
                 console.log(results.news[i].month);
                 console.log(monthSelected);
                 filteredResults.news.push(results.news[i]);
