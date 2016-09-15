@@ -2269,15 +2269,16 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
                                 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
                             }
-                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined){
                                 resultsListHTML += " <div class=\"list__item--left\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+                                if(formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined){
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";}
                                 resultsListHTML += "</div>";
                             }
                             if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
                                 resultsListHTML += "<div class=\"list__item--right\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\">";
                                 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
                                     resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
                                 } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
@@ -2288,7 +2289,7 @@ var ServicesAPI = {
                                     resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
                                 }
                                 resultsListHTML += "</a>";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
                                 resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
                                 resultsListHTML += "</div>";
                             }
@@ -2303,13 +2304,14 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
                                 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
                             }
-                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                if(formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";}
                                 resultsListHTML += "</div>";
                             }
-                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
+                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
                                 resultsListHTML += "<div class=\"list__item--right\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\">";
                                 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
@@ -2323,7 +2325,10 @@ var ServicesAPI = {
                                 }
                                 resultsListHTML += "</a>";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-                                resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+                                if(formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") 
+                                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+                                else    
+                                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + ")</span>";
                                 resultsListHTML += "</div>";
                             }
                             resultsListHTML += "<span class=\"clearfix\"></span>";
