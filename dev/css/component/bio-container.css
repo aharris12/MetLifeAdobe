@@ -1,3 +1,18 @@
 .bio-container {
     width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bio-container__selectors {
+    text-align: center;
+}
+
+.bio-container__selectors svg {
+    fill: #666;
+}
+
+.bio-container__selectors select {
+    width: inherit;
+    background-color: white;
 }

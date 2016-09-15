@@ -95,6 +95,7 @@
     <link href="css/component/share-chat.css" rel="stylesheet">
     <link href="css/component/visiondental-overlay.css" rel="stylesheet">
     <link href="css/component/inview.css" rel="stylesheet">
+    <link href="css/component/bio-container.css" rel="stylesheet">
     <link href="css/theme/ie9select.css" rel="stylesheet">
 </head>
 <body>
@@ -895,16 +896,22 @@
     <div class="bio-container">
         <div class="bio-container__selectors">
             <select name="" class="bio-container__selectors--left js-primary-biocontainer-switch">
-                <option value="Real Estate"></option>
-                <option value="Free Real Estate"></option>
-                <option value="Real Free Real Estate"></option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Free Real Estate">Free Real Estate</option>
+                <option value="Real Free Real Estate">Real Free Real Estate</option>
             </select>
+            <svg class="icon">
+                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+            </svg>
             <select name="" class="bio-container__selectors--right js-secondary-biocontainer-switch">
-                <option value="Leadership Team"></option>
-                <option value="Energy Team"></option>
-                <option value="Synergy Team"></option>
-                <option value="Energy Synergy Team"></option>
+                <option value="Leadership Team">Leadership Team</option>
+                <option value="Energy Team">Energy Team</option>
+                <option value="Synergy Team">Synergy Team</option>
+                <option value="Energy Synergy Team">Energy Synergy Team</option>
             </select>
+            <svg class="icon">
+                <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
+            </svg>
         </div>
         <div class="bio-container__profiles">
             <div class="bio-profile bg-white xs-12 sm-4">
@@ -918,7 +925,7 @@
                 <span class="bio-profile__name"></span>
                 <p class="rtf-probably"></p>
                 <a href="" class="bio-profile__bio-link"></a>
-                <div class="bio-overlay">
+                <div class="bio-overlay hidden">
 
                 </div>
             </div>
