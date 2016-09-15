@@ -99,7 +99,7 @@
 					}
 				}
 			};
-			
+
 			function addEvent(){
 				$openBtn.on('click', openList);
 				$openBtn.on('keydown', kwcagEvent.btnKeyCheck);

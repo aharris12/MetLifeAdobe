@@ -20088,7 +20088,7 @@ if($('.rtf-general-content').length > 0 && $('.rtf-general-content').prev('.cont
 					}
 				}
 			};
-			
+
 			function addEvent(){
 				$openBtn.on('click', openList);
 				$openBtn.on('keydown', kwcagEvent.btnKeyCheck);
