@@ -53,10 +53,7 @@ function processCountrySelection(evt) {
 
 var clickDisabled = false;
 
-$('.country__list').on('touchmove', function(e) {
-    e.stopPropagation();
-});
-$('.country__list').on('touchstart', function(e) {
+$('.country__list').on('touchmove touchstart', function(e) {
     e.stopPropagation();
 });
 $('.country__selected').on('touchstart click', function(e) {
@@ -89,7 +86,7 @@ $('.country__selected').on('touchstart click', function(e) {
 });
 
 $('body').on('click touchstart', function(e){
-    e.stopPropagation();
+    //e.stopPropagation();
     if (e.target.className != "country__selected") {
         if (e.type == "touchstart") {
             if ($("#countryList").is(":visible") == true) {
