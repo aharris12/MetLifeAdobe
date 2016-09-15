@@ -5522,9 +5522,11 @@ a:visited {
 }
 
 .carousel-caption {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     width: 100%;
     max-height: 250px;
-    display: flex;
     top: 0;
     bottom: 0;
     right: 0;
@@ -5533,14 +5535,18 @@ a:visited {
 }
 
 .carousel-caption--hero {
-    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
     vertical-align: middle;
     margin: 5px auto;
     font-size: 20px;
     line-height: 24px;
     font-weight: 600;
-    align-items: center;
 }
 
 .carousel--hero .icon {
@@ -5570,8 +5576,14 @@ a:visited {
     }
 
     .carousel-control {
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
         display: inline-flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
         z-index: 10;
     }
@@ -16921,6 +16933,7 @@ body  .quote_edit_form .submit_quote_edit_form {
 .blog-suggestions {
     padding-bottom: 50px;
 }
+
 .blog-suggestions__option {
     display: inline;
     margin-right: 2%;
@@ -16928,9 +16941,11 @@ body  .quote_edit_form .submit_quote_edit_form {
     margin-bottom: 0;
     float: left;
 }
+
 .blog-suggestions__option img {
     width: 100%;
 }
+
 .blog-suggestions__option__img-caption {
     display: inline;
     margin-top: 20px;
@@ -16938,10 +16953,13 @@ body  .quote_edit_form .submit_quote_edit_form {
 
 @media (min-width: 768px) {
     .blog-suggestions__option {
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
         display: inline-flex;
         width: 15%;
     }
-   .blog-suggestions__option img {
+
+    .blog-suggestions__option img {
         width: 97%;
     }
 }
@@ -16950,6 +16968,7 @@ body  .quote_edit_form .submit_quote_edit_form {
     .blog-suggestions__option {
         display: inline;
     }
+
     .blog-suggestions__option img {
         width: 100%;
     }
@@ -17407,10 +17426,14 @@ body  .quote_edit_form .submit_quote_edit_form {
     }
 
     .campaign-header__popup__contact {
-        display: flex
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
     }
 
     .campaign-header__popup__contact input {
+        -webkit-flex: 1;
+        -ms-flex: 1;
         flex: 1;
         margin-right: 10px;
     }
@@ -19850,6 +19873,8 @@ text-align: center;
 
 .generic__content--center--link {
     display: block;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
     align-items: baseline;
     width: 22%;
     text-align: center;
@@ -19916,16 +19941,19 @@ text-align: center;
 .generic_content .expand_button:active, .generic_content .expand_button:hover {
     background-color: #edf6ce;
 }
-.wrapper-general .video-text__document{
+
+.wrapper-general .video-text__document {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
+
 @media screen and (min-width: 768px) {
     .generic_content {
         padding-left: 0;
         padding-right: 0;
     }
+
     .generic-content__img__container {
         width: 75%;
     }
@@ -19955,9 +19983,10 @@ text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
-    .wrapper-general .video-text__document{
+    .wrapper-general .video-text__document {
         width: 80%;
     }
+
     .wrapper-general ul {
         font-size: 14px;
         line-height: 18px;
