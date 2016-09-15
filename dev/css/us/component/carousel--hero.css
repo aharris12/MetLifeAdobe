@@ -1,8 +1,16 @@
 .carousel-caption {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .carousel-caption--hero {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     width: 100%;
     vertical-align: middle;
     margin: 5px auto;
@@ -10,8 +18,6 @@
     line-height: 24px;
     font-weight: 600;
     letter-spacing: 1px;
-    display: flex;
-    align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,24 +39,29 @@
     }
 
 }
+
 @media screen and (min-width: 1024px) {
     .carousel-caption--hero {
         padding-bottom: 95px;
-        width:60%;
+        width: 60%;
     }
+
     .carousel-caption {
         margin-left: auto;
         margin-right: auto;
     }
+
     .carousel-caption--hero {
         padding-left: 0px;
         padding-bottom: 70px;
     }
 }
+
 @media screen and (min-width: 1700px) {
     .carousel-caption--hero {
-        width:65%;
+        width: 65%;
     }
+
     .carousel-caption--hero {
         font-size: 60px;
         line-height: 60px;
