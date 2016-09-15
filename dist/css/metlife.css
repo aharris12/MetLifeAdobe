@@ -5160,7 +5160,7 @@ a:visited {
 @media screen and (min-width: 768px) {
     .homepage-nav__link {
         font-size: 12px;
-        padding: 0 30px;
+        padding: 0 15px;
     }
 
     .homepage-sub {
@@ -5202,7 +5202,6 @@ a:visited {
         padding: 5px 20px;
     }
 }
-
 @media screen and (min-width: 1024px) {
     .homepage-sub {
         margin-top: 60px;
@@ -5222,7 +5221,7 @@ a:visited {
 
     .homepage-nav__link {
         font-size: 14px;
-        padding: 0 50px;
+        padding: 0 40px;
     }
 
     .homepage-sub__link img {
@@ -5245,11 +5244,7 @@ a:visited {
         height: 200px;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .homepage-nav__link {
-        padding: 0 15px;
-    }
-}
+
 
 .quote-office {
     margin-top:0;
@@ -6974,7 +6969,8 @@ ol.promocard_content__list li:after {
 }
 
 .form-item__field--large {
-    width: 240px;
+    width: 100%;
+    padding-right: 27px;
 }
 
 .list-filter .form-item__label--large span {
@@ -6993,7 +6989,7 @@ ol.promocard_content__list li:after {
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 5px;
-    color:#333;
+    color: #333;
     font-weight: 600;
 }
 
@@ -7081,16 +7077,15 @@ ol.promocard_content__list li:after {
 
 .list-filter select {
     margin-left: 0;
-    font-size: 0.85em;
+    font-size: 14px;
     width: 100%;
 }
 
 .form-item__label--large .form-icon-wrapper {
     display: inline-block;
     margin: 10px auto;
-    width: 280px;
+    min-width: 100px;
 }
-
 
 [data-form-library-msg] {
     display: none;
@@ -7127,12 +7122,14 @@ ol.promocard_content__list li:after {
     list-style-type: disc;
     margin: 10px 0 20px 60px;
 }
+
 .forms-library-category-others ul li b {
     font-size: 13px;
     line-height: 20px;
     font-weight: 600;
     color: #666;
 }
+
 .forms-library-category-others ul li .other-form__item {
     margin-bottom: 10px;
     display: block;
@@ -7146,48 +7143,56 @@ ol.promocard_content__list li:after {
     margin-bottom: 0;
     font-size: 1em;
 }
-.section-title .section-title__title{
+
+.section-title .section-title__title {
     font-size: 16px;
-    line-height:20px;
+    line-height: 20px;
     font-weight: 400;
     color: #333
 }
 
-.section-title .brand-gray-2nd.hidden-xs{
+.section-title .brand-gray-2nd.hidden-xs {
     font-size: 11px;
-    line-height:15px;
+    line-height: 15px;
     font-weight: 300;
     color: #666
 }
+
 @media (min-width: 768px) {
-    .section-title .section-title__title{
+    .section-title .section-title__title {
         font-size: 14px;
-        line-height:20px;
+        line-height: 20px;
     }
 
-    .section-title .brand-gray-2nd.hidden-xs{
+    .section-title .brand-gray-2nd.hidden-xs {
         font-size: 11px;
-        line-height:16px;
+        line-height: 16px;
     }
+
     .forms-library-category-others ul li .other-form__item {
         line-height: 20px;
     }
-    .forms-library-category-others p, .list__footer-copy{
+
+    .forms-library-category-others p, .list__footer-copy {
         font-size: 14px;
         line-height: 20px;
     }
+
     .forms-library-category-others h2, .list__title {
         font-size: 16px;
     }
-    .list__item p{
+
+    .list__item p {
         font-size: 13px;
         line-height: 20px;
     }
+
     .list [data-form-library-msg] .list__title {
         font-size: 18px;
         line-height: 22px;
     }
-    [data-form-library-msg] .list__copy{
+
+    [data-form-library-msg] .list__copy {
         display: block;
     }
 
@@ -7220,8 +7225,11 @@ ol.promocard_content__list li:after {
     .form-item__label--large {
         display: inline-block;
         width: auto;
-        /*        margin-bottom:20px;*/
         font-size: 1.1em;
+    }
+
+    .form-item__label--large .form-icon-wrapper {
+        min-width: 200px;
     }
 
     .list__item__title {
@@ -7252,16 +7260,17 @@ ol.promocard_content__list li:after {
 }
 
 @media (min-width: 1024px) {
-    .section-title .brand-gray-2nd.hidden-xs{
+    .section-title .brand-gray-2nd.hidden-xs {
         font-size: 12px;
-        line-height:18px;
+        line-height: 18px;
     }
+
     .forms-library-category-others ul li .other-form__item {
         font-size: 13px;
         line-height: 20px;
     }
 
-    .list [data-form-library-msg] .list__title{
+    .list [data-form-library-msg] .list__title {
         font-size: 20px;
         line-height: 24px;
     }
@@ -7281,6 +7290,10 @@ ol.promocard_content__list li:after {
     .list__item__date {
         font-size: 11px;
         line-height: 15px;
+    }
+
+    .form-item__label--large .form-icon-wrapper {
+        min-width: 250px;
     }
 }
 
@@ -13167,6 +13180,10 @@ ol.promocard_content__list li:after {
         padding: 30px 30px 30px 30px;
     }
 
+    .image-product-card .content-body {
+        padding: 30px 30px 30px 30px;
+    }
+
     .product-card .action {
         width: 20%;
         padding: 30px 10px;
@@ -13278,6 +13295,10 @@ ol.promocard_content__list li:after {
 
     .product-card .content-body {
         padding: 40px 10px 40px 40px;
+    }
+
+    .image-product-card .content-body {
+        padding: 40px 40px 40px 40px;
     }
 
     .content .content-body-no-action {
