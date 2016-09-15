@@ -1063,6 +1063,7 @@ $("#insurance-type").on("change",function(){
     $('#state1-mmquote').removeAttr("disabled");
 });
 
-//$(".life-insurance-quote-right .cta_header_quote_type_of_insurance .insurance-type").on("change", function() {
-//    $(this).addClass("modified-margin-quote-insurance");
-//});
+
+$('.life-insurance-quote-right .cta_header_quote_type_of_insurance .insurance-type').on('change', function() {
+    $('.cta_header_quote_type_of_insurance').addClass('modified-margin-quote-insurance');
+});

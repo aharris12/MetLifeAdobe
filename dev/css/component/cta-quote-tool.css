@@ -360,12 +360,15 @@
     margin-right: 5px;
     vertical-align: bottom;
 }
-.modified-margin-quote-insurance {
-    margin-bottom: 2px;
+.cta_header_quote .modified-margin-quote-insurance {
+    margin-bottom: 5px;
 }
 @media screen and (max-width: 767px) {
     .cta_header_quote .cta_header_quote_type_of_insurance--sub {
         margin-bottom: 15px;
+    }
+    .life-insurance-quote-right .life-quote-form .btn_global {
+        width: 100%;
     }
 }
 @media screen and (min-width: 768px) {
@@ -401,6 +404,7 @@
         margin:0;
         background-color: transparent;
     }
+
 }
 
 @media screen and (min-width: 1024px) {
