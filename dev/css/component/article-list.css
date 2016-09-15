@@ -40,7 +40,8 @@
 }
 
 .form-item__field--large {
-    width: 240px;
+    width: 100%;
+    padding-right: 27px;
 }
 
 .list-filter .form-item__label--large span {
@@ -59,7 +60,7 @@
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 5px;
-    color:#333;
+    color: #333;
     font-weight: 600;
 }
 
@@ -147,16 +148,15 @@
 
 .list-filter select {
     margin-left: 0;
-    font-size: 0.85em;
+    font-size: 14px;
     width: 100%;
 }
 
 .form-item__label--large .form-icon-wrapper {
     display: inline-block;
     margin: 10px auto;
-    width: 280px;
+    min-width: 100px;
 }
-
 
 [data-form-library-msg] {
     display: none;
@@ -193,12 +193,14 @@
     list-style-type: disc;
     margin: 10px 0 20px 60px;
 }
+
 .forms-library-category-others ul li b {
     font-size: 13px;
     line-height: 20px;
     font-weight: 600;
     color: #666;
 }
+
 .forms-library-category-others ul li .other-form__item {
     margin-bottom: 10px;
     display: block;
@@ -212,48 +214,56 @@
     margin-bottom: 0;
     font-size: 1em;
 }
-.section-title .section-title__title{
+
+.section-title .section-title__title {
     font-size: 16px;
-    line-height:20px;
+    line-height: 20px;
     font-weight: 400;
     color: #333
 }
 
-.section-title .brand-gray-2nd.hidden-xs{
+.section-title .brand-gray-2nd.hidden-xs {
     font-size: 11px;
-    line-height:15px;
+    line-height: 15px;
     font-weight: 300;
     color: #666
 }
+
 @media (min-width: 768px) {
-    .section-title .section-title__title{
+    .section-title .section-title__title {
         font-size: 14px;
-        line-height:20px;
+        line-height: 20px;
     }
 
-    .section-title .brand-gray-2nd.hidden-xs{
+    .section-title .brand-gray-2nd.hidden-xs {
         font-size: 11px;
-        line-height:16px;
+        line-height: 16px;
     }
+
     .forms-library-category-others ul li .other-form__item {
         line-height: 20px;
     }
-    .forms-library-category-others p, .list__footer-copy{
+
+    .forms-library-category-others p, .list__footer-copy {
         font-size: 14px;
         line-height: 20px;
     }
+
     .forms-library-category-others h2, .list__title {
         font-size: 16px;
     }
-    .list__item p{
+
+    .list__item p {
         font-size: 13px;
         line-height: 20px;
     }
+
     .list [data-form-library-msg] .list__title {
         font-size: 18px;
         line-height: 22px;
     }
-    [data-form-library-msg] .list__copy{
+
+    [data-form-library-msg] .list__copy {
         display: block;
     }
 
@@ -286,8 +296,11 @@
     .form-item__label--large {
         display: inline-block;
         width: auto;
-        /*        margin-bottom:20px;*/
         font-size: 1.1em;
+    }
+
+    .form-item__label--large .form-icon-wrapper {
+        min-width: 200px;
     }
 
     .list__item__title {
@@ -318,16 +331,17 @@
 }
 
 @media (min-width: 1024px) {
-    .section-title .brand-gray-2nd.hidden-xs{
+    .section-title .brand-gray-2nd.hidden-xs {
         font-size: 12px;
-        line-height:18px;
+        line-height: 18px;
     }
+
     .forms-library-category-others ul li .other-form__item {
         font-size: 13px;
         line-height: 20px;
     }
 
-    .list [data-form-library-msg] .list__title{
+    .list [data-form-library-msg] .list__title {
         font-size: 20px;
         line-height: 24px;
     }
@@ -347,6 +361,10 @@
     .list__item__date {
         font-size: 11px;
         line-height: 15px;
+    }
+
+    .form-item__label--large .form-icon-wrapper {
+        min-width: 250px;
     }
 }
 
