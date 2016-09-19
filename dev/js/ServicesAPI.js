@@ -13,7 +13,7 @@ var searchPaginationPrev;
 var searchUrl;
 var searchStart = 1;
 var searchEnd = 10;
-var totalSearchResults;
+var totalSearchResults = 0;
 var didYouMean = null;
 if ($(".page-count").length > 0) {
     var searchDefaultSelect = $(".page-count").val();
@@ -1713,13 +1713,7 @@ var ServicesAPI = {
         }
     },
     createPaginationSearch: function () {
-        if (didYouMean) {
-            var url = $(".js-searchSubmit").attr("data-search-ajax-url");
-            if (didYouMean) {
-                ServicesAPI.searchServiceCall(url, didYouMean);
-            }
 
-        } else {
 
 
             $('.results_content').children().removeClass('.hidden');
@@ -1857,10 +1851,11 @@ var ServicesAPI = {
                 $('.display-text > span:nth-of-type(2)').html('&nbsp;' + totalSearchResults);
             }
 
-        }
+
     },
     searchServiceCall: function (url, query, e) {
         count = 0;
+        totalSearchResults = 0;
         var frontEnd = $(".js-searchSubmit").attr("data-front-end");
         var site = $(".js-searchSubmit").attr("data-site");
         console.log("ajax searchPaginationNumber ", searchPaginationNumber)
@@ -1880,100 +1875,7 @@ var ServicesAPI = {
         $(".js-searchSuggestion").children().remove();
         resultsListHTML = "";
 
-        /************LOCAL Site Search SERVICE***************/
-        //var siteSearchResults = $.getJSON("search-gsa.json", function (data) {
-        //    siteSearchResults = data.GSP.RES.R;
-        //    var sitSearchResultsUrl = '.DU';
-        //    var sitSearchResultsTitle = '.T';
-        //    var sitSearchResultsContent = '.S';
-        //    console.log(siteSearchResults)
-        //    if (siteSearchResults.length != 0) {
-        //
-        //        $('.form-item__display').removeClass('hidden');
-        //        // $(".page-count").removeClass('hidden');
-        //        $(".no-results").addClass('hidden');
-        //        //results_content is the default component for listing out general results
-        //        resultsListHTML += "<div class=\"results_content\">";
-        //        for (var i = 0; i < siteSearchResults.length; i++) {
-        //            count++;
-        //            sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-        //            sitSearchResultsTitle = data.GSP.RES.R[i].T;
-        //            sitSearchResultsContent = data.GSP.RES.R[i].S;
-        //            resultsListHTML += "<div class=\"list__item--no-border\">";
-        //            resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-        //            resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
-        //            resultsListHTML += "</div>";
-        //        }
-        //        resultsListHTML += "</div>";
-        //    } else {
-        //        $('.form-item__display').removeClass('hidden');
-        //        $(".page-count").addClass('hidden');
-        //        $(".no-results").removeClass('hidden');
-        //    }
-        //    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-        //    ServicesAPI.createPagination(count);
-        //});
-        /************LOCAL Site Search SERVICE***************/
-
         /************LIVE Site Search SERVICE***************/
-        if (didYouMean) {
-            console.log("suggestions text true")
-            $.ajax({
-                url: searchUrl,
-                dataType: 'json',
-                type: 'GET',
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (data) {
-                    console.log(data)
-                    if (data.GSP.hasOwnProperty("RES")) {
-                        $(".form-item__display").show();
-                        $(".page-count").removeClass('hidden');
-                        $(".search-results-container__correction-text").removeClass("hidden");
-                        totalSearchResults = data.GSP.RES.M;
-                        console.log(totalSearchResults)
-                        var siteSearchResults = data.GSP.RES.R;
-                        var sitSearchResultsUrl;
-                        var sitSearchResultsTitle;
-                        var sitSearchResultsContent;
-                        if (siteSearchResults.length != 0) {
-                            var correctionHtml = '<a href="#">' + didYouMean + '</a>';
-                            $(".js-searchSuggestion").append(correctionHtml);
-                            $('.form-item__display').removeClass('hidden');
-                            // $(".page-count").removeClass('hidden');
-                            $(".no-results").addClass('hidden');
-                            //results_content is the default component for listing out general results
-                            resultsListHTML += "<div class=\"results_content\">";
-                            for (var i = 0; i < siteSearchResults.length; i++) {
-                                count++;
-                                sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-                                sitSearchResultsTitle = data.GSP.RES.R[i].T;
-                                sitSearchResultsContent = data.GSP.RES.R[i].S;
-                                resultsListHTML += "<div class=\"list__item--no-border\">";
-                                resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-                                resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
-                                resultsListHTML += "</div>";
-                            }
-                            resultsListHTML += "</div>";
-                        }
-                    } else {
-                        $('.form-item__display').addClass('hidden');
-                        $(".page-count").addClass('hidden');
-                        $(".no-results").removeClass('hidden');
-                        totalSearchResults = 0;
-                    }
-                    didYouMean = null;
-                    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-                    ServicesAPI.createPaginationSearch(totalSearchResults);
-                },
-                error: function (e) {
-                    ServicesAPI.showSorryUnableToLocateMessage();
-                },
-                timeout: 30000
-            });
-        } else {
-            console.log("false")
             $.ajax({
                 url: searchUrl,
                 dataType: 'json',
@@ -1994,12 +1896,16 @@ var ServicesAPI = {
                         var correctionHtml = '<a href="#">' + correctSpelling + '</a>';
                         $(".js-searchSuggestion").append(correctionHtml);
                         didYouMean = correctSpelling;
-                    } else if (data.GSP.hasOwnProperty("RES")) {
+                    }else{
+                        didYouMean = null;
+                    }
+                    if (data.GSP.hasOwnProperty("RES")) {
                         $(".form-item__display").show();
                         $(".page-count").removeClass('hidden');
-                        $(".search-results-container__correction-text").addClass("hidden");
+                        if(didYouMean == null) {
+                            $(".search-results-container__correction-text").addClass("hidden");
+                        }
                         totalSearchResults = data.GSP.RES.M;
-                        console.log(totalSearchResults)
                         var siteSearchResults = data.GSP.RES.R;
                         var sitSearchResultsUrl;
                         var sitSearchResultsTitle;
@@ -2037,7 +1943,7 @@ var ServicesAPI = {
                 },
                 timeout: 30000
             });
-        }
+
 
         /************LIVE SERVICE***************/
     },
