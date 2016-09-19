@@ -26,12 +26,12 @@
     float: right;
 }
 .cta-promo__container p, .cta-promo__container h3 {
-    width: 100%;
-    vertical-align: middle;
-    text-align: center;
-}
+     width: 100%;
+     vertical-align: middle;
+     text-align: center;
+ }
 .cta-promo__container p{
-    font-size: 13px;
+   font-size: 13px;
     line-height: 18px;
 }
 .cta-promo__container h3 {
@@ -44,7 +44,9 @@
     width: auto;
 }
 .find-office__zip-city-state-container,.find-office__dental-container, .find-office__vision-container{
+    width: 100%;
     float: left;
+    margin-bottom: 5px;
 }
 .find-office__zip-city-state{
     padding-right: 50px;
@@ -103,6 +105,7 @@
 @media screen and (min-width: 768px) {
     .quote-office {
         margin: -70px auto 0;
+        width: 95%;
     }
     .quote-office--left, .quote-office--right {
         height:200px;

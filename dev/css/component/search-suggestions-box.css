@@ -1,11 +1,20 @@
+.inputHolderSR .suggestionsbox table {
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 40px;
+    border: 1px #ccc solid;
+}
+
 .suggestionsbox {
     cursor: pointer;
 }
 
-
 .suggestionsbox table {
     visibility: visible;
-    width: 346px;
+    width: calc(100% - 20px);;
     position: fixed;
     top: 97px;
     left: 10px;
@@ -13,6 +22,13 @@
     border-radius: 0px 0px 2px 2px;
     background: white;
     border: none;
+}
+
+.suggestionsbox--minimized table {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .suggestionsbox table tbody {
@@ -54,14 +70,28 @@
         left: 133px;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
+    }
 }
 
 @media (min-width: 1024px) {
     .suggestionsbox table {
         width: 170px;
         left: 221px;
+        -webkit-transition: top 0.5s;
+        -moz-transition: top 0.5s;
+        -o-transition: top 0.5s;
+        transition: top 0.5s;
     }
 
+    .suggestionsbox--minimized table {
+        top: 42px;
+    }
 }
 
 

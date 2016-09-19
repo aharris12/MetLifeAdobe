@@ -31,6 +31,10 @@
     margin-bottom: 0px;
 }
 
+.contactAdvisorSingle{
+   display: table;
+}
+
 @media screen and (min-width: 768px){
     .form-card{
         display: table;
@@ -72,6 +76,10 @@
         display: table-cell;
         width: 40%
     }
+    .contactAdvisorSingle{
+        display: table;
+        width: 40%;
+    }
     .contact-container--form-card .contactSidebarBtns button{
         width:inherit;
     }
@@ -88,10 +96,12 @@
     .contact-container--form-card{
         width: 34%
     }
+    .contactAdvisorSingle{
+        width: 40%;
+    }
     .form-card__img__text h3{
         font-size: 32px;
         line-height:36px;
-
     }
     .form-card__img__text p{
         font-size: 18px;
@@ -99,3 +109,30 @@
 
     }
 }
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+}
+.generic-form .form-user-grp .birthDateDay, .generic-form .form-user-grp .birthDateMonth, .generic-form .form-user-grp .birthDateYear {
+   /* width: 30%;*/
+    display: table-cell;
+}
+
+.input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+.generic-form .form-user-grp .sectionBar {
+    width: 5%;
+    color: inherit;
+    padding: 10px 0;
+    text-align: center;
+    border: none;
+    background-color: inherit;
+    box-shadow: none;
+    display: table-cell;
+}
+

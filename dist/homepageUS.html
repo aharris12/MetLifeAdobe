@@ -53,14 +53,14 @@
             <span class="search-trigger__label">Search</span>
 
             <form name="metSearchForm" id="metSearchForm" class="search-trigger__container"
-                  data-path-to-search-results="search-results.html">
+                  data-path-to-search-results="https://qa.www.metlife.com/searchresultsl">
                 <!--<input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch" placeholder="Search" data-placeholder="">-->
 
-                <input type="text" id="searchInPage" class="search-trigger__search-box js-oldSearch search_openTwo"
+                <input type="text" id="searchInPage" class="search-trigger__search-box  search_openTwo"
                        autocomplete="off" name="query"
                        onkeyup="setThemePageIDS();ss_handleKey(event);drawTextBox('',event);" placeholder="Search"
                        data-placeholder="">
-                <input id="overlayerback" class="search-trigger__search-box js-oldSearch hdinputsearch_gsa_back hidden"
+                <input id="overlayerback" class="search-trigger__search-box  hdinputsearch_gsa_back hidden"
                        autocomplete="off" type="text">
                 <!--Begin of fix for QC DE8990 5/25/16-->
                 <a href="#" class="search_location_image">
@@ -1063,7 +1063,7 @@
 </div>
 
 <!-- Carousel Hero -->
-<div id="carouselHero" class="carousel slide carousel--hero" data-ride="carousel" data-interval="">
+<div id="carouselHero" class="carousel slide carousel--hero" data-ride="carousel" data-interval="7000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#carouselHero" data-slide-to="0" class="active"></li>
@@ -2547,7 +2547,7 @@
                         </div>
                         <div class="find-office--submit"><a href="#"
                                                             class="btn btn-brand-2nd find-office__submit pull-right"
-                                                            data-fao-market="us">Submit</a></div>
+                                                            data-fao-market="AR">Submit</a></div>
                     </div>
                 </div>
             </div>
@@ -3223,12 +3223,31 @@
     </div>
 </div>
 
-<!--<div id="suggestionsbox" class="suggestionsbox ">
-    <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table">
+<div id="suggestionsbox" class="suggestionsbox ">
+    <table cellpadding="0" cellspacing="0" class="ss-gac-table" id="search_suggest_table" style="visibility: hidden;">
         <tbody class="ss-gac-m" id="search_suggest" style="visibility: hidden;">
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions"></td>
+            <td class="ss-gac-d">Suggestions</td>
+        </tr>
+        <tr class="ss-gac-b">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance claim form</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance quote</b></td>
+        </tr>
+        <tr class="ss-gac-a">
+            <td class="ss-gac-c js-searchSuggestions" colspan="2">life<b> insurance calculator</b></td>
+        </tr>
+        <tr class="ss-gac-e">
+            <td colspan="2"><span>close</span></td>
+        </tr>
         </tbody>
     </table>
-</div>-->
+</div>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places"></script>

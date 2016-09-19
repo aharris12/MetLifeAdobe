@@ -1,3 +1,5 @@
+
+
 .video-text__video {
     padding: 20px 0px 10px;
 }
@@ -5,9 +7,26 @@
 .video-faq .video-text__video {
     padding-top: 0;
 }
+.video-faq.accordion{
+    position: relative;
+}
+.video-faq.accordion .accordion__name{
+    padding-top: 10px;
+}
+
+.video-faq.accordion .accordion__link{
+    position: absolute;
+    padding: 0;
+    float: none;
+    right: 40px;
+    top: 12px;
+}
 
 .videoWrapper {
     position: relative;
+}
+
+.videoWrapper--youtube{
     padding-bottom: 56.25%
 }
 
@@ -16,7 +35,6 @@
 }
 
 .video-text__document {
-    /*    font-size:0.9em;*/
     margin-bottom: 20px;
 }
 
@@ -43,7 +61,7 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 20px;
-    margin-top: 10px;
+    display:none;
 }
 
 .video-duration {
@@ -60,6 +78,19 @@
     margin-bottom: 0;
 }
 
+.video-text--full .video-text__description--full p{
+    font-size: 12px;
+    line-height:16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.video-text--full .video-text__description--full h3{
+    font-size: 14px;
+    line-height:20px;
+    font-weight: 600;
+}
+
 .video-faq .video-text__description h3{
     margin-top:10px;
     margin-bottom: 0;
@@ -69,17 +100,16 @@
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
     }
 
     .video-faq .video-text__label {
         margin-top: 0;
+        display:block;
     }
 
-    .video-faq .video-text__video {
-        padding-top: 10px;
-    }
 
     .video-text-wrapper {
         padding-bottom: 10px;
@@ -145,13 +175,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+    .video-faq.accordion .accordion__name{
+        padding-top: 0px;
+    }
     .video-text-wrapper {
         padding-bottom: 20px;
     }
 
-    .video-faq.accordion .accordion__name {
-        padding-top: 10px;
-    }
 
     .wrapper.video-text {
         padding: 30px 0;
@@ -161,6 +192,12 @@
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .video-faq .video-text__label {
+
+        display:block;
+    }
+
 
     .video-faq:first-child:nth-last-child(2),
     .video-faq:first-child:nth-last-child(2) ~ .video-faq.accordion {

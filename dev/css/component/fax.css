@@ -12,7 +12,7 @@
 }
 
 .find-an-x-search__container{
-    padding-top: 25px;
+    padding-top: 10px;
     position: relative;
     padding-bottom: 20px;
 }
@@ -20,11 +20,11 @@
 .find-an-x-search__container .mobile_expand_close{
     display: none;
     position:absolute;
-    top: 4px;
+    top: -12px;
     right: 2px;
 }
 .find-an-x-search__container .mobile_expand_close svg{
-    height: 16px;
+    height: 13px;
 }
 
 .cta_search__container{
@@ -32,11 +32,23 @@
     text-align: center;
 }
 
+#googleMapsContainer > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(4){
+
+    height: 125px !important;
+}
+
+.gm-style-iw div {
+    height: 100px !important;
+    max-height: 458px !important;
+}
+
 .cta_search__container .find-an-x-input__container{
     display: block;
     position: relative;
     padding: 0px 20px;
-    margin-bottom: 10px;
+}
+.cta_search__container .find-an-x-input__container__margin{
+    margin-bottom:10px;
 }
 
 
@@ -64,7 +76,7 @@
 .cta_search__container .find-an-x-search--expand .directions_button{
     width: 100%;
     display:inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 10px;
 }
 
@@ -162,10 +174,11 @@
     padding-top: 6px;
     float: left;
     height: 34px;
+    font-size: 13px;
 }
 
 .fax-results__container .results_list_container .default_results_text{
-    padding: 20px 0px;
+    padding: 0px 0px 20px;
     font-size: 14px;
     line-height: 20px;
 }
@@ -288,12 +301,16 @@
     font-weight: normal;
     display: block;
 }
+.results_office_phone a, .results_office_fax a{
+    text-decoration: underline;
+    color: #2c77c5;
+}
 
 .fax-results__container .results_list_container .results_office_result .results_office_fax{
     padding: 0 0 0 10%;
     font-size: 12px;
     font-weight: normal;
-    display: none;
+
 }
 
 /**************************** End Results containcer css ****************************/
@@ -318,7 +335,6 @@
 
 .fax-directions__container .driving-direction-container span:first-of-type{
     margin-top: 10px;
-    float: left;
 }
 
 .fax-directions__container .driving-direction-container .get-directions-text{
@@ -388,6 +404,15 @@
     border: 1px solid #ccc;
 }
 
+.fax-directions__container .driving-direction-container .get-directions-form .get-directions-from-address .from-address.error {
+    border-color: #eb4646;
+    color: #EB4646;
+    background-color: #f5d0d0 !important;
+    background-color: rgba(245, 208, 208, 0.35);
+    fill: #EB4646;
+}
+
+
 .fax-directions__container .driving-direction-container .get-directions-form .get-directions-to-address{
     margin-top: 20px;
 }
@@ -409,6 +434,8 @@
     float: right;
     background-color: white;
     border: none;
+    opacity: 1;
+    -webkit-text-fill-color: #333;
 }
 
 .fax-directions__container .driving-direction-container .get-directions-form .btn-brand-2nd{
@@ -476,7 +503,11 @@
 }
 
 @media screen and (min-width: 768px) {
-
+    .results_office_phone a, .results_office_fax a{
+        text-decoration: none;
+        color: #333;
+        pointer-events: none;
+    }
     /***************************** search container css ***********************************/
 
     .find-an-x-search__container{
@@ -626,6 +657,8 @@
 }
 
 @media screen and (min-width: 1024px) {
+
+
     /************************** search container css ********************************************/
     .find-an-x-search__container{
         max-width: 761px;
@@ -681,5 +714,19 @@
 
     .fax-results__container .results_list_container .results_office_result .dentist_right{
         width: 47%;
+    }
+    .find-an-x-search--expand .form-icon-wrapper{
+        display: inline-block;
+    }
+    .find-an-x-search--expand .form-icon-wrapper svg{
+        right:15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .fax-results__container .results_list_container .results_office_result .results_office_get_directions a{
+        display: none;
+    }
+    .find-an-x-search--expand{
+        display: none;
     }
 }

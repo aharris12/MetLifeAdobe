@@ -1,6 +1,7 @@
 .blog-suggestions {
     padding-bottom: 50px;
 }
+
 .blog-suggestions__option {
     display: inline;
     margin-right: 2%;
@@ -8,9 +9,11 @@
     margin-bottom: 0;
     float: left;
 }
+
 .blog-suggestions__option img {
     width: 100%;
 }
+
 .blog-suggestions__option__img-caption {
     display: inline;
     margin-top: 20px;
@@ -18,10 +21,13 @@
 
 @media (min-width: 768px) {
     .blog-suggestions__option {
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
         display: inline-flex;
         width: 15%;
     }
-   .blog-suggestions__option img {
+
+    .blog-suggestions__option img {
         width: 97%;
     }
 }
@@ -30,6 +36,7 @@
     .blog-suggestions__option {
         display: inline;
     }
+
     .blog-suggestions__option img {
         width: 100%;
     }

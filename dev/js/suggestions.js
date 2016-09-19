@@ -73,8 +73,9 @@ var ss_cached = [];
 
 var ss_gsa_host = null;
 
-var ajaxURL = "/wps/suggest";
-
+var ajaxURL = $('.search-trigger__container input').attr('data-search-url');
+var dataSuggestionsFrontEnd = $('.search-trigger__container input').attr('data-suggestions-frontend');
+var dataSuggestionsSite = $('.search-trigger__container input').attr('data-suggestions-site');
 if (window.location.href.indexOf("metlife.com/mmi", 0) >= 0) {
     ajaxURL = "/wps/mmi/suggest";
 }
@@ -387,6 +388,7 @@ function ss_composeSuggestUri(qVal, suggestForm) {
      */
     uri = uri +
         '&format=' + encodeURIComponent(ss_protocol);
+    uri += '&client=' + encodeURIComponent(dataSuggestionsFrontEnd) + "&site=" + encodeURIComponent(dataSuggestionsSite);
     return uri;
 }
 
@@ -910,10 +912,22 @@ function ss_clear(nofocus) {
      */
 }
 
-$(".search-trigger__search-box").blur(function () {
-    ss_clear();
-});
+if ($(".suggestionsbox").length > 0) {
+    $('body').on('click touchstart tap', function (event) {
+        var target = $(event.target);
+        if ($(".suggestionsbox > table").css("visibility") == "visible" && target.closest(".suggestionsbox").length == 0) {
+            clear_suggestions();
+        }
+    });
+}
 
+$('body').on('click touchstart tap', function (event) {
+    if ($(event.target).is('.search-trigger__search-box')) {
+
+    } else {
+        $('.search-trigger__search-box').val('');
+    }
+});
 /**
  * Hides search suggestions.
  *
@@ -1199,7 +1213,7 @@ function ss_handleMouseC() {
             var x = rows[ri].getElementsByTagName('td');
 
             $('#searchInPage,#Search').val($(x)[0].innerText);
-console.log($('#searchInPage,#Search').val())
+            console.log($('#searchInPage,#Search').val())
             var searchTerm = $(".search-trigger__search-box").val();
             console.log(searchTerm)
 
