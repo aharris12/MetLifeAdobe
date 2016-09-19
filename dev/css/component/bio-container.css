@@ -9,6 +9,13 @@
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+}
+
+.bio-container__selectors--left {
+    position: relative;
+}
+
+.bio-container__selectors--right {
     position: relative;
 }
 
@@ -28,7 +35,20 @@
 @media screen and (min-width: 768px) {
     .bio-container__selectors select {
         width: 250px;
-        background-color: white;
+    }
+
+    .bio-container__selectors svg {
+        right: 10px;
+    }
+
+    .bio-container__selectors--left {
+        width: 250px;
+        display: inline-block;
+    }
+
+    .bio-container__selectors--right {
+        width: 250px;
+        display: inline-block;
     }
 }
 
