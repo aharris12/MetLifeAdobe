@@ -1,0 +1,25 @@
+.bio-container__profiles {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio-profile {
+    max-width: 350px;
+}
+
+.bio-profile__image {
+
+}
+
+.bio-profile__name {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
