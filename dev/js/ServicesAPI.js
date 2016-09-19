@@ -14,7 +14,7 @@ var searchUrl;
 var searchStart = 1;
 var searchEnd = 10;
 var totalSearchResults;
-var didYouMean;
+var didYouMean = null;
 if ($(".page-count").length > 0) {
     var searchDefaultSelect = $(".page-count").val();
 }
@@ -64,8 +64,8 @@ $(document).ready(function () {
 
 });
 
-$(window).resize(function(){
-    if($(".fax__container").length !=0) {
+$(window).resize(function () {
+    if ($(".fax__container").length != 0) {
         if ($(".hidden-xs").is(":visible")) {
             $(".google-maps-container").attr('style', function (i, style) {
                 return style.replace(/height[^;]+;?/g, '');
@@ -496,7 +496,7 @@ $(".js-productSelector").click(function (e) {
         return;
     }
 
-    if ($("[data-product-sub='" + selectedProduct + "']").length > 0  && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
+    if ($("[data-product-sub='" + selectedProduct + "']").length > 0 && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
         $(".product__selector--sub").addClass("error")
         $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
         return;
@@ -723,14 +723,14 @@ $(".page-count").on('change', function () {
     }
 });
 
-$(".mobile_expand_close").click(function(){
+$(".mobile_expand_close").click(function () {
     $(".find-an-x-search--expand").slideUp();
     $(".mobile_expand_close").hide();
 });
 //Find an X Click Functions
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
     if (getViewport() == "mobile") {
-        if($(".find-an-x-search--expand").css("display") == "none"){
+        if ($(".find-an-x-search--expand").css("display") == "none") {
             $(".find-an-x-search--expand").slideDown();
             $(".mobile_expand_close").show();
         }
@@ -779,9 +779,9 @@ $(".find_an_office_radius").on('change', function () {
     ServicesAPI.showLocation();
 });
 
-$("body").on('click tap'," .results_office_name",function(){
-    var i= $(this).closest('.results_office_result').index();
-    google.maps.event.trigger(markersArray[i],  'click');
+$("body").on('click tap', " .results_office_name", function () {
+    var i = $(this).closest('.results_office_result').index();
+    google.maps.event.trigger(markersArray[i], 'click');
 });
 
 $('.get-directions-buttons .btn').on('click', function () {
@@ -975,9 +975,8 @@ $(".insurance-type").on("change", function () {
     quoteProduct = $(this).find(':selected').attr('data-product');
     $(".js-hideButton").hide();
 });
-String.prototype.replaceAll = function(str1, str2, ignore)
-{
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+String.prototype.replaceAll = function (str1, str2, ignore) {
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
 }
 String.prototype.toTitleCase = function () {
     var i, j, str, lowers, uppers;
@@ -1714,13 +1713,13 @@ var ServicesAPI = {
         }
     },
     createPaginationSearch: function () {
-        if(didYouMean){
+        if (didYouMean) {
             var url = $(".js-searchSubmit").attr("data-search-ajax-url");
             if (didYouMean) {
                 ServicesAPI.searchServiceCall(url, didYouMean);
             }
 
-        }else {
+        } else {
 
 
             $('.results_content').children().removeClass('.hidden');
@@ -1917,7 +1916,7 @@ var ServicesAPI = {
         /************LOCAL Site Search SERVICE***************/
 
         /************LIVE Site Search SERVICE***************/
-        if(didYouMean){
+        if (didYouMean) {
             console.log("suggestions text true")
             $.ajax({
                 url: searchUrl,
@@ -1958,13 +1957,13 @@ var ServicesAPI = {
                             }
                             resultsListHTML += "</div>";
                         }
-                        didYouMean = null;
                     } else {
                         $('.form-item__display').addClass('hidden');
                         $(".page-count").addClass('hidden');
                         $(".no-results").removeClass('hidden');
                         totalSearchResults = 0;
                     }
+                    didYouMean = null;
                     $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
                     ServicesAPI.createPaginationSearch(totalSearchResults);
                 },
@@ -1973,7 +1972,7 @@ var ServicesAPI = {
                 },
                 timeout: 30000
             });
-        }else{
+        } else {
             console.log("false")
             $.ajax({
                 url: searchUrl,
@@ -1992,7 +1991,7 @@ var ServicesAPI = {
                         correctSpelling = correctSpelling.split('+OR+').join(newchar);
                         console.log(correctSpelling)
                         $(".no-results").addClass('hidden');
-                        var correctionHtml = '<a href="#">' + correctSpelling+ '</a>';
+                        var correctionHtml = '<a href="#">' + correctSpelling + '</a>';
                         $(".js-searchSuggestion").append(correctionHtml);
                         didYouMean = correctSpelling;
                     } else if (data.GSP.hasOwnProperty("RES")) {
@@ -2269,11 +2268,12 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
                                 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
                             }
-                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined){
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                if(formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined){
-                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";}
+                                if (formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                }
                                 resultsListHTML += "</div>";
                             }
                             if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
@@ -2307,8 +2307,9 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                if(formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
-                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";}
+                                if (formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                }
                                 resultsListHTML += "</div>";
                             }
                             if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
@@ -2325,9 +2326,9 @@ var ServicesAPI = {
                                 }
                                 resultsListHTML += "</a>";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-                                if(formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") 
+                                if (formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ")
                                     resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
-                                else    
+                                else
                                     resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + ")</span>";
                                 resultsListHTML += "</div>";
                             }
@@ -2893,7 +2894,7 @@ var ServicesAPI = {
         $(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
     },
     getDirectionsPanel: function (strpDestination) {
-        pageTitle= $(".page-title__heading").text();
+        pageTitle = $(".page-title__heading").text();
         console.log(pageTitle)
         $('.page-title__heading').text($('.getDirectionsTextPageTitle').text());
         if ($(".generatedBreadCrumb").length == 0) {
