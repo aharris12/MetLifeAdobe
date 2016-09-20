@@ -249,6 +249,8 @@ $('.megamenu-trigger').on('click', function () {
 
     if(!$('.container').children().hasClass('microsite-header')) {
         $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+    } else {
+        $('.subnav--microsite').toggleClass('subnav-mobile-microsite--open');
     }
 
     
