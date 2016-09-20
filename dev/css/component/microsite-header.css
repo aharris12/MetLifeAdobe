@@ -1,37 +1,37 @@
-.microsite-header{
-    height:50px;
-    display:table;
+.microsite-header {
+    height: 50px;
+    display: table;
     width: 95%;
     padding: 0;
 }
 
-.microsite-header div{
+.microsite-header div {
     height: 50px;
     display: table-cell;
     vertical-align: middle;
 }
 
-.microsite-header h1{
+.microsite-header h1 {
     margin-bottom: 0;
 }
 
-.microsite-header .megamenu-trigger{
+.microsite-header .megamenu-trigger {
     width: 41px;
-    display:block;
+    display: block;
 }
 
-.microsite-header__logos{
+.microsite-header__logos {
     width: 100%;
     text-align: center;
 }
 
-.microsite-header__logos__img img{
+.microsite-header__logos__img img {
     width: 100px;
 }
 
-.microsite-header__logos__img:first-child:nth-last-child(1){
-    margin-left:auto;
-    margin-right:auto;
+.microsite-header__logos__img:first-child:nth-last-child(1) {
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -47,7 +47,7 @@
     vertical-align: middle;
 }
 
-.microsite-header .megamenu-trigger__icon{
+.microsite-header .megamenu-trigger__icon {
     fill: #2c77c5;
 }
 
@@ -56,62 +56,51 @@
     width: 19px;
 }
 
-.microsite-trigger__icon--close{
+.microsite-trigger__icon--close {
     height: 16px;
     width: 16px;
 }
 
-@media screen and (max-width: 767px) {
-    /*created for megamenu*/
-    .subnav-mobile-microsite--open {
-        overflow-y: auto;
-        height: calc(100% - 50px);
-    }
+html.megamenu--open--microsite {
+    overflow-y: visible;
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
-    .microsite-header{
+    .microsite-header {
         width: 95%;
         height: 85px;
     }
-    .microsite-header .microsite-header__logos{
-        margin: auto;
+
+    .microsite-header .microsite-header__logos {
         position: relative;
+        margin: auto;
     }
 
-    .microsite-header .megamenu-trigger{
-        display:none;
+    .microsite-header .megamenu-trigger {
+        display: none;
     }
 
-    .microsite-header__logos__img img{
+    .microsite-header__logos__img img {
         width: 103px;
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .microsite-header {
+        width: 85%;
+        height: 100px;
+    }
 
-@media screen and (min-width: 1024px){
-    .microsite-header .microsite-header__logos{
-        position: relative;
+    .microsite-header .microsite-header__logos {
         max-width: 1300px;
-        margin: auto;
     }
 
-    .microsite-header .megamenu-trigger{
-        display:none;
-    }
-
-
-    .microsite-header div{
-        height: 70px;
-    }
-
-
-    .microsite-header{
-        height:100px;
-    }
-
-    .microsite-header__logos__img img{
+    .microsite-header__logos__img img {
         width: 164px;
+    }
+
+    .microsite-header div {
+        height: 70px;
     }
 }
