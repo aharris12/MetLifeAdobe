@@ -164,7 +164,6 @@ function formatRateTable() {
     $(".rate_table").each(function () {
         var parent = $(this);
         if (parent.hasClass("rate_table--variation-1")) {
-
             // appends the body content and data-target class
             var bodyContent;
             var bodyLocation = parent.find(".content_body--variation .content_table");
@@ -184,9 +183,7 @@ function formatRateTable() {
                     }
                 }
             }
-        }
-        else if (parent.hasClass("rate_table--variation-2")) {
-
+        } else if (parent.hasClass("rate_table--variation-2")) {
             // appends the body content and data-target class
             var bodyContent;
             var bodyLocation = parent.find(".content_body--variation .content_table");
@@ -214,8 +211,7 @@ function formatRateTable() {
                     }
                 }
             }
-        }
-        else {
+        } else {
             if (parent.parent().hasClass("two-column-table")) {
                 // removes optional components
                 parent.find(".content_corner, .content_top, .content_left").remove();
@@ -290,7 +286,6 @@ function formatRateTable() {
         parent.find(".content_temp").remove();
     });
 }
-
 
 // Resize Rate Table
 function resizeRateTable() {
@@ -385,7 +380,6 @@ function resizeRateTable() {
         }
     });
 }
-
 /***** Rates Tables End ****************************************************************/
 
 
