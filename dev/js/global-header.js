@@ -245,7 +245,13 @@ $('.megamenu-trigger').on('click', function () {
     }
 
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
-    $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+
+
+    if(!$('.container').children().hasClass('microsite-header')) {
+        $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+    }
+
+    
     $("html, body, .global-header").toggleClass('megamenu--open--style');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();
