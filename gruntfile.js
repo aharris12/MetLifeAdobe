@@ -273,8 +273,8 @@ module.exports = function (grunt) {
                     'dev/css/component/inview.css',
                     'dev/css/component/tooltipster.css',
                     'dev/css/component/generic-content.css',
-                    'dev/css/kr/component/*.css',
                     'dev/css/kr/theme/*.css',
+                    'dev/css/kr/component/*.css',
                     'dev/css/theme/ie9select.css'
                 ],
                 dest: 'dist/css/metlife.kr.css'
