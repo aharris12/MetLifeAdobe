@@ -7,6 +7,7 @@
     line-height: 22px;
     font-weight: 400;
     color: #333;
+    margin-bottom: 15px;
 }
 
 .rate_table .controls {
@@ -163,6 +164,10 @@
     background-color: #ffffff;
 }
 
+.overlay-table-layout:not(:last-child) {
+    padding-bottom: 20px;
+}
+
 .overlay-table-layout .overlay-table {
     border: solid 1px #cccccc;
 }
@@ -187,17 +192,19 @@
 }
 
 .comparison-table-layout {
-    margin: 15px 0 5px;
     font-size: 0;
 }
+
 .comparison-table-layout .comparison-table {
     width: 100%;
     display: block;
     border: solid 1px #cccccc;
 }
+
 .comparison-table-layout .comparison-table:first-child {
     margin-bottom: 20px;
 }
+
 .comparison-table-layout .comparison-table h2 {
     height: 40px;
     background-color: #dae4ed;
@@ -211,14 +218,11 @@
     padding: 10px 0;
     margin-bottom: 0;
 }
+
 .comparison-table-layout .comparison-table .rate_table .content .content_left,
 .comparison-table-layout .comparison-table .rate_table .content .content_body {
     max-height: 120px;
 }
-
-/*.two-column-table-layout {
-    margin: 20px 0;
-}*/
 
 .two-column-table-layout .two-column-table h2 {
     height: 40px;
@@ -293,9 +297,21 @@
     font-weight: 600;
 }
 
+.monthly-rates:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.monthly-rates .view-all-rates {
+    margin-top: 15px;
+}
+
 .monthly_rates {
     background-color: #ffffff;
-    padding-top: 20px;
+}
+
+.monthly_rates .expanded:not(:last-child),
+.monthly_rates .unexpanded:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .monthly_rates h1 {
@@ -308,7 +324,6 @@
 
 .monthly_rates .unexpanded {
     display: none;
-    margin-top: 20px;
 }
 
 .monthly_rates .expand_button {
@@ -359,67 +374,78 @@
     .table-title {
         font-size: 20px;
         line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    .monthly-rates .view-all-rates {
+        margin-top: 20px;
     }
 
     .rate_table .controls {
         display: none;
     }
+
     .rate_table .content .content_top .content_container {
         overflow: visible;
     }
+
     .rate_table .content .content_body .content_container {
         height: 100%;
         overflow: visible;
     }
+
     .rate_table .content .content_body .content_container .window {
         height: 100%;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .controls {
+    .campaign-card .rate_table .controls {
         display: block;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_top .content_container {
+
+    .campaign-card .rate_table .content .content_top .content_container {
         overflow: hidden;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container {
+
+    .campaign-card .rate_table .content .content_body .content_container {
         height: auto;
         overflow: hidden;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container .window {
+
+    .campaign-card .rate_table .content .content_body .content_container .window {
         height: auto;
     }
 
-    .comparison-table-layout {
-        margin: 20px 0 10px;
-    }
     .comparison-table-layout .comparison-table {
         width: 50%;
         display: inline-block;
     }
+
     .comparison-table-layout .comparison-table:first-child {
         margin-bottom: 0;
     }
+
     .comparison-table-layout .comparison-table:last-child {
         border-left: none;
     }
+
     .comparison-table-layout .comparison-table h2 {
         height: 60px;
         padding: 20px 0;
     }
 
-    .campaign-card .comparison-table-layout {
-        margin: 15px 0 5px;
-    }
     .campaign-card .comparison-table-layout .comparison-table {
         width: 100%;
         display: block;
     }
+
     .campaign-card .comparison-table-layout .comparison-table:first-child {
         margin-bottom: 20px;
     }
+
     .campaign-card .comparison-table-layout .comparison-table:last-child {
         border-left: solid 1px #cccccc;
     }
+
     .campaign-card .comparison-table-layout .comparison-table h2 {
         height: 40px;
         padding: 10px 0;
@@ -486,33 +512,36 @@
         padding-bottom: 17px;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .controls {
+    .campaign-card .rate_table .controls {
         display: none;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_top .content_container {
+
+    .campaign-card .rate_table .content .content_top .content_container {
         overflow: visible;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container {
+
+    .campaign-card .rate_table .content .content_body .content_container {
         height: 100%;
         overflow: visible;
     }
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container .window {
+
+    .campaign-card .rate_table .content .content_body .content_container .window {
         height: 100%;
     }
 
-    .campaign-card .comparison-table-layout {
-        margin: 20px 0 10px;
-    }
     .campaign-card .comparison-table-layout .comparison-table {
         width: 50%;
         display: inline-block;
     }
+
     .campaign-card .comparison-table-layout .comparison-table:first-child {
         margin-bottom: 0;
     }
+
     .campaign-card .comparison-table-layout .comparison-table:last-child {
         border-left: none;
     }
+
     .campaign-card .comparison-table-layout .comparison-table h2 {
         height: 60px;
         padding: 20px 0;

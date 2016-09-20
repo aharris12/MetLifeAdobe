@@ -487,12 +487,14 @@ $('.login-trigger').click(function (e) {
 
 $('.contact-trigger').click(function (e) {
     e.preventDefault();
+    $(".contactOtherDetails").show();
+    $(".contactSidebar").show();
+    $('.contactSliderOuterCon').show();
     currentView = getViewport();
     $("#contactSidebar").find(".form-user-grp").each(function () {
         $(this).find("input, select, textarea").removeClass('error');
         $(this).find("input, select, textarea").val('')
     });
-    $(".contactOtherDetails").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 

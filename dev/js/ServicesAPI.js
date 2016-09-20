@@ -262,12 +262,16 @@ $('[data-submit-type="clr"]').on('click', function (e) {
             $(".contact-thanks").removeClass("hidden");
 
         } else {
-            $('.' + fid).fadeOut('slow', function () {
+            setTimeout(function () {
+                $('.contactSliderOuterCon').fadeOut(500);
+                $('.contact-close').trigger('click');
+            }, 5000);
+            /*$('.' + fid).fadeOut('slow', function () {
                 setTimeout(function () {
                     $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
+                    $('.contact-close').trigger('click');
                 }, 5000)
-            });
+            });*/
         }
     } else {
         //alert("invalid");
@@ -3494,11 +3498,14 @@ var ServicesAPI = {
 
     },
     formPass: function (fid) {
-
         switch (fid) {
             case "contactSidebar":
-                $('.contactSideForm').fadeOut(2000);
-                $('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+                $('.contactSideForm,.contactOtherDetails').fadeOut(800);
+                setTimeout(function () {
+                    $('.contactSideThankyou').fadeIn(800);
+                }, 500);
+
+
                 break;
 
             case "twoColumnContactForm":
@@ -3524,11 +3531,15 @@ var ServicesAPI = {
         switch (fid) {
             case "contactSidebar":
                 //in a timeout to avoid visual conflict with animation
+
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
-                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType, .contactSideSubmitError').fadeOut(2000);
+                    $('.contactSideThankyou, .productUserType, .contactSideSubmitError').hide();
                     $('.contactSideForm').show();
+                    $(".contactSidebar").show();
                     $('.contact-container--global').css("right", "-640px");
+                    $(".contactOtherDetails").show();
+
                 }, 1000);
                 break;
 
