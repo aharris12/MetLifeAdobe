@@ -9,6 +9,7 @@
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 20px;
 }
 
 .bio-container__selectors--left {
@@ -33,6 +34,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .bio-container__selectors {
+        margin-bottom: 30px;
+    }
+
     .bio-container__selectors select {
         width: 250px;
     }
@@ -53,5 +58,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-
+    .bio-container__selectors {
+        margin-bottom: 40px;
+    }
 }

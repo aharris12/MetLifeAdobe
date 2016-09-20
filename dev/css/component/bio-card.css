@@ -5,7 +5,13 @@
 }
 
 .bio-profile {
-    max-width: 350px;
+    width: 30%;
+    text-align: center;
+    margin-right: 5%;
+}
+
+.bio-profile:last-of-type {
+    margin-right: 0%;
 }
 
 .bio-profile__image {
@@ -14,6 +20,34 @@
 
 .bio-profile__name {
     display: block;
+}
+
+.bio-overlay {
+    position: fixed;
+    z-index: 1200;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.bio-overlay__content {
+    text-align: left;
+    background-color: #f2f2f2;
+    position: absolute;
+    width: 80%;
+    padding: 40px;
+    margin: 10%;
+}
+.bio-overlay__content--left {
+    float: left;
+    width: 30%;
+}
+
+.bio-overlay__content--right {
+    float: right;
+    width: calc(70% - 20px);
 }
 
 @media screen and (min-width: 768px) {
