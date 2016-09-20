@@ -192,7 +192,6 @@
 }
 
 .comparison-table-layout {
-    /*margin: 15px 0 5px;*/
     font-size: 0;
 }
 
@@ -224,10 +223,6 @@
 .comparison-table-layout .comparison-table .rate_table .content .content_body {
     max-height: 120px;
 }
-
-/*.two-column-table-layout {
-    margin: 20px 0;
-}*/
 
 .two-column-table-layout .two-column-table h2 {
     height: 40px;
@@ -403,25 +398,21 @@
         height: 100%;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .controls {
+    .campaign-card .rate_table .controls {
         display: block;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_top .content_container {
+    .campaign-card .rate_table .content .content_top .content_container {
         overflow: hidden;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container {
+    .campaign-card .rate_table .content .content_body .content_container {
         height: auto;
         overflow: hidden;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container .window {
+    .campaign-card .rate_table .content .content_body .content_container .window {
         height: auto;
-    }
-
-    .comparison-table-layout {
-        /*margin: 20px 0 10px;*/
     }
 
     .comparison-table-layout .comparison-table {
@@ -440,10 +431,6 @@
     .comparison-table-layout .comparison-table h2 {
         height: 60px;
         padding: 20px 0;
-    }
-
-    .campaign-card .comparison-table-layout {
-        /*margin: 15px 0 5px;*/
     }
 
     .campaign-card .comparison-table-layout .comparison-table {
@@ -525,25 +512,21 @@
         padding-bottom: 17px;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .controls {
+    .campaign-card .rate_table .controls {
         display: none;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_top .content_container {
+    .campaign-card .rate_table .content .content_top .content_container {
         overflow: visible;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container {
+    .campaign-card .rate_table .content .content_body .content_container {
         height: 100%;
         overflow: visible;
     }
 
-    .campaign-card .comparison-table-layout .rate_table .content .content_body .content_container .window {
+    .campaign-card .rate_table .content .content_body .content_container .window {
         height: 100%;
-    }
-
-    .campaign-card .comparison-table-layout {
-        /*margin: 20px 0 10px;*/
     }
 
     .campaign-card .comparison-table-layout .comparison-table {
