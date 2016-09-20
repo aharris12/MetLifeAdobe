@@ -420,7 +420,16 @@ module.exports = function (grunt) {
                     'dev/js/news-room.js',
                     'dev/js/inview.js',
                     'dev/js/contact-us.js',
-                    'dev/js/kr/*.js'
+                      'dev/js/kr/common.js',
+                'dev/js/kr/footer.js',
+            'dev/js/kr/gnb.js',
+        'dev/js/kr/header.js',
+        'dev/js/kr/producttilecontainer.js',
+        'dev/js/kr/sharecall.js',
+        'dev/js/kr/siteModule.js',
+        'dev/js/kr/siteObject.js',
+        'dev/js/kr/sub-cat.js',
+        'dev/js/kr/TweenMax.min.js'
 
                 ],
                 dest: 'dist/js/metlife.kr.js'
