@@ -56,8 +56,8 @@
     font-weight: 700;
 }
 
-.campaign-card-section .campaign-contact-form .contact-close{
-    display:none;
+.campaign-card-section .campaign-contact-form .contact-close {
+    display: none;
 }
 
 .campaign-card .campaign-contact-form select {
@@ -69,33 +69,33 @@
     fill: #666;
 }
 
-.campaign-content-linksection a{
-    display:inline-block;
+.campaign-content-linksection a {
+    display: inline-block;
 }
 
-.campaign-card .campaign-card-content .campaign-d-content-section{
+.campaign-card .campaign-card-content .campaign-d-content-section {
     text-align: center;
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum{
-    padding-top:20px;
-    margin-top:20px;
+.campaign-card .campaign-card-content .campaign-card-addendum {
+    padding-top: 20px;
+    margin-top: 20px;
     border-top: 1px solid #ccc;
 
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum p{
+.campaign-card .campaign-card-content .campaign-card-addendum p {
     margin-bottom: 15px;
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum span{
+.campaign-card .campaign-card-content .campaign-card-addendum span {
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 10px;
     display: inline-block;
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum ul{
+.campaign-card .campaign-card-content .campaign-card-addendum ul {
     text-align: left;
     font-size: 18px;
     line-height: 22px;
@@ -104,16 +104,16 @@
     list-style: none;
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum ul li{
+.campaign-card .campaign-card-content .campaign-card-addendum ul li {
     margin: 10px 0px;
 }
 
-.campaign-card .campaign-card-content .campaign-card-addendum ul li span{
-    display:inline-block;
+.campaign-card .campaign-card-content .campaign-card-addendum ul li span {
+    display: inline-block;
 }
 
 /*This is just filler css for the lp button div which is vendor script */
-.campaign-content-linksection .campaign-card-ctc{
+.campaign-content-linksection .campaign-card-ctc {
     min-width: 164px;
     margin: 0 auto;
     height: 40px;
@@ -137,17 +137,40 @@
 }
 
 .campaign-card .campaign-card-section {
-    position:relative;
+    position: relative;
 }
+
 .campaign-contact-form .form__title {
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
     color: #333;
 }
+
 .campaign-contact-form .form__subtitle {
     color: #333;
 }
+
+.generic-text a {
+    text-decoration: underline;
+}
+
+.generic-text p,
+.generic-text ul {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .campaign-content-linksection a:first-of-type {
+        margin-bottom: 20px;
+    }
+
+    .campaign-content-linksection a {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
 @media screen and (min-width: 768px) {
 
     .campaign-card {
@@ -174,7 +197,7 @@
         text-align: left;
     }
 
-    .campaign-card .campaign-card-content .campaign-card-content-title{
+    .campaign-card .campaign-card-content .campaign-card-content-title {
         text-align: left;
     }
 
@@ -182,7 +205,7 @@
         text-align: center;
     }
 
-    .campaign-card-content p:last-of-type{
+    .campaign-card-content p:last-of-type {
         margin-bottom: 40px;
     }
 
@@ -208,35 +231,36 @@
         width: 66.66666667%;
     }
 
-    .campaign-card .campaign-card-content .campaign-content-linksection a{
+    .campaign-card .campaign-card-content .campaign-content-linksection a {
         vertical-align: top;
         display: inline-block;
         margin: 0px 15px;
     }
 
-    .campaign-card .campaign-card-content .campaign-content-linksection br{
-        display:none;
+    .campaign-card .campaign-card-content .campaign-content-linksection br {
+        display: none;
     }
 
-    .campaign-card .campaign-card-content .campaign-card-addendum{
-        padding-top:30px;
-        margin-top:30px;
+    .campaign-card .campaign-card-content .campaign-card-addendum {
+        padding-top: 30px;
+        margin-top: 30px;
 
     }
 
-
-    .campaign-card .campaign-card-content .campaign-card-addendum ul{
+    .campaign-card .campaign-card-content .campaign-card-addendum ul {
         text-align: center;
-        padding:0;
+        padding: 0;
     }
 
-    .campaign-card .campaign-card-content .campaign-card-addendum ul li{
-        display:inline-block;
-        margin-right:40px;
+    .campaign-card .campaign-card-content .campaign-card-addendum ul li {
+        display: inline-block;
+        margin-right: 40px;
     }
+
     .campaign-contact-form .contactDisclaimer {
         display: none;
     }
+
     .campaign-card .campaign-card-content .campaign-card-content__subtitle {
         font-size: 24px;
         line-height: 28px;
@@ -260,7 +284,7 @@
     .campaign-card .campaign-card-content .campaign-card-content-title {
         font-size: 44px;
         line-height: 48px;
-        width:80%;
+        width: 80%;
     }
 
     .campaign-card .campaign-card-content {
@@ -271,30 +295,18 @@
         padding: 40px auto 40px auto;
     }
 
-    .campaign-card .campaign-card-content .campaign-card-addendum{
-        padding-top:40px;
-        margin-top:40px;
+    .campaign-card .campaign-card-content .campaign-card-addendum {
+        padding-top: 40px;
+        margin-top: 40px;
     }
 
-    .campaign-card .campaign-card-content .campaign-card-addendum p{
+    .campaign-card .campaign-card-content .campaign-card-addendum p {
         margin-bottom: 20px;
     }
+
     .campaign-card .campaign-card-content .campaign-card-content__subtitle {
         font-size: 18px;
         line-height: 22px;
-        width:80%;
-    }
-}
-
-.generic-text a{
-    text-decoration: underline;
-}
-@media screen and (max-width: 767px) {
-    .campaign-content-linksection a:first-of-type {
-margin-bottom: 20px;
-    }
-    .campaign-content-linksection a{
-        width:90%;
-        max-width: 300px;
+        width: 80%;
     }
 }
