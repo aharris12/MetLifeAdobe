@@ -595,6 +595,7 @@ $('.contact-trigger').click(function (e) {
         $(this).find("input, select, textarea").val('')
     });
     $(".contactOtherDetails").show();
+    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 
@@ -609,6 +610,7 @@ $('.productPolicyTypes').on('change', function () {
     currentView = getViewport();
 })
 function closeContactForm() {
+    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '-640'}, 400);
     $('.contactSideForm').find('.error-mandatory').removeClass('error-mandatory');
     $('.contactSideForm').find('.errorSpanOpen').removeClass('errorSpanOpen');
@@ -6165,12 +6167,16 @@ $('[data-submit-type="clr"]').on('click', function (e) {
             $(".contact-thanks").removeClass("hidden");
 
         } else {
-            $('.' + fid).fadeOut('slow', function () {
+            setTimeout(function () {
+                $('.contactSliderOuterCon').fadeOut(2000);
+                $('.contact-close').trigger('click');
+            }, 5000);
+            /*$('.' + fid).fadeOut('slow', function () {
                 setTimeout(function () {
                     $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
+                    $('.contact-close').trigger('click');
                 }, 5000)
-            });
+            });*/
         }
     } else {
         //alert("invalid");
@@ -9429,7 +9435,7 @@ var ServicesAPI = {
                 //in a timeout to avoid visual conflict with animation
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
-                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType, .contactSideSubmitError').fadeOut(2000);
+                    $('.contactSideThankyou, .productUserType, .contactSideSubmitError').fadeOut(2000);
                     $('.contactSideForm').show();
                     $('.contact-container--global').css("right", "-640px");
                 }, 1000);

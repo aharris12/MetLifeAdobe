@@ -485,6 +485,7 @@ $('.contact-trigger').click(function (e) {
         $(this).find("input, select, textarea").val('')
     });
     $(".contactOtherDetails").show();
+    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 
@@ -499,6 +500,7 @@ $('.productPolicyTypes').on('change', function () {
     currentView = getViewport();
 })
 function closeContactForm() {
+    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '-640'}, 400);
     $('.contactSideForm').find('.error-mandatory').removeClass('error-mandatory');
     $('.contactSideForm').find('.errorSpanOpen').removeClass('errorSpanOpen');
