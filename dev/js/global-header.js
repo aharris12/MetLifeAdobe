@@ -479,13 +479,14 @@ $('.login-trigger').click(function (e) {
 
 $('.contact-trigger').click(function (e) {
     e.preventDefault();
+    $(".contactOtherDetails").show();
+    $(".contactSidebar").show();
+    $('.contactSliderOuterCon').show();
     currentView = getViewport();
     $("#contactSidebar").find(".form-user-grp").each(function () {
         $(this).find("input, select, textarea").removeClass('error');
         $(this).find("input, select, textarea").val('')
     });
-    $(".contactOtherDetails").show();
-    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '0'}, 400);
 });
 
@@ -500,7 +501,6 @@ $('.productPolicyTypes').on('change', function () {
     currentView = getViewport();
 })
 function closeContactForm() {
-    $(".contactSliderOuterCon").show();
     $('.contact-container--global').stop().animate({right: '-640'}, 400);
     $('.contactSideForm').find('.error-mandatory').removeClass('error-mandatory');
     $('.contactSideForm').find('.errorSpanOpen').removeClass('errorSpanOpen');
