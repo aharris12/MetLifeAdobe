@@ -328,14 +328,14 @@ $('[data-valid-type=number]').on('blur', function (evt) {
 });
 
 
-$('[data-valid-type=text]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    var val = $this.val();
-    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
-    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
-    ServicesAPI.validateOnType(val, $this, re);
-});
+//$('[data-valid-type=text]').on('blur', function (evt) {
+//    evt.preventDefault();
+//    var $this = $(this);
+//    var val = $this.val();
+//    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+//    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+//    ServicesAPI.validateOnType(val, $this, re);
+//});
 
 $('.user-checkbox').on('click', function () {
     var count = 0;
