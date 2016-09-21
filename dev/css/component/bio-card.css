@@ -1,25 +1,31 @@
 .bio-container__profiles {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 .bio-profile {
-    width: 30%;
-    text-align: center;
-    margin-right: 5%;
-}
-
-.bio-profile:last-of-type {
-    margin-right: 0%;
-}
-
-.bio-profile__image {
-
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .bio-profile__name {
     display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.bio-profile__content {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    min-height: 146px;
+}
+
+.bio-profile__content p {
+    margin-bottom: 10px;
+}
+
+.bio-profile__content a {
+    text-decoration: underline;
 }
 
 .bio-overlay {
@@ -50,8 +56,56 @@
     width: calc(70% - 20px);
 }
 
-@media screen and (min-width: 768px) {
+.bio-overlay__content--right .icon-close {
+    fill: #666;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    height: 15px;
+    cursor: pointer;
+}
 
+.bio-overlay__name {
+    display: block;
+    font-size: 20px;
+    line-height:24px;
+}
+
+.bio-overlay__description {
+    display: block;
+    font-size: 13px;
+    line-height:18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+@media screen and (min-width: 768px) {
+    .bio-overlay__name{
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 5px;
+    }
+
+    .bio-overlay__description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bio-profile {
+        width: 30%;
+        margin-right: 5%;
+    }
+
+    .bio-profile:nth-of-type(3n) {
+        margin-right: 0;
+    }
+
+    .bio-container__profiles {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media screen and (min-width: 1024px) {

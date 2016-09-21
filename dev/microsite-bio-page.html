@@ -926,9 +926,9 @@
         <div class="bio-container__selectors">
             <div class="bio-container__selectors--left">
                 <select name="" class=" js-primary-biocontainer-switch">
-                    <option value="Real Estate">Real Estate</option>
-                    <option value="Free Real Estate">Free Real Estate</option>
-                    <option value="Real Free Real Estate">Real Free Real Estate</option>
+                    <!-- These values need to be added to each 'bio-profile' component as the data attribute 'data-primary-switch'-->
+                    <option value="real_estate">Real Estate</option>
+                    <option value="free_real_estate">Free Real Estate</option>
                 </select>
                 <svg class="icon">
                     <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
@@ -936,10 +936,10 @@
             </div>
             <div class="bio-container__selectors--right">
                 <select name="" class="js-secondary-biocontainer-switch">
-                    <option value="Leadership Team">Leadership Team</option>
-                    <option value="Energy Team">Energy Team</option>
-                    <option value="Synergy Team">Synergy Team</option>
-                    <option value="Energy Synergy Team">Energy Synergy Team</option>
+                    <!-- These values need to be added to each 'bio-profile' component as the data attribute 'data-secondary-switch'-->
+                    <option value="leadership_team">Leadership Team</option>
+                    <option value="energy_team">Energy Team</option>
+                    <option value="synergy_team">Synergy Team</option>
                 </select>
                 <svg class="icon">
                     <use xlink:href="images/icons-metlife.svg#icon-select-arrows"></use>
@@ -947,43 +947,25 @@
             </div>
         </div>
         <div class="bio-container__profiles bg-gray-1st">
-            <div class="bio-profile bg-white col-xs-12 col-sm-4">
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="real_estate" data-secondary-switch="leadership_team">
                 <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
-                <span class="bio-profile__name">Robert Merck</span>
-
-                <p>Global head of Real Estate</p>
-                <a href="#" class="js-bio-profile__bio-link">View Bio</a>
-
-                <div class="bio-overlay hidden">
-
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Global head of Real Estate</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
                 </div>
-            </div>
-            <div class="bio-profile bg-white col-xs-12 col-sm-4">
-                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
-                <span class="bio-profile__name">Bob Merck</span>
-
-                <p>Global head of Real Estate</p>
-                <a href="#" class="js-bio-profile__bio-link">View Bio</a>
-
-                <div class="bio-overlay hidden">
-
-                </div>
-            </div>
-            <div class="bio-profile bg-white col-xs-12 col-sm-4">
-                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
-                <span class="bio-profile__name">Bobby Merck</span>
-
-                <p>Global head of Real Estate</p>
-                <a href="#" class="js-bio-profile__bio-link">View Bio</a>
-
                 <div class="bio-overlay js-bio-overlay hidden">
                     <div class="bio-overlay__content">
                         <div class="bio-overlay__content--left">
                             <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
                         </div>
                         <div class="bio-overlay__content--right">
-                            <span class="bio-overlay__name"></span>
-                            <span class="bio-overlay__description"></span>
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
 
                             <div class="bio-overlay__text">
                                 <p>Robert R. Merck is senior managing director and head of real estate and agricultural
@@ -995,43 +977,222 @@
                                     a
                                     staff
                                     of 265 investment professionals, both domestic and international.</p>
-
-                                <p>Mr. Merck started his career with MetLife in 1982 and has served in various
-                                    capacities in
-                                    Real Estate Investments. Since assuming overall responsibility for the real estate
-                                    and
-                                    agricultural portfolios, Mr. Merck has implemented strategic initiatives and a risk
-                                    management focus that have strengthened the portfolios, raised the profile of the
-                                    franchise
-                                    and positively impacted the financial results of the business. Under Mr. Merck, the
-                                    commercial and agricultural mortgage portfolios have more than doubled in size and
-                                    the
-                                    platforms have expanded internationally. Under Mr. Merck’s leadership, MetLife has
-                                    diversified its real estate equity portfolio, in part through the $5.4 billion sale
-                                    of
-                                    Peter
-                                    Cooper Village / Stuyvesant Town, one of the largest real estate transactions in
-                                    history. In
-                                    addition, Mr. Merck was responsible for launching the firm’s new investment
-                                    management
-                                    business in 2012.</p>
-
-                                <p>Mr. Merck received a B.B.A. degree from Emory University where he graduated with
-                                    highest
-                                    honors and an MBA from Georgia State University.</p>
-
-                                <p> He serves on the Boards of Directors of Metropolitan Realty Management, Inc. and the
-                                    Metropolitan Tower Realty Company, Inc. Mr. Merck also serves on the Real Estate
-                                    Advisory
-                                    Board of the Emory Goizueta Business School, is a Trustee of the Urban Land
-                                    Institute
-                                    and
-                                    serves on the Board of Directors of the Real Estate Roundtable.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="real_estate" data-secondary-switch="leadership_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Global head of Real Estate</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="real_estate" data-secondary-switch="leadership_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Global head of Real Estate</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="free_real_estate" data-secondary-switch="leadership_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Free Real Estate</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="free_real_estate" data-secondary-switch="leadership_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby "It's a free house" Merck</span>
+                    <p>Free Real Estate</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="real_estate" data-secondary-switch="energy_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Real Estate Energy Team</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-profile bg-white col-xs-12 col-sm-4 hidden" data-primary-switch="real_estate" data-secondary-switch="synergy_team">
+                <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                <div class="bio-profile__content">
+                    <span class="bio-profile__name">Bobby Merck</span>
+                    <p>Real Estate Synergy</p>
+                    <a href="#" class="js-bio-profile__bio-link">View Bio</a>
+                </div>
+                <div class="bio-overlay js-bio-overlay hidden">
+                    <div class="bio-overlay__content">
+                        <div class="bio-overlay__content--left">
+                            <img src="images/prof1.jpg" alt="" class="bio-profile__image"/>
+                        </div>
+                        <div class="bio-overlay__content--right">
+                            <svg class="icon icon-close">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="images/icons-metlife.svg#icon-close"></use>
+                            </svg>
+                            <span class="bio-overlay__name">Bobby Merck</span>
+                            <span class="bio-overlay__description">Bobby is a nice person</span>
+
+                            <div class="bio-overlay__text">
+                                <p>Robert R. Merck is senior managing director and head of real estate and agricultural
+                                    investments at MetLife, Inc. In this role, Mr. Merck is responsible for managing the
+                                    company's $55 billion commercial mortgage and equity real estate portfolio, as well
+                                    as
+                                    its
+                                    $13 billion agricultural investments portfolio. In this capacity, Mr. Merck oversees
+                                    a
+                                    staff
+                                    of 265 investment professionals, both domestic and international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
