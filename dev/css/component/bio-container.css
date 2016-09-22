@@ -6,7 +6,7 @@
 
 .bio-container__selectors {
     text-align: center;
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
@@ -24,13 +24,13 @@
 .bio-container__selectors svg {
     fill: #666;
     position: absolute;
-    right: 7%;
+    right: 3%;
     top: 10px;
     z-index: 501;
 }
 
 .bio-container__selectors select {
-    width: 90%;
+    width: 100%;
     background-color: white;
 }
 
@@ -43,6 +43,7 @@
 
     .bio-container__selectors {
         margin-bottom: 30px;
+        width: 80%;
     }
 
     .bio-container__selectors select {
