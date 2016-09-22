@@ -667,6 +667,14 @@ $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
  });*/
 
 
+
+//Event handler for removing error messages on radio buttons for forms
+$('.form-radio-grp input').click(function(){
+    $('.form-radio-grp span').removeClass("errorRadio");
+});
+
+
+
 // Search in Page
 $("#searchInPage, .js-searchSubmit").keypress(function (e) {
     if (e.which == 13) {
@@ -3206,7 +3214,9 @@ var ServicesAPI = {
         f.setAttribute("type", "hidden");
         f.setAttribute("name", c);
         f.setAttribute("value", d);
-        a.appendChild(f);
+        if($("#" + a.getAttribute("id")).find("[name=" + c + "]").length == 0) {
+            a.appendChild(f);
+        }
     },
     getCookie: function (c_name) {
         if (document.cookie.length > 0) {
@@ -3534,6 +3544,8 @@ var ServicesAPI = {
 
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
+                    $('.form-radio-grp input').removeAttr('checked');
+                    $('.form-radio-grp span').removeClass('errorRadio');
                     $('.contactSideThankyou, .productUserType, .contactSideSubmitError').hide();
                     $('.contactSideForm').show();
                     $(".contactSidebar").show();
@@ -3561,8 +3573,6 @@ var ServicesAPI = {
                 $('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
                 break;
         }
-
-
     },
     emailUnsub: function () {
         if ($("#email_unsub").hasClass("error")) {
