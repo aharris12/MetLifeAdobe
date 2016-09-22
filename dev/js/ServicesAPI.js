@@ -429,9 +429,7 @@ $('.productPolicy').on('blur', function () {
     var $con = $this.closest('.productPolicyTypes');
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
+
     if (val == "" || val == placeholder) {
         $con.find('.productPolicy').attr('data-valid-status', 'failed');
         $con.find('.productPolicy').addClass('error');
@@ -450,9 +448,7 @@ $('.form-user-grp > select').on('blur', function () {
     var $this = $(this);
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
+
     if (val == "" || val == placeholder) {
         $this.closest('.form-user-grp').find('svg').css('fill', '#db3535');
     } else {
@@ -3037,7 +3033,7 @@ var ServicesAPI = {
                     //$this.parent().find('.errorSpan').addClass('errorSpanOpen');
                     $('.contactSideForm .info-mandatory').addClass('error-mandatory');
                     $this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-                    $this.val(placeholder);
+
                     formStatus = false;
                 } else {
                     $('.contactSideForm .info-mandatory').removeClass('error-mandatory');
