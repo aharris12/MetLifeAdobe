@@ -4448,8 +4448,13 @@ $("#edit-coverage-mmquote").change(function() {
 
 $("#insurance-type").on("change",function(){
     $('#state1-mmquote').removeAttr("disabled");
-
 });
+
+
+$('.life-insurance-quote-right .cta_header_quote_type_of_insurance .insurance-type').on('change', function() {
+    $('.cta_header_quote_type_of_insurance').addClass('modified-margin-quote-insurance');
+});
+
 QuoteToolAPI.loadEventListenersForResults = function() {
     $("#edit-month-mmquote").on("change", function () {
         QuoteToolAPI.populateDaysDropDown("#edit-");
@@ -6300,9 +6305,6 @@ $('.productPolicy').on('blur', function () {
     var $con = $this.closest('.productPolicyTypes');
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
     if (val == "" || val == placeholder) {
         $con.find('.productPolicy').attr('data-valid-status', 'failed');
         $con.find('.productPolicy').addClass('error');
@@ -6321,9 +6323,6 @@ $('.form-user-grp > select').on('blur', function () {
     var $this = $(this);
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
     if (val == "" || val == placeholder) {
         $this.closest('.form-user-grp').find('svg').css('fill', '#db3535');
     } else {
@@ -6537,6 +6536,10 @@ $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
  }
  });*/
 
+//Event handler for removing error messages on radio buttons for forms
+$('.form-radio-grp input').click(function(){
+        $('.form-radio-grp span').removeClass("errorRadio");
+});
 
 // Search in Page
 $("#searchInPage, .js-searchSubmit").keypress(function (e) {
@@ -8900,7 +8903,6 @@ var ServicesAPI = {
                     //$this.parent().find('.errorSpan').addClass('errorSpanOpen');
                     $('.contactSideForm .info-mandatory').addClass('error-mandatory');
                     $this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-                    $this.val(placeholder);
                     formStatus = false;
                 } else {
                     $('.contactSideForm .info-mandatory').removeClass('error-mandatory');
@@ -9077,7 +9079,9 @@ var ServicesAPI = {
         f.setAttribute("type", "hidden");
         f.setAttribute("name", c);
         f.setAttribute("value", d);
-        a.appendChild(f);
+        if($("#" + a.getAttribute("id")).find("[name=" + c + "]").length == 0) {
+            a.appendChild(f);
+        }
     },
     getCookie: function (c_name) {
         if (document.cookie.length > 0) {
@@ -9405,6 +9409,8 @@ var ServicesAPI = {
 
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
+                    $('.form-radio-grp input').removeAttr('checked');
+                    $('.form-radio-grp span').removeClass('errorRadio');
                     $('.contactSideThankyou, .productUserType, .contactSideSubmitError').hide();
                     $('.contactSideForm').show();
                     $(".contactSidebar").show();
@@ -9432,8 +9438,6 @@ var ServicesAPI = {
                 $('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
                 break;
         }
-
-
     },
     emailUnsub: function () {
         if ($("#email_unsub").hasClass("error")) {

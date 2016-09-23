@@ -95,6 +95,10 @@
     position: relative;
 }
 
+.quote-tool-form .form-user-grp {
+    padding: 5px 0;
+}
+
 .form-state {
     width: 61%;
     float: left;
