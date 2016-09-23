@@ -13,7 +13,6 @@
     z-index: 1000;
 }
 
-
 .global-header__left, .global-header__middle, .global-header__right {
     background-color: #2c77c5;
 }
@@ -65,7 +64,7 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px 0px;
     }
 
-    .global-header.global-header--minimized .icon.icon-close{
+    .global-header.global-header--minimized .icon.icon-close {
         top: 17px;
     }
 
@@ -869,20 +868,20 @@
     /*overflow-y: hidden;*/
 }
 
-@media screen and (max-width: 767px){
-    .megamenu--open--hide{
-        display:none;
+@media screen and (max-width: 767px) {
+    .megamenu--open--hide {
+        display: none;
     }
 
-    html.megamenu--open--style{
-        height:100%;
-        position:fixed;
-        overflow-x:hidden;
+    html.megamenu--open--style {
+        height: 100%;
+        position: fixed;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
     }
 
-    body.megamenu--open--style{
-        height:100%;
+    body.megamenu--open--style {
+        height: 100%;
         position: fixed;
         overflow: hidden;
     }
@@ -890,7 +889,6 @@
     /*.global-header.megamenu--open--style{
         position:fixed;
     }*/
-
     .megamenu--open--mobile {
         height: calc(100% - 50px);
         overflow-y: auto;
@@ -903,8 +901,6 @@
         transition: none !important;
     }
 }
-
-
 
 .megamenu__main-item {
     background-color: #3d9cdb;
@@ -1022,7 +1018,7 @@
         z-index: 2000;
     }
 
-    html.megamenu--open--style{
+    html.megamenu--open--style {
         overflow-y: hidden;
     }
 

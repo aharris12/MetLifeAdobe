@@ -5,7 +5,7 @@ var currentSpot = 0;
 function optionalHeaderCTA() {
     var quoteOfficeLeft = $('.quote-office--left');
     var quoteOfficeRight = $('.quote-office--right');
-    if(quoteOfficeLeft.find("div").first().hasClass("find-office__container")){
+    if (quoteOfficeLeft.find("div").first().hasClass("find-office__container")) {
         quoteOfficeLeft.addClass("light--blue");
         quoteOfficeRight.addClass("dark--blue");
     }
@@ -30,15 +30,15 @@ var resizeMenu = false;
 //Adjust the width of second row of MegaMenu
 function resizeMegaMenu() {
     if (getViewport() == "mobile") {
-        if($(".megamenu").hasClass("megamenu--open")) {
-            if(!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
+        if ($(".megamenu").hasClass("megamenu--open")) {
+            if (!$(".megamenu--open").hasClass("megamenu--open--mobile")) {
                 $(".megamenu--open").addClass("megamenu--open--mobile");
 
             }
         }
     }
     if (getViewport() == "tablet" || getViewport() == "desktop") {
-        if($(".megamenu--open").hasClass("megamenu--open--mobile")) {
+        if ($(".megamenu--open").hasClass("megamenu--open--mobile")) {
             $(".megamenu--open").removeClass("megamenu--open--mobile");
 
         }
@@ -182,7 +182,7 @@ function adjustSearchBox() {
         }
     }
     if (getViewport() != "mobile") {
-        if ($('.megamenu').is(':visible')){
+        if ($('.megamenu').is(':visible')) {
             $('.search-trigger__container').css('display', 'block');
             $(".search-trigger__container").animate({
                 top: "50"
@@ -229,10 +229,9 @@ $('body').on('click touchstart tap', function (e) {
 });
 
 
-
 $('.megamenu-trigger').on('click', function () {
-    
-    
+
+
     if ($(".icon-close.megamenu-trigger__icon").css("display") == "none") {
         currentSpot = $('body').scrollTop();
         $(".icon-close.megamenu-trigger__icon").css("display", "inline-block");
@@ -245,7 +244,13 @@ $('.megamenu-trigger').on('click', function () {
     }
 
     $('.' + $(this).attr('data-target')).toggleClass('megamenu--open');
-    $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+
+
+    if (!$('.container').children().hasClass('microsite-header')) {
+        $("body > :not('.megamenu, .global-header')").toggleClass("megamenu--open--hide");
+    }
+
+
     $("html, body, .global-header").toggleClass('megamenu--open--style');
     $(".js-megaMenuToggle").toggleClass("hidden");
     $('.login-container').hide();

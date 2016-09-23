@@ -13,8 +13,8 @@ var searchPaginationPrev;
 var searchUrl;
 var searchStart = 1;
 var searchEnd = 10;
-var totalSearchResults;
-var didYouMean;
+var totalSearchResults = 0;
+var didYouMean = null;
 if ($(".page-count").length > 0) {
     var searchDefaultSelect = $(".page-count").val();
 }
@@ -64,8 +64,8 @@ $(document).ready(function () {
 
 });
 
-$(window).resize(function(){
-    if($(".fax__container").length !=0) {
+$(window).resize(function () {
+    if ($(".fax__container").length != 0) {
         if ($(".hidden-xs").is(":visible")) {
             $(".google-maps-container").attr('style', function (i, style) {
                 return style.replace(/height[^;]+;?/g, '');
@@ -262,12 +262,16 @@ $('[data-submit-type="clr"]').on('click', function (e) {
             $(".contact-thanks").removeClass("hidden");
 
         } else {
-            $('.' + fid).fadeOut('slow', function () {
+            setTimeout(function () {
+                $('.contactSliderOuterCon').fadeOut(500);
+                $('.contact-close').trigger('click');
+            }, 5000);
+            /*$('.' + fid).fadeOut('slow', function () {
                 setTimeout(function () {
                     $('.contactSliderOuterCon').fadeOut(2000);
-                    $('.contactsClose').trigger('click');
+                    $('.contact-close').trigger('click');
                 }, 5000)
-            });
+            });*/
         }
     } else {
         //alert("invalid");
@@ -324,14 +328,14 @@ $('[data-valid-type=number]').on('blur', function (evt) {
 });
 
 
-$('[data-valid-type=text]').on('blur', function (evt) {
-    evt.preventDefault();
-    var $this = $(this);
-    var val = $this.val();
-    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
-    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
-    ServicesAPI.validateOnType(val, $this, re);
-});
+//$('[data-valid-type=text]').on('blur', function (evt) {
+//    evt.preventDefault();
+//    var $this = $(this);
+//    var val = $this.val();
+//    var re = /^([^0-9!@#$%\^&*()[\]{}\-\=\_\+'";:/?>.,<`~\ ]*)$/;
+//    /* var re = /^[0-9!@#$%\^&*)(+=._-]*$/;*/
+//    ServicesAPI.validateOnType(val, $this, re);
+//});
 
 $('.user-checkbox').on('click', function () {
     var count = 0;
@@ -425,9 +429,6 @@ $('.productPolicy').on('blur', function () {
     var $con = $this.closest('.productPolicyTypes');
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
     if (val == "" || val == placeholder) {
         $con.find('.productPolicy').attr('data-valid-status', 'failed');
         $con.find('.productPolicy').addClass('error');
@@ -446,9 +447,6 @@ $('.form-user-grp > select').on('blur', function () {
     var $this = $(this);
     var val = $this.val();
     var placeholder = $this.attr('placeholder');
-    if ($this.val() == "") {
-        $this.val(placeholder);
-    }
     if (val == "" || val == placeholder) {
         $this.closest('.form-user-grp').find('svg').css('fill', '#db3535');
     } else {
@@ -496,7 +494,7 @@ $(".js-productSelector").click(function (e) {
         return;
     }
 
-    if ($("[data-product-sub='" + selectedProduct + "']").length > 0  && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
+    if ($("[data-product-sub='" + selectedProduct + "']").length > 0 && $("[data-product-sub='" + selectedProduct + "']").find(':selected').val() == "") {
         $(".product__selector--sub").addClass("error")
         $(".product__selector--sub").parent('.select_wrapper').find('svg').css('fill', '#db3535');
         return;
@@ -662,6 +660,10 @@ $(".suggestionsbox").on("click", ".js-searchSuggestions", function () {
  }
  });*/
 
+//Event handler for removing error messages on radio buttons for forms
+$('.form-radio-grp input').click(function(){
+        $('.form-radio-grp span').removeClass("errorRadio");
+});
 
 // Search in Page
 $("#searchInPage, .js-searchSubmit").keypress(function (e) {
@@ -723,14 +725,14 @@ $(".page-count").on('change', function () {
     }
 });
 
-$(".mobile_expand_close").click(function(){
+$(".mobile_expand_close").click(function () {
     $(".find-an-x-search--expand").slideUp();
     $(".mobile_expand_close").hide();
 });
 //Find an X Click Functions
 $(".find-an-x-search__container .cta_search").on('focus', function (e) {
     if (getViewport() == "mobile") {
-        if($(".find-an-x-search--expand").css("display") == "none"){
+        if ($(".find-an-x-search--expand").css("display") == "none") {
             $(".find-an-x-search--expand").slideDown();
             $(".mobile_expand_close").show();
         }
@@ -779,9 +781,9 @@ $(".find_an_office_radius").on('change', function () {
     ServicesAPI.showLocation();
 });
 
-$("body").on('click tap'," .results_office_name",function(){
-    var i= $(this).closest('.results_office_result').index();
-    google.maps.event.trigger(markersArray[i],  'click');
+$("body").on('click tap', " .results_office_name", function () {
+    var i = $(this).closest('.results_office_result').index();
+    google.maps.event.trigger(markersArray[i], 'click');
 });
 
 $('.get-directions-buttons .btn').on('click', function () {
@@ -975,9 +977,8 @@ $(".insurance-type").on("change", function () {
     quoteProduct = $(this).find(':selected').attr('data-product');
     $(".js-hideButton").hide();
 });
-String.prototype.replaceAll = function(str1, str2, ignore)
-{
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+String.prototype.replaceAll = function (str1, str2, ignore) {
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof(str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
 }
 String.prototype.toTitleCase = function () {
     var i, j, str, lowers, uppers;
@@ -1714,13 +1715,7 @@ var ServicesAPI = {
         }
     },
     createPaginationSearch: function () {
-        if(didYouMean){
-            var url = $(".js-searchSubmit").attr("data-search-ajax-url");
-            if (didYouMean) {
-                ServicesAPI.searchServiceCall(url, didYouMean);
-            }
 
-        }else {
 
 
             $('.results_content').children().removeClass('.hidden');
@@ -1858,10 +1853,11 @@ var ServicesAPI = {
                 $('.display-text > span:nth-of-type(2)').html('&nbsp;' + totalSearchResults);
             }
 
-        }
+
     },
     searchServiceCall: function (url, query, e) {
         count = 0;
+        totalSearchResults = 0;
         var frontEnd = $(".js-searchSubmit").attr("data-front-end");
         var site = $(".js-searchSubmit").attr("data-site");
         console.log("ajax searchPaginationNumber ", searchPaginationNumber)
@@ -1881,100 +1877,7 @@ var ServicesAPI = {
         $(".js-searchSuggestion").children().remove();
         resultsListHTML = "";
 
-        /************LOCAL Site Search SERVICE***************/
-        //var siteSearchResults = $.getJSON("search-gsa.json", function (data) {
-        //    siteSearchResults = data.GSP.RES.R;
-        //    var sitSearchResultsUrl = '.DU';
-        //    var sitSearchResultsTitle = '.T';
-        //    var sitSearchResultsContent = '.S';
-        //    console.log(siteSearchResults)
-        //    if (siteSearchResults.length != 0) {
-        //
-        //        $('.form-item__display').removeClass('hidden');
-        //        // $(".page-count").removeClass('hidden');
-        //        $(".no-results").addClass('hidden');
-        //        //results_content is the default component for listing out general results
-        //        resultsListHTML += "<div class=\"results_content\">";
-        //        for (var i = 0; i < siteSearchResults.length; i++) {
-        //            count++;
-        //            sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-        //            sitSearchResultsTitle = data.GSP.RES.R[i].T;
-        //            sitSearchResultsContent = data.GSP.RES.R[i].S;
-        //            resultsListHTML += "<div class=\"list__item--no-border\">";
-        //            resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-        //            resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
-        //            resultsListHTML += "</div>";
-        //        }
-        //        resultsListHTML += "</div>";
-        //    } else {
-        //        $('.form-item__display').removeClass('hidden');
-        //        $(".page-count").addClass('hidden');
-        //        $(".no-results").removeClass('hidden');
-        //    }
-        //    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-        //    ServicesAPI.createPagination(count);
-        //});
-        /************LOCAL Site Search SERVICE***************/
-
         /************LIVE Site Search SERVICE***************/
-        if(didYouMean){
-            console.log("suggestions text true")
-            $.ajax({
-                url: searchUrl,
-                dataType: 'json',
-                type: 'GET',
-                async: false,
-                contentType: 'application/x-www-form-urlencoded',
-                processData: false,
-                success: function (data) {
-                    console.log(data)
-                    if (data.GSP.hasOwnProperty("RES")) {
-                        $(".form-item__display").show();
-                        $(".page-count").removeClass('hidden');
-                        $(".search-results-container__correction-text").removeClass("hidden");
-                        totalSearchResults = data.GSP.RES.M;
-                        console.log(totalSearchResults)
-                        var siteSearchResults = data.GSP.RES.R;
-                        var sitSearchResultsUrl;
-                        var sitSearchResultsTitle;
-                        var sitSearchResultsContent;
-                        if (siteSearchResults.length != 0) {
-                            var correctionHtml = '<a href="#">' + didYouMean + '</a>';
-                            $(".js-searchSuggestion").append(correctionHtml);
-                            $('.form-item__display').removeClass('hidden');
-                            // $(".page-count").removeClass('hidden');
-                            $(".no-results").addClass('hidden');
-                            //results_content is the default component for listing out general results
-                            resultsListHTML += "<div class=\"results_content\">";
-                            for (var i = 0; i < siteSearchResults.length; i++) {
-                                count++;
-                                sitSearchResultsUrl = data.GSP.RES.R[i].DU;
-                                sitSearchResultsTitle = data.GSP.RES.R[i].T;
-                                sitSearchResultsContent = data.GSP.RES.R[i].S;
-                                resultsListHTML += "<div class=\"list__item--no-border\">";
-                                resultsListHTML += "<a class=\"list__item__anchor inline-block\" href=\"" + sitSearchResultsUrl + "\">" + sitSearchResultsTitle + "</a>";
-                                resultsListHTML += "<p>" + sitSearchResultsContent + "</p>";
-                                resultsListHTML += "</div>";
-                            }
-                            resultsListHTML += "</div>";
-                        }
-                        didYouMean = null;
-                    } else {
-                        $('.form-item__display').addClass('hidden');
-                        $(".page-count").addClass('hidden');
-                        $(".no-results").removeClass('hidden');
-                        totalSearchResults = 0;
-                    }
-                    $(resultsListHTML).insertAfter($(".search-results-container__correction-text"));
-                    ServicesAPI.createPaginationSearch(totalSearchResults);
-                },
-                error: function (e) {
-                    ServicesAPI.showSorryUnableToLocateMessage();
-                },
-                timeout: 30000
-            });
-        }else{
-            console.log("false")
             $.ajax({
                 url: searchUrl,
                 dataType: 'json',
@@ -1992,15 +1895,19 @@ var ServicesAPI = {
                         correctSpelling = correctSpelling.split('+OR+').join(newchar);
                         console.log(correctSpelling)
                         $(".no-results").addClass('hidden');
-                        var correctionHtml = '<a href="#">' + correctSpelling+ '</a>';
+                        var correctionHtml = '<a href="#">' + correctSpelling + '</a>';
                         $(".js-searchSuggestion").append(correctionHtml);
                         didYouMean = correctSpelling;
-                    } else if (data.GSP.hasOwnProperty("RES")) {
+                    }else{
+                        didYouMean = null;
+                    }
+                    if (data.GSP.hasOwnProperty("RES")) {
                         $(".form-item__display").show();
                         $(".page-count").removeClass('hidden');
-                        $(".search-results-container__correction-text").addClass("hidden");
+                        if(didYouMean == null) {
+                            $(".search-results-container__correction-text").addClass("hidden");
+                        }
                         totalSearchResults = data.GSP.RES.M;
-                        console.log(totalSearchResults)
                         var siteSearchResults = data.GSP.RES.R;
                         var sitSearchResultsUrl;
                         var sitSearchResultsTitle;
@@ -2038,7 +1945,7 @@ var ServicesAPI = {
                 },
                 timeout: 30000
             });
-        }
+
 
         /************LIVE SERVICE***************/
     },
@@ -2269,15 +2176,17 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
                                 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
                             }
-                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
+                                if (formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                }
                                 resultsListHTML += "</div>";
                             }
                             if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
                                 resultsListHTML += "<div class=\"list__item--right\">";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\">";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\">";
                                 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
                                     resultsListHTML += "<img src=\"/static/images/icon_word.png\" alt=\"Document icon\" class=\"document-icon\">";
                                 } else if (formsSearchResults[i].file_type.toLowerCase() == "ppt" || formsSearchResults[i].file_type.toLowerCase() == "pptx") {
@@ -2288,7 +2197,7 @@ var ServicesAPI = {
                                     resultsListHTML += "<img src=\"/static/images/icon_pdf.png\" alt=\"PDF icon\" class=\"document-icon\">";
                                 }
                                 resultsListHTML += "</a>";
-                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
+                                resultsListHTML += "<a href=\"" + formsSearchResults[i].eform_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
                                 resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].eform_size) / 1024)) + " KB)</span>";
                                 resultsListHTML += "</div>";
                             }
@@ -2303,13 +2212,15 @@ var ServicesAPI = {
                             if (formsSearchResults[i].file_category_title != null && formsSearchResults[i].file_category_title != undefined) {
                                 resultsListHTML += "<span class=\"list__item__date\">" + formsSearchResults[i].file_category_title + "</span>";
                             }
-                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined && formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                            if (formsSearchResults[i].file_title != null && formsSearchResults[i].file_title != undefined) {
                                 resultsListHTML += " <div class=\"list__item--left\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"list__item__title text-bold\">" + formsSearchResults[i].file_title + "</a>";
-                                resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                if (formsSearchResults[i].file_description != null && formsSearchResults[i].file_description != undefined) {
+                                    resultsListHTML += "<p>" + formsSearchResults[i].file_description + "</p>";
+                                }
                                 resultsListHTML += "</div>";
                             }
-                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " " && formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ") {
+                            if (formsSearchResults[i].file_type != null && formsSearchResults[i].file_type != undefined && formsSearchResults[i].file_type !== "" && formsSearchResults[i].file_type !== " ") {
                                 resultsListHTML += "<div class=\"list__item--right\">";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\">";
                                 if (formsSearchResults[i].file_type.toLowerCase() == "doc" || formsSearchResults[i].file_type.toLowerCase() == "docx") {
@@ -2323,7 +2234,10 @@ var ServicesAPI = {
                                 }
                                 resultsListHTML += "</a>";
                                 resultsListHTML += "<a href=\"" + formsSearchResults[i].file_url + "\" target=\"_blank\" class=\"hidden-xs download-link\">" + metaDataResults.download_text + "</a>";
-                                resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+                                if (formsSearchResults[i].file_size != null && formsSearchResults[i].file_size != undefined && formsSearchResults[i].file_size != "" && formsSearchResults[i].file_size != " ")
+                                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + "-" + (Math.round((formsSearchResults[i].file_size) / 1024)) + " KB)</span>";
+                                else
+                                    resultsListHTML += "<span class=\"block document-size\">(" + formsSearchResults[i].file_type.toUpperCase() + ")</span>";
                                 resultsListHTML += "</div>";
                             }
                             resultsListHTML += "<span class=\"clearfix\"></span>";
@@ -2888,7 +2802,7 @@ var ServicesAPI = {
         $(".breadcrumb").find("span:last-of-type").removeClass("breadcrumb__crumb");
     },
     getDirectionsPanel: function (strpDestination) {
-        pageTitle= $(".page-title__heading").text();
+        pageTitle = $(".page-title__heading").text();
         console.log(pageTitle)
         $('.page-title__heading').text($('.getDirectionsTextPageTitle').text());
         if ($(".generatedBreadCrumb").length == 0) {
@@ -3113,7 +3027,6 @@ var ServicesAPI = {
                     //$this.parent().find('.errorSpan').addClass('errorSpanOpen');
                     $('.contactSideForm .info-mandatory').addClass('error-mandatory');
                     $this.parent('.form-user-grp').find('svg').css('fill', '#db3535');
-                    $this.val(placeholder);
                     formStatus = false;
                 } else {
                     $('.contactSideForm .info-mandatory').removeClass('error-mandatory');
@@ -3290,7 +3203,9 @@ var ServicesAPI = {
         f.setAttribute("type", "hidden");
         f.setAttribute("name", c);
         f.setAttribute("value", d);
-        a.appendChild(f);
+        if($("#" + a.getAttribute("id")).find("[name=" + c + "]").length == 0) {
+            a.appendChild(f);
+        }
     },
     getCookie: function (c_name) {
         if (document.cookie.length > 0) {
@@ -3582,11 +3497,14 @@ var ServicesAPI = {
 
     },
     formPass: function (fid) {
-
         switch (fid) {
             case "contactSidebar":
-                $('.contactSideForm').fadeOut(2000);
-                $('.contactSideThankyou, .contact-container--global .contactOtherDetails').fadeIn(800);
+                $('.contactSideForm,.contactOtherDetails').fadeOut(800);
+                setTimeout(function () {
+                    $('.contactSideThankyou').fadeIn(800);
+                }, 500);
+
+
                 break;
 
             case "twoColumnContactForm":
@@ -3612,11 +3530,17 @@ var ServicesAPI = {
         switch (fid) {
             case "contactSidebar":
                 //in a timeout to avoid visual conflict with animation
+
                 setTimeout(function () {
                     $('#requestFormRightNav_Acc').trigger("reset");
-                    $('.contactSideThankyou, .contact-container--global .contactOtherDetails, .productUserType, .contactSideSubmitError').fadeOut(2000);
+                    $('.form-radio-grp input').removeAttr('checked');
+                    $('.form-radio-grp span').removeClass('errorRadio');
+                    $('.contactSideThankyou, .productUserType, .contactSideSubmitError').hide();
                     $('.contactSideForm').show();
+                    $(".contactSidebar").show();
                     $('.contact-container--global').css("right", "-640px");
+                    $(".contactOtherDetails").show();
+
                 }, 1000);
                 break;
 
@@ -3638,8 +3562,6 @@ var ServicesAPI = {
                 $('.updateInfoForm .contactSideThankyou, .updateInfoForm .contact-single_other').fadeOut(2000);
                 break;
         }
-
-
     },
     emailUnsub: function () {
         if ($("#email_unsub").hasClass("error")) {
