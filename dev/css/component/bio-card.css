@@ -1,0 +1,132 @@
+.bio-container__profiles {
+
+}
+
+.bio-profile {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.bio-profile__name {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.bio-profile__content {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    min-height: 146px;
+}
+
+.bio-profile__content p {
+    margin-bottom: 10px;
+}
+
+.bio-profile__content a {
+    text-decoration: underline;
+}
+
+.bio-overlay {
+    position: fixed;
+    z-index: 1200;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.bio-overlay__content {
+    text-align: left;
+    background-color: #f2f2f2;
+    position: absolute;
+    width: 80%;
+    padding: 40px;
+    margin: 10%;
+}
+
+.bio-overlay__content--right .icon-close {
+    fill: #666;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.bio-overlay__name {
+    display: block;
+    font-size: 20px;
+    line-height:24px;
+    margin-bottom: 5px;
+}
+
+.bio-overlay__description {
+    display: block;
+    font-size: 13px;
+    line-height:18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.bio-overlay__content--right:first-of-type {
+    float: left;
+    margin-bottom: 10px;
+}
+
+.bio-overlay__content--left {
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.bio-overlay__content--right {
+    float: right;
+}
+
+@media screen and (min-width: 768px) {
+    .bio-overlay__name{
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .bio-overlay__description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bio-profile {
+        width: 30%;
+        margin-right: 5%;
+    }
+
+    .bio-profile:nth-of-type(3n) {
+        margin-right: 0;
+    }
+
+    .bio-container__profiles {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bio-overlay__content--left {
+        width: 30%;
+    }
+
+    .bio-overlay__content--right {
+        width: calc(70% - 20px);
+    }
+
+    .bio-overlay__content--right:first-of-type {
+        float: right;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
