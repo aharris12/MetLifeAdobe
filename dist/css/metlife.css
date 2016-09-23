@@ -14175,6 +14175,10 @@ manner*/
     position: relative;
 }
 
+.quote-tool-form .form-user-grp {
+    padding: 5px 0;
+}
+
 .form-state {
     width: 61%;
     float: left;
@@ -15394,13 +15398,9 @@ manner*/
     font-weight: 400;
     color: #ffffff;
 }
-
-
 .cta_header_quote .cta_header_quote_type_of_insurance {
     margin-bottom: 15px;
 }
-
-
 .cta_header_quote .select_wrapper {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -15755,9 +15755,15 @@ manner*/
     margin-right: 5px;
     vertical-align: bottom;
 }
+.cta_header_quote .modified-margin-quote-insurance {
+    margin-bottom: 5px;
+}
 @media screen and (max-width: 767px) {
     .cta_header_quote .cta_header_quote_type_of_insurance--sub {
         margin-bottom: 15px;
+    }
+    .life-insurance-quote-right .life-quote-form .btn_global {
+        width: 100%;
     }
 }
 @media screen and (min-width: 768px) {
@@ -15768,24 +15774,21 @@ manner*/
         margin: 0px;
         float: right;
     }
-
     .cta_header_quote .dob_cta_quote {
         display: none;
     }
-
     .cta_header_quote .quote_tool_form .your_health select {
         width: 90%;
         width: calc(100% - 29px);
     }
-
-
-
     .cta_header_quote .errorSpan .error_arrow_img {
         position: absolute;
         top: 99px;
         height: 30px;
     }
-
+    .life-insurance-quote-right .cta_header_quote .btn_global {
+        float: left;
+    }
     .cta_header_quote .coverage_amount span svg use {
         right: 34px;
     }
@@ -15796,6 +15799,7 @@ manner*/
         margin:0;
         background-color: transparent;
     }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -18967,11 +18971,18 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     border-top: 1px solid #ccc;
 }
 
+
+.life-insurance-quote-right .life-quote-form__header {
+    color: #fff;
+}
+
 .life-insurance-quote-right{
     background: #2C77C5;
     padding:25px;
     box-shadow: rgba(0, 0, 0, 0.09) 1px 3px 5px 0px;
     color:white;
+    float:left;
+    width: 100%;
 }
 
 .life-insurance-quote .life-insurance-quote-right .quote-right-header{
@@ -19009,12 +19020,16 @@ div.page-not-found ~ div.global-footer > div.wrapper {
         display:table-cell;
         width:50%;
         padding: 30px;
+        float: none;
 
     }
 
     .life-insurance-quote .life-insurance-quote-right .quote-right-header{
         font-size: 16px;
+    }
 
+    .life-insurance-quote-right .cta_header-quote .btn_global {
+        float: left;
     }
 }
 
@@ -19024,11 +19039,9 @@ div.page-not-found ~ div.global-footer > div.wrapper {
         width: 85%;
         max-width: 1300px;
     }
-    .life-insurance-quote .life-insurance-quote-left p{
+    .life-insurance-quote .life-insurance-quote-left p {
         font-size: 16px;
     }
-
-
     .life-insurance-quote .life-insurance-quote-left{
 
         padding: 40px;
@@ -19038,11 +19051,9 @@ div.page-not-found ~ div.global-footer > div.wrapper {
         padding: 40px;
         font-size: 16px;
     }
-
     .life-insurance-quote .life-insurance-quote-left .quote-left-header{
         font-size: 24px;
         line-height: 28px;
-
     }
     .life-insurance-quote .life-insurance-quote-right .quote-right-header{
         font-size: 18px;
@@ -19050,7 +19061,8 @@ div.page-not-found ~ div.global-footer > div.wrapper {
     }
 }
 .options-small-component {
-text-align: center;
+    text-align: center;
+    padding: 20px 10px 30px 10px;
 }
 .options-small-component svg{
     fill:#333;
