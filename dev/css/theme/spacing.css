@@ -164,17 +164,64 @@
     }
 }
 
-
 /* test values for components */
 .component {
     background-color: #f2f2f2;
 }
 
-@media screen and (min-width: 768px) {
+.office-search-wrapper {
+    padding-bottom: 20px;
+}
 
+.disclaimer-wrapper {
+    padding-bottom: 40px;
+}
+
+.product-comparison-chart-wrapper {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.faq-and-video-wrapper {
+    background-color: #fff;
+}
+
+.contextual-links-wrapper {
+    padding-bottom: 0;
+}
+
+.faq-and-video-wrapper {
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .office-search-wrapper {
+        padding-bottom: 40px;
+    }
+
+    .product-comparison-chart-wrapper {
+        padding-bottom: 40px;
+    }
+
+    .faq-and-video-wrapper {
+        padding-bottom: 40px;
+    }
+    .product-tiles-wrapper {
+        padding-bottom: 20px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .office-search-wrapper {
+        padding-bottom: 50px;
+    }
 
+    .product-comparison-chart-wrapper {
+        padding-bottom: 50px;
+    }
+
+    .faq-and-video-wrapper {
+        padding-bottom: 50px;
+    }
 }
 
