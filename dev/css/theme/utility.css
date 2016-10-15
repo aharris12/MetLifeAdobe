@@ -8,7 +8,6 @@ strong {
     background-position: center center;
 }
 
-/* make bg images clickable via JS */
 .clickable {
     cursor: pointer;
 }
@@ -279,43 +278,6 @@ a[href*='tel'] {
     text-decoration: none;
 }
 
-.pad-t-sm-0 {
-    padding-top: 0;
-}
-.pad-t-sm-10 {
-    padding-top: 10px;
-}
-.pad-t-sm-20 {
-    padding-top: 20px;
-}
-.pad-t-sm-30 {
-    padding-top: 30px;
-}
-.pad-t-sm-40 {
-    padding-top: 40px;
-}
-.pad-t-sm-50 {
-    padding-top: 50px;
-}
-.pad-b-sm-0 {
-    padding-bottom: 0;
-}
-.pad-b-sm-10 {
-    padding-bottom: 10px;
-}
-.pad-b-sm-20 {
-    padding-bottom: 20px;
-}
-.pad-b-sm-30 {
-    padding-bottom: 30px;
-}
-.pad-b-sm-40 {
-    padding-bottom: 40px;
-}
-.pad-b-sm-50 {
-    padding-bottom: 50px;
-}
-
 @media screen and (min-width: 768px) {
     .border-top-sm {
         border-top: 1px solid #ccc;
@@ -345,43 +307,6 @@ a[href*='tel'] {
     .visible-xs {
         display: none !important;
     }
-
-    .pad-t-md-0 {
-        padding-top: 0;
-    }
-    .pad-t-md-10 {
-        padding-top: 10px;
-    }
-    .pad-t-md-20 {
-        padding-top: 20px;
-    }
-    .pad-t-md-30 {
-        padding-top: 30px;
-    }
-    .pad-t-md-40 {
-        padding-top: 40px;
-    }
-    .pad-t-md-50 {
-        padding-top: 50px;
-    }
-    .pad-b-md-0 {
-        padding-bottom: 0;
-    }
-    .pad-b-md-10 {
-        padding-bottom: 10px;
-    }
-    .pad-b-md-20 {
-        padding-bottom: 20px;
-    }
-    .pad-b-md-30 {
-        padding-bottom: 30px;
-    }
-    .pad-b-md-40 {
-        padding-bottom: 40px;
-    }
-    .pad-b-md-50 {
-        padding-bottom: 50px;
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -390,42 +315,5 @@ a[href*='tel'] {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .pad-t-lg-0 {
-        padding-top: 0;
-    }
-    .pad-t-lg-10 {
-        padding-top: 10px;
-    }
-    .pad-t-lg-20 {
-        padding-top: 20px;
-    }
-    .pad-t-lg-30 {
-        padding-top: 30px;
-    }
-    .pad-t-lg-40 {
-        padding-top: 40px;
-    }
-    .pad-t-lg-50 {
-        padding-top: 50px;
-    }
-    .pad-b-lg-0 {
-        padding-bottom: 0;
-    }
-    .pad-b-lg-10 {
-        padding-bottom: 10px;
-    }
-    .pad-b-lg-20 {
-        padding-bottom: 20px;
-    }
-    .pad-b-lg-30 {
-        padding-bottom: 30px;
-    }
-    .pad-b-lg-40 {
-        padding-bottom: 40px;
-    }
-    .pad-b-lg-50 {
-        padding-bottom: 50px;
     }
 }
