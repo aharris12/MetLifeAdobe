@@ -1,15 +1,15 @@
 var SpacingModule = (function () {
     var spacing = {
         "product-module-large": {
-            "office-search": ["20 40 50", ""],
+            "office-search": ["0 0 0", ""],
             "contextual-links": ["0 0 0", ""]
         },
         "product-module-medium": {
-            "office-search": ["20 40 50", ""],
+            "office-search": ["0 0 0", ""],
             "contextual-links": ["0 0 0", ""]
         },
         "product-module-small": {
-            "office-search": ["20 40 50", ""],
+            "office-search": ["0 0 0", ""],
             "contextual-links": ["0 0 0", ""]
         },
         "promo-card": {
@@ -23,10 +23,10 @@ var SpacingModule = (function () {
             "skinny-product-tile": ["", "20 0 0"]
         },
         "skinny-product-tile": {
-            "office-search": ["20 40 50", ""]
+            "office-search": ["0 0 0", ""]
         },
         "faq-and-video": {
-            "office-search": ["", "20 40 50"]
+            "office-search": ["0 40 50", ""]
         },
         "product-tiles": {
             "product-module-small": ["10 30 40", ""]

@@ -190,15 +190,15 @@
     padding-bottom: 0;
 }
 
+.office-search-wrapper {
+    padding-bottom: 0;
+}
+
 .faq-and-video-wrapper {
     padding-bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
-    .office-search-wrapper {
-        padding-bottom: 40px;
-    }
-
     .product-comparison-chart-wrapper {
         padding-bottom: 40px;
     }
@@ -206,16 +206,13 @@
     .faq-and-video-wrapper {
         padding-bottom: 40px;
     }
+
     .product-tiles-wrapper {
         padding-bottom: 20px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .office-search-wrapper {
-        padding-bottom: 50px;
-    }
-
     .product-comparison-chart-wrapper {
         padding-bottom: 50px;
     }

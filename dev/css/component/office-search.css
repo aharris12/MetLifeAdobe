@@ -1,6 +1,7 @@
 .office-search {
     position: relative;
     text-align: center;
+    padding: 20px 0;
 }
 
 .office-search__label {
@@ -27,7 +28,7 @@
     .office-search__icon {
         position: absolute;
         left: 8px;
-        top: -5px;
+        top: 15px;
     }
 
     .office-search__label {
@@ -48,7 +49,7 @@
 
 @media screen and (min-width: 768px) {
     .office-search {
-        /*margin-top: 40px;*/
+        padding: 40px 0;
     }
 
     .office-search__label, .office-search__icon, .office-search__input, .office-search__action {
@@ -69,6 +70,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .office-search {
+        padding: 40px 0;
+    }
+
     .office-search__label {
         font-size: 20px;
     }
@@ -76,9 +81,5 @@
     .office-search__icon svg {
         height: 60px;
         width: 60px;
-    }
-
-    .office-search {
-        /*margin-top: 50px;*/
     }
 }
