@@ -36,13 +36,13 @@ var SpacingModule = (function () {
 
     // Initializes Spacing
     function init() {
-        var components = $(".component[data-component]");
+        var components = $("[data-spacing]");
         var length = components.length;
 
         for (var index = 0; index < length; index++) {
             var comp1, comp2, prop1, prop2;
             comp1 = components.eq(index);
-            prop1 = comp1.attr("data-component");
+            prop1 = comp1.attr("data-spacing");
 
 
             // Apply TOP styling to first component
@@ -58,7 +58,7 @@ var SpacingModule = (function () {
             // Apply styling between components (BOTTOM/TOP)
             if (index < length - 1) {
                 comp2 = components.eq(index + 1);
-                prop2 = comp2.attr("data-component");
+                prop2 = comp2.attr("data-spacing");
 
                 if (spacing.hasOwnProperty(prop1) && spacing[prop1].hasOwnProperty(prop2)) {
                     comp1.addClass(classFormat(spacing[prop1][prop2][0], "bottom"));
