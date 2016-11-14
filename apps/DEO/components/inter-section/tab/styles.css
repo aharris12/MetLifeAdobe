@@ -195,7 +195,7 @@
     margin: 40px auto; }
     .tab-container a {
       min-width: 139px;
-      padding: 10 10px;
+      padding: 10px 10px;
       font-size: 14px; }
     .tab-container a.active:after {
       bottom: -8px;
