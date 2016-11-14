@@ -1,0 +1,16 @@
+<!-- COMPONENT START -->
+
+	{% set gcolumn = innerdata %}
+
+
+
+	<div class="general-column">
+
+		{% for list in gcolumn.complist %}
+			{% set innerdata = list.innerdata %}
+			{% include paths.apps + list.comp + "/index.html" %}
+		{% endfor %}
+
+	</div>
+
+<!-- COMPONENT END -->

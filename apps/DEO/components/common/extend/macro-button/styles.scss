@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* css folder ##common/extend/macro-button## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$blueStart : #66c6ff;
+$blueEnd : #3d8fdc;
+$greenStart : #9bbd20;
+$greenEnd : #77900a;
+
+$boxshadowVar : rgba(0,0,0,.2) 0 1px 1px 0;
+
+.btn-basic {
+	padding:13px 30px;
+	display: inline-block;
+	vertical-align: top;
+	@include border-radius($radius:2px);
+	@include css3-prefix("box-shadow", $boxshadowVar);
+	border:0 solid transparent;
+	color: #ffffff;
+	font-size:15px;
+	font-weight:bold;
+
+}
+
+.btn-basic.btn-fullsize {
+	width:100%;
+}
+
+.btn-basic.blue {
+	//@include backgoundGradient( $blueStart, $blueEnd, "./images/bluebg.png", repeat-x );
+	//&:hover, &:focus {
+	//	background:$blueStart
+	//}
+	background-color: $pointColor5;
+}
+
+.btn-basic.green {
+	//@include backgoundGradient( $greenStart, $greenEnd, "./images/greenbg.png", repeat-x );
+	//&:hover, &:focus {
+	//	background:$greenStart
+	//}
+	background-color: $pointColor5;
+}
+
+
+@media all and (min-width:768px) {
+	.btn-basic {
+		font-size:14px;
+		padding:13px 20px;
+	}
+}
+
+
+@media all and (min-width:1024px) {
+}
+

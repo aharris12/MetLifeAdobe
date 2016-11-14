@@ -1,0 +1,36 @@
+/* /product/detail1/prd-text css */
+
+.prd-article:last-child .prd-stitle-container:last-child .prd-text:last-child {
+  padding-bottom: 0; }
+
+.prd-text {
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  padding-bottom: 22px;
+  text-align: left; }
+  .prd-text .prd-img img {
+    padding-bottom: 0; }
+  .prd-text .prd-bullet-text {
+    padding-left: 20px;
+    line-height: 21px;
+    background-image: url("/content/dam/DEO/author/common_ico/ico-product-dot.svg");
+    background-position: 7px 9px;
+    background-repeat: no-repeat;
+    -webkit-background-size: 4px 4px;
+    background-size: 4px 4px; }
+  .prd-text .prd-text-gray {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -1px;
+    text-align: left; }
+  .prd-text .prd-text-link a {
+    color: #0e5dae; }
+
+@media all and (min-width: 768px) {
+  .prd-text {
+    font-size: 14px;
+    line-height: 21px;
+    color: #333; }
+    .prd-text .prd-text-gray {
+      font-size: 13px; } }

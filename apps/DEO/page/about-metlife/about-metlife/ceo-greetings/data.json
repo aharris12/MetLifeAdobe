@@ -1,0 +1,112 @@
+{
+
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "회사소개" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "CEO인사말" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "경영이념·비전" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연혁" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "Metlife금융그룹" }
+	],
+	"active" : "0"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "회사소개" },
+		{ "href" : "#lnk", "text" : "CEO인사말" }
+	],
+	"pageTitleComp1" : {
+		"levelTag" : "h2",
+		"title" : "CEO인사말",
+		"titleCopy" : "MetLife CEO의 경영철학 및 주요경력 등을 소개합니다.",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"container" : {
+		"graytype": false,
+		"complist": [
+			{
+				"comp" : "/common/basic-component/general-column",
+				"innerdata" : {
+					"complist": [
+						{
+							"comp": "/common/basic-component/base-heading",
+							"innerdata": {
+								"text": "고객여러분 안녕하십니까!",
+								"levelTag": "h3",
+								"class": "opt-text28 opt-pb10 opt-text-bold text-align-c"
+							}
+						},
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "메트라이프생명 대표이사 사장 데미언 그린",
+									"class": "opt-text14 opt-pb40 text-align-c opt-pointColor1"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "메트라이프생명을 찾아주신 고객 여러분께 진심으로 감사와 환영의 인사를 드립니다.",
+									"class" : "opt-text14 opt-text-bold opt-pb20"
+								},
+								{
+									"text" : "1989년 한국에 첫 발을 내딛은 메트라이프생명은 전세계 50여개 국가의 약 1억명의 고객으로부터 인정과 신뢰를 받고 있는 MetLife금융그룹의 가족으로서, 고객의 풍요로운 노후와 가정의 행복을 위해 회사의 모든 역량을 집중 하고 있습니다.",
+									"class" : "opt-text14 opt-pb30"
+								},
+								{
+									"text" : "고객중심(Customer Centricity) 경영을 핵심가치로 하겠습니다.",
+									"class" : "opt-text14 opt-text-bold opt-pb20"
+								},
+								{
+									"text" : "메트라이프생명은 고객중심(Customer Centricity) 경영을 핵심가치로 정하고, 갈수록 치열해지는 경영환경 속에서도 우리회사만의 차별화된 글로벌 네트워크를 활용하여 고객의 자산과 보장계획에 대한 책임을 다하고 있습니다. 그 결과 자타가 공인하는 최고수준의 보험금 지급능력(AAA등급)과 위험기준자기자본비율(Risk Based Capital)을 유지하고, 150만 계약을 관리하는 규모와 내실을 겸비한 생명보험회사로 발돋움하였습니다.",
+									"class" : "opt-text14 opt-pb20"
+								},
+								{
+									"text" : "또한, 선진화된 교육 및 지원 시스템을 기반으로 재정설계 전문가인 FSR(Financial Services Representative)을 통해 고객의 니즈(Needs)에 맞는 고객맞춤 재정설계 서비스를 제공해 드리고 있으며, 상품개발에 있어서도 고령화의 급진전에 따른 장수리스크 관리를 위해 차별화된 은퇴솔루션을 선보이고 있습니다.",
+									"class" : "opt-text14 opt-pb20"
+								},
+								{
+									"text" : "더불어, 메트라이프생명은 윤리경영이 고객과 함께하는 기업의 핵심가치임을 모든 구성원이 공유하고, 이웃과 나눔을 함께하는 사회적 책임을 실천하기 위해 ‘메트라이프코리아재단’을 설립하여 장애아동과 노인 복지증진을 위한 사업을 활발히 진행해오고 있습니다. 특히, MetLife 와 서울대학교 노화고령사회연구소가 공동으로 연구한 ‘한국의 베이비부머 연구’와 ‘통합은퇴준비지수(MIRRI; MetLife Integrated Retirement Readiness Index)’의 잇따른 발표는 한국경제의 주축이었던 베이비부머 세대의 은퇴와 노화에 따른 여러 문제를 해결하는데 큰 기여를 한다고 평가 받고 있습니다. ",
+									"class" : "opt-text14 opt-pb20"
+								},
+								{
+									"text" : "이 밖에도 국내 여자골프 최고 권위의 메이저대회인 ‘MetLife·한경 KLPGA 챔피언십’ 대회를 주최해 한국 여자골프의 위상뿐 아니라 MetLife브랜드를 널리 알리고 있으며, 2012년 1월에는 역삼동 소재 메트라이프타워로 본사를 이전하여 새로운 백년대계를 설계하고 고객님께 더 나은 서비스를 제공하기 위한 기반을 마련하였습니다. ",
+									"class" : "opt-text14 opt-pb30"
+								},
+								{
+									"text" : "보험의 가치와 의미를 되새기겠습니다. ",
+									"class" : "opt-text14 opt-text-bold opt-pb20"
+								},
+								{
+									"text" : "메트라이프생명의 모든 임직원과 FSR은 고객 여러분의 변함없는 관심과 격려에 감사 드리며, 고객의 삶에 미치는 긍정적 영향에 대해 자부심과 사명감을 가지고 최선의 노력을 다하겠습니다. 항상 보험의 가치와 의미를 되새기며, ‘고객이 어려울 때, 가까이에서 가장 큰 힘이 되는 메트라이프생명’이 되겠습니다.",
+									"class" : "opt-text14 opt-pb20"
+								},
+								{
+									"text" : "고객님과 고객님의 가정에 건강과 행복이 항상 넘치시길 기원합니다.",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "감사합니다.",
+									"class" : "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-img",
+							"innerdata" : {
+								"imgURL" : "/general-content/img1.png",
+								"imgAlt" : "CEO 데미언 그린"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

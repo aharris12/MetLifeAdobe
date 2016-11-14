@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* css folder ##category/product-tiles## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$titleMobFontSize : 22px;
+$titleTabletFontSize : 20px;
+$titleWebFontSize : 24px;
+
+$titleMobLineHeight : 26px;
+$titleTabletLineHeight : 27px;
+$titleWebLineHeight : 30px;
+
+$listMobFontSize : 15px;
+$listTabletFontSize : 14px;
+$listWebFontSize : 14px;
+
+$listMobLineHeight : 23px;
+$listTabletLineHeight : 21px;
+$listWebLineHeight : 21px;
+
+.product-tiles {
+	width:100%;
+	text-align: center;
+	background: #ffffff;
+	@include css3-prefix( "box-shadow", 1px 3px 5px 0 rgba(0,0,0,.1) );
+
+	&>a {
+		display: block;
+		color: #000;
+	}
+
+	& img {
+		width:100%;
+	}
+
+	& dl {
+		padding:0 20px 25px 20px;
+
+		& .product-tiles-title {
+			color: #000;
+			display: block;
+			font-weight:bold;
+			padding:25px 0 15px 0;
+			font-size: $titleMobFontSize;
+			line-height: $titleMobLineHeight;
+		}
+		& dd {
+			width:100%;
+			display: block;
+			padding:0 10px 0 10px;
+			text-align: left;
+			background: url('./images/ico-product-dot.svg') 0 8px no-repeat;
+			font-size:$listMobFontSize;
+			line-height:$listMobLineHeight;
+		}
+	}
+}
+
+.product-tiles-link {
+	position: relative;
+	min-height:67px;
+
+	& .product-tiles-linkbtn {
+		& .btn-basic {
+			margin-bottom:12.5px;
+		}
+	}
+
+	& .product-tiles-linktext {
+		position: absolute;
+		text-align: center;
+		width:100%;
+		bottom:0;
+		left:0;
+		& a {
+			font-weight: bold;
+			color: $pointColor1;
+			padding-top:5px;
+			display: inline-block;
+			text-decoration: underline;
+		}
+		& a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+@media all and(min-width:768px) {
+	.product-tiles {
+		@include css3-prefix("box-shadow", 1px 3px 5px 0 rgba(0, 0, 0, .1));
+
+		& dl {
+			padding:0 20px 15px 20px;
+
+			& .product-tiles-title {
+				padding:20px 0 15px 0;
+				font-size: $titleTabletFontSize;
+				line-height: $titleTabletLineHeight;
+			}
+
+			& dd {
+				//background-position: 0 7px;
+				font-size:$listTabletFontSize;
+				line-height:$listTabletLineHeight;
+			}
+		}
+	}
+	.product-tiles.promoType-tiles {
+		padding-bottom:0;
+	}
+	.product-tiles-link {
+		min-height: 70px;
+	}
+}
+
+@media all and(min-width:1024px) {
+
+	.product-tiles {
+		& dl {
+			padding:0 36px 25px 36px;
+			/* 최소 사이즈 지정 start :: moon 16.11.08 :: */
+			min-height:182px;
+			/* 최소 사이즈 지정 end :: moon 16.11.08 :: */
+			& .product-tiles-title {
+				padding:25px 0 20px 0;
+				font-size: $titleWebFontSize;
+				line-height: $titleWebLineHeight;
+			}
+			& dd {
+				background-position: 0 7px;
+				font-size:$listWebFontSize;
+				line-height:$listWebLineHeight;
+			}
+		}
+	}
+
+	.product-tiles-link {
+		min-height: 80px;
+	}
+
+
+}

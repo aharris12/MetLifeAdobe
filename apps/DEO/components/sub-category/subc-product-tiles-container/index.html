@@ -1,0 +1,18 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/sub-category/subc-product-tiles-container/styles.css -->
+<!-- #js# /apps/DEO/components/sub-category/subc-product-tiles-container/scripts.js -->
+
+
+<div class="comp-container bg-gray">
+    {% set items = subcProductList %}
+    <div class="subc-product-tiles-container">
+        <ul class="subc-product-tiles-list">
+            {% for itemList in items %}
+            {% set subcProductTiles = itemList.subcProductTiles %}
+            <li>{% include paths.apps + "/sub-category/subc-product-tiles/index.html" %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

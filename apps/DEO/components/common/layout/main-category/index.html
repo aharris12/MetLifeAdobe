@@ -1,0 +1,97 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/layout/main-category/styles.css -->
+<!-- #js# /apps/DEO/components/common/layout/main-category/scripts.js -->
+
+{% set cateList = globalIA %}
+
+
+<div class="main-category" data-cat-type="main">
+
+    <div class="main-cat-list">
+        <ul class="main-cat-listwrap">
+
+            {% set catList0 = mainCat0 %}
+            <li><a href="{{ catList0.href }}" {% if catList0.title %} title="{{catList0.title}}" target="_blank" {% endif%} class="main-menu"><span>{{ catList0.text }}</span></a>
+                {% if catList0.innerMenu %}
+                <div class="main-cat-submenu">
+                    <div class="main-cat-submenu-list">
+                        <ul class="cat-prd" >
+                            {% for catInner in catList0.innerMenu %}
+                            <li>
+                                <a href="{{ catInner.href }}" {% if catInner.title %} title="{{catInner.title}}" target="_blank" {% endif%}>
+                                    <span><img src="{{ paths.author }}/common_ico/ico-prd1.png" alt=""></span>
+                                    <span class="text">{{ catInner.text }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            </li>
+            
+            {% set catList1 = globalIA[4] %}
+            <li><a href="{{ catList1.href }}" {% if catList1.title %} title="{{catList1.title}}" target="_blank" {% endif%} class="main-menu"><span>{{ catList1.text }}</span></a>
+                {% if catList1.innerMenu %}
+                <div class="main-cat-submenu">
+                    <div class="main-cat-submenu-list">
+                        <ul>
+                            {% for catInner in catList1.innerMenu %}
+                            <li>
+                                <a href="{{ catInner.href }}" {% if catInner.title %} title="{{catInner.title}}" target="_blank" {% endif%}>
+                                    <span><img src="{{ paths.author }}/common_ico/ico-prd1.png" alt=""></span>
+                                    <span>{{ catInner.text }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            </li>
+
+            {% set catList3 = mainCat3 %}
+            <li><a href="{{ catList3.href }}" {% if catList3.title %} title="{{catList3.title}}" target="_blank" {% endif%} class="main-menu"><span>{{ catList3.text }}</span></a>
+                {% if catList3.innerMenu %}
+                <div class="main-cat-submenu">
+                    <div class="main-cat-submenu-list">
+                        <ul class="cat-center">
+                            {% for catInner in catList3.innerMenu %}
+                            <li>
+                                <a href="{{ catInner.href }}" {% if catInner.title %} title="{{catInner.title}}" target="_blank" {% endif%}>
+                                    <span><img src="{{ paths.author }}/common_ico/ico-prd1.png" alt=""></span>
+                                    <span class="text">{{ catInner.text }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            </li>
+
+            {% set catList4 = globalIA[0] %}
+            <li><a href="{{ catList4.href }}" {% if catList4.title %} title="{{catList4.title}}" target="_blank" {% endif%} class="main-menu"><span>{{ catList4.text }}</span></a>
+                {% if catList4.innerMenu %}
+                <div class="main-cat-submenu">
+                    <div class="main-cat-submenu-list">
+                        <ul>
+                            {% for catInner in catList4.innerMenu %}
+                            <li>
+                                <a href="{{ catInner.href }}" {% if catInner.title %} title="{{catInner.title}}" target="_blank" {% endif%}>
+                                    <span><img src="{{ paths.author }}/common_ico/ico-prd1.png" alt=""></span>
+                                    <span>{{ catInner.text }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

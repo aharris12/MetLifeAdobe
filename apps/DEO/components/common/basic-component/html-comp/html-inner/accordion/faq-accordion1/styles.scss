@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.acco-container{
+	padding-top:5px;
+	.acco-heading{
+		display: block;
+		padding-bottom: 12px;
+		font-size: 22px;
+		line-height: 22px;
+		color: #000;
+	}
+	ul.list-type1{
+		& li{
+			width:100%;
+			padding-left:10px;
+			text-align: left;
+			background: url('/content/dam/DEO/author/common_ico/ico-product-dot.svg') 0 8px no-repeat;
+			background-size: 4px 4px;
+			background-position: 0 10px;
+			font-size: 15px;
+			line-height:23px;
+		}
+		& + .acco-heading{
+			padding-top: 23px;
+		}
+	}
+
+	.form-lib-file {
+
+		& a {
+			position: relative;
+			display: block;
+			padding: 0 0 7px 25px;
+			font-size:14px;
+			font-weight:bold;
+			color: #2377c5;
+			line-height:20px;
+			text-align:left;
+			vertical-align:top;
+
+			&:after {
+				width:19px;
+				height:20px;
+				content:'';
+				position: absolute;
+				left:0;
+				top:0;
+
+				background-image: url('/content/dam/DEO/author/common_ico/ico_doc.png');
+				background-repeat: no-repeat;
+				-webkit-background-size:cover;
+				background-size:cover;
+			}
+			& .down{
+				display: inline-block;
+				font-size:0;
+				line-height:0;
+				text-indent: -999%;
+			}
+			& .form-lib-kb{
+				display: block;
+				padding-top:5px;
+				font-size: 14px;
+				font-weight: normal;
+				color: #333;
+			}
+		}
+		& a.ico-word:after { background-position: -19px 0; }
+		& a.ico-excel:after { background-position: -38px 0; }
+		& a.ico-ppt:after { background-position: -57px 0; }
+	}
+
+}
+
+.acco-container .acco-table-type1 {
+	overflow:auto;
+	width:100%;
+	padding-bottom: 10px;
+
+	& table{
+		width: 100%;
+		max-width: 640px;
+	}
+	& tbody tr th, & tbody tr td{
+		padding:8px 10px 9px;
+		font-size:15px;
+		line-height:21px;
+		text-align:left;
+		border-top:1px solid #cccccc;
+	}
+	& tbody tr:first-child th, & tbody tr:first-child td{
+		border-top:none;
+	}
+	& tbody tr th{
+		font-weight:normal;
+		word-break: break-all;
+	}
+	& tbody tr td .list-type1 li{
+		line-height:21px;
+	}
+}
+
+@media all and(min-width:768px) {
+	.acco-container{
+		.acco-heading{
+			padding-bottom: 16px;
+			font-size:16px;
+			line-height: 16px;
+			color: #333;
+		}
+		ul.list-type1{
+			& li{
+				font-size: 14px;
+				line-height:21px;
+			}
+			& + .acco-heading{
+				padding-top: 25px;
+			}
+		}
+
+		.acco-table-type1 {
+			& tbody tr th, & tbody tr td{
+				padding: 9px 10px 11px;
+				font-size:14px;
+			}
+		}
+		.form-lib-file {
+			& a {
+				padding-bottom: 10px;
+				font-size:13px;
+				& .down{
+					font-size:13px;
+					line-height:20px;
+					text-indent: 0;
+				}
+				& .form-lib-kb{
+					display: inline-block;
+					padding:0 0 0 10px;
+				}
+			}
+		}
+	}
+}
+@media all and(min-width:1024px) {
+}

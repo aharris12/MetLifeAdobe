@@ -1,0 +1,43 @@
+{
+	"relatedList" : [
+		{
+			"relatedContents" : {
+				"imgUrl" : "/@temp/related1.png",
+				"imgAlt" : "fsr안내",
+				"title" : "FSR안내",
+				"cont" : "고객의 재정적 안정을 위해 선택된 메트라이프생명의 금융전문가입니다.",
+				"lnkCont" : [
+					{"text" : "FSR 소개", "link":"#lnk"},
+					{"text" : "함께하는 FSR", "link":"#lnk1"},
+					{"text" : "FSR의 비전", "link":"#lnk2"}
+				]
+			}
+		},
+		{
+			"relatedContents" : {
+				"imgUrl" : "/@temp/related1.png",
+				"imgAlt" : "fsr 지원안내",
+				"title" : "FSR 지원안내",
+				"cont" : "체계적이고 전문적인 교육과정을 통해 진정한 전문가로 거듭납니다.",
+				"lnkCont" : [
+					{"text" : "FSR 성공원친 10계명", "link":"#lnk"},
+					{"text" : "FSR 교육 프로그램", "link":"#lnk1"},
+					{"text" : "FSR 보상제도", "link":"#lnk2"}
+				]
+			}
+		},
+		{
+			"relatedContents" : {
+				"imgUrl" : "/@temp/related1.png",
+				"imgAlt" : "GA 비즈니스 안내",
+				"title" : "GA 비즈니스 안내",
+				"cont" : "업계 최고 수준의 노하우와 기량을 보유한 인력들이 여러분의 성공을 돕고 있습니다.",
+				"lnkCont" : [
+					{"text" : "GA 지원프램", "link":"#lnk"},
+					{"text" : "GA 교육시스템", "link":"#lnk1"},
+					{"text" : "GA 협약절차", "link":"#lnk2"}
+				]
+			}
+		}
+	]
+}

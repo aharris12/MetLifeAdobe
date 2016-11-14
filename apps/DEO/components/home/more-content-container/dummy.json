@@ -1,0 +1,38 @@
+{
+	"moreCont" : {
+		"moreHead" : {
+			"level" : "h3",
+			"text" : "고객중심 경영 메트라이프생명",
+			"class" : "more-content-heading"
+		},
+		"moreCopy" : {
+			"text" : "메트라이프는 150년 동안 고객의 소중한 삶에 꼭 필요한 보장을 제공,<br>오랜 역사와 함께 쌓아온 선진 금융노하우로 당신의 성공적인 삶을 향해 함께 나아갑니다."
+		},
+		"moreList" : [
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/more1.png",
+					"imgAlt" : "라이프가이드",
+					"title" : "라이프가이드 - Relationship",
+					"cont" : "건강한 관계 맺기 July-August 2016"
+				}
+			},
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/more1.png",
+					"imgAlt" : "메트라이프 사회공헌활동",
+					"title" : "메트라이프 사회공헌활동",
+					"cont" : "아름다운 사람들이 만들어가는 행복한 세상"
+				}
+			},
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/more1.png",
+					"imgAlt" : "프리미엄 서비스",
+					"title" : "프리미엄 서비스",
+					"cont" : "고객 누구나 즐길 수 있는 다양한 서비스"
+				}
+			}
+		]
+	}
+}

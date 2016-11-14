@@ -1,0 +1,60 @@
+/* error css */
+
+/*35px?*/
+.error {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px 10px 35px;
+  text-align: center; }
+  .error .error-heading {
+    padding-bottom: 15px;
+    font-size: 22px;
+    line-height: 29px;
+    color: #000; }
+  .error .error-linktext {
+    padding-bottom: 20px; }
+    .error .error-linktext a {
+      display: inline-block;
+      text-decoration: underline;
+      font-size: 14px;
+      font-weight: bold;
+      color: #2377c5; }
+  .error .error-txt {
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px; }
+  .error .error-code {
+    font-size: 100px;
+    color: #2377c5; }
+
+@media all and (min-width: 768px) {
+  .error {
+    max-width: 728px;
+    margin: 0 auto;
+    padding: 50px 20px 0; }
+    .error .error-heading {
+      padding-bottom: 20px;
+      font-size: 30px;
+      line-height: 40px; }
+    .error .error-linktext {
+      padding-bottom: 30px; }
+    .error .error-txt {
+      padding-bottom: 20px; } }
+
+@media all and (min-width: 1024px) {
+  .error {
+    width: 100%;
+    max-width: 880px;
+    padding: 65px 110px 0; }
+    .error .error-heading {
+      font-size: 36px;
+      line-height: 48px; }
+    .error .error-linktext {
+      padding-bottom: 40px; }
+      .error .error-linktext a {
+        font-size: 16px; }
+    .error .error-txt {
+      padding-bottom: 30px;
+      font-size: 16px; }
+    .error .error-code {
+      font-size: 150px; } }

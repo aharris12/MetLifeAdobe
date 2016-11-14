@@ -1,0 +1,17 @@
+
+{% set subCategory = gnbDepth3 %}
+{% include paths.apps + "/common/layout/sub-category-3depth/index.html" %}
+
+
+<div class="content">
+    {% include paths.apps + "/common/layout/share-click-to-call/index.html" %}
+    <div class="comp-container">
+
+        {% set innerdata = resultCont %}
+        {% include paths.apps + "/newsroom/list/index.html" %}
+
+        {% set promoCard = proMotion %}
+        {% include paths.apps + "/inter-section/promotion-card/index.html" %}
+    </div>
+</div>
+

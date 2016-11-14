@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* css folder ##inter-section/search-select## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.search-container{
+	width:100%;
+}
+.search-select{
+	overflow:hidden;
+	padding: 0 20px 20px;
+
+	& label{
+		display: block;
+		font-size:16px;
+		line-height:40px;
+		text-align:center;
+	}
+	& .slt-area{
+		position: relative;
+		padding-right: 80px;
+
+		& .btn-basic{
+			position:absolute;
+			right:0;
+			top:0;
+			padding: 13px 21px;
+		}
+	}
+}
+
+@media all and(min-width:768px) {
+	.search-container{
+		width:95%;
+	}
+	.search-select{
+		width: 56%;
+		margin: 0 auto;
+		padding:0 0 28px;
+		& label{
+			float:left;
+			width:20%;
+			display: inline-block;
+			padding-right: 10px;
+			&.screen_out{
+				width:auto;
+				& + .slt-area{
+					float:none;
+					margin:0 auto;
+				}
+			}
+		}
+		.slt-area{
+			float:left;
+			width:80%;
+			& .btn-basic{
+				padding: 13px 21px;
+			}
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.search-container{
+		width:80%;
+		max-width:880px;
+		margin:0 auto;
+	}
+	.search-select{
+		width:48%;
+		padding-bottom:40px;
+	}
+}

@@ -2,156 +2,92 @@
 
 /* css folder ##newsroom/list## */
 
-@import "system/styles/basicset.scss";
-@import "system/styles/mixin.scss";
+.news-list{
+	.result-list{
+		padding-top:20px;
+	}
+}
 
+.news-search{
+	padding: 21px 10px 0 10px;
 
-.news-file {
-	width:100%;
-	position: relative;
-	& a {
-		font-size:14px;
-		font-weight:bold;
-		color: $pointColor1;
-		padding-left:25px;
-		height:20px;
-		line-height:20px;
-		&:after {
-			width:19px;
-			height:20px;
-			content:'';
-			position: absolute;
-			left:0;
-			top:0;
-
-			background-image: url('./images/ico_doc.png');
-			background-repeat: no-repeat;
-			-webkit-background-size:cover;
-			background-size:cover;
+	.slt-half{
+		margin-left: -16px;
+		&:after{
+			content:"";
+			display: block;
+			clear: both;
+		}
+		.half{
+			float: left;
+			width: 50%;
+			padding-left: 16px;
+			label{
+				display: inline-block;
+				margin-bottom:7px;
+				font-size: 16px;
+				color: #333;
+			}
 		}
 	}
-	& a.ico-word:after { background-position: -19px 0; }
-	& a.ico-excel:after { background-position: -38px 0; }
-	& a.ico-ppt:after { background-position: -57px 0; }
-}
 
-.news-list-more {
-	text-align: center;
-	& button {
-		display: inline-block;
-		font-size:14px;
-		font-weight:bold;
-		color: $pointColor1;
-		padding:20px 30px 20px 15px;
-		text-align: left;
-		background: url('./images/ico_more.png') right 15px center no-repeat;
-		-webkit-background-size:7px;
-		background-size:7px;
-	}
-}
-
-.news-heading {
-	color: #000;
-	font-size:22px;
-	font-weight:bold;
-	padding-left:20px;
-	padding-bottom:10px;
-}
-
-.news-list {
-	margin:0 auto;
-	padding:20px 0 0 0;
-	& ul {
-		width:100%;
-		border-top:1px solid #cccccc;
-		& li {
-			padding:15px 20px;
-			width:100%;
-			border-bottom:1px solid #cccccc;
+	.slt-extend{
+		position: relative;
+		padding: 10px 80px 0 0;
+		.btn-basic{
+			position:absolute;
+			right: 0;
+			top: 10px;
+			padding: 13px 20px 12px;
 		}
 	}
 }
-
-.news-list-con {
-	width:100%;
-	& .date, & .title {
-		display: block;
-		width:100%;
-	}
-	& .date {
-		font-size:13px;
-		padding-bottom:12px;
-		color: #333;
-	}
-	& .title {
-		padding-bottom:12px;
-		& a {
-			font-size:16px;
-			line-height:22px;
-			color: $pointColor1;
-		}
-	}
-}
-
 
 @media all and(min-width:768px) {
 
-	.news-list-more {
-		margin-bottom:20px;
-		& button {
-			font-size:16px;
-			padding:20px 30px 20px 15px;
+	.news-list{
+		.result-list{
+			padding-top:40px;
+		}
+	}
+	.news-search{
+		width: 85%;
+		margin: 0 auto;
+		padding-top:40px;
+		&:after{
+			content:"";
+			display: block;
+			clear: both;
 		}
 
-	}
-
-	.news-heading {
-		font-size:20px;
-		padding:0 0 12px 20px;
-	}
-
-	.news-list {
-		width:95%;
-		padding:40px 0 0 0;
-		& ul {
-
-			padding:0;
-
-			& li {
-				position: relative;
-				padding:20px;
+		& .slt-half, & .slt-extend{
+			float: left;
+			width: 50%;
+		}
+		.slt-extend{
+			padding: 0 80px 0 10px;
+			.btn-basic{
+				top:0;
 			}
 		}
-	}
-
-	.news-list-con {
-		& .date {
-			font-size:14px;
-		}
-		& .title {
-			padding-bottom:0;
-			& a {
-				font-size:16px;
-				line-height:20px;
+		.slt-half{
+			margin-left: -15px;
+			.half{
+				padding-left: 15px;
+				label{
+					float: left;
+					margin-bottom: 0;
+					padding-right:10px;
+					line-height: 40px;
+				}
+				.slt-wrap{
+					float:left;
+					width:82%;
+				}
+				&:first-child .slt-wrap{
+					width:71%;
+				}
 			}
-		}
-	}
-
-	.news-file {
-		width:auto;
-		position: absolute;
-		right:20px;
-		top:50%;
-		margin-top:-18px;
-		& a {
-			display: block;
-			font-size:14px;
-			margin-bottom:3px;
-		}
-		& span {
-			display: block;
-			text-align: right;
-			color: #333333;
 		}
 	}
 
@@ -159,31 +95,23 @@
 
 @media all and(min-width:1024px) {
 
-	.news-list-more {
-		margin-bottom:33px;
-	}
-
-	.news-list {
-		width:85%;
-		max-width:880px;
-		padding-top:50px;
-		& ul {
-			padding:0;
-		}
-
-		& .date {
-			font-size:13px;
-		}
-	}
-
-	.news-file {
-		margin-top:-16px;
-		& a {
-			font-size:13px;
-		}
-		& span {
-			font-size:13px;
+	.news-search{
+		width: 70%;
+		max-width: 610px;
+		margin: 0 auto;
+		.slt-half{
+			margin-left: -15px;
+			.half{
+				.slt-wrap{
+					width:79%;
+				}
+				&:first-child{
+					padding-left: 0;
+					.slt-wrap{
+						width:72%;
+					}
+				}
+			}
 		}
 	}
-
 }

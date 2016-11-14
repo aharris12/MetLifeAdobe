@@ -1,0 +1,14 @@
+{
+	"subCategory" : { "href" : "#lnk1", "text" : "상품소개" , "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사망보장보험" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "건강보장보험" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연금보험" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "VUL"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "퇴직연금"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "기타상품"},
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "기업상담문의"}
+
+		],
+		"active" : "0"
+	}
+}

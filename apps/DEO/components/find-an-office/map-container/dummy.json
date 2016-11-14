@@ -1,0 +1,49 @@
+{
+	"mapContainer" : {
+		"resultCont" : {
+			"result" : "총 22개 지점 중 1 - 5",
+			"resultContent" : [
+				{
+					"mapLink" : "#lnk",
+					"branches" :"ALLSTAR지점",
+					"addr" : "서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)",
+					"phone" : "02-546-9811",
+					"fax" : "02-546-9812",
+					"btnType" : "지도보기"
+				},
+				{
+					"mapLink" : "#lnk",
+					"branches" :"BPS지점",
+					"addr" : "서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)",
+					"phone" : "02-546-9811",
+					"fax" : "02-546-9812",
+					"btnType" : "지도보기"
+				},
+				{
+					"mapLink" : "#lnk",
+					"branches" :"BRAND지점",
+					"addr" : "서울 강남구 학동로 401, 14층(청담동, 금하빌딩)",
+					"phone" : "02-546-1490",
+					"fax" : "02-546-1497",
+					"btnType" : "지도보기"
+				},
+				{
+					"mapLink" : "#lnk",
+					"branches" :"CROWN지점",
+					"addr" : "서울 강남구 학동로 401, 14층(청담동, 금하빌딩)",
+					"phone" : "02-541-1490",
+					"fax" : "02-546-1497",
+					"btnType" : "지도보기"
+				},
+				{
+					"mapLink" : "#lnk",
+					"branches" :"Charin지점",
+					"addr" : "서울 강남구 도산대로45길 6, 13층(신사동, 호림아트센터2빌딩)",
+					"phone" : "02-2051-2491",
+					"fax" : "02-546-9812",
+					"btnType" : "지도보기"
+				}
+			]
+		}
+	}
+}

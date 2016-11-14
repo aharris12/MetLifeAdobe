@@ -1,9 +1,0 @@
-diff a/apps/DEO/components/extend/heading/index.html b/apps/DEO/components/extend/heading/index.html	(rejected hunks)
-@@ -1,5 +1,7 @@
- <!-- COMPONENT START -->
- 
-+
-+
- {% macro headtag(level, innerTag, classes) %}
- 
-     {% if level == "h2" %}

@@ -1,0 +1,34 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/tab/styles.css -->
+
+{% set item = innerdata %}
+
+<!-- #js# /system/scripts/ui/dropdown/dropdown.js -->
+<!-- #js# /apps/DEO/components/inter-section/tab/scripts.js -->
+
+<div class="tab-drop-listwrap">
+
+	{% for activeList in item.tabList %}
+		{% if activeList.active  %}
+			<button type="button">{{ activeList.text }}</button>
+		{% endif %}
+	{% endfor %}
+	<div class="tab-drop-list">
+		<div class="tab-container" data-mob-drop="false">
+
+		{% for tabContList in item.tabList %}
+
+			{% if tabContList.active  %}
+				<a href="{{ tabContList.lnk }}" class="active">{{ tabContList.text }}</a>
+			{% else %}
+				<a href="{{ tabContList.lnk }}">{{ tabContList.text }}</a>
+			{% endif %}
+
+		{% endfor %}
+
+		</div>
+	</div>
+</div>
+
+
+<!-- COMPONENT END -->

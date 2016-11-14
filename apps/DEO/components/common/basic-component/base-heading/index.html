@@ -1,0 +1,7 @@
+<!-- COMPONENT START -->
+<div class="base-heading">
+	{% import paths.apps + "/common/extend/heading/index.html" as heading %}
+	{% set headData = innerdata %}
+	{{ heading.headtag(headData.levelTag, headData.text, headData.class) }}
+</div>
+<!-- COMPONENT END -->

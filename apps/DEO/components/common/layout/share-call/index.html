@@ -1,0 +1,31 @@
+<!-- COMPONENT START -->
+<!-- #js# /apps/DEO/components/common/layout/share-call/scripts.js -->
+
+{% set share = shareCall %}
+{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+<div class="share-call">
+    {% if share.share %}
+    <div class="share-sns">
+        {{ btn.button("공유하기", "button", color='share-white', cusClass="ico-share") }}
+        <div class="share-sns-listwrap">
+            <div class="share-sns-list">
+                <span>공유하기</span>
+                <!--<a href="#lnk" class="share-print"><img src="/{{  paths.apps }}/common/layout/share-call/images/icon_pr.png" alt="프린트"></a>-->
+                <a href="#lnk" class="tablet-view"><img src="/{{  paths.apps }}/common/layout/share-call/images/icon_fb.png" alt="페이스북"></a>
+                <a href="#lnk" class="tablet-view"><img src="/{{  paths.apps }}/common/layout/share-call/images/icon_tw.png" alt="트위터"></a>
+                <a href="#lnk" class="mobile-view"><img src="/{{  paths.apps }}/common/layout/share-call/images/icon_kakao.png" alt="카카오톡"></a>
+                <a href="#lnk" class="tablet-view"><img src="/{{  paths.apps }}/common/layout/share-call/images/icon_mail.png" alt="이메일"></a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if share.chat %}
+    <div class="share-chat">
+        {{ btn.btnlink("채팅상담", "#lnk", color='share-blue', cusClass="ico-chat") }}
+    </div>
+    {% endif %}
+</div>
+<!-- #comp css# /apps/DEO/components/common/layout/share-call/styles.css -->
+
+<!-- COMPONENT END -->

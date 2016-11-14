@@ -1,0 +1,40 @@
+.rank-wrap {
+  width: 100%;
+  height: 100%;
+  font-size: 0; }
+  .rank-wrap .rank-list {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+    vertical-align: middle; }
+    .rank-wrap .rank-list .rank-name {
+      display: table;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: #f2f2f2; }
+      .rank-wrap .rank-list .rank-name .rank-cont {
+        display: table-cell;
+        height: 40px;
+        vertical-align: middle;
+        font-size: 15px;
+        line-height: 21px;
+        text-align: center; }
+
+@media all and (min-width: 768px) {
+  .rank-wrap .rank-list {
+    display: inline-block;
+    width: 18.4%;
+    padding-bottom: 0; }
+    .rank-wrap .rank-list:not(:first-child) {
+      margin-left: 2%; }
+    .rank-wrap .rank-list .rank-name {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 14px; } }
+
+@media all and (min-width: 1024px) {
+  .rank-wrap .rank-list .rank-name {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px; } }

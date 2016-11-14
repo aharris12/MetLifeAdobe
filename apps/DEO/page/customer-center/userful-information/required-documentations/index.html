@@ -1,0 +1,28 @@
+<!-- #page css# /apps/DEO/page/form-lib-list/styles.css -->
+
+
+<div class="content">
+
+    {% include paths.apps + "/common/layout/share-click-to-call/index.html" %}
+    <div class="comp-container">
+        <div class="formLibrary">
+            <!-- h2 ~ h6 선택가능 -->
+
+
+            {% set tabCont = tabbutton %}
+            {% include paths.apps + "/inter-section/tab/index.html" %}
+
+             {% include paths.apps + "/form-library/index.html" %}
+
+            {% set innerdata = innerdata1 %}
+            {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+            {% set innerdata = innerdata2 %}
+            {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+        </div>
+    </div>
+
+</div>
+
+

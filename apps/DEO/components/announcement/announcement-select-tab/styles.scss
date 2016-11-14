@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* css folder ##announcement/announcement-select-tab## */
+
+@import "system/styles/basicset.scss";
+
+
+.announcement-select-tab{
+	padding: 20px 0;
+
+	& .faq-search{
+		overflow:hidden;
+		padding: 0 20px 20px;
+
+		& label{
+			display: block;
+			font-size:16px;
+			line-height:40px;
+			text-align:center;
+		}
+		& .slt-area{
+			position: relative;
+			padding-right: 80px;
+
+			& .btn-basic{
+				position:absolute;
+				right:0;
+				top:0;
+				padding: 13px 21px 12px;
+			}
+		}
+	}
+}
+
+.announcement-select-sec {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+
+
+@media all and(min-width:768px) {
+	.announcement-select-tab{
+		width: 95%;
+		margin: 0 auto;
+		padding: 20px 0;
+		.faq-search{
+			width: 54%;
+			margin: 0 auto;
+			padding:0 0 28px;
+			& label{
+				float:left;
+				display: inline-block;
+				width: auto;
+				padding-right: 10px;
+			}
+			& .slt-area{
+				float:left;
+				width:80%;
+				& .btn-basic{
+					top:0;
+					padding: 13px 21px;
+				}
+
+			}
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.announcement-select-tab{
+		width: 100%;
+		max-width:880px;
+		padding: 20px 0;
+		& .faq-search{
+			padding-bottom:40px;
+		}
+	}
+}

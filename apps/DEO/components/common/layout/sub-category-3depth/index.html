@@ -1,0 +1,26 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/layout/sub-category-3depth/styles.css -->
+<!-- #js# /apps/DEO/components/common/layout/sub-category-3depth/scripts.js -->
+
+{% set subCategory = subCategory %}
+
+<div class="sub-category">
+    <div class="sub-cat-backbtn">
+        <button type="button"><span>{{ subCategory.text }}</span></button>
+        <a href="{{ subCategory.href }}"><span>{{ subCategory.text }}</span></a>
+    </div>
+    <div class="sub-cat-list">
+        <ul class="sub-cat-listwrap">
+            {% for menulist in subCategory.innerMenu %}
+
+            {% if loop.index0 == subCategory.active %}
+            <li class="active"><a href="{{ menulist.href }}" {% if menulist.title %} title="{{menulist.title}}" target="_blank" {% endif%}><span>{{ menulist.text }}</span></a></li>
+            {% else %}
+            <li><a href="{{ menulist.href }}" {% if menulist.title %} title="{{menulist.title}}" target="_blank" {% endif%}><span>{{ menulist.text }}</span></a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

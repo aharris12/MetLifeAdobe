@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@media all and( min-width:768px ) {}
+
+@media all and( min-width:1024px ) {
+
+	.prd-table-column {
+		display: table;
+		width:100%;
+		padding-bottom:22px;
+	}
+
+	.prd-table-column:not(:last-child) {
+		padding-bottom:30px;
+	}
+
+	.prd-table-column .prd-table-type1 {
+		display: table-cell;
+		width:20%;
+		padding-bottom:0;
+
+		& table {
+			border-left:1px solid #cccccc;
+		}
+		&:first-child table {
+			border-left:none;
+		}
+
+		& td {
+			letter-spacing:-2px;
+		}
+	}
+
+
+}

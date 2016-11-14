@@ -1,0 +1,34 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/form-library/styles.css -->
+
+{% set item = formLib %}
+<div class="comp-container">
+   <div class="form-lib">
+        <h4 class="form-lib-heading">{{ docTitle }} 청구양식 안내</h4>
+        <ul>
+            {% for formLibList in item %}
+            <li>
+                <div class="form-lib-con">
+                    <strong class="screen_out">제목 : </strong>
+                    <strong class="title">
+                        {% if formLibList.titleLink %}
+                        <a href="{{ formLibList.titleLink }}">{{ formLibList.title }}</a>
+                        {% else %}
+                        {{ formLibList.title }}
+                        {% endif %}
+                    </strong>
+
+                    <span class="screen_out">부제목 : </span> <span class=title-subcopy>{{ formLibList.subCopy }}</span>
+                </div>
+                <div class="form-lib-file">
+                    <a href="#lnk" class="ico-smp">샘플<span class="down">다운로드</span></a>
+                    <a href="#lnk" class="ico-word">양식<span class="down">다운로드</span> <span class="form-lib-kb">(DOC -128kb)</span></a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<!-- COMPONENT END -->

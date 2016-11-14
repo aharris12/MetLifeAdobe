@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/* css folder ##sub-category/subc-product-tiles/## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$titleMobFontSize : 22px;
+$titleTabletFontSize : 20px;
+$titleWebFontSize : 22px;
+
+$titleMobLineHeight : 26px;
+$titleTabletLineHeight : 26px;
+$titleWebLineHeight : 28px;
+
+$listMobFontSize : 15px;
+$listTabletFontSize : 14px;
+$listWebFontSize : 14px;
+
+$listMobLineHeight : 21px;
+$listTabletLineHeight : 21px;
+$listWebLineHeight : 21px;
+
+$boxMobPadding : 30px 20px;
+$boxTabletPadding: 40px 25px;
+$boxWebPadding : 60px 36px 50px;
+
+$titleMobBtmPadding : 20px;
+$titleTabletBtmPadding: 14px;
+$titleWebBtmPadding : 20px;
+
+$contTabletHeight: 180px;
+$contWebHeight: 170px;
+
+.subc-product-tiles {
+	width:100%;
+	padding: $boxMobPadding;
+	text-align: center;
+	background: #fff;
+
+	@include css3-prefix( "box-shadow", 1px 3px 5px 0 rgba(0,0,0,.1) );
+
+	.subc-product-tiles-container {
+
+		& dt {
+			width:100%;
+			color: #000;
+			padding-bottom: $titleMobBtmPadding;
+			display: block;
+			font-weight:bold;
+			font-size: $titleMobFontSize;
+			line-height: $titleMobLineHeight;
+			word-break: break-all;
+			//letter-spacing:-2px;
+		}
+		& dd {
+			width:100%;
+			display: block;
+			padding-bottom: 20px;
+			text-align: center;
+			font-size: $listMobFontSize;
+			line-height: $listMobLineHeight;
+		}
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+	.subc-product-tiles {
+		padding:42px 25px 40px 25px;
+		.subc-product-tiles-container {
+			padding-bottom: 0;
+			//height: $contTabletHeight;
+
+			& dt {
+				padding-bottom: $titleTabletBtmPadding;
+				font-size: $titleTabletFontSize;
+				line-height: $titleTabletLineHeight;
+			}
+			& dd {
+				font-size: $listTabletFontSize;
+				line-height: $listTabletLineHeight;
+			}
+		}
+	}
+	.product-tiles-link {
+		min-height:80px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+@media all and(min-width:1024px) {
+
+	.subc-product-tiles {
+		padding:60px 40px 50px 40px;
+		.subc-product-tiles-container {
+			padding-bottom: 0;
+			//height: 170px;
+
+			& dt {
+				padding-bottom: $titleWebBtmPadding;
+				font-size: $titleWebFontSize;
+				line-height: $titleWebLineHeight;
+			}
+			& dd {
+				font-size: $listTabletFontSize;
+				line-height: $listTabletLineHeight;
+			}
+		}
+	}
+}

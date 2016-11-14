@@ -1,0 +1,31 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-detailbox/styles.css -->
+
+<div class="prd-container bg-gray">
+
+    <div class="prd-detailbox">
+
+        {% set inner = detailInner %}
+        {% for compload in inner %}
+
+            {% if compload.type == "title" %}
+
+                {% set innerdata = compload.innerdata.title %}
+                {% include paths.apps + compload.loadComp + "/index.html" %}
+
+            {% elif compload.type == "container" %}
+                <div class="prd-article">
+                {% for innercomp in compload.innerdata %}
+                    {% set prdCont = innercomp.innerdata %}
+                    {% include paths.apps + innercomp.loadComp + "/index.html" %}
+                {% endfor %}
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

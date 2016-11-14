@@ -1,0 +1,25 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "인재채용" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "EVP" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용안내" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "온라인채용공고" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용관련FAQ" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "인사제도및복리후생" }
+	],
+		"active" : "2"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "인재채용" },
+		{ "href" : "#lnk", "text" : "온라인채용공고" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "온라인채용공고",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	}
+}

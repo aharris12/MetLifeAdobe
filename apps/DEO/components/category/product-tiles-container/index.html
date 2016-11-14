@@ -1,0 +1,22 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/category/product-tiles-container/styles.css -->
+<!-- #js# /apps/DEO/components/category/product-tiles-container/scripts.js -->
+
+<div class="comp-container bg-gray">
+    {% set items = productList %}
+    <div class="product-tiles-container">
+        <ul class="product-tiles-list">
+            {% for itemList in items %}
+                {% set productTiles = itemList.productTiles %}
+                    {% if productTiles.type == "basic" %}
+                        <li>{% include paths.apps + "/category/product-tiles/index.html" %}</li>
+                    {% elif productTiles.type == "promotion" %}
+                        {% set promoCard = productTiles %}
+                        <li data-list-type="promotion">{% include paths.apps + "/inter-section/promotion-card/index.html" %}</li>
+                    {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

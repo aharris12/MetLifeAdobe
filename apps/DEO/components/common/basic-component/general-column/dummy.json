@@ -1,0 +1,68 @@
+{
+	"innerdata" : {
+		"graytype" : false,
+		"complist" : [
+			{
+				"comp" : "/common/basic-component/base-heading",
+				"innerdata" : {
+					"text" : "메트라이프생명의 4가지 가치",
+					"levelTag" : "h3",
+					"class" : "opt-text28 opt-text-bold opt-pb20"
+				}
+			},
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+						"text" : "메트라이브생명과 만나면 인생이 즐겁습니다.",
+						"class" : "opt-text16"
+					},
+					{
+						"text" : "메트라이브생명과 만나면 인생이 즐겁습니다. Bold",
+						"class" : "opt-text16 opt-pb20",
+						"bold" :  true
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/base-list",
+				"innerdata" : {
+					"bultClass" : "opt-bult01 opt-pb20",
+					"textClass" : "opt-text16",
+					"list" : [
+						{
+							"text" : "메트라이브생명과 만나면 인생이 즐겁습니다1.",
+							"bultClass" : "opt-bult02",
+							"textClass" : "opt-text14",
+							"list" : [
+								{
+									"text" : "메트라이브생명과 만나면 인생이 즐겁습니다2.",
+									"bultClass" : "opt-bult03",
+									"textClass" : "opt-text13",
+									"list" : [
+										{
+											"text" : "메트라이브생명과 만나면 인생이 즐겁습니다3."
+										}
+									]
+								}
+							]
+						},
+						{ "text" : "메트라이브생명과 만나면 인생이 즐겁습니다2." },
+						{ "text" : "메트라이브생명과 만나면 인생이 즐겁습니다3." },
+						{ "text" : "메트라이브생명과 만나면 인생이 즐겁습니다4." },
+						{ "text" : "메트라이브생명과 만나면 인생이 즐겁습니다5." },
+						{ "text" : "메트라이브생명과 만나면 인생이 즐겁습니다6." }
+					]
+				}
+			},
+			{
+				"comp" : "/common/basic-component/base-img",
+				"innerdata" : {
+					"imgURL" : "/general-content/img1.png",
+					"imgAlt" : "CEO 데미언 그린",
+					"description" : "CEO 데미언 그립입니다 그린이에요 그린이에요~"
+				}
+			}
+		]
+	}
+}

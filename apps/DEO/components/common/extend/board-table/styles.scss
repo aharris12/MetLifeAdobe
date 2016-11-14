@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/* css folder ##common/extend/board-table## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+
+$th_bgcolor : #000;
+$th_color : #fff;
+
+$nth_bgcolor : #efefef;
+$border_color : #cccccc;
+
+.ui-board-table {
+	width:100%;
+	& table {
+		width:100%;
+		& tr {
+			& th, & td {
+				border-bottom:1px solid $border_color;
+				padding:10px;
+			}
+			& th {
+				background-color: $th_bgcolor;
+				color: $th_color;
+				text-align: center;
+			}
+			& td {
+				text-align: center;
+			}
+			&:nth-child(2n) td{
+				background: $nth_bgcolor;
+			}
+			& td.al-left {
+				text-align: left;
+			}
+		}
+	}
+}

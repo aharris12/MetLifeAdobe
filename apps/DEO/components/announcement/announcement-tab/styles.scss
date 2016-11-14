@@ -1,0 +1,32 @@
+/* css folder ##announcement/announcement-tab## */
+
+@import "system/styles/basicset.scss";
+
+
+.announcement-tab {
+	width:100%;
+	max-width:880px;
+}
+
+.announcement-tab-menu {
+	display: table;
+	font-size:0;
+	text-align: center;
+	padding-bottom:28px;
+	& button {
+		padding:0 12px 12px 12px;
+		display: inline-block;
+		color: $pointColor1;
+	}
+	& button.active {
+		font-weight:bold;
+		color: #000;
+	}
+}
+
+.announcement-tabsec {
+	display: none;
+}
+.announcement-tabsec.active {
+	display: block;
+}

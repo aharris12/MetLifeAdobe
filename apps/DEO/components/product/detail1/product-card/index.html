@@ -1,0 +1,43 @@
+<!-- COMPONENT START -->
+
+<!-- #js# /system/scripts/plugins/retina/retina.js -->
+<!-- #comp css# /apps/DEO/components/product/detail1/product-card/styles.css -->
+
+{% set item = productCard %}
+<div class="product-card">
+    <div class="product-img background-change" style="background-image:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');" data-web="{{ paths.author }}{{ item.imgWebUrl }}" data-tablet="{{ paths.author }}{{ item.imgTabletUrl }}" data-mobile="{{ paths.author }}{{ item.imgMobileUrl }}">
+        {% if item.imgAlt %}
+        <span class="screen_out">{{ imgAlt }}</span>
+        {% endif %}
+    </div>
+    <div class="product-content">
+        <span class="product-heading">{{ item.cardTitle }}</span>
+        <ul class="product-list">
+            {% for content in item.content %}
+            <li>{{ content }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% if item.aside == true %}
+    <div class="product-aside">
+        <span class="product-btn-block">
+            {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+            {{ btn.btnlink(item.btnCont.btnType, item.btnCont.href, color=item.btnCont.color) }}
+        </span>
+
+        {% if item.asideLink %}
+
+            {% if item.asideTarget =="_blank" %}
+                <p class="product-aside-copy"><a href="{{ item.asideLink }}" target="_blank" title="새창링크">{{ item.asideCopy }}</a></p>
+            {% else %}
+                <p class="product-aside-copy"><a href="{{ item.asideLink }}">{{ item.asideCopy }}</a></p>
+            {% endif %}
+
+        {% else %}
+            <p class="product-aside-copy">{{ item.asideCopy }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<!-- COMPONENT END -->

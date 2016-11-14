@@ -1,0 +1,24 @@
+{
+	"productCard" : {
+		"imgWebUrl" : "/product-card/img_web1.jpg",
+		"imgTabletUrl" : "/product-card/img_web1.jpg",
+		"imgMobileUrl" : "/product-card/img_mob1.jpg",
+		"imgAlt" : "대체텍스트 필요시",
+		"cardTitle" : "같은비용으로 최대한의 효과를 누리고자 하는 고객의 마음을 읽어주는...고객의 생각에서 시작한 가성비 좋은 보험",
+		"content" : [
+			"자녀독립 전까지의 사망보장은 충분하게 가장의 경제활동기 사망시, 유가족의 생활보장을 위하여 맞춤형 보장이 가능",
+			"아프고 다쳤을 때에도 충분하게 비갱신형 무해지 환급형 특약을 통해 진단, 수술, 입원비까지 보장",
+			"3대 질병 보장은 더 충분하게 암, 급성심근경색증, 놔출혈 진단금을 최대 6천만원",
+			"고객의 마음의 소리까지 듣는 하트서비스 각박한 세상, 끊임없는 스트레스로 지친 마음을 풀어주는 심리상담"
+		],
+		"aside" : true,
+		"btnCont" : {
+			"href" : "#lnk",
+			"btnType" : "보험료계산",
+			"color" : "green"
+		},
+		"asideLink" : "#lnk",
+		"asideTarget" : "_blank",
+		"asideCopy" : "가입상담문의"
+	}
+}

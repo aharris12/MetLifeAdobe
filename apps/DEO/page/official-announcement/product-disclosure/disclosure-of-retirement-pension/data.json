@@ -1,0 +1,127 @@
+{
+
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "보험상품공시" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "경영공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험상품공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험상품가격공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사회공헌공시" }
+	],
+	"active" : "1"
+	},
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "공시실" },
+		{ "href" : "#lnk", "text" : "보험상품공시" },
+		{ "href" : "#lnk", "text" : "퇴직보험공시" }
+	],
+	"pageTitleComp": {
+		"levelTag": "h2",
+		"title": "퇴직보험공시",
+		"shareComp": {
+			"share": false,
+			"chat": false
+		}
+	},
+	"faqList" : {
+		"mainTitle" : "공시내용",
+		"faqContList" : [
+			{
+
+				"type" : "html",
+				"que" : "상품별 공시 이율 1 (연금보험 및 연금전환특약)",
+				"indataList" : [
+					{
+						"loadComp" : "/announcement/announcement-select-tab",
+						"innerdata" : {
+							"options" : [
+								{"text" : "금리연동 + 무배당 금리연동", "val" : "0"},
+								{"text" : "금리연동 + 무배당 금리연동1", "val" : "1"},
+								{"text" : "금리연동 + 무배당 금리연동2", "val" : "2"},
+								{"text" : "금리연동 + 무배당 금리연동3", "val" : "3"},
+								{"text" : "금리연동 + 무배당 금리연동4", "val" : "4"}
+							],
+							"loadHtml" : [
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "상품별 공시 이율 1 (연금보험 및 연금전환특약)",
+				"indataList" : [
+					{
+						"loadComp" : "/common/basic-component/base-text",
+						"innerdata" : [
+							{
+								"text" : "메트라이브생명과 만나면 인생이 즐겁습니다.",
+								"class" : "opt-text14 opt-pb30 opt-bdb"
+							}
+						]
+					},
+					{
+						"loadComp" : "/announcement/announcement-tab",
+						"innerdata" : {
+							"button" : [
+								"신공시이율 (2016년4월1일 이후 계약)",
+								"신공시이율 (2015년1월1일 이후 계약)",
+								"신공시이율 (2013년4월1일이후계약)",
+								"신공시이율 (2019년10월1일 이후 계약)",
+								"신공시이율 (2008년4월7일 이후 계약)"
+							],
+							"loadHtml" : [
+
+
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+								},
+								{
+									"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"que" : "상품별 공시 이율 3(저축보험)",
+				"anw" : "anw 상품별 공시 이율 3(저축보험)"
+			},
+			{
+				"que" : "보험계약대출이율 연동상품",
+				"anw" : "anw 보험계약대출이율 연동상품"
+			},
+			{
+				"que" : "상품별 공시 이율2(자산 연계형 연금보험)",
+				"anw" : "anw 상품별 공시 이율2(자산 연계형 연금보험)"
+			},
+			{
+				"que" : "상품별 공시 이율2(자산 연계형 연금보험)",
+				"anw" : "anw 상품별 공시 이율2(자산 연계형 연금보험)"
+			}
+		]
+	}
+}

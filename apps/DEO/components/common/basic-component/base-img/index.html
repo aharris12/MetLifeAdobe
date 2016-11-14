@@ -1,0 +1,14 @@
+<!-- COMPONENT START -->
+
+{% set imgitem = innerdata %}
+
+<div class="base-img">
+	<div class="img-container {% if imgitem.class %}{{ imgitem.class }} {% endif %}">
+		<div class="img-cont"><img src="{{ paths.author }}{{ imgitem.imgURL }}" alt="{{ imgitem.imgAlt }}"></div>
+		{% if imgitem.description %}
+		<p class="img-des">{{ imgitem.description }}</p>
+		{% endif %}
+	</div>
+</div>
+
+<!-- COMPONENT END -->

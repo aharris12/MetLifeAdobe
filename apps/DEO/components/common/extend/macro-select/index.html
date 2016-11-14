@@ -1,0 +1,27 @@
+
+{% macro select_type1(labelVal, value, name='', designSelect='false', idVal='') %}
+<div class="slt-wrap">
+<select title="{{ labelVal }}" name="{{ name }}" data-select-design="{{designSelect}}" >
+    {% for val in value %}<option value="{{ val.val }}">{{ val.text }}</option>
+    {% endfor %}
+</select>
+</div>
+<!-- #comp css# /apps/DEO/components/common/extend/macro-select/styles.css -->
+{% endmacro %}
+
+
+
+{% macro select_type2(idVal, value, name='', designSelect='false') %}
+<div class="slt-wrap">
+<select id="{{ idVal }}" name="{{ name }}" data-select-design="{{designSelect}}" >
+    {% for val in value %}<option value="{{ val.val }}">{{ val.text }}</option>
+    {% endfor %}
+</select>
+</div>
+<!-- #comp css# /apps/DEO/components/common/extend/macro-select/styles.css -->
+{% endmacro %}
+
+
+<!--//{% if designSelect=='true' %}-->
+<!-- #js# /apps/DEO/components/common/extend/macro-select/scripts.js -->
+<!--{% endif %}-->

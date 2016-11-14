@@ -1,0 +1,46 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/extend/board-table/styles.css -->
+
+
+{% set table = tableData %}
+
+<div class="ui-board-table">
+    <table>
+        <caption>
+            {{ table.caption }} :
+            {% for thead in table.theadData %}
+                {{ thead }}{% if loop.last %}{% else %},{% endif %}
+            {% endfor %}
+            순서로 안내
+        </caption>
+        <thead>
+            <tr>
+                {% for thead in table.theadData %}
+                <th scope="col">{{ thead }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for tbody in table.tbodyData %}
+            <tr>
+                {% for td in tbody.tr %}
+                    <td {% if td.classes %}class="{{ td.classes }}"{% endif %}>
+                        {% if td.href != undefined %}
+                            {% if td.blank %}
+                                <a href="{{ td.href }}" target="_blank" title="{{ td.title }}">{{ td.data }}</a>
+                            {% else %}
+                                <a href="{{ td.href }}"{% if td.title %} title="{{ td.title }}"{% endif %}>{{ td.data }}</a>
+                            {% endif %}
+                        {% else %}
+                            {{ td.data }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<!-- COMPONENT END -->

@@ -1,0 +1,31 @@
+/* css folder ##test/youtube-player## */
+.youtube-container {
+  position: relative; }
+
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; }
+  .youtube-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
+
+.youtube-control button {
+  width: 100px;
+  height: 100px; }
+
+.youtube-sumnail {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  overflow: hidden; }
+  .youtube-sumnail img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%; }

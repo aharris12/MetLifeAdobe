@@ -1,0 +1,42 @@
+{
+	"innerdata" : {
+		"button" : [
+			"신공시이율 (2016년4월1일 이후 계약)",
+			"신공시이율 (2015년1월1일 이후 계약)",
+			"신공시이율 (2013년4월1일이후계약)",
+			"신공시이율 (2019년10월1일 이후 계약)",
+			"신공시이율 (2008년4월7일 이후 계약)"
+		],
+		"loadHtml" : [
+			{
+				"type" : "html",
+				"indataList" : [
+					{
+						"loadComp" : "/common/basic-component/base-text",
+						"innerdata" : [
+							{
+								"text" : "테스트 컴포넌트 로드",
+								"class" : "opt-text14 opt-pb20"
+							}
+						]
+					},
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+					}
+				]
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+			}
+		]
+	}
+}

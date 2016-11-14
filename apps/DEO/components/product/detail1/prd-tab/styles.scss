@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* css folder ##/product/detail1/prd-tab## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+
+$mobHeight : 40px;
+$tabletHeight : 56px;
+
+$mobFontSize : 15px;
+$tabletFontSize : 16px;
+
+.prd-tab {
+	height:$mobHeight;
+	display: table;
+	font-size:0;
+	width:100%;
+	text-align: center;
+}
+
+.prd-tab a {
+	font-size:15px;
+	height:100%;
+	line-height:$mobHeight;
+	display: inline-block;
+	padding:0 15px;
+	background: #e3e3e3;
+	color: #666;
+	font-weight:bold;
+	&:not(:last-child) {
+		margin-right:2px;
+	}
+	&.active {
+		background: #ffffff;
+		color: #333;
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+	.prd-tab {
+		height:$tabletHeight;
+	}
+	.prd-tab a {
+		font-size:$tabletFontSize;
+		line-height:$tabletHeight;
+	}
+
+}

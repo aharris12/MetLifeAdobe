@@ -1,0 +1,294 @@
+{
+
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "브랜드" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사망보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "건강보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연금보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "퇴직연금" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "기타상품" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "가입상담문의" }
+	],
+	"active" : "0"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "상품소개" },
+		{ "href" : "#lnk", "text" : "사망보장보험" },
+		{ "href" : "#lnk", "text" : "무배당 변액유니버셜종신보험 경청" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "무배당 변액유니버셜종신보험 경청",
+		"titleCopy" : "더 필요할 때는 보장을 키우고, 좀 덜 필요할 때는 줄이다",
+		"shareComp" : {
+			"share" : true,
+			"chat" : true
+		}
+	},
+	"prdTab" : [
+		{
+			"text" : "보장내용",
+			"link" : "#lnk"
+		},
+		{
+			"text" : "가입안내",
+			"link" : "#lnk",
+			"active" : true
+		},
+		{
+			"text" : "알아두실 사항",
+			"link" : "#lnk"
+		}
+	],
+	"detailInner" : [
+		{
+			"type" : "title",
+			"loadComp" : "/product/detail1/prd-stitle",
+			"innerdata" : {
+				"title" : {
+					"level" : "h3",
+					"text" : "가입안내",
+					"class" : "screen_out"
+				}
+			}
+		},
+		{
+			"type" : "title",
+			"loadComp" : "/product/detail1/prd-stitle",
+			"innerdata" : {
+				"title" : {
+					"level" : "h4",
+					"text" : "1종 라이프싸이클형(LC형)",
+					"class" : "prd-title"
+				}
+			}
+		},
+		{
+			"type" : "container",
+			"innerdata" : [
+				{
+					"type" : "container",
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h5",
+							"text" : "상품안내",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table4"
+
+							},
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table5"
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text-list",
+								"innerdata" : [
+									{
+										"text" : "피보험자의 은퇴나이는 계약을 체결할 때 계약자가 55세, 60세, 65세 중 하나를 선택하며, 은퇴나이 전 보험기간은 최소 10년 이상이어야 합니다. 은퇴나이는 최초 선택 이후 변경할 수 없습니다."
+									},
+									{
+										"text" : "피보험자의 가입나이가 50세 이상인 경우, 보험가입금액 3,000만원부터 가입 가능하며, 피보험자의 가입나이가 30세 미만인 경우, 보험가입금액은 최대 5억원으로 제한됩니다"
+									}
+								]
+							}
+						]
+					}
+				},
+				{
+					"type" : "container",
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h5",
+							"text" : "보험료",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table6"
+
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text-list",
+								"innerdata" : [
+									{
+										"text" : "위의 보험료는 가입금액, 가입나이, 성별, 보험기간 및 납입기간 등에 따라 달라질 수 있습니다."
+									}
+								]
+							}
+						]
+					}
+				},
+				{
+					"type" : "container",
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h5",
+							"text" : "해지환급금",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/product/detail1/prd-text",
+								"innerdata" : {
+									"text" : "(가입조건:가입금액 1억원, 20년 월납, 남자 40세, 은퇴나이 60세 가정, 보험료 136,000원/단위:만원, 만원 미만 절사)"
+								}
+							},
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table7"
+
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text-list",
+								"innerdata" : [
+									{ "text" : "해지환급금에는 최저보증이 없어 원금손실이 발생할 수 있으며, 그 손실은 모두 계약자에게 귀속됩니다." },
+									{ "text" : "이 보험계약은 납입한 보험료 중 위험보험료, 사업비 등을 차감한 후 특별계정으로 투입·운용되고, 특별계정 적립금에서 운용보수, 증권거래비용, 기타비용 및 계약유지보증비용 등 제반비용이 차감됩니다." },
+									{ "text" : "위의 해지환급금은 세전 기준으로 특별계정 수익률에 따라 매일 변동하며, 중도해지 시 특별계정 적립금에서 미상각신계약비를 차감하므로 해지환급금은 납입보험료보다 적거나 없을 수도 있습니다." },
+									{ "text" : "위의 예시된 금액 및 환급률 등이 미래의 수익을 보장하는 것은 아닙니다." },
+									{ "text" : "상기예시금액의 투자수익률은 0%, 감독규정 제1-2조제13호에 따른 평균공시이율 3.5% 및 동 이율의 1.5배인 5.25%를 기준으로 계산한 금액입니다." },
+									{ "text" : "평균공시이율은 감독원장이 정하는 바에 따라 산정한 전체 보험회사 공시이율의 평균으로, 전년도 9월말 기준 직전 12개월간 보험회사 평균공시이율입니다." }
+								]
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text",
+								"innerdata" : {
+									"text" : "<strong> 해지환급금이 납입보험료보다 적은 이유는 다음과 같습니다.</strong> <br> 계약자가 납입한 보험료는 불의의 사고를 당한 다른 가입자에게 보험금으로 지급되고 보험회사 운영에 필요한 경비로 사용되므로 중도 해지하는 경우 지급되는 해지환급금은 납입한 보험료보다 적거나 없을 수 있습니다."
+								}
+							},
+
+							{
+								"loadComp" : "/product/detail1/prd-text",
+								"innerdata" : {
+									"bullet" : "prd-bullet-text",
+									"text" : "기타 보험료 및 해지환급금 산출 관련 사항은 상품요약서(당사 홈페이지 상품공시실 참조), 가입설계서 및 상품설명서에서 보다 자세히 확인하실 수 있습니다."
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"type" : "title",
+			"loadComp" : "/product/detail1/prd-stitle",
+			"innerdata" : {
+				"title" : {
+					"level" : "h4",
+					"text" : "적립형 계약에 관한 사항",
+					"class" : "prd-title"
+				}
+			}
+		},
+		{
+			"type" : "container",
+			"innerdata" : [
+				{
+					"type" : "container",
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h5",
+							"text" : "적립형계약으로의 전환조건",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table8"
+
+							}
+						]
+					}
+				},
+				{
+					"type" : "container",
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h5",
+							"text" : "적립형계약의 보장 내용",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table9"
+
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text-list",
+								"innerdata" : [
+									{ "text" : "계약자적립금은 특별계정의 운용실적에 따라 매일 변동합니다."},
+									{ "text" : "사망보험금이 적립형계약의 최저사망보증금액보다 적을 경우에는 적립형 계약의 최저사망보증금액을 최저사망보험금으로 보증지급합니다."},
+									{ "text" : "최저사망보험금을 보증하기 위해 매년 특별계정 적립금의 연 0.07%를 차감합니다."},
+									{ "text" : "계약소멸사유 : 피보험자가 사망 한 경우"},
+									{ "text" : "사망보험금의 경우 ‘고의적 사고 및 2년 이내 자살’의 경우 보험금 지급이 제한될 수 있습니다." }
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+
+	],
+	"prdMoreCont" : {
+		"moreList" : [
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/prd-morecont1.png",
+					"imgAlt" : "",
+					"title" : "무배당 스마트플랜 변액유니버셜종신보험",
+					"cont" : "사망보험금이 일시에 지급되는 기본형, 고액의 보장을 준비하는 증액형"
+				}
+			},
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/prd-morecont2.png",
+					"imgAlt" : "",
+					"title" : "무배당 100세 PLUS 종신 암보험",
+					"cont" : "소액암, 일반암은 물론 특약을 통해 고액암과 두번째암까지 보장"
+				}
+			},
+			{
+				"moreContent" : {
+					"imgUrl" : "/@temp/prd-morecont3.png",
+					"imgAlt" : "",
+					"title" : "무배당 Kids Plan 변액유니버설보험",
+					"cont" : "우리 아이의 밝은 미래를 위해 성장단계마다 필요한 자산 꼼꼼한 플랜"
+				}
+			}
+		]
+	},
+
+	"productCard" : {
+		"imgWebUrl" : "/product-card/img_web1.jpg",
+		"imgTabletUrl" : "/product-card/img_web1.jpg",
+		"imgMobileUrl" : "/product-card/img_mob1.jpg",
+		"imgAlt" : "대체텍스트 필요시",
+		"cardTitle" : "같은비용으로 최대한의 효과를 누리고자 하는 고객의 마음을 읽어주는...고객의 생각에서 시작한 가성비 좋은 보험",
+		"content" : [
+			"자녀독립 전까지의 사망보장은 충분하게 가장의 경제활동기 사망시, 유가족의 생활보장을 위하여 맞춤형 보장이 가능",
+			"아프고 다쳤을 때에도 충분하게 비갱신형 무해지 환급형 특약을 통해 진단, 수술, 입원비까지 보장",
+			"3대 질병 보장은 더 충분하게 암, 급성심근경색증, 놔출혈 진단금을 최대 6천만원",
+			"고객의 마음의 소리까지 듣는 하트서비스 각박한 세상, 끊임없는 스트레스로 지친 마음을 풀어주는 심리상담"
+		],
+		"aside" : true,
+		"btnCont" : {
+			"href" : "#lnk",
+			"btnType" : "보험료계산",
+			"color" : "green"
+		},
+		"asideLink" : "#lnk",
+		"asideCopy" : "가입상담문의"
+	}
+
+}

@@ -1,0 +1,23 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-text-list/styles.css -->
+
+{% set item = innerdata %}
+
+<div class="prd-text-list">
+
+    <ul>
+        {% for list in innerdata %}
+            <li class="prd-text-listitem">{{ list.text | safe}}
+                {% if list.innerList %}
+                    <ul>
+                    {% for innerlist in list.innerList %}
+                        <li class="prd-text-listitem-inner">{{ innerlist.text | safe }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- COMPONENT END -->

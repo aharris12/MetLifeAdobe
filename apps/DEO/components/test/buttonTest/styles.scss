@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+
+/* css folder ##test/buttonTest## */
+
+@import "system/styles/basicset.scss";
+
+$allmenu_mobHeight : 50px;
+$allmenu_tabletHeight : 70px;
+
+.allmenu-container{
+	position: relative;
+	background: $pointColor1;
+	height:100%;
+	max-height:$allmenu_mobHeight;
+}
+
+
+/* menu button */
+
+.allmenu-control {
+	display: inline-block;
+	height:100%;
+}
+
+.allmenu-control>button{
+	width: 19px;
+	padding:0 12px;
+	height:100%;
+	/*transition: all .5s ease 0s;*/
+	display: block;
+	font-size:14px;
+	font-weight:bold;
+	color: #ffffff;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	line-height:50px;
+}
+
+.allmenu-control>button>.web-view{
+	display: block;
+	text-indent:-999em;
+}
+
+.allmenu-control .allmenu-btn-open {
+	background: url('./images/icon_menu.png') 50% 50% no-repeat;
+	-webkit-background-size:19px auto;
+	background-size:19px auto;
+}
+.allmenu-control .allmenu-btn-close{
+	display: none;
+	background: url('./images/icon_menu_close.png') 50% 50% no-repeat;
+	-webkit-background-size:19px auto;
+	background-size:19px auto;
+
+}
+
+
+/* menu wrap */
+
+.allmenu-wrap {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	//-webkit-overflow-scrolling: auto; /*MAKES OVERFLOWN OBJECTS HAVE INERTIA SCROLLING*/
+	display: none;
+	position: fixed;
+	left:0;
+	top:$allmenu_mobHeight;
+	width:100%;
+	height:100%;
+	background: $pointColor1;
+}
+
+.active .allmenu-wrap {
+	display: block;
+}
+
+
+/* menu list */
+
+.allmenu-wrap .allmenu-list{
+	position: relative;
+
+}
+
+.allmenu-list-wrap ul {}
+.allmenu-list-wrap>ul>li {
+	width:100%;
+	background: $pointColor3;
+	font-size:18px;
+	border-bottom:1px solid rgba(14,93,174,.2);
+}
+.allmenu-list-wrap>ul>li>a {
+	color: $textColor2;
+	font-weight:bold;
+	padding:20px;
+	display: block;
+	position: relative;
+}
+.allmenu-list-wrap>ul>li>a:after {
+	content:'';
+	display: block;
+	width:12px;
+	height:12px;
+	position: absolute;
+	right:12px;
+	top:23px;
+	background: url('./images/icon_mob_menu_closed_arrow.png') 0 0 no-repeat;
+	-webkit-background-size:12px 12px;
+	background-size:12px 12px;
+}
+.allmenu-list-wrap .submenu {
+	display: none;
+	overflow: hidden;
+	background: $pointColor2;
+}
+.allmenu-list-wrap .submenu>ul>li {}
+.allmenu-list-wrap .submenu>ul>li>a {
+	font-size:14px;
+	color: #ffffff;
+	display: block;
+	padding:15px 0 15px 30px;
+	font-weight:bold;
+}
+.allmenu-list-wrap .submenu>ul>li>a:hover {
+	background: #1d6fc2;
+}
+
+
+/* menu banner */
+
+.allmenu-wrap .allmenu-banner{ display: none; }
+
+
+@media all and (min-width:768px) {
+
+	.allmenu-container{
+		height:100%;
+		max-height:$allmenu_tabletHeight;
+	}
+
+	/* menu button */
+
+
+	.allmenu-control {
+		height:100%;
+		max-height:$allmenu_tabletHeight;
+	}
+
+	.allmenu-control>button{
+		padding:0 15px;
+		height:100%;
+		max-height:$allmenu_tabletHeight;
+		background-position: 50% 50%;
+		line-height:70px;
+	}
+
+	.minisize .allmenu-control>button{
+		line-height:50px;
+	}
+
+
+
+	/* menu wrap */
+
+	.allmenu-wrap {
+		overflow: auto;
+		padding-top:30px;
+		border-top:1px solid $pointColor2;
+		transition:top .5s ease 0s;
+		top:$allmenu_tabletHeight;
+	}
+
+	.allmenu-wrap .allmenu-list{
+		width:90%;
+		max-width:1100px;
+		margin:0 auto;
+	}
+
+	.allmenu-list-wrap {
+		border-top:1px solid $pointColor2;
+		padding:20px 0 30px 0;
+	}
+
+	.allmenu-list-wrap:first-child {
+		border-top:none;
+		padding:0 0 30px 0;
+	}
+
+	.allmenu-list-wrap>ul:after {
+		clear:both;
+		content:'';
+		display: block;
+	}
+	.allmenu-list-wrap>ul>li {
+		float: left;
+		width:25%;
+		background: none;
+		font-size:18px;
+		padding-right:10px;
+		border-bottom:none;
+	}
+	.allmenu-list-wrap>ul>li>a {
+		padding:20px 0;
+	}
+	.allmenu-list-wrap>ul>li>a:hover {
+		text-decoration: underline;
+	}
+	.allmenu-list-wrap>ul>li>a:after {
+		display: none;
+	}
+
+	.allmenu-list-wrap .submenu {
+		display: block;
+		background: none;
+	}
+
+	.allmenu-list-wrap .submenu>ul>li>a {
+		padding:0 5px 15px 0;
+		color: $pointColor4;
+	}
+	.allmenu-list-wrap .submenu>ul>li>a:hover {
+		background: none;
+		color: #ffffff;
+	}
+
+}
+
+
+@media all and (min-width:1025px) {
+
+
+	.allmenu-control>button{
+		width:auto;
+		height:100%;
+		display: inline-block;
+	}
+
+	.allmenu-control>button>.web-view{
+		width:auto;
+		max-height:$allmenu_tabletHeight;
+		text-indent: 0;
+		padding-left:27px;
+		vertical-align: middle;
+	}
+
+
+	.allmenu-control .allmenu-btn-open {
+		background-position: 15px 50%;
+	}
+	.allmenu-control .allmenu-btn-close{
+		display: none;
+		background-position: 15px 50%;
+
+	}
+
+
+	.allmenu-list-wrap {
+		padding:20px 0 30px 30px;
+	}
+
+	.allmenu-list-wrap:first-child {
+		padding:0 0 30px 30px;
+	}
+
+
+}

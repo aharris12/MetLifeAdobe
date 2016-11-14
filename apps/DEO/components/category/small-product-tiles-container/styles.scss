@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/* css folder ##category/small-product-tiles-container## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.small-product-tiles-container {
+	text-align: center;
+	height:100%;
+}
+
+.small-product-tiles-wrap{
+	display:inline-block;
+	width:100%;
+	margin-bottom:10px;
+	@include css3-prefix("box-shadow", 1px 3px 5px 0 rgba(1, 1, 1, 0.1) );
+}
+
+.small-product-tiles-container ul li:not(:last-child) .small-product-tiles{
+	border-bottom:1px solid #e2e2e2;
+}
+
+@media all and(min-width:768px) {
+
+	.small-product-tiles-wrap{
+		width:95%;
+		margin-bottom:20px;
+		max-width:1100px;
+		@include css3-prefix("box-shadow", none );
+	}
+	.small-product-tiles-container ul{
+		margin:0 auto;
+		min-height:300px;
+		display: table;
+		width:100%;
+		font-size:0;
+	}
+	.small-product-tiles-container ul li{
+		display: inline-block;
+		width:33.33%;
+		height:100%;
+		vertical-align: top;
+		@include css3-prefix("box-shadow", 0px 3px 5px 0 rgba(0, 0, 0, 0.1) );
+	}
+
+	.small-product-tiles-container ul li:not(:last-child) .small-product-tiles{
+		border-bottom:none;
+		border-right:1px solid #e2e2e2;
+	}
+}
+
+@media all and(min-width:1024px) {
+	.small-product-tiles-container ul {
+		min-height:316px;
+	}
+}

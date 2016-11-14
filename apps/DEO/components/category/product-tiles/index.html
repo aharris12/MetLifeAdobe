@@ -1,0 +1,41 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/category/product-tiles/styles.css -->
+
+{% set item = productTiles %}
+<div class="product-tiles">
+    {% if item.sumnail %}
+        <img src="{{ paths.author }}{{ item.sumnail }}" alt="{{ item.alt }}">
+    {% endif %}
+
+    <div class="product-tiles-content">
+        {% if item.contentList %}
+                <dl>
+                    <dt class="product-tiles-title">{{ item.title }}</dt>
+                    {% for content in item.contentList %}
+                    <dd>{{ content }}</dd>
+                    {% endfor %}
+                </dl>
+        {% else %}
+                <p class="product-tiles-title">{{ item.title }}</p>
+        {% endif %}
+    </div>
+
+    <div class="product-tiles-link">
+        {% if item.btnType %}
+            <div class="product-tiles-linkbtn">
+                {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                {{ btn.btnlink(item.btnType, item.href) }}
+            </div>
+        {% endif %}
+
+
+        {% if item.textType %}
+           <!-- <div class="product-tiles-linktext">
+                <a href="{{ item.textType.href }}">{{ item.textType.text }}</a>
+            </div>-->
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- COMPONENT END -->

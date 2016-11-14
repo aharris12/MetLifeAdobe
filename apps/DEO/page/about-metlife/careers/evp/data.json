@@ -1,0 +1,127 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "인재채용" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "EVP" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용안내" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "온라인채용공고" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용관련FAQ" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "인사제도및복리후생" }
+	],
+		"active" : "0"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "인재채용" },
+		{ "href" : "#lnk", "text" : "EVP" }
+	],
+
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "EVP",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"container" : {
+		"graytype": false,
+		"complist1": [
+			{
+				"comp": "/common/basic-component/base-heading",
+				"innerdata": {
+					"text": "EVP(Employee Value Proposition) Statement",
+					"levelTag": "h3",
+					"class": "opt-text28 opt-text-bold opt-pb40 text-align-c"
+				}
+			},
+			{
+				"comp": "/common/basic-component/base-text",
+				"innerdata": [
+					{
+						"text": "메트라이프는 지금껏 우리가 근간을 만들어 온 이 산업에 대하여 이제는 글로벌 혁신을 주도하고 있습니다. 잘 갖춰진 팀웍을 바탕으로 우리는 잠재된 역량을 실현할 준비가 되어 있습니다. 공동의 목적에 대해 다양한 관점으로 우리는 고객들의 더 나은 삶을 위하여 최선을 다해 노력합니다.",
+						"class": "opt-text16 opt-pb20"
+					}
+				]
+			}
+		],
+
+		"imglist": [
+			{
+				"comp": "/common-basic/base-img",
+				"innerdata": {
+					"imgURL": "/general-content/img3-1.png",
+					"imgAlt": "MetLife EVP 이미지"
+				}
+			},
+			{
+				"comp": "/common-basic/base-img",
+				"innerdata": {
+					"imgURL": "/general-content/img3-2.png",
+					"imgAlt": "MetLife EVP 이미지"
+				}
+			},
+			{
+				"comp": "/common-basic/base-img",
+				"innerdata": {
+					"imgURL": "/general-content/img3-3.png",
+					"imgAlt": "MetLife EVP 이미지"
+				}
+			}
+		],
+
+		"complist2": [
+			{
+				"comp": "/common/basic-component/base-heading",
+				"innerdata": {
+					"text": "EVP(Employee Value Proposition) Pillars",
+					"levelTag": "h3",
+					"class": "opt-text28 opt-text-bold opt-pb40 text-align-c"
+				}
+			}
+		],
+
+		"generalContTilesList" : [
+			{
+				"generalContTiles": {
+					"imgUrl": "/general-content/ico_vision1.svg",
+					"title": "변화 주도",
+					"eng": "Making a Difference",
+					"contentList": [
+						"메트라이프는 모든 구성원들이 사업 성공 및 고객의 삶에 가치있는 변화를 스스로 일으킬 수 있다는 확신을 가지도록 노력합니다."
+					]
+				}
+			},
+			{
+				"generalContTiles": {
+					"imgUrl": "/general-content/ico_vision2.svg",
+					"title": "최고의 입지 구축",
+					"eng": "Succeeding Together",
+					"contentList": [
+						"메트라이프는 각 국의 팀, 그리고 전 세계 모든 글로벌 조직에 서로 지지하고 협력하는 근무환경을 제공합니다."
+					]
+				}
+			},
+			{
+				"generalContTiles": {
+					"imgUrl": "/general-content/ico_vision3.svg",
+					"title": "시장 선도",
+					"eng": "Leading the Way",
+					"contentList": [
+						"메트라이프는 세계적인 수준의 사업 성과와 혁신을 통해 업계의 글로벌 혁신을 주도할 수 있는 역량, 사업영역 및 인재를 보유하고 있는 의욕적인 기업입니다."
+					]
+				}
+			},
+			{
+				"generalContTiles": {
+					"imgUrl": "/general-content/ico_vision4.svg",
+					"title": "잠재력 실현",
+					"eng": "Realizing Potential",
+					"contentList": [
+						"메트라이프는 회사의 성과에 기여하는 직원들이 직무교육, 개인 역량개발, 경력개발을 통해 그들의 잠재력을 실현할 수 있도록 동기를 부여하고 육성합니다."
+					]
+				}
+			}
+		]
+	}
+}

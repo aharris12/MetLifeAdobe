@@ -1,0 +1,37 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/promotion-card/styles.css -->
+
+
+{% set promo = promoCard %}
+
+<div class="comp-container bg-gray">
+    <div class="promo-card">
+        <div class="promo-card-imgbg" style="background-image:url('{{ paths.author }}{{ promo.imgURL }}');">
+            {% if promo.imgIR %}
+                <!-- background Alternative Text Area :: start -->
+                <div class="screen_out">{{ promo.imgIR }}</div>
+                <!-- background Alternative Text Area :: end -->
+            {% endif %}
+        </div>
+        <div class="promo-card-content">
+            <div class="promo-card-wrap">
+                <dl>
+                    <dt>{{ promo.promoContent.title }}</dt>
+                    {% if promo.promoContent.subCopy %}
+                    <dd class="subcopy">{{ promo.promoContent.subCopy }}</dd>
+                    {% endif %}
+                    {% for text in promo.promoContent.text %}
+                    <dd>{{ text }}</dd>
+                    {% endfor %}
+                </dl>
+
+                {% if promo.link %}
+                    {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                    {{ btn.btnlink(promo.link.text, promo.link.href, color=promo.link.color) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

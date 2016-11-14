@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* css folder ##error## */
+
+$boxMobPadding: 25px 10px 35px;
+$boxTabletPadding: 50px 20px 0; /*35px?*/
+$boxWebPadding: 65px 110px 0	;
+
+$titleMobPb: 15px;
+$titleTabletPb: 20px;
+
+$titleMobFontSize: 22px;
+$titleTabletFontSize: 30px;
+$titleWebFontSize: 36px;
+
+$titleMobLineHeight: 29px;
+$titleTabletLineHeight: 40px;
+$titleWebLineHeight: 48px;
+
+$linkMobBtmPadding: 20px;
+$linkTabletBtmPadding: 30px;
+$linkWebBtmPadding: 40px;
+
+$linkMobFontSize: 14px;
+$linkWebFontSize: 16px;
+
+$contMobBtmPadding: 10px;
+$contTabletBtmPadding: 20px;
+$contWebBtmPadding: 30px;
+
+$contTxtMobFontSize: 14px;
+$contTxtWebFontSize: 16px;
+
+$contTxtMobLineHeight: 20px;
+$contTxtTabletLineHeight: 21px;
+
+$codeMobFontSize: 100px;
+$codeWebFontSize: 150px;
+
+$pointColor1: #2377c5;
+
+.error  {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: $boxMobPadding;
+	text-align: center;
+
+	.error-heading {
+		padding-bottom: $titleMobPb;
+		font-size: $titleMobFontSize;
+		line-height: $titleMobLineHeight;
+		color: #000;
+	}
+
+	.error-linktext {
+		padding-bottom: $linkMobBtmPadding;
+		& a {
+			display: inline-block;
+			text-decoration: underline;
+			font-size: $linkMobFontSize;
+			font-weight: bold;
+			color: $pointColor1;
+		}
+	}
+
+	.error-txt {
+		padding-bottom: $contMobBtmPadding;
+		font-size: $contTxtMobFontSize;
+		line-height: $contTxtMobLineHeight;
+	}
+
+	.error-code {
+		font-size: $codeMobFontSize;
+		color: $pointColor1;
+	}
+
+}
+
+
+@media all and(min-width:768px) {
+
+	.error {
+		max-width: 728px;
+		margin: 0 auto;
+		padding: $boxTabletPadding;
+
+		.error-heading {
+			padding-bottom: $titleTabletPb;
+			font-size: $titleTabletFontSize;
+			line-height: $titleTabletLineHeight;
+		}
+
+		.error-linktext {
+			padding-bottom: $linkTabletBtmPadding;
+		}
+
+		.error-txt {
+			padding-bottom: $contTabletBtmPadding;
+		}
+	}
+
+}
+
+@media all and(min-width:1024px) {
+
+	.error {
+		width: 100%;
+		max-width: 880px;
+		padding: $boxWebPadding;
+
+		.error-heading {
+			font-size: $titleWebFontSize;
+			line-height: $titleWebLineHeight;
+		}
+
+		.error-linktext {
+			padding-bottom: $linkWebBtmPadding;
+			& a {
+				font-size: $linkWebFontSize;
+			}
+		}
+
+		.error-txt {
+			padding-bottom: $contWebBtmPadding;
+			font-size:  $contTxtWebFontSize;
+		}
+
+		.error-code {
+			font-size: $codeWebFontSize;
+		}
+	}
+
+}

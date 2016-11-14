@@ -1,0 +1,60 @@
+/* css folder ##home/more-content## */
+.more-content {
+  -webkit-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  -khtml-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.1); }
+
+.more-section {
+  display: block; }
+
+.more-content-img {
+  display: block; }
+  .more-content-img img {
+    width: 100%; }
+
+.more-content-con {
+  display: block;
+  text-align: center;
+  padding: 15px 0; }
+  .more-content-con strong {
+    display: block;
+    padding-bottom: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 21px;
+    color: #000; }
+  .more-content-con span {
+    display: block;
+    font-size: 15px;
+    line-height: 23px;
+    color: #333; }
+
+@media all and (min-width: 768px) {
+  .more-content {
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    -khtml-box-shadow: 0 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 0 transparent;
+    -ms-box-shadow: 0 0 0 0 transparent;
+    -o-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent; }
+  .more-content-con {
+    padding: 15px 0; }
+    .more-content-con strong {
+      font-size: 20px;
+      line-height: 27px; }
+    .more-content-con span {
+      font-size: 14px;
+      line-height: 21px; } }
+
+@media all and (min-width: 1024px) {
+  .more-content-con {
+    padding: 20px 0; }
+    .more-content-con strong {
+      font-size: 24px;
+      line-height: 30px; }
+    .more-content-con span {
+      font-size: 14px;
+      line-height: 21px; } }

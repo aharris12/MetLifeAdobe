@@ -1,0 +1,35 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/error/styles.css -->
+
+{% set items = container %}
+
+<div class="error">
+
+    {% set tit = items.titlelist %}
+    <h3 class="error-heading">{{ tit.title }}</h3>
+
+    <div class="error-cont">
+        {% if items.complist %}
+            {% for list in items.complist %}
+                {% set innerdata = list.innerdata %}
+                {% include paths.apps + list.comp + "/index.html" %}
+            {% endfor %}
+        {% endif %}
+
+        {% if items.linklist %}
+            {% set link = items.linklist %}
+            <div class="error-linktext">
+                <a href="{{ link.href }}">{{ link.text }}</a>
+            </div>
+        {% endif %}
+
+        {% if items.codelist %}
+            {% set cod = items.codelist %}
+            <p class="error-code">{{ cod.code }}</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

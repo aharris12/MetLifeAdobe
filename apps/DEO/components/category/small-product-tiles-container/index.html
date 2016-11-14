@@ -1,0 +1,21 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/category/small-product-tiles-container/styles.css -->
+<!-- #js# /apps/DEO/components/category/small-product-tiles-container/scripts.js -->
+
+
+<div class="comp-container bg-gray">
+    <div class="small-product-tiles-container">
+        {% set items = smallProductTilesList %}
+        <div class="small-product-tiles-wrap">
+            <ul>
+                {% for itemList in items %}
+                {% set smallProductTiles = itemList.smallProductTiles %}
+                <li>{% include paths.apps + "/category/small-product-tiles/index.html" %}</li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

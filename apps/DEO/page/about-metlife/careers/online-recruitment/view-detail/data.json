@@ -1,0 +1,104 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "인재채용" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "EVP" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용안내" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "온라인채용공고" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용관련FAQ" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "인사제도및복리후생" }
+	],
+		"active" : "2"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "인재채용" },
+		{ "href" : "#lnk", "text" : "온라인채용공고" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "온라인채용공고",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+	"recruitBasic" : {
+		"headTitle" : "[메트라이프생명] 2016 하반기 대졸신입사원 공개채용",
+		"subCopy" : [
+			"모집부문 : [계리분석팀] 본사 대졸 신입 모집",
+			"구분 : 신입",
+			"모집기간 : 2016-02-02 ~ 2016-02-15"
+		],
+		"btnType" : "지원서 작성",
+		"href" : "#lnk",
+		"textType" : {
+			"text" : "지원서 수정",
+			"href" : "#lnk"
+		}
+	},
+	"innerdata" : {
+		"graytype" : false,
+		"complist" : [
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+						"text" : "지원자격",
+						"class" : "opt-text14 opt-text-bold"
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/base-list",
+				"innerdata" : {
+					"bultClass" : "opt-bult02 opt-pb30",
+					"textClass" : "opt-text14",
+					"list" : [
+						{ "text" : "4년제 정규대학의 2017년 2월 졸업예정자 및 기 졸업자 (석박사 포함)" },
+						{ "text" : "최종학력 전학년 평균평점이 B등급 이상인 자" },
+						{ "text" : "해외 여행에 결격사유가 없는 자" },
+						{ "text" : "남자의 경우 병역을 必하였거나, 면제된 자" }
+					]
+				}
+			},
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+						"text" : "제출서류",
+						"class" : "opt-text14 opt-text-bold"
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/base-list",
+				"innerdata" : {
+					"bultClass" : "opt-bult02 opt-pb30",
+					"textClass" : "opt-text14",
+					"list" : [
+						{ "text" : "서류전형 합격자에 한하여 춯 개별 안내합니다." }
+					]
+				}
+			},
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+						"text" : "접수기간",
+						"class" : "opt-text14 opt-text-bold"
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/base-list",
+				"innerdata" : {
+					"bultClass" : "opt-bult02 opt-pb30",
+					"textClass" : "opt-text14",
+					"list" : [
+						{ "text" : "2016년 01월 01일 (월) 09:00 ~ 2016년 01월 01일 (금) 18:00 까지" }
+					]
+				}
+			}
+		]
+	}
+}

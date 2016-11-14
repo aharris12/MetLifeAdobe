@@ -1,0 +1,25 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/cyber-counter/styles.css -->
+{% set items = cyberCounter %}
+<div class="cyber-counter-wrap web-view">
+    {% import paths.apps + "/common/extend/heading/index.html" as heading %}
+    {{ heading.headtag("h2", "사이버창구 업무", "cyber-counter-heading") }}
+
+    <div class="cyber-counter">
+        <a href="#lnk" class="cyber-link1"><span>계약조회</span></a>
+        <a href="#lnk" class="cyber-link2"><span>보험료납입</span></a>
+        <a href="#lnk" class="cyber-link3"><span>자동이체</span></a>
+        <a href="#lnk" class="cyber-link4"><span>보험계약대출</span></a>
+        <a href="#lnk" class="cyber-link5"><span>펀드변경</span></a>
+        <a href="#lnk" class="cyber-link6"><span>보험금청구</span></a>
+        <a href="#lnk" class="cyber-link7"><span>개인정보변경</span></a>
+        <a href="#lnk" class="cyber-link8"><span>e-모니터링</span></a>
+    </div>
+</div>
+
+<div class="tablet-banner">
+    {% set skinnyBanner = items.skinnyBanner %}
+    {% include paths.apps + "/home/skinny-banner/index.html" %}
+</div>
+
+<!-- COMPONENT END -->

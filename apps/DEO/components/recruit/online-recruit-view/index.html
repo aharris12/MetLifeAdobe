@@ -1,0 +1,42 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/recruit/online-recruit-view/styles.css -->
+
+{% set items = recruitBasic %}
+<div class="recruit-view">
+    <div class="recruit-view-back">
+        <a href="#lnk"><span>뒤로가기</span></a>
+    </div>
+
+    <div class="recruit-view-con">
+        <div class="recruit-view-header">
+            {% import paths.apps + "/common/extend/heading/index.html" as heading %}
+            {{ heading.headtag("h3", items.headTitle, "recruit-view-heading") }}
+
+            {% for subCopy in items.subCopy %}
+            <p class="recruit-view-subcopy">{{ items.subCopy }}</p>
+            {% endfor %}
+        </div>
+
+        {% set newCont = innerdata %}
+        {% include paths.apps + "/common/basic-component/general-column/index.html" %}
+
+    </div>
+
+    <div class="recruit-view-btn">
+        {% if items.btnType %}
+            {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+            {{ btn.btnlink(items.btnType, items.href,"recruit-view-linkbtn") }}
+        {% endif %}
+
+        {% if items.textType %}
+			 <a href="{{ items.textType.href }}" class="recruit-view-linktxt opt-text14">{{ items.textType.text }}</a>
+        {% endif %}
+    </div>
+
+    <div class="recruit-view-back">
+        <a href="#lnk"><span>뒤로가기</span></a>
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

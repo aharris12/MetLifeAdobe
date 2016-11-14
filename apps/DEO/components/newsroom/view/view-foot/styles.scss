@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* css folder ##newsroom/view/view-foot## */
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.news-foot{
+	padding-bottom:25px;
+	.news-foot-con{
+		font-size: 13px;
+		line-height: 20px;
+		color: #333;
+		& > p{
+			padding-bottom: 25px;
+			word-break: break-all;
+		}
+		& a{
+			color: $pointColor1;
+		}
+	}
+	.news-foot-info{
+		font-size: 13px;
+		line-height: 20px;
+		color: #333;
+		strong{
+			display: block;
+			font-weight: normal;
+		}
+	}
+}
+
+@media all and(min-width:768px) {
+	.news-foot{
+		padding-bottom:35px;
+	}
+}

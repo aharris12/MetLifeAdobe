@@ -1,0 +1,133 @@
+/* css folder ##file-a-claim## */
+.file-claim-container {
+  padding-top: 20px; }
+
+.file-claim-files {
+  position: absolute;
+  right: 20px;
+  top: 11px; }
+  .file-claim-files a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0061a0;
+    padding-left: 25px;
+    height: 20px;
+    line-height: 20px; }
+    .file-claim-files a:after {
+      width: 19px;
+      height: 20px;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url("./images/ico_doc.png");
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover; }
+  .file-claim-files a.ico-word:after {
+    background-position: -19px 0; }
+  .file-claim-files a.ico-excel:after {
+    background-position: -38px 0; }
+  .file-claim-files a.ico-ppt:after {
+    background-position: -57px 0; }
+  .file-claim-files .down {
+    font-size: 0;
+    line-height: 0;
+    text-indent: -999%; }
+  .file-claim-files .file-claim-kb {
+    display: block;
+    padding: 6px 0 0 5px;
+    font-size: 13px;
+    color: #333;
+    text-indent: 0; }
+
+.file-claim-heading {
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 0 25px 20px; }
+  .file-claim-heading h3 + .subinfo {
+    padding-top: 8px;
+    background-position: 0 15px; }
+  .file-claim-heading .subinfo {
+    padding-left: 12px;
+    background: url("./images/ico-subcopy.svg") 0 7px no-repeat;
+    font-size: 15px;
+    line-height: 23px; }
+
+.comp-file-claim {
+  margin: 0 auto;
+  padding-bottom: 20px; }
+  .comp-file-claim ul {
+    width: 100%; }
+    .comp-file-claim ul li {
+      position: relative;
+      padding: 11px 20px 15px;
+      width: 100%;
+      border-top: 1px solid #cccccc; }
+
+.file-claim-con {
+  width: 100%; }
+  .file-claim-con .title {
+    display: block;
+    width: 100%;
+    padding-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #333; }
+    .file-claim-con .title a {
+      color: #0061a0; }
+
+@media all and (min-width: 768px) {
+  .file-claim-container {
+    padding-top: 30px; }
+  .file-claim-heading {
+    font-size: 20px;
+    padding: 0 0 12px 20px; }
+    .file-claim-heading .subinfo {
+      font-size: 12px;
+      line-height: 21px; }
+  .comp-file-claim {
+    width: 95%;
+    padding-bottom: 28px; }
+    .comp-file-claim ul {
+      padding: 0; }
+      .comp-file-claim ul li {
+        position: relative;
+        padding: 28px 20px 29px; }
+  .file-claim-con .date {
+    font-size: 13px; }
+  .file-claim-con .title {
+    width: 70%;
+    padding-bottom: 0;
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+  .file-claim-files {
+    top: 50%;
+    margin-top: -20px; }
+    .file-claim-files a {
+      font-size: 13px; }
+    .file-claim-files .down {
+      display: inline-block;
+      font-size: 13px;
+      line-height: 21px;
+      text-indent: 0; }
+  .file-claim-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -20px; } }
+
+@media all and (min-width: 1024px) {
+  .comp-file-claim {
+    width: 85%;
+    max-width: 880px;
+    padding-bottom: 40px; }
+    .comp-file-claim ul {
+      padding: 0; }
+  .file-claim-files a {
+    font-size: 13px; } }

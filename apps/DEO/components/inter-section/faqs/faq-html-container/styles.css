@@ -1,0 +1,15 @@
+/* css folder ##inter-section/faqs/faq-html-container## */
+.faq-container {
+  padding: 20px 0; }
+
+@media all and (min-width: 768px) {
+  .faq-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px 0; } }
+
+@media all and (min-width: 1024px) {
+  .faq-container {
+    width: 100%;
+    max-width: 880px;
+    padding: 40px 0; } }

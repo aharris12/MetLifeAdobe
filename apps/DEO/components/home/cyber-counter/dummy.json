@@ -1,0 +1,14 @@
+{
+	"cyberCounter" : {
+		"skinnyBanner" : {
+			"imgUrl" : "/skinny-banner/img-temp.png",
+			"imgAlt" : "대체텍스트 필요시 입력",
+			"title" : "모바일창구 안내",
+			"contentList" : [
+				"계약조회 및 보험료 납입, 자동이체 등의 업무처리가 가능합니다."
+			],
+			"link" : "#lnk",
+			"color" : "green"
+		}
+	}
+}

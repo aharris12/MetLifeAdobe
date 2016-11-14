@@ -1,75 +1,48 @@
 <!-- COMPONENT START -->
 <!-- #comp css# /apps/DEO/components/newsroom/list/styles.css -->
 
-<div class="comp-container">
-    <div class="news-list">
-        <h3 class="news-heading">뉴스 업데이트</h3>
-        <ul>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-                <div class="news-file">
-                    <a href="#lnk" class="ico-pdf">지원서류안내.PDF</a>
-					<span>(PDF -128kb)</span>
-				</div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-                <div class="news-file">
-                    <a href="#lnk" class="ico-word">지원서류안내.DOC</a>
-					<span>(PDF -128kb)</span>
-				</div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-                <div class="news-file">
-                    <a href="#lnk" class="ico-excel">지원서류안내.XLS</a>
-                    <span>(PDF -128kb)</span>
-                </div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-                <div class="news-file">
-                    <a href="#lnk" class="ico-ppt">지원서류안내.PPT</a>
-					<span>(PDF -128kb)</span>
-				</div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-            </li>
-            <li>
-                <div class="news-list-con">
-                    <span class="screen_out">작성일 : </span> <span class="date">2016-06-25</span>
-                    <span class="screen_out">제목 : </span> <span class="title"><a href="#lnk">메트라이프생명, 자원봉사활동 장려 위한 휴가 제도 도입</a></span>
-                </div>
-            </li>
-        </ul>
+<div class="news-list">
+    <form action="?">
+        <fieldset>
+            <legend class="screen_out">보도자료 검색</legend>
 
+            <div class="news-search">
 
-        <div class="news-list-more">
-            <button type="button">더보기</button>
-        </div>
-    </div>
+                {% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+                <div class="slt-half">
+                    <div class="half">
+                        <label for="yearSlt">연도</label>
+                        {{ forms.select_type2("yearSlt", [
+                        {text : "2016", val : "2016"},
+                        {text : "2015", val : "2015"}
+                        ], "name")}}
+                    </div>
+                    <div class="half">
+                        <label for="monthSlt">월</label>
+                        {{ forms.select_type2("monthSlt", [
+                        {text : "전체", val : "전체"},
+                        {text : "12", val : "12"}
+                        ], "name")}}
+                    </div>
+                </div>
+                <div class="slt-extend">
+                    <label class="screen_out" for="categorySlt">분류</label>
+                    {{ forms.select_type2("categorySlt", [
+                    {text : "전체", val : "전체"}
+                    ], "name")}}
+                    <div>
+                        {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                        {{ btn.button("검색", "submit", color="green") }}
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+
+    {% set innerdata = resultCont %}
+	{% include paths.apps + "/newsroom/list/result-content/index.html" %}
+
 </div>
 
 <!-- COMPONENT END -->

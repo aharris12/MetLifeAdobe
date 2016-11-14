@@ -1,0 +1,37 @@
+{
+	"prdCont" : {
+		"title" : {
+			"level" : "h3",
+			"text" : "상품구조",
+			"class" : "prd-stitle"
+		},
+		"complist" : [
+			{
+				"loadComp" : "/product/detail1/prd-text",
+				"innerdata" : {
+					"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험"
+				}
+			},
+			{
+				"loadComp" : "/product/detail1/prd-img",
+				"innerdata" : {
+					"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험",
+					"web" : "/@temp/prd-tablet.png",
+					"tablet" : "/@temp/prd-tablet.png",
+					"mobile": "/@temp/prd-mobile.png",
+					"alt" : "text",
+					"imgIR" : "background Alternative Text",
+					"caption" : "가입금액 1억원 기준 <br> 은퇴나이 55세, 60세, 65세 중 선택"
+				}
+			},
+			{
+				"loadComp" : "/product/detail1/prd-text",
+				"innerdata" : {
+					"bullet" : "prd-bullet-text",
+					"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험"
+				}
+			}
+		]
+	}
+
+}

@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* css folder ##inter-section/faqs/faq## */
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+
+
+.comp-faq{
+	margin: 0 auto;
+	.comp-faq-title{
+		position: relative;
+		padding-left: 20px;
+		& > strong{
+			font-size:22px;
+			line-height:100%;
+			color: #000;
+			& + .subinfo{
+				padding-top:8px;
+				background-position:0 15px;
+			}
+		}
+		& .comp-fap-allopen,
+		& .comp-fap-allclose{
+			display:none;
+		}
+	}
+	& .subinfo{
+		padding-left:12px;
+		background:url('./images/ico-subcopy.svg') 0 7px no-repeat;
+		font-size:15px;
+		line-height:23px;
+	}
+	& .comp-faq-info{
+		padding:15px 20px 0 34px;
+		background:url('./images/ico-subcopy.svg') 20px 22px no-repeat;
+		font-size:15px;
+		line-height:21px;
+		& a{
+			font-weight:bold;
+			color:$pointColor1;
+			border-bottom:1px solid #2377c5;
+		}
+	}
+}
+
+.comp-faq-con {
+	padding:10px 0;
+	& ul.comp-faq-ul li.comp-faq-list{
+		border-top:1px solid #cecece;
+	}
+}
+
+.comp-faq-list{
+	& .comp-faq-question {
+		& dl dd button{
+			width:100%;
+			padding:10px 45px 10px 20px;
+			text-align: left;
+			display: block;
+			background:url('./images/ico-plus.svg') right 20px center no-repeat;
+			font-size:16px;
+			line-height:24px;
+			color: $pointColor1;
+			&.bold{
+				font-weight:bold;
+			}
+		}
+	}
+
+	& .comp-faq-answer {
+		width:100%;
+		height:0;
+		display: none;
+		overflow: hidden;
+		& dl dd {
+			padding: 9px 20px 12px 20px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	&.active{
+		& .comp-faq-question dd button{
+			background-image:url('./images/ico-minus.svg');
+		}
+	}
+}
+
+
+
+@media all and(min-width:768px) {
+	.comp-faq{
+		.comp-faq-title{
+			& > strong{
+				font-size:20px;
+			}
+			& > button{
+				position:absolute;
+				right:10px;
+				top:3px;
+				font-size:14px;
+				line-height:21px;
+				font-weight:bold;
+				color: $pointColor1;
+				&.comp-fap-allopen{
+					display:block;
+				}
+				&.comp-fap-allclose{
+					display:none;
+				}
+			}
+		}
+		& .subinfo{
+			font-size:12px;
+			line-height:21px;
+		}
+		& .comp-faq-info{
+			padding-top:20px;
+			background-position: 20px 27px;
+			font-size:13px;
+			line-height:20px;
+		}
+	}
+
+	.comp-faq-con{
+		padding:14px 0;
+	}
+
+	.comp-faq-list{
+		.comp-faq-question {
+			& dl dd button {
+				padding:14px 20px 14px 20px;
+				background-position: right 20px top 18px;
+				font-size:14px;
+				line-height:21px;
+			}
+		}
+		& .comp-faq-answer {
+			& dl dd {
+				padding: 4px 20px 18px 20px;
+				font-size: 14px;
+				line-height: 21px;
+			}
+		}
+
+		&.active{
+			& .comp-faq-question dd button{
+				background-position: right 20px top 24px;
+			}
+		}
+	}
+
+}
+
+@media all and(min-width:1024px) {
+	.comp-faq{
+		& .comp-faq-title{
+			& > button{
+				right:20px;
+			}
+		}
+	}
+	.comp-faq-con{
+		padding: 12px 0;
+	}
+}

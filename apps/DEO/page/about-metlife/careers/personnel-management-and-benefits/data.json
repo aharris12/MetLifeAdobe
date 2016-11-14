@@ -1,0 +1,163 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "인재채용" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "EVP" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용안내" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "온라인채용공고" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "채용관련FAQ" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "인사제도및복리후생" }
+	],
+		"active" : "4"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "인재채용" },
+		{ "href" : "#lnk", "text" : "인사제도 및 복리후생" }
+	],
+
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "인사제도 및 복리후생",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"container" : {
+		"graytype": false,
+		"complist": [
+			{
+				"comp": "/common/basic-component/general-column",
+				"innerdata": {
+					"complist": [
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "급여제도",
+								"levelTag" : "h3",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "지원자의 능력과 역량 및 Job Value에 의거 책정",
+									"class": "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "급여구성",
+								"levelTag" : "h3",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/table/rank-table/table1"
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "Annual Performance Incentive Bonus",
+								"levelTag" : "h3",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "조직과 개인의 성과에 따라 차등 지급하는 성과급 제도",
+									"class": "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "직급체계",
+								"levelTag" : "h3",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/rank/"
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "승진제도",
+								"levelTag" : "h3",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "승진의 의미",
+								"levelTag" : "h4",
+								"class" : "opt-text14 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "성과, 보유역량, 향후 발전 가능성 등을 종합적으로 판단하여 상위 직급/직무를 부여하며, 그에 따라 확대된 책임과 권한을 부여하고 합당한 보상을 제공",
+									"class": "opt-text14 opt-pb20"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "승진의 종류",
+								"levelTag" : "h4",
+								"class" : "opt-text14 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/table/rank-table/table2"
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "성과관리제도",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "지속적인 직원 개발 및 성과 향상을 위해 매년 개인별 회사 발전을 위한 정량적/정성적 공헌을 측정하여 상대평가 함",
+									"class": "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "복리후생제도",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb10"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/table/rank-table/table3"
+						}
+					]
+				}
+			}
+		]
+	}
+}

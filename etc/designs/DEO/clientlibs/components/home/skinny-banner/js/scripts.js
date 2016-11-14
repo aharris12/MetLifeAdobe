@@ -1,0 +1,1 @@
+/* home/skinny-banner script */

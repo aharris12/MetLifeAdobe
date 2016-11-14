@@ -1,0 +1,20 @@
+{% set subCategory = gnbDepth3 %}
+{% include paths.apps + "/common/layout/sub-category-3depth/index.html" %}
+
+
+<div class="content">
+
+    {% include paths.apps + "/common/layout/share-click-to-call/index.html" %}
+
+    <div class="comp-container bg-gray">
+        {% include paths.apps + "/product/detail1/product-card/index.html" %}
+
+        {% include paths.apps + "/product/detail1/prd-tab/index.html" %}
+        {% include paths.apps + "/product/detail1/prd-detailbox/index.html" %}
+    </div>
+
+    <div class="comp-container bg-gray">
+        {% include paths.apps + "/product/detail1/prd-more-contents-container/index.html" %}
+    </div>
+
+</div>

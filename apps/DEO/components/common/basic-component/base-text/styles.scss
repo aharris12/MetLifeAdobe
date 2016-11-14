@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+
+$baseTextColor : #333;
+$baseTextPointColor : #666;
+
+.opt-text28,
+.opt-text24,
+.opt-text20,
+.opt-text16,
+.opt-text14,
+.opt-text13 {
+	color: $baseTextColor;
+	font-weight:normal;
+	text-indent:0;
+}
+
+.opt-text28.opt-text-bold,
+.opt-text24.opt-text-bold,
+.opt-text20.opt-text-bold,
+.opt-text16.opt-text-bold,
+.opt-text14.opt-text-bold,
+.opt-text13.opt-text-bold {
+	font-weight:bold;
+}
+
+.opt-text14.opt-pointColor1,
+.opt-text13.opt-pointColor1 {
+	color: $baseTextPointColor;
+}
+
+
+.opt-text28 {
+	font-size:22px;
+	line-height:28px;
+}
+
+.opt-text24 {
+	font-size:22px;
+	line-height:28px;
+}
+
+.opt-text20 {
+	font-size:20px;
+	line-height:26px;
+}
+
+.opt-text16 {
+	font-size:16px;
+	line-height:22px;
+}
+
+.opt-text14 {
+	font-size:15px;
+	line-height:21px;
+}
+
+.opt-text13 {
+	font-size:14px;
+	line-height:20px;
+}
+
+
+@media all and(min-width:768px) {
+
+	.opt-text28 {
+		font-size:24px;
+		line-height:32px;
+	}
+
+	.opt-text24 {
+		font-size:22px;
+		line-height:30px;
+	}
+
+	.opt-text20 {
+		font-size:18px;
+		line-height:26px;
+	}
+
+	.opt-text16 {
+		font-size:16px;
+		line-height:24px;
+	}
+
+	.opt-text14 {
+		font-size:14px;
+		line-height:21px;
+	}
+	.opt-text13 {
+		font-size:13px;
+		line-height:20px;
+	}
+}
+
+
+@media all and(min-width:1024px) {
+
+	.opt-text28 {
+		font-size:28px;
+		line-height:36px;
+	}
+
+	.opt-text24 {
+		font-size:24px;
+		line-height:31px;
+	}
+
+	.opt-text20 {
+		font-size:20px;
+		line-height:28px;
+	}
+
+}
+
+
+
+.ol-decimal .opt-text-bold>li,
+.ol-decimalZero .opt-text-bold>li,
+.opt-bult01 .opt-text-bold>li,
+.opt-bult02 .opt-text-bold>li,
+.opt-bult03 .opt-text-bold>li{
+	font-weight:bold;
+}
+
+
+
+.ol-decimal {
+	&>ol, &>ol>li {
+		list-style-position:outside;
+		padding-left: 5px;
+		margin-left: 15px;
+		list-style: decimal;
+	}
+
+	&>.opt-text16>li {
+		@extend .opt-text16;
+	}
+
+	&>.opt-text14>li {
+		@extend .opt-text14;
+	}
+
+	&>.opt-text13>li {
+		@extend .opt-text13;
+	}
+}
+
+.ol-decimalZero {
+	&>ol, &>ol>li {
+		list-style-position:outside;
+		text-indent: 10px;
+		margin-left: 11px;
+		list-style: decimal-leading-zero;
+	}
+
+	&>.opt-text16>li {
+		@extend .opt-text16;
+	}
+
+	&>.opt-text14>li {
+		@extend .opt-text14;
+	}
+
+	&>.opt-text13>li {
+		@extend .opt-text13;
+	}
+}
+
+.opt-bult01 {
+	&>ul>li {
+		font-weight:normal;
+		background: {
+			image : url('/content/dam/DEO/author/common_ico/opt-bult-dot.svg');
+			repeat : no-repeat;
+		}
+	}
+
+	&>.opt-text16>li {
+		@extend .opt-text16;
+		background: {
+			position: 0 10px;
+		}
+		-webkit-background-size:5px 5px;
+		background-size:5px 5px;
+		padding-left:15px;
+	}
+
+	&>.opt-text14>li {
+		@extend .opt-text14;
+		background: {
+			position: 0 9px;
+		}
+		-webkit-background-size:5px 5px;
+		background-size:5px 5px;
+		padding-left:15px;
+	}
+
+	&>.opt-text13>li {
+		@extend .opt-text13;
+		background: {
+			position: 0 8px;
+		}
+		-webkit-background-size:4px 4px;
+		background-size:4px 4px;
+		padding-left:10px;
+	}
+}
+
+.opt-bult02 {
+	&>ul>li {
+		font-weight:normal;
+		background: {
+			image : url('/content/dam/DEO/author/common_ico/opt-bult-dash.svg');
+			repeat : no-repeat;
+		}
+	}
+	&>.opt-text16>li {
+		@extend .opt-text16;
+		background: {
+			position: 0 9px;
+		}
+		-webkit-background-size:5px 1px;
+		background-size:5px 1px;
+		padding-left:15px;
+	}
+
+	&>.opt-text14>li {
+		@extend .opt-text14;
+		background: {
+			position: 0 10px;
+		}
+		-webkit-background-size:5px 1px;
+		background-size:5px 1px;
+		padding-left:15px;
+	}
+
+	&>.opt-text13>li {
+		@extend .opt-text13;
+		background: {
+			position: 0 9px;
+		}
+		-webkit-background-size:4px 1px;
+		background-size:4px 1px;
+		padding-left:10px;
+	}
+}
+
+.opt-bult03 {
+	&>ul>li {
+		font-weight:normal;
+		background: {
+			image : url('/content/dam/DEO/author/common_ico/opt-bult-info.svg');
+			repeat : no-repeat;
+		}
+	}
+	&>.opt-text16>li {
+		@extend .opt-text16;
+		background: {
+			position: 0 5px;
+		}
+		-webkit-background-size:10px 10px;
+		background-size:12px 12px;
+		padding-left:18px;
+	}
+
+	&>.opt-text14>li {
+		@extend .opt-text14;
+		background: {
+			position: 0 4px;
+		}
+		-webkit-background-size:10px 10px;
+		background-size:10px 10px;
+		padding-left:18px;
+	}
+
+	&>.opt-text13>li {
+		@extend .opt-text13;
+		background: {
+			position: 0 4px;
+		}
+		-webkit-background-size:10px 10px;
+		background-size:10px 10px;
+		padding-left:18px;
+	}
+}
+

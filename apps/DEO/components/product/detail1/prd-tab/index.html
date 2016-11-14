@@ -1,0 +1,12 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-tab/styles.css -->
+
+<div class="prd-tab">
+    {% set tablist = prdTab %}
+
+    {% for items in tablist %}
+        <a href="{{ items.link }}"{% if items.active %} class="active"{% endif %}>{{ items.text }}</a>
+    {% endfor %}
+</div>
+
+<!-- COMPONENT END -->

@@ -1,0 +1,116 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "상품소개" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사망보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "건강보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연금보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "VUL" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "퇴직연금" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "기타상금" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "가입상담문의" }
+	],
+		"active" : "0"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "상품소개" },
+		{ "href" : "#lnk", "text" : "사망보장보험" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "사망보장보험",
+		"titleCopy" : "든든한 사망보장으로 가족의 꿈과 미래를 지켜주세요.",
+		"shareComp" : {
+			"share" : true,
+			"chat" : true
+		}
+	},
+
+	"subcProductList1" : [
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 변액유니버셜 종신보험 경청",
+				"href" : "#lnk",
+				"contentList" : [
+					"갈수록 커지는 당신의 불안을 안심으로 바꿀 수 있도록 우리의 준비가 빠르게 움직일 수 있도록 고객의 마음을 경청합니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 스마트플랜 변액유니버셜종신보험",
+				"href" : "#lnk",
+				"contentList" : [
+					"갑자기 찾아오는 질병엔 속수무책. 늘어나는 여성관련 암, 질병들... 적어도 의료비 걱정은 없어야겠죠?"
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 VIP플랜 변액유니버셜종신보험",
+				"href" : "#lnk",
+				"contentList" : [
+					"한번의 가입, 합리적 보험료로 평생 보장받는 보험을 만나 당신의 하이라이프를 마음껏 펼치세요!"
+				],
+				"btnType" : "더 알아보기"
+			}
+		}
+	],
+	"subcProductList2" : [
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 하이라이프 종신보험",
+				"href" : "#lnk",
+				"contentList" : [
+					"사망 보장과 건강 보장 두가지를 준비할 수 있다면 가족 생각에 무겁던 당신의 마음도 조금은 가벼워질 수 있겠죠?"
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 LifeCycle 종신보험",
+				"href" : "#lnk",
+				"contentList" : [
+					"먼 길을 달려가야 할 내 인생, 넘어지지 않고 나아가려면 인생계획에 맞게 계약 변경 가능한 동반자가 필요하죠!"
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "무배당 더해주고 채워주는 정기보험",
+				"href" : "#lnk",
+				"contentList" : [
+					"부담되는 치료비용을 늘 걱정하는 당신의 마음, 우리 가족이 걱정 털고 웃을 수 있게 든든한 보장, 미리 만나야겠죠?"
+				],
+				"btnType" : "더 알아보기"
+			}
+		}
+	],
+	"smallModule" : {
+		"list" : [
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "무배당 우리가족 대출클린 신용보험"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "무배당 VIP플랜 변액유니버셜종신보험"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "무배당 라이프플랜 변액유니버셜종신보험"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "무배당 더해주고 채워주는 정기보험"
+			}
+		]
+	}
+}

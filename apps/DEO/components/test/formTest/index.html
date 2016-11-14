@@ -1,0 +1,27 @@
+<!-- COMPONENT START -->
+
+
+{% import paths.apps + "/common/extend/macro-input/index.html" as forms %}
+
+
+<!-- input type 예제 -->
+<!--
+input( id, label text, name, value, type )
+* id, label text : 필수 입력값
+* name defalut : null
+* value defalut : null
+* type defalut : text (text or password)
+-->
+<div>
+    {{ forms.input( "name", "test" ) }}
+
+<br><br>
+
+    {{ forms.uploader( "file-uploader", "첨부파일", value="첨부파일" ) }}
+</div>
+
+
+
+<!-- COMPONENT END -->
+
+

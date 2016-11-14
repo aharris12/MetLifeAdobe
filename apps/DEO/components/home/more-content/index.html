@@ -1,0 +1,18 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/more-content/styles.css -->
+
+
+{% set item = moreContent %}
+<div class="more-content">
+	<a href="#lnk" class="more-section">
+		<span class="more-content-img">
+			<img src="{{ paths.author }}{{ item.imgUrl }}" alt="{{ item.imgAlt }}">
+		</span>
+		<span class="more-content-con">
+			<strong>{{ item.title }}</strong>
+			<span>{{ item.cont }}</span>
+		</span>
+	</a>
+</div>
+
+<!-- COMPONENT END -->

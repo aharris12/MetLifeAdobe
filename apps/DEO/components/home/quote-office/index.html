@@ -1,0 +1,105 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/quote-office/styles.css -->
+<!-- #js# /apps/DEO/components/home/quote-office/scripts.js -->
+
+
+{% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+
+<div class="quote-office">
+	<div class="product-selector">
+		<h2 class="product-office-heading">메트라이프 상품소개</h2>
+		<div class="select-wrapper">
+			<label for="categorySlt" class="screen_out">상품 카테고리 선택</label>
+			{{ forms.select_type2("categorySlt", [
+			{text : "상품 카테고리를 선택하세요", val : "1"}
+			], "name")}}
+			<div class="slt-area">
+				<div class="half">
+					<label for="productSlt" class="screen_out">상품명 선택</label>
+					{{ forms.select_type2("productSlt", [
+					{text : "상품명을 선택하세요", val : "0"},
+					{text : "상품", val : "1"}
+					], "name")}}
+				</div>
+				<div class="half">
+					{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+					{{ btn.btnlink("확인" , color="green") }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="office-selector">
+		<h2 class="product-office-heading">원하시는 서비스를 선택하세요</h2>
+		<div class="office-tab">
+			<ul>
+				<li class="active">
+					<a href="#lnk" class="tab-title">모바일창구</a>
+					<div class="tab-cont">
+						<div class="select-wrapper">
+							<div class="slt-area">
+								<div class="half">
+									<label for="cyberSlt" class="screen_out">업무 선택</label>
+									{{ forms.select_type2("cyberSlt", [
+									{text : "업무를 선택하세요", val : "0"},
+									{text : "업무", val : "1"}
+									], "name")}}
+								</div>
+								<div class="half">
+									{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+									{{ btn.btnlink("자세히 보기" , color="green") }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#lnk" class="tab-title">지점찾기</a>
+					<div class="tab-cont">
+						<div class="select-wrapper">
+							<div class="slt-area">
+								<div class="half">
+									<label for="stateSlt" class="screen_out"> 선택</label>
+									{{ forms.select_type2("stateSlt", [
+									{text : "시/도 선택", val : "0"},
+									{text : "서울특별시", val : "1"}
+									], "name")}}
+								</div>
+								<div class="half">
+									{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+									{{ btn.btnlink("자세히 보기" , color="green") }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#lnk" class="tab-title">콜센터</a>
+					<div class="tab-cont">
+						<div class="select-wrapper">
+							<div class="slt-area">
+								<div class="half">
+									 <div class="call-info">
+										<span class="call">
+											<span class="tablet-view">1588-9600</span>
+											<a href="tel:15889600" class="mobile-view">1588-9600</a>
+										</span>
+										<span class="other">
+											<span>콜센터 : 오전 9시 ~ 오후 6시</span>
+										</span>
+									</div>
+								</div>
+								<div class="half">
+									{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+									{{ btn.btnlink("자세히 보기" , color="green") }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- COMPONENT END -->

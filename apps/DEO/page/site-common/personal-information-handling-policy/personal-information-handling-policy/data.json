@@ -1,0 +1,609 @@
+{
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "개인정보 처리방침" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "개인정보처리방침",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+	"proMotion" : {
+		"imgURL" : "/category/promo-img1.png",
+		"imgIR" : "대체텍스트 필요시 입력",
+		"promoContent" : {
+			"title" : "무배당 스마트플랜 변액유니버설 종신보험",
+			"text" : [
+				"든든한 사망보장에 적립형 전환기능으로 목적자금 활용이 가능한 보험"
+			]
+		},
+		"link" : {
+			"color" : "green",
+			"href" : "#lnk",
+			"text" : "더 알아보기"
+		}
+	},
+
+	"container" : {
+		"graytype" : false,
+		"complist" : [
+			{
+				"comp" : "/inter-section/tab",
+				"innerdata" : {
+					"mobDrop" : true,
+					"tabList" : [
+						{
+							"lnk" : "#lnk",
+							"text" : "개인정보 처리방침",
+							"active" : true
+						},
+						{
+							"lnk" : "#lnk",
+							"text" : "개인신용정보활용체제"
+						},
+						{
+							"lnk" : "#lnk",
+							"text" : "고객권리 안내문"
+						},
+						{
+							"lnk" : "#lnk",
+							"text" : "영상정보처리기기 설치·운영방침"
+						}
+					]
+				}
+			},
+			{
+				"comp" : "/common/basic-component/general-column",
+				"innerdata" : {
+					"complist" : [
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보 처리방침",
+								"levelTag" : "h3",
+								"class" : "opt-text20 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "회사는 고객 여러분의 개인정보를 무엇보다 중요하게 생각하고 있으며 개인정보 관련 법령 및 지침을 준수하고 있습니다. 회사는 개인정보취급방침을 통하여 고객 여러분께서 제공하시는 개인정보가 어떠한 용도와 방식으로 처리되고 있으며, 개인정보 보호를 위한 안전조치 사항을 알려드리고 있습니다. 이 방침은 회사의 정책에 따라 변경될 수 있으며 중요한 내용이 변경되는 경우 웹사이트를 통해 공지 할 것입니다.",
+									"class" : "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보의 수집·이용 목적, 수집하는 개인정보의 항목 및 수집 방법",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-list",
+							"innerdata" : {
+								"bultClass" : "ol-decimalZero",
+								"textClass" : "opt-text14 opt-text-bold",
+								"list" : [
+									{
+										"text" : "수집 및 이용목적",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "회사는 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적 이외의 용도로는 사용되지 않습니다.",
+														"class" : "opt-text14 opt-pb20"
+													},
+													{
+														"text" : "보험계약의 체결 및 이행",
+														"class" : "opt-text14 opt-text-bold"
+													}
+												]
+											},
+											{
+												"comp" : "/common/basic-component/base-list",
+												"innerdata" : {
+													"bultClass" : "opt-bult02 opt-pb20",
+													"textClass" : "opt-text14",
+													"list" : [
+														{
+															"text": "보험계약의 체결·유지·관리·상담·이행, 계약적부, 보험금지급·심사, 보험사고조사"
+														},
+														{
+															"text": "조사연구, 서비스 제공, 순보험 요율의 산출·검증"
+														},
+														{
+															"text": "보험모집질서 유지, 공공기관의 정책자료로 제공"
+														},
+														{
+															"text": "보험계약 및 보험금 청구에 이해관계가 있는 자에 대한 법규 및 계약상 의무 이행"
+														},
+														{
+															"text": "보험계약 관련 분쟁 대응, 고객 이력 관리"
+														}
+
+													]
+												}
+											},
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "상품의 소개 및 마케팅 등에의 활용",
+														"class" : "opt-text14 opt-text-bold"
+													}
+												]
+											},
+											{
+												"comp" : "/common/basic-component/base-list",
+												"innerdata" : {
+													"bultClass" : "opt-bult02 opt-pb20",
+													"textClass" : "opt-text14",
+													"list" : [
+														{
+															"text": "귀사의 상품, 서비스 소개 및 판매, 사은, 판촉행사 안내(방문, 우편, 전자우편, 전화, SMS포함), 시장조사"
+														}
+
+													]
+												}
+											}
+										]
+									},
+
+									{
+										"text" : "수집하는 개인정보 항목",
+										"bultClass" : "opt-bult02",
+										"textClass" : "opt-text14 opt-pb20",
+										"list" : [
+											{ "text" : "개인식별정보 : 성명, 주민등록번호 또는 외국인등록번호, 주소, 성별, 직업, 전화번호, 휴대전화번호, 전자우편번호, 국적"},
+											{ "text" : "보험계약정보 : 보험사명, 증권번호, 보험기간, 보험계약일자, 상품명, 담보내용, 보험가입금액, 보험료, 계약유지여부"},
+											{ "text" : "보험금지급정보 : 보험사고일자, 보험금 청구일자, 지급일자, 지급액, 지급사유"},
+											{ "text" : "피보험자의 질병 및 상해에 관한 정보"}
+										]
+									},
+
+									{
+										"text" : "수집 방법",
+										"beforeComp" : [
+
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+
+													{
+														"text" : "회사는 개인정보를 대부분 고객님으로부터 직접 수집합니다. 어떠한 경우라도 회사는 업무를 수행하기 위하여 필수적으로 필요한 최소한의 정보만 수집합니다.",
+														"class" : "opt-text14 opt-pb40"
+													}
+
+												]
+											}
+
+										]
+									}
+								]
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보의 보유 및 이용기간",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-list",
+							"innerdata" : {
+								"bultClass" : "opt-bult01",
+								"textClass" : "opt-text14 opt-pb40",
+								"list" : [
+									{
+										"text" : "수집·이용 동의일로부터 거래종료 후 5년까지 (단, 거래종료 후 5년이 경과한 후에는 보험금 지급, 금융사고 조사, 보험사기 방지·적발, 민원처리, 법령상 의무이행을 위한 경우에 한하여 보유·이용하며, 별도 보관)"
+									},
+
+									{
+										"text" : "거래종료일은 보험계약 만기, 해지 , 취소, 철회일 또는 소멸일 및 보험금 청구권 소멸시효 완성일(상법 제662조 등), 채권 채무 관계 소멸일 중 가장 나중에 도래한 사유를 기준으로 판단합니다"
+									}
+								]
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보의 파기",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "개인정보의 파기 절차 및 방법은 다음과 같습니다.",
+									"class" : "opt-text14 opt-pb20"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-list",
+							"innerdata" : {
+								"bultClass" : "ol-decimalZero",
+								"textClass" : "opt-text14 opt-pb40 opt-text-bold",
+								"list" : [
+									{
+										"text" : "파기절차",
+										"afterComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "회사는 원칙적으로 거래가 종료된 고객의 개인(신용)정보는 필수적인 정보만 보관하고, 보험계약과 직접적인 관련이 없는 비 필수 정보는 즉시(‘거래종료일기준’로부터 3개월 이내) 필수정보는 거래종료일로부터 5년 경과 시 파기합니다.",
+														"class" : "opt-text14"
+													},
+													{
+														"text" : "단, 법률상 의무이행, 보험금 지급, 금융사고 조사, 분쟁해결, 민원처리 등을 위해 보관이 불가피한 경우에는 현재 거래중인 고객의 정보와 별도로 분리하여 보관합니다",
+														"class" : "opt-text14 opt-pb20"
+													}
+												]
+											}
+										]
+									},
+
+									{
+										"text" : "파기방법",
+										"afterComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다. 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.",
+														"class" : "opt-text14"
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보를 처리하는 업무의 위탁",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "고객님의 개인정보는 수집·이용 동의일로부터 개인정보의 수집·이용 목적을 달성할 때까지 보유되며 그 목적이 달성되면 지체 없이 파기될 것입니다.",
+									"class" : "opt-text14 opt-pb20"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/table/privacy-policy/table1"
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보의 제3자 제공",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "회사는 원칙적으로 고객의 사전동의 없이는 본래의 범위를 초과하여 처리하거나 제3자에게 제공하지 않습니다. 단, 다음의 경우에는 개인정보를 제공하고 있으며, 개인정보를 제공받는 자, 제공목적 및 범위는 다음과 같습니다.",
+									"class" : "opt-text14 opt-pb20"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/html-comp",
+							"innerdata" : "/common/basic-component/html-comp/html-inner/table/privacy-policy/table2"
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "정보주체의 권리, 의무 및 그 행사방법",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-list",
+							"innerdata" : {
+								"bultClass" : "ol-decimalZero",
+								"textClass" : "opt-text14 opt-text-bold",
+								"list" : [
+									{
+										"text" : "개인정보의 알람",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "고객님께서는 회사가 처리하는 개인정보에 대해 언제든지 열람을 신청하실 수 있습니다.",
+														"class" : "opt-text14"
+													},
+													{
+														"text" : "회사는 고객님께서 쉽게 열람요구를 할 수 있도록 제공하고 있습니다. 또한 열람 연기 또는 제안 및 거부 시 그 사유를 고객님께 알리고 있습니다.",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+
+									{
+										"text" : "개인정보 처리 정지, 정정, 삭제 및 파기",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "고객님께서는 개인정보에 대해 처리 정지, 열람 한 정보에 대해서는 정정, 삭제 및 파기를 요구할 수 있습니다.",
+														"class" : "opt-text14"
+													},
+													{
+														"text" : "요구 시 회사는 본인 확인 절차를 통해 확인 후 고객님 요구사항을 즉시 조치를 취하며, 그 결과를 고객님께 알리고 있습니다. 다만, 법령에 근거하여 요구를 거절 할 수 있습니다.",
+														"class" : "opt-text14 opt-pb20"
+													}
+												]
+											}
+										]
+									},
+
+
+									{
+										"text" : "만 14세 미만 아동의 법정대리인의 권리",
+										"beforeComp" : [
+
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "회사는 만14세 미만 아동의 개인정보를 수집하는 경우 법정 대리인의 동의를 받습니다.",
+														"class" : "opt-text14"
+													},
+													{
+														"text" : "만14세 미만 아동의 법정대리인은 아동의 개인정보의 알림, 정정, 동의철회를 요청할 수 있으며 이러한 요청이 있을 경우 회사는 본인여부를 확인하고, 지체 없이 필요한 조치를 취합니다.",
+														"class" : "opt-text14 opt-pb40"
+													}
+
+												]
+											}
+
+										]
+									}
+								]
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인(신용)정보 안전성 확보를 위한 조치사항",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-list",
+							"innerdata" : {
+								"bultClass" : "ol-decimalZero",
+								"textClass" : "opt-text14 opt-text-bold",
+								"list" : [
+									{
+										"text" : "내부관리계획 수립",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "개인정보보호규정·지침 및 정보보안규정·지침을 제정하여 시행하고 있습니다.",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+									{
+										"text" : "접근권한 관리",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "임직원 개인정보 DB접근은 직무별로 차등화 하여 권한을 부여 받은 최소한의 인력만이 접근이 가능합니다",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+									{
+										"text" : "내부관리계획 수립",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "개인정보보호규정·지침 및 정보보안규정·지침을 제정하여 시행하고 있습니다.",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+									{
+										"text" : "접속기록의 보관 및 위·변조 방지",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "시스템에 접근한 임직원의 로그를 보관하고 별도 시스템에 저장하고 있습니다",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},{
+										"text" : "접근 통제 시스템 설치 및 운영",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있으며, 기타 시스템적으로 보안성을 확보하기 위한 가능한 모든 기술적 장치를 갖추려 노력하고 있습니다.",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+									{
+										"text" : "보안프로그램 설치 및 운영",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "회사는 해킹이나 컴퓨터 바이러스 등에 의해 회원의 개인정보가 유출되거나 훼손되는 것을 막기 위해 보안프로그램을 설치·운영하고 있습니다",
+														"class" : "opt-text14 opt-pb20 "
+													}
+												]
+											}
+										]
+									},
+									{
+										"text" : "물리적 접근 방지",
+										"beforeComp" : [
+											{
+												"comp" : "/common/basic-component/base-text",
+												"innerdata" : [
+													{
+														"text" : "전산실, 자료보관실 등 개인정보를 보관하고 있는 물리적 보관 장소를 별도로 두고 있는 경우에는 이에 대한 출입 통제 절차를 수립·운영하고 있습니다.",
+														"class" : "opt-text14 opt-pb40 "
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보 자동수집 장치의 설치/운영 및 거부에 관한 사항",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "회사 홈페이지 사이버창구를 이용하여 보험, 대출, 수익증권 등 금융거래를 하는 경우 회사는 개인정보를 Session방식으로 관리하여 서비스 하고 있습니다. Session방식은 개인PC에 개인정보가 아닌 암호화 된 Session ID만 한시적으로 저장하며, 개인정보는 서버에 저장되므로, 개인정보가 노출되지 않습니다. 또한 Session정보의 경우 일정시간 서비스를 사용하지 않을 경우 자동적으로 사용 할 수 없게 되며, 고객께서 Session정보를 삭제 하고 싶으신 경우 로그아웃 또는 브라우저를 종료 하시면 바로 삭제 됩니다.",
+									"class" : "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보 및 개인신용정보 책임자",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "메트라이프생명은 이용자의 개인정보 및 개인신용정보를 보호하고 개인(신용)정보와 관련한 이용자의 고충을 처리하기 위하여 개인(신용)정보보호책임자를 다음과 같이 지정하고 있습니다.",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "개인정보보호 책임자",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "성명: 박주민 부사장",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "전화: 02-3469-9611",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "이메일: heejj@metlife.co.kr",
+									"class" : "opt-text14 opt-pb40"
+								}
+							]
+						},
+						{
+							"comp" : "/common/basic-component/base-heading",
+							"innerdata" : {
+								"text" : "개인정보 관련 고충사항의 처리",
+								"levelTag" : "h4",
+								"class" : "opt-text16 opt-text-bold opt-pb20"
+							}
+						},
+						{
+							"comp" : "/common/basic-component/base-text",
+							"innerdata" : [
+								{
+									"text" : "개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "개인정보침해신고센터 (한국인터넷진흥원) : 홈페이지 www.privacy.kisa.kr",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "개인정보 분쟁조정위원회(한국인터넷진흥원):홈페이지 www.privacy.kisa.kr",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "대검찰청 사이버범죄수사단: 홈페이지 www.spo.go.kr",
+									"class" : "opt-text14"
+								},
+								{
+									"text" : "경찰청사이버테러대응센터: 홈페이지 www.netan.go.kr",
+									"class" : "opt-text14 opt-pb20"
+								},
+								{
+									"text" : "최근 개정 일자: 2016년 09월 21일",
+									"class" : "opt-text14 opt-pb40"
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"comp" : "/inter-section/search-select",
+				"innerdata" : {
+					"searchLabel" : "정책선택",
+					"labelless" : true,
+					"labelText" : "이전 정책을 선택해 주세요",
+					"btnType" : "확인"
+				}
+			}
+		]
+	}
+}

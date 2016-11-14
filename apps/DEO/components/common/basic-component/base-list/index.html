@@ -1,0 +1,119 @@
+<!-- COMPONENT START -->
+
+
+{% set listSet = innerdata %}
+<div class="base-list">
+	<div class="{{ listSet.bultClass }}">
+		{% if listSet.bultClass == "ol-decimal" %}
+			<ol class="{{ listSet.textClass }}">
+		{% elif listSet.bultClass == "ol-decimalZero" %}
+			<ol class="{{ listSet.textClass }}">
+		{% else %}
+			<ul class="{{ listSet.textClass }}">
+		{% endif %}
+
+				{% for list in listSet.list %}
+				<li>{{ list.text | safe }}
+					{% if list.beforeComp %}
+						{% for before in list.beforeComp %}
+							{% if before.loadComp  %}
+								{% set extendComp = before.loadComp %}
+							{% endif %}
+							{% set innerdata = before.innerdata %}
+							{% include paths.apps + before.comp + "/index.html" %}
+						{% endfor %}
+					{% endif %}
+
+					{% if list.list %}
+					<div class="base-list">
+						<div class="{{ list.bultClass }}">
+							<ul class="{{ list.textClass }}">
+							{% for listdep2 in list.list %}
+								<li>{{ listdep2.text | safe }}
+
+									{% if listdep2.beforeComp %}
+
+										{% for before in listdep2.beforeComp %}
+											{% if before.loadComp %}
+												{% set extendComp = before.loadComp %}
+											{% endif %}
+											{% include paths.apps + before.comp + "/index.html" %}
+										{% endfor %}
+
+									{% endif %}
+
+									{% if listdep2.list %}
+									<div class="base-list">
+										<div class="{{ listdep2.bultClass }}">
+											<ul class="{{ listdep2.textClass }}">
+
+												{% for listdep3 in listdep2.list %}
+												<li>{{ listdep3.text | safe }}
+
+
+													{% for before in listdep3.beforeComp %}
+														{% if before.loadComp %}
+															{% set extendComp = before.loadComp %}
+														{% endif %}
+														{% set innerdata = before.innerdata %}
+														{% include paths.apps + before.comp + "/index.html" %}
+													{% endfor %}
+
+													{% for after in listdep3.afterComp %}
+														{% if after.loadComp %}
+															{% set extendComp = after.loadComp %}
+														{% endif %}
+														{% set innerdata = after.innerdata %}
+														{% include paths.apps + after.comp + "/index.html" %}
+													{% endfor %}
+
+
+												</li>
+												{% endfor %}
+
+											</ul>
+										</div>
+									</div>
+									{% endif %}
+
+									{% if listdep2.afterComp %}
+
+										{% for after in listdep2.afterComp %}
+											{% if after.loadComp %}
+												{% set extendComp = after.loadComp %}
+											{% endif %}
+											{% set innerdata = after.innerdata %}
+											{% include paths.apps + after.comp + "/index.html" %}
+										{% endfor %}
+
+									{% endif %}
+
+								</li>
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+
+
+
+					{% if list.afterComp %}
+						{% for after in list.afterComp %}
+							{% if after.loadComp %}
+								{% set extendComp = after.loadComp %}
+							{% endif %}
+							{% set innerdata = after.innerdata %}
+							{% include paths.apps + after.comp + "/index.html" %}
+						{% endfor %}
+					{% endif %}
+
+
+				</li>
+				{% endfor %}
+
+
+
+		</ul>
+	</div>
+</div>
+<!-- COMPONENT END -->

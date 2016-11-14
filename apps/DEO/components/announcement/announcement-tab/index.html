@@ -1,0 +1,45 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/announcement/announcement-tab/styles.css -->
+<!-- #js# /apps/DEO/components/announcement/announcement-tab/scripts.js -->
+
+<div class="announcement-tab">
+
+	{% set faqTab = innerdata %}
+
+	<div class="announcement-tab-menu opt-pt30">
+		{% for faqTabbutton in faqTab.button %}
+		<button type="button">{{ faqTabbutton }}</button>
+		{% endfor %}
+	</div>
+
+
+	{% for faqTabHtmlContent in faqTab.loadHtml %}
+	<div class="announcement-tabsec">
+		{% if faqTabHtmlContent.type == "html" %}
+			{% for loadlist in faqTabHtmlContent.indataList %}
+
+				{% if loadlist.loadComp %}
+					{% set extendComp = loadlist.loadComp %}
+				{% else %}
+					{% set extendComp = false %}
+				{% endif %}
+
+				{% set innerdata = loadlist.innerdata %}
+
+				{% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+			{% endfor %}
+		{% else %}
+
+			{% set innerdata = faqTabHtmlContent.innerdata %}
+			{% include paths.apps + '/' + innerdata + "/index.html" %}
+
+		{% endif %}
+
+	</div>
+	{% endfor %}
+
+</div>
+
+
+<!-- COMPONENT END -->

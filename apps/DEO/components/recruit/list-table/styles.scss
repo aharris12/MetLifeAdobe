@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* css folder ##recruit/list-table## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.list-table{
+	padding-bottom:20px;
+	.tbl{
+		width:100%;
+		padding-bottom:20px;
+		.tbl-head{
+			display:none;
+		}
+		.tbl-body{
+			& .tbl-row{
+				border-bottom:1px solid #cecece;
+			}
+			& .tbl-row .tbl-inbody{
+				width:100%;
+				padding:12px 20px;
+				& .col{
+					display:table;
+					width:100%;
+					padding-top:10px;
+					&:first-child{
+						padding-top:0;
+					}
+					& .colhead{
+						display:table-cell;
+						width:75px;
+						font-size:15px;
+						font-weight:bold;
+						line-height:22px;
+					}
+					& .colbody{
+						display:table-cell;
+						font-size:15px;
+						line-height:21px;
+						a{
+							color:#2377c5;
+						}
+					}
+				}
+			}
+		}
+	}
+	.paging{
+		padding:0 10px;
+	}
+}
+
+@media all and(min-width:768px) {
+	.list-table{
+		padding:30px 20px 40px;
+		.tbl{
+			position:relative;
+			.tbl-head{
+				display:block;
+				padding:0 20px 15px;
+				border-bottom:1px solid #cecece;
+				&:after{
+					content:"";
+					display:block;
+					clear:both;
+				}
+				span{
+					float:left;
+					font-size:14px;
+					font-weight:bold;
+					text-align:center;
+					&.col.col-1{
+						width:52.5%;
+						text-align:left;
+					}
+					&.col.col-2{width:22.5%;}
+					&.col.col-3{width:12.5%;}
+					&.col.col-4{width:12.5%;}
+				}
+			}
+			.tbl-body{
+				& .tbl-row{
+					padding: 0 20px;
+					border-bottom:1px solid #cecece;
+				}
+				& .tbl-row .tbl-inbody{
+					display:table;
+					padding:15px 0;
+					& .col{
+						display:table-cell;
+						padding-top:0;
+						text-align:center;
+						&:first-child{
+							padding-top:0;
+						}
+						& .colhead{
+							position:absolute;
+							top:-999px;
+							left:-999px;
+							display:block;
+							width:1px;
+							height:1px;
+							font-size:0;
+							line-height:0;
+						}
+						& .colbody{
+							display:inline;
+							font-size:14px;
+						}
+						&.col-1{width:auto;text-align:left;}
+						&.col-2{width:22.5%;}
+						&.col-3{width:12.5%;}
+						&.col-4{width:12.5%;}
+					}
+				}
+			}
+		}
+		.paging{
+			padding:0;
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.list-table {
+		width:100%;
+		max-width:880px;
+		margin:0 auto;
+		padding:40px 0 50px;
+	}
+}
+

@@ -1,0 +1,32 @@
+/* css folder ##/product/detail1/prd-detailbox## */
+.prd-container {
+  padding-bottom: 25px; }
+
+.prd-detailbox {
+  margin: 0 10px;
+  padding: 21px 10px;
+  background: #ffffff; }
+
+@media all and (min-width: 768px) {
+  .prd-container {
+    padding-bottom: 40px; }
+  .prd-detailbox {
+    text-align: center;
+    width: 95%;
+    padding: 42px 20px;
+    margin: 0 auto; }
+  .prd-article {
+    padding-bottom: 10px; }
+    .prd-article:last-child {
+      padding-bottom: 0; } }
+
+@media all and (min-width: 1024px) {
+  .prd-container {
+    padding-bottom: 50px; }
+  .prd-detailbox {
+    max-width: 1100px;
+    padding: 62px 110px; }
+  .prd-article {
+    padding-bottom: 20px; }
+    .prd-article:last-child {
+      padding-bottom: 0; } }

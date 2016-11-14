@@ -1,0 +1,17 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/related-contents-container/styles.css -->
+
+<div class="comp-container">
+    {% set items = relatedList %}
+    <div class="related-contents-container">
+        <ul class="related-contents-list">
+            {% for itemList in items %}
+                {% set relatedContents = itemList.relatedContents %}
+                <li>{% include paths.apps + "/home/related-contents/index.html" %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+<!-- COMPONENT END -->

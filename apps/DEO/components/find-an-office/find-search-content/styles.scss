@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* css folder ##find-an-office/find-search-content## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.map-search{
+	padding-bottom:20px;
+	.slt-half{
+		& .half{
+			margin-bottom:10px;
+		}
+	}
+	.input-extend{
+		position:relative;
+		padding-right:80px;
+		.btn-basic{
+			position:absolute;
+			right: 0;
+			top: 0;
+			padding: 13px 21px 12px;
+		}
+	}
+
+}
+
+@media all and(min-width:768px) {
+	.map-search{
+		max-width:580px;
+		margin:0 auto;
+		padding-bottom:30px;
+		&:after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.slt-half{
+			float:left;
+			width:48.3%;
+			& .half{
+				float:left;
+				width:50%;
+				padding-right:10px;
+				margin-bottom:0;
+			}
+		}
+		.input-extend{
+			float:left;
+			width: 51.7%;
+		}
+
+	}
+}
+
+@media all and(min-width:1024px) {
+
+}

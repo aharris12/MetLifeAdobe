@@ -1,0 +1,25 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/skinny-banner/styles.css -->
+
+{% set items = skinnyBanner %}
+<div class="skinnybn-container">
+
+    <div class="skinnybn-img" style="background-image: url('{{ paths.author }}{{ items.imgUrl }}');"><p class="screen_out">{{ items.imgAlt }}</p></div>
+    <div class="skinnybn-content">
+        <div class="skinnybn-content-wrap">
+            <!-- h2~h3 선택 가능 -->
+            <h3 class="skinnybn-heading">{{ items.title }}</h3>
+            <p class="skinnybn-copy">{{ items.subCopy }}</p>
+            {% for content in items.contentList %}
+            <p>{{ content }}</p>
+            {% endfor %}
+        </div>
+        <div class="skinny-link">
+            {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+            {{ btn.btnlink("더 알아보기", items.link, color=items.color) }}
+        </div>
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

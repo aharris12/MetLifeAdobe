@@ -1,0 +1,10 @@
+/* css folder ##/product/detail1/prd-stitle-container## */
+.prd-article:last-child .prd-stitle-container:last-child {
+  padding-bottom: 0; }
+
+.prd-stitle-container {
+  padding-bottom: 10px; }
+
+@media all and (min-width: 768px) {
+  .prd-stitle-container {
+    padding-bottom: 20px; } }

@@ -1,0 +1,25 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/small-product-module/styles.css -->
+
+{% set items = smallModule %}
+
+<div class="small-product-module">
+    <div class="bg-gray">
+        <div class="product-table">
+            <div class="module-title">
+                <strong>{{ items.title }}</strong>
+                <span>{{ items.subCopy }}</span>
+            </div>
+            {% for list in items.list %}
+            <div class="module-box">
+                <a href="{{ list.lnk }}">
+                    <span class="module-text" style="background-image:url({{ paths.author }}{{ list.imgUrl }});">
+                        {{ list.text }}
+                    </span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- COMPONENT END -->

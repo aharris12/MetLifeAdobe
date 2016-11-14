@@ -1,0 +1,58 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/newsroom/list/result-content/styles.css -->
+
+{% set items = resultCont %}
+<div class="result-list">
+    <div class="result-header">
+        <h3 class="result-heading">{{ items.mainTitle }}</h3>
+
+        {% if items.subInfo %}
+        {% for content in items.subInfo %}
+        <p class="subinfo">{{ content }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% include paths.apps + "/common/basic-component/base-text/index.html" %}
+
+    {% if items.resultContent %}
+    <div class="result-list-cont">
+        <ul>
+            {% set resultCont = items.resultContent %}
+            {% for resultList in resultCont %}
+            <li>
+                <div class="result-list-con">
+                    <span class="screen_out">일자 : </span> <span class="date">{{ resultList.date }}</span>
+                    <span class="screen_out">제목 : </span> <span class="title">
+                        {% if resultList.link %}
+                            <a href="{{ items.link }}">{{ resultList.title }}</a>
+                        {% else %}
+                            {{ resultList.title }}
+                        {% endif %}
+                    </span>
+                </div>
+                {% if resultList.fileAttach == true %}
+                <div class="result-file">
+                    <a href="#lnk" class="ico-{{ resultList.fileType }}" title="파일 다운로드">{{ resultList.fileName }}.<span class="upper-latin">{{ resultList.fileType }}</span></a>
+                    <span class="result-file-kb">(<span class="upper-latin">{{ resultList.fileType }}</span> -128kb)</span>
+                </div>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% if items.listMore == true %}
+        <div class="result-list-more">
+            <button type="button">더보기</button>
+        </div>
+        {% endif %}
+    </div>
+    <!-- result -->
+
+    {% else %}
+
+    {% set innerdata = items.textComp %}
+    <div class="noresult-list-con">{% include paths.apps + "/common/basic-component/base-text/index.html" %}</div><!-- noresult -->
+
+    {% endif %}
+</div>
+
+<!-- COMPONENT END -->

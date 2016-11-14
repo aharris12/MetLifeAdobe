@@ -1,0 +1,56 @@
+{
+	"tableData" : {
+		"caption" : "테스트 테이블",
+		"theadData" : ["test1", "test2", "test3", "test4", "test5"],
+		"tbodyData" : [
+			{ "tr" : [
+					{ "data" : "name1" },
+					{ "href": "#lnk1", "data" : "content1", "classes" : "al-left" },
+					{ "data" : "data1" },
+					{ "data" : "write1" },
+					{ "data" : "file1" }
+				]
+			},
+			{ "tr" : [
+					{ "data" : "name2" },
+					{ "href": "#lnk2", "data" : "content2", "classes" : "al-left" },
+					{ "data" : "data2" },
+					{ "data" : "write2" },
+					{ "data" : "file2" }
+				]
+			},
+			{ "tr" : [
+					{ "data" : "name3" },
+					{ "href": "#lnk3", "data" : "content3", "classes" : "al-left" },
+					{ "data" : "data3" },
+					{ "data" : "write3" },
+					{ "data" : "file3" }
+				]
+			},
+			{ "tr" : [
+					{ "data" : "name4" },
+					{ "href": "#lnk4", "data" : "content4", "classes" : "al-left" },
+					{ "data" : "data4" },
+					{ "data" : "write4" },
+					{ "data" : "file4" }
+				]
+			},
+			{ "tr" : [
+					{ "data" : "name5" },
+					{ "blank" : true, "href": "#lnk5", "data" : "content5", "title":"새창링크", "classes" : "al-left" },
+					{ "data" : "data5" },
+					{ "data" : "write5" },
+					{ "data" : "file5" }
+				]
+			},
+			{ "tr" : [
+					{ "data" : "name6" },
+					{ "href": "#lnk6", "data" : "content6", "classes" : "al-left" },
+					{ "data" : "data6" },
+					{ "data" : "write6" },
+					{ "href": "#fileUrl",  "data" : "file", "title":"~파일 다운로드" }
+				]
+			}
+		]
+	}
+}

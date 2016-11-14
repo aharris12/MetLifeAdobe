@@ -1,0 +1,378 @@
+.base-container {
+  padding: 20px 20px 20px 20px; }
+
+@media all and (min-width: 768px) {
+  .base-container {
+    padding: 30px 30px 40px 30px; } }
+
+@media all and (min-width: 1024px) {
+  .base-container {
+    padding: 40px 0 50px 0; } }
+
+.general-column {
+  margin: 0 auto; }
+  .general-column .tab-drop-listwrap {
+    margin-top: 0; }
+  .general-column .search-container .search-select {
+    padding-bottom: 0; }
+
+@media all and (min-width: 768px) {
+  .general-column {
+    max-width: 880px;
+    margin: 0 auto; } }
+
+@media all and (min-width: 1024px) {
+  .general-column {
+    margin: 0 auto; } }
+
+.opt-text28,
+.opt-text24,
+.opt-text20,
+.opt-text16,
+.ol-decimal > .opt-text16 > li,
+.ol-decimalZero > .opt-text16 > li,
+.opt-bult01 > .opt-text16 > li,
+.opt-bult02 > .opt-text16 > li,
+.opt-bult03 > .opt-text16 > li,
+.opt-table2 table tr th.th1,
+.opt-text14,
+.ol-decimal > .opt-text14 > li,
+.ol-decimalZero > .opt-text14 > li,
+.opt-bult01 > .opt-text14 > li,
+.opt-bult02 > .opt-text14 > li,
+.opt-bult03 > .opt-text14 > li,
+.opt-table2 table tr th.th2,
+.opt-table2 table tr td,
+.opt-text13,
+.ol-decimal > .opt-text13 > li,
+.ol-decimalZero > .opt-text13 > li,
+.opt-bult01 > .opt-text13 > li,
+.opt-bult02 > .opt-text13 > li,
+.opt-bult03 > .opt-text13 > li {
+  color: #333;
+  font-weight: normal;
+  text-indent: 0; }
+
+.opt-text28.opt-text-bold,
+.opt-text24.opt-text-bold,
+.opt-text20.opt-text-bold,
+.opt-text16.opt-text-bold,
+.ol-decimal > .opt-text16 > li.opt-text-bold,
+.ol-decimalZero > .opt-text16 > li.opt-text-bold,
+.opt-bult01 > .opt-text16 > li.opt-text-bold,
+.opt-bult02 > .opt-text16 > li.opt-text-bold,
+.opt-bult03 > .opt-text16 > li.opt-text-bold,
+.opt-table2 table tr th.opt-text-bold.th1,
+.opt-text14.opt-text-bold,
+.ol-decimal > .opt-text14 > li.opt-text-bold,
+.ol-decimalZero > .opt-text14 > li.opt-text-bold,
+.opt-bult01 > .opt-text14 > li.opt-text-bold,
+.opt-bult02 > .opt-text14 > li.opt-text-bold,
+.opt-bult03 > .opt-text14 > li.opt-text-bold,
+.opt-table2 table tr th.opt-text-bold.th2,
+.opt-table2 table tr td.opt-text-bold,
+.opt-text13.opt-text-bold,
+.ol-decimal > .opt-text13 > li.opt-text-bold,
+.ol-decimalZero > .opt-text13 > li.opt-text-bold,
+.opt-bult01 > .opt-text13 > li.opt-text-bold,
+.opt-bult02 > .opt-text13 > li.opt-text-bold,
+.opt-bult03 > .opt-text13 > li.opt-text-bold {
+  font-weight: bold; }
+
+.opt-text14.opt-pointColor1, .ol-decimal > .opt-text14 > li.opt-pointColor1, .ol-decimalZero > .opt-text14 > li.opt-pointColor1, .opt-bult01 > .opt-text14 > li.opt-pointColor1, .opt-bult02 > .opt-text14 > li.opt-pointColor1, .opt-bult03 > .opt-text14 > li.opt-pointColor1, .opt-table2 table tr th.opt-pointColor1.th2, .opt-table2 table tr td.opt-pointColor1,
+.opt-text13.opt-pointColor1,
+.ol-decimal > .opt-text13 > li.opt-pointColor1,
+.ol-decimalZero > .opt-text13 > li.opt-pointColor1,
+.opt-bult01 > .opt-text13 > li.opt-pointColor1,
+.opt-bult02 > .opt-text13 > li.opt-pointColor1,
+.opt-bult03 > .opt-text13 > li.opt-pointColor1 {
+  color: #666; }
+
+.opt-text28 {
+  font-size: 22px;
+  line-height: 28px; }
+
+.opt-text24 {
+  font-size: 22px;
+  line-height: 28px; }
+
+.opt-text20 {
+  font-size: 20px;
+  line-height: 26px; }
+
+.opt-text16, .ol-decimal > .opt-text16 > li, .ol-decimalZero > .opt-text16 > li, .opt-bult01 > .opt-text16 > li, .opt-bult02 > .opt-text16 > li, .opt-bult03 > .opt-text16 > li, .opt-table2 table tr th.th1 {
+  font-size: 16px;
+  line-height: 22px; }
+
+.opt-text14, .ol-decimal > .opt-text14 > li, .ol-decimalZero > .opt-text14 > li, .opt-bult01 > .opt-text14 > li, .opt-bult02 > .opt-text14 > li, .opt-bult03 > .opt-text14 > li, .opt-table2 table tr th.th2, .opt-table2 table tr td {
+  font-size: 15px;
+  line-height: 21px; }
+
+.opt-text13, .ol-decimal > .opt-text13 > li, .ol-decimalZero > .opt-text13 > li, .opt-bult01 > .opt-text13 > li, .opt-bult02 > .opt-text13 > li, .opt-bult03 > .opt-text13 > li {
+  font-size: 14px;
+  line-height: 20px; }
+
+@media all and (min-width: 768px) {
+  .opt-text28 {
+    font-size: 24px;
+    line-height: 32px; }
+  .opt-text24 {
+    font-size: 22px;
+    line-height: 30px; }
+  .opt-text20 {
+    font-size: 18px;
+    line-height: 26px; }
+  .opt-text16, .ol-decimal > .opt-text16 > li, .ol-decimalZero > .opt-text16 > li, .opt-bult01 > .opt-text16 > li, .opt-bult02 > .opt-text16 > li, .opt-bult03 > .opt-text16 > li, .opt-table2 table tr th.th1 {
+    font-size: 16px;
+    line-height: 24px; }
+  .opt-text14, .ol-decimal > .opt-text14 > li, .ol-decimalZero > .opt-text14 > li, .opt-bult01 > .opt-text14 > li, .opt-bult02 > .opt-text14 > li, .opt-bult03 > .opt-text14 > li, .opt-table2 table tr th.th2, .opt-table2 table tr td {
+    font-size: 14px;
+    line-height: 21px; }
+  .opt-text13, .ol-decimal > .opt-text13 > li, .ol-decimalZero > .opt-text13 > li, .opt-bult01 > .opt-text13 > li, .opt-bult02 > .opt-text13 > li, .opt-bult03 > .opt-text13 > li {
+    font-size: 13px;
+    line-height: 20px; } }
+
+@media all and (min-width: 1024px) {
+  .opt-text28 {
+    font-size: 28px;
+    line-height: 36px; }
+  .opt-text24 {
+    font-size: 24px;
+    line-height: 31px; }
+  .opt-text20 {
+    font-size: 20px;
+    line-height: 28px; } }
+
+.ol-decimal .opt-text-bold > li,
+.ol-decimalZero .opt-text-bold > li,
+.opt-bult01 .opt-text-bold > li,
+.opt-bult02 .opt-text-bold > li,
+.opt-bult03 .opt-text-bold > li {
+  font-weight: bold; }
+
+.ol-decimal > ol, .ol-decimal > ol > li {
+  list-style-position: outside;
+  padding-left: 5px;
+  margin-left: 15px;
+  list-style: decimal; }
+
+.ol-decimalZero > ol, .ol-decimalZero > ol > li {
+  list-style-position: outside;
+  text-indent: 10px;
+  margin-left: 11px;
+  list-style: decimal-leading-zero; }
+
+.opt-bult01 > ul > li {
+  font-weight: normal;
+  background-image: url("/content/dam/DEO/author/common_ico/opt-bult-dot.svg");
+  background-repeat: no-repeat; }
+
+.opt-bult01 > .opt-text16 > li, .ol-decimal > .opt-text16.opt-bult01 > li > li, .ol-decimalZero > .opt-text16.opt-bult01 > li > li, .opt-bult01 > .opt-text16.opt-bult01 > li > li, .opt-bult02 > .opt-text16.opt-bult01 > li > li, .opt-bult03 > .opt-text16.opt-bult01 > li > li, .opt-table2 table tr .opt-bult01 > th.th1 > li {
+  background-position: 0 10px;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
+  padding-left: 15px; }
+
+.opt-bult01 > .opt-text14 > li, .ol-decimal > .opt-text14.opt-bult01 > li > li, .ol-decimalZero > .opt-text14.opt-bult01 > li > li, .opt-bult01 > .opt-text14.opt-bult01 > li > li, .opt-bult02 > .opt-text14.opt-bult01 > li > li, .opt-bult03 > .opt-text14.opt-bult01 > li > li, .opt-table2 table tr .opt-bult01 > th.th2 > li, .opt-table2 table tr .opt-bult01 > td > li {
+  background-position: 0 9px;
+  -webkit-background-size: 5px 5px;
+  background-size: 5px 5px;
+  padding-left: 15px; }
+
+.opt-bult01 > .opt-text13 > li, .ol-decimal > .opt-text13.opt-bult01 > li > li, .ol-decimalZero > .opt-text13.opt-bult01 > li > li, .opt-bult01 > .opt-text13.opt-bult01 > li > li, .opt-bult02 > .opt-text13.opt-bult01 > li > li, .opt-bult03 > .opt-text13.opt-bult01 > li > li {
+  background-position: 0 8px;
+  -webkit-background-size: 4px 4px;
+  background-size: 4px 4px;
+  padding-left: 10px; }
+
+.opt-bult02 > ul > li {
+  font-weight: normal;
+  background-image: url("/content/dam/DEO/author/common_ico/opt-bult-dash.svg");
+  background-repeat: no-repeat; }
+
+.opt-bult02 > .opt-text16 > li, .ol-decimal > .opt-text16.opt-bult02 > li > li, .ol-decimalZero > .opt-text16.opt-bult02 > li > li, .opt-bult01 > .opt-text16.opt-bult02 > li > li, .opt-bult02 > .opt-text16.opt-bult02 > li > li, .opt-bult03 > .opt-text16.opt-bult02 > li > li, .opt-table2 table tr .opt-bult02 > th.th1 > li {
+  background-position: 0 9px;
+  -webkit-background-size: 5px 1px;
+  background-size: 5px 1px;
+  padding-left: 15px; }
+
+.opt-bult02 > .opt-text14 > li, .ol-decimal > .opt-text14.opt-bult02 > li > li, .ol-decimalZero > .opt-text14.opt-bult02 > li > li, .opt-bult01 > .opt-text14.opt-bult02 > li > li, .opt-bult02 > .opt-text14.opt-bult02 > li > li, .opt-bult03 > .opt-text14.opt-bult02 > li > li, .opt-table2 table tr .opt-bult02 > th.th2 > li, .opt-table2 table tr .opt-bult02 > td > li {
+  background-position: 0 10px;
+  -webkit-background-size: 5px 1px;
+  background-size: 5px 1px;
+  padding-left: 15px; }
+
+.opt-bult02 > .opt-text13 > li, .ol-decimal > .opt-text13.opt-bult02 > li > li, .ol-decimalZero > .opt-text13.opt-bult02 > li > li, .opt-bult01 > .opt-text13.opt-bult02 > li > li, .opt-bult02 > .opt-text13.opt-bult02 > li > li, .opt-bult03 > .opt-text13.opt-bult02 > li > li {
+  background-position: 0 9px;
+  -webkit-background-size: 4px 1px;
+  background-size: 4px 1px;
+  padding-left: 10px; }
+
+.opt-bult03 > ul > li {
+  font-weight: normal;
+  background-image: url("/content/dam/DEO/author/common_ico/opt-bult-info.svg");
+  background-repeat: no-repeat; }
+
+.opt-bult03 > .opt-text16 > li, .ol-decimal > .opt-text16.opt-bult03 > li > li, .ol-decimalZero > .opt-text16.opt-bult03 > li > li, .opt-bult01 > .opt-text16.opt-bult03 > li > li, .opt-bult02 > .opt-text16.opt-bult03 > li > li, .opt-bult03 > .opt-text16.opt-bult03 > li > li, .opt-table2 table tr .opt-bult03 > th.th1 > li {
+  background-position: 0 5px;
+  -webkit-background-size: 10px 10px;
+  background-size: 12px 12px;
+  padding-left: 18px; }
+
+.opt-bult03 > .opt-text14 > li, .ol-decimal > .opt-text14.opt-bult03 > li > li, .ol-decimalZero > .opt-text14.opt-bult03 > li > li, .opt-bult01 > .opt-text14.opt-bult03 > li > li, .opt-bult02 > .opt-text14.opt-bult03 > li > li, .opt-bult03 > .opt-text14.opt-bult03 > li > li, .opt-table2 table tr .opt-bult03 > th.th2 > li, .opt-table2 table tr .opt-bult03 > td > li {
+  background-position: 0 4px;
+  -webkit-background-size: 10px 10px;
+  background-size: 10px 10px;
+  padding-left: 18px; }
+
+.opt-bult03 > .opt-text13 > li, .ol-decimal > .opt-text13.opt-bult03 > li > li, .ol-decimalZero > .opt-text13.opt-bult03 > li > li, .opt-bult01 > .opt-text13.opt-bult03 > li > li, .opt-bult02 > .opt-text13.opt-bult03 > li > li, .opt-bult03 > .opt-text13.opt-bult03 > li > li {
+  background-position: 0 4px;
+  -webkit-background-size: 10px 10px;
+  background-size: 10px 10px;
+  padding-left: 18px; }
+
+.opt-table1 {
+  overflow: auto;
+  width: 100%; }
+  .opt-table1 table {
+    min-width: 640px;
+    text-align: center; }
+    .opt-table1 table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      line-height: 19px; }
+    .opt-table1 table td {
+      line-height: 20px; }
+    .opt-table1 table th, .opt-table1 table td {
+      padding: 10px;
+      border-width: 0 1px 1px 1px;
+      border-style: solid;
+      border-color: #cccccc;
+      color: #333;
+      font-size: 14px;
+      letter-spacing: -1px; }
+      .opt-table1 table th:first-child, .opt-table1 table td:first-child {
+        border-left: 0; }
+      .opt-table1 table th:last-child, .opt-table1 table td:last-child {
+        border-right: 0; }
+      .opt-table1 table th.point-wt, .opt-table1 table td.point-wt {
+        background-color: #fff; }
+      .opt-table1 table th.tb-left, .opt-table1 table td.tb-left {
+        padding: 10px 20px;
+        text-align: left; }
+      .opt-table1 table th.tb-right, .opt-table1 table td.tb-right {
+        padding: 10px 20px;
+        text-align: right; }
+    .opt-table1 table tfoot th {
+      background-color: #fff; }
+  .opt-table1.opt-tabletext-ty2 table th {
+    font-size: 13px;
+    line-height: 18px; }
+  .opt-table1.opt-tabletext-ty2 table td {
+    font-size: 13px;
+    line-height: 19px; }
+
+@media all and (min-width: 768px) {
+  .opt-table1 {
+    overflow: hidden; }
+    .opt-table1 table {
+      width: 100%; }
+      .opt-table1 table td {
+        line-height: 21px; }
+      .opt-table1 table th, .opt-table1 table td {
+        padding: 12px 10px; }
+        .opt-table1 table th.tb-left, .opt-table1 table td.tb-left {
+          padding: 12px 20px; }
+        .opt-table1 table th.tb-right, .opt-table1 table td.tb-right {
+          padding: 12px 20px; }
+    .opt-table1.opt-tabletext-ty2 table td {
+      line-height: 20px; } }
+
+.opt-table-wrap {
+  width: 100%; }
+
+.opt-table2 {
+  overflow: auto;
+  width: 100%;
+  padding-bottom: 11px; }
+  .opt-table2 table {
+    width: 100%;
+    text-align: center;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc; }
+    .opt-table2 table tr:nth-last-child(even) td {
+      background: #f2f2f2; }
+    .opt-table2 table tr th, .opt-table2 table tr td {
+      border-bottom: 1px solid #ccc;
+      color: #333; }
+      .opt-table2 table tr th.tb-left, .opt-table2 table tr td.tb-left {
+        text-align: left; }
+      .opt-table2 table tr th.tb-right, .opt-table2 table tr td.tb-right {
+        text-align: right; }
+    .opt-table2 table tr th {
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      font-weight: bold; }
+      .opt-table2 table tr th.th1 {
+        background-color: #dae4ed;
+        padding: 20px 10px; }
+        .opt-table2 table tr th.th1.tb-left, .opt-table2 table tr th.th1.tb-right {
+          padding: 20px; }
+      .opt-table2 table tr th.th2 {
+        background-color: #e4e4e4;
+        padding: 13px 10px; }
+        .opt-table2 table tr th.th2.tb-left, .opt-table2 table tr th.th2.tb-right {
+          padding: 13px 20px; }
+    .opt-table2 table tr td {
+      padding: 10px;
+      background: #fff; }
+      .opt-table2 table tr td.tb-left, .opt-table2 table tr td.tb-right {
+        padding: 10px 20px; }
+
+@media all and (min-width: 768px) {
+  .opt-table-wrap {
+    display: table;
+    padding-bottom: 22px; }
+    .opt-table-wrap .opt-table2:nth-child(2) table, .opt-table-wrap .opt-table2:nth-child(2) table {
+      border-left-width: 0;
+      border-right-width: 0; }
+  .opt-table2 {
+    overflow: hidden;
+    display: table-cell;
+    width: 33.33%;
+    padding-bottom: 0; }
+    .opt-table2 table th.th1 {
+      padding: 12px 10px; }
+      .opt-table2 table th.th1.tb-left, .opt-table2 table th.th1.tb-right {
+        padding: 13px 20px; }
+    .opt-table2 table th.th2 {
+      padding: 12px 10px; }
+      .opt-table2 table th.th2.tb-left, .opt-table2 table th.th2.tb-right {
+        padding: 13px 20px; } }
+
+.img-container .img-cont {
+  width: 100%; }
+  .img-container .img-cont img {
+    width: 100%; }
+
+.img-container .img-des {
+  padding-top: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666; }
+
+@media all and (min-width: 768px) {
+  .img-container {
+    width: 440px;
+    margin: 0 auto; }
+    .img-container .img-des {
+      padding-top: 10px;
+      font-size: 13px;
+      line-height: 18px; } }
+
+@media all and (min-width: 1024px) {
+  .img-container {
+    width: 660px; }
+    .img-container .img-des {
+      line-height: 21px; } }

@@ -1,0 +1,58 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/find-an-office/find-info/styles.css -->
+
+
+<div class="info-container">
+	{% set items = infoCont1 %}
+	<div class="info-center">
+		<div class="info-tiles-content">
+			<h3 class="info-tiles-title">{{ items.title }}</h3>
+
+			{% set info = items.infoContent %}
+			{% for infoList in info %}
+			<div class="info-tiles-cont">
+				<div class="info-list-con">
+					<p><span class="screen_out">전화 : </span><span class="tablet-view">{{ infoList.tel }}</span><a href="tel:{{infoList.tel }}" class="tel-link mobile-view">{{ infoList.tel }}</a></p>
+					<p>상담시간 {{ infoList.service }}</p>
+					<p>해외이용시 {{ infoList.abroad}}</p>
+				</div>
+			</div>
+			<!-- button -->
+			<div class="info-tiles-link">
+				<div class="info-tiles-linktext">
+					<a href="{{ infoList.textType.href }}"><span>{{ infoList.textType.text }}</span></a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	{% set items = infoCont2 %}
+	<div class="info-plaza">
+		<div class="info-tiles-content">
+			<h3 class="info-tiles-title">{{ items.title }}</h3>
+			<ul class="info-tiles-list">
+				{% set info = items.infoContent %}
+				{% for infoList in info %}
+				<li>
+					<div class="info-list-con">
+						<p><span class="screen_out">플라자 지점 : </span>  {{ infoList.plaza }}</p>
+						<p><span class="screen_out">주소 : </span> {{ infoList.addr1 }}</p>
+						<p><span class="screen_out">상세주소 : </span> {{ infoList.addr2 }}</p>
+					</div>
+					<!-- button -->
+					<div class="info-tiles-link">
+						<div class="info-tiles-linkbtn">
+							{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+							{{ btn.btnlink(infoList.btnType,infoList.mapLink) }}
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<!-- COMPONENT END -->

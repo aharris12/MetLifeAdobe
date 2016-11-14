@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/* css folder ##home/skinny-banner## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+/* img area size */
+
+$imgHeight_mob : 200px;
+$imgHeight_tablet : 100%;
+$imgHeight_web : 100%;
+
+
+
+/* content area size */
+
+
+/* heading tag size */
+
+$heading_font_mob : 24px;
+$heading_lineH_mob : 28px;
+
+$heading_font_tablet : 22px;
+$heading_lineH_tablet : 28px;
+
+$heading_font_web : 22px;
+$heading_lineH_web : 28px;
+
+
+/* content font-size */
+$content_font_mob : 14px;
+$content_lineH_mob : 18px;
+
+$content_font_tablet : 14px;
+$content_lineH_tablet : 18px;
+
+$content_font_web : 14px;
+$content_lineH_web : 18px;
+
+
+
+.skinnybn-container {
+	width:100%;
+}
+.skinnybn-img {
+	width:100%;
+	height:$imgHeight_mob;
+	background-repeat:no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size:cover;
+	background-size:cover;
+}
+
+.skinnybn-content {
+	background-color: $pointColor2;
+	color: #ffffff;
+	text-align: center;
+	padding:20px;
+	& .skinnybn-heading {
+		font-size:$heading_font_mob;
+		line-height:$heading_lineH_mob;
+		padding-bottom:10px;
+		font-weight:600;
+	}
+	& p {
+		padding-bottom:10px;
+		font-size:$content_font_mob;
+		line-height:$content_lineH_mob;
+		&.skinnybn-copy {
+			color: $pointColor4;
+			font-weight:600;
+		}
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+
+	.skinnybn-container{
+		display: table;
+		font-size:0;
+		&>div { display: table-cell; }
+		&:after {
+			clear:both;
+			content:'';
+			display: block;
+		}
+	}
+
+	.skinnybn-img {
+		width:32%;
+		height:$imgHeight_tablet;
+		background-position: 50% top;
+	}
+
+	.skinnybn-content {
+		padding:20px 190px 20px 4%;
+		display: table;
+		width:68%;
+		height:$imgHeight_tablet;
+		vertical-align: middle;
+		text-align: left;
+		position: relative;
+		& .skinnybn-content-wrap {
+			width:100%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		& .skinnybn-heading {
+			font-size:$heading_font_tablet;
+			line-height:$heading_lineH_tablet;
+			padding-bottom:10px;
+		}
+
+		& p {
+			padding-bottom:10px;
+			font-size:$content_font_tablet;
+			line-height:$content_lineH_tablet;
+
+			&.skinnybn-copy {
+				font-size:15px;
+			}
+		}
+
+		& .skinny-link {
+			position: absolute;
+			right:60px;
+			top:50%;
+			margin-top:-19px;
+		}
+	}
+}
+
+@media all and(min-width:1024px) {}

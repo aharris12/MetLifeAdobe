@@ -1,0 +1,19 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-stitle-container/styles.css -->
+
+
+<div class="prd-stitle-container">
+
+    {% set innerdata = prdCont.title %}
+    {% include paths.apps + "/product/detail1/prd-stitle/index.html" %}
+
+
+    {% for list in prdCont.complist %}
+        {% set innerdata = list.innerdata %}
+        {% include paths.apps + list.loadComp + "/index.html" %}
+    {% endfor %}
+
+</div>
+
+
+<!-- COMPONENT END -->

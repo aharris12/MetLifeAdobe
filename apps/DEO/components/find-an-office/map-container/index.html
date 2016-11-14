@@ -1,0 +1,22 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/find-an-office/map-container/styles.css -->
+
+{% set item = mapContainer %}
+<div class="map-container">
+
+	<div class="map-srh">
+		{% include paths.apps + "/find-an-office/find-search-content/index.html" %}
+	</div>
+	<div class="map-con">
+		{% include paths.apps + "/find-an-office/find-map-content/index.html" %}
+	</div>
+
+	<div class="map-result">
+		{% set resultCont = item.resultCont %}
+		{% include paths.apps + "/find-an-office/find-result-content/index.html" %}
+	</div>
+
+</div>
+
+
+<!-- COMPONENT END -->

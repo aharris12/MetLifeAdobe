@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* css folder ##home/more-content-container## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$maxCompWidth : 1100px;
+
+.more-content-container {
+	& > ul {
+		padding: 30px 0;
+		& > li{
+			width:95%;
+			margin:0 auto 2%;
+		}
+		& > li .more-content {
+			position: relative;
+		}
+	}
+	/*임시*/
+	.more-content-heading{
+		padding: 40px 0 10px;
+		font-size: 24px;
+		line-height: 32px;
+		color: #000;
+		text-align: center;
+	}
+	.more-content-subcopy{
+		font-size: 14px;
+		line-height:21px;
+		color: #555;
+		text-align: center;
+	}
+}
+
+@media all and(min-width:768px) {
+
+	.more-content-container {
+		width:95%;
+		margin:0 auto;
+		max-width:$maxCompWidth;
+		& > ul {
+			padding: 40px 0;
+			height:100%;
+			width:100%;
+			display: table;
+			font-size:0;
+			padding-bottom:0;
+			text-align: center;
+			& > li {
+				display: inline-block;
+				vertical-align: top;
+				width:32%;
+				padding:0;
+				margin-left:2%;
+				margin-bottom:0;
+				height:100%;
+			}
+			& > li:first-child {
+				margin-left:0;
+			}
+			&:after {
+				clear:both;
+				content:'';
+				display: block;
+			}
+
+			& li .more-contentW {
+				position: relative;
+			}
+		}
+
+		/*임시*/
+		.more-content-heading{
+			padding: 45px 0 10px;
+			font-size: 28px;
+			line-height: 36px;
+		}
+		.more-content-subcopy{
+			font-size: 15px;
+			line-height:23px;
+		}
+	}
+
+}
+
+@media all and(min-width:1024px) {
+
+	.more-content-container {
+		width:85%;
+		max-width:1100px;
+		& > ul {
+			padding: 50px 0 80px;
+			& > li {
+				width: 32%;
+				margin-left: 2%;
+				padding: 0;
+			}
+			& > li:first-child {
+				margin-left: 0;
+			}
+		}
+
+		/*임시*/
+		.more-content-heading{
+			padding: 57px 0 18px;
+			font-size: 32px;
+			line-height: 41px;
+		}
+		.more-content-subcopy{
+			font-size: 14px;
+			line-height:21px;
+		}
+
+	}
+
+}

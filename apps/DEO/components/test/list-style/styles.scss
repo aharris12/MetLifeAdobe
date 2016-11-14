@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+/* css folder ##test/list-style## */
+
+
+.list-style {
+	margin:20px;
+	display: table;
+	& h3 {
+		font-size:22px;
+		font-weight:bold;
+	}
+
+	&>div {
+		padding:0 20px 20px 20px;
+		display: inline-block;
+		width:33%;
+		vertical-align: top;
+	}
+
+	& ol {
+		padding:10px 0;
+	}
+
+	& li {
+		font-size:14px;
+		line-height:18px;
+	}
+
+	& li:nth-child(2n+2) {
+		font-weight:bold;
+	}
+
+	& li:nth-child(4n) {
+		color: blue;
+	}
+}
+
+.list-style ol, .list-style ol li {
+	list-style-position:outside;
+	text-indent: -0px;
+	margin-left: 10px;
+}
+
+.disc ol, .disc ol li{
+	list-style: disc;
+}
+.circle ol, .circle ol li{
+	list-style: circle;
+}
+.square ol, .square ol li{
+	list-style: square;
+}
+.decimal ol, .decimal ol li{
+	list-style: decimal;
+}
+.square ol, .square ol li{
+	list-style: square;
+}
+.decimal-leading-zero ol, .decimal-leading-zero ol li{
+	list-style: decimal-leading-zero;
+}
+.lower-roman ol, .lower-roman ol li{
+list-style: lower-roman;
+}
+.upper-roman ol, .upper-roman ol li{
+list-style: upper-roman;
+}
+.lower-latin ol, .lower-latin ol li{
+list-style: lower-latin;
+}
+.upper-latin ol, .upper-latin ol li{
+list-style: upper-latin;
+}

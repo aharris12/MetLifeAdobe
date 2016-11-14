@@ -1,0 +1,37 @@
+<!-- COMPONENT START -->
+
+
+{% macro input(idVal, labelVal, name='', value='', type='text') %}
+<div class="input-wrap">
+    <label for="{{ idVal }}">{{ labelVal }}</label>
+    <input type="{{ type }}" id="{{ idVal }}" value="{{ value | escape }}" />
+</div>
+<!-- #comp css# /apps/DEO/components/common/extend/macro-input/styles.css -->
+<!-- #js# /apps/DEO/components/common/extend/macro-input/scripts.js -->
+
+{% endmacro %}
+
+<!-- input fileType add -->
+
+{% macro uploader(idVal, labelVal, name='', value='', type='text') %}
+
+<div class="ui-uploader">
+    <span class="uploader-name">첨부파일</span>
+    <label for="{{ idVal }}" class="screen_out">{{ labelVal }}</label>
+    <input type="file" id="{{ idVal }}" value="" class="uploader-hidden" tabindex="-1">
+    <button type="button" class="file-findbtn">찾아보기</button>
+</div>
+
+<!-- #comp css# /apps//DEO/components/extend/macro-input/styles.css -->
+<!-- #js# /apps/DEO/components/common/extend/macro-input/scripts.js -->
+
+
+{% endmacro %}
+
+
+
+<!-- input fileType add end -->
+
+{{ uploader( "file-uploader", "첨부파일", value="첨부파일" ) }}
+
+<!-- COMPONENT END -->

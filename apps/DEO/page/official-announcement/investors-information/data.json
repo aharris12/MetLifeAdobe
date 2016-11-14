@@ -1,0 +1,158 @@
+{
+	"gnbDepth2" : { "href" : "#lnk1", "text" : "공시실" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "경영공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험상품공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보험상품가격공시" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사회공헌공시" }
+	],
+	"active" : "2"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "공시실" },
+		{ "href" : "#lnk", "text" : "보험상품 가격공신" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "보험상품 가격공시",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+	"searchSelect" : {
+		"searchLabel" : "상품 선택",
+		"labelText" : "전체",
+		"btnType" : "검색"
+	},
+
+	"fileClaim1" : {
+		"mainTitle" : "보장성",
+		"fileCont" : [
+			{
+				"listTitle": "무배당 변액유니버셜종신보험 경청",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 스마트플랜 변액유니버셜종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 VIP플랜 변액유니버셜종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 라이프플랜 변액유니버셜종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 하이라이프 종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 LifeCycle 종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 더해주고 채워주는 정기보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 우리가족 대출클린 신용보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			}
+		]
+
+	},
+	"fileClaim2" : {
+		"mainTitle" : "변액유니버셜",
+		"fileCont" : [
+			{
+				"listTitle": "무배당 실버플랜 변액유니버셜보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 kids Plan 변액유니버셜보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			}
+		]
+
+	},
+	"fileClaim3" : {
+		"mainTitle" : "건강보장",
+		"fileCont" : [
+			{
+				"listTitle": "무배당 아이사랑 첫보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 미리받는 변액종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 그녀를 위한 선지급 종신보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 100세 Plus 종신암보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 노후愛간병보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 100세 시대 실버암보험(갱신형)",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			}
+		]
+
+	},
+	"fileClaim4" : {
+		"mainTitle" : "연금",
+		"fileCont" : [
+			{
+				"listTitle": "무배당 변액연금보험 동행",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 건강해지는 연금보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 스마트 밸런스 연금보험",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 언제나 더받는 연금보험(월납)",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "무배당 언제나 더받는 연금보험(일시납)",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			}
+		]
+
+	}
+}
