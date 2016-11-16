@@ -1,0 +1,90 @@
+/* advertisement/view css */
+
+.advertisement-view-back {
+  display: inline-block; }
+  .advertisement-view-back a {
+    display: block;
+    padding: 0 0 0 10px;
+    background: url("/content/dam/DEO/components/advertisement/view/ico_back_ar.svg") 0 50% no-repeat;
+    -webkit-background-size: 4px 5px;
+    background-size: 4px 5px; }
+    .advertisement-view-back a span {
+      font-size: 11px;
+      line-height: 15px;
+      font-weight: bold;
+      color: #0e5dae;
+      border-bottom: 1px solid #0e5dae; }
+
+.advertisement-view {
+  padding: 25px 20px; }
+
+.advertisement-view-con .advertisement-view-header .advertisement-view-heading {
+  padding: 30px 0 20px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 28px;
+  color: #000; }
+
+.advertisement-view-con .advertisement-view-header .advertisement-view-subcopy {
+  font-size: 16px;
+  line-height: 22px; }
+
+.advertisement-view-con .date {
+  display: block; }
+
+.advertisement-view-image {
+  width: 100%; }
+  .advertisement-view-image > img {
+    width: 100%;
+    padding-bottom: 10px; }
+  .advertisement-view-image > p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    padding-bottom: 25px; }
+
+@media all and (min-width: 768px) {
+  .advertisement-view-back a span {
+    font-size: 12px;
+    background-size: 4px 7px;
+    line-height: 19px; }
+  .advertisement-view {
+    padding: 40px 20px; }
+  .advertisement-view-con .advertisement-view-header .advertisement-view-heading {
+    font-size: 24px;
+    line-height: 32px;
+    padding-bottom: 20px; }
+  .advertisement-view-con .advertisement-view-header .advertisement-view-subcopy {
+    font-size: 16px;
+    line-height: 24px; }
+  .advertisement-view-image {
+    width: 57%;
+    max-width: 440px;
+    margin: 0 auto; }
+    .advertisement-view-image > p {
+      font-size: 13px;
+      line-height: 18px;
+      padding-bottom: 35px; } }
+
+@media all and (min-width: 1024px) {
+  .advertisement-view {
+    width: 85%;
+    max-width: 880px;
+    padding: 50px 0;
+    margin: 0 auto; }
+  .advertisement-view-con .advertisement-view-header .advertisement-view-heading {
+    font-size: 28px;
+    line-height: 36px;
+    padding-bottom: 30px; }
+  .advertisement-view-con .advertisement-view-header .advertisement-view-subcopy {
+    font-size: 16px;
+    line-height: 24px; }
+  .advertisement-view-image {
+    width: 86%;
+    max-width: 660px;
+    margin: 0 auto; }
+    .advertisement-view-image > p {
+      padding-bottom: 25px;
+      font-size: 13px;
+      line-height: 21px;
+      color: #666; } }

@@ -1,0 +1,15 @@
+<!-- COMPONENT START -->
+
+
+{% macro button(text, type, color='green', cusClass='') %}
+<!-- #comp css# /apps/DEO/components/common/extend/macro-button/styles.css -->
+<button type="{{ type }}" class="btn-basic {{ color }} {{ cusClass }}">{{ text }}</button>
+{% endmacro %}
+
+
+{% macro btnlink(text, href, color='green', blank, cusClass='') %}
+<!-- #comp css# /apps/DEO/components/common/extend/macro-button/styles.css -->
+<a href="{{ href }}" class="btn-basic {{ color }} {{ cusClass }}" {% if blank %}target="_blank" title="새창링크" {% endif %}>{{ text }}</a>
+{% endmacro %}
+
+<!-- COMPONENT END -->

@@ -1,0 +1,76 @@
+/* css folder ##newsroom/list## */
+.news-list .result-list {
+  padding-top: 20px; }
+
+.news-search {
+  padding: 21px 10px 0 10px; }
+  .news-search .slt-half {
+    margin-left: -16px; }
+    .news-search .slt-half:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .news-search .slt-half .half {
+      float: left;
+      width: 50%;
+      padding-left: 16px; }
+      .news-search .slt-half .half label {
+        display: inline-block;
+        margin-bottom: 7px;
+        font-size: 16px;
+        color: #333; }
+  .news-search .slt-extend {
+    position: relative;
+    padding: 10px 80px 0 0; }
+    .news-search .slt-extend .btn-basic {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      padding: 13px 20px 12px; }
+
+@media all and (min-width: 768px) {
+  .news-list .result-list {
+    padding-top: 40px; }
+  .news-search {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 40px; }
+    .news-search:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .news-search .slt-half, .news-search .slt-extend {
+      float: left;
+      width: 50%; }
+    .news-search .slt-extend {
+      padding: 0 80px 0 10px; }
+      .news-search .slt-extend .btn-basic {
+        top: 0; }
+    .news-search .slt-half {
+      margin-left: -15px; }
+      .news-search .slt-half .half {
+        padding-left: 15px; }
+        .news-search .slt-half .half label {
+          float: left;
+          margin-bottom: 0;
+          padding-right: 10px;
+          line-height: 40px; }
+        .news-search .slt-half .half .slt-wrap {
+          float: left;
+          width: 82%; }
+        .news-search .slt-half .half:first-child .slt-wrap {
+          width: 71%; } }
+
+@media all and (min-width: 1024px) {
+  .news-search {
+    width: 70%;
+    max-width: 610px;
+    margin: 0 auto; }
+    .news-search .slt-half {
+      margin-left: -15px; }
+      .news-search .slt-half .half .slt-wrap {
+        width: 79%; }
+      .news-search .slt-half .half:first-child {
+        padding-left: 0; }
+        .news-search .slt-half .half:first-child .slt-wrap {
+          width: 72%; } }

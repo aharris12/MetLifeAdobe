@@ -1,0 +1,142 @@
+{
+
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "상품소개" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사망보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "건강보장보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연금보험" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "퇴직연금" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "기타상품" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "가입상담문의" }
+	],
+	"active" : "4"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "상품소개" },
+		{ "href" : "#lnk", "text" : "기타상품" },
+		{ "href" : "#lnk", "text" : "펀드상품" }
+	],
+	"pageTitleComp1" : {
+		"levelTag" : "h2",
+		"title" : "펀드상품",
+		"titleCopy" : "수익성과 안정성을 꼼꼼하게 따지는 당신! 믿을 수 있는 MetLife생명과 만나십시오.",
+		"shareComp" : {
+			"share" : true,
+			"chat" : true
+		}
+	},
+	"faqList" : {
+		"mainTitle" : "펀드상품 목록",
+		"subInfo" : [
+			"수익증권 신규판매 계좌개설 및 신규판매 중단(2010.05.03 시행)",
+			"기존 가입한 수익증권 계좌에 대해서는 현행과 동일하게 모든 업무가능"
+		],
+		"faqContList" : [
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			},
+			{
+				"type" : "html",
+				"que" : "[국내] 프랭클린 그로스 증권 투자신탁(주식) 5호",
+				"indataList" : [
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/accordion/faq-accordion1"
+					}
+				]
+			}
+		]
+	},
+	"fileClaim" : {
+		"mainTitle" : "펀드투자자교육",
+		"fileCont" : [
+			{
+				"listTitle": "전국 투자자 교육협의회",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "금융투자협회",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "펀드투자 이것은 알고합시다.",
+				"type" : "fileDown"
+			}
+		]
+
+	},
+	"smallModule" : {
+		"title" : "기타 상품 관련 안내",
+		"subCopy" : "기타 상품에 대한 더 자세한 정보를 확인하실 수 있습니다.",
+		"list" : [
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "공지사항"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "고객신용 정보관리"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "펀드매매(WTS)"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "수익증권문의"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "펀드FAQ"
+			}
+		]
+	}
+}

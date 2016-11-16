@@ -1,0 +1,56 @@
+.opt-table1 {
+  overflow: auto;
+  width: 100%; }
+  .opt-table1 table {
+    min-width: 640px;
+    text-align: center; }
+    .opt-table1 table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      line-height: 19px; }
+    .opt-table1 table td {
+      line-height: 20px; }
+    .opt-table1 table th, .opt-table1 table td {
+      padding: 10px;
+      border-width: 0 1px 1px 1px;
+      border-style: solid;
+      border-color: #cccccc;
+      color: #333;
+      font-size: 14px;
+      letter-spacing: -1px; }
+      .opt-table1 table th:first-child, .opt-table1 table td:first-child {
+        border-left: 0; }
+      .opt-table1 table th:last-child, .opt-table1 table td:last-child {
+        border-right: 0; }
+      .opt-table1 table th.point-wt, .opt-table1 table td.point-wt {
+        background-color: #fff; }
+      .opt-table1 table th.tb-left, .opt-table1 table td.tb-left {
+        padding: 10px 20px;
+        text-align: left; }
+      .opt-table1 table th.tb-right, .opt-table1 table td.tb-right {
+        padding: 10px 20px;
+        text-align: right; }
+    .opt-table1 table tfoot th {
+      background-color: #fff; }
+  .opt-table1.opt-tabletext-ty2 table th {
+    font-size: 13px;
+    line-height: 18px; }
+  .opt-table1.opt-tabletext-ty2 table td {
+    font-size: 13px;
+    line-height: 19px; }
+
+@media all and (min-width: 768px) {
+  .opt-table1 {
+    overflow: hidden; }
+    .opt-table1 table {
+      width: 100%; }
+      .opt-table1 table td {
+        line-height: 21px; }
+      .opt-table1 table th, .opt-table1 table td {
+        padding: 12px 10px; }
+        .opt-table1 table th.tb-left, .opt-table1 table td.tb-left {
+          padding: 12px 20px; }
+        .opt-table1 table th.tb-right, .opt-table1 table td.tb-right {
+          padding: 12px 20px; }
+    .opt-table1.opt-tabletext-ty2 table td {
+      line-height: 20px; } }

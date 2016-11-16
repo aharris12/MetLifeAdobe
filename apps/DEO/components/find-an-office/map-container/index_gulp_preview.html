@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="title" content="## Page Title, 10 ~ 70 characters ##">
+        <meta name="description" content="## Page Description, 70 ~ 160 characters ##">
+        <meta name="keywords" content="## Page Keywords, 10 ~ 20 characters ##">
+        <title>Component Preview</title>
+        <!-- build:css /etc/clientlibs/<@=project.name@>/<@=page.name@>/styles.min.css -->
+        <link rel="stylesheet" href="/system/styles/common.css">
+        <link rel="stylesheet" href="/system/styles/sitecommon.css">
+        <link rel="stylesheet" href="/system/styles/options.css">
+        <link rel="stylesheet" href="/system/styles/comp-common.css">
+        <!--<link rel="stylesheet" charset="utf-8" href="/application/setting/styles/app.css" />-->
+        <!-- components style : start -->
+        <link rel="stylesheet" href="/apps/DEO/components/find-an-office/map-container/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/find-an-office/find-search-content/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-select/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-input/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-button/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/find-an-office/find-map-content/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/find-an-office/find-result-content/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/inter-section/paging/styles.css">
+        <!-- resource:page css -->
+        <!-- components style : end -->
+        <!-- build:js /etc/clientlibs/<@=project.name@>/libs/scripts.min.js -->
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/libs/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteObject.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteModule.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/greensock/TweenMax.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/common.js"></script>
+        <!-- endbuild -->
+        <!--[if lte IE 9]>
+<script src="/system/scripts/libs/html5.js"></script>
+<script src="/system/scripts/libs/respond.min.js"></script>
+<script src="/system/scripts/libs/selectivizr-min.js"></script>
+<![endif]-->
+        <!-- resource:page css -->
+    </head>
+
+    <body class="doc-loading">
+        <!-- CONTENT -->
+        <div class="map-container">
+            <div class="map-srh">
+                <form action="?">
+                    <fieldset>
+                        <legend class="screen_out">지점위치 검색</legend>
+                        <div class="map-search">
+                            <div class="slt-half">
+                                <div class="half"> <label class="screen_out" for="stateSlt">도 선택</label>
+                                    <div class="slt-wrap"> <select id="stateSlt" name="name" data-select-design="false">
+    <option value="1">서울특별시</option>
+    <option value="2">경기도</option>
+    
+</select> </div>
+                                </div>
+                                <div class="half"> <label class="screen_out" for="suburbSlt">구 선택</label>
+                                    <div class="slt-wrap"> <select id="suburbSlt" name="name" data-select-design="false">
+    <option value="1">강남구</option>
+    <option value="2">성동구</option>
+    
+</select> </div>
+                                </div>
+                            </div>
+                            <div class="input-extend">
+                                <div class="input-wrap"> <label for="branchInput">지점명을 입력하세요</label> <input type="text" id="branchInput" value=""> </div>
+                                <div> <button type="submit" class="btn-basic green">검색</button> </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="map-con">
+                <div class="find-map">
+                    <!-- 임시 -->
+                    <div class="map-area web-view tablet-view"><img src="/content/dam/DEO/author/@temp/map1.jpg" style="width:100%; height:100%" alt=""></div>
+                    <div class="map-area mobile-view"><img src="/content/dam/DEO/author/@temp/map2.jpg" style="width:100%; height:100%" alt=""></div>
+                    <div class="map-area" style="display:none">지도들어옴</div>
+                    <!-- //임시 -->
+                    <h3 class="map-con-info">지점운영시간</h3>
+                    <ul class="map-con-list">
+                        <li>업무시간 : 오전 9시 ~ 오후 6시</li>
+                        <li>점심시간 : 오전 12시 ~ 오후 1시<br>※ 점심시간은 업무처리 불가, 고객플라자는 정산운영합니다.</li>
+                        <li>제지급금 접수시간(대출, 해약, 분할 보험금, 배당등) : 오전 9시 ~ 오후 4시<br>※ 오후 4시 이후 접수 건은 익영업일 지급됨</li>
+                        <li>수익증권 업무는 고객플라자에서만 가능합니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-result">
+                <div class="find-result-list"> <span class="result-heading">총 22개 지점 중 1 - 5</span>
+                    <ul>
+                        <li>
+                            <div class="result-list-con">
+                                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="#lnk">ALLSTAR지점</a></p>
+                                <p class="result-addr"><span class="screen_out">주소 : </span> 서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)</p>
+                                <p>전화 : <span class="tablet-view">02-546-9811</span> <a href="tel:02-546-9811" class="tel-link">02-546-9811</a></p>
+                                <p>FAX : 02-546-9812</p>
+                            </div>
+                            <div class="result-btn mobile-view"> <a href="" class="btn-basic green">지도보기</a> </div>
+                        </li>
+                        <li>
+                            <div class="result-list-con">
+                                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="#lnk">BPS지점</a></p>
+                                <p class="result-addr"><span class="screen_out">주소 : </span> 서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)</p>
+                                <p>전화 : <span class="tablet-view">02-546-9811</span> <a href="tel:02-546-9811" class="tel-link">02-546-9811</a></p>
+                                <p>FAX : 02-546-9812</p>
+                            </div>
+                            <div class="result-btn mobile-view"> <a href="" class="btn-basic green">지도보기</a> </div>
+                        </li>
+                        <li>
+                            <div class="result-list-con">
+                                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="#lnk">BRAND지점</a></p>
+                                <p class="result-addr"><span class="screen_out">주소 : </span> 서울 강남구 학동로 401, 14층(청담동, 금하빌딩)</p>
+                                <p>전화 : <span class="tablet-view">02-546-1490</span> <a href="tel:02-546-1490" class="tel-link">02-546-1490</a></p>
+                                <p>FAX : 02-546-1497</p>
+                            </div>
+                            <div class="result-btn mobile-view"> <a href="" class="btn-basic green">지도보기</a> </div>
+                        </li>
+                        <li>
+                            <div class="result-list-con">
+                                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="#lnk">CROWN지점</a></p>
+                                <p class="result-addr"><span class="screen_out">주소 : </span> 서울 강남구 학동로 401, 14층(청담동, 금하빌딩)</p>
+                                <p>전화 : <span class="tablet-view">02-541-1490</span> <a href="tel:02-541-1490" class="tel-link">02-541-1490</a></p>
+                                <p>FAX : 02-546-1497</p>
+                            </div>
+                            <div class="result-btn mobile-view"> <a href="" class="btn-basic green">지도보기</a> </div>
+                        </li>
+                        <li>
+                            <div class="result-list-con">
+                                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="#lnk">Charin지점</a></p>
+                                <p class="result-addr"><span class="screen_out">주소 : </span> 서울 강남구 도산대로45길 6, 13층(신사동, 호림아트센터2빌딩)</p>
+                                <p>전화 : <span class="tablet-view">02-2051-2491</span> <a href="tel:02-2051-2491" class="tel-link">02-2051-2491</a></p>
+                                <p>FAX : 02-546-9812</p>
+                            </div>
+                            <div class="result-btn mobile-view"> <a href="" class="btn-basic green">지도보기</a> </div>
+                        </li>
+                    </ul>
+                    <div class="paging web-view"> <a href="#lnk" class="page-prev default">이전</a>
+                        <div> <a href="#lnk" class="active">1</a> <a href="#lnk">2</a> <a href="#lnk">3</a> <a href="#lnk">4</a> <a href="#lnk">5</a> <a href="#lnk">6</a> <a href="#lnk">7</a> <a href="#lnk">8</a> <a href="#lnk">9</a> <a href="#lnk">10</a> </div>
+                        <a href="#lnk" class="page-next">다음</a> </div>
+                    <div class="paging mobile-view"> <a href="#lnk" class="page-prev default">이전</a>
+                        <div> <a href="#lnk" class="active">1</a> <a href="#lnk">2</a> <a href="#lnk">3</a> <a href="#lnk">4</a> </div> <a href="#lnk" class="page-next">다음</a> </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CONTENT-->
+        <script type="text/javascript" charset="utf-8" src="/apps/DEO/components/common/extend/macro-input/scripts.js"></script>
+    </body>
+
+</html>

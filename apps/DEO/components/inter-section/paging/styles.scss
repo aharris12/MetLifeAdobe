@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+/* css folder ##inter-section/paging## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.paging {
+	text-align:left;
+	&:after{
+		content:"";
+		display: block;
+		clear:both;
+	}
+
+	& a{
+		float:left;
+		width:37px;
+		border:{
+			width: 1px 1px 1px 0;
+			style: solid;
+			color: #ccc;
+		}
+		font-size:14px;
+		line-height:37px;
+		text-align:center;
+		color:#2377c5;
+		&.active{
+			background-color:#2377c5;
+			color:#fff;
+			font-weight:bold;
+		}
+		&.page-next,&.page-prev{
+			width:60px;
+			&.default{
+				color:#666;
+			}
+		}
+		&.page-prev{
+			border-left:1px solid #ccc;
+		}
+	}
+	& div{
+		float:left;
+	}
+	&.mobile-view{display:block;}
+	&.web-view{display:none;}
+
+}
+
+@media all and(min-width:768px) {
+	.paging {
+
+		& a{
+			width:31px;
+			border:{
+				width: 1px 1px 1px 0;
+				style: solid;
+				color: #ccc;
+			}
+			line-height:31px;
+			&.page-next,&.page-prev{
+				width:62px;
+			}
+		}
+	}
+}
+@media all and(min-width:1024px){
+	.paging{
+
+		&.mobile-view{display:none;}
+		&.web-view{display:block;}
+	}
+}

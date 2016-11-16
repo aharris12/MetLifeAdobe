@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+
+.img-container{
+	.img-cont{
+		width:100%;
+		& img{
+			width:100%;
+		}
+	}
+	.img-des{
+		padding-top:5px;
+		font-size:14px;
+		line-height:20px;
+		color:#666;
+	}
+}
+
+@media all and(min-width:768px) {
+	.img-container{
+		width:440px;
+		margin:0 auto;
+		.img-des{
+			padding-top:10px;
+			font-size:13px;
+			line-height:18px;
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.img-container{
+		width:660px;
+		.img-des{
+			line-height:21px;
+		}
+	}
+}

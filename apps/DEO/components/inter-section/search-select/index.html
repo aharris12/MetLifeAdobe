@@ -1,0 +1,29 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/search-select/styles.css -->
+
+{% set items = innerdata %}
+<div class="search-container">
+    <form action="?">
+        <fieldset>
+            <legend class="screen_out">분류검색</legend>
+            {% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+                <div class="search-select">
+                {% if items.labelless == true %}
+                <label for="categorySlt" class="screen_out">{{ items.searchLabel }}</label>
+                {% else %}
+                <label for="categorySlt">{{ items.searchLabel }}</label>
+                {% endif %}
+                <div class="slt-area">
+                    {{ forms.select_type2("categorySlt", [
+                    {text : items.labelText , val : "1"}
+                    ], "name")}}
+
+                    {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                    {{ btn.button(items.btnType , "button" , color="green") }}
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<!-- COMPONENT END -->

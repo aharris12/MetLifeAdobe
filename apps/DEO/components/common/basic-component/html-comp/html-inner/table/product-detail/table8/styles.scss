@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.prd-table-type1{
+	ul.list-type1{
+		& li{
+			width:100%;
+			padding-left:10px;
+			text-align: left;
+			background: url('/content/dam/DEO/author/common_ico/ico-product-dot.svg') 0 8px no-repeat;
+			background-size: 4px 4px;
+			background-position: 0 10px;
+			font-size: 15px;
+			line-height:23px;
+		}
+		& + .acco-heading{
+			padding-top: 23px;
+		}
+	}
+}
+
+@media all and(min-width:768px) {
+	.prd-table-type1 {
+		ul.list-type1 {
+			& li {
+				font-size: 14px;
+				line-height: 21px;
+			}
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+}

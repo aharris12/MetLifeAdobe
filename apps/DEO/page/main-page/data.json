@@ -1,0 +1,104 @@
+{
+	"cyberCounter" : {
+		"skinnyBanner" : {
+			"imgUrl" : "/skinny-banner/img-temp.png",
+			"imgAlt" : "대체텍스트 필요시 입력",
+			"title" : "모바일창구 안내",
+			"contentList" : [
+				"계약조회 및 보험료 납입, 자동이체 등의 업무처리가 가능합니다."
+			],
+			"link" : "#lnk",
+			"color" : "green"
+		}
+	},
+	"promoCard" : {
+		"imgIR" : "background Alternative Text",
+		"imgURL" : "/category/promo-img1.png",
+		"promoContent" : {
+			"title" : "무배당 스마트플랜 변액유니버설 종신보험",
+			"text" : [
+				"든든한 사망보장에 적립형 전환기능으로 목적자금 활용이 가능한 보험"
+			]
+		},
+		"link" : {
+			"color" : "green",
+			"href" : "#lnk",
+			"text" : "더 알아보기"
+		}
+	},
+
+	"mainCat0": {
+		"href": "#lnk1",
+		"text": "상품소개",
+		"innerMenu": [
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "사망보장보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "건강보장보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "연금보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "기타상품"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "퇴직연금"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "가입상담문의"
+			}
+		]
+	},
+
+	"mainCat3": {
+		"href": "#lnk1",
+		"text": "고객센터",
+		"innerMenu": [
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "공지/이벤트"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "유용한정보"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "지점안내"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "고객의소리"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "보험금청구안내"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "보험범죄신고센터"
+			}
+		]
+	}
+
+}

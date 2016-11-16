@@ -1,0 +1,17 @@
+
+
+.base-container{
+	padding:20px 20px 20px 20px;
+}
+
+@media all and(min-width:768px) {
+	.base-container {
+		padding: 30px 30px 40px 30px;
+	}
+}
+
+@media all and(min-width:1024px) {
+	.base-container {
+		padding: 40px 0 50px 0;
+	}
+}

@@ -1,0 +1,100 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/caroucel/styles.css -->
+<!-- #js# /system/scripts/plugins/external/imagesloaded/v3.2/imagesloaded.pkgd.min.js -->
+<!-- #js# /system/scripts/plugins/external/touchswipe/jquery.touchswipe.js -->
+<!-- #js# /system/scripts/plugins/slider/slide-util.js -->
+<!-- #js# /system/scripts/plugins/slider/slide-indicator.js -->
+<!-- #js# /system/scripts/plugins/slider/slide-basic.js -->
+<!-- #js# /system/scripts/plugins/slider/slide-basicindi.js -->
+<!-- #js# /system/scripts/plugins/slider/slide-load.js -->
+<!-- #js# /apps/DEO/components/home/caroucel/scripts.js -->
+
+<div class="slide-box main-caroucel">
+
+	<!--
+		**************   .ui-slide 속성   **************
+		data-slide-auto="true" : 자동재생 기능 추가
+		data-slide-viewlen= number or array : 화면에 보이게 될 ui-slide-inner 개수 // array경우 [mobile, tablet, desktop] 순
+		data-slide-type= slide Mode 선언
+	-->
+
+	<div class="ui-slide" data-slide-type="basicindi,basicindi,basicindi" data-slide-viewlen="1,1,1" data-slide-auto="true">
+
+
+		<div class="ui-slide-direct ui-slide-direct-prev">
+			<button type="button" class="ui-slide-prev"><span>이전 슬라이드</span></button>
+		</div>
+
+		<div class="ui-slide-control">
+			<!--
+				**************   .ui-slide-indicator 속성   **************
+				data-indi-type= number or html : indicator button type 선언 // array경우 [mobile, tablet, desktop] 순
+				data-indi-i18ntxt : i18n용 텍스트
+				.ui-slide-indicator > button : number로만 구성될 경우 number로 markup, 복합구성이나 html로 구성될 경우 html 구성
+			-->
+			<div class="ui-slide-autoControl">
+				<button type="button" class="ui-slide-play"> play </button>
+				<button type="button" class="ui-slide-stop"> stop </button>
+			</div>
+			<div class="ui-slide-indicator" data-indi-type="number,number,number" data-indi-i18ntxt="슬라이드">
+				<button type="button"> 1 </button>
+				<button type="button"> 2 </button>
+				<button type="button"> 3 </button>
+				<button type="button"> 4 </button>
+			</div>
+
+		</div>
+
+		<div class="ui-slide-content">
+			<ul>
+				<li data-inner-colum="1">
+					<div class="ui-slide-inner">
+						<a href="#lnk">
+							<img src="{{paths.author}}/@temp/hero_auto.jpg" alt="">
+							<div class="slide-tit">
+								<p><span>당신의 긴 인생, <br> 저희가 큰 힘이 되겠습니다.</span></p>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li data-inner-colum="1">
+					<div class="ui-slide-inner">
+						<a href="#lnk">
+							<img src="{{paths.author}}/@temp/hero_foundation.jpg" alt="">
+							<div class="slide-tit">
+								<p><span>당신의 긴 인생, <br> 저희가 큰 힘이 되겠습니다.</span></p>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li data-inner-colum="1">
+					<div class="ui-slide-inner">
+						<a href="#lnk">
+							<img src="{{paths.author}}/@temp/hero_life.jpg" alt="">
+							<div class="slide-tit">
+								<p><span>당신의 긴 인생, <br> 저희가 큰 힘이 되겠습니다.</span></p>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li data-inner-colum="1">
+					<div class="ui-slide-inner">
+						<a href="#lnk">
+							<img src="{{paths.author}}/@temp/hero_small_business.jpg" alt="">
+							<div class="slide-tit">
+								<p><span>당신의 긴 인생, <br> 저희가 큰 힘이 되겠습니다.</span></p>
+							</div>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="ui-slide-direct ui-slide-direct-next">
+			<button type="button" class="ui-slide-next"><span>다음 슬라이드</span></button>
+		</div>
+	</div>
+
+</div>
+
+<!-- COMPONENT END -->

@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+/* css folder ##find-an-office/find-info## */
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$maxCompWidth : 1100px;
+
+$boxMobPadding: 0 10px 20px;
+$boxTabletPadding: 0px 35px 40px;
+$boxWebPadding: 0px 15px 50px;
+
+$liMobBtmMargin: 30px;
+$liTabletBtmMargin: 0px;
+//$liWebBtmMargin: 0px;
+
+$boxMaxHeight: 146px;
+
+$titleMobFontSize: 16px;
+$titleTabletFontSize: 16px;
+//$titleWebFontSize: 16px;
+
+$titleMobBtmPadding: 15px;
+$titleTabletBtmPadding: 15px;
+//$titleWebBtmPadding: 15px;
+
+$listMobFontSize: 15px;
+$listTabletFontSize: 13px;
+$listWebFontSize: 14px;
+
+$listMobLineHeight: 21px;
+$listTabletLineHeight: 20px;
+$listWebLineHeight: 21px;
+
+$listMobTxtBtnTopPadding: 12px;
+$listTabletTxtBtnTopPadding: 20px;
+$listWebTxtBtnTopPadding: 15px;
+
+$listMobBtnTopPadding: 10px;
+$listTabletBtnTopPadding: 20px;
+$listWebBtnTopPadding: 15px;
+
+$txtBtnMobFontSize: 15px;
+$txtBtnTabletFontSize: 13px;
+//$txtBtnTxtWebFontSize: 13px;
+
+
+.info-container {
+	width: 100%;
+	height: 100%;
+	display: table;
+	padding: $boxMobPadding;
+	margin-bottom: $liMobBtmMargin;
+}
+
+.info-tiles-content {
+	margin-bottom: $liMobBtmMargin;
+}
+
+.info-tiles-title {
+	font-size: $titleMobFontSize;
+	padding-bottom: $titleMobBtmPadding;
+	font-weight: bold;
+}
+
+.info-tiles-list {
+	width: 100%;
+	font-size: 0;
+	& li {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		font-size: $listMobFontSize;
+		line-height: $listMobLineHeight;
+		&:first-child {
+			margin-bottom: $liMobBtmMargin;
+		}
+	}
+}
+
+.info-list-con {
+	& p {
+		font-size: $listMobFontSize;
+		line-height: $listMobLineHeight;
+	}
+}
+
+.info-tiles-linkbtn {
+	padding-top: $listMobBtnTopPadding;
+	text-align: center;
+	line-height:1;
+}
+
+.info-tiles-linktext {
+	display: inline-block;
+	padding-top: $listMobTxtBtnTopPadding;
+	& a {
+		display: block;
+		& span {
+			display: inline-block;
+			padding-bottom: 2px;
+			border-bottom: 1px solid $pointColor1;
+			font-size: $txtBtnMobFontSize;
+			font-weight: bold;
+			color: $pointColor1;
+		}
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+	.info-container {
+		width: 95%;
+		margin: 0 auto;
+		max-width:$maxCompWidth;
+		padding: $boxTabletPadding;
+	}
+
+	.info-center {
+		display:inline-block;
+		width: 32.19%;
+		padding-right: 15px;
+	}
+
+	.info-plaza {
+		display:inline-block;
+		width: 66.19%;
+		vertical-align: top;
+	}
+
+	.info-tiles-title {
+		font-size: $titleTabletFontSize;
+		padding-bottom: $titleTabletBtmPadding;
+	}
+
+	.info-tiles-list {
+		& li {
+			display: inline-block;
+			width: 48.93%;
+			height: 100%;
+			padding-bottom: 0;
+			vertical-align: top;
+			font-size: $listTabletFontSize;
+			line-height: $listTabletLineHeight;
+			&:first-child {
+				padding-right: 15px;
+				margin-bottom: $liTabletBtmMargin;
+			}
+		}
+	}
+
+	.info-list-con {
+		& p {
+			font-size: $listTabletFontSize;
+			line-height: $listTabletLineHeight;
+		}
+	}
+
+	.info-tiles-content {
+		margin-bottom: 0;
+	}
+
+	.info-tiles-link {
+		& li {
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			vertical-align: top;
+			&:first-child {
+				padding-right: 2%;
+			}
+		}
+	}
+
+	.info-tiles-linkbtn {
+		text-align: left;
+		padding-top: $listTabletBtnTopPadding;
+	}
+	.info-tiles-linktext {
+		padding-top: $listTabletTxtBtnTopPadding;
+		padding-bottom: 26px;
+		& a {
+			& span {
+				font-size: $txtBtnTabletFontSize;
+			}
+		}
+	}
+
+}
+
+@media all and(min-width:1024px) {
+	.info-container {
+		width: 85%;
+		max-width: $maxCompWidth;
+		padding: $boxWebPadding;
+	}
+
+	.info-tiles-list {
+		& li {
+			font-size: $listWebFontSize;
+			line-height: $listWebLineHeight;
+		}
+	}
+
+	.info-list-con {
+		& p {
+			font-size: $listWebFontSize;
+			line-height: $listWebLineHeight;
+		}
+	}
+
+	.info-tiles-linkbtn {
+		padding-top: $listWebBtnTopPadding;
+	}
+	.info-tiles-linktext {
+		padding-top: $listWebTxtBtnTopPadding;
+	}
+
+}

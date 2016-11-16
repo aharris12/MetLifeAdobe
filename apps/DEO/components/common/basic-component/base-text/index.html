@@ -1,0 +1,9 @@
+<!-- COMPONENT START -->
+
+{% set textitem = innerdata %}
+
+{% for arr in textitem %}
+<div class="base-text"><p class="{{ arr.class }} {% if arr.bold %}opt-text-bold{% endif %}">{{ arr.text | safe }}</p></div>
+{% endfor %}
+
+<!-- COMPONENT END -->

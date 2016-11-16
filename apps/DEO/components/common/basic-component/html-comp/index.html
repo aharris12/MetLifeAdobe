@@ -1,0 +1,16 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/basic-component/html-comp/styles.css -->
+
+<div class="comp-html">
+
+    {% if extendComp %}
+        {% set url = extendComp %}
+        {% include paths.apps + extendComp + "/index.html" %}
+    {% else %}
+        {% set url = innerdata %}
+        {% include paths.apps + url + "/index.html" %}
+    {% endif %}
+
+</div>
+
+<!-- COMPONENT END -->

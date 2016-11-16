@@ -1,0 +1,17 @@
+
+{% set subCategory = gnbDepth3 %}
+{% include paths.apps + "/common/layout/sub-category-3depth/index.html" %}
+
+<div class="content">
+	{% include paths.apps + "/common/layout/share-click-to-call/index.html" %}
+
+	<div class="comp-container">
+		{% set resultCont = resultCont %}
+		{% include paths.apps + "/find-an-office/map-container/index.html" %}
+
+		{% set infoCont1 = infoCont1 %}
+		{% set infoCont2 = infoCont2 %}
+		{% include paths.apps + "/find-an-office/find-info/index.html" %}
+	</div>
+
+</div>

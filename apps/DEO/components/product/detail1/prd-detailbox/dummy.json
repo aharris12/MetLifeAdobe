@@ -1,0 +1,99 @@
+{
+	"detailInner" : [
+		{
+			"type" : "title",
+			"loadComp" : "/product/detail1/prd-stitle",
+			"innerdata" : {
+				"title" : {
+					"level" : "h3",
+					"text" : "1종 라이프싸이클형(LC형)",
+					"class" : "prd-title"
+				}
+			}
+		},
+		{
+			"type" : "container",
+			"innerdata" :  [
+				{
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h4",
+							"text" : "상품구조",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/product/detail1/prd-text",
+								"innerdata" : {
+									"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험"
+								}
+							},
+							{
+								"loadComp" : "/product/detail1/prd-img",
+								"innerdata" : {
+									"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험",
+									"web" : "/@temp/prd-tablet.png",
+									"tablet" : "/@temp/prd-tablet.png",
+									"mobile": "/@temp/prd-mobile.png",
+									"alt" : "text",
+									"imgIR" : "background Alternative Text",
+									"caption" : "가입금액 1억원 기준 <br> 은퇴나이 55세, 60세, 65세 중 선택"
+								}
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text",
+								"innerdata" : {
+									"bullet" : "prd-bullet-text",
+									"text" : "은퇴나이 이전 사망 시에는 보험가입금액의 100%, 은퇴나이 이후 사망 시에는 보험가입 금액의 50%를 지급 합리적인 보험료로 경제활동 시기에 사망보장을 강화한 종신보험"
+								}
+							}
+						]
+					}
+				},
+				{
+					"loadComp" : "/product/detail1/prd-stitle-container",
+					"innerdata" : {
+						"title" : {
+							"level" : "h4",
+							"text" : "주계약",
+							"class" : "prd-stitle"
+						},
+						"complist" : [
+							{
+								"loadComp" : "/common/basic-component/html-comp",
+								"innerdata" : "/common/basic-component/html-comp/html-inner/table/product-detail/table1"
+							},
+							{
+								"loadComp" : "/product/detail1/prd-text-list",
+								"innerdata" : [
+									{
+										"text" : "기본보험금액 : [은퇴나이 전] 보험가입금액 – 중도인출금액 + 추가납입보험료 [은퇴나이 후] 보험가입금액X50% - 중도인출금액 + 추가납입보험료"
+									},
+									{
+										"text" : "① 기본보험금액 ②계약자적립금 X105% ③기납입보험료 중 기본보험금액보다 더 큰 금액이 있을 경우에는 그 금액을 지급합니다. 사망보험금의 경우 ‘고의적 사고 및 2년 이내 자살’의 경우 보험금 지급이 제한될 수 있습니다."
+									},
+									{
+										"text" : "회사는 특별계정의 운용실적과 관계없이 계약유지보증기간 동안 최저사망보험금으로 기본보험금액을 보장합니다."
+									},
+									{
+										"text" : "이를 위해 아래에 해당하는 금액의 보증비용을 부가합니다.",
+										"innerList" : [
+											{
+												"text" : "- 경과기간 10년 이내 - 1종 라이프싸이클형(LC형) : 보험가입금액 비례 연 1.2/1000 + 특별계정적립금 비례 연 1.3%"
+											},
+											{
+												"text" : "- 경과기간 10년 초과 - 1종 라이프싸이클형(LC형) : 보험가입금액 비례 연 1.2/1000"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+
+	]
+}

@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+@import "apps/DEO/components/common/basic-component/base-text/styles.scss";
+
+//$mob-minWidth: 640px;
+$opt-table-pb:11px;
+$opt-tablet-table-pb:22px;
+
+$opt-th1-bgcolor:#dae4ed;
+$opt-th2-bgcolor:#e4e4e4;
+
+$opt-td-bgcolor:#fff;
+$opt-td-bgcolor2:#f2f2f2;
+
+$opt-th1-pd:20px 10px;
+$opt-th1-pdlr:20px;
+
+$opt-th2-pd:13px 10px;
+$opt-th2-pdlr:13px 20px;
+$opt-tablet-th2-pd:12px 10px;
+$opt-tablet-th2-pdlr:12px 20px;
+
+$opt-td-pd:10px;
+$opt-td-pdlr:10px 20px;
+
+.opt-table-wrap {
+	width:100%;
+}
+
+
+.opt-table2 {
+	overflow:auto;
+	width:100%;
+	padding-bottom:$opt-table-pb;
+
+	table {
+		//min-width:$mob-minWidth;
+		width:100%;
+		text-align:center;
+		border:{width:1px 1px 0; style:solid; color:#ccc}
+
+		tr {
+			&:nth-last-child(even) td {background:$opt-td-bgcolor2}
+
+			th, td {
+				border-bottom:1px solid #ccc;
+				color:$baseTextColor;
+				&.tb-left {text-align:left}
+				&.tb-right {text-align:right}
+			}
+
+			th {
+				border-top-width:1px;
+				border-bottom-width:1px;
+
+				font-weight: bold;
+
+				&.th1 {
+					background-color:$opt-th1-bgcolor;
+					padding:$opt-th1-pd;
+					@extend .opt-text16;
+					&.tb-left, &.tb-right {
+						padding:$opt-th1-pdlr
+					}
+				}
+				&.th2 {
+					background-color:$opt-th2-bgcolor;
+					padding:$opt-th2-pd;
+					@extend .opt-text14;
+					&.tb-left, &.tb-right {padding:$opt-th2-pdlr}
+				}
+			}
+
+			td {
+				padding:$opt-td-pd;
+				background:$opt-td-bgcolor;
+				@extend .opt-text14;
+				&.tb-left, &.tb-right {padding:$opt-td-pdlr}
+			}
+		}
+	}
+}
+
+@media all and( min-width:768px ) {
+
+	.opt-table-wrap {
+		display:table;
+		padding-bottom:$opt-tablet-table-pb;
+		& .opt-table2:nth-child(2) table, & .opt-table2:nth-child(2) table {
+			border-left-width: 0;
+			border-right-width: 0;
+		}
+	}
+
+	.opt-table2 {
+		overflow:hidden;
+		//max-width:920px;
+		display: table-cell;
+		width: 33.33%;
+		padding-bottom:0;
+
+		table {
+			th {
+				&.th1 {
+					padding:$opt-tablet-th2-pd;
+					&.tb-left, &.tb-right {padding:$opt-th2-pdlr}
+				}
+				&.th2 {
+					padding:$opt-tablet-th2-pd;
+					&.tb-left, &.tb-right {padding:$opt-th2-pdlr}
+				}
+			}
+		}
+	}
+}

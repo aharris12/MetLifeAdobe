@@ -1,0 +1,78 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/faqs/faq/styles.css -->
+<!-- #js# /system/scripts/ui/accordion/accordion.js -->
+<!-- #js# /apps/DEO/components/inter-section/faqs/faq/scripts.js -->
+
+
+{% set items = faqContent %}
+
+<div class="comp-faq">
+    <div class="comp-faq-title">
+        <strong>{{ items.mainTitle }}</strong>
+        {% if items.allControl == true %}
+        <button type="button" class="comp-fap-allopen">전체보기</button>
+        <button type="button" class="comp-fap-allclose">전체닫기</button>
+        {% endif %}
+        {% if items.subInfo %}
+            {% for content in items.subInfo %}
+                <p class="subinfo">{{ content }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+    <div class="comp-faq-con">
+        <ul class="comp-faq-ul">
+            {% for faqList in items.faqContList %}
+            <li class="comp-faq-list">
+                <div class="comp-faq-question">
+                    <dl>
+                        <dt class="screen_out">질문</dt>
+                        {% if faqList.type == "html" %}
+                        <dd><button type="button">{{ faqList.que }}</button></dd>
+                        {% else %}
+                        <dd><button type="button">{{ faqList.que }}</button></dd>
+                        {% endif %}
+                    </dl>
+                </div>
+                <div class="comp-faq-answer">
+                    <dl>
+                        <dt class="screen_out">답변</dt>
+                        <dd>
+                            {% if faqList.type == "html" %}
+
+                                {% for loadlist in faqList.indataList %}
+
+                                    {% if loadlist.loadComp %}
+                                        {% set extendComp = loadlist.loadComp %}
+                                    {% else %}
+                                        {% set extendComp = false %}
+                                    {% endif %}
+                                    {% set innerdata = loadlist.innerdata %}
+
+                                    {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+                                {% endfor %}
+
+                            {% else %}
+                                {{ faqList.anw }}
+                            {% endif %}
+
+
+
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    {% if items.faqInformation == true %}
+    <p class="comp-faq-info">찾고자 하는 문의사항이 없다면 <a href="#lnk">이용문의</a>를 이용해주시기 바랍니다.</p>
+    {% endif %}
+</div>
+
+
+<!-- COMPONENT END -->

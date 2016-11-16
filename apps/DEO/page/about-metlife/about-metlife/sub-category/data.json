@@ -1,0 +1,68 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "MetLife소개" , "innerMenu" : [
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "CEO인사말" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "경영이념ㆍ비전" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "연혁" },
+			{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "MetLife금융그룹" }
+		]
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "회사소개" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "회사소개",
+		"titleCopy" : "변함없는 마음으로 고객을 섬기겠습니다.",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"subcProductList1" : [
+		{
+			"subcProductTiles" : {
+				"title" : "CEO 인사말",
+				"href" : "#lnk",
+				"contentList" : [
+					"메트라이프CEO의 경영철학 및 주요경력 등을 소개합니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "경영이념·비전",
+				"href" : "#lnk",
+				"contentList" : [
+					"세계를 선도하는 메트라이프의 경영이념 · 비전을 소개합니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "연혁",
+				"href" : "#lnk",
+				"contentList" : [
+					"고객과 함께 온 150년, 메트라이프가 고객과 함께 지나온 길을 안내합니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		}
+	],
+	"subcProductList2" : [
+		{
+			"subcProductTiles" : {
+				"title" : "MetLife금융그룹",
+				"href" : "#lnk",
+				"contentList" : [
+					"전세계 60여 개국의 메트라이프 금융그룹 웹사이트를 만나보세요."
+				],
+				"btnType" : "더 알아보기"
+			}
+		}
+	]
+}

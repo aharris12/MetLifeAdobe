@@ -1,0 +1,30 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/advertisement/view/styles.css -->
+
+
+{% set items = advertisementHead %}
+
+<div class="advertisement-view">
+	<div class="advertisement-view-back">
+		<a href="#lnk"><span>뒤로가기</span></a>
+	</div>
+
+	<div class="advertisement-view-con">
+		<div class="advertisement-view-header">
+			{% import paths.apps + "/common/extend/heading/index.html" as heading %}
+			{{ heading.headtag("h3", items.headTitle, "advertisement-view-heading") }}
+		</div>
+		<span class="date opt-text14 opt-pb30">2016-07-01</span>
+
+		{% set newCont = innerdata %}
+		{% include paths.apps + "/common/basic-component/general-column/index.html" %}
+
+	</div>
+
+	<div class="advertisement-view-back">
+		<a href="#lnk"><span>뒤로가기</span></a>
+	</div>
+
+</div>
+
+<!-- COMPONENT END -->

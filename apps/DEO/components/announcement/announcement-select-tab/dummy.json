@@ -1,0 +1,42 @@
+{
+	"innerdata" : {
+		"options" : [
+			{"text" : "금리연동 + 무배당 금리연동", "val" : "0"},
+			{"text" : "금리연동 + 무배당 금리연동1", "val" : "1"},
+			{"text" : "금리연동 + 무배당 금리연동2", "val" : "2"},
+			{"text" : "금리연동 + 무배당 금리연동3", "val" : "3"},
+			{"text" : "금리연동 + 무배당 금리연동4", "val" : "4"}
+		],
+		"loadHtml" : [
+			{
+				"type" : "html",
+				"indataList" : [
+					{
+						"loadComp" : "/common/basic-component/base-text",
+						"innerdata" : [
+							{
+								"text" : "테스트 컴포넌트 로드",
+								"class" : "opt-text14 opt-pb20"
+							}
+						]
+					},
+					{
+						"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+					}
+				]
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/disclosure-of-retirement-pension/content1"
+			},
+			{
+				"innerdata" : "/common/basic-component/html-comp/html-inner/official-announcement/product-disclosure/applied-interest-rate/spot-month-interest-rate/content1"
+			}
+		]
+	}
+}

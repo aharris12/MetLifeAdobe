@@ -1,0 +1,191 @@
+/* home/caroucel css */
+
+.main-caroucel.slide-box {
+  position: relative;
+  min-height: 120px;
+  max-height: 280px;
+  overflow: hidden; }
+
+.main-caroucel .ui-slide {
+  opacity: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0; }
+
+.main-caroucel .ui-slide-content {
+  width: 100%;
+  overflow: hidden; }
+
+.main-caroucel .ui-slide-content > ul {
+  width: 100%;
+  display: table; }
+
+.main-caroucel .ui-slide-content > ul > li {
+  float: left;
+  position: relative; }
+  .main-caroucel .ui-slide-content > ul > li[data-column-tpye="1"] {
+    width: 100%; }
+  .main-caroucel .ui-slide-content > ul > li > .ui-slide-inner {
+    float: left; }
+  .main-caroucel .ui-slide-content > ul > li > .ui-slide-inner > a {
+    display: block;
+    width: 100%; }
+    .main-caroucel .ui-slide-content > ul > li > .ui-slide-inner > a img {
+      width: 100%; }
+  .main-caroucel .ui-slide-content > ul > li:last-child .ui-slide-inner {
+    width: auto;
+    height: 100%; }
+
+.main-caroucel .ui-slide-inner > a:focus {
+  border: 3px solid #6e000d; }
+
+.main-caroucel .ui-slide-control {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+  font-size: 0;
+  display: table;
+  z-index: 2; }
+
+.main-caroucel .ui-slide-autoControl {
+  vertical-align: top;
+  display: inline-block; }
+
+.main-caroucel .ui-slide-indicator {
+  vertical-align: top;
+  display: inline-block; }
+
+.main-caroucel .ui-slide-indicator button {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  text-indent: -999em;
+  background: #fff;
+  margin: 0 3px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  opacity: 0.5; }
+
+.main-caroucel .ui-slide-indicator button.indi-active {
+  opacity: 1;
+  width: 18px; }
+
+.main-caroucel .ui-slide-direct {
+  position: absolute;
+  top: 0;
+  width: 8%;
+  height: 100%;
+  text-align: center;
+  z-index: 1; }
+  .main-caroucel .ui-slide-direct > button {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; }
+  .main-caroucel .ui-slide-direct > button:hover {
+    opacity: 1; }
+  .main-caroucel .ui-slide-direct > button > span {
+    display: block;
+    text-indent: -999em; }
+
+.main-caroucel .ui-slide-direct-next {
+  right: 0; }
+  .main-caroucel .ui-slide-direct-next > button {
+    background: url("/content/dam/DEO/components/home/caroucel/white_arrow_r.png") right 10px center no-repeat;
+    -webkit-background-size: 18px auto;
+    background-size: 18px auto; }
+
+.main-caroucel .ui-slide-direct-prev {
+  left: 0; }
+  .main-caroucel .ui-slide-direct-prev > button {
+    background: url("/content/dam/DEO/components/home/caroucel/white_arrow_l.png") 10px center no-repeat;
+    -webkit-background-size: 18px auto;
+    background-size: 18px auto; }
+
+.main-caroucel .ui-slide-play {
+  width: 15px;
+  height: 9px;
+  padding: 0 3px;
+  text-indent: -999em;
+  background: url("/content/dam/DEO/components/home/caroucel/carousel-play.png") left center no-repeat;
+  -webkit-background-size: 9px 9px;
+  background-size: 9px 9px; }
+
+.main-caroucel .ui-slide-stop {
+  width: 15px;
+  height: 9px;
+  padding: 0 3px;
+  text-indent: -999em;
+  background: url("/content/dam/DEO/components/home/caroucel/carousel-stop.png") left center no-repeat;
+  -webkit-background-size: 9px 9px;
+  background-size: 9px 9px; }
+
+.main-caroucel .slide-tit {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  vertical-align: middle; }
+  .main-caroucel .slide-tit > p {
+    max-height: 280px;
+    display: table;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto; }
+    .main-caroucel .slide-tit > p span {
+      color: #ffffff;
+      font-size: 22px;
+      line-height: 27px;
+      text-align: center;
+      font-weight: bold;
+      display: table-cell;
+      width: 100%;
+      padding-bottom: 34px;
+      vertical-align: middle;
+      text-shadow: 1px 1px 1px #000; }
+
+@media all and (min-width: 768px) {
+  .main-caroucel.slide-box {
+    position: relative;
+    min-height: 240px;
+    max-height: 400px; }
+  .main-caroucel .slide-tit > p {
+    max-height: 400px;
+    width: 60%;
+    max-width: 440px; }
+    .main-caroucel .slide-tit > p span {
+      font-size: 28px;
+      line-height: 32px;
+      padding-bottom: 9px;
+      vertical-align: middle;
+      text-shadow: 1px 1px 1px #333; }
+  .main-caroucel .ui-slide-control {
+    bottom: 84px; }
+  .main-caroucel .ui-slide-direct-next > button {
+    background-position: right 20px center; }
+  .main-caroucel .ui-slide-direct-prev {
+    left: 0; }
+    .main-caroucel .ui-slide-direct-prev > button {
+      background-position: 20px center; } }
+
+@media all and (min-width: 1024px) {
+  .main-caroucel .slide-tit > p {
+    max-width: 660px; }
+    .main-caroucel .slide-tit > p span {
+      font-size: 48px;
+      line-height: 58px;
+      padding-bottom: 50px; }
+  .main-caroucel .ui-slide-control {
+    bottom: 125px; }
+  .main-caroucel .ui-slide-direct-next > button {
+    background-position: right 30px center; }
+  .main-caroucel .ui-slide-direct-prev {
+    left: 0; }
+    .main-caroucel .ui-slide-direct-prev > button {
+      background-position: 30px center; } }

@@ -1,0 +1,38 @@
+{
+	"advertisementHead" : {
+		"headTitle" : "[메트라이프생명] 2016 하반기 대졸신입사원 공개채용",
+		"btnType" : "지원서 작성",
+		"href" : "#lnk",
+		"textType" : {
+			"text" : "지원서 수정",
+			"href" : "#lnk"
+		}
+	},
+
+	"innerdata" : {
+		"graytype" : false,
+		"complist" : [
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+					"text" : "MetLife생명의 My Choice 변액연금보험은 쌓인 수익을 원금에 합쳐 5년마다 원금을 다시 조정할 수 있는 리셋기능을 더했습니다.",
+					"class" : "opt-text14 opt-pb40 opt-text-bold"
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/youtube",
+				"innerdata" : [
+					{
+						"title" : "MetLife Asia: My Dads Story - Dream for My Child",
+						"id" : "CMkeicTX0Tc",
+						"optClass" : "opt-pb40",
+						"control" : false,
+						"sumnail" : false
+					}
+				]
+			}
+		]
+	}
+}

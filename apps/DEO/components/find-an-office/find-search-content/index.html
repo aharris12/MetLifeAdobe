@@ -1,0 +1,43 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/find-an-office/find-search-content/styles.css -->
+
+
+<form action="?">
+    <fieldset>
+        <legend class="screen_out">지점위치 검색</legend>
+
+        <div class="map-search">
+
+            {% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+            <div class="slt-half">
+                <div class="half">
+                    <label class="screen_out" for="stateSlt">도 선택</label>
+                    {{ forms.select_type2("stateSlt", [
+                    {text : "서울특별시", val : "1"},
+                    {text : "경기도", val : "2"}
+                    ], "name")}}
+                </div>
+                <div class="half">
+                    <label class="screen_out" for="suburbSlt">구 선택</label>
+                    {{ forms.select_type2("suburbSlt", [
+                    {text : "강남구", val : "1"},
+                    {text : "성동구", val : "2"}
+                    ], "name")}}
+                </div>
+            </div>
+
+            <div class="input-extend">
+                {% import paths.apps + "/common/extend/macro-input/index.html" as forms %}
+                {{ forms.input( "branchInput","지점명을 입력하세요") }}
+
+                <div>
+                    {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                    {{ btn.button("검색", "submit", color="green") }}
+                </div>
+            </div>
+
+        </div>
+    </fieldset>
+</form>
+
+<!-- COMPONENT END -->

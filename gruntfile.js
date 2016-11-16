@@ -273,6 +273,7 @@ module.exports = function (grunt) {
                     'dev/css/component/inview.css',
                     'dev/css/component/tooltipster.css',
                     'dev/css/component/generic-content.css',
+                    'dev/css/kr/theme/*.css',
                     'dev/css/kr/component/*.css',
                     'dev/css/theme/ie9select.css'
                 ],
@@ -362,6 +363,76 @@ module.exports = function (grunt) {
 
                 ],
                 dest: 'dist/js/metlife.js'
+            },
+            componentsKR: {
+                src: [
+                    'dev/js/variable.js',
+                    'dev/js/utility.js',
+                    'dev/js/global-header.js',
+                    'dev/js/global-footer.js',
+                    'dev/js/homepage-nav.js',
+                    'dev/js/carousel--hero.js',
+                    'dev/js/carousel--tabs.js',
+                    'dev/js/accordion.js',
+                    'dev/js/cta-box.js',
+                    'dev/js/get-quote-find-office.js',
+                    'dev/js/svgxuse.js',
+                    'dev/js/divider-load-more.js',
+                    'dev/js/divider-scroll-to.js',
+                    'dev/js/product-module.js',
+                    'dev/js/subnavigation.js',
+                    'dev/js/table-variations.js',
+                    'dev/js/login-overlay.js',
+                    'dev/js/media-contact.js',
+                    'dev/js/form-card.js',
+                    'dev/js/microsite-header.js',
+                    'dev/js/product-comparison-chart.js',
+                    'dev/js/product-tile.js',
+                    'dev/js/form-library.js',
+                    'dev/js/subnavigationgoback.js',
+                    'dev/js/privacy-policy.js',
+                    'dev/js/quote-result-card.js',
+                    'dev/js/quote-results.js',
+                    'dev/js/xmlhttp.js',
+                    'dev/js/search-box.js',
+                    'dev/js/quote-tool.js',
+                    'dev/js/result-pages.js',
+                    'dev/js/view-all-rates.js',
+                    'dev/js/markerwithlabel.js',
+                    'dev/js/feedback.js',
+                    'dev/js/cookie.js',
+                    'dev/js/ServicesAPI.js',
+                    'dev/js/aem_form.js',
+                    'dev/js/suggestions.js',
+                    'dev/js/campaign-header.js',
+                    'dev/js/campaign-card.js',
+                    'dev/js/glossary.js',
+                    'dev/js/toqjshashtable.js',
+                    'dev/js/toqdata.js',
+                    'dev/js/blogpost.js',
+                    'dev/js/overlay.js',
+                    'dev/js/aemfixes.js',
+                    'dev/js/share-chat.js',
+                    'dev/js/product-card.js',
+                    'dev/js/contextual--links.js',
+                    'dev/js/email.js',
+                    'dev/js/general--content.js',
+                    'dev/js/news-room.js',
+                    'dev/js/inview.js',
+                    'dev/js/contact-us.js',
+                      'dev/js/kr/common.js',
+                'dev/js/kr/footer.js',
+            'dev/js/kr/gnb.js',
+        'dev/js/kr/header.js',
+        'dev/js/kr/producttilecontainer.js',
+        'dev/js/kr/sharecall.js',
+        'dev/js/kr/siteModule.js',
+        'dev/js/kr/siteObject.js',
+        'dev/js/kr/sub-cat.js',
+        'dev/js/kr/TweenMax.min.js'
+
+                ],
+                dest: 'dist/js/metlife.kr.js'
             }
         }, //concat
 
@@ -382,6 +453,11 @@ module.exports = function (grunt) {
             target3: {
                 files: {
                     'dist/js/feedback.min.js': 'dist/js/feedback.js'
+                }
+            },
+            target4: {
+                files: {
+                    'dist/js/metlife.kr.min.js': 'dist/js/metlife.kr.js'
                 }
             }
         }, //uglify

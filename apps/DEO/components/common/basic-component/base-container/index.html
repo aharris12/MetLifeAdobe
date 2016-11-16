@@ -1,0 +1,14 @@
+<!-- COMPONENT START -->
+
+{% set container = containerComp %}
+
+<div class="base-container">
+	<div class="{% if gcolumn.graytype %}bg-gray{% endif %}">
+		{% for listComp in container.complist %}
+		{% set innerdata = listComp.innerdata %}
+		{% include paths.apps + listComp.comp + "/index.html" %}
+		{% endfor %}
+	</div>
+</div>
+
+<!-- COMPONENT END -->

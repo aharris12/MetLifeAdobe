@@ -1,0 +1,36 @@
+{
+	"smallProductTilesList" : [
+		{
+			"smallProductTiles" : {
+				"imgUrl" : "/@temp/ico_retirement.svg",
+				"title" : "퇴직연금",
+				"contentList" : [
+					"기업에게는 재정적 안정을 근로자에게는 든든한 미래를",
+					"MetLife의 퇴직연금은 안정성과 수익성을 동시에 추구합니다."
+				],
+				"link" : "#lnk"
+			}
+		},
+		{
+			"smallProductTiles" : {
+				"imgUrl" : "/@temp/ico_etc.svg",
+				"title" : "기타상품",
+				"contentList" : [
+					"MetLife의 다양한 상품들을 만나보세요.",
+					"목적자금마련, 어린이 보험 등 고객의 니즈에 따라 맞춤 선택이 가능합니다."
+				],
+				"link" : "#lnk"
+			}
+		},
+		{
+			"smallProductTiles" : {
+				"imgUrl" : "/@temp/ico_consult.svg",
+				"title" : "가입상담문의",
+				"contentList" : [
+					"보험가입에 대한 궁금한 점을 친절하게 상담해드립니다. 상담을 신청하세요."
+				],
+				"link" : "#lnk"
+			}
+		}
+	]
+}

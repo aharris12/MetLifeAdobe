@@ -1,0 +1,117 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/layout/gnb/styles.css -->
+<!-- #js# /apps/DEO/components/common/layout/gnb/scripts.js -->
+
+
+<div class="allmenu-container">
+
+    <div class="allmenu-control">
+        <button type="button" class="allmenu-btn-open"><span class="web-view">메뉴</span><span class="screen_out">열기</span></button>
+        <button type="button" class="allmenu-btn-close"><span class="screen_out">메뉴</span><span class="web-view">닫기</span></button>
+    </div>
+
+    <div class="allmenu-wrap">
+        <div class="allmenu-list">
+            <div class="allmenu-list-wrap">
+                <ul>
+                    {% set nav = globalIA[1] %}
+                    <li><a href="{{ nav.href }}" {% if nav.title %} title="{{nav.title}}" target="_blank" {% endif%} class="dep1lnk">{{ nav.text }}</a>
+                        {% if nav.innerMenu %}
+                        <div class="submenu">
+                            <ul>
+                                {% for innerMenu in nav.innerMenu %}
+                                <li><a href="{{ innerMenu.href }}" {% if innerMenu.title %} title="{{innerMenu.title}}" target="_blank"{% endif%}>{{ innerMenu.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else %}
+                        {% endif %}
+                    </li>
+
+                    {% set nav = globalIA[4] %}
+                    <li><a href="{{ nav.href }}" {% if nav.title %} title="{{nav.title}}" target="_blank" {% endif%} class="dep1lnk">{{ nav.text }}</a>
+                        {% if nav.innerMenu %}
+                        <div class="submenu">
+                            <ul>
+                                {% for innerMenu in nav.innerMenu %}
+                                <li><a href="{{ innerMenu.href }}" {% if innerMenu.title %} title="{{innerMenu.title}}" target="_blank"{% endif%}>{{ innerMenu.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else %}
+                        {% endif %}
+                    </li>
+
+                    {% set nav = globalIA[3] %}
+                    <li><a href="{{ nav.href }}" {% if nav.title %} title="{{nav.title}}" target="_blank" {% endif%} class="dep1lnk">{{ nav.text }}</a>
+                        {% if nav.innerMenu %}
+                        <div class="submenu">
+                            <ul>
+                                {% for innerMenu in nav.innerMenu %}
+                                <li><a href="{{ innerMenu.href }}" {% if innerMenu.title %} title="{{innerMenu.title}}" target="_blank"{% endif%}>{{ innerMenu.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else %}
+                        {% endif %}
+                    </li>
+
+                    {% set nav = globalIA[0] %}
+                    <li><a href="{{ nav.href }}" {% if nav.title %} title="{{nav.title}}" target="_blank" {% endif%} class="dep1lnk">{{ nav.text }}</a>
+                        {% if nav.innerMenu %}
+                        <div class="submenu">
+                            <ul>
+                                {% for innerMenu in nav.innerMenu %}
+                                <li><a href="{{ innerMenu.href }}" {% if innerMenu.title %} title="{{innerMenu.title}}" target="_blank"{% endif%}>{{ innerMenu.text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="allmenu-list-wrap">
+                <ul>
+                    <li class="tablet-view"><a href="#lnk">공시실</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#lnk">경영공시</a></li>
+                                <li><a href="#lnk">보험상품공시</a></li>
+                                <li><a href="#lnk">무배당퇴직연금공시</a></li>
+                                <li><a href="#lnk">보험금융상품등록부</a></li>
+                                <li><a href="#lnk">보험상품가격공시</a></li>
+                                <li><a href="#lnk">사회공헌공시</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="tablet-onlyview"><a href="dep1lnk">모바일창구 로그인</a></li>
+                    <li class="web-view"><a href="dep1lnk">사이버창구 로그인</a></li>
+                    <li class="tablet-view"><a href="#lnk" class="dep1lnk">퇴직연금 로그인</a></li>
+                    <li class="web-view"><a href="#lnk" class="dep1lnk">원격지원 서비스</a></li>
+                    <li class="tablet-view"><a href="#lnk" class="dep1lnk">채팅상담</a></li>
+                </ul>
+                <div class="header-allmenu-bn">
+                    <div class="header-allmenu-bnimg" style="background-image: url('{{ paths.author }}/header/header-bn.jpg');">
+                        <!-- background Alternative Text Area :: start -->
+                        <div class="screen_out">background Alternative Text</div>
+                        <!-- background Alternative Text Area :: end -->
+                    </div>
+                    <div class="header-allmenu-bncontent">
+                        <dl>
+                            <dt>무배당 변액유니버셜 종신보험 경청</dt>
+                            <dd>메트라이프 생명은 고객의 마음을 경청합니다. <br>
+                                <a href="#lnk">더 알아보기</a></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

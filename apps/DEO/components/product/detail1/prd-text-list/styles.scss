@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* css folder ##product/detail1/prd-text-list## */
+
+
+.prd-text-list {
+	padding-bottom:22px;
+}
+
+.prd-article:last-child .prd-stitle-container:last-child .prd-text-list:last-child {
+	padding-bottom:0;
+}
+
+.prd-text-list .prd-text-listitem {
+	text-align: left;
+	font-size:15px;
+	line-height:21px;
+	color: #333;
+	padding-left:20px;
+	background: {
+		image : url('/content/dam/DEO/author/common_ico/ico-product-dot.svg');
+		position : 7px 8px;
+		repeat : no-repeat;
+	}
+	-webkit-background-size:4px 4px;
+	background-size:4px 4px;
+}
+
+.prd-text-list .prd-text-listitem-inner {
+	text-align: left;
+	font-size:14px;
+	line-height:21px;
+	color: #333;
+	padding-left:20px;
+	background: {
+		image : url('/content/dam/DEO/author/common_ico/listdot.png');
+		position : 7px 8px;
+		repeat : no-repeat;
+	}
+	-webkit-background-size:4px 1px;
+	background-size:4px 1px;
+}
+
+
+@media all and(min-width:768px) {
+
+
+	.prd-text-list {
+		padding-bottom:22px;
+	}
+
+	.prd-text-list .prd-text-listitem {
+		font-size:14px;
+		background: {
+			position : 7px 8px;
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+
+
+	.prd-text-list {
+		padding-bottom:22px;
+	}
+
+
+}

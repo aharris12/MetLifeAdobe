@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* css folder ##home/related-contents## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+
+$titleMobFontSize : 22px;
+$titleTabletFontSize : 20px;
+$titleWebFontSize : 24px;
+
+$titleMobLineHeight : 21px;
+$titleTabletLineHeight : 27px;
+$titleWebLineHeight : 30px;
+
+$listMobFontSize : 15px;
+$listTabletFontSize : 14px;
+$listWebFontSize : 14px;
+
+$listMobLineHeight : 23px;
+$listTabletLineHeight : 21px;
+$listWebLineHeight : 21px;
+
+.related-contents{
+	@include css3-prefix( "box-shadow", 1px 3px 5px 0 rgba(0,0,0,.1) );
+
+}
+.related-contents-img{
+	img{
+		width: 100%;
+	}
+}
+.related-contents-con{
+	padding: 20px;
+	text-align: left;
+	background-color: #fff;
+	dl{
+		dt{
+			padding-bottom: 15px;
+			font-size: $titleMobFontSize;
+			line-height: $titleMobLineHeight;
+			color: #000;
+		}
+		dd{
+			padding-bottom:15px;
+			font-size: $listMobFontSize;
+			line-height: $listMobLineHeight;
+			color: #333;
+		}
+	}
+	ul a{
+		font-size: $listMobFontSize;
+		font-weight: bold;
+		line-height: 30px;
+		color: $pointColor1;
+		&:hover, &:focus{
+			text-decoration: underline;
+		}
+	}
+}
+
+@media all and(min-width:768px) {
+	.related-contents{
+		@include css3-prefix( "box-shadow" , 0 0 0 0 rgba(0,0,0,0) )
+	}
+	.related-contents-con{
+		padding: 20px 0 40px;
+		dl{
+			dt{
+				font-size: $titleTabletFontSize;
+				font-weight: bold;
+				line-height: $titleTabletLineHeight;
+			}
+			dd{
+				font-size: $listTabletFontSize;
+				line-height: $listTabletLineHeight;
+			}
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.related-contents-con{
+		padding: 25px 0 50px;
+		dl{
+			dt{
+				font-size: $titleWebFontSize;
+				font-weight: bold;
+				line-height: $titleWebLineHeight;
+			}
+			dd{
+				font-size: $listWebFontSize;
+				line-height: $listWebLineHeight;
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+/* css folder ##common/layout/main-category## */
+.main-category[data-cat-type='main'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: none; }
+
+.main-cat-submenu {
+  display: none; }
+
+@media all and (min-width: 768px) {
+  .main-category[data-cat-type='main'] {
+    display: block;
+    background: url("./images/catline-bg.png") 0 0 repeat-x; }
+    .main-category[data-cat-type='main'] .main-cat-list {
+      position: relative; }
+    .main-category[data-cat-type='main'] .main-cat-list > ul {
+      display: table;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0; }
+      .main-category[data-cat-type='main'] .main-cat-list > ul > li {
+        display: inline-block; }
+      .main-category[data-cat-type='main'] .main-cat-list > ul > li > a {
+        display: block;
+        position: relative; }
+      .main-category[data-cat-type='main'] .main-cat-list > ul > li > a:hover, .main-category[data-cat-type='main'] .main-cat-list > ul > li > a.active {
+        background: #0090da; }
+      .main-category[data-cat-type='main'] .main-cat-list > ul > li > a > span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        display: inline-block;
+        text-align: center;
+        padding: 23px 45px; }
+  .active.main-category {
+    background: #0061a0; }
+  .active.main-menu, .active.main-cat-submenu {
+    display: block; }
+  .active.main-menu {
+    position: relative; }
+  .active.main-menu:after {
+    position: absolute;
+    left: 50%;
+    margin-left: -11px;
+    bottom: 0;
+    width: 22px;
+    height: 11px;
+    display: block;
+    content: '';
+    background: url("./images/active-ar.png") 0 0 no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain; }
+  .main-cat-submenu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 60px;
+    width: 100%; }
+    .main-cat-submenu .main-cat-submenu-list {
+      width: 100%;
+      height: 180px;
+      display: inline-block;
+      background: #ffffff; }
+    .main-cat-submenu ul {
+      width: 100%;
+      height: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      font-size: 0; }
+      .main-cat-submenu ul > li {
+        /*display: inline-block;*/
+        float: left;
+        height: 100%; }
+        .main-cat-submenu ul > li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 45px 15px 55px 15px;
+          text-align: center; }
+          .main-cat-submenu ul > li a span {
+            display: block; }
+            .main-cat-submenu ul > li a span img {
+              width: 60px; }
+    .main-cat-submenu:after {
+      display: table;
+      clear: both;
+      content: '';
+      font-size: 0;
+      overflow: hidden; }
+    .main-cat-submenu a {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000; }
+    .main-cat-submenu .cat-prd, .main-cat-submenu .cat-center {
+      position: relative;
+      overflow: hidden;
+      height: 100%; }
+      .main-cat-submenu .cat-prd li:nth-child(5), .main-cat-submenu .cat-prd li:nth-child(6), .main-cat-submenu .cat-center li:nth-child(5), .main-cat-submenu .cat-center li:nth-child(6) {
+        display: table;
+        vertical-align: middle;
+        height: 50%;
+        right: 0; }
+        .main-cat-submenu .cat-prd li:nth-child(5) a, .main-cat-submenu .cat-prd li:nth-child(6) a, .main-cat-submenu .cat-center li:nth-child(5) a, .main-cat-submenu .cat-center li:nth-child(6) a {
+          display: table-cell;
+          height: 100%;
+          padding: 0;
+          text-align: left; }
+          .main-cat-submenu .cat-prd li:nth-child(5) a span, .main-cat-submenu .cat-prd li:nth-child(6) a span, .main-cat-submenu .cat-center li:nth-child(5) a span, .main-cat-submenu .cat-center li:nth-child(6) a span {
+            display: inline;
+            font-size: 0; }
+            .main-cat-submenu .cat-prd li:nth-child(5) a span img, .main-cat-submenu .cat-prd li:nth-child(6) a span img, .main-cat-submenu .cat-center li:nth-child(5) a span img, .main-cat-submenu .cat-center li:nth-child(6) a span img {
+              display: inline-block;
+              width: 15%; }
+          .main-cat-submenu .cat-prd li:nth-child(5) a .text, .main-cat-submenu .cat-prd li:nth-child(6) a .text, .main-cat-submenu .cat-center li:nth-child(5) a .text, .main-cat-submenu .cat-center li:nth-child(6) a .text {
+            display: inline-block;
+            padding-top: 4px;
+            padding-left: 5px;
+            font-size: 14px; }
+      .main-cat-submenu .cat-prd li:nth-child(5) a, .main-cat-submenu .cat-center li:nth-child(5) a {
+        vertical-align: bottom;
+        padding-bottom: 5px; }
+      .main-cat-submenu .cat-prd li:nth-child(6) a, .main-cat-submenu .cat-center li:nth-child(6) a {
+        vertical-align: top;
+        padding-top: 5px; } }
+
+@media all and (min-width: 1024px) {
+  .main-cat-submenu-list {
+    height: 200px; } }

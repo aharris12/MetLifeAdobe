@@ -1,0 +1,49 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/announcement/announcement-select-tab/styles.css -->
+<!-- #js# /apps/DEO/components/announcement/announcement-select-tab/scripts.js -->
+
+<div class="announcement-select-tab">
+
+	{% set selectTab = innerdata %}
+	<div class="announcement-select-menu">
+		<div class="faq-search">
+			{% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+			<label for="categorySlt1">내용선택</label>
+			<div class="slt-area">
+				{{ forms.select_type2("categorySlt1", selectTab.options, "name")}}
+
+				{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+				{{ btn.button("검색", "submit", color="green", cusClass="announcement-select-go") }}
+			</div>
+		</div>
+	</div>
+
+
+	{% for faqTabHtmlContent in selectTab.loadHtml %}
+	<div class="announcement-select-sec">
+		{% if faqTabHtmlContent.type == "html" %}
+			{% for loadlist in faqTabHtmlContent.indataList %}
+
+				{% if loadlist.loadComp %}
+					{% set extendComp = loadlist.loadComp %}
+				{% else %}
+					{% set extendComp = false %}
+				{% endif %}
+
+				{% set innerdata = loadlist.innerdata %}
+				{% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+			{% endfor %}
+		{% else %}
+
+			{% set innerdata = faqTabHtmlContent.innerdata %}
+			{% include paths.apps + '/' + innerdata + "/index.html" %}
+
+		{% endif %}
+
+	</div>
+	{% endfor %}
+
+</div>
+
+<!-- COMPONENT END -->

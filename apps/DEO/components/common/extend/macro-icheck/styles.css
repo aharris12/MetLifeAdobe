@@ -1,0 +1,81 @@
+/* css folder ##common/extend/macro-icheck## */
+/* iCheck plugin Minimal skin, blue
+----------------------------------- */
+.icheckbox_minimal,
+.iradio_minimal {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 21px;
+  height: 21px;
+  background: url("./images/minimal.png") no-repeat;
+  border: none;
+  cursor: pointer; }
+
+.icheckbox_minimal.focus {
+  outline: 1px dotted #000; }
+
+.icheckbox_minimal {
+  background-position: 0 0; }
+
+.icheckbox_minimal.hover {
+  background-position: -23px 0; }
+
+.icheckbox_minimal.checked {
+  background-position: -46px 0; }
+
+.icheckbox_minimal.disabled {
+  background-position: -69px 0;
+  cursor: default; }
+
+.icheckbox_minimal.checked.disabled {
+  background-position: -92px 0; }
+
+.iradio_minimal {
+  background-position: -115px 0; }
+
+.iradio_minimal.focus {
+  outline: 1px dotted #000; }
+
+.iradio_minimal.hover {
+  background-position: -138px 0; }
+
+.iradio_minimal.checked {
+  background-position: -161px 0; }
+
+.iradio_minimal.disabled {
+  background-position: -184px 0;
+  cursor: default; }
+
+.iradio_minimal.checked.disabled {
+  background-position: -207px 0; }
+
+.ui-radio {
+  display: inline-block;
+  padding-right: 20px; }
+
+.ui-radio label {
+  color: #000;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 0 0 10px; }
+
+.ui-checkbox {
+  display: inline-block;
+  padding-right: 20px; }
+
+.ui-checkbox label {
+  color: #000;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 0 0 10px; }
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (min-resolution: 1.25dppx) {
+  .icheckbox_minimal,
+  .iradio_minimal {
+    background-image: url("./images/minimal@2x.png");
+    -webkit-background-size: 228px 21px;
+    background-size: 228px 21px; } }

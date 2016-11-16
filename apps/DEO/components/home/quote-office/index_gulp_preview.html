@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="title" content="## Page Title, 10 ~ 70 characters ##">
+        <meta name="description" content="## Page Description, 70 ~ 160 characters ##">
+        <meta name="keywords" content="## Page Keywords, 10 ~ 20 characters ##">
+        <title>Component Preview</title>
+        <!-- build:css /etc/clientlibs/<@=project.name@>/<@=page.name@>/styles.min.css -->
+        <link rel="stylesheet" href="/system/styles/common.css">
+        <link rel="stylesheet" href="/system/styles/sitecommon.css">
+        <link rel="stylesheet" href="/system/styles/options.css">
+        <link rel="stylesheet" href="/system/styles/comp-common.css">
+        <!--<link rel="stylesheet" charset="utf-8" href="/application/setting/styles/app.css" />-->
+        <!-- components style : start -->
+        <link rel="stylesheet" href="/apps/DEO/components/home/quote-office/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-select/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-button/styles.css">
+        <!-- resource:page css -->
+        <!-- components style : end -->
+        <!-- build:js /etc/clientlibs/<@=project.name@>/libs/scripts.min.js -->
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/libs/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteObject.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteModule.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/greensock/TweenMax.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/common.js"></script>
+        <!-- endbuild -->
+        <!--[if lte IE 9]>
+<script src="/system/scripts/libs/html5.js"></script>
+<script src="/system/scripts/libs/respond.min.js"></script>
+<script src="/system/scripts/libs/selectivizr-min.js"></script>
+<![endif]-->
+        <!-- resource:page css -->
+    </head>
+
+    <body class="doc-loading">
+        <!-- CONTENT -->
+        <div class="quote-office">
+            <div class="product-selector">
+                <h2 class="product-office-heading">메트라이프 상품소개</h2>
+                <div class="select-wrapper"> <label for="categorySlt" class="screen_out">상품 카테고리 선택</label>
+                    <div class="slt-wrap"> <select id="categorySlt" name="name" data-select-design="false">
+    <option value="1">상품 카테고리를 선택하세요</option>
+    
+</select> </div>
+                    <div class="slt-area">
+                        <div class="half"> <label for="productSlt" class="screen_out">상품명 선택</label>
+                            <div class="slt-wrap"> <select id="productSlt" name="name" data-select-design="false">
+    <option value="0">상품명을 선택하세요</option>
+    <option value="1">상품</option>
+    
+</select> </div>
+                        </div>
+                        <div class="half"> <a href="" class="btn-basic green">확인</a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="office-selector">
+                <h2 class="product-office-heading">원하시는 서비스를 선택하세요</h2>
+                <div class="office-tab">
+                    <ul>
+                        <li class="active"> <a href="#lnk" class="tab-title">모바일창구</a>
+                            <div class="tab-cont">
+                                <div class="select-wrapper">
+                                    <div class="slt-area">
+                                        <div class="half"> <label for="cyberSlt" class="screen_out">업무 선택</label>
+                                            <div class="slt-wrap"> <select id="cyberSlt" name="name" data-select-design="false">
+    <option value="0">업무를 선택하세요</option>
+    <option value="1">업무</option>
+    
+</select> </div>
+                                        </div>
+                                        <div class="half"> <a href="" class="btn-basic green">자세히 보기</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li> <a href="#lnk" class="tab-title">지점찾기</a>
+                            <div class="tab-cont">
+                                <div class="select-wrapper">
+                                    <div class="slt-area">
+                                        <div class="half"> <label for="stateSlt" class="screen_out"> 선택</label>
+                                            <div class="slt-wrap"> <select id="stateSlt" name="name" data-select-design="false">
+    <option value="0">시/도 선택</option>
+    <option value="1">서울특별시</option>
+    
+</select> </div>
+                                        </div>
+                                        <div class="half"> <a href="" class="btn-basic green">자세히 보기</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li> <a href="#lnk" class="tab-title">콜센터</a>
+                            <div class="tab-cont">
+                                <div class="select-wrapper">
+                                    <div class="slt-area">
+                                        <div class="half">
+                                            <div class="call-info"> <span class="call">
+											<span class="tablet-view">1588-9600</span> <a href="tel:15889600" class="mobile-view">1588-9600</a> </span> <span class="other">
+											<span>콜센터 : 오전 9시 ~ 오후 6시</span> </span>
+                                            </div>
+                                        </div>
+                                        <div class="half"> <a href="" class="btn-basic green">자세히 보기</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- // CONTENT-->
+        <script type="text/javascript" charset="utf-8" src="/apps/DEO/components/home/quote-office/scripts.js"></script>
+    </body>
+
+</html>

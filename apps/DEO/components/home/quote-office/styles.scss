@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+/* css folder ##home/quote-office## */
+
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.quote-office{
+	.product-office-heading{
+		padding-bottom:15px;
+		font-size:17px;
+		font-weight:normal;
+		color:#fff;
+	}
+
+	.product-selector{
+		padding:20px;
+		margin-bottom:30px;
+		background:#0e5dae;
+		.slt-area{
+			.half {
+				&:first-child {
+					padding-right: 96px;
+				}
+			}
+		}
+	}
+
+	.office-selector{
+		height:185px;
+		padding:20px 20px 30px;
+		margin-bottom:30px;
+		background:#2377c5;
+		& .office-tab{
+			ul{
+				position:Relative;
+				&:after{
+					content:"";
+					display:block;
+					clear:both;
+				}
+				& li{
+					float:left;
+					width:33.3%;
+					&.active{
+						& .tab-cont{
+							display:block;
+							z-index:10;
+						}
+						& .tab-title{
+							position:relative;
+							z-index:15;
+							background:#3e9cdc;
+
+							&:after{
+								content:"";
+								position:absolute;
+								left:50%;
+								bottom:-8px;
+								margin-left:-4px;
+								display:block;
+								width:13px;
+								height:8px;
+								background:url('./images/ico-arrow.png') 0 0 no-repeat;
+								background-size: 13px 8px;
+							}
+						}
+					}
+
+					& .tab-cont{
+						display:none;
+						z-index:0;
+						position:absolute;
+						top:40px;
+						left:0;
+						width:100%;
+						& .btn-basic{
+							padding:13px 18px;
+						}
+					}
+				}
+				& .tab-title{
+					display:inline-block;
+					width:100%;
+					text-align:center;
+					font-size:15px;
+					font-weight:bold;
+					line-height:40px;
+					color:#fff;
+					@include backgoundGradient (#0e5dae,#064c92,#064c92,repeat);
+					@include css3-prefix( "box-shadow", 1px 3px 5px 0 rgba(0,0,0,.2) );
+				}
+
+			}
+		}
+	}
+}
+
+.select-wrapper{
+	.slt-area{
+		position:relative;
+		padding-top:15px;
+
+		.btn-basic{
+			margin-top:15px;
+		}
+		.half{
+			&:first-child {
+				padding-right: 118px
+			}
+			&:last-child {
+				position:absolute;
+				top:0;
+				right:0;
+			}
+		}
+
+		.call-info{
+			text-align:center;
+			& .call{
+				padding:10px 0;
+				vertical-align:top;
+				& span, & a{
+					font-size:23px;
+					font-weight:bold;
+					color:#fff;
+				}
+			}
+			& .other{
+				& span{
+					display:block;
+					font-size:13px;
+					line-height:20px;
+					color:#fff;
+					letter-spacing:-1px;
+				}
+			}
+		}
+	}
+
+	.slt-wrap{
+		background:#fff;
+		@include border-radius($radius: 2px)
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+	.quote-office{
+		position:relative;
+		z-index:50;
+		width:95%;
+		margin:0 auto;
+		&:after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+
+		.product-office-heading{
+			padding-bottom:20px;
+			font-size:20px;
+		}
+
+		.product-selector{
+			float:left;
+			width:49%;
+			height:216px;
+			padding:30px 20px;
+			margin-bottom:0;
+			.slt-area{
+				.half {
+					&:first-child {
+						padding-right: 76px;
+					}
+				}
+			}
+		}
+
+		.office-selector{
+			float:right;
+			width:49%;
+			height:216px;
+			padding:30px 20px;
+			margin-bottom: 0;
+			.slt-area{
+				.half {
+					&:first-child {
+						padding-right: 115px;
+					}
+				}
+			}
+		}
+
+		.main-caroucel + &{
+			margin-top:-60px;
+		}
+	}
+
+}
+
+@media all and(min-width:1024px) {
+	.quote-office{
+		width:85%;
+		max-width:1100px;
+
+		.product-selector{
+			height:194px;
+			padding:30px 35px;
+
+			.slt-area{
+				.half {
+					&:first-child {
+						padding-right: 0;
+						margin-right: -5px;
+					}
+				}
+			}
+		}
+
+		.office-selector{
+			height:194px;
+			padding:30px 35px;
+
+			.slt-area{
+				.half {
+					&:first-child {
+						padding-right: 39px;
+					}
+				}
+			}
+
+			& .office-tab ul li .tab-cont .btn-basic{
+				padding:13px 21px;
+			}
+		}
+		.main-caroucel + &{
+			margin-top:-80px;
+		}
+	}
+
+	.select-wrapper{
+		.slt-area{
+			padding-right:80px;
+			.call-info{
+				display:table;
+				width:100%;
+				padding:0 25px;
+				text-align:center;
+				& .call, & .other {
+					display:table-cell;
+					vertical-align:middle;
+				}
+			}
+		}
+	}
+
+}

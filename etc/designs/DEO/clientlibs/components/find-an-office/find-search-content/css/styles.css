@@ -1,0 +1,35 @@
+/* find-an-office/find-search-content css */
+
+.map-search {
+  padding-bottom: 20px; }
+  .map-search .slt-half .half {
+    margin-bottom: 10px; }
+  .map-search .input-extend {
+    position: relative;
+    padding-right: 80px; }
+    .map-search .input-extend .btn-basic {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 13px 21px 12px; }
+
+@media all and (min-width: 768px) {
+  .map-search {
+    max-width: 580px;
+    margin: 0 auto;
+    padding-bottom: 30px; }
+    .map-search:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .map-search .slt-half {
+      float: left;
+      width: 48.3%; }
+      .map-search .slt-half .half {
+        float: left;
+        width: 50%;
+        padding-right: 10px;
+        margin-bottom: 0; }
+    .map-search .input-extend {
+      float: left;
+      width: 51.7%; } }

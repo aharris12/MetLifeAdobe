@@ -1,0 +1,72 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "MetLife소개" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "회사소개" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "Agent소개" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "브랜드" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "사회공헌" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "인재채용" }
+	],
+		"active" : "4"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "MetLife소개" },
+		{ "href" : "#lnk", "text" : "인재채용" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "인재채용",
+		"titleCopy" : "메트라이프와 함께 소중한 꿈을 펼쳐나갈 분을 찾습니다.",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"subcProductList" : [
+		{
+			"subcProductTiles" : {
+				"title" : "EVP",
+				"href" : "#lnk",
+				"contentList" : [
+					"메트라이프의 인재상을 소개합니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "채용안내",
+				"href" : "#lnk",
+				"contentList" : [
+					"메트라이프 채용안내입니다."
+				],
+				"btnType" : "더 알아보기"
+			}
+		},
+		{
+			"subcProductTiles" : {
+				"title" : "온라인채용공고",
+				"href" : "#lnk",
+				"contentList" : [
+					"인재를 소중히 생각하는 메트라이프에서 금융전문인으로 성장하세요."
+				],
+				"btnType" : "더 알아보기"
+			}
+		}
+	],
+	"smallModule" : {
+		"list" : [
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "채용관련 FAQ"
+			},
+			{
+				"lnk" : "#lnk",
+				"imgUrl" : "/common_ico/ico_death.svg",
+				"text" : "인사제도 및 복리후생"
+			}
+		]
+	}
+}

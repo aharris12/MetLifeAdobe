@@ -1,0 +1,50 @@
+/* inter-section/paging css */
+
+.paging {
+  text-align: left; }
+  .paging:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .paging a {
+    float: left;
+    width: 37px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    font-size: 14px;
+    line-height: 37px;
+    text-align: center;
+    color: #2377c5; }
+    .paging a.active {
+      background-color: #2377c5;
+      color: #fff;
+      font-weight: bold; }
+    .paging a.page-next, .paging a.page-prev {
+      width: 60px; }
+      .paging a.page-next.default, .paging a.page-prev.default {
+        color: #666; }
+    .paging a.page-prev {
+      border-left: 1px solid #ccc; }
+  .paging div {
+    float: left; }
+  .paging.mobile-view {
+    display: block; }
+  .paging.web-view {
+    display: none; }
+
+@media all and (min-width: 768px) {
+  .paging a {
+    width: 31px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    line-height: 31px; }
+    .paging a.page-next, .paging a.page-prev {
+      width: 62px; } }
+
+@media all and (min-width: 1024px) {
+  .paging.mobile-view {
+    display: none; }
+  .paging.web-view {
+    display: block; } }

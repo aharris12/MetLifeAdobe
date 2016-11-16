@@ -1,0 +1,14 @@
+<!-- COMPONENT START -->
+{% import paths.apps + "/common/extend/macro-icheck/index.html" as forms %}
+
+
+<div>
+    {{ forms.radio( "radio1", "동의함", name='radio_test1', check='check' ) }}
+    {{ forms.radio( "radio2", "동의하지 않음", name='radio_test1') }}
+</div>
+<div>
+    {{ forms.checkbox( "checkbox1", "동의함", name='checkbox1', type='checkbox' ) }}
+    {{ forms.checkbox( "checkbox2", "동의하지 않음", name='checkbox2' ) }}
+</div>
+
+<!-- COMPONENT END -->

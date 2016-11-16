@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="title" content="## Page Title, 10 ~ 70 characters ##">
+        <meta name="description" content="## Page Description, 70 ~ 160 characters ##">
+        <meta name="keywords" content="## Page Keywords, 10 ~ 20 characters ##">
+        <title>Component Preview</title>
+        <!-- build:css /etc/clientlibs/<@=project.name@>/<@=page.name@>/styles.min.css -->
+        <link rel="stylesheet" href="/system/styles/common.css">
+        <link rel="stylesheet" href="/system/styles/sitecommon.css">
+        <link rel="stylesheet" href="/system/styles/options.css">
+        <link rel="stylesheet" href="/system/styles/comp-common.css">
+        <!--<link rel="stylesheet" charset="utf-8" href="/application/setting/styles/app.css" />-->
+        <!-- components style : start -->
+        <link rel="stylesheet" href="/apps/DEO/components/newsroom/list/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-select/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/common/extend/macro-button/styles.css">
+        <link rel="stylesheet" href="/apps/DEO/components/newsroom/list/result-content/styles.css">
+        <!-- resource:page css -->
+        <!-- components style : end -->
+        <!-- build:js /etc/clientlibs/<@=project.name@>/libs/scripts.min.js -->
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/libs/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteObject.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteModule.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/greensock/TweenMax.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/common.js"></script>
+        <!-- endbuild -->
+        <!--[if lte IE 9]>
+<script src="/system/scripts/libs/html5.js"></script>
+<script src="/system/scripts/libs/respond.min.js"></script>
+<script src="/system/scripts/libs/selectivizr-min.js"></script>
+<![endif]-->
+        <!-- resource:page css -->
+    </head>
+
+    <body class="doc-loading">
+        <!-- CONTENT -->
+        <div class="news-list">
+            <form action="?">
+                <fieldset>
+                    <legend class="screen_out">보도자료 검색</legend>
+                    <div class="news-search">
+                        <div class="slt-half">
+                            <div class="half"> <label for="yearSlt">연도</label>
+                                <div class="slt-wrap"> <select id="yearSlt" name="name" data-select-design="false">
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+    
+</select> </div>
+                            </div>
+                            <div class="half"> <label for="monthSlt">월</label>
+                                <div class="slt-wrap"> <select id="monthSlt" name="name" data-select-design="false">
+    <option value="전체">전체</option>
+    <option value="12">12</option>
+    
+</select> </div>
+                            </div>
+                        </div>
+                        <div class="slt-extend"> <label class="screen_out" for="categorySlt">분류</label>
+                            <div class="slt-wrap"> <select id="categorySlt" name="name" data-select-design="false">
+    <option value="전체">전체</option>
+    
+</select> </div>
+                            <div> <button type="submit" class="btn-basic green">검색</button> </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="result-list">
+                <div class="result-header">
+                    <h3 class="result-heading">뉴스 업데이트</h3>
+                    <p class="subinfo">이 자료는 보험업법 제124조(공시 등) 및 보험감독규정 제 7-44조(경영공시)에 의거, 보험사업자가 인터넷 홈페이지에 공시해야 하는 경영사항에 대하여 생명보험협회에서 정한 생명보험경영통일공시기준 상의 표준화된 양식에 따라 작성한 것입니다.</p>
+                </div>
+                <div class="noresult-list-con">
+                    <div class="base-text">
+                        <p class="opt-text16 opt-pb20 opt-text-bold">검색 결과가 없습니다.</p>
+                    </div>
+                    <div class="base-text">
+                        <p class="opt-text14">다른 날짜와 주제를 선택해서 다시 검색해주세요.</p>
+                    </div>
+                </div>
+                <!-- noresult -->
+            </div>
+        </div>
+        <!-- // CONTENT-->
+    </body>
+
+</html>

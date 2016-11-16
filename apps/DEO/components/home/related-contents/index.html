@@ -1,0 +1,25 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/related-contents/styles.css -->
+
+{% set item = relatedContents %}
+<div class="related-contents">
+	<div class="related-contents-img">
+		<img src="{{ paths.author }}{{ item.imgUrl }}" alt="{{ item.imgAlt }}">
+	</div>
+	<div class="related-contents-con">
+		<dl>
+			<dt>{{ item.title }}</dt>
+			<dd>{{ item.cont }}</dd>
+		</dl>
+
+		{% if item.lnkCont %}
+		<ul>
+			{% for innerlist in item.lnkCont  %}
+			<li><a href="{{ innerlist.link }}">{{ innerlist.text }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+</div>
+
+<!-- COMPONENT END -->

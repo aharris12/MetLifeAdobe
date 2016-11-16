@@ -1,0 +1,30 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/sub-category/subc-product-tiles/styles.css -->
+
+{% set item = subcProductTiles %}
+<div class="subc-product-tiles">
+
+    <div class="subc-product-tiles-container">
+        {% if item.contentList %}
+                <dl>
+                    <dt>{{ item.title }}</dt>
+                    {% for content in item.contentList %}
+                    <dd>{{ content }}</dd>
+                    {% endfor %}
+                </dl>
+        {% else %}
+                <p>{{ item.title }}</p>
+        {% endif %}
+    </div>
+
+    <div class="subc-product-tiles-link">
+        {% if item.btnType %}
+        <div class="subc-product-tiles-linkbtn">
+            {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+            {{ btn.btnlink(item.btnType, item.href) }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- COMPONENT END -->

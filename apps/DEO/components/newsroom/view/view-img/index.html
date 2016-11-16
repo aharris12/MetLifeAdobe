@@ -1,0 +1,37 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/newsroom/view/view-img/styles.css -->
+
+{% set items = newsBasic %}
+<div class="news-view">
+    <div class="new-view-back">
+        <a href="#lnk"><span>뒤로가기</span></a>
+    </div>
+
+    <div class="news-view-con">
+        <div class="news-view-header">
+            {% import paths.apps + "/common/extend/heading/index.html" as heading %}
+            {{ heading.headtag("h3", items.headTitle, "news-view-heading") }}
+
+            {% for subCopy in items.subCopy %}
+            <p class="new-view-subcopy">{{ items.subCopy }}</p>
+            {% endfor %}
+        </div>
+
+        <span class="date">2016-07-01</span>
+        <div class="news-file">
+            <a href="#lnk" class="ico-pdf">보도자료전문_신용생명보험판매.PDF</a> <span class="news-file-kb">(PDF -128kb)</span>
+        </div>
+
+        {% set newCont = innerdata %}
+        {% include paths.apps + "/common/basic-component/general-column/index.html" %}
+
+        <!-- view-foot -->
+        {% include paths.apps + "/newsroom/view/view-foot/index.html" %}
+    </div>
+
+    <div class="new-view-back">
+        <a href="#lnk"><span>뒤로가기</span></a>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

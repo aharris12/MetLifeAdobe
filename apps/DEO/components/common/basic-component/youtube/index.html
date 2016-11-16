@@ -1,0 +1,46 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/common/basic-component/youtube/styles.css -->
+<!-- #js# /system/scripts/plugins/external/imagesloaded/v3.2/imagesloaded.pkgd.min.js -->
+<!-- #js# /apps/DEO/components/common/basic-component/youtube/scripts.js -->
+
+{% set videoComp = innerdata %}
+
+{% for item in videoComp %}
+
+
+<div class="youtube-container">
+
+	<div class="youtube-wrapper {% if item.optClass %}{{item.optClass}}{% endif %}">
+		<div class="youtube-video" data-video-id="{{ item.id }}" data-video-title="{{ item.title }}" {% if
+			 item.sumnail %} data-sumnail="true" {% endif %}>
+			<div class="youtube-player"></div>
+			{% if item.sumnail %}
+			<div class="youtube-sumnail"><img src="https://img.youtube.com/vi/{{ item.id }}/0.jpg"
+											  alt="{{ item.title }} 썸네일"></div>
+			{% endif %}
+		</div>
+		<p class="youtube-playtime opt-pt10 opt-text13"></p>
+
+		{% if item.sumnail %}
+		<div class="youtube-control">
+			<button type="button" class="youtube-play">Play</button>
+			<button type="button" class="youtube-stop">Stop</button>
+		</div>
+		{% endif %}
+
+		{% if not item.sumnail and item.control %}
+		<div class="youtube-control">
+			<button type="button" class="youtube-play">Play</button>
+			<button type="button" class="youtube-pause">pause</button>
+			<button type="button" class="youtube-stop">Stop</button>
+		</div>
+		{% endif %}
+	</div>
+
+</div>
+
+{% endfor %}
+
+
+
+<!-- COMPONENT END -->

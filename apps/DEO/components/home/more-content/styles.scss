@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* css folder ##home/more-content## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+
+
+$titleMobFontSize : 22px;
+$titleTabletFontSize : 20px;
+$titleWebFontSize : 24px;
+
+$titleMobLineHeight : 21px;
+$titleTabletLineHeight : 27px;
+$titleWebLineHeight : 30px;
+
+$listMobFontSize : 15px;
+$listTabletFontSize : 14px;
+$listWebFontSize : 14px;
+
+$listMobLineHeight : 23px;
+$listTabletLineHeight : 21px;
+$listWebLineHeight : 21px;
+
+.more-content{
+	@include css3-prefix( "box-shadow", 1px 3px 5px 0 rgba(0,0,0,.1) );
+}
+.more-section{
+	display:block;
+}
+.more-content-img{
+	display: block;
+	img{
+		width: 100%;
+	}
+}
+.more-content-con{
+	display: block;
+	text-align:center;
+	padding: 15px 0;
+	strong {
+		display: block;
+		padding-bottom: 12px;
+		font-size: $titleMobFontSize;
+		font-weight: bold;
+		line-height: $titleMobLineHeight;
+		color: #000;
+	}
+	span{
+		display: block;
+		font-size: $listMobFontSize;
+		line-height: $listMobLineHeight;
+		color: #333;
+	}
+}
+
+@media all and(min-width:768px) {
+	.more-content{
+		@include css3-prefix( "box-shadow" , 0 0 0 0 rgba(0,0,0,0) )
+	}
+	.more-content-con{
+		padding: 15px 0;
+		strong{
+				font-size: $titleTabletFontSize;
+				line-height: $titleTabletLineHeight;
+		}
+		span{
+			font-size: $listTabletFontSize;
+			line-height: $listTabletLineHeight;
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.more-content-con{
+		padding: 20px 0;
+		strong{
+			font-size: $titleWebFontSize;
+			line-height: $titleWebLineHeight;
+		}
+		span{
+			font-size: $listWebFontSize;
+			line-height: $listWebLineHeight;
+		}
+	}
+}

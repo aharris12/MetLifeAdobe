@@ -1,0 +1,19 @@
+{
+	"innerdata" : {
+		"tabList" : [
+			{
+				"lnk" : "#lnk",
+				"text" : "제지급금"
+			},
+			{
+				"lnk" : "#lnk",
+				"text" : "입금"
+			},
+			{
+				"lnk" : "#lnk",
+				"text" : "변경/정정",
+				"active" : true
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+<!-- COMPONENT START -->
+
+
+{% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+
+<div class="classTable">
+    {{ btn.button("버튼텍스트", "button", cusClass='btn-fullsize') }}
+    {{ btn.btnlink("링크텍스트", "#lnk", true) }}
+</div>
+
+<div class="classTable">
+    {{ btn.button("버튼텍스트", "button", color='blue') }}
+    {{ btn.btnlink("링크텍스트", "#lnk", color='blue') }}
+</div>
+
+
+<!-- COMPONENT END -->
+
+

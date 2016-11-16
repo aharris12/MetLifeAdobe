@@ -1,0 +1,31 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/find-an-office/find-result-content/styles.css -->
+
+
+{% set items = resultCont %}
+<div class="find-result-list">
+
+    <span class="result-heading">{{ items.result }}</span>
+    <ul>
+        {% set resultCont = items.resultContent %}
+        {% for resultList in resultCont %}
+        <li>
+            <div class="result-list-con">
+                <p class="result-branch"><span class="screen_out">지점명 : </span> <a href="{{ resultList.mapLink }}">{{ resultList.branches }}</a></p>
+                <p class="result-addr"><span class="screen_out">주소 : </span> {{ resultList.addr }}</p>
+                <p>전화 : <span class="tablet-view">{{ resultList.phone }}</span> <a href="tel:{{ resultList.phone }}" class="tel-link">{{ resultList.phone }}</a></p>
+                <p>FAX : {{ resultList.fax }}</p>
+            </div>
+
+            <div class="result-btn mobile-view">
+                {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                {{ btn.btnlink(resultList.btnType, resultList.mapLink') }}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% include paths.apps + "/inter-section/paging/index.html" %}
+</div>
+
+<!-- COMPONENT END -->

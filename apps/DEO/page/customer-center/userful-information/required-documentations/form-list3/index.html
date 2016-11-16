@@ -1,0 +1,39 @@
+
+{% set subCategory = gnbDepth3 %}
+{% include paths.apps + "/common/layout/sub-category-3depth/index.html" %}
+
+
+<div class="content">
+    {% include paths.apps + "/common/layout/share-click-to-call/index.html" %}
+    <div class="comp-container">
+        <!-- tab -->
+        {% set innerdata = tabCont %}
+        {% include paths.apps + "/inter-section/tab/index.html" %}
+
+        <!-- form-lib-list -->
+        {% set formLibList = formLib %}
+
+        {% for tabTitCheck in innerdata.tabList %}
+            {% if tabTitCheck.active %}
+                <h3 class="screen_out">{{ tabTitCheck.text }}</h3>
+                {% set docTitle = tabTitCheck.text %}
+                {% include paths.apps + "/form-library/index.html" %}
+            {% endif %}
+        {% endfor %}
+
+        {% set innerdata = container1 %}
+        {% include paths.apps + "/common/basic-component/general-column/index.html" %}
+
+        <!-- html-comp( table ) -->
+        {% set innerdata = indata1 %}
+        {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+        {% set innerdata = container2 %}
+        {% include paths.apps + "/common/basic-component/general-column/index.html" %}
+
+        <!-- html-comp( table ) -->
+        {% set innerdata = indata2 %}
+        {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+
+    </div>
+</div>

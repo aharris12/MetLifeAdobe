@@ -1,0 +1,42 @@
+
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/test/selectTest/styles.css -->
+
+
+{% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+
+<!-- select type 예제 -->
+<!--
+select( title, value, name )
+* title, value : 필수 입력값
+* value type : [ { text : option text, val : option value }, ... ];
+* name defalut : null
+-->
+
+<div>
+
+
+    <div class="testDiv">
+        <!-- 스크립트 연동 없을시 -->
+        {{ forms.select_type1("titlename", [
+            {text : "test1", val : "test1"},
+            {text : "test2", val : "test2"}
+        ], "name")}}
+    </div>
+
+    <div class="testDiv">
+        <!-- 스크립트 연동 없을시 -->
+        <label for="idname">label text</label>
+        {{ forms.select_type2("idname", [
+            {text : "test1", val : "test1"},
+            {text : "test2", val : "test2"}
+        ], "name")}}
+    </div>
+
+
+</div>
+
+
+<!-- COMPONENT END -->
+
+

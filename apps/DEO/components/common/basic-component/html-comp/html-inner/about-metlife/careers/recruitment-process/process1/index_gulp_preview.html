@@ -1,0 +1,121 @@
+<div class="careers-progress careers-index1">
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-01.gif" alt="1"></span>
+			<span class="careers-number-tit">서류전형</span>
+		</button>
+        <div class="careers-layer careers-layerpos1 careers-lefttype">
+            <dl> <dt class="opt-text14 opt-text-bold">서류전형</dt>
+                <dd class="opt-text14">지원자의 직무관련 지식과 <br> 경험/경력/자격사항 등이 종합적으로 고려되어 평가 </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-02.gif" alt="2"></span>
+			<span class="careers-number-tit">직무능력평가<br>직무성격검사<br>영어능력평가</span>
+		</button>
+        <div class="careers-layer careers-layerpos2 careers-lefttype">
+            <dl> <dt class="opt-text14 opt-text-bold">직무능력검사, 직무성격검사</dt>
+                <dd class="opt-text14">서류전형 합격자에 한해 실제 직무상황에서의 <br> 업무수행능력 및 잠재역량측정을 위한 직무능력검사 <br> 및 개인의 직무와 관련되어 선호하는 행동이나</dd>
+            </dl>
+            <dl> <dt class="opt-text14 opt-text-bold">영어능력평가</dt>
+                <dd class="opt-text14">메트라이프생명에서 근무하기에 충분한 영어능력의 <br> 보유 여부 판단을 위한 영어능력 평가실시 ( 직무상 <br> 영어 필요 시 )</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-03.gif" alt="3"></span>
+			<span class="careers-number-tit">1차면접</span>
+		</button>
+        <div class="careers-layer careers-layerpos3 careers-lefttype">
+            <dl> <dt class="opt-text14 opt-text-bold">1차면접</dt>
+                <dd class="opt-text14">직무능력/성격검사 및 영어능력평가 통과자에 한해 <br> 모집부서의 Manager / 팀원 및 HR과의 1차 면접 실시</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-04.gif" alt="4"></span>
+			<span class="careers-number-tit">2차면접</span>
+		</button>
+        <div class="careers-layer careers-layerpos4 careers-lefttype">
+            <dl> <dt class="opt-text14 opt-text-bold">2차면접</dt>
+                <dd class="opt-text14">1차면접 합격자에 <br> 모집부서의 임원 및 HR임원과의 2차면접 실시</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-05.gif" alt="5"></span>
+			<span class="careers-number-tit">3차면접</span>
+		</button>
+        <div class="careers-layer careers-layerpos5 careers-righttype">
+            <dl> <dt class="opt-text14 opt-text-bold">3차면접</dt>
+                <dd class="opt-text14">2차면접 합격자에 한해 CEO면접 실시</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-06.gif" alt="6"></span>
+			<span class="careers-number-tit">채용검진</span>
+		</button>
+        <div class="careers-layer careers-layerpos6 careers-righttype">
+            <dl> <dt class="opt-text14 opt-text-bold">채용검진</dt>
+                <dd class="opt-text14">정상 근무의 적격성 여부 판단을 위한 건강검진 실시</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="careers-list"> <button type="button" class="careers-button">
+			<span class="careers-number-img"><img src="/content/dam/DEO/author/careers/num-07.gif" alt="7"></span>
+			<span class="careers-number-tit">최종합격</span>
+		</button>
+        <div class="careers-layer careers-layerpos7 careers-righttype">
+            <dl> <dt class="opt-text14 opt-text-bold">최종합격</dt>
+                <dd class="opt-text14">모든 채용전형 합격자에 한해 합격여부 개별통보 후 근로계약</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function($)
+    {
+        function careersLayerInit()
+        {
+            var $elem = {};
+            $elem.el = $('.careers-index1');
+            $elem.elemlist = $elem.el.find('.careers-list');
+            $elem.elemBtn = $elem.elemlist.find('.careers-button');
+            $elem.elemLayer = $elem.elemlist.find('.careers-layer');
+            var $win = $(window);
+
+            function resizeSet()
+            {
+                if (window[sitename].VARS.IS_VIEWTYPE != 'web')
+                {
+                    $elem.elemBtn.off('focus mouseenter', overlayer.onOverLayer);
+                    $elem.elemBtn.off('focusout', overlayer.offOverLayer);
+                    $elem.el.off('focusout mouseleave', overlayer.offOverLayer);
+                    $elem.elemBtn.attr('tabindex', '-1');
+                }
+                else
+                {
+                    $elem.elemBtn.on('focus mouseenter', overlayer.onOverLayer);
+                    $elem.elemBtn.on('focusout', overlayer.offOverLayer);
+                    $elem.el.on('mouseleave', overlayer.offOverLayer);
+                    $elem.elemBtn.removeAttr('tabindex');
+                }
+            }
+
+            function addEvent()
+            {
+                if (window[sitename].VARS.IS_VIEWTYPE == 'web')
+                {
+                    $elem.elemBtn.on('focus mouseenter', overlayer.onOverLayer);
+                    $elem.elemBtn.on('focusout', overlayer.offOverLayer);
+                    $elem.el.on('mouseleave', overlayer.offOverLayer);
+                }
+                $win.on('resize', resizeSet)
+            }
+            var overlayer = new window[sitename].MDOBJ.OVERLAYER($elem, addEvent);
+            overlayer.init();
+        }
+        $(document).on('ready', careersLayerInit);
+    })(jQuery);
+</script>

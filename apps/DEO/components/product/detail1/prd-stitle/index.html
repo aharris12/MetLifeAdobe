@@ -1,0 +1,10 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-stitle/styles.css -->
+
+
+{% import paths.apps + "/common/extend/heading/index.html" as heading %}
+
+{% set title = innerdata %}
+{{ heading.headtag(title.level, title.text, title.class) }}
+
+<!-- COMPONENT END -->

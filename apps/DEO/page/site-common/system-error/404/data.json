@@ -1,0 +1,18 @@
+{
+	"container": {
+		"graytype": true,
+
+		"titlelist": {
+			"title": "링크 정보를 다시 확인해 주시기 바랍니다."
+		},
+
+		"linklist": {
+			"href": "#URL",
+			"text" : "메트라이프 홈으로 바로가기"
+		},
+
+		"codelist": {
+			"code": "404"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"fileClaim" : {
+		"mainTitle" : "펀드투자자교육",
+		"fileCont" : [
+			{
+				"listTitle": "전국 투자자 교육협의회",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "금융투자협회",
+				"btnType" : "바로가기",
+				"href" : "#lnk"
+			},
+			{
+				"listTitle": "펀드투자 이것은 알고합시다.",
+				"titleLink" : "#lnk",
+				"type" : "fileDown"
+			}
+		]
+
+	}
+}

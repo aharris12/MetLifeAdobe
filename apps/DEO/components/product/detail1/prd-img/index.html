@@ -1,0 +1,23 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-img/styles.css -->
+<!-- #js# /system/scripts/plugins/retina/retina.js -->
+
+<div class="prd-img">
+    {% set imgSrc = innerdata %}
+    <img class="retinaimg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"  data-web="{{ paths.author }}{{ imgSrc.web }}" data-tablet="{{ paths.author }}{{ imgSrc.tablet }}" data-mobile="{{ paths.author }}{{ imgSrc.mobile }}" alt="{{ imgSrc.alt }}">
+
+    {% if imgSrc.imgIR %}
+    <div class="screen_out">
+        {{ imgSrc.imgIR }}
+    </div>
+    {% endif %}
+
+    {% if imgSrc.caption %}
+    <div class="prd-text">
+        {{ imgSrc.caption | safe }}
+    </div>
+    {% endif %}
+
+</div>
+
+<!-- COMPONENT END -->

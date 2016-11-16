@@ -1,0 +1,84 @@
+{
+	"mainNavi": {
+		"main": true,
+		"backbtn": {
+			"stat": false,
+			"text": "All Insurance Products"
+		}
+	},
+
+	"mainCat0": {
+		"href": "#lnk1",
+		"text": "상품소개",
+		"innerMenu": [
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "사망보장보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "건강보장보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "연금보험"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "기타상품"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "퇴직연금"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "가입상담문의"
+			}
+		]
+	},
+
+	"mainCat3": {
+		"href": "#lnk1",
+		"text": "고객센터",
+		"innerMenu": [
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "공지/이벤트"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "유용한정보"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "지점안내"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "고객의소리"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "보험금청구안내"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "보험범죄신고센터"
+			}
+		]
+	}
+
+}

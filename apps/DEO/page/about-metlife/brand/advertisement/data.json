@@ -1,0 +1,54 @@
+{
+	"gnbDepth3" : { "href" : "#lnk1", "text" : "브랜드" , "innerMenu" : [
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "보도자료" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "광고" },
+		{"href" : "#lnk_dep2", "icosrc" : "ico-prd1.png", "text" : "브랜드스토리" }
+	],
+	"active" : "1"
+	},
+
+	"breadcrumb" : [
+		{ "href" : "#lnk", "text" : "회사소개" },
+		{ "href" : "#lnk", "text" : "브랜드" },
+		{ "href" : "#lnk", "text" : "광고" }
+	],
+	"pageTitleComp" : {
+		"levelTag" : "h2",
+		"title" : "TV광고",
+		"shareComp" : {
+			"share" : false,
+			"chat" : false
+		}
+	},
+
+	"advertisementHead" : {
+		"headTitle" : "무배당 My Choice 변액연금보험 [15초]"
+	},
+
+	"innerdata" : {
+		"graytype" : false,
+		"complist" : [
+			{
+				"comp" : "/common/basic-component/base-text",
+				"innerdata" : [
+					{
+						"text" : "MetLife생명의 My Choice 변액연금보험은 쌓인 수익을 원금에 합쳐 5년마다 원금을 다시 조정할 수 있는 리셋기능을 더했습니다.",
+						"class" : "opt-text14 opt-pb40 opt-text-bold"
+					}
+				]
+			},
+			{
+				"comp" : "/common/basic-component/youtube",
+				"innerdata" : [
+					{
+						"title" : "MetLife Asia: My Dads Story - Dream for My Child",
+						"id" : "CMkeicTX0Tc",
+						"optClass" : "opt-pb40",
+						"control" : false,
+						"sumnail" : false
+					}
+				]
+			}
+		]
+	}
+}

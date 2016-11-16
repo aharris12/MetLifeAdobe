@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.6 99.01">
+    <defs>
+        <style>
+            .cls-1{
+                fill:none;
+                stroke:#494949;
+                stroke-linecap:round;
+                stroke-linejoin:round;
+                stroke-width:1.5px;
+            }
+        </style>
+    </defs>
+    <title>자산 1</title>
+    <g id="icon" data-name="icon">
+            <circle class="cls-1" cx="26.3" cy="27.95" r="11.35" transform="translate(-11.06 36.75) rotate(-60)"/>
+            <line class="cls-1" x1="45.11" y1="17.55" x2="63.97" y2="17.55"/>
+            <line class="cls-1" x1="45.11" y1="29.05" x2="63.97" y2="29.05"/>
+            <line class="cls-1" x1="45.11" y1="40.55" x2="63.97" y2="40.55"/>
+            <line class="cls-1" x1="15.68" y1="52.05" x2="63.97" y2="52.05"/>
+            <line class="cls-1" x1="15.68" y1="63.54" x2="63.97" y2="63.54"/>
+            <line class="cls-1" x1="15.68" y1="75.04" x2="63.97" y2="75.04"/>
+            <polyline class="cls-1" points="17.09 22.46 27.18 28.28 31.52 38.03"/>
+            <polygon class="cls-1" points="81.86 84 81.86 0.75 0.75 0.75 0.75 98.26 69.44 98.26 81.86 84"/>
+            <polyline class="cls-1" points="69.44 98.26 69.44 84 81.86 84"/>
+    </g>
+</svg>

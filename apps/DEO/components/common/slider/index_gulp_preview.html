@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="title" content="## Page Title, 10 ~ 70 characters ##">
+        <meta name="description" content="## Page Description, 70 ~ 160 characters ##">
+        <meta name="keywords" content="## Page Keywords, 10 ~ 20 characters ##">
+        <title>Component Preview</title>
+        <!-- build:css /etc/clientlibs/<@=project.name@>/<@=page.name@>/styles.min.css -->
+        <link rel="stylesheet" href="/system/styles/common.css">
+        <link rel="stylesheet" href="/system/styles/sitecommon.css">
+        <link rel="stylesheet" href="/system/styles/options.css">
+        <link rel="stylesheet" href="/system/styles/comp-common.css">
+        <!--<link rel="stylesheet" charset="utf-8" href="/application/setting/styles/app.css" />-->
+        <!-- components style : start -->
+        <link rel="stylesheet" href="/apps/DEO/components/slider/styles.css">
+        <!-- resource:page css -->
+        <!-- components style : end -->
+        <!-- build:js /etc/clientlibs/<@=project.name@>/libs/scripts.min.js -->
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/libs/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteObject.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/siteModule.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/greensock/TweenMax.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/common/common.js"></script>
+        <!-- endbuild -->
+        <!--[if lte IE 9]>
+<script src="/system/scripts/libs/html5.js"></script>
+<script src="/system/scripts/libs/respond.min.js"></script>
+<script src="/system/scripts/libs/selectivizr-min.js"></script>
+<![endif]-->
+        <!-- resource:page css -->
+    </head>
+
+    <body class="doc-loading">
+        <!-- CONTENT -->
+        <div class="slide-box">
+            <!--
+        **************   .ui-slide 속성   **************
+        data-slide-auto="true" : 자동재생 기능 추가
+        data-slide-viewlen= number or array : 화면에 보이게 될 ui-slide-inner 개수 // array경우 [mobile, tablet, desktop] 순
+        data-slide-type= slide Mode 선언
+    -->
+            <div class="ui-slide" data-slide-type="basic,basicindi,basicindi" data-slide-viewlen="1,2,3" data-slide-auto="true">
+                <div class="ui-slide-direct ui-slide-direct-prev"> <button type="button" class="ui-slide-prev"><span>이전 슬라이드</span></button> </div>
+                <div class="ui-slide-control">
+                    <!--
+                **************   .ui-slide-indicator 속성   **************
+                data-indi-type= number or html : indicator button type 선언 // array경우 [mobile, tablet, desktop] 순
+                data-indi-i18ntxt : i18n용 텍스트
+                .ui-slide-indicator > button : number로만 구성될 경우 number로 markup, 복합구성이나 html로 구성될 경우 html 구성
+            -->
+                    <div class="ui-slide-autoControl"> <button type="button" class="ui-slide-play"> play </button> <button type="button" class="ui-slide-stop"> stop </button> </div>
+                    <div class="ui-slide-indicator" data-indi-type="none,number,number" data-indi-i18ntxt="슬라이드"> <button type="button"> 1 </button> <button type="button"> 2 </button> <button type="button"> 3 </button> <button type="button"> 4 </button> </div>
+                </div>
+                <div class="ui-slide-content">
+                    <ul>
+                        <li data-inner-colum="1">
+                            <div class="ui-slide-inner">
+                                <a href="#lnk"><img src="/content/dam/DEO/author/@temp/hero_auto.jpg" alt=""></a>
+                            </div>
+                        </li>
+                        <li data-inner-colum="1">
+                            <div class="ui-slide-inner">
+                                <a href="#lnk"><img src="/content/dam/DEO/author/@temp/hero_foundation.jpg" alt=""></a>
+                            </div>
+                        </li>
+                        <li data-inner-colum="1">
+                            <div class="ui-slide-inner">
+                                <a href="#lnk"><img src="/content/dam/DEO/author/@temp/hero_life.jpg" alt=""></a>
+                            </div>
+                        </li>
+                        <li data-inner-colum="1">
+                            <div class="ui-slide-inner">
+                                <a href="#lnk"><img src="/content/dam/DEO/author/@temp/hero_small_business.jpg" alt=""></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ui-slide-direct ui-slide-direct-next"> <button type="button" class="ui-slide-next"><span>다음 슬라이드</span></button> </div>
+            </div>
+        </div>
+        <!-- // CONTENT-->
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/imagesloaded/v3.2/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/external/touchswipe/jquery.touchswipe.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/slider/slide-util.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/slider/slide-indicator.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/slider/slide-basic.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/slider/slide-basicindi.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/system/scripts/plugins/slider/slide-load.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/apps/DEO/components/slider/scripts.js"></script>
+    </body>
+
+</html>

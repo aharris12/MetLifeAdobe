@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/* css folder ##find-an-office/map-container## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+.map-container{
+	width:100%;
+	padding:20px 0;
+	&:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	.map-con{padding:0 10px;}
+	.map-srh{padding:0 20px;}
+}
+
+
+@media all and(min-width:768px) {
+	.map-container {
+		padding:30px 0;
+		width: 95%;
+		margin: 0 auto;
+		.map-con {
+			float: right;
+			width: 46.5%;
+		}
+		.map-result {
+			float: left;
+			width: 51%
+		}
+		.map-con,.map-srh{padding:0;}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.map-container {
+		padding:40px 0;
+		width: 85%;
+		max-width: 1100px;
+		.map-srh {
+			float: left;
+			width: 100%;
+		}
+		.map-con {
+			float: right;
+			width: 40%;
+		}
+		.map-result {
+			float: left;
+			width: 57.5%
+		}
+	}
+}

@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* css folder ##inter-section/small-product-module2## */
+
+@import "system/styles/basicset.scss";
+@import "system/styles/mixin.scss";
+
+$maxCompWidth: 1100px;
+$TabletWidth: 95%;
+
+$boxMobTopPadding: 100px;
+$boxMobBtmPadding: 25px;
+
+//$boxTabletTopPadding: 100px;
+$boxTabletBtmPadding: 30px;
+
+$boxWebTopPadding: 110px;
+//$boxWebBtmPadding: 30px;
+
+$linkMobFontSize: 15px;
+$linkTabletFontSize: 14px;
+
+$linkMobLineHeight: 22px;
+$linkTabletLineHeight: 24px;
+
+.small-product-module2 {
+	margin: 0 auto;
+	padding-bottom: 20px;
+	text-align: center;
+
+	.product-table {
+		display:table;
+		width: 100%;
+		margin: 0 auto;
+		font-size: 0;
+		background:#fff;
+
+		@include css3-prefix("box-shadow", 1px 3px 5px 0 rgba(1, 1, 1, 0.1) );
+
+		& .module-box:not(:last-child) {
+			border-bottom:1px solid #e3e3e3
+		}
+
+		.module-box {
+			display: block;
+			a{
+				display:table;
+				width: 100%;
+				height: 100%;
+				.module-text{
+					display: table-cell;
+					padding-top: $boxMobTopPadding;
+					padding-bottom: $boxMobBtmPadding;
+					background-position: 50% 25px;
+					background-repeat:no-repeat;
+					font-size:$linkMobFontSize;
+					line-height:$linkMobLineHeight;
+					font-weight:bold;
+					text-decoration:underline;
+					vertical-align:middle;
+					color:#2377c5;
+				}
+			}
+		}
+	}
+}
+
+
+@media all and(min-width:768px) {
+
+	.small-product-module2 {
+		width: $TabletWidth;
+		padding-bottom: 50px;
+		border-bottom: 1px solid #ccc;
+
+		.product-table {
+			.module-box {
+				display: table-cell;
+				width: 25%;
+				&:not(:first-child) {border-left: 1px solid #e3e3e3}
+				vertical-align: middle;
+				a {
+					display: table;
+					padding-left: 15%;
+					padding-right: 15%;
+					.module-text {
+						background-position:50% 30px;
+						padding-bottom: $boxTabletBtmPadding;
+						font-size: $linkTabletFontSize;
+						line-height: $linkTabletLineHeight;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and(min-width:1024px) {
+	.small-product-module2{
+		max-width: $maxCompWidth;
+		.product-table{
+			.module-box {
+				a {
+					.module-text {
+						padding-top: $boxWebTopPadding;
+					}
+				}
+			}
+		}
+	}
+}
+

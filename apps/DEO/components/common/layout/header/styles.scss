@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+/* css folder ##common/layout/header## */
+
+@import "system/styles/basicset.scss";
+
+
+.header-container {
+	z-index:100;
+	position: fixed;
+	-webkit-box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+	-moz-box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+	box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+	//-webkit-transform: translateZ(0);
+	//-webkit-backface-visibility: hidden;
+	left:0;
+	top:0;
+	height:50px;
+	width:100%;
+	background: #fff;
+	@include transMove;
+}
+.minisize.header-container {
+	@include transMove;
+}
+
+.header-container h1{
+	margin:0 auto;
+	width:120px;
+	height:26px;
+	position: absolute;
+	left:50%;
+	top:15px;
+	margin-left:-60px;
+	z-index:2;
+	@include transMove;
+}
+
+.header-container h1 img{
+	width:100%;
+}
+
+.header-line {
+	position: relative;
+	height:100%;
+	max-height:70px;
+}
+
+.header-utils {
+	width:100%;
+	height:100%;
+	max-height:70px;
+	display: table;
+	font-size:0;
+	position: relative;
+	background: #fff;
+	z-index:1;
+}
+
+
+.header-utils>div {
+	display: inline-block;
+	vertical-align: top;
+	height:100%;
+}
+
+
+.header-home {
+	display: none;
+}
+
+.header-home-link {
+	display: none;
+}
+
+.header-search-load {
+	position: relative;
+}
+
+.header-dimmed {
+	display: none;
+	width:100%;
+	height:100%;
+	position: fixed;
+	left:0;
+	top:0;
+	z-index:0;
+	background: $pointColor1;
+}
+
+.header-aside {
+	height:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	z-index:10;
+}
+
+@media all and (min-width:768px) {
+
+	.header-container {
+		@include transMove;
+		height:70px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+	.minisize .header-container {
+		@include transMove;
+		height:50px;
+		-webkit-box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+		-moz-box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+		box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+	}
+
+	.minisize .header-container h1{
+		width:120px;
+		height:50px;
+		top:0;
+		margin-left:-60px;
+		& a {
+			display: block;
+			padding:15px 0;
+		}
+	}
+
+	.header-home-link {
+		display: block;
+		height:100%;
+		max-height:70px;
+		position: relative;
+		& a {
+			height:100%;
+		}
+	}
+
+	.header-container h1{
+		margin:0 auto;
+		width:168px;
+		position: absolute;
+		left:50%;
+		top:0;
+		height:36px;
+		margin-left:-84px;
+		z-index:2;
+
+		& a {
+			display: block;
+			padding:21px 0;
+		}
+	}
+
+
+	.header-utils {
+		padding-left:15px;
+		z-index:auto;
+	}
+
+	.sch-active .header-utils {
+	}
+
+	.header-utils>div {
+		max-height:100%;
+	}
+
+
+	.header-home {
+		vertical-align: top;
+		& a {
+			display: inline-block;
+			background: url('./images/ico_home.svg') 50% 50% no-repeat;
+			vertical-align: middle;
+			width: 19px;
+			max-height:100%;
+			height:70px;
+			line-height:70px;
+			padding:0 15px;
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+			-webkit-background-size: 19px auto;
+			background-size: 19px auto;
+			@include transMove;
+
+		}
+	}
+
+	.minisize .header-home a{
+		line-height:50px;
+		height:50px;
+		@include transMove;
+
+	}
+
+
+}
+
+
+@media all and (min-width:1024px) {
+
+	.header-home-link {
+		display: table;
+		vertical-align: middle;
+	}
+
+	.header-home {
+		& a {
+			display: table-cell;
+			height:100%;
+			width:auto;
+			vertical-align: middle;
+			background-position: 15px 50%;
+		}
+		& .web-view {
+			padding:0 0 0 27px;
+			vertical-align: middle;
+			font-size:14px;
+			color: #333333;
+		}
+	}
+}
+
+.test-container {
+	margin-top:70px;
+}

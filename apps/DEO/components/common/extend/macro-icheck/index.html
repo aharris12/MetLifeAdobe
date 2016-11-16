@@ -1,0 +1,27 @@
+<!-- COMPONENT START -->
+
+
+{% macro radio(idVal, labelVal, name='', value='', check='') %}
+<div class="ui-radio">
+<input type="radio" id="{{ idVal }}" name="{{ name }}" value="{{ value | escape }}" {% if check %} checked="checked" {% endif %} />
+<label for="{{ idVal }}"><span>{{ labelVal }}</span></label>
+</div>
+<!-- #comp css# /apps/DEO/components/extend/macro-icheck/styles.css -->
+<!-- #js# /system/scripts/plugins/icheck/icheck.min.js -->
+<!-- #js# /apps/DEO/components/extend/macro-icheck/scripts.js -->
+
+{% endmacro %}
+
+{% macro checkbox(idVal, labelVal, name='', value='', check='') %}
+<div class="ui-checkbox">
+<input type="checkbox" id="{{ idVal }}" name="{{ name }}" value="{{ value | escape }}" {% if check %} checked="checked" {% endif %} />
+<label for="{{ idVal }}"><span>{{ labelVal }}</span></label>
+</div>
+<!-- #comp css# /apps//DEO/components/extend/macro-icheck/styles.css -->
+<!-- #js# /system/scripts/plugins/icheck/icheck.min.js -->
+<!-- #js# /apps/DEO/components/extend/macro-icheck/scripts.js -->
+
+{% endmacro %}
+
+
+<!-- COMPONENT END -->

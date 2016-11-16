@@ -1,0 +1,17 @@
+{
+	"prdTab" : [
+		{
+			"text" : "보장내용",
+			"link" : "#lnk",
+			"active" : true
+		},
+		{
+			"text" : "가입안내",
+			"link" : "#lnk"
+		},
+		{
+			"text" : "알아두실 사항",
+			"link" : "#lnk"
+		}
+	]
+}

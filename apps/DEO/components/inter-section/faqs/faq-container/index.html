@@ -1,0 +1,28 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/inter-section/faqs/faq-container/styles.css -->
+
+<div class="faq-container">
+    <div class="faq-search">
+        <form action="?">
+            <fieldset>
+                <legend class="screen_out">분류검색</legend>
+                {% import paths.apps + "/common/extend/macro-select/index.html" as forms %}
+                <label for="categorySlt">분류선택</label>
+                <div class="slt-area">
+                    {{ forms.select_type2("categorySlt", [
+                    {text : "전체", val : "전체"}
+                    ], "name")}}
+
+                    {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                    {{ btn.button("검색", "submit", color="green") }}
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    {% set faqContent = faqList %}
+    {% include paths.apps + "/inter-section/faqs/faq/index.html" %}
+</div>
+
+
+<!-- COMPONENT END -->

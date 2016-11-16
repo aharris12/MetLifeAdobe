@@ -1,0 +1,48 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/file-a-claim/styles.css -->
+
+{% set item = fileClaim %}
+<div class="comp-container">
+    <div class="comp-file-claim">
+        <h3 class="file-claim-heading">{{ item.mainTitle }}</h3>
+        {% if item.subCopy %}
+            {% for copyCont in item.subCopy %}
+            <p class="subinfo">
+                {{ copyCont }}
+            </p>
+            {% endfor %}
+        {% endif %}
+        <ul>
+            {% set filecont = item.fileCont %}
+            {% for fileList in filecont %}
+            <li>
+                <div class="file-claim-con">
+                    <span class="screen_out">제목 : </span>
+                    <span class="title">
+                        {% if fileList.titleLink %}
+                        <a href="{{ fileList.titleLink }}">{{ fileList.listTitle }}</a>
+                        {% else %}
+                        {{ fileList.listTitle }}
+                        {% endif %}
+
+                    </span>
+                </div>
+                {% if fileList.type == "fileDown" %}
+                    <div class="file-claim-files">
+                        <a href="#lnk" class="ico-pdf">양식<span class="down">다운로드</span></a>
+                        <span class="file-claim-kb">(PDF -128kb)</span>
+                    </div>
+                {% else %}
+                    <div class="file-claim-btn">
+                        {% import paths.apps + "/common/extend/macro-button/index.html" as btn %}
+                        {{ btn.btnlink(fileList.btnType, fileList.href) }}
+                    </div>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+<!-- COMPONENT END -->

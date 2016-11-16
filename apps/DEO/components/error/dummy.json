@@ -1,0 +1,58 @@
+{
+	"container": {
+		"graytype": true,
+
+		"titlelist": {
+			"title": "링크 정보를 다시 확인해 주시기 바랍니다."
+		},
+
+		"complist": [
+			{
+				"comp": "/common/basic-component/general-column",
+				"innerdata": {
+					"complist": [
+						{
+							"comp": "/common/basic-component/base-text",
+							"innerdata": [
+								{
+									"text": "시스템 점검으로 인해 일시적으로 홈페이지 사용이 불가능합니다.",
+									"class": "opt-text16 opt-pb20 text-align-c"
+								},
+								{
+									"text": "점검시간 : 20XX년 XX월 XX일 00:00 ~ 20XX년 XX월 XX일 00:00 (XX시간)",
+									"class": "opt-text16 text-align-c"
+								},
+								{
+									"text": "점검사유 : 로그인 프로세스 변경",
+									"class": "opt-text16 text-align-c"
+								},
+								{
+									"text": "제한 기능 : 페이지 로그인을 포함한 모든 기능",
+									"class": "opt-text16 opt-pb30 text-align-c"
+								},
+								{
+									"text": "작업 이후 안정적인 서비스 제공으로 보답하겠습니다.",
+									"class": "opt-text16 text-align-c"
+								},
+								{
+									"text": "감사합니다.",
+									"class": "opt-text16 text-align-c"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+
+		"linklist": {
+			"href": "#URL",
+			"text" : "메트라이프 홈으로 바로가기"
+		},
+
+		"codelist": {
+			"code": "404"
+		}
+	}
+
+}

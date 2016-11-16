@@ -1,0 +1,120 @@
+{
+	"gnbDepth3": {
+		"href": "#lnk1",
+		"text": "지점안내",
+		"innerMenu": [
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "지점찾기"
+			},
+			{
+				"href": "#lnk_dep2",
+				"icosrc": "ico-prd1.png",
+				"text": "방카슈랑스(은행)안내"
+			}
+		],
+		"active": "0"
+	},
+	"breadcrumb": [
+		{
+			"href": "#lnk",
+			"text": "고객센터"
+		},
+		{
+			"href": "#lnk",
+			"text": "지점안내"
+		},
+		{
+			"href": "#lnk",
+			"text": "지점찾기"
+		}
+	],
+	"pageTitleComp": {
+		"levelTag": "h2",
+		"title": "지점찾기",
+		"shareComp": {
+			"share": false,
+			"chat": false
+		}
+	},
+	"resultCont": {
+		"result": "총 22개 지점 중 1 - 5",
+		"resultContent": [
+			{
+				"mapLink": "#lnk",
+				"branches": "ALLSTAR지점",
+				"addr": "서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)",
+				"phone": "02-546-9811",
+				"fax": "02-546-9812",
+				"btnType": "지도보기"
+			},
+			{
+				"mapLink": "#lnk",
+				"branches": "BPS지점",
+				"addr": "서울 강남구 테헤란로4길 14, 7층(역삼동, 미림타워)",
+				"phone": "02-546-9811",
+				"fax": "02-546-9812",
+				"btnType": "지도보기"
+			},
+			{
+				"mapLink": "#lnk",
+				"branches": "BRAND지점",
+				"addr": "서울 강남구 학동로 401, 14층(청담동, 금하빌딩)",
+				"phone": "02-546-1490",
+				"fax": "02-546-1497",
+				"btnType": "지도보기"
+			},
+			{
+				"mapLink": "#lnk",
+				"branches": "CROWN지점",
+				"addr": "서울 강남구 학동로 401, 14층(청담동, 금하빌딩)",
+				"phone": "02-541-1490",
+				"fax": "02-541-1497",
+				"btnType": "지도보기"
+			},
+			{
+				"mapLink": "#lnk",
+				"branches": "Charin지점",
+				"addr": "서울 강남구 도산대로45길 6, 13층(신사동, 호림아트센터2빌딩)",
+				"phone": "02-2051-2491",
+				"fax": "02-546-9812",
+				"btnType": "지도보기"
+			}
+		]
+	},
+	"infoCont1": {
+		"title": "콜센터 안내",
+		"infoContent": [
+			{
+				"href": "#lnk",
+				"tel": "1588-9600",
+				"service": "9:00~18:00 (평일)",
+				"abroad": "+82-2-2017-6700",
+				"textType": {
+					"href": "#URL",
+					"text": "자세히보기"
+				}
+			}
+		]
+	},
+	"infoCont2": {
+		"title": "고객플라자 안내",
+		"infoContent": [
+			{
+				"href": "#lnk",
+				"plaza": "서울고객 플라자",
+				"addr1": "서울특별시 강남구 테헤란로 316, 3층",
+				"addr2": "(역삼동, 메트라이프 타워)",
+				"btnType": "지도보기"
+			},
+			{
+				"href": "#lnk",
+				"plaza": "부산고객 플라자",
+				"addr1": "부산광역시 부산진구 범일로 181, 4층",
+				"addr2": "(범천 1동, 사학연금회관 빌딩)",
+				"btnType": "지도보기"
+			}
+		]
+	}
+}

@@ -1,0 +1,44 @@
+<!-- COMPONENT START -->
+
+<!-- #comp css# /apps/DEO/components/common/layout/header/styles.css -->
+<!-- #js# /apps/DEO/components/common/layout/header/scripts.js -->
+
+<div class="header-container">
+
+    <div class="header-line">
+
+        <h1><a href="#lnk"><img src="/{{ paths.apps }}/common/layout/header/images/logo.png" alt="metlife"></a></h1>
+
+        <div class="header-utils">
+            <div class="header-gnb">{% include paths.apps + "/common/layout/gnb/index.html" %}</div>
+            <div class="header-home">
+                <div class="header-home-link">
+                    <a href="#lnk"><span class="screen_out">METLIFE</span><span class="web-view">홈</span></a>
+                </div>
+            </div>
+            <div class="header-search-load">{% include paths.apps + "/common/layout/search/index.html" %}</div>
+        </div>
+
+        <div class="header-search-container">
+            <div class="header-search-wrap">
+                <form action="?">
+                    <fieldset>
+                        <legend class="screen_out">통합검색</legend>
+                        <div class="header-search-input input-wrap">
+                            <label for="header-search-inputarea" class="header-search-label">검색어</label>
+                            <input type="text" id="header-search-inputarea" class="header-search-inputbox" value=""/>
+                        </div>
+                        <button type="submit" class="header-search-submit">검색</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="header-aside">
+            {% include paths.apps + "/common/layout/aside/index.html" %}
+        </div>
+
+    </div>
+</div>
+
+<!-- COMPONENT END -->

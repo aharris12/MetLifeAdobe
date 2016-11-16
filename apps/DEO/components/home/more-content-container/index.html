@@ -1,0 +1,29 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/home/more-content-container/styles.css -->
+
+
+{% set moreitem = moreCont %}
+<div class="comp-container">
+    {% set items = moreitem.moreList %}
+    <div class="more-content-container">
+        {% if moreitem.moreHead %}
+
+        {% import paths.apps + "/common/extend/heading/index.html" as heading %}
+        {{ heading.headtag(moreitem.moreHead.level, moreitem.moreHead.text, moreitem.moreHead.class) }}
+
+        {% endif %}
+
+		{% if moreitem.moreCopy %}
+			<p class="more-content-subcopy">{{ moreitem.moreCopy.text | safe }}</p>
+		{% endif %}
+
+        <ul class="more-content-list">
+            {% for itemList in items %}
+                {% set moreContent = itemList.moreContent %}
+                <li>{% include paths.apps + "/home/more-content/index.html" %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- COMPONENT END -->

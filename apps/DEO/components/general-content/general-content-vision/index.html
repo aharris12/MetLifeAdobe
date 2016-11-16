@@ -1,0 +1,44 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/general-content/general-content-vision/styles.css -->
+
+{% set items = container %}
+	<div class="general-content-vision">
+		{% for list in items.complist1 %}
+			{% set innerdata = list.innerdata %}
+			{% include paths.apps + list.comp + "/index.html" %}
+		{% endfor %}
+
+		<div class="general-vision-img">
+			{% for list in items.imglist %}
+				{% set innerdata = list.innerdata %}
+				{% include paths.apps + "/common/basic-component/base-img/index.html" %}
+			{% endfor %}
+		</div>
+
+		{% for list in items.complist2 %}
+			{% set innerdata = list.innerdata %}
+			{% include paths.apps + list.comp + "/index.html" %}
+		{% endfor %}
+
+		<div class="general-tiles-wrap">
+			<ul>
+				{% for itemList in items.generalContTilesList %}
+				{% set generalContTiles = itemList.generalContTiles %}
+				<li>
+					{% set tiles = generalContTiles %}
+					<div class="general-tiles">
+						<dl class="value1"  style="background-image: url('{{ paths.author }}{{ tiles.imgUrl }}');">
+							<dt><div class="general-title"><span class="txt-eng">{{ tiles.eng}}</span>{{ tiles.title }}</div></dt>
+							{% for content in tiles.contentList %}
+							<dd>{{ content }}</dd>
+							{% endfor %}
+						</dl>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+	</div>
+
+<!-- COMPONENT END -->

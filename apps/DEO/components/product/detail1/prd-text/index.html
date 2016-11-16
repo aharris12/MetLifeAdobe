@@ -1,0 +1,28 @@
+<!-- COMPONENT START -->
+<!-- #comp css# /apps/DEO/components/product/detail1/prd-text/styles.css -->
+
+{% set item = innerdata %}
+
+<div class="prd-text">
+
+    {% if item.alignClass %}
+        <p class="{{ item.alignClass }}">{{ item.text | safe }}</p>
+    {% elif item.bullet  %}
+        <p class="{{ item.bullet }}">{{ item.text | safe }}</p>
+    {% else %}
+        <p>{{ item.text | safe }}</p>
+    {% endif %}
+
+    {% if item.img %}
+        {% set indata = item.img %}
+        {% include paths.apps + "/product/detail1/prd-img/index.html" %}
+    {% endif %}
+
+    {% if item.grayCopy %}
+        {% set innerdata = item.grayCopy %}
+        {% include paths.apps + "/common/basic-component/html-comp/index.html" %}
+    {% endif %}
+
+</div>
+
+<!-- COMPONENT END -->
